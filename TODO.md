@@ -2,28 +2,27 @@
 
 ## Current Phase: Step 1 - Repository & Project Setup
 
-### In Progress
-- [x] Create GitHub repository
-- [x] README.md
-- [x] .claude/CLAUDE.md
-- [x] .gitignore
-- [x] .gitattributes
-- [x] docs/NEC_COVERAGE.md
-- [x] docs/ASSET_SOURCES.md
-- [ ] Unity project folder structure
-- [ ] Copy reusable scripts from career-explorer
-- [ ] Initial commit & push to GitHub
+### Completed
+- [x] Create GitHub repository (https://github.com/jdonnelly-zspace/nec-code-inspector)
+- [x] README.md, CLAUDE.md, .gitignore, .gitattributes
+- [x] docs/NEC_COVERAGE.md, docs/ASSET_SOURCES.md
+- [x] Unity project folder structure
+- [x] Copy reusable scripts from career-explorer (Inputs, Utils, Data patterns)
+- [x] Initial commit & push to GitHub
 
-### Step 2: Core Systems (Week 1-2)
-- [ ] GameManager singleton
-- [ ] NECDatabase singleton + JSON schema
-- [ ] DifficultyManager (Beginner/Standard/Expert)
-- [ ] ProgressManager (JSON persistence)
-- [ ] ScenarioCatalog + ScenarioDefinition ScriptableObjects
-- [ ] ViolationDefinition ScriptableObjects
-- [ ] 50 core NEC articles in JSON database
-- [ ] Boot scene with SDK detection
-- [ ] Main menu scene (placeholder)
+### Step 2: Core Systems - COMPLETED
+- [x] GameManager singleton (scene flow, difficulty, progress)
+- [x] NECDatabase singleton + JSON loader with full-text search
+- [x] DifficultyManager (Beginner/Standard/Expert)
+- [x] DifficultySettingsSO (citation modes, hints, scaffolding, time limits)
+- [x] ProgressManager (JSON persistence to Application.persistentDataPath)
+- [x] InspectionScore + SandboxScore data models with grading
+- [x] ScenarioCatalogSO + ScenarioDefinitionSO ScriptableObjects
+- [x] ViolationDefinitionSO (NEC reference, severity, scene binding, hints)
+- [x] NECArticle + NECArticleCollection data models
+- [x] 50 core NEC articles in JSON database (Ch 1-4, 6)
+- [ ] Boot scene with SDK detection (deferred to Step 3)
+- [ ] Main menu scene (deferred to Step 7)
 
 ### Step 3: Inspection Scenario #1 - Residential Panel (Week 3-4)
 - [ ] InspectionScenarioRunner (StateMachine)
