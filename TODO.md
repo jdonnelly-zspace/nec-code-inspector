@@ -24,16 +24,26 @@
 - [ ] Boot scene with SDK detection (deferred to Step 3)
 - [ ] Main menu scene (deferred to Step 7)
 
-### Step 3: Inspection Scenario #1 - Residential Panel (Week 3-4)
-- [ ] InspectionScenarioRunner (StateMachine)
-- [ ] IntroStep, FreeInspectionStep, ReviewStep, NECReviewStep, ScoreStep
-- [ ] Residential panel 3D scene with embedded violations
-- [ ] Component hover/highlight/inspect interaction
-- [ ] Violation flagging UI (PopupCanvas)
-- [ ] NEC citation input (dropdown/search/free-text per difficulty)
-- [ ] Virtual flashlight tool
-- [ ] Scoring system
-- [ ] Difficulty differentiation (hints, scaffolding, time limits)
+### Step 3: Inspection Scenario System - COMPLETED (scripts)
+- [x] InspectionStateMachine (clean version without career-explorer dependencies)
+- [x] InspectionScenarioRunner (builds step sequence, starts machine)
+- [x] IntroStep (scenario intro with continue prompt)
+- [x] FreeInspectionStep (main gameplay loop: inspect, flag, time limit, scaffolding)
+- [x] ReviewStep (found/missed/false positives summary)
+- [x] NECReviewStep (walk through missed violations with NEC articles)
+- [x] ScoreStep (letter grade, retry/menu options, progress save)
+- [x] InspectableComponent (hover highlight, flag, mark compliant, hint pulse)
+- [x] InspectionManager (tracks violations, calculates scores, filters by difficulty)
+- [x] InspectionPointerController (raycast, hover, inspect, tool use bridge)
+- [x] ViolationFlaggingPanel (NEC citation: dropdown/search/free-text per difficulty)
+- [x] InspectionHUD (intro panel, inspection panel, timer, flagged count)
+- [x] InspectionReviewPanel (summary, missed violations, final score)
+- [x] NECReferencePanel (search, article display, related articles, 2026 badge)
+- [x] VirtualTool base class + Flashlight (spotlight) + Multimeter (V/A/Ω/continuity)
+- [x] MeasurementPoint (simulated electrical readings on components)
+- [x] ToolBelt (tool switching manager)
+- [ ] Residential panel 3D scene with embedded violations (requires Unity editor)
+- [ ] Scene prefab setup and wiring (requires Unity editor)
 
 ### Step 4: Inspection Scenario #2 - Branch Circuits (Week 3-4)
 - [ ] Kitchen/bathroom 3D scene
