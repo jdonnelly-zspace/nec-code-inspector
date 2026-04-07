@@ -6,6 +6,7 @@ Unity 6.3 LTS + zCore 6.3. Target: Windows 11 on zSpace Inspire 2.
 
 ## Critical Constraints
 
+- **Render Pipeline: URP (Universal Render Pipeline).** zCore 6.3.3.5 and zView 6.1.0 are URP-compatible. Use URP shaders (Lit, Unlit, etc.), not Built-in/Standard shaders.
 - ALL UI Canvases MUST use World Space render mode. NEVER use Screen Space Overlay or Screen Space Camera. zSpace stereo rendering requires World Space.
 - ZCamera replaces the standard Unity camera. Never add a regular Camera component to scenes.
 - Use TextMeshPro for ALL text rendering.

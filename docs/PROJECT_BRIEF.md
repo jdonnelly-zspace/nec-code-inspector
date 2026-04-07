@@ -44,7 +44,8 @@ Searchable NEC article database (66 articles), quick reference cards (10 topics)
 
 ## Technical Architecture
 
-- **Engine:** Unity 6.3 LTS + zCore 6.3
+- **Engine:** Unity 6.3 LTS + zCore 6.3.3.5 + zView 6.1.0
+- **Render Pipeline:** URP (Universal Render Pipeline) — zCore 6.3 is URP-compatible
 - **Target:** Windows 11 on zSpace Inspire 2
 - **Stereo:** All UI in World Space (required for zSpace 3D)
 - **Input:** 6DOF stylus (primary) + mouse fallback

@@ -24,20 +24,21 @@ Before starting, ensure you have:
 
 ## Phase 1: Unity Project Setup (Day 1)
 
-### 1.1 Open the Project in Unity
+### 1.1 Create the Unity Project
 
-1. Open Unity Hub → **Open** → navigate to `C:\Users\Jilldonnelly\Documents\nec-code-inspector`
-2. Unity will import all 73 scripts. Wait for compilation to complete.
+1. Open Unity Hub → **New Project** → select **3D (URP)** template → set location to `C:\Users\Jilldonnelly\Documents\nec-code-inspector`
+   - If the folder already exists with scripts, Unity Hub may prompt — choose to create the project in this location
+   - Alternatively: create the URP project in a temp folder, then copy the generated `Packages/`, `ProjectSettings/`, and `Assets/Settings/` folders into the existing repo
+2. Unity will initialize with URP and import all 73 existing scripts. Wait for compilation.
 3. If compilation errors appear, check:
    - TextMeshPro: **Window → TextMeshPro → Import TMP Essential Resources**
-   - zCore: **Window → Package Manager → + → Add package from disk** → select zCore 6.3 package.json
 
-### 1.2 Install Required Packages
+### 1.2 Install zSpace & Additional Packages
 
-Open **Window → Package Manager** and add:
-- TextMeshPro (usually included in Unity 6)
-- zCore 6.3 (from zSpace developer portal .tgz file)
-- UnityGaussianSplatting: **+ → Add package from git URL** → `https://github.com/aras-p/UnityGaussianSplatting.git`
+1. **Import zCore:** **Assets → Import Package → Custom Package** → select `zCore-6.3.3.5-Unity2018.4.36.unitypackage` → Import All
+2. **Import zView:** **Assets → Import Package → Custom Package** → select `zView-6.1.0.unitypackage` → Import All
+3. **Install Gaussian Splatting:** **Window → Package Manager → + → Add package from git URL** → `https://github.com/aras-p/UnityGaussianSplatting.git`
+4. **Verify URP is active:** **Edit → Project Settings → Graphics** → confirm a URP Asset is assigned as the default render pipeline
 
 ### 1.3 Run All Generator Scripts
 
@@ -384,8 +385,10 @@ These can be Unity primitives with colored materials — functional for alpha, r
    - Product Name: NEC Code Inspector
    - Default resolution: 1920×1080
    - Fullscreen Mode: Fullscreen Window
-   - Color Space: Linear (required for zSpace)
+   - Color Space: Linear (required for zSpace and URP)
    - Scripting Backend: IL2CPP (for release) or Mono (for faster iteration)
+   - Graphics: URP Asset assigned in **Edit → Project Settings → Graphics**
+   - Quality: URP Renderer set for each quality level
 
 ### 5.2 zSpace Configuration
 
