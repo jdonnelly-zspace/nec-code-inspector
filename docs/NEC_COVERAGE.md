@@ -33,16 +33,22 @@
 **Difficulty distribution:** Beginner sees 5, Standard sees 10, Expert sees all 12.
 **Generator script:** `Assets/_Project/Scripts/Editor/BranchCircuitScenarioGenerator.cs`
 
-### Scenario 3: Grounding & Bonding (Alpha)
-| NEC Article | Topic |
-|-------------|-------|
-| Art. 250.4 | General requirements |
-| Art. 250.24 | Grounding electrode conductor |
-| Art. 250.50 | Grounding electrode system |
-| Art. 250.52 | Grounding electrodes |
-| Art. 250.64 | Grounding electrode conductor installation |
-| Art. 250.104 | Bonding of piping systems |
-| Art. 250.122 | Equipment grounding conductor size |
+### Scenario 3: Grounding & Bonding (Alpha) - 10 Violations
+| NEC Article | Topic | Violation ID | Difficulty | Severity |
+|-------------|-------|-------------|:----------:|:--------:|
+| Art. 250.52(A)(5) | Ground rod length requirement | GND-ELECTRODE-001 | Beginner | Critical |
+| Art. 250.24(A)(1) | GEC disconnected at panel | GND-GEC-001 | Beginner | Critical |
+| Art. 250.104(A) | Water pipe not bonded | GND-BOND-WATER-001 | Beginner | Major |
+| Art. 250.122 | EGC undersized for circuit | GND-EGC-SIZE-001 | Beginner | Major |
+| Art. 250.50 | Electrodes not bonded together | GND-ELECTRODE-SYS-001 | Standard | Critical |
+| Art. 250.4(A)(1) | Corroded system ground connection | GND-SYSTEM-001 | Standard | Major |
+| Art. 250.64(A) | Aluminum GEC in contact with earth | GND-GEC-ALUM-001 | Standard | Major |
+| Art. 250.52(A)(1) | Water pipe insufficient earth contact | GND-WATERPIPE-001 | Standard | Major |
+| Art. 250.94 | Missing intersystem bonding termination | GND-INTERSYSTEM-001 | Expert | Minor |
+| Art. 250.53(A)(2) | Single rod without supplemental electrode | GND-SUPPLEMENT-001 | Expert | Major |
+
+**Difficulty distribution:** Beginner sees 4, Standard sees 8, Expert sees all 10.
+**Generator script:** `Assets/_Project/Scripts/Editor/GroundingScenarioGenerator.cs`
 
 ### Scenario 4: Commercial Installation (Alpha)
 | NEC Article | Topic |

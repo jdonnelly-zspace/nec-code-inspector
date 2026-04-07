@@ -639,6 +639,26 @@
       "keywords": ["optional calculation", "existing dwelling", "10 kVA", "40 percent", "demand"],
       "relatedArticles": ["220.82", "220.40"],
       "isNewIn2026": false
+    },
+    {
+      "article": "250.53",
+      "subsection": "(A)(2)",
+      "title": "Supplemental Electrode Required",
+      "text": "A single rod, pipe, or plate electrode shall be supplemented by an additional electrode of a type specified in 250.52(A)(2) through (A)(8). The supplemental electrode shall be permitted to be bonded to the rod, pipe, or plate electrode, the grounding electrode conductor, the grounded service-entrance conductor, or the service equipment enclosure. Exception: If a single rod, pipe, or plate grounding electrode has a resistance to earth of 25 ohms or less, the supplemental electrode shall not be required.",
+      "chapter": 2,
+      "keywords": ["supplemental electrode", "ground rod", "25 ohms", "resistance", "additional"],
+      "relatedArticles": ["250.50", "250.52(A)(5)"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "250.94",
+      "subsection": "",
+      "title": "Intersystem Bonding Termination",
+      "text": "An intersystem bonding termination for connecting intersystem bonding conductors required for other systems shall be provided external to enclosures at the service equipment or metering equipment enclosure and at the disconnecting means for any additional buildings or structures. The intersystem bonding termination shall consist of a set of terminals with the capacity for connection of not less than three intersystem bonding conductors.",
+      "chapter": 2,
+      "keywords": ["intersystem", "bonding", "communications", "termination", "cable", "telephone"],
+      "relatedArticles": ["250.50", "250.24"],
+      "isNewIn2026": false
     }
   ]
 }

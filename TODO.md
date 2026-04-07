@@ -1,6 +1,6 @@
 # NEC Code Inspector - Development TODO
 
-## Current Phase: Step 6 - NEC Reference & Assessment (scripts complete, awaiting Unity Editor)
+## Current Phase: Steps 1-7 scripts complete. Unity Editor work + Alpha content remaining.
 
 ### Completed
 - [x] Create GitHub repository (https://github.com/jdonnelly-zspace/nec-code-inspector)
@@ -92,21 +92,27 @@
 - [ ] Wire up Quick Reference Cards to inspection HUD (requires Unity Editor)
 - [ ] Run card/certificate generators (requires Unity Editor)
 
-### Step 7: Integration & Polish (Week 6)
-- [ ] MainMenu scene with mode selection
-- [ ] Scene transitions
-- [ ] Audio (SFX, ambient)
-- [ ] Performance testing
-- [ ] Windows build from Mac
+### Step 7: Integration & Polish (Week 6) - COMPLETED (scripts)
+- [x] BootSequence (SDK detection, database verification, splash timing)
+- [x] SceneTransitionManager (async load, fade overlay, loading screen)
+- [x] AudioManager (SFX + ambient with crossfade, volume control, convenience methods)
+- [x] SettingsManager (JSON persistence for audio, difficulty, student name)
+- [x] MainMenuPanel (mode selection, scenario browser, difficulty picker, settings UI)
+- [ ] Unity scenes: Boot, MainMenu (requires Unity Editor)
+- [ ] Audio clips (SFX, ambient) (requires audio assets)
+- [ ] Performance testing on zSpace hardware
+- [ ] Windows build
 
 ## Future Milestones
 
 ### Alpha (Weeks 7-10)
-- Inspection scenarios #3-5
-- Virtual multimeter and clamp meter
-- Tutorial system
-- 200+ NEC articles
-- Wire-a-House mode begins
+- [x] Scenario 3: Grounding & Bonding (10 violations, generator script, 2 new NEC articles)
+- [ ] Scenario 4: Commercial Installation (requires new NEC articles + generator)
+- [ ] Scenario 5: Outdoor/Wet Location (requires new NEC articles + generator)
+- [ ] Virtual clamp meter tool
+- [ ] Tutorial system
+- [ ] Expand to 200+ NEC articles
+- [ ] Wire-a-House mode begins
 
 ### Beta (Weeks 11-16)
 - Wire-a-House complete
