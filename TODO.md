@@ -1,6 +1,6 @@
 # NEC Code Inspector - Development TODO
 
-## Current Phase: Step 5 - Panel Design Sandbox (scripts complete, awaiting Unity Editor)
+## Current Phase: Step 6 - NEC Reference & Assessment (scripts complete, awaiting Unity Editor)
 
 ### Completed
 - [x] Create GitHub repository (https://github.com/jdonnelly-zspace/nec-code-inspector)
@@ -78,13 +78,19 @@
 - [ ] Run generator to create PanelDesignDefinitionSO asset (requires Unity Editor)
 - [ ] Prefab wiring and playtest (requires Unity Editor)
 
-### Step 6: NEC Reference & Assessment (Week 5-6)
-- [ ] Quick Reference Panel (searchable world-space UI)
-- [ ] Violation context display
-- [ ] Quick-reference cards
-- [ ] Assessment scoring
-- [ ] Progress tracking (JSON persistence)
-- [ ] Certificate generation
+### Step 6: NEC Reference & Assessment (Week 5-6) - COMPLETED (scripts)
+- [x] NECReferencePanel (searchable world-space UI) — completed in Step 3
+- [x] QuickReferenceCardSO data model (10 categories, difficulty-filtered)
+- [x] QuickReferenceCardPanel (searchable, filterable by category, links to NEC articles)
+- [x] QuickReferenceCardGenerator editor script (10 cards: GFCI, AFCI, wire sizing, spacing, load calc, grounding, panel design, NM cable, 2026 changes)
+- [x] CertificateTemplateSO (4 types: chapter, scenario mastery, sandbox, overall)
+- [x] CertificateGenerator (evaluates progress, awards certificates, token-based description formatting)
+- [x] Chapter mastery tracking added to ProgressManager (threshold-based, best-attempt tracking)
+- [x] ProgressDashboardPanel (scenario scores, sandbox scores, mastery, certificates)
+- [x] EarnedCertificate persistence in ProgressData
+- [ ] Certificate UI panel with visual design (requires Unity Editor)
+- [ ] Wire up Quick Reference Cards to inspection HUD (requires Unity Editor)
+- [ ] Run card/certificate generators (requires Unity Editor)
 
 ### Step 7: Integration & Polish (Week 6)
 - [ ] MainMenu scene with mode selection
