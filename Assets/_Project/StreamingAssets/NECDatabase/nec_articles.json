@@ -489,6 +489,156 @@
       "keywords": ["pool", "bonding", "equipotential", "grid"],
       "relatedArticles": ["680.22", "250.4"],
       "isNewIn2026": false
+    },
+    {
+      "article": "210.8",
+      "subsection": "(A)(3)",
+      "title": "GFCI Protection - Outdoors",
+      "text": "All 125-volt through 250-volt receptacles installed outdoors of dwelling units shall have GFCI protection. This includes receptacles on porches, patios, decks, and attached garages with direct outdoor access.",
+      "chapter": 2,
+      "keywords": ["GFCI", "outdoor", "dwelling", "receptacle", "porch", "patio", "deck"],
+      "relatedArticles": ["210.8(A)", "210.8(A)(2)"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "210.8",
+      "subsection": "(A)(9)",
+      "title": "GFCI Protection - Bathtubs and Shower Stalls",
+      "text": "All 125-volt through 250-volt receptacles installed within 6 feet of the outside edge of a bathtub or shower stall shall have GFCI protection.",
+      "chapter": 2,
+      "keywords": ["GFCI", "bathtub", "shower", "6 feet", "receptacle", "dwelling"],
+      "relatedArticles": ["210.8(A)", "210.8(A)(1)"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "210.8",
+      "subsection": "(D)",
+      "title": "GFCI Protection - Specific Appliances",
+      "text": "GFCI protection shall be provided for dishwashers in dwelling unit locations. The branch circuit supplying the dishwasher shall be protected by a listed GFCI device.",
+      "chapter": 2,
+      "keywords": ["GFCI", "dishwasher", "appliance", "dwelling", "branch circuit"],
+      "relatedArticles": ["210.8(A)", "422.16"],
+      "isNewIn2026": true
+    },
+    {
+      "article": "210.12",
+      "subsection": "(B)",
+      "title": "AFCI Protection - Branch Circuit Extensions or Modifications",
+      "text": "Where branch-circuit wiring is modified, replaced, or extended in any of the areas specified in 210.12(A), the branch circuit shall be protected by one of the means described in 210.12(A)(1) through (A)(6).",
+      "chapter": 2,
+      "keywords": ["AFCI", "arc fault", "modification", "extension", "branch circuit"],
+      "relatedArticles": ["210.12(A)"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "210.52",
+      "subsection": "(C)(5)",
+      "title": "Receptacle Outlets - Island and Peninsular Countertop Spaces",
+      "text": "At least one receptacle outlet shall be provided at each island countertop space with a long dimension of 24 inches or greater and a short dimension of 12 inches or greater. At least one receptacle outlet shall be provided at each peninsular countertop space with a long dimension of 24 inches or greater and a short dimension of 12 inches or greater.",
+      "chapter": 2,
+      "keywords": ["island", "peninsular", "countertop", "receptacle", "kitchen", "24 inches"],
+      "relatedArticles": ["210.52(C)", "210.52(B)"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "210.52",
+      "subsection": "(D)",
+      "title": "Receptacle Outlets - Bathrooms",
+      "text": "At least one receptacle outlet shall be installed within 36 inches of the outside edge of each basin. The receptacle outlet shall be located on a wall or partition that is adjacent to the basin or basin countertop, or installed on the side or face of the basin cabinet not more than 12 inches below the countertop.",
+      "chapter": 2,
+      "keywords": ["bathroom", "receptacle", "basin", "36 inches", "countertop"],
+      "relatedArticles": ["210.8(A)(1)", "210.11(C)(1)"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "210.52",
+      "subsection": "(E)(1)",
+      "title": "Receptacle Outlets - Outdoor Outlets for Dwelling Units",
+      "text": "For a one-family dwelling and each unit of a two-family dwelling that is at grade level, at least two receptacle outlets accessible while standing at grade level and not more than 6-1/2 feet above grade shall be installed at the front and back of the dwelling.",
+      "chapter": 2,
+      "keywords": ["outdoor", "receptacle", "dwelling", "grade", "front", "back"],
+      "relatedArticles": ["210.8(A)(3)", "210.52(A)"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "210.52",
+      "subsection": "(G)",
+      "title": "Receptacle Outlets - Basements, Garages, and Accessory Buildings",
+      "text": "For a one-family dwelling, at least one receptacle outlet shall be installed in each attached garage and in each detached garage or accessory building with electric power. At least one receptacle outlet shall be installed in an unfinished area of the basement in addition to any laundry area receptacles.",
+      "chapter": 2,
+      "keywords": ["basement", "garage", "accessory building", "receptacle", "dwelling"],
+      "relatedArticles": ["210.8(A)(2)", "210.52(A)"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "240.4",
+      "subsection": "(B)",
+      "title": "Next Higher Standard Overcurrent Device",
+      "text": "Where the standard ratings in 240.6(A) do not correspond with the ampacity of the conductors being protected, the next higher standard overcurrent device rating shall be permitted to be used, provided the conductors being protected are not part of a branch circuit supplying more than one receptacle for cord-and-plug-connected portable loads.",
+      "chapter": 2,
+      "keywords": ["overcurrent", "next size up", "standard rating", "conductor", "protection"],
+      "relatedArticles": ["240.4", "240.4(D)", "240.6"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "334.80",
+      "subsection": "",
+      "title": "NM Cable - Ampacity",
+      "text": "Where more than two NM cables containing two or more current-carrying conductors are installed through the same opening in wood framing without maintaining spacing, the ampacity of each conductor shall be adjusted in accordance with Table 310.15(C)(1). The adjustment factors shall apply only to the number of current-carrying conductors.",
+      "chapter": 3,
+      "keywords": ["NM cable", "ampacity", "bundling", "derate", "current-carrying", "adjustment"],
+      "relatedArticles": ["310.14", "310.16", "334.10"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "220.42",
+      "subsection": "",
+      "title": "General Lighting Demand Factors",
+      "text": "The demand factors specified in Table 220.42 shall apply to the portion of the total branch-circuit load computed for general illumination. The demand factors shall not apply to the portion of the total branch-circuit load computed for heavy-duty lampholders. For dwelling units, the first 3,000 VA at 100%, the next 3,001 to 120,000 VA at 35%, and the remainder over 120,000 VA at 25%.",
+      "chapter": 2,
+      "keywords": ["demand factor", "lighting", "load calculation", "dwelling", "VA", "3000"],
+      "relatedArticles": ["220.12", "220.40"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "220.52",
+      "subsection": "",
+      "title": "Small-Appliance and Laundry Loads - Dwelling Unit",
+      "text": "In each dwelling unit, the load shall be computed at 1,500 VA for each 2-wire small-appliance branch circuit required by 210.11(C)(1) and each laundry branch circuit required by 210.11(C)(2). These loads shall be permitted to be included with the general lighting load and subjected to the demand factors in Table 220.42.",
+      "chapter": 2,
+      "keywords": ["small appliance", "laundry", "1500 VA", "load calculation", "dwelling", "demand"],
+      "relatedArticles": ["210.11(C)(1)", "210.11(C)(3)", "220.42"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "220.54",
+      "subsection": "",
+      "title": "Electric Dryer Load - Dwelling Unit",
+      "text": "The load for household electric clothes dryers in a dwelling unit shall be either 5,000 watts or the nameplate rating, whichever is larger, for each dryer served. The demand factors in Table 220.54 shall be permitted for the number of dryers served.",
+      "chapter": 2,
+      "keywords": ["dryer", "5000 watts", "load calculation", "dwelling", "demand factor"],
+      "relatedArticles": ["220.40", "220.82"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "220.55",
+      "subsection": "",
+      "title": "Electric Cooking Equipment - Dwelling Unit",
+      "text": "The demand load for household electric ranges, wall-mounted ovens, counter-mounted cooking units, and other household cooking appliances individually rated in excess of 1-3/4 kW shall be permitted to be computed according to Table 220.55. A single branch circuit serving a household cooking appliance rated at not more than 12 kW shall have a maximum demand of 8 kW.",
+      "chapter": 2,
+      "keywords": ["range", "oven", "cooking", "8 kW", "12 kW", "demand", "load calculation"],
+      "relatedArticles": ["210.19", "220.40"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "220.83",
+      "subsection": "",
+      "title": "Optional Calculation - Existing Dwelling Unit",
+      "text": "An optional calculation for an existing dwelling unit shall be permitted. The total load of the dwelling unit shall be determined by adding the general lighting and receptacle load, the small-appliance and laundry load, and any additional nameplate loads. Apply a demand factor of 100% to the first 10 kVA and 40% to the remainder.",
+      "chapter": 2,
+      "keywords": ["optional calculation", "existing dwelling", "10 kVA", "40 percent", "demand"],
+      "relatedArticles": ["220.82", "220.40"],
+      "isNewIn2026": false
     }
   ]
 }

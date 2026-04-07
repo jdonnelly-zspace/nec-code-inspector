@@ -1,6 +1,6 @@
 # NEC Code Inspector - Development TODO
 
-## Current Phase: Step 1 - Repository & Project Setup
+## Current Phase: Step 5 - Panel Design Sandbox (scripts complete, awaiting Unity Editor)
 
 ### Completed
 - [x] Create GitHub repository (https://github.com/jdonnelly-zspace/nec-code-inspector)
@@ -46,18 +46,37 @@
 - [ ] Scene prefab setup and wiring (requires Unity editor)
 
 ### Step 4: Inspection Scenario #2 - Branch Circuits (Week 3-4)
-- [ ] Kitchen/bathroom 3D scene
-- [ ] GFCI/AFCI violation types
-- [ ] Receptacle spacing violations
-- [ ] Wire gauge violations
+- [x] 10 new NEC articles added to database (210.8(A)(3), 210.8(A)(9), 210.8(D), 210.12(B), 210.52(C)(5), 210.52(D), 210.52(E)(1), 210.52(G), 240.4(B), 334.80)
+- [x] 12 violation definitions (5 Beginner, 5 Standard, 2 Expert/subtle)
+- [x] BranchCircuitScenarioGenerator editor script (menu: NEC Inspector > Generate Branch Circuit Scenario)
+- [x] GFCI violations: bathroom, kitchen, garage, dishwasher (2026)
+- [x] AFCI violations: bedroom, living room
+- [x] Receptacle spacing: wall (6ft rule), countertop (24in rule)
+- [x] Wire gauge: 14 AWG on 20A breaker, NM cable bundling derate
+- [x] Dedicated circuits: bathroom, small appliance (2 required)
+- [x] NEC_COVERAGE.md updated with full violation-to-article mapping
+- [ ] Kitchen/bathroom/living area 3D scene (requires Unity Editor)
+- [ ] Run generator to create ScriptableObject assets (requires Unity Editor)
+- [ ] Add scenario to ScenarioCatalog (requires Unity Editor)
+- [ ] Scene prefab setup and wiring (requires Unity Editor)
 
-### Step 5: Panel Design Sandbox (Week 5-6)
-- [ ] PanelBuilder with BreakerSlot snap system
-- [ ] Breaker placement (drag from tray, snap to slots)
-- [ ] Wire routing (Grabbable endpoints + LineRenderer)
-- [ ] Load calculation tool (Art. 220)
-- [ ] ComplianceChecker rule engine (10 core rules)
-- [ ] Sandbox scoring
+### Step 5: Panel Design Sandbox (Week 5-6) - COMPLETED (scripts)
+- [x] PanelDesignDefinitionSO + RequiredCircuit + BreakerData data classes
+- [x] BreakerSlot snap system (integrates with DropTarget)
+- [x] PlacedBreaker (drag behavior via SnappingDraggablePlane)
+- [x] WireConnection (LineRenderer routing with gauge validation)
+- [x] LoadCalculator (Art. 220: lighting 3VA/sqft, SA 1500VA, demand factors Table 220.42)
+- [x] ComplianceChecker (10 NEC rules: breaker/conductor match, GFCI, AFCI, load balance, etc.)
+- [x] PanelDesignManager (state tracking, scoring, compliance integration)
+- [x] PanelDesignRunner (5-step state machine: Briefing → Placement → Wiring → Compliance → Score)
+- [x] PanelDesignHUD (world-space UI: briefing, design, wiring, compliance, score panels)
+- [x] PanelDesignSandboxGenerator editor script (menu: NEC Inspector > Generate Panel Sandbox Data)
+- [x] 5 new NEC articles for load calculations (Art. 220.42, 220.52, 220.54, 220.55, 220.83)
+- [x] Residential 200A panel definition with 12 required circuits
+- [x] NEC_COVERAGE.md updated with full compliance rule + circuit tables
+- [ ] Unity scene setup with 3D panel, breaker tray, slot GameObjects (requires Unity Editor)
+- [ ] Run generator to create PanelDesignDefinitionSO asset (requires Unity Editor)
+- [ ] Prefab wiring and playtest (requires Unity Editor)
 
 ### Step 6: NEC Reference & Assessment (Week 5-6)
 - [ ] Quick Reference Panel (searchable world-space UI)
