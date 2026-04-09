@@ -659,6 +659,327 @@
       "keywords": ["intersystem", "bonding", "communications", "termination", "cable", "telephone"],
       "relatedArticles": ["250.50", "250.24"],
       "isNewIn2026": false
+    },
+
+    {
+      "article": "110.3",
+      "subsection": "(B)",
+      "title": "Installation and Use - Listed or Labeled Equipment",
+      "text": "Listed or labeled equipment shall be installed and used in accordance with any instructions included in the listing or labeling.",
+      "chapter": 1,
+      "keywords": ["listed", "labeled", "installation", "instructions", "equipment"],
+      "relatedArticles": ["110.12"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "110.14",
+      "subsection": "(B)",
+      "title": "Temperature Limitations",
+      "text": "The temperature rating associated with the ampacity of a conductor shall be selected and coordinated so as not to exceed the lowest temperature rating of any connected termination, conductor, or device.",
+      "chapter": 1,
+      "keywords": ["temperature", "rating", "termination", "conductor", "ampacity", "60C", "75C"],
+      "relatedArticles": ["110.14", "310.16"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "200.6",
+      "subsection": "",
+      "title": "Means of Identifying Grounded Conductors",
+      "text": "An insulated grounded conductor of 6 AWG or smaller shall be identified by a continuous white or gray outer finish or by three continuous white or gray stripes on other than green insulation along its entire length.",
+      "chapter": 2,
+      "keywords": ["grounded", "conductor", "white", "gray", "neutral", "identification"],
+      "relatedArticles": ["250.24"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "210.3",
+      "subsection": "",
+      "title": "Rating",
+      "text": "Branch circuits recognized by this article shall be rated in accordance with the maximum permitted ampere rating or setting of the overcurrent device. The rating for other than individual branch circuits shall be 15, 20, 30, 40, and 50 amperes.",
+      "chapter": 2,
+      "keywords": ["branch circuit", "rating", "ampere", "overcurrent", "15", "20", "30", "40", "50"],
+      "relatedArticles": ["210.11", "240.4"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "210.19",
+      "subsection": "(A)",
+      "title": "Branch-Circuit Conductors - Minimum Ampacity",
+      "text": "Branch-circuit conductors shall have an ampacity not less than the maximum load to be served. Conductors shall be sized to carry not less than the larger of 210.19(A)(1) or (A)(2).",
+      "chapter": 2,
+      "keywords": ["branch circuit", "conductor", "ampacity", "minimum", "sizing"],
+      "relatedArticles": ["210.3", "310.16", "240.4"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "210.23",
+      "subsection": "",
+      "title": "Permissible Loads, Individual Branch Circuits",
+      "text": "An individual branch circuit shall be permitted to supply any load for which it is rated. A branch circuit supplying two or more outlets or receptacles shall supply only the loads specified according to its size.",
+      "chapter": 2,
+      "keywords": ["branch circuit", "loads", "individual", "rating", "permissible"],
+      "relatedArticles": ["210.3", "210.19"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "210.52",
+      "subsection": "(F)",
+      "title": "Dwelling Unit Receptacle Outlets - Hallways",
+      "text": "In dwelling units, hallways of 3.0 m (10 ft) or more in length shall have at least one receptacle outlet.",
+      "chapter": 2,
+      "keywords": ["hallway", "receptacle", "dwelling", "10 feet"],
+      "relatedArticles": ["210.52(A)"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "215.2",
+      "subsection": "",
+      "title": "Minimum Rating and Size of Feeders",
+      "text": "Feeder conductors shall have an ampacity not less than required to supply the load as calculated in Parts III, IV, and V of Article 220. The minimum feeder-circuit conductor size, before the application of any adjustment or correction factors, shall have an allowable ampacity not less than the noncontinuous load plus 125 percent of the continuous load.",
+      "chapter": 2,
+      "keywords": ["feeder", "conductor", "ampacity", "minimum", "sizing", "continuous", "load"],
+      "relatedArticles": ["220.40", "310.16"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "220.14",
+      "subsection": "",
+      "title": "Other Loads - All Occupancies",
+      "text": "In all occupancies, the minimum load for each outlet for general-use receptacles and outlets not used for general illumination shall not be less than 180 volt-amperes per outlet.",
+      "chapter": 2,
+      "keywords": ["receptacle", "load", "180 VA", "outlet", "commercial", "occupancy"],
+      "relatedArticles": ["220.12", "220.44"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "220.18",
+      "subsection": "",
+      "title": "Maximum Loads",
+      "text": "The total load shall not exceed the rating of the branch circuit, and it shall not exceed the maximum loads specified in 220.18(A) through (C) under the conditions specified therein.",
+      "chapter": 2,
+      "keywords": ["maximum", "load", "branch circuit", "rating"],
+      "relatedArticles": ["210.23", "220.12"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "220.44",
+      "subsection": "",
+      "title": "Receptacle Loads - Other Than Dwelling Units",
+      "text": "Receptacle loads calculated in accordance with 220.14 shall be permitted to be made subject to the demand factors given in Table 220.44 or permitted to be calculated as specified in 220.44(A).",
+      "chapter": 2,
+      "keywords": ["receptacle", "load", "commercial", "demand factor", "non-dwelling"],
+      "relatedArticles": ["220.14", "220.40"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "225.18",
+      "subsection": "",
+      "title": "Clearance for Overhead Conductors and Cables",
+      "text": "Overhead spans of open conductors and open multiconductor cables shall have a clearance of not less than 3.0 m (10 ft) above finished grade, sidewalks, or from any platform or projection from which they might be reached where the supply conductors do not exceed 150 volts to ground.",
+      "chapter": 2,
+      "keywords": ["overhead", "clearance", "conductors", "outside", "grade"],
+      "relatedArticles": ["230.24"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "240.21",
+      "subsection": "(B)(1)",
+      "title": "Feeder Taps Not Over 10 ft",
+      "text": "Conductors shall be permitted to be tapped, without overcurrent protection at the tap, to a feeder where all of the following conditions are met: the length of the tap conductors does not exceed 3.0 m (10 ft), the ampacity of the tap conductors is not less than the combined calculated loads on the circuits supplied by the tap conductors, and the tap conductors are enclosed in a raceway.",
+      "chapter": 2,
+      "keywords": ["feeder", "tap", "10 foot", "overcurrent", "raceway", "conductor"],
+      "relatedArticles": ["240.4", "215.2"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "250.4",
+      "subsection": "(A)(5)",
+      "title": "Effective Ground-Fault Current Path",
+      "text": "Electrical equipment and wiring and other electrically conductive material likely to become energized shall be installed in a manner that creates a low-impedance circuit facilitating the operation of the overcurrent device.",
+      "chapter": 2,
+      "keywords": ["ground-fault", "current path", "impedance", "overcurrent", "bonding"],
+      "relatedArticles": ["250.4(A)(1)", "250.122"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "250.66",
+      "subsection": "",
+      "title": "Size of AC Grounding Electrode Conductor",
+      "text": "The size of the grounding electrode conductor at the service, at each building or structure where supplied by a feeder(s) or branch circuit(s), or at a separately derived system shall not be less than given in Table 250.66.",
+      "chapter": 2,
+      "keywords": ["grounding electrode conductor", "GEC", "sizing", "table", "service"],
+      "relatedArticles": ["250.24", "250.52"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "250.118",
+      "subsection": "",
+      "title": "Types of Equipment Grounding Conductors",
+      "text": "The equipment grounding conductor run with or enclosing the circuit conductors shall be one or more or a combination of copper, aluminum, or copper-clad aluminum conductors, rigid metal conduit, intermediate metal conduit, electrical metallic tubing, listed flexible metal conduit, or other listed types.",
+      "chapter": 2,
+      "keywords": ["equipment grounding conductor", "EGC", "types", "conduit", "raceway"],
+      "relatedArticles": ["250.122", "250.4(A)(5)"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "300.4",
+      "subsection": "(A)",
+      "title": "Protection Against Physical Damage - Cables Through Framing Members",
+      "text": "In both exposed and concealed locations, where a cable- or raceway-type wiring method is installed through bored holes in joists, rafters, or wood members, holes shall be bored so that the edge of the hole is not less than 32 mm (1-1/4 in.) from the nearest edge of the wood member. Where this distance cannot be maintained, the cable or raceway shall be protected from penetration by screws or nails by a steel plate or bushing.",
+      "chapter": 3,
+      "keywords": ["protection", "physical damage", "cable", "framing", "nail plate", "boring"],
+      "relatedArticles": ["334.30", "300.5"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "300.5",
+      "subsection": "",
+      "title": "Underground Installations",
+      "text": "Direct-buried cables or raceways shall be installed to meet the minimum cover requirements of Table 300.5. Underground cables under a building shall be in a raceway. Underground conductors shall be protected from damage in accordance with 300.5(D).",
+      "chapter": 3,
+      "keywords": ["underground", "burial", "depth", "cover", "direct-buried", "raceway"],
+      "relatedArticles": ["300.4"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "314.16",
+      "subsection": "",
+      "title": "Number of Conductors in Outlet, Device, and Junction Boxes",
+      "text": "Boxes and conduit bodies shall be of an approved size to provide free space for all enclosed conductors. In no case shall the volume of the box be less than the fill calculation as calculated in 314.16(A) and (B). Each conductor that originates outside the box and terminates or is spliced within the box is counted once, and each conductor that passes through the box without splice or termination is counted once.",
+      "chapter": 3,
+      "keywords": ["box fill", "conductor", "volume", "junction box", "outlet box", "device box"],
+      "relatedArticles": ["314.28"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "404.2",
+      "subsection": "(C)",
+      "title": "Switches - Grounding",
+      "text": "Snap switches, including dimmer and similar control switches, shall be connected to an equipment grounding conductor and shall provide a means to connect metal faceplates to the equipment grounding conductor, whether or not a metal faceplate is installed.",
+      "chapter": 4,
+      "keywords": ["switch", "grounding", "snap switch", "dimmer", "faceplate", "EGC"],
+      "relatedArticles": ["250.118", "250.122"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "430.7",
+      "subsection": "",
+      "title": "Marking on Motors and Multimotor Equipment",
+      "text": "A motor shall be marked with the manufacturer's name, rated volts, rated frequency, number of phases, rated full-load current, rated temperature rise or insulation system class and rated ambient temperature, time rating, rated horsepower, locked-rotor code letter, and other information as specified.",
+      "chapter": 4,
+      "keywords": ["motor", "nameplate", "marking", "horsepower", "full-load current", "code letter"],
+      "relatedArticles": ["430.6", "430.52"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "430.22",
+      "subsection": "",
+      "title": "Single Motor - Branch-Circuit Conductor Size",
+      "text": "Conductors supplying a single motor used in a continuous duty application shall have an ampacity of not less than 125 percent of the motor full-load current rating as determined by 430.6(A)(1).",
+      "chapter": 4,
+      "keywords": ["motor", "conductor", "branch circuit", "125 percent", "sizing", "full-load current"],
+      "relatedArticles": ["430.6", "310.16"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "430.24",
+      "subsection": "",
+      "title": "Several Motors or a Motor(s) and Other Load(s)",
+      "text": "Conductors supplying several motors, or a motor(s) and other load(s), shall have an ampacity not less than 125 percent of the full-load current rating of the highest rated motor plus the sum of the full-load current ratings of all the other motors in the group plus the ampacity required for other loads.",
+      "chapter": 4,
+      "keywords": ["multiple motors", "conductor sizing", "125 percent", "group", "feeder"],
+      "relatedArticles": ["430.22", "430.52"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "430.32",
+      "subsection": "",
+      "title": "Continuous-Duty Motors - Overload Protection",
+      "text": "Each continuous-duty motor rated more than 1 hp shall be protected against overload by a separate overload device that is responsive to motor current. This device shall be selected to trip or shall be rated at not more than 115 percent of the motor nameplate full-load current rating for motors marked with a service factor not less than 1.15.",
+      "chapter": 4,
+      "keywords": ["motor", "overload", "protection", "115 percent", "service factor", "nameplate"],
+      "relatedArticles": ["430.6", "430.52"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "430.102",
+      "subsection": "(B)",
+      "title": "Motor Controller Disconnecting Means",
+      "text": "A disconnecting means shall be located in sight from the motor location and the driven machinery location. The disconnecting means shall disconnect the motor and the controller from all ungrounded supply conductors and shall be designed so that no pole can be operated independently.",
+      "chapter": 4,
+      "keywords": ["motor", "disconnect", "controller", "in sight", "locked-rotor"],
+      "relatedArticles": ["430.110", "430.52"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "430.110",
+      "subsection": "",
+      "title": "Ampere Rating and Interrupting Capacity of Motor Disconnecting Means",
+      "text": "The disconnecting means for motor circuits rated 600 volts nominal or less shall have an ampere rating not less than 115 percent of the full-load current rating of the motor. For a design E or design E motor, the disconnecting means shall be marked as rated for use with a Design E motor.",
+      "chapter": 4,
+      "keywords": ["motor", "disconnect", "ampere rating", "115 percent", "in sight"],
+      "relatedArticles": ["430.102", "430.6"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "480.3",
+      "subsection": "",
+      "title": "Wiring and Equipment - Storage Batteries",
+      "text": "Wiring and equipment for storage battery systems shall comply with the applicable provisions of this Code and any additional requirements of this article. Battery systems over 50 volts nominal shall have the conductors and overcurrent protection sized in accordance with their rated discharge current.",
+      "chapter": 4,
+      "keywords": ["battery", "storage", "wiring", "UPS", "overcurrent", "50 volts"],
+      "relatedArticles": ["480.4", "480.7"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "480.4",
+      "subsection": "",
+      "title": "Battery Disconnecting Means",
+      "text": "A disconnecting means shall be provided within sight of the battery system for all ungrounded conductors derived from a stationary battery system over 50 volts nominal.",
+      "chapter": 4,
+      "keywords": ["battery", "disconnect", "stationary", "UPS", "50 volts", "in sight"],
+      "relatedArticles": ["480.3", "480.7"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "480.7",
+      "subsection": "",
+      "title": "Battery System Ventilation",
+      "text": "Provisions shall be made for sufficient diffusion and ventilation of gases from the battery to prevent the accumulation of an explosive mixture. Batteries in dedicated battery rooms shall have ventilation systems designed to limit the maximum concentration of hydrogen to 1 percent of the total volume of the room.",
+      "chapter": 4,
+      "keywords": ["battery", "ventilation", "hydrogen", "explosive", "battery room"],
+      "relatedArticles": ["480.3", "480.4"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "680.7",
+      "subsection": "",
+      "title": "Pool Equipment Bonding Conductors",
+      "text": "Equipment bonding conductors for pools, spas, and hot tubs shall be installed in accordance with 680.26 and shall be sized in accordance with Table 250.122.",
+      "chapter": 6,
+      "keywords": ["pool", "bonding", "conductor", "spa", "hot tub", "equipotential"],
+      "relatedArticles": ["680.26", "250.122"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "680.12",
+      "subsection": "",
+      "title": "Maintenance Disconnecting Means",
+      "text": "One or more means to simultaneously disconnect all ungrounded conductors shall be provided for all utilization equipment other than lighting. Each means shall be readily accessible and within sight from the equipment it serves and shall be located at least 1.5 m (5 ft) from the inside walls of the pool, spa, or hot tub.",
+      "chapter": 6,
+      "keywords": ["pool", "disconnect", "maintenance", "5 feet", "accessible"],
+      "relatedArticles": ["680.22", "680.26"],
+      "isNewIn2026": false
+    },
+    {
+      "article": "680.44",
+      "subsection": "",
+      "title": "GFCI Protection for Pool Equipment",
+      "text": "All electrical equipment used with storable and permanently installed pools, including power-supply cords, shall be protected by ground-fault circuit interrupters.",
+      "chapter": 6,
+      "keywords": ["pool", "GFCI", "ground-fault", "equipment", "storable"],
+      "relatedArticles": ["680.22", "210.8"],
+      "isNewIn2026": false
     }
   ]
 }

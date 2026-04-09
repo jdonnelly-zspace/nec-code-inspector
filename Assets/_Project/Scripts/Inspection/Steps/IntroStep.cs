@@ -11,6 +11,7 @@ namespace NECInspector.Inspection
     {
         private readonly InspectionManager _inspectionManager;
         private readonly InspectionHUD _hud;
+        private System.Action _continueHandler;
 
         public IntroStep(InspectionStateMachine.StateID id, InspectionStateMachine stateMachine,
             InspectionStateMachine.StateID nextStepID, InspectionManager inspectionManager, InspectionHUD hud)
@@ -42,8 +43,11 @@ namespace NECInspector.Inspection
             bool continuePressed = false;
             if (_hud != null)
             {
-                _hud.OnContinuePressed += () => continuePressed = true;
+                _continueHandler = () => continuePressed = true;
+                _hud.OnContinuePressed += _continueHandler;
                 yield return new WaitUntil(() => continuePressed);
+                _hud.OnContinuePressed -= _continueHandler;
+                _continueHandler = null;
                 _hud.HideIntroPanel();
             }
             else

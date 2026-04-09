@@ -262,6 +262,7 @@ namespace NECInspector.Editor
                     AssetDatabase.CreateAsset(scenario, scenarioPath);
                 }
 
+                scenario.id = "scenario-branch-circuits";
                 scenario.sceneName = "BranchCircuitInspection";
                 scenario.displayName = "Branch Circuit Wiring Inspection";
                 scenario.description = "Inspect a residential kitchen, bathroom, and living area electrical installation for branch circuit code violations including GFCI/AFCI protection, receptacle spacing, wire sizing, and dedicated circuit requirements.";

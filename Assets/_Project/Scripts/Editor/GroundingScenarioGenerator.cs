@@ -227,6 +227,7 @@ namespace NECInspector.Editor
                     AssetDatabase.CreateAsset(scenario, scenarioPath);
                 }
 
+                scenario.id = "scenario-grounding";
                 scenario.sceneName = "GroundingInspection";
                 scenario.displayName = "Grounding & Bonding Inspection";
                 scenario.description = "Inspect a residential service entrance and grounding electrode system for code violations. Verify proper grounding electrode installation, bonding connections, conductor sizing, and system grounding integrity.";
