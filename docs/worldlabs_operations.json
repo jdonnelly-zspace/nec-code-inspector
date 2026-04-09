@@ -1,0 +1,34 @@
+{
+  "environments": [
+    {
+      "name": "NEC Garage Panel",
+      "scene": "ResidentialPanel",
+      "operation_id": "1e007e9d-bb7a-4619-bd56-76a76df9806b",
+      "status": "generating"
+    },
+    {
+      "name": "NEC Kitchen Bathroom",
+      "scene": "BranchCircuitInspection",
+      "operation_id": "2a28d184-a750-4008-b9da-05befbc6c054",
+      "status": "generating"
+    },
+    {
+      "name": "NEC Utility Room Grounding",
+      "scene": "GroundingInspection",
+      "operation_id": null,
+      "status": "needs_retry"
+    },
+    {
+      "name": "NEC Panel Workshop",
+      "scene": "PanelSandbox",
+      "operation_id": "0c854626-a317-4858-9674-758966962a32",
+      "status": "generating"
+    },
+    {
+      "name": "NEC Main Menu Lobby",
+      "scene": "MainMenu",
+      "operation_id": "f74bc478-7c15-41ba-aca3-bfd401ffa0ae",
+      "status": "generating"
+    }
+  ]
+}
