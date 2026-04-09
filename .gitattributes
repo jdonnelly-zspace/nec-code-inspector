@@ -1,3 +1,6 @@
+# Normalize line endings (both devs on Windows)
+* text=auto eol=crlf
+
 # Unity LFS
 *.fbx filter=lfs diff=lfs merge=lfs -text
 *.glb filter=lfs diff=lfs merge=lfs -text
@@ -19,6 +22,7 @@
 *.asset filter=lfs diff=lfs merge=lfs -text
 *.cubemap filter=lfs diff=lfs merge=lfs -text
 *.unitypackage filter=lfs diff=lfs merge=lfs -text
+*.spz filter=lfs diff=lfs merge=lfs -text
 
 # Collapse Unity-generated files on GitHub
 *.meta linguist-generated=true
