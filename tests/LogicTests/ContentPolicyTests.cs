@@ -4,46 +4,29 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Text.Json;
 using NECInspector.Codes;
-using NECInspector.Credentials;
 using NECInspector.Data;
 
 namespace NECInspector.LogicTests
 {
     /// <summary>
-    /// Enforces docs/CONTENT_POLICY.md: content covers only skills that a credential requires,
+    /// Enforces docs/CONTENT_POLICY.md: content covers only skills from the app's skill list,
     /// and code wording is paraphrased, not copied (no statutory "shall" anywhere in the content).
     /// </summary>
     public static class ContentPolicyTests
     {
         public static void Run(TestContext t)
         {
-            ContentStaysInCredentialScope(t);
+            ContentStaysInSkillList(t);
             CodeTextIsParaphrased(t);
         }
 
-        // Skills (concept IDs) required by at least one credential file
-        public static HashSet<string> RequiredSkills(string root)
-        {
-            var options = new JsonSerializerOptions { IncludeFields = true };
-            var skills = new HashSet<string>();
-
-            foreach (string file in Directory.GetFiles(Path.Combine(root, "Assets/_Project/StreamingAssets/Credentials"), "*.json"))
-            {
-                var profile = JsonSerializer.Deserialize<CredentialProfile>(File.ReadAllText(file), options);
-                if (profile?.requirements == null) continue;
-                foreach (var r in profile.requirements)
-                    skills.Add(r.skillId);
-            }
-
-            return skills;
-        }
-
-        private static void ContentStaysInCredentialScope(TestContext t)
+        // Content may only teach skills from the app's own skill list (ConceptIds). The app contains no
+        // credentials; adding a skill needs a documented reason in docs/credential-alignment.
+        private static void ContentStaysInSkillList(TestContext t)
         {
             t.Begin("content scope");
 
             string root = TestContext.RepoRoot();
-            var required = RequiredSkills(root);
             var options = new JsonSerializerOptions { IncludeFields = true };
 
             foreach (string file in Directory.GetFiles(Path.Combine(root, "Assets/_Project/Content/Scenarios"), "*.json"))
@@ -52,13 +35,19 @@ namespace NECInspector.LogicTests
                 if (data?.violations == null) continue;
 
                 foreach (var v in data.violations)
-                    t.IsTrue(required.Contains(v.conceptId),
-                        $"{Path.GetFileName(file)}: {v.violationId} tests '{v.conceptId}', which no credential requires");
+                    t.IsTrue(ConceptIds.IsKnown(v.conceptId),
+                        $"{Path.GetFileName(file)}: {v.violationId} tests '{v.conceptId}', which is not in the skill list");
             }
 
             foreach (var rule in ElectricalTables.CreateNecDefaults().complianceRules)
-                t.IsTrue(required.Contains(rule.conceptId),
-                    $"sandbox rule {rule.ruleId} gives evidence for '{rule.conceptId}', which no credential requires");
+                t.IsTrue(ConceptIds.IsKnown(rule.conceptId),
+                    $"sandbox rule {rule.ruleId} gives evidence for '{rule.conceptId}', which is not in the skill list");
+
+            // The app must not ship credential files or credential code
+            t.IsTrue(!Directory.Exists(Path.Combine(root, "Assets/_Project/StreamingAssets/Credentials")),
+                "no credential files ship in StreamingAssets");
+            t.IsTrue(!Directory.Exists(Path.Combine(root, "Assets/_Project/Scripts/Credentials")),
+                "no credential code ships in the app");
         }
 
         // Statutory wording ("shall") is a sign that text was copied from a code book.

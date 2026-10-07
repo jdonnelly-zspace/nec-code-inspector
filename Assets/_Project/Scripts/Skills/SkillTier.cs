@@ -3,8 +3,7 @@ using NECInspector.Core;
 namespace NECInspector.Skills
 {
     /// <summary>
-    /// Depth of a skill, independent of any credential. Credentials name and weight these
-    /// tiers in their own way; progress is recorded against the tier of the evidence.
+    /// Depth of a skill. Progress is recorded against the tier of the evidence.
     /// </summary>
     public enum SkillTier
     {

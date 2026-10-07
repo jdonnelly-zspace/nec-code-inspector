@@ -11,7 +11,7 @@ namespace NECInspector.Editor
     /// <summary>
     /// Builds ScenarioDefinitionSO and ViolationDefinitionSO assets from the JSON files in
     /// Assets/_Project/Content/Scenarios. Scenario content lives in data, so adding or changing
-    /// a scenario (or a credential-specific content pack) does not require editing C#.
+    /// a scenario does not require editing C#.
     /// Files are checked by ScenarioFileValidator before any asset is touched.
     /// Asset paths match the earlier per-scenario generators, so existing references stay valid.
     /// </summary>

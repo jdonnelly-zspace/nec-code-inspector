@@ -35,8 +35,8 @@ namespace NECInspector.Skills
     }
 
     /// <summary>
-    /// What the learner can do, independent of any credential. Credentials are views over
-    /// this data (see CredentialReadiness); progress is never stored per credential.
+    /// What the learner can do. The app knows nothing about credentials: progress is kept per
+    /// skill, and lining skills up with a credential is done outside the app.
     /// </summary>
     [Serializable]
     public class SkillProgress

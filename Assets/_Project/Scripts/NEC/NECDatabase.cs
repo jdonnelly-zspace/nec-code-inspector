@@ -12,7 +12,7 @@ namespace NECInspector.NEC
     {
         public static NECDatabase Instance { get; private set; }
 
-        [Tooltip("Profile to activate at startup. A credential can switch it later.")]
+        [Tooltip("Profile to activate at startup. The student's saved choice replaces it at boot.")]
         [SerializeField] private string _defaultProfileId = CodeProfileLibrary.DefaultProfileId;
 
         private void Awake()

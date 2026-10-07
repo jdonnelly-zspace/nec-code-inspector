@@ -3,7 +3,6 @@ using System.Linq;
 using UnityEngine;
 using TMPro;
 using NECInspector.Core;
-using NECInspector.Credentials;
 using NECInspector.Data;
 using NECInspector.Skills;
 
@@ -11,7 +10,7 @@ namespace NECInspector.UI
 {
     /// <summary>
     /// World-space dashboard showing student progress across all scenarios and sandbox.
-    /// Displays score history, skill mastery, credential readiness and earned certificates.
+    /// Displays score history, skill mastery and earned certificates.
     /// </summary>
     public class ProgressDashboardPanel : MonoBehaviour
     {
@@ -70,8 +69,7 @@ namespace NECInspector.UI
                 $"Total Attempts: {totalAttempts}\n" +
                 $"Overall Accuracy: {avgAccuracy:P0}\n" +
                 $"Skills Attained: {data.skills.AttainedSkillCount()} of {ConceptIds.All.Length}\n" +
-                $"Certificates Earned: {data.earnedCertificates.Count}" +
-                FormatReadiness(data));
+                $"Certificates Earned: {data.earnedCertificates.Count}");
 
             // Scenario scores (best per scenario)
             PopulateScenarioScores(data.completedScenarios);
@@ -148,13 +146,11 @@ namespace NECInspector.UI
             }
         }
 
-        // Skills are tracked independently of any credential; a credential only supplies tier names
+        // Skills are what the app tracks; tier names are the app's own
         private void PopulateSkills(SkillProgress skills)
         {
             ClearContent(_masteryContent);
             if (_masteryEntryPrefab == null || _masteryContent == null) return;
-
-            var credential = CredentialLibrary.Default;
 
             if (skills.stats.Count == 0)
             {
@@ -177,34 +173,14 @@ namespace NECInspector.UI
 
                 var attained = skills.HighestAttainedTier(skillId);
                 string status = attained.HasValue
-                    ? $"{TierLabel(credential, attained.Value)} attained"
-                    : $"Working toward {TierLabel(credential, top.Tier)}";
+                    ? $"{SkillTiers.Names[(int)attained.Value]} attained"
+                    : $"Working toward {SkillTiers.Names[(int)top.Tier]}";
 
                 var item = Instantiate(_masteryEntryPrefab, _masteryContent);
                 var text = item.GetComponentInChildren<TMP_Text>();
                 if (text != null)
                     text.text = $"{SkillNames.Display(skillId)} - {status}  ({top.mastery:P0} mastery, {top.attempts} attempts)";
             }
-        }
-
-        private static string TierLabel(CredentialProfile credential, SkillTier tier)
-        {
-            return credential != null ? credential.GetTierLabel(tier) : SkillTiers.Names[(int)tier];
-        }
-
-        private static string FormatReadiness(ProgressData data)
-        {
-            var credential = CredentialLibrary.Get(data.activeCredentialId) ?? CredentialLibrary.Default;
-            if (credential == null) return "";
-
-            var report = CredentialReadiness.Evaluate(credential, data.skills);
-            string text = $"\n{credential.displayName}: {report.percent:P0} ready ({report.attainedCount} of {report.TotalCount} skills)";
-
-            // Say so when the app only teaches part of the credential
-            if (report.deferredCount > 0)
-                text += $"\nThe app covers {report.coverage:P0} of this credential so far.";
-
-            return text;
         }
 
         private void PopulateCertificates(List<EarnedCertificate> certificates)

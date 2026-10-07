@@ -2,15 +2,17 @@
 
 Rules for everything students read in the app: scenarios, violations, citations, reference articles,
 quick-reference cards, certificates and terminology. They exist because the installation codes (NEC, CEC,
-BS 7671 and others) are copyrighted, and because the app should teach what credentials actually require.
+BS 7671 and others) are copyrighted, and because the app should teach the skills people need to earn a credential, without containing the credential.
 
-## 1. Scope: only skills that a credential requires
+## 1. Scope: the app's skills only, and no credentials in the app
 
-- A skill is a concept ID (`ConceptIds`). Content may only teach skills that at least one credential file in
-  `StreamingAssets/Credentials/` requires.
+- The app is skill based: it helps people get a credential. It contains **no credentials** (no credential
+  names, blueprints, exam breakdowns or readiness scores). The tests fail if credential files or code appear
+  in the app.
+- A skill is a concept ID (`ConceptIds`). Content may only teach skills from that list.
 - A violation tests exactly one skill (`conceptId`); a sandbox rule gives evidence for exactly one skill.
-  Adding content for a skill no credential requires is out of scope. Add the credential requirement first,
-  with a credential expert's review, or leave the content out.
+- Adding a skill needs a documented reason in `docs/credential-alignment/` (what a credential assesses that
+  the app does not yet teach), reviewed by a credential expert. Alignment notes are never shipped.
 - Enforced by `tests/LogicTests/ContentPolicyTests.cs` (fails the build).
 
 ## 2. Wording: paraphrase, never copy
@@ -30,11 +32,10 @@ BS 7671 and others) are copyrighted, and because the app should teach what crede
 - UI strings take the code's name, reference format and section names from the active profile
   (`CodeProfiles.Terminology`). Do not hard-code "NEC", "Art." or "Chapter" in UI code.
 
-## 4. Credentials
+## 4. Credential alignment (outside the app)
 
-- A credential file lists the skills and tiers it requires. Draft it from the issuing body's published
-  outline of what it assesses, in your own words, and set `reviewStatus` to `draft` until a credential
-  expert has reviewed it.
+- Alignment files live in `docs/credential-alignment/`. Draft them from the issuing body's published outline
+  of what it assesses, in your own words, and keep them marked draft until a credential expert has reviewed them.
 - Do not reproduce exam questions or answer keys.
 
 ## Current status
@@ -47,7 +48,7 @@ same check yet.
 
 ## Adding or changing content: checklist
 
-1. Which credential requires the skill? (Scope)
+1. Is the skill in `ConceptIds`, and is any new skill documented in `docs/credential-alignment/`? (Scope)
 2. Is the explanation in my own words, and shorter than the source? (Wording)
 3. Does the UI text come from the profile terminology, not a hard-coded code name? (Labels)
 4. Do the logic tests pass: `dotnet run --project tests/LogicTests`?
