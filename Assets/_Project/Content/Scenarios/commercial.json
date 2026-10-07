@@ -21,7 +21,7 @@
         {
           "profileId": "nec",
           "reference": "430.52",
-          "text": "The motor branch-circuit short-circuit and ground-fault protective device shall comply with the percentages listed in Table 430.52 and shall not exceed the maximum value resulting from application of Table 430.52."
+          "text": "A motor branch circuit's short-circuit and ground-fault device follows the percentages in Table 430.52 and stays at or below the maximum they give."
         }
       ],
       "componentObjectName": "Motor1_BranchBreaker",
@@ -40,7 +40,7 @@
         {
           "profileId": "nec",
           "reference": "430.22",
-          "text": "Conductors supplying a single motor used in a continuous duty application shall have an ampacity of not less than 125 percent of the motor full-load current rating as determined by 430.6(A)(1)."
+          "text": "Conductors for one continuously running motor need ampacity of at least 125 percent of its full-load current (taken per 430.6(A)(1))."
         }
       ],
       "componentObjectName": "Motor2_BranchConductor",
@@ -59,7 +59,7 @@
         {
           "profileId": "nec",
           "reference": "430.110",
-          "text": "The disconnecting means for motor circuits rated 600 volts nominal or less shall have an ampere rating not less than 115 percent of the full-load current rating of the motor."
+          "text": "The disconnect for a motor circuit of 600 V or less must be rated at 115 percent or more of the motor's full-load current."
         }
       ],
       "componentObjectName": "Motor1_Disconnect_Remote",
@@ -78,7 +78,7 @@
         {
           "profileId": "nec",
           "reference": "430.32",
-          "text": "Each continuous-duty motor rated more than 1 hp shall be protected against overload by a separate overload device that is responsive to motor current. This device shall be selected to trip or shall be rated at not more than 115 percent of the motor nameplate full-load current rating for motors marked with a service factor not less than 1.15."
+          "text": "A continuous-duty motor over 1 hp needs its own overload device that responds to motor current, set to trip at (or rated for) no more than 115 percent of nameplate full-load current when the motor's service factor is 1.15 or higher."
         }
       ],
       "componentObjectName": "Motor2_OverloadRelay",
@@ -97,7 +97,7 @@
         {
           "profileId": "nec",
           "reference": "220.40",
-          "text": "The calculated load of a feeder or service shall not be less than the sum of the loads on the branch circuits supplied, as determined by Part II of this article, after any applicable demand factors permitted by Parts III or IV or V have been applied."
+          "text": "A feeder or service load must equal at least the sum of the branch-circuit loads it supplies (Part II), after any demand factors allowed by Parts III, IV or V."
         }
       ],
       "componentObjectName": "ServicePanel_LoadSchedule",
@@ -116,7 +116,7 @@
         {
           "profileId": "nec",
           "reference": "215.2",
-          "text": "Feeder conductors shall have an ampacity not less than required to supply the load as calculated in Parts III, IV, and V of Article 220."
+          "text": "Size feeder conductors to carry the load worked out by the Article 220 calculation methods (its Parts III, IV and V)."
         }
       ],
       "componentObjectName": "Feeder_SubPanel_Conductor",
@@ -135,7 +135,7 @@
         {
           "profileId": "nec",
           "reference": "220.44",
-          "text": "Receptacle loads calculated in accordance with 220.14 shall be permitted to be made subject to the demand factors given in Table 220.44."
+          "text": "Receptacle loads figured under 220.14 may use the demand factors in Table 220.44."
         }
       ],
       "componentObjectName": "Office_ReceptacleLoadCalc",
@@ -154,7 +154,7 @@
         {
           "profileId": "nec",
           "reference": "250.122",
-          "text": "Equipment grounding conductors shall not be smaller than shown in Table 250.122 based on the rating or setting of the overcurrent device protecting the circuit conductors."
+          "text": "Pick the equipment grounding conductor size from Table 250.122, using the ampere rating or trip setting of the protective device ahead of the circuit."
         }
       ],
       "componentObjectName": "Motor1_EGC",
@@ -173,7 +173,7 @@
         {
           "profileId": "nec",
           "reference": "430.24",
-          "text": "Conductors supplying several motors, or a motor(s) and other load(s), shall have an ampacity not less than 125 percent of the full-load current rating of the highest rated motor plus the sum of the full-load current ratings of all the other motors in the group."
+          "text": "For several motors, or a motor plus other loads, conductor ampacity is 125 percent of the largest motor's full-load current plus the full-load currents of the other motors."
         }
       ],
       "componentObjectName": "MechRoom_MultiMotorFeeder",
@@ -192,7 +192,7 @@
         {
           "profileId": "nec",
           "reference": "430.102(B)",
-          "text": "A disconnecting means shall be located in sight from the motor location and the driven machinery location. The disconnecting means shall disconnect the motor and the controller from all ungrounded supply conductors."
+          "text": "A disconnect must be in sight of both the motor and the driven machinery, and it must open the motor and controller from every ungrounded supply conductor."
         }
       ],
       "componentObjectName": "Motor2_Controller_Disc",
@@ -211,7 +211,7 @@
         {
           "profileId": "nec",
           "reference": "430.7",
-          "text": "A motor shall be marked with the manufacturer's name, rated volts, rated frequency, number of phases, rated full-load current, rated temperature rise or insulation system class and rated ambient temperature, time rating, rated horsepower, locked-rotor code letter."
+          "text": "Motor nameplates carry the maker, voltage, frequency, phase count, full-load amps, temperature rise or insulation class, ambient temperature, time rating, horsepower and locked-rotor code letter."
         }
       ],
       "componentObjectName": "Motor3_Nameplate",
@@ -230,7 +230,7 @@
         {
           "profileId": "nec",
           "reference": "240.21(B)(1)",
-          "text": "Conductors shall be permitted to be tapped, without overcurrent protection at the tap, to a feeder where: the length of the tap conductors does not exceed 3.0 m (10 ft), the ampacity of the tap conductors is not less than the combined calculated loads on the circuits supplied by the tap conductors, and the tap conductors are enclosed in a raceway."
+          "text": "A feeder tap needs no overcurrent device at the tap if it is no longer than 3.0 m (10 ft), has ampacity of at least the combined calculated loads it serves, and runs in a raceway."
         }
       ],
       "componentObjectName": "Feeder_TapConductor",

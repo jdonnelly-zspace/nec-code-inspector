@@ -21,7 +21,7 @@
         {
           "profileId": "nec",
           "reference": "250.52(A)(5)",
-          "text": "Rod-type grounding electrodes of stainless steel, copper, or zinc coated steel shall be at least 8 feet in length and 5/8 inch in diameter."
+          "text": "A ground rod (stainless, copper, or zinc-plated steel) needs a minimum length of 8 feet and a 5/8 inch diameter."
         }
       ],
       "componentObjectName": "GroundRod_Main",
@@ -40,7 +40,7 @@
         {
           "profileId": "nec",
           "reference": "250.24(A)(1)",
-          "text": "A grounding electrode conductor shall be used to connect the equipment grounding conductors, the service-equipment enclosures, and, where the system is grounded, the grounded conductor to the grounding electrode(s)."
+          "text": "The grounding electrode conductor is the link between the grounding electrode(s) and the service's equipment grounding conductors and enclosures and, if the system is grounded, its grounded conductor."
         }
       ],
       "componentObjectName": "GEC_ServicePanel",
@@ -59,7 +59,7 @@
         {
           "profileId": "nec",
           "reference": "250.104(A)",
-          "text": "The metal water piping system shall be bonded to the service equipment enclosure, the grounded conductor at the service, the grounding electrode conductor where of sufficient size, or to the one or more grounding electrodes used."
+          "text": "Bond the metal water pipe system to any one of these: the service enclosure, the service's grounded conductor, a grounding electrode conductor of adequate size, or the electrodes in use."
         }
       ],
       "componentObjectName": "WaterPipe_Bonding",
@@ -78,7 +78,7 @@
         {
           "profileId": "nec",
           "reference": "250.122",
-          "text": "Equipment grounding conductors of the wire type shall not be smaller than shown in Table 250.122."
+          "text": "Wire-type equipment grounding conductors are at least the size Table 250.122 specifies."
         }
       ],
       "componentObjectName": "EGC_SubPanel",
@@ -97,7 +97,7 @@
         {
           "profileId": "nec",
           "reference": "250.50",
-          "text": "All grounding electrodes as described in 250.52(A)(1) through (A)(7) that are present at each building or structure served shall be bonded together to form the grounding electrode system."
+          "text": "Bond together every electrode of the types listed in 250.52(A)(1) through (A)(7) at a building so they act as one system."
         }
       ],
       "componentObjectName": "Electrode_BondingJumper",
@@ -116,7 +116,7 @@
         {
           "profileId": "nec",
           "reference": "250.4(A)(1)",
-          "text": "Electrical systems that are grounded shall be connected to earth in a manner that will limit the voltage imposed by lightning, line surges, or unintentional contact with higher-voltage lines and that will stabilize the voltage to earth during normal operation."
+          "text": "Grounding a system ties it to earth to hold down surge voltages (from lightning, line surges, or an accidental touch of higher-voltage lines) and to keep voltage to earth stable during normal use."
         }
       ],
       "componentObjectName": "ServiceGround_Connection",
@@ -135,7 +135,7 @@
         {
           "profileId": "nec",
           "reference": "250.64(A)",
-          "text": "Bare aluminum or copper-clad aluminum grounding electrode conductors shall not be used where in direct contact with masonry or the earth or where subject to corrosive conditions."
+          "text": "Aluminum grounding electrode conductors, whether bare or copper-clad, are off limits where they would touch masonry or soil directly or sit in a corrosive environment."
         }
       ],
       "componentObjectName": "GEC_AluminumRun",
@@ -154,7 +154,7 @@
         {
           "profileId": "nec",
           "reference": "250.52(A)(1)",
-          "text": "A metal underground water pipe in direct contact with the earth for 10 feet or more, including any metal well casing that is bonded to the pipe and that is in direct contact with the earth."
+          "text": "A metal underground water pipe counts as an electrode only when 10 feet or more of it touches the earth, including bonded metal well casing in contact with earth."
         }
       ],
       "componentObjectName": "WaterPipe_Underground",
@@ -173,7 +173,7 @@
         {
           "profileId": "nec",
           "reference": "250.94",
-          "text": "An intersystem bonding termination shall be provided external to enclosures at the service equipment or metering equipment enclosure and at the disconnecting means for any additional buildings or structures."
+          "text": "Provide an intersystem bonding termination outside enclosures at the service or meter enclosure, and at the disconnect of any additional building or structure."
         }
       ],
       "componentObjectName": "ServicePanel_IntersystemBond",
@@ -192,7 +192,7 @@
         {
           "profileId": "nec",
           "reference": "250.53(A)(2)",
-          "text": "A single rod, pipe, or plate electrode shall be supplemented by an additional electrode. The supplemental electrode shall be bonded to one of the following: the rod, pipe, or plate electrode, the grounding electrode conductor, the grounded service-entrance conductor, or the service equipment enclosure."
+          "text": "When the only electrode is one rod, pipe or plate, add a second electrode and bond it to the first, to the grounding electrode conductor, to the incoming grounded conductor at the service, or to the service enclosure."
         }
       ],
       "componentObjectName": "GroundRod_Supplemental",

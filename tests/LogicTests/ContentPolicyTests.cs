@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Text.Json;
 using NECInspector.Codes;
 using NECInspector.Credentials;
@@ -10,7 +11,7 @@ namespace NECInspector.LogicTests
 {
     /// <summary>
     /// Enforces docs/CONTENT_POLICY.md: content covers only skills that a credential requires,
-    /// and code wording is paraphrased, not copied.
+    /// and code wording is paraphrased, not copied (no statutory "shall" anywhere in the content).
     /// </summary>
     public static class ContentPolicyTests
     {
@@ -61,7 +62,7 @@ namespace NECInspector.LogicTests
         }
 
         // Statutory wording ("shall") is a sign that text was copied from a code book.
-        // Reported as a warning until the existing text has been paraphrased.
+        // Applies to every piece of student-facing text in the content files.
         private static void CodeTextIsParaphrased(TestContext t)
         {
             t.Begin("content policy: paraphrased text");
@@ -69,32 +70,35 @@ namespace NECInspector.LogicTests
             string root = TestContext.RepoRoot();
             var options = new JsonSerializerOptions { IncludeFields = true };
 
-            int citationTexts = 0, citationLegal = 0;
             foreach (string file in Directory.GetFiles(Path.Combine(root, "Assets/_Project/Content/Scenarios"), "*.json"))
             {
+                string name = Path.GetFileName(file);
                 var data = JsonSerializer.Deserialize<ScenarioFileData>(File.ReadAllText(file), options);
                 if (data?.violations == null) continue;
 
+                t.IsTrue(!LooksStatutory(data.description), $"{name}: scenario description uses statutory wording");
+                t.IsTrue(!LooksStatutory(data.environmentDescription), $"{name}: environment description uses statutory wording");
+
                 foreach (var v in data.violations)
+                {
+                    t.IsTrue(!LooksStatutory(v.description), $"{v.violationId}: description uses statutory wording");
+                    t.IsTrue(!LooksStatutory(v.hintText), $"{v.violationId}: hint uses statutory wording");
+                    t.IsTrue(!LooksStatutory(v.inspectionNote), $"{v.violationId}: inspection note uses statutory wording");
+
                     foreach (var c in v.citations ?? new ViolationCitation[0])
-                    {
-                        citationTexts++;
-                        if (LooksStatutory(c.text)) citationLegal++;
-                    }
+                        t.IsTrue(!LooksStatutory(c.text), $"{v.violationId}: citation text for '{c.reference}' uses statutory wording");
+                }
             }
 
             var articles = JsonSerializer.Deserialize<ArticleFile>(
                 File.ReadAllText(Path.Combine(root, "Assets/_Project/StreamingAssets/NECDatabase/nec_articles.json")));
-            int articleLegal = articles.articles.Count(a => LooksStatutory(a.text));
-
-            if (citationLegal > 0 || articleLegal > 0)
-                t.Warn($"{citationLegal} of {citationTexts} violation citation texts and {articleLegal} of {articles.articles.Length} " +
-                       "article texts use statutory wording ('shall'); paraphrase them (docs/CONTENT_POLICY.md)");
+            foreach (var a in articles.articles)
+                t.IsTrue(!LooksStatutory(a.text), $"article '{a.article}{a.subsection}' text uses statutory wording");
         }
 
         private static bool LooksStatutory(string text)
         {
-            return !string.IsNullOrEmpty(text) && (text.Contains(" shall ") || text.Contains(" shall not "));
+            return !string.IsNullOrEmpty(text) && Regex.IsMatch(text, @"\bshall\b", RegexOptions.IgnoreCase);
         }
 
         private class ArticleFile
@@ -104,6 +108,8 @@ namespace NECInspector.LogicTests
 
         private class ArticleText
         {
+            public string article { get; set; }
+            public string subsection { get; set; }
             public string text { get; set; }
         }
     }
