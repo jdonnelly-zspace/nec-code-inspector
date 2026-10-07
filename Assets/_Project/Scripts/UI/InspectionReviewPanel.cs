@@ -99,7 +99,7 @@ namespace NECInspector.Inspection
 
             if (_missedIndexText != null) _missedIndexText.text = $"Missed Violation {violationIndex} of {totalMissed}";
             if (_missedComponentText != null) _missedComponentText.text = violation.componentObjectName;
-            if (_missedDescriptionText != null) _missedDescriptionText.text = violation.description;
+            if (_missedDescriptionText != null) _missedDescriptionText.text = violation.GetDescription(CodeProfiles.ActiveId);
             var citation = violation.GetCitation(CodeProfiles.ActiveId);
             if (_missedNECArticleText != null)
             {

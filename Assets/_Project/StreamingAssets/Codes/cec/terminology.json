@@ -1,0 +1,41 @@
+{
+  "codeName": "CEC",
+  "referencePrefix": "Rule ",
+  "referenceNoun": "Rule",
+  "sectionLabel": "Section",
+  "generalPracticeLabel": "General practice",
+  "terms": [
+    {
+      "key": "grounding",
+      "text": "grounding"
+    },
+    {
+      "key": "ground-rod",
+      "text": "ground rod"
+    },
+    {
+      "key": "receptacle",
+      "text": "receptacle"
+    },
+    {
+      "key": "breaker",
+      "text": "breaker"
+    },
+    {
+      "key": "panel",
+      "text": "panelboard"
+    },
+    {
+      "key": "shock-protection-device",
+      "text": "GFCI"
+    },
+    {
+      "key": "arc-fault-device",
+      "text": "AFCI"
+    },
+    {
+      "key": "service-disconnect",
+      "text": "service disconnect"
+    }
+  ]
+}

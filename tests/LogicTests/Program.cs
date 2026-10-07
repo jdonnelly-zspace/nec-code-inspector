@@ -17,7 +17,8 @@ namespace NECInspector.LogicTests
             TerminologyTests.Run(ctx);
             ContentPolicyTests.Run(ctx);
             ScenarioDataTests.Run(ctx);
-            ArticleDatabaseTests.Run(ctx);
+            CodeProfileFilesTests.Run(ctx);
+            DataCodeProfileTests.Run(ctx);
 
             foreach (string warning in ctx.Warnings)
                 Console.WriteLine($"WARN  {warning}");

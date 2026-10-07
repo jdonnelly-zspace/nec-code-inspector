@@ -22,6 +22,11 @@
           "profileId": "nec",
           "reference": "210.8(A)(1)",
           "text": "In a home's bathrooms, every 125 V to 250 V receptacle needs GFCI protection."
+        },
+        {
+          "profileId": "cec",
+          "reference": "26-700",
+          "text": "A receptacle within 1.5 m of a sink, bathtub or shower stall needs Class A GFCI protection."
         }
       ],
       "componentObjectName": "BathroomReceptacle_Sink",
@@ -79,6 +84,14 @@
           "profileId": "nec",
           "reference": "210.52(A)",
           "text": "Place receptacles so every point along a wall's floor line is within 6 feet of one."
+        },
+        {
+          "profileId": "cec",
+          "reference": "26-712",
+          "text": "Place dwelling receptacles so that every spot along the floor line of usable wall space is within 1.8 m of one.",
+          "description": "Wall receptacles about 4.3 m (14 ft) apart, farther than the 3.6 m maximum",
+          "hintText": "No point along the floor line of usable wall space may be more than 1.8 m from a receptacle, so receptacles can be at most 3.6 m apart.",
+          "inspectionNote": "This wall section has a gap of about 4.3 m (14 ft) between receptacles, more than the 3.6 m that the 1.8 m rule allows."
         }
       ],
       "componentObjectName": "LivingRoom_WallGap",
@@ -98,6 +111,11 @@
           "profileId": "nec",
           "reference": "240.4(D)",
           "text": "Small copper conductors have breaker limits: 15 A for 14 AWG, 20 A for 12 AWG and 30 A for 10 AWG."
+        },
+        {
+          "profileId": "cec",
+          "reference": "14-104",
+          "text": "A device protecting copper conductors from 14 AWG to 10 AWG is limited to 15 A for 14 AWG, 20 A for 12 AWG and 30 A for 10 AWG, and generally cannot be rated above the conductor's ampacity."
         }
       ],
       "componentObjectName": "KitchenCircuit_Wire",
@@ -117,6 +135,11 @@
           "profileId": "nec",
           "reference": "210.12(A)",
           "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the methods in 210.12(A)(1) through (A)(6)."
+        },
+        {
+          "profileId": "cec",
+          "reference": "26-724(f)",
+          "text": "Branch circuits for 125 V receptacles rated 20 A or less in bedrooms, living and dining rooms, kitchens, hallways, closets, laundry areas and similar rooms of a dwelling need combination-type AFCI protection, with exceptions such as circuits that already need ground-fault protection."
         }
       ],
       "componentObjectName": "BedroomCircuit_Breaker",
@@ -136,6 +159,12 @@
           "profileId": "nec",
           "reference": "210.12(A)",
           "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the methods in 210.12(A)(1) through (A)(6)."
+        },
+        {
+          "profileId": "cec",
+          "reference": "26-724(f)",
+          "text": "Branch circuits for 125 V receptacles rated 20 A or less in bedrooms, living and dining rooms, kitchens, hallways, closets, laundry areas and similar rooms of a dwelling need combination-type AFCI protection, with exceptions such as circuits that already need ground-fault protection.",
+          "inspectionNote": "Living room circuit lacks AFCI protection. Combination-type AFCI protection is required for receptacle circuits in most dwelling living spaces."
         }
       ],
       "componentObjectName": "LivingRoomCircuit_Breaker",
@@ -155,6 +184,14 @@
           "profileId": "nec",
           "reference": "210.52(C)",
           "text": "Space countertop receptacles so that nowhere along the counter's back wall are you over 24 inches (horizontally) from one."
+        },
+        {
+          "profileId": "cec",
+          "reference": "26-712(d)(iii)",
+          "text": "Behind kitchen counter work surfaces, install split receptacles so that you are never farther than 900 mm, measured along the wall line, from one.",
+          "description": "Kitchen countertop gap of 36 inches (about 915 mm) exceeds the 900 mm receptacle spacing limit",
+          "hintText": "Along the counter wall line, no point may be more than 900 mm from a receptacle.",
+          "inspectionNote": "This countertop section has a 36 inch (about 915 mm) gap without a receptacle, over the 900 mm limit."
         }
       ],
       "componentObjectName": "KitchenCountertop_Gap",

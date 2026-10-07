@@ -35,6 +35,19 @@ namespace NECInspector.Codes
             }
         }
 
+        /// <summary>
+        /// Whether sandbox calculations use tables that belong to the active code (true with no profile loaded,
+        /// when the NEC fallback applies).
+        /// </summary>
+        public static bool HasOwnTables
+        {
+            get
+            {
+                var profile = Active;
+                return profile == null || profile.HasOwnTables;
+            }
+        }
+
         private static ElectricalTables _fallbackTables;
         private static CodeTerminology _fallbackTerminology;
 

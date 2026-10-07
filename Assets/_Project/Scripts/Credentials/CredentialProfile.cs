@@ -21,6 +21,7 @@ namespace NECInspector.Credentials
         public string codeProfileId;        // installation code the credential is based on (see CodeProfileIds)
         public string reviewStatus;         // "app-defined", "draft" or "reviewed" (by a credential expert)
         public string[] tierLabels;         // optional names for Foundation, Practitioner, Authority
+        public string coverageNote;         // how much of the credential the app can teach, in plain words
         public CredentialRequirement[] requirements;
 
         public string GetTierLabel(SkillTier tier)
@@ -39,6 +40,8 @@ namespace NECInspector.Credentials
         public string skillId;      // a concept ID (see ConceptIds)
         public string tier;         // Foundation | Practitioner | Authority
         public float weight = 1f;
+        public bool deferred;       // the credential requires it but the app has no content for it yet
+        public string basis;        // which part of the credential's own outline this comes from
     }
 
     public static class CredentialValidator
@@ -115,9 +118,12 @@ namespace NECInspector.Credentials
     {
         public CredentialProfile credential;
         public List<RequirementStatus> requirements = new List<RequirementStatus>();
-        public float percent;       // weighted progress, 0..1
+        public float percent;       // weighted progress over the requirements the app can teach, 0..1
         public int attainedCount;
+        public int deferredCount;   // requirements the app has no content for yet (not in percent)
+        public float coverage;      // share of the credential's total weight the app can teach, 0..1
 
+        /// <summary>Requirements the app can teach (deferred ones are not listed).</summary>
         public int TotalCount => requirements.Count;
         public bool IsComplete => TotalCount > 0 && attainedCount == TotalCount;
     }
@@ -136,11 +142,19 @@ namespace NECInspector.Credentials
 
             float totalWeight = 0f;
             float earnedWeight = 0f;
+            float deferredWeight = 0f;
 
             foreach (var requirement in credential.requirements)
             {
                 if (requirement == null || !SkillTiers.TryParse(requirement.tier, out var tier))
                     continue;
+
+                if (requirement.deferred)
+                {
+                    report.deferredCount++;
+                    deferredWeight += requirement.weight;
+                    continue;
+                }
 
                 var status = new RequirementStatus { requirement = requirement, tier = tier };
 
@@ -176,6 +190,9 @@ namespace NECInspector.Credentials
             }
 
             report.percent = totalWeight > 0f ? earnedWeight / totalWeight : 0f;
+
+            float allWeight = totalWeight + deferredWeight;
+            report.coverage = allWeight > 0f ? totalWeight / allWeight : 0f;
             return report;
         }
     }

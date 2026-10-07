@@ -80,8 +80,11 @@ namespace NECInspector.Core
 
         private IEnumerator VerifyDatabase()
         {
-            // Wait a frame for the code profile to initialize and register itself
+            // Wait a frame for the code profiles to load
             yield return null;
+
+            // The student's credential decides which installation code is active
+            GameManager.Instance?.Progress?.ApplyActiveCredential();
 
             var profile = Codes.CodeProfiles.Active;
             if (profile != null && profile.IsLoaded)

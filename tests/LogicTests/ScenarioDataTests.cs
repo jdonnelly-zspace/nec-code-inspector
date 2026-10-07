@@ -100,7 +100,7 @@ namespace NECInspector.LogicTests
             var violationIds = new HashSet<string>();
             var assetNames = new HashSet<string>();
             var conceptsUsed = new HashSet<string>();
-            var articleRefs = ArticleDatabaseTests.LoadReferences();
+            var profiles = ProfileFiles.LoadAll(TestContext.RepoRoot());
 
             foreach (string file in files)
             {
@@ -122,11 +122,12 @@ namespace NECInspector.LogicTests
 
                     foreach (var citation in v.citations ?? new ViolationCitation[0])
                     {
-                        // Only the NEC has an article database so far; other profiles are checked when they get one
-                        if (citation.profileId != CodeProfileIds.Nec) continue;
+                        var profile = profiles.FirstOrDefault(p => p.Id == citation.profileId);
+                        t.IsTrue(profile != null, $"{name}: {v.violationId} cites unknown code profile '{citation.profileId}'");
+                        if (profile == null) continue;
 
-                        t.IsTrue(ArticleDatabaseTests.Resolves(articleRefs, citation.reference),
-                            $"{name}: {v.violationId} cites '{citation.reference}' which is not in nec_articles.json");
+                        t.IsTrue(profile.HasReference(citation.reference),
+                            $"{name}: {v.violationId} cites '{citation.reference}' which is not in Codes/{profile.Id}/articles.json");
                     }
                 }
             }

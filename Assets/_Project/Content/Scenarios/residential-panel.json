@@ -60,6 +60,14 @@
           "profileId": "nec",
           "reference": "110.26(A)(1)",
           "text": "Working space in front of live parts must be at least as deep as Table 110.26(A)(1) requires; for 0 to 150 V nominal that is 3 feet."
+        },
+        {
+          "profileId": "cec",
+          "reference": "2-308",
+          "text": "Keep at least 1 m of clear working space about electrical equipment wherever it must be reached for operation or maintenance.",
+          "description": "Working space in front of panel is less than 1 m deep",
+          "hintText": "Measure the clear space in front of the panel. Is there at least 1 m of unobstructed working space?",
+          "inspectionNote": "Storage boxes are stacked within 24 inches (about 610 mm) of the panel face. The code calls for at least 1 m of working space."
         }
       ],
       "componentObjectName": "Panel_WorkingSpace_Obstruction",
@@ -98,6 +106,11 @@
           "profileId": "nec",
           "reference": "240.4",
           "text": "Protect conductors (except flexible cords) from overcurrent according to their ampacity."
+        },
+        {
+          "profileId": "cec",
+          "reference": "14-104",
+          "text": "A device protecting copper conductors from 14 AWG to 10 AWG is limited to 15 A for 14 AWG, 20 A for 12 AWG and 30 A for 10 AWG, and generally cannot be rated above the conductor's ampacity."
         }
       ],
       "componentObjectName": "Panel_Breaker30A_12AWG",

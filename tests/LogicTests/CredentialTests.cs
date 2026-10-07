@@ -16,6 +16,7 @@ namespace NECInspector.LogicTests
         {
             ValidatorCatchesBadData(t);
             ReadinessMath(t);
+            DeferredRequirements(t);
             CredentialFilesAreValid(t);
         }
 
@@ -139,6 +140,51 @@ namespace NECInspector.LogicTests
             t.Equal(2, CredentialReadiness.Evaluate(credential, null).TotalCount, "null progress still lists requirements");
         }
 
+        private static void DeferredRequirements(TestContext t)
+        {
+            t.Begin("credential deferred requirements");
+
+            var credential = new CredentialProfile
+            {
+                id = "partial", displayName = "Partial", codeProfileId = "cec",
+                requirements = new[]
+                {
+                    new CredentialRequirement { skillId = ConceptIds.ShockProtection, tier = "Practitioner", weight = 3f },
+                    new CredentialRequirement { skillId = ConceptIds.EarthingBonding, tier = "Practitioner", weight = 1f, deferred = true },
+                    new CredentialRequirement { skillId = ConceptIds.LoadCalculation, tier = "Practitioner", weight = 4f, deferred = true }
+                }
+            };
+            t.Equal(0, CredentialValidator.Validate(credential).Count, "deferred requirements are valid");
+
+            var none = CredentialReadiness.Evaluate(credential, new SkillProgress());
+            t.Equal(1, none.TotalCount, "only requirements the app can teach are listed");
+            t.Equal(2, none.deferredCount, "deferred requirements are counted separately");
+            t.Near(3.0 / 8.0, none.coverage, "coverage is the weight the app can teach");
+            t.Near(0, none.percent, "no progress is 0%");
+
+            var progress = new SkillProgress();
+            for (int i = 0; i < SkillPolicy.MinAttempts; i++)
+                progress.Record(new SkillEvidence(ConceptIds.ShockProtection, SkillTier.Practitioner, 1f, "x"));
+            var done = CredentialReadiness.Evaluate(credential, progress);
+            t.Near(1, done.percent, "readiness counts only what the app can teach");
+            t.IsTrue(done.IsComplete, "complete when every teachable requirement is attained");
+
+            // Evidence for a deferred skill is still recorded, it just does not count toward the credential yet
+            for (int i = 0; i < SkillPolicy.MinAttempts; i++)
+                progress.Record(new SkillEvidence(ConceptIds.EarthingBonding, SkillTier.Practitioner, 1f, "x"));
+            t.Equal(2, progress.AttainedSkillCount(), "the learner's skill progress still includes the deferred skill");
+            t.Equal(1, CredentialReadiness.Evaluate(credential, progress).attainedCount, "but the credential does not count it");
+
+            var allDeferred = new CredentialProfile
+            {
+                id = "none", displayName = "None", codeProfileId = "cec",
+                requirements = new[] { new CredentialRequirement { skillId = ConceptIds.EarthingBonding, tier = "Practitioner", deferred = true } }
+            };
+            var empty = CredentialReadiness.Evaluate(allDeferred, new SkillProgress());
+            t.Near(0, empty.coverage, "nothing teachable means no coverage");
+            t.IsTrue(!empty.IsComplete, "a credential with nothing teachable is never complete");
+        }
+
         private static void CredentialFilesAreValid(TestContext t)
         {
             t.Begin("credential files");
@@ -150,7 +196,7 @@ namespace NECInspector.LogicTests
 
             var options = new JsonSerializerOptions { IncludeFields = true };
             var ids = new HashSet<string>();
-            var evidenceTiers = ScenarioEvidenceTiers(root);
+            var codeProfiles = ProfileFiles.LoadAll(root);
 
             foreach (string file in files)
             {
@@ -162,21 +208,34 @@ namespace NECInspector.LogicTests
                 if (profile == null || profile.requirements == null) continue;
 
                 t.IsTrue(ids.Add(profile.id), $"{name}: credential id '{profile.id}' is unique");
+                t.IsTrue(codeProfiles.Any(c => c.Id == profile.codeProfileId),
+                    $"{name}: code profile '{profile.codeProfileId}' has no folder under StreamingAssets/Codes");
 
-                // A credential that asks for a skill at a tier nothing can teach could never be completed
+                // A credential that asks for a skill at a tier nothing can teach could never be completed.
+                // Only violations that apply to the credential's own code count as evidence.
+                var evidenceTiers = ScenarioEvidenceTiers(root, profile.codeProfileId);
                 foreach (var r in profile.requirements)
                 {
                     if (!SkillTiers.TryParse(r.tier, out var tier)) continue;
                     bool reachable = evidenceTiers.TryGetValue(r.skillId, out var tiers) && tiers.Any(x => x >= (int)tier);
-                    t.IsTrue(reachable, $"{name}: no scenario violation gives evidence for {r.skillId} at {r.tier} or above");
+
+                    if (r.deferred)
+                    {
+                        // Keep the file honest: once content exists, the requirement should stop being deferred
+                        if (reachable) t.Warn($"{name}: {r.skillId} is marked deferred but content for '{profile.codeProfileId}' now covers it at {r.tier}");
+                    }
+                    else
+                    {
+                        t.IsTrue(reachable, $"{name}: no violation applying to '{profile.codeProfileId}' gives evidence for {r.skillId} at {r.tier} or above");
+                    }
                 }
             }
 
             t.IsTrue(ids.Contains("core-skills"), "the default 'core-skills' credential exists");
         }
 
-        // For each skill, the tiers of evidence the scenario content can produce
-        private static Dictionary<string, HashSet<int>> ScenarioEvidenceTiers(string root)
+        // For each skill, the tiers of evidence the scenario content can produce under one code profile
+        private static Dictionary<string, HashSet<int>> ScenarioEvidenceTiers(string root, string codeProfileId)
         {
             var result = new Dictionary<string, HashSet<int>>();
             var options = new JsonSerializerOptions { IncludeFields = true };
@@ -189,6 +248,7 @@ namespace NECInspector.LogicTests
                 foreach (var v in data.violations)
                 {
                     if (!Enum.TryParse<DifficultyLevel>(v.minimumDifficulty, out var difficulty)) continue;
+                    if (ViolationCitations.Find(v.citations, codeProfileId) == null) continue;
                     if (!result.TryGetValue(v.conceptId, out var tiers))
                         result[v.conceptId] = tiers = new HashSet<int>();
                     tiers.Add((int)SkillTiers.FromDifficulty(difficulty));

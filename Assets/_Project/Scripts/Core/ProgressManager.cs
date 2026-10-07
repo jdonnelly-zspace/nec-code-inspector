@@ -79,6 +79,32 @@ namespace NECInspector.Core
         }
 
         /// <summary>
+        /// The credential the student works toward (empty = the default). Choosing one also selects
+        /// the installation code it is based on. Skill progress itself is not tied to it.
+        /// </summary>
+        public CredentialProfile GetActiveCredential()
+        {
+            return CredentialLibrary.Get(Data.activeCredentialId) ?? CredentialLibrary.Default;
+        }
+
+        public void SetActiveCredential(CredentialProfile credential)
+        {
+            if (credential == null) return;
+
+            Data.activeCredentialId = credential.id;
+            Save();
+            ApplyActiveCredential();
+        }
+
+        /// <summary>Activate the code profile of the active credential (called at startup and after a change).</summary>
+        public void ApplyActiveCredential()
+        {
+            var credential = GetActiveCredential();
+            if (credential != null)
+                Codes.CodeProfileLibrary.Activate(credential.codeProfileId);
+        }
+
+        /// <summary>
         /// How close the student's skills are to a credential's requirements.
         /// </summary>
         public ReadinessReport GetReadiness(CredentialProfile credential)
@@ -135,6 +161,7 @@ namespace NECInspector.Core
         public List<ScenarioProgress> completedScenarios = new List<ScenarioProgress>();
         public List<SandboxProgress> completedSandboxes = new List<SandboxProgress>();
         public SkillProgress skills = new SkillProgress();
+        public string activeCredentialId = "";
         public List<EarnedCertificate> earnedCertificates = new List<EarnedCertificate>();
         public float totalTimeSpent = 0f;
     }

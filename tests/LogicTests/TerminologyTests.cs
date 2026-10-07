@@ -79,11 +79,10 @@ namespace NECInspector.LogicTests
         {
             t.Begin("terminology json == defaults");
 
-            string path = Path.Combine(TestContext.RepoRoot(), "Assets/_Project/StreamingAssets/NECDatabase/terminology.json");
-            var fromFile = JsonSerializer.Deserialize<CodeTerminology>(File.ReadAllText(path), new JsonSerializerOptions { IncludeFields = true });
+            var fromFile = ProfileFiles.Load(TestContext.RepoRoot(), CodeProfileIds.Nec).terminology;
             var defaults = CodeTerminology.CreateNecDefaults();
 
-            t.IsTrue(fromFile != null, "terminology.json parses");
+            t.IsTrue(fromFile != null, "the NEC profile has a terminology.json that parses");
             if (fromFile == null) return;
 
             t.Equal(defaults.codeName, fromFile.codeName, "codeName");
@@ -123,6 +122,7 @@ namespace NECInspector.LogicTests
             public string Edition => "test";
             public bool IsLoaded => true;
             public int ArticleCount => 0;
+            public bool HasOwnTables => true;
             public ElectricalTables Tables => ElectricalTables.CreateNecDefaults();
             public CodeTerminology Terminology { get; }
             public CodeArticle GetArticle(string reference) => null;
