@@ -31,7 +31,7 @@
 | Art. 210.8(D) | GFCI - Dishwashers (2026) | BC-GFCI-DISHWASHER-001 | Expert | Major |
 
 **Difficulty distribution:** Beginner sees 5, Standard sees 10, Expert sees all 12.
-**Generator script:** `Assets/_Project/Scripts/Editor/BranchCircuitScenarioGenerator.cs`
+**Scenario data:** `Assets/_Project/Content/Scenarios/branch-circuits.json` (imported by `ScenarioDataImporter`)
 
 ### Scenario 3: Grounding & Bonding (Alpha) - 10 Violations
 | NEC Article | Topic | Violation ID | Difficulty | Severity |
@@ -48,7 +48,7 @@
 | Art. 250.53(A)(2) | Single rod without supplemental electrode | GND-SUPPLEMENT-001 | Expert | Major |
 
 **Difficulty distribution:** Beginner sees 4, Standard sees 8, Expert sees all 10.
-**Generator script:** `Assets/_Project/Scripts/Editor/GroundingScenarioGenerator.cs`
+**Scenario data:** `Assets/_Project/Content/Scenarios/grounding.json` (imported by `ScenarioDataImporter`)
 
 ### Scenario 4: Commercial Installation (Alpha)
 | NEC Article | Topic |

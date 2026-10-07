@@ -6,7 +6,7 @@
 - [ ] Boot + MainMenu scenes
 - [ ] Residential panel 3D scene with embedded violations + prefab wiring
 - [ ] Kitchen/bathroom/living area 3D scene (Branch Circuit scenario)
-- [ ] Run BranchCircuitScenarioGenerator + PanelDesignSandboxGenerator in Editor
+- [ ] Run NEC Inspector > Import Scenario Data + PanelDesignSandboxGenerator in Editor
 - [ ] Panel sandbox scene with 3D panel, breaker tray, slot GameObjects
 - [ ] Wire Quick Reference Cards to inspection HUD
 - [ ] Certificate UI panel visual design
