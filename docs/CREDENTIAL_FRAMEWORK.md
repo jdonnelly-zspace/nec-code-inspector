@@ -69,15 +69,54 @@ Variation that must be data, not hard-coded:
 - **Terminology:** grounding vs earthing; breaker vs MCB; panel vs consumer unit / distribution board.
 - **Inspection and exam style:** written exam only, practical assessment, or both.
 
+## Current NEC coupling review
+
+Reviewed the scripts under `Assets/_Project/Scripts` (core data, database, compliance, load and wire files read in full; the rest by search). NEC-related names appear 414 times across 60 files, mostly as names and labels rather than logic. Overall coupling is moderate: the data model is a good base, but the NEC is hard-coded in four places. UI scripts and editor generators were not read in full.
+
+### Where the coupling is
+1. **Violations are authored against NEC citations, not concepts (high effort).**
+   - `ViolationDefinitionSO` has `necArticle` and `necArticleText` and no concept ID (`Data/ViolationDefinitionSO.cs:22`).
+   - `InspectionManager` scores a flag by comparing the student's citation to `violation.necArticle` (`Inspection/InspectionManager.cs:156`).
+   - The four scenario generators in `Editor/` (about 1,080 lines) hard-code violation text, so content lives in C#, not in swappable data.
+2. **One global NEC database (medium effort).**
+   - `NECDatabase` is a singleton that loads one JSON file with 98 entries (`NEC/NECDatabase.cs:39`).
+   - Six files call `NECDatabase.Instance` directly: the boot sequence, the review step, and the reference, flagging and quick-reference panels.
+   - `NECArticle.isNewIn2026` assumes a single edition, and references are numeric strings like `250.24(A)(1)` that will not fit BS 7671 or VDE numbering.
+3. **Rules and numbers are hard-coded in logic (highest effort).**
+   - `ComplianceChecker` has 10 fixed rules with NEC citations in the strings (`PanelSandbox/ComplianceChecker.cs:58`).
+   - `LoadCalculator` embeds Art. 220 constants: 3 VA/ft², the 3,000 / 35% / 25% demand tiers, 240 V and a US breaker size list (`PanelSandbox/LoadCalculator.cs:12`).
+   - `WireConnection` hard-codes AWG sizes and Table 310.16 ampacities (`PanelSandbox/WireConnection.cs:90`).
+   - Units are AWG, square feet and 120/240 V 60 Hz throughout.
+4. **Tiers and difficulty (low effort).**
+   - `DifficultyLevel` is a three-value enum with credential labels only in comments (`Core/DifficultyLevel.cs:3`).
+   - `DifficultySettingsSO` is already data-driven, but `NECCitationMode` and `highlight2026Changes` are NEC-named.
+   - UI labels such as "NEC Chapters" and "NEC Citations" are baked into strings.
+
+### What already helps
+- Scenarios, violations, difficulty settings and quick-reference cards are already ScriptableObjects, so they can be swapped as data.
+- Violations already carry severity, minimum difficulty and a subtle flag, which map naturally to tiers.
+- The article database is external JSON in `StreamingAssets`.
+- The inspection flow itself (pointer, flagging, steps, scoring) is code-neutral apart from the citation comparison.
+
+### Rough refactor order
+1. Add a concept ID to violations, keeping `necArticle` as a legacy field. Smallest change, and it unlocks the rest.
+2. Introduce a `CodeProfile` interface to replace `NECDatabase.Instance`, with the NEC as the first implementation, plus a profile-aware citation matcher.
+3. Make rules and tables data-driven: ampacity table, demand factors, standard sizes and voltage move into the profile, and the 10 compliance rules become configurable.
+4. Move scenario content out of the generators into JSON or SO assets so a credential pack does not need C# edits.
+5. Rename UI strings and `NECCitationMode` to neutral terms and add a unit setting (AWG vs mm²).
+
+### Licensing check needed
+`necArticleText` and the `text` fields in `nec_articles.json` contain code language, and several look close to verbatim NEC wording. The NEC is copyrighted by NFPA. Confirm the license position before shipping, and especially before adding more codes.
+
 ## Risks and open questions
 1. **Copyright.** NEC, CEC, BS 7671 and the VDE/NF standards are copyrighted. Store clause numbers and paraphrased explanations only, and check licensing before using exam blueprints.
 2. **Scenario reuse.** Some violations are code-specific (for example GFCI placement rules). Each violation needs an "applies to profiles" list, not an assumption that it works everywhere.
 3. **Localization scope.** Language is separate from credential. Decide whether French and German UI text is in scope.
-4. **Existing code.** This design has not been checked against the current scripts (`NECDatabase`, `DifficultyManager`, scenario ScriptableObjects). The first step is a review of how tightly NEC is coupled.
+4. **Existing code.** Coupling has been reviewed (see above). The biggest risks are hard-coded compliance rules, load constants and scenario content in editor generators.
 5. **Research gaps.** Netherlands, Spain, Italy, Ireland and the German Meister and French habilitation details still need sourcing.
 
 ## Suggested next steps
-1. Review the current `NEC/`, `Data/` and `Core/` scripts for NEC coupling.
+1. Confirm the NEC text licensing position (see the coupling review).
 2. Define the concept list from the topics shared by IEC 60364 and the NEC and tag existing scenarios with it.
 3. Build `CodeProfile` and `CredentialProfile` data types, with NEC and one other profile (BS 7671 is the easiest second code to add).
 4. Convert one scenario end to end as a proof of concept.
