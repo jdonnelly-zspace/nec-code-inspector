@@ -2,15 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using NECInspector.Credentials;
 using NECInspector.Skills;
 
 namespace NECInspector.Core
 {
     /// <summary>
     /// Persists student progress across sessions as JSON in Application.persistentDataPath.
-    /// Progress is recorded per skill (Data.skills), never per credential; a credential is a
-    /// view over the skills (see GetReadiness).
+    /// Progress is recorded per skill (Data.skills). The app does not contain credentials; how the
+    /// skills line up with a credential is worked out outside the app.
     /// </summary>
     public class ProgressManager
     {
@@ -79,37 +78,28 @@ namespace NECInspector.Core
         }
 
         /// <summary>
-        /// The credential the student works toward (empty = the default). Choosing one also selects
-        /// the installation code it is based on. Skill progress itself is not tied to it.
+        /// The installation code the student studies under (empty = the default). Skill progress
+        /// is not tied to it: the same skills count whichever code the student practiced with.
         /// </summary>
-        public CredentialProfile GetActiveCredential()
+        public string GetActiveCodeProfileId()
         {
-            return CredentialLibrary.Get(Data.activeCredentialId) ?? CredentialLibrary.Default;
+            return string.IsNullOrEmpty(Data.activeCodeProfileId) ? Codes.CodeProfileLibrary.DefaultProfileId : Data.activeCodeProfileId;
         }
 
-        public void SetActiveCredential(CredentialProfile credential)
+        public void SetActiveCodeProfile(string profileId)
         {
-            if (credential == null) return;
+            if (!Codes.CodeProfileLibrary.Activate(profileId)) return;
 
-            Data.activeCredentialId = credential.id;
+            Data.activeCodeProfileId = profileId;
             Save();
-            ApplyActiveCredential();
         }
 
-        /// <summary>Activate the code profile of the active credential (called at startup and after a change).</summary>
-        public void ApplyActiveCredential()
+        /// <summary>Activate the student's code profile (called at startup); falls back to the default.</summary>
+        public void ApplyActiveCodeProfile()
         {
-            var credential = GetActiveCredential();
-            if (credential != null)
-                Codes.CodeProfileLibrary.Activate(credential.codeProfileId);
-        }
-
-        /// <summary>
-        /// How close the student's skills are to a credential's requirements.
-        /// </summary>
-        public ReadinessReport GetReadiness(CredentialProfile credential)
-        {
-            return CredentialReadiness.Evaluate(credential, Data.skills);
+            string id = GetActiveCodeProfileId();
+            if (!Codes.CodeProfileLibrary.Activate(id) && id != Codes.CodeProfileLibrary.DefaultProfileId)
+                Codes.CodeProfileLibrary.Activate(Codes.CodeProfileLibrary.DefaultProfileId);
         }
 
         /// <summary>
@@ -161,7 +151,7 @@ namespace NECInspector.Core
         public List<ScenarioProgress> completedScenarios = new List<ScenarioProgress>();
         public List<SandboxProgress> completedSandboxes = new List<SandboxProgress>();
         public SkillProgress skills = new SkillProgress();
-        public string activeCredentialId = "";
+        public string activeCodeProfileId = "";
         public List<EarnedCertificate> earnedCertificates = new List<EarnedCertificate>();
         public float totalTimeSpent = 0f;
     }

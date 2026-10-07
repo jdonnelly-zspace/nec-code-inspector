@@ -70,5 +70,5 @@ These scripts came from another project and should not be refactored:
 - **GameManager** is the only singleton (`GameManager.Instance`)
 - Each scenario is its own Unity scene
 - Content data lives in ScriptableObjects under `Assets/_Project/ScriptableObjects/`
-- Code profiles (NEC, CEC, ...) are folders of JSON in `Assets/_Project/StreamingAssets/Codes/`; credentials are JSON in `StreamingAssets/Credentials/`
+- Code profiles (NEC, CEC, ...) are folders of JSON in `Assets/_Project/StreamingAssets/Codes/`; the app contains no credentials (alignment notes live in `docs/credential-alignment/` and are not shipped)
 - Scenarios use the StateMachine pattern with named StateIDs and Step sequences

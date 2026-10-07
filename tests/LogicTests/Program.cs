@@ -13,7 +13,7 @@ namespace NECInspector.LogicTests
             CitationMatcherTests.Run(ctx);
             CodeProfileTests.Run(ctx);
             SkillProgressTests.Run(ctx);
-            CredentialTests.Run(ctx);
+            SkillCoverageTests.Run(ctx);
             TerminologyTests.Run(ctx);
             ContentPolicyTests.Run(ctx);
             ScenarioDataTests.Run(ctx);

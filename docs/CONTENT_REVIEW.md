@@ -61,15 +61,16 @@ explained in our own words. Please check every entry:
 - **Not mapped on purpose:** violations whose CEC rule I could not confirm from public sources (GFCI in kitchens and garages,
   motor rules, grounding and bonding details, service disconnect, panel directory, and others). Rather than guess a rule
   number, they stay hidden under the CEC until an expert supplies the rule.
-- **Red Seal credential** (`StreamingAssets/Credentials/red-seal-309a.json`): the task list and question counts come from the
-  published exam breakdown. Which skills each task exercises, and the weights that follow, are my estimate; please confirm or
-  correct them. The full occupational standard could not be read, so task contents are inferred from their titles.
+- **Red Seal alignment draft** (`docs/credential-alignment/red-seal-309a-draft.json`, not shipped in the app): the task list and
+  question counts come from the published exam breakdown. Which skills each task exercises, and the weights that follow, are my
+  estimate; please confirm or correct them. The full occupational standard could not be read, so task contents are inferred
+  from their titles.
 
 ## Articles not tied to any current violation
 
-Content policy limits content to skills a credential requires. The articles below are neither cited by a
+Content policy limits content to the app's skill list. The articles below are neither cited by a
 violation nor listed as related to a cited article. Some support the panel sandbox load calculation
-(`220.x`, `230.79`, `210.x`); others belong to skills no credential requires yet (pool, battery, outdoor
+(`220.x`, `230.79`, `210.x`); others belong to skills the app does not have yet (pool, battery, outdoor
 and wet locations, wiring methods). They were paraphrased, not removed. Decide which to keep.
 
 `110.14(A)`, `110.14(B)`, `110.3(B)`, `200.6`, `210.3`, `210.8(A)(3)`, `210.8(A)(7)`, `210.8(A)(9)`,

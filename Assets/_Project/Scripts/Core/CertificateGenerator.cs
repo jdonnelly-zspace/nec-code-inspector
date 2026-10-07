@@ -116,7 +116,7 @@ namespace NECInspector.Core
             if (template.requiresSandbox && sandboxes.Count == 0)
                 return false;
 
-            // Check skills: progress is per skill, whatever credential the student is working toward
+            // Check skills: progress is per skill
             if (template.requiredSkills != null && template.requiredSkills.Length > 0)
             {
                 foreach (var skillId in template.requiredSkills)
