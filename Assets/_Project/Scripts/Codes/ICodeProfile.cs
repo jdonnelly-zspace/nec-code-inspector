@@ -17,6 +17,12 @@ namespace NECInspector.Codes
         /// <summary>Voltages, ampacities, load-calc constants and compliance rule settings.</summary>
         ElectricalTables Tables { get; }
 
+        /// <summary>
+        /// False if the profile has no tables of its own (Tables then holds NEC values), so panel sandbox
+        /// results are not valid evidence for this code.
+        /// </summary>
+        bool HasOwnTables { get; }
+
         /// <summary>Names and labels this code uses (reference format, section names, vocabulary).</summary>
         CodeTerminology Terminology { get; }
 

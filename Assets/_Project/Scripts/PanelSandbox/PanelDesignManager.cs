@@ -131,6 +131,12 @@ namespace NECInspector.PanelSandbox
         public List<SkillEvidence> GetSkillEvidence(SandboxScore score, DifficultyLevel difficulty)
         {
             var evidence = new List<SkillEvidence>();
+
+            // Without tables of its own the active code is being checked against NEC numbers,
+            // which would say nothing about this code
+            if (!CodeProfiles.HasOwnTables)
+                return evidence;
+
             var tier = SkillTiers.FromDifficulty(difficulty);
             var tables = CodeProfiles.Tables;
 

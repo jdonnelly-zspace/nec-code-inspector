@@ -22,6 +22,14 @@
           "profileId": "nec",
           "reference": "250.52(A)(5)",
           "text": "A ground rod (stainless, copper, or zinc-plated steel) needs a minimum length of 8 feet and a 5/8 inch diameter."
+        },
+        {
+          "profileId": "cec",
+          "reference": "10-700",
+          "text": "A manufactured grounding electrode can be made of rods 3 m long, driven in full length, with at least two spaced 3 m apart and bonded together.",
+          "description": "Ground rod shorter than the 3 m rod length",
+          "hintText": "A manufactured ground electrode uses 3 m rods driven in full length. Check the rod length.",
+          "inspectionNote": "This ground rod is only 6 feet (about 1.8 m) long, shorter than the 3 m rods the code expects."
         }
       ],
       "componentObjectName": "GroundRod_Main",

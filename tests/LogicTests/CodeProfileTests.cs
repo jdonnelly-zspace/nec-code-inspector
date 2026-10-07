@@ -68,6 +68,7 @@ namespace NECInspector.LogicTests
             public string Edition => "test";
             public bool IsLoaded => true;
             public int ArticleCount => 0;
+            public bool HasOwnTables => true;
             public ElectricalTables Tables => _tables;
             public CodeTerminology Terminology => CodeTerminology.CreateNecDefaults();
             public CodeArticle GetArticle(string reference) => null;

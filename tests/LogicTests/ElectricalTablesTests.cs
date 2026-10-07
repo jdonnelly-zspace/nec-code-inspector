@@ -19,12 +19,10 @@ namespace NECInspector.LogicTests
         {
             t.Begin("tables json == built-in defaults");
 
-            string path = Path.Combine(TestContext.RepoRoot(), "Assets/_Project/StreamingAssets/NECDatabase/electrical_tables.json");
-            var options = new JsonSerializerOptions { IncludeFields = true };
-            var fromFile = JsonSerializer.Deserialize<ElectricalTables>(File.ReadAllText(path), options);
+            var fromFile = ProfileFiles.Load(TestContext.RepoRoot(), CodeProfileIds.Nec).tables;
             var defaults = ElectricalTables.CreateNecDefaults();
 
-            t.IsTrue(fromFile != null, "electrical_tables.json parses");
+            t.IsTrue(fromFile != null, "the NEC profile has a tables.json that parses");
             if (fromFile == null) return;
 
             t.Equal(defaults.singlePoleVoltage, fromFile.singlePoleVoltage, "singlePoleVoltage");

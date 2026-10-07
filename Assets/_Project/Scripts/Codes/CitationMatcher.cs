@@ -1,9 +1,13 @@
+using System;
+using System.Text.RegularExpressions;
+
 namespace NECInspector.Codes
 {
     /// <summary>
-    /// Default citation matching for codes that use hierarchical numeric references
-    /// such as "250.24(A)(1)": exact match, or the student cites a parent of the expected rule.
-    /// Profiles with different numbering can implement their own matching.
+    /// Default citation matching for codes that use hierarchical references such as
+    /// "250.24(A)(1)" or "26-712(d)(iii)": the student cites the exact reference, or a parent of it
+    /// ("250.24" for "250.24(A)(1)"). A parent must end where a new level starts, so "250.2" is not
+    /// a parent of "250.24". Labels ("Art.", "Rule"), spaces and letter case are ignored.
     /// </summary>
     public static class CitationMatcher
     {
@@ -12,21 +16,40 @@ namespace NECInspector.Codes
             if (string.IsNullOrEmpty(cited) || string.IsNullOrEmpty(expected))
                 return false;
 
-            string normalizedCited = Normalize(cited);
-            string normalizedExpected = Normalize(expected);
+            string c = Normalize(cited);
+            string e = Normalize(expected);
+            if (c.Length == 0 || e.Length == 0)
+                return false;
 
-            // Exact match
-            if (normalizedCited == normalizedExpected) return true;
+            return c == e || IsParentOfNormalized(c, e);
+        }
 
-            // Partial match (student cites parent article, expected is subsection)
-            if (normalizedExpected.StartsWith(normalizedCited)) return true;
+        /// <summary>True if the first reference is a parent level of the second, at a level boundary.</summary>
+        public static bool IsParentOf(string parent, string child)
+        {
+            if (string.IsNullOrEmpty(parent) || string.IsNullOrEmpty(child))
+                return false;
 
-            return false;
+            string p = Normalize(parent);
+            string c = Normalize(child);
+            return p.Length > 0 && IsParentOfNormalized(p, c);
+        }
+
+        private static bool IsParentOfNormalized(string parent, string child)
+        {
+            if (child.Length <= parent.Length || !child.StartsWith(parent, StringComparison.Ordinal))
+                return false;
+
+            // The next character must open a new level: "(" subsection, "." or "-" numbering
+            char next = child[parent.Length];
+            return next == '(' || next == '.' || next == '-';
         }
 
         private static string Normalize(string reference)
         {
-            return reference.Replace(" ", "").Replace("Art.", "").Replace("art.", "").Trim();
+            string text = reference.Replace(" ", "").Trim().ToLowerInvariant();
+            // Drop a leading label such as "art." or "rule"
+            return Regex.Replace(text, @"^[a-z.]+(?=\d)", "");
         }
     }
 }

@@ -86,31 +86,23 @@ namespace NECInspector.LogicTests
                     t.IsTrue(!LooksStatutory(v.inspectionNote), $"{v.violationId}: inspection note uses statutory wording");
 
                     foreach (var c in v.citations ?? new ViolationCitation[0])
+                    {
                         t.IsTrue(!LooksStatutory(c.text), $"{v.violationId}: citation text for '{c.reference}' uses statutory wording");
+                        t.IsTrue(!LooksStatutory(c.description), $"{v.violationId}: {c.profileId} description override uses statutory wording");
+                        t.IsTrue(!LooksStatutory(c.hintText), $"{v.violationId}: {c.profileId} hint override uses statutory wording");
+                        t.IsTrue(!LooksStatutory(c.inspectionNote), $"{v.violationId}: {c.profileId} note override uses statutory wording");
+                    }
                 }
             }
 
-            var articles = JsonSerializer.Deserialize<ArticleFile>(
-                File.ReadAllText(Path.Combine(root, "Assets/_Project/StreamingAssets/NECDatabase/nec_articles.json")));
-            foreach (var a in articles.articles)
-                t.IsTrue(!LooksStatutory(a.text), $"article '{a.article}{a.subsection}' text uses statutory wording");
+            foreach (var profile in ProfileFiles.LoadAll(root))
+                foreach (var a in profile.articles ?? new CodeArticleData[0])
+                    t.IsTrue(!LooksStatutory(a.text), $"{profile.Id} '{a.reference}' text uses statutory wording");
         }
 
         private static bool LooksStatutory(string text)
         {
             return !string.IsNullOrEmpty(text) && Regex.IsMatch(text, @"\bshall\b", RegexOptions.IgnoreCase);
-        }
-
-        private class ArticleFile
-        {
-            public ArticleText[] articles { get; set; }
-        }
-
-        private class ArticleText
-        {
-            public string article { get; set; }
-            public string subsection { get; set; }
-            public string text { get; set; }
         }
     }
 }

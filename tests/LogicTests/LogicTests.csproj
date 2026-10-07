@@ -22,6 +22,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Codes/*.cs is engine-independent; files that need Unity live in Codes/Unity/ and are not compiled here -->
     <Compile Include="$(Scripts)Codes/*.cs" Link="Unity/Codes/%(Filename)%(Extension)" />
     <Compile Include="$(Scripts)Data/ConceptIds.cs" Link="Unity/Data/ConceptIds.cs" />
     <Compile Include="$(Scripts)Data/ViolationSeverity.cs" Link="Unity/Data/ViolationSeverity.cs" />

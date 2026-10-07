@@ -194,11 +194,17 @@ namespace NECInspector.UI
 
         private static string FormatReadiness(ProgressData data)
         {
-            var credential = CredentialLibrary.Default;
+            var credential = CredentialLibrary.Get(data.activeCredentialId) ?? CredentialLibrary.Default;
             if (credential == null) return "";
 
             var report = CredentialReadiness.Evaluate(credential, data.skills);
-            return $"\n{credential.displayName}: {report.percent:P0} ready ({report.attainedCount} of {report.TotalCount} skills)";
+            string text = $"\n{credential.displayName}: {report.percent:P0} ready ({report.attainedCount} of {report.TotalCount} skills)";
+
+            // Say so when the app only teaches part of the credential
+            if (report.deferredCount > 0)
+                text += $"\nThe app covers {report.coverage:P0} of this credential so far.";
+
+            return text;
         }
 
         private void PopulateCertificates(List<EarnedCertificate> certificates)

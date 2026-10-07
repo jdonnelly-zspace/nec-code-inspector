@@ -50,5 +50,10 @@ namespace NECInspector.Data
         {
             return GetCitation(profileId) != null;
         }
+
+        // Text as it should read for a code: the citation can override the shared wording
+        public string GetDescription(string profileId) => ViolationCitations.Choose(GetCitation(profileId)?.description, description);
+        public string GetHint(string profileId) => ViolationCitations.Choose(GetCitation(profileId)?.hintText, hintText);
+        public string GetInspectionNote(string profileId) => ViolationCitations.Choose(GetCitation(profileId)?.inspectionNote, inspectionNote);
     }
 }
