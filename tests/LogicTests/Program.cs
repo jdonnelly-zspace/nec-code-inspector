@@ -12,6 +12,8 @@ namespace NECInspector.LogicTests
             LoadCalculatorTests.Run(ctx);
             CitationMatcherTests.Run(ctx);
             CodeProfileTests.Run(ctx);
+            SkillProgressTests.Run(ctx);
+            CredentialTests.Run(ctx);
             ScenarioDataTests.Run(ctx);
             ArticleDatabaseTests.Run(ctx);
 

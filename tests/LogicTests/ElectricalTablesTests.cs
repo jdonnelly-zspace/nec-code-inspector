@@ -62,6 +62,7 @@ namespace NECInspector.LogicTests
                 t.Equal(defaults.complianceRules[i].ruleId, fromFile.complianceRules[i].ruleId, $"rule {i} id");
                 t.Equal(defaults.complianceRules[i].enabled, fromFile.complianceRules[i].enabled, $"rule {i} enabled");
                 t.Equal(defaults.complianceRules[i].reference, fromFile.complianceRules[i].reference, $"rule {i} reference");
+                t.Equal(defaults.complianceRules[i].conceptId, fromFile.complianceRules[i].conceptId, $"rule {i} conceptId");
             }
         }
 
@@ -97,6 +98,13 @@ namespace NECInspector.LogicTests
             t.IsTrue(partial.generalLoadDemandTiers.Length > 0, "demand tiers filled");
             t.IsTrue(partial.standardServiceSizes.Length > 0, "standard sizes filled");
             t.IsTrue(partial.complianceRules.Length > 0, "rule configs filled");
+            t.IsTrue(partial.complianceRules.All(r => !string.IsNullOrEmpty(r.conceptId)), "every rule maps to a concept");
+            t.IsTrue(partial.complianceRules.All(r => NECInspector.Data.ConceptIds.IsKnown(r.conceptId)), "rule concepts are known concepts");
+
+            // A rules file written before rules carried a concept still gets one
+            var legacy = new ElectricalTables { complianceRules = new[] { new ComplianceRuleConfig { ruleId = "RULE-03", reference = "x" } } };
+            legacy.EnsureComplete();
+            t.Equal(NECInspector.Data.ConceptIds.ShockProtection, legacy.GetRuleConfig("RULE-03").conceptId, "missing concept is filled from the defaults");
             t.Equal(230f, partial.serviceVoltage, "explicit values are kept");
         }
     }

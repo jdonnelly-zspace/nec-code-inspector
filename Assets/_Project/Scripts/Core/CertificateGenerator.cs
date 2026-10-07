@@ -116,12 +116,12 @@ namespace NECInspector.Core
             if (template.requiresSandbox && sandboxes.Count == 0)
                 return false;
 
-            // Check chapter mastery
-            if (template.requiredChapters != null && template.requiredChapters.Length > 0)
+            // Check skills: progress is per skill, whatever credential the student is working toward
+            if (template.requiredSkills != null && template.requiredSkills.Length > 0)
             {
-                foreach (var chapter in template.requiredChapters)
+                foreach (var skillId in template.requiredSkills)
                 {
-                    if (!_progress.Data.masteredChapters.Contains(chapter))
+                    if (!_progress.Data.skills.HasAttained(skillId, template.requiredTier))
                         return false;
                 }
             }

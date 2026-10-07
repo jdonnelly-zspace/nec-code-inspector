@@ -2,11 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using NECInspector.Credentials;
+using NECInspector.Skills;
 
 namespace NECInspector.Core
 {
     /// <summary>
     /// Persists student progress across sessions as JSON in Application.persistentDataPath.
+    /// Progress is recorded per skill (Data.skills), never per credential; a credential is a
+    /// view over the skills (see GetReadiness).
     /// </summary>
     public class ProgressManager
     {
@@ -53,7 +57,8 @@ namespace NECInspector.Core
             }
         }
 
-        public void RecordInspectionScore(string scenarioId, DifficultyLevel difficulty, InspectionScore score)
+        public void RecordInspectionScore(string scenarioId, DifficultyLevel difficulty, InspectionScore score,
+            IEnumerable<SkillEvidence> evidence = null)
         {
             var entry = new ScenarioProgress
             {
@@ -69,39 +74,16 @@ namespace NECInspector.Core
             };
 
             Data.completedScenarios.Add(entry);
+            Data.skills.Record(evidence, DateTime.UtcNow.ToString("o"));
             Save();
         }
 
         /// <summary>
-        /// Mark a chapter as mastered when the student achieves minimum accuracy across all its scenarios.
+        /// How close the student's skills are to a credential's requirements.
         /// </summary>
-        public void RecordChapterMastery(string chapter)
+        public ReadinessReport GetReadiness(CredentialProfile credential)
         {
-            if (!Data.masteredChapters.Contains(chapter))
-            {
-                Data.masteredChapters.Add(chapter);
-                Save();
-                Debug.Log($"[ProgressManager] Chapter {chapter} mastered!");
-            }
-        }
-
-        /// <summary>
-        /// Check if a chapter is mastered based on completed scenarios.
-        /// A chapter is mastered when all its scenarios have ≥80% accuracy.
-        /// </summary>
-        public bool IsChapterMastered(string chapter, string[] scenarioIdsForChapter, float threshold = 0.8f)
-        {
-            foreach (var id in scenarioIdsForChapter)
-            {
-                var best = GetBestScenarioAttempt(id);
-                if (best == null) return false;
-
-                float accuracy = best.totalViolations > 0
-                    ? (float)best.violationsFound / best.totalViolations
-                    : 0f;
-                if (accuracy < threshold) return false;
-            }
-            return true;
+            return CredentialReadiness.Evaluate(credential, Data.skills);
         }
 
         /// <summary>
@@ -127,7 +109,8 @@ namespace NECInspector.Core
             return best;
         }
 
-        public void RecordSandboxScore(string panelType, SandboxScore score)
+        public void RecordSandboxScore(string panelType, SandboxScore score,
+            IEnumerable<SkillEvidence> evidence = null)
         {
             var entry = new SandboxProgress
             {
@@ -140,6 +123,7 @@ namespace NECInspector.Core
             };
 
             Data.completedSandboxes.Add(entry);
+            Data.skills.Record(evidence, DateTime.UtcNow.ToString("o"));
             Save();
         }
     }
@@ -150,7 +134,7 @@ namespace NECInspector.Core
         public string studentName = "";
         public List<ScenarioProgress> completedScenarios = new List<ScenarioProgress>();
         public List<SandboxProgress> completedSandboxes = new List<SandboxProgress>();
-        public List<string> masteredChapters = new List<string>();
+        public SkillProgress skills = new SkillProgress();
         public List<EarnedCertificate> earnedCertificates = new List<EarnedCertificate>();
         public float totalTimeSpent = 0f;
     }

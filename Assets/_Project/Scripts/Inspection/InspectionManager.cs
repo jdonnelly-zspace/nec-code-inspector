@@ -5,6 +5,7 @@ using UnityEngine;
 using NECInspector.Codes;
 using NECInspector.Core;
 using NECInspector.Data;
+using NECInspector.Skills;
 
 namespace NECInspector.Inspection
 {
@@ -179,6 +180,37 @@ namespace NECInspector.Inspection
                 totalCitations = correctFlags, // Only count correct flags for citation scoring
                 timeElapsed = ElapsedTime
             };
+        }
+
+        /// <summary>
+        /// One piece of skill evidence per active violation: the violation's concept at the tier of its
+        /// difficulty, with full credit for finding it and citing it correctly, partial credit for
+        /// finding it with a wrong citation, and none if it was missed.
+        /// </summary>
+        public List<SkillEvidence> GetSkillEvidence()
+        {
+            var evidence = new List<SkillEvidence>();
+            string profileId = CodeProfiles.ActiveId;
+
+            foreach (var violation in _activeViolations)
+            {
+                if (string.IsNullOrEmpty(violation.conceptId)) continue;
+
+                var flagged = _flaggedViolations.FirstOrDefault(f => f.componentName == violation.componentObjectName);
+                bool found = flagged != null;
+
+                var expected = violation.GetCitation(profileId);
+                bool citationCorrect = found && expected != null
+                    && IsNECCitationCorrect(flagged.citedNECArticle, expected.reference);
+
+                evidence.Add(new SkillEvidence(
+                    violation.conceptId,
+                    SkillTiers.FromDifficulty(violation.minimumDifficulty),
+                    SkillOutcomes.ForInspection(found, citationCorrect),
+                    SkillEvidenceSources.Inspection));
+            }
+
+            return evidence;
         }
 
         /// <summary>

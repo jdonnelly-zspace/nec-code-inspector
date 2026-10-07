@@ -8,39 +8,159 @@
   "dryerVA": 5000,
   "rangeDemandVA": 8000,
   "generalLoadDemandTiers": [
-    { "upToVA": 3000, "factor": 1 },
-    { "upToVA": 120000, "factor": 0.35 },
-    { "upToVA": -1, "factor": 0.25 }
+    {
+      "upToVA": 3000,
+      "factor": 1
+    },
+    {
+      "upToVA": 120000,
+      "factor": 0.35
+    },
+    {
+      "upToVA": -1,
+      "factor": 0.25
+    }
   ],
   "fixedApplianceDemandThreshold": 4,
   "fixedApplianceDemandFactor": 0.75,
-  "standardServiceSizes": [60, 100, 125, 150, 200, 225, 300, 400],
+  "standardServiceSizes": [
+    60,
+    100,
+    125,
+    150,
+    200,
+    225,
+    300,
+    400
+  ],
   "loadBalanceMaxImbalance": 0.2,
   "conductorSizes": [
-    { "name": "14 AWG", "maxAmps": 15, "visualWidth": 0.003 },
-    { "name": "12 AWG", "maxAmps": 20, "visualWidth": 0.005 },
-    { "name": "10 AWG", "maxAmps": 30, "visualWidth": 0.007 },
-    { "name": "8 AWG", "maxAmps": 40, "visualWidth": 0.009 },
-    { "name": "6 AWG", "maxAmps": 55, "visualWidth": 0.012 },
-    { "name": "4 AWG", "maxAmps": 70, "visualWidth": 0 },
-    { "name": "3 AWG", "maxAmps": 85, "visualWidth": 0 },
-    { "name": "2 AWG", "maxAmps": 95, "visualWidth": 0 },
-    { "name": "1 AWG", "maxAmps": 110, "visualWidth": 0 },
-    { "name": "1/0 AWG", "maxAmps": 125, "visualWidth": 0 },
-    { "name": "2/0 AWG", "maxAmps": 145, "visualWidth": 0 },
-    { "name": "3/0 AWG", "maxAmps": 165, "visualWidth": 0 },
-    { "name": "4/0 AWG", "maxAmps": 195, "visualWidth": 0 }
+    {
+      "name": "14 AWG",
+      "maxAmps": 15,
+      "visualWidth": 0.003
+    },
+    {
+      "name": "12 AWG",
+      "maxAmps": 20,
+      "visualWidth": 0.005
+    },
+    {
+      "name": "10 AWG",
+      "maxAmps": 30,
+      "visualWidth": 0.007
+    },
+    {
+      "name": "8 AWG",
+      "maxAmps": 40,
+      "visualWidth": 0.009
+    },
+    {
+      "name": "6 AWG",
+      "maxAmps": 55,
+      "visualWidth": 0.012
+    },
+    {
+      "name": "4 AWG",
+      "maxAmps": 70,
+      "visualWidth": 0
+    },
+    {
+      "name": "3 AWG",
+      "maxAmps": 85,
+      "visualWidth": 0
+    },
+    {
+      "name": "2 AWG",
+      "maxAmps": 95,
+      "visualWidth": 0
+    },
+    {
+      "name": "1 AWG",
+      "maxAmps": 110,
+      "visualWidth": 0
+    },
+    {
+      "name": "1/0 AWG",
+      "maxAmps": 125,
+      "visualWidth": 0
+    },
+    {
+      "name": "2/0 AWG",
+      "maxAmps": 145,
+      "visualWidth": 0
+    },
+    {
+      "name": "3/0 AWG",
+      "maxAmps": 165,
+      "visualWidth": 0
+    },
+    {
+      "name": "4/0 AWG",
+      "maxAmps": 195,
+      "visualWidth": 0
+    }
   ],
   "complianceRules": [
-    { "ruleId": "RULE-01", "enabled": true, "reference": "240.4" },
-    { "ruleId": "RULE-02", "enabled": true, "reference": "210.11" },
-    { "ruleId": "RULE-03", "enabled": true, "reference": "210.8" },
-    { "ruleId": "RULE-04", "enabled": true, "reference": "210.12" },
-    { "ruleId": "RULE-05", "enabled": true, "reference": "General Practice" },
-    { "ruleId": "RULE-06", "enabled": true, "reference": "230.79" },
-    { "ruleId": "RULE-07", "enabled": true, "reference": "110.14" },
-    { "ruleId": "RULE-08", "enabled": true, "reference": "310.14" },
-    { "ruleId": "RULE-09", "enabled": true, "reference": "408.36" },
-    { "ruleId": "RULE-10", "enabled": true, "reference": "General Practice" }
+    {
+      "ruleId": "RULE-01",
+      "enabled": true,
+      "reference": "240.4",
+      "conceptId": "overcurrent-protection"
+    },
+    {
+      "ruleId": "RULE-02",
+      "enabled": true,
+      "reference": "210.11",
+      "conceptId": "branch-circuit-requirements"
+    },
+    {
+      "ruleId": "RULE-03",
+      "enabled": true,
+      "reference": "210.8",
+      "conceptId": "shock-protection"
+    },
+    {
+      "ruleId": "RULE-04",
+      "enabled": true,
+      "reference": "210.12",
+      "conceptId": "arc-fault-protection"
+    },
+    {
+      "ruleId": "RULE-05",
+      "enabled": true,
+      "reference": "General Practice",
+      "conceptId": "load-calculation"
+    },
+    {
+      "ruleId": "RULE-06",
+      "enabled": true,
+      "reference": "230.79",
+      "conceptId": "load-calculation"
+    },
+    {
+      "ruleId": "RULE-07",
+      "enabled": true,
+      "reference": "110.14",
+      "conceptId": "equipment-installation"
+    },
+    {
+      "ruleId": "RULE-08",
+      "enabled": true,
+      "reference": "310.14",
+      "conceptId": "conductor-sizing"
+    },
+    {
+      "ruleId": "RULE-09",
+      "enabled": true,
+      "reference": "408.36",
+      "conceptId": "equipment-installation"
+    },
+    {
+      "ruleId": "RULE-10",
+      "enabled": true,
+      "reference": "General Practice",
+      "conceptId": "equipment-installation"
+    }
   ]
 }

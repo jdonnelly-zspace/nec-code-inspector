@@ -1,10 +1,11 @@
 using UnityEngine;
+using NECInspector.Skills;
 
 namespace NECInspector.Data
 {
     public enum CertificateType
     {
-        ChapterCompletion,
+        SkillAttainment,
         ScenarioMastery,
         SandboxProficiency,
         OverallProficiency
@@ -17,14 +18,16 @@ namespace NECInspector.Data
         public string certificateId;
         public string certificateTitle;
         [TextArea(2, 4)]
-        public string descriptionTemplate;   // Use {StudentName}, {Date}, {Score}, {Chapter}
+        public string descriptionTemplate;   // Use {StudentName}, {Date}, {Score}, {Difficulty}
         public CertificateType type;
 
         [Header("Requirements")]
         [Tooltip("Minimum combined accuracy (0-1) to earn this certificate")]
         public float minimumAccuracy = 0.8f;
-        [Tooltip("NEC chapters that must be mastered (empty = any)")]
-        public string[] requiredChapters;
+        [Tooltip("Skills (concept IDs) that must be attained (empty = any)")]
+        public string[] requiredSkills;
+        [Tooltip("Tier at which each required skill must be attained (a higher tier also counts)")]
+        public SkillTier requiredTier = SkillTier.Practitioner;
         [Tooltip("Scenario IDs that must be completed (empty = any)")]
         public string[] requiredScenarios;
         [Tooltip("Must complete sandbox mode")]

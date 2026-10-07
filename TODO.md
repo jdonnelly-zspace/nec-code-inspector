@@ -29,8 +29,14 @@ Status key: `[x]` done and merged, `[~]` built and in review (PR open), `[ ]` no
 **B2. Finish the data layer**
 - [~] Per-profile citations on violations: `citations` list (profileId, reference, text) replaces `necArticle` / `necArticleText`; scoring compares the student's citation to the active profile's reference (this branch)
 - [ ] Concept-aware scoring: let a citation in the same concept count (for example 210.8(A)(1) vs 210.8(A)(5)). Needs article-to-concept tags in each profile's article data and a policy decision on how much credit it earns
-- [ ] Credential profile: tier names and mapping per credential, topic weights, exam style, code profile ID
-- [ ] Record progress and certificates per credential
+- [~] Skill-based progress (decision: progress is per skill, never per credential). Evidence from inspections and the sandbox updates a running mastery per skill and tier; a skill is attained at 3+ attempts and 80% mastery; a higher tier covers a lower one (this branch)
+- [~] Credential profile as a view over skills: `StreamingAssets/Credentials/*.json` lists the skills and tiers a credential requires, its code profile, and its tier names; readiness is computed from skill progress. Ships with one app-defined credential, `core-skills` (this branch)
+- [~] Certificates are earned from skills (`requiredSkills` + `requiredTier`) instead of NEC chapters; the dead chapter-mastery code is removed; the dashboard shows skills and credential readiness (this branch)
+- [ ] Real credential files, drafted from the research and reviewed by a credential expert: NCCER Electrical, Red Seal 309A (tie to Phase D)
+- [ ] Credential picker in the UI (the dashboard currently shows readiness for the default credential)
+- [ ] Finer skill taxonomy: the 11 concepts are the skills for now; credentials such as motors or hazardous locations may need sub-skills
+- [ ] Credential-specific readiness reports and certificates (a printable view of a credential's requirements against skills)
+- [ ] Update `docs/CREDENTIAL_FRAMEWORK.md` (PR #1) with the skill-based progress decision
 - [~] Violation and scenario applicability, derived from citations: a violation applies to a profile only if it has a citation for it; a scenario applies if any violation does. `InspectionManager` skips non-applicable violations and the main menu hides non-applicable scenarios (this branch)
 - [ ] Rename leftover NEC-named API from the citation change (`FlagViolation(... necArticle)`, `citedNECArticle`, `FlaggedNECArticle`) as part of Phase C
 - [ ] Move remaining editor-script content to JSON: panel sandbox circuits, quick-reference cards, certificate templates, difficulty settings

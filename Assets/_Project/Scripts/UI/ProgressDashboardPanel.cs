@@ -3,12 +3,15 @@ using System.Linq;
 using UnityEngine;
 using TMPro;
 using NECInspector.Core;
+using NECInspector.Credentials;
+using NECInspector.Data;
+using NECInspector.Skills;
 
 namespace NECInspector.UI
 {
     /// <summary>
     /// World-space dashboard showing student progress across all scenarios and sandbox.
-    /// Displays score history, chapter mastery, and earned certificates.
+    /// Displays score history, skill mastery, credential readiness and earned certificates.
     /// </summary>
     public class ProgressDashboardPanel : MonoBehaviour
     {
@@ -66,8 +69,9 @@ namespace NECInspector.UI
             SetText(_overallStatsText,
                 $"Total Attempts: {totalAttempts}\n" +
                 $"Overall Accuracy: {avgAccuracy:P0}\n" +
-                $"Chapters Mastered: {data.masteredChapters.Count}\n" +
-                $"Certificates Earned: {data.earnedCertificates.Count}");
+                $"Skills Attained: {data.skills.AttainedSkillCount()} of {ConceptIds.All.Length}\n" +
+                $"Certificates Earned: {data.earnedCertificates.Count}" +
+                FormatReadiness(data));
 
             // Scenario scores (best per scenario)
             PopulateScenarioScores(data.completedScenarios);
@@ -75,8 +79,8 @@ namespace NECInspector.UI
             // Sandbox scores
             PopulateSandboxScores(data.completedSandboxes);
 
-            // Chapter mastery
-            PopulateMastery(data.masteredChapters);
+            // Skill mastery
+            PopulateSkills(data.skills);
 
             // Certificates
             PopulateCertificates(data.earnedCertificates);
@@ -144,25 +148,57 @@ namespace NECInspector.UI
             }
         }
 
-        private void PopulateMastery(List<string> chapters)
+        // Skills are tracked independently of any credential; a credential only supplies tier names
+        private void PopulateSkills(SkillProgress skills)
         {
             ClearContent(_masteryContent);
             if (_masteryEntryPrefab == null || _masteryContent == null) return;
 
-            if (chapters.Count == 0)
+            var credential = CredentialLibrary.Default;
+
+            if (skills.stats.Count == 0)
             {
                 var item = Instantiate(_masteryEntryPrefab, _masteryContent);
                 var text = item.GetComponentInChildren<TMP_Text>();
-                if (text != null) text.text = "No chapters mastered yet. Complete scenarios with 80%+ accuracy.";
+                if (text != null) text.text = "No skills practiced yet. Complete an inspection or the panel sandbox.";
                 return;
             }
 
-            foreach (var chapter in chapters)
+            foreach (string skillId in ConceptIds.All)
             {
+                // Show the highest tier the student has practiced for this skill
+                SkillStat top = null;
+                foreach (var stat in skills.stats)
+                {
+                    if (stat.skillId == skillId && (top == null || stat.tier > top.tier))
+                        top = stat;
+                }
+                if (top == null) continue;
+
+                var attained = skills.HighestAttainedTier(skillId);
+                string status = attained.HasValue
+                    ? $"{TierLabel(credential, attained.Value)} attained"
+                    : $"Working toward {TierLabel(credential, top.Tier)}";
+
                 var item = Instantiate(_masteryEntryPrefab, _masteryContent);
                 var text = item.GetComponentInChildren<TMP_Text>();
-                if (text != null) text.text = $"Chapter {chapter} - Mastered";
+                if (text != null)
+                    text.text = $"{SkillNames.Display(skillId)} - {status}  ({top.mastery:P0} mastery, {top.attempts} attempts)";
             }
+        }
+
+        private static string TierLabel(CredentialProfile credential, SkillTier tier)
+        {
+            return credential != null ? credential.GetTierLabel(tier) : SkillTiers.Names[(int)tier];
+        }
+
+        private static string FormatReadiness(ProgressData data)
+        {
+            var credential = CredentialLibrary.Default;
+            if (credential == null) return "";
+
+            var report = CredentialReadiness.Evaluate(credential, data.skills);
+            return $"\n{credential.displayName}: {report.percent:P0} ready ({report.attainedCount} of {report.TotalCount} skills)";
         }
 
         private void PopulateCertificates(List<EarnedCertificate> certificates)

@@ -70,7 +70,8 @@ namespace NECInspector.Inspection
                 GameManager.Instance.Progress.RecordInspectionScore(
                     _inspectionManager.ScenarioDefinition.id,
                     GameManager.Instance.Difficulty.CurrentLevel,
-                    score
+                    score,
+                    _inspectionManager.GetSkillEvidence()
                 );
             }
         }

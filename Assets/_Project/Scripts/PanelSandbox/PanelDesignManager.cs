@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using NECInspector.Codes;
 using NECInspector.Core;
+using NECInspector.Data;
+using NECInspector.Skills;
 
 namespace NECInspector.PanelSandbox
 {
@@ -118,6 +121,34 @@ namespace NECInspector.PanelSandbox
                 loadCalcAccuracy = loadAccuracy,
                 allRequiredCircuitsPresent = allRequired
             };
+        }
+
+        /// <summary>
+        /// Skill evidence from the last compliance check: each rule counts toward the concept the active
+        /// profile assigns to it, plus the load calculation accuracy toward load-calculation.
+        /// The tier follows the difficulty the student played at.
+        /// </summary>
+        public List<SkillEvidence> GetSkillEvidence(SandboxScore score, DifficultyLevel difficulty)
+        {
+            var evidence = new List<SkillEvidence>();
+            var tier = SkillTiers.FromDifficulty(difficulty);
+            var tables = CodeProfiles.Tables;
+
+            if (_lastComplianceResults != null)
+            {
+                foreach (var result in _lastComplianceResults)
+                {
+                    var rule = tables.GetRuleConfig(result.ruleId);
+                    if (rule == null || string.IsNullOrEmpty(rule.conceptId)) continue;
+
+                    evidence.Add(new SkillEvidence(rule.conceptId, tier, result.passed ? 1f : 0f, SkillEvidenceSources.Sandbox));
+                }
+            }
+
+            if (score != null)
+                evidence.Add(new SkillEvidence(ConceptIds.LoadCalculation, tier, score.loadCalcAccuracy, SkillEvidenceSources.Sandbox));
+
+            return evidence;
         }
 
         /// <summary>

@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using NECInspector.Data;
 
 namespace NECInspector.Codes
 {
@@ -24,6 +25,7 @@ namespace NECInspector.Codes
         public string ruleId;       // e.g., "RULE-01"
         public bool enabled = true;
         public string reference;    // citation shown for this rule in the active code
+        public string conceptId;    // skill (concept) this rule gives evidence of
     }
 
     /// <summary>
@@ -92,6 +94,14 @@ namespace NECInspector.Codes
                 conductorSizes = defaults.conductorSizes;
             if (complianceRules == null || complianceRules.Length == 0)
                 complianceRules = defaults.complianceRules;
+
+            // Files written before rules carried a concept still work: take it from the defaults
+            foreach (var rule in complianceRules)
+            {
+                if (!string.IsNullOrEmpty(rule.conceptId)) continue;
+                var fallback = defaults.GetRuleConfig(rule.ruleId);
+                if (fallback != null) rule.conceptId = fallback.conceptId;
+            }
         }
 
         /// <summary>
@@ -127,16 +137,16 @@ namespace NECInspector.Codes
                 },
                 complianceRules = new[]
                 {
-                    Rule("RULE-01", "240.4"),
-                    Rule("RULE-02", "210.11"),
-                    Rule("RULE-03", "210.8"),
-                    Rule("RULE-04", "210.12"),
-                    Rule("RULE-05", "General Practice"),
-                    Rule("RULE-06", "230.79"),
-                    Rule("RULE-07", "110.14"),
-                    Rule("RULE-08", "310.14"),
-                    Rule("RULE-09", "408.36"),
-                    Rule("RULE-10", "General Practice")
+                    Rule("RULE-01", "240.4", ConceptIds.OvercurrentProtection),
+                    Rule("RULE-02", "210.11", ConceptIds.BranchCircuitRequirements),
+                    Rule("RULE-03", "210.8", ConceptIds.ShockProtection),
+                    Rule("RULE-04", "210.12", ConceptIds.ArcFaultProtection),
+                    Rule("RULE-05", "General Practice", ConceptIds.LoadCalculation),
+                    Rule("RULE-06", "230.79", ConceptIds.LoadCalculation),
+                    Rule("RULE-07", "110.14", ConceptIds.EquipmentInstallation),
+                    Rule("RULE-08", "310.14", ConceptIds.ConductorSizing),
+                    Rule("RULE-09", "408.36", ConceptIds.EquipmentInstallation),
+                    Rule("RULE-10", "General Practice", ConceptIds.EquipmentInstallation)
                 }
             };
         }
@@ -146,9 +156,9 @@ namespace NECInspector.Codes
             return new ConductorSize { name = name, maxAmps = maxAmps, visualWidth = visualWidth };
         }
 
-        private static ComplianceRuleConfig Rule(string ruleId, string reference)
+        private static ComplianceRuleConfig Rule(string ruleId, string reference, string conceptId)
         {
-            return new ComplianceRuleConfig { ruleId = ruleId, enabled = true, reference = reference };
+            return new ComplianceRuleConfig { ruleId = ruleId, enabled = true, reference = reference, conceptId = conceptId };
         }
     }
 }
