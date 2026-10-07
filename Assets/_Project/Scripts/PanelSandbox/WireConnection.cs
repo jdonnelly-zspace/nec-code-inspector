@@ -1,4 +1,5 @@
 using UnityEngine;
+using NECInspector.Codes;
 
 namespace NECInspector.PanelSandbox
 {
@@ -46,16 +47,8 @@ namespace NECInspector.PanelSandbox
         public void SetGauge(string gauge)
         {
             _wireGauge = gauge;
-            // Thicker wires for larger gauges
-            _wireWidth = gauge switch
-            {
-                "14 AWG" => 0.003f,
-                "12 AWG" => 0.005f,
-                "10 AWG" => 0.007f,
-                "8 AWG" => 0.009f,
-                "6 AWG" => 0.012f,
-                _ => 0.005f
-            };
+            // Thicker wires for larger conductors (widths come from the profile's conductor table)
+            _wireWidth = CodeProfiles.Tables.GetWireWidth(gauge, 0.005f);
             _lineRenderer.startWidth = _wireWidth;
             _lineRenderer.endWidth = _wireWidth;
         }
@@ -85,27 +78,12 @@ namespace NECInspector.PanelSandbox
         }
 
         /// <summary>
-        /// Returns the maximum ampacity for a given copper wire gauge per NEC Table 310.16.
+        /// Returns the maximum ampacity for a conductor size from the active profile's table
+        /// (copper, NEC Table 310.16 for the NEC profile). Unknown sizes return 0.
         /// </summary>
         public static int GetMaxAmpsForGauge(string gauge)
         {
-            return gauge switch
-            {
-                "14 AWG" => 15,
-                "12 AWG" => 20,
-                "10 AWG" => 30,
-                "8 AWG" => 40,
-                "6 AWG" => 55,
-                "4 AWG" => 70,
-                "3 AWG" => 85,
-                "2 AWG" => 95,
-                "1 AWG" => 110,
-                "1/0 AWG" => 125,
-                "2/0 AWG" => 145,
-                "3/0 AWG" => 165,
-                "4/0 AWG" => 195,
-                _ => 0
-            };
+            return CodeProfiles.Tables.GetMaxAmps(gauge);
         }
     }
 }

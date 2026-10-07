@@ -22,6 +22,25 @@ namespace NECInspector.Codes
             }
         }
 
+        private static ElectricalTables _fallbackTables;
+
+        /// <summary>
+        /// Tables for the active profile. Falls back to NEC defaults when no profile is loaded
+        /// (for example when a scene is played directly without the boot scene).
+        /// </summary>
+        public static ElectricalTables Tables
+        {
+            get
+            {
+                var profile = Active;
+                if (profile != null && profile.Tables != null)
+                    return profile.Tables;
+
+                _fallbackTables ??= ElectricalTables.CreateNecDefaults();
+                return _fallbackTables;
+            }
+        }
+
         public static void SetActive(ICodeProfile profile)
         {
             _active = profile;

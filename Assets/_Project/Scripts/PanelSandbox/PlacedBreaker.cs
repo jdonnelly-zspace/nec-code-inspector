@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using NECInspector.Codes;
 
 namespace NECInspector.PanelSandbox
 {
@@ -57,7 +58,8 @@ namespace NECInspector.PanelSandbox
         public float GetLoadVA()
         {
             if (_breakerData == null) return 0f;
-            float voltage = _breakerData.poleCount == 2 ? 240f : 120f;
+            var tables = CodeProfiles.Tables;
+            float voltage = _breakerData.poleCount == 2 ? tables.doublePoleVoltage : tables.singlePoleVoltage;
             return _breakerData.ampRating * voltage;
         }
     }

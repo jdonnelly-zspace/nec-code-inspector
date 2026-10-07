@@ -24,6 +24,9 @@ namespace NECInspector.NEC
         public string Edition => "2026";
         public bool IsLoaded => _isLoaded;
         public int ArticleCount => _allArticles.Count;
+        public ElectricalTables Tables => _tables ??= ElectricalTables.CreateNecDefaults();
+
+        private ElectricalTables _tables;
 
         private void Awake()
         {
@@ -36,6 +39,7 @@ namespace NECInspector.NEC
             Instance = this;
             DontDestroyOnLoad(gameObject);
             LoadArticles();
+            LoadTables();
             CodeProfiles.SetActive(this);
         }
 
@@ -88,6 +92,39 @@ namespace NECInspector.NEC
             catch (Exception e)
             {
                 Debug.LogError($"[NECDatabase] Error loading articles: {e.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Load voltages, ampacities, load-calc constants and compliance rule settings from
+        /// StreamingAssets/NECDatabase/electrical_tables.json. Missing file or arrays fall back to NEC defaults.
+        /// </summary>
+        private void LoadTables()
+        {
+            string path = Path.Combine(Application.streamingAssetsPath, "NECDatabase", "electrical_tables.json");
+
+            if (!File.Exists(path))
+            {
+                Debug.LogWarning($"[NECDatabase] Electrical tables not found at {path}; using built-in NEC defaults");
+                return;
+            }
+
+            try
+            {
+                var tables = JsonUtility.FromJson<ElectricalTables>(File.ReadAllText(path));
+                if (tables == null)
+                {
+                    Debug.LogError("[NECDatabase] Failed to parse electrical tables; using built-in NEC defaults");
+                    return;
+                }
+
+                tables.EnsureComplete();
+                _tables = tables;
+                Debug.Log($"[NECDatabase] Loaded electrical tables ({tables.conductorSizes.Length} conductor sizes, {tables.complianceRules.Length} rule settings)");
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"[NECDatabase] Error loading electrical tables: {e.Message}; using built-in NEC defaults");
             }
         }
 

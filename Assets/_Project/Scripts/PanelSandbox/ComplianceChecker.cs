@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using NECInspector.Codes;
 
 namespace NECInspector.PanelSandbox
 {
@@ -24,30 +25,57 @@ namespace NECInspector.PanelSandbox
     }
 
     /// <summary>
-    /// Validates a panel design against 10 NEC compliance rules.
+    /// Validates a panel design against 10 compliance rules. Which rules run, the citation
+    /// shown for each, and numeric limits come from the active code profile's tables
+    /// (NEC values by default).
     /// </summary>
     public class ComplianceChecker
     {
+        private static ElectricalTables Tables => CodeProfiles.Tables;
+
         /// <summary>
-        /// Run all 10 compliance checks against the current panel state.
+        /// Citation for a rule from the active profile, or the built-in NEC citation if none is configured.
+        /// </summary>
+        private static string Ref(string ruleId, string fallback)
+        {
+            var config = Tables.GetRuleConfig(ruleId);
+            return config != null && !string.IsNullOrEmpty(config.reference) ? config.reference : fallback;
+        }
+
+        private static bool IsEnabled(string ruleId)
+        {
+            var config = Tables.GetRuleConfig(ruleId);
+            return config == null || config.enabled;
+        }
+
+        /// <summary>
+        /// Run every enabled compliance check against the current panel state.
         /// </summary>
         public List<ComplianceResult> RunAllChecks(
             PanelDesignDefinitionSO definition,
             BreakerSlot[] slots,
             List<PlacedBreaker> placedBreakers)
         {
-            var results = new List<ComplianceResult>();
+            var checks = new (string ruleId, Func<ComplianceResult> run)[]
+            {
+                ("RULE-01", () => CheckBreakerConductorMatch(placedBreakers)),
+                ("RULE-02", () => CheckRequiredCircuits(definition, placedBreakers)),
+                ("RULE-03", () => CheckGFCIProtection(definition, placedBreakers)),
+                ("RULE-04", () => CheckAFCIProtection(definition, placedBreakers)),
+                ("RULE-05", () => CheckLoadBalance(slots, placedBreakers)),
+                ("RULE-06", () => CheckMainBreakerSizing(definition, placedBreakers)),
+                ("RULE-07", () => CheckDoubleTap(slots)),
+                ("RULE-08", () => CheckConductorAmpacity(placedBreakers)),
+                ("RULE-09", () => CheckPanelSpaces(definition, slots, placedBreakers)),
+                ("RULE-10", () => CheckWireConnections(placedBreakers))
+            };
 
-            results.Add(CheckBreakerConductorMatch(placedBreakers));
-            results.Add(CheckRequiredCircuits(definition, placedBreakers));
-            results.Add(CheckGFCIProtection(definition, placedBreakers));
-            results.Add(CheckAFCIProtection(definition, placedBreakers));
-            results.Add(CheckLoadBalance(slots, placedBreakers));
-            results.Add(CheckMainBreakerSizing(definition, placedBreakers));
-            results.Add(CheckDoubleTap(slots));
-            results.Add(CheckConductorAmpacity(placedBreakers));
-            results.Add(CheckPanelSpaces(definition, slots, placedBreakers));
-            results.Add(CheckWireConnections(placedBreakers));
+            var results = new List<ComplianceResult>();
+            foreach (var check in checks)
+            {
+                if (IsEnabled(check.ruleId))
+                    results.Add(check.run());
+            }
 
             return results;
         }
@@ -65,7 +93,7 @@ namespace NECInspector.PanelSandbox
                 if (breaker.BreakerData.ampRating > wireMax)
                 {
                     return new ComplianceResult(
-                        "RULE-01", "Breaker/Conductor Match", "240.4",
+                        "RULE-01", "Breaker/Conductor Match", Ref("RULE-01", "240.4"),
                         false,
                         $"{breaker.AssignedCircuitName}: {breaker.BreakerData.ampRating}A breaker exceeds {breaker.ConnectedWire.WireGauge} capacity ({wireMax}A)."
                     );
@@ -73,7 +101,7 @@ namespace NECInspector.PanelSandbox
             }
 
             return new ComplianceResult(
-                "RULE-01", "Breaker/Conductor Match", "240.4",
+                "RULE-01", "Breaker/Conductor Match", Ref("RULE-01", "240.4"),
                 true, "All breakers match their conductor ampacity."
             );
         }
@@ -99,14 +127,14 @@ namespace NECInspector.PanelSandbox
             if (missing.Count > 0)
             {
                 return new ComplianceResult(
-                    "RULE-02", "Required Branch Circuits", "210.11",
+                    "RULE-02", "Required Branch Circuits", Ref("RULE-02", "210.11"),
                     false,
                     $"Missing required circuits: {string.Join(", ", missing)}."
                 );
             }
 
             return new ComplianceResult(
-                "RULE-02", "Required Branch Circuits", "210.11",
+                "RULE-02", "Required Branch Circuits", Ref("RULE-02", "210.11"),
                 true, "All required branch circuits are present."
             );
         }
@@ -131,14 +159,14 @@ namespace NECInspector.PanelSandbox
             if (violations.Count > 0)
             {
                 return new ComplianceResult(
-                    "RULE-03", "GFCI Protection", "210.8",
+                    "RULE-03", "GFCI Protection", Ref("RULE-03", "210.8"),
                     false,
                     $"Missing GFCI protection: {string.Join(", ", violations)}."
                 );
             }
 
             return new ComplianceResult(
-                "RULE-03", "GFCI Protection", "210.8",
+                "RULE-03", "GFCI Protection", Ref("RULE-03", "210.8"),
                 true, "All required circuits have GFCI protection."
             );
         }
@@ -163,14 +191,14 @@ namespace NECInspector.PanelSandbox
             if (violations.Count > 0)
             {
                 return new ComplianceResult(
-                    "RULE-04", "AFCI Protection", "210.12",
+                    "RULE-04", "AFCI Protection", Ref("RULE-04", "210.12"),
                     false,
                     $"Missing AFCI protection: {string.Join(", ", violations)}."
                 );
             }
 
             return new ComplianceResult(
-                "RULE-04", "AFCI Protection", "210.12",
+                "RULE-04", "AFCI Protection", Ref("RULE-04", "210.12"),
                 true, "All required circuits have AFCI protection."
             );
         }
@@ -197,20 +225,21 @@ namespace NECInspector.PanelSandbox
             if (totalLoad <= 0f)
             {
                 return new ComplianceResult(
-                    "RULE-05", "Load Balance", "General Practice",
+                    "RULE-05", "Load Balance", Ref("RULE-05", "General Practice"),
                     true, "No load to balance."
                 );
             }
 
+            float maxImbalance = Tables.loadBalanceMaxImbalance;
             float imbalance = Math.Abs(leftLoad - rightLoad) / totalLoad;
-            bool balanced = imbalance <= 0.2f;
+            bool balanced = imbalance <= maxImbalance;
 
             return new ComplianceResult(
-                "RULE-05", "Load Balance", "General Practice",
+                "RULE-05", "Load Balance", Ref("RULE-05", "General Practice"),
                 balanced,
                 balanced
                     ? $"Load is balanced ({imbalance:P0} imbalance)."
-                    : $"Load imbalance is {imbalance:P0} (max 20%). Left: {leftLoad:N0} VA, Right: {rightLoad:N0} VA."
+                    : $"Load imbalance is {imbalance:P0} (max {maxImbalance:P0}). Left: {leftLoad:N0} VA, Right: {rightLoad:N0} VA."
             );
         }
 
@@ -223,11 +252,11 @@ namespace NECInspector.PanelSandbox
             foreach (var breaker in breakers)
                 totalLoadVA += breaker.GetLoadVA();
 
-            float loadAmps = LoadCalculator.ConvertVAToAmps(totalLoadVA, 240f);
+            float loadAmps = LoadCalculator.ConvertVAToAmps(totalLoadVA);
             bool adequate = definition.totalAmps >= loadAmps;
 
             return new ComplianceResult(
-                "RULE-06", "Main Breaker Sizing", "230.79",
+                "RULE-06", "Main Breaker Sizing", Ref("RULE-06", "230.79"),
                 adequate,
                 adequate
                     ? $"Main breaker ({definition.totalAmps}A) adequate for {loadAmps:N0}A calculated load."
@@ -258,7 +287,7 @@ namespace NECInspector.PanelSandbox
                 if (kvp.Value > kvp.Key.BreakerData.poleCount)
                 {
                     return new ComplianceResult(
-                        "RULE-07", "No Double-Tapped Breakers", "110.14",
+                        "RULE-07", "No Double-Tapped Breakers", Ref("RULE-07", "110.14"),
                         false,
                         $"Breaker '{kvp.Key.AssignedCircuitName}' occupies {kvp.Value} slots but is only {kvp.Key.BreakerData.poleCount}-pole."
                     );
@@ -266,7 +295,7 @@ namespace NECInspector.PanelSandbox
             }
 
             return new ComplianceResult(
-                "RULE-07", "No Double-Tapped Breakers", "110.14",
+                "RULE-07", "No Double-Tapped Breakers", Ref("RULE-07", "110.14"),
                 true, "No double-tapped breakers found."
             );
         }
@@ -282,7 +311,7 @@ namespace NECInspector.PanelSandbox
                 if (!breaker.ConnectedWire.Validate())
                 {
                     return new ComplianceResult(
-                        "RULE-08", "Conductor Ampacity", "310.14",
+                        "RULE-08", "Conductor Ampacity", Ref("RULE-08", "310.14"),
                         false,
                         $"{breaker.AssignedCircuitName}: {breaker.ConnectedWire.WireGauge} insufficient for {breaker.BreakerData.ampRating}A breaker."
                     );
@@ -290,7 +319,7 @@ namespace NECInspector.PanelSandbox
             }
 
             return new ComplianceResult(
-                "RULE-08", "Conductor Ampacity", "310.14",
+                "RULE-08", "Conductor Ampacity", Ref("RULE-08", "310.14"),
                 true, "All conductor ampacities match breaker ratings."
             );
         }
@@ -309,7 +338,7 @@ namespace NECInspector.PanelSandbox
             bool withinLimit = usedSlots <= definition.totalSlots;
 
             return new ComplianceResult(
-                "RULE-09", "Panel Spaces", "408.36",
+                "RULE-09", "Panel Spaces", Ref("RULE-09", "408.36"),
                 withinLimit,
                 withinLimit
                     ? $"Using {usedSlots} of {definition.totalSlots} panel spaces."
@@ -332,14 +361,14 @@ namespace NECInspector.PanelSandbox
             if (unwired.Count > 0)
             {
                 return new ComplianceResult(
-                    "RULE-10", "Wire Connections", "General Practice",
+                    "RULE-10", "Wire Connections", Ref("RULE-10", "General Practice"),
                     false,
                     $"Breakers without wire connections: {string.Join(", ", unwired)}."
                 );
             }
 
             return new ComplianceResult(
-                "RULE-10", "Wire Connections", "General Practice",
+                "RULE-10", "Wire Connections", Ref("RULE-10", "General Practice"),
                 true, "All breakers have wire connections."
             );
         }

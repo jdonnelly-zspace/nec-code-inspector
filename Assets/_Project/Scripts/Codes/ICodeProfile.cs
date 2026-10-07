@@ -14,6 +14,9 @@ namespace NECInspector.Codes
         bool IsLoaded { get; }
         int ArticleCount { get; }
 
+        /// <summary>Voltages, ampacities, load-calc constants and compliance rule settings.</summary>
+        ElectricalTables Tables { get; }
+
         /// <summary>Exact or partial (parent article) lookup by reference.</summary>
         CodeArticle GetArticle(string reference);
 

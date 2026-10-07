@@ -1,19 +1,17 @@
 using System;
 using System.Collections.Generic;
+using NECInspector.Codes;
 
 namespace NECInspector.PanelSandbox
 {
     /// <summary>
-    /// Static utility for NEC Article 220 residential load calculations.
-    /// Uses the standard method (not optional calculation).
+    /// Static utility for dwelling-unit load calculations using the standard method
+    /// (not optional calculation). Constants, demand factors and standard sizes come from
+    /// the active code profile's ElectricalTables (NEC Art. 220 for the NEC profile).
     /// </summary>
     public static class LoadCalculator
     {
-        public const float LIGHTING_VA_PER_SQFT = 3f;        // Table 220.12
-        public const float SMALL_APPLIANCE_VA = 1500f;        // Art. 220.52
-        public const float LAUNDRY_VA = 1500f;                // Art. 220.52
-        public const float DRYER_VA = 5000f;                  // Art. 220.54
-        public const float RANGE_DEMAND_VA = 8000f;           // Table 220.55 (single, ≤12kW)
+        private static ElectricalTables Tables => CodeProfiles.Tables;
 
         [Serializable]
         public struct CircuitLoad
@@ -29,59 +27,53 @@ namespace NECInspector.PanelSandbox
         }
 
         /// <summary>
-        /// Calculate general lighting load per NEC Art. 220.12.
-        /// 3 VA per square foot for dwelling units.
+        /// Calculate general lighting load (NEC Table 220.12: 3 VA per square foot for dwelling units).
         /// </summary>
         public static float CalculateGeneralLighting(float squareFootage)
         {
-            return squareFootage * LIGHTING_VA_PER_SQFT;
+            return squareFootage * Tables.lightingVAPerArea;
         }
 
         /// <summary>
-        /// Calculate small-appliance circuit load per NEC Art. 220.52.
-        /// 1,500 VA per required 20A small-appliance branch circuit.
+        /// Calculate small-appliance circuit load (NEC 220.52: 1,500 VA per required 20A circuit).
         /// </summary>
         public static float CalculateSmallApplianceLoad(int circuitCount = 2)
         {
-            return circuitCount * SMALL_APPLIANCE_VA;
+            return circuitCount * Tables.smallApplianceVA;
         }
 
         /// <summary>
-        /// Calculate laundry circuit load per NEC Art. 220.52.
-        /// 1,500 VA for the laundry branch circuit.
+        /// Calculate laundry circuit load (NEC 220.52: 1,500 VA for the laundry branch circuit).
         /// </summary>
         public static float CalculateLaundryLoad()
         {
-            return LAUNDRY_VA;
+            return Tables.laundryVA;
         }
 
         /// <summary>
-        /// Apply Table 220.42 demand factors to general lighting +
-        /// small-appliance + laundry combined load.
-        /// First 3,000 VA at 100%, 3,001-120,000 VA at 35%, over 120,000 VA at 25%.
+        /// Apply the profile's demand-factor tiers to the combined general load.
+        /// NEC Table 220.42: first 3,000 VA at 100%, 3,001-120,000 VA at 35%, over 120,000 VA at 25%.
         /// </summary>
         public static float ApplyDemandFactor(float totalVA)
         {
-            if (totalVA <= 3000f)
-                return totalVA;
+            float result = 0f;
+            float lower = 0f;
 
-            float result = 3000f; // First 3,000 at 100%
+            foreach (var tier in Tables.generalLoadDemandTiers)
+            {
+                float upper = tier.upToVA < 0f ? float.MaxValue : tier.upToVA;
+                float slice = Math.Min(totalVA, upper) - lower;
+                if (slice <= 0f) break;
 
-            if (totalVA <= 120000f)
-            {
-                result += (totalVA - 3000f) * 0.35f;
-            }
-            else
-            {
-                result += (120000f - 3000f) * 0.35f;
-                result += (totalVA - 120000f) * 0.25f;
+                result += slice * tier.factor;
+                lower = upper;
             }
 
             return result;
         }
 
         /// <summary>
-        /// Calculate total service load for a dwelling unit using NEC standard method.
+        /// Calculate total service load for a dwelling unit using the standard method.
         /// Combines general lighting (with demand factor), fixed appliances, and large loads.
         /// </summary>
         public static float CalculateTotalServiceLoad(
@@ -101,12 +93,12 @@ namespace NECInspector.PanelSandbox
             float combinedVA = lightingVA + smallAppVA + laundryVA;
             float demandVA = ApplyDemandFactor(combinedVA);
 
-            // Step 2: Add fixed appliance loads at 100% (or 75% if 4+ appliances)
+            // Step 2: Add fixed appliance loads at 100%, reduced when there are enough of them
             float fixedApplianceVA = 0f;
             int fixedCount = 0;
 
-            if (hasDryer) { fixedApplianceVA += DRYER_VA; fixedCount++; }
-            if (hasRange) { fixedApplianceVA += RANGE_DEMAND_VA; fixedCount++; }
+            if (hasDryer) { fixedApplianceVA += Tables.dryerVA; fixedCount++; }
+            if (hasRange) { fixedApplianceVA += Tables.rangeDemandVA; fixedCount++; }
 
             if (additionalLoads != null)
             {
@@ -117,40 +109,41 @@ namespace NECInspector.PanelSandbox
                 }
             }
 
-            // If 4 or more fixed appliances (other than range/dryer/AC),
-            // apply 75% demand to the non-range/dryer appliances
+            // NEC 220.53: with 4 or more fixed appliances (other than range/dryer/AC),
+            // apply 75% demand to the non-range/dryer appliances.
             // Simplified: we count all fixed appliances
-            if (fixedCount >= 4)
+            if (fixedCount >= Tables.fixedApplianceDemandThreshold)
             {
-                fixedApplianceVA *= 0.75f;
+                fixedApplianceVA *= Tables.fixedApplianceDemandFactor;
             }
 
             return demandVA + fixedApplianceVA;
         }
 
         /// <summary>
-        /// Convert VA to amperes at a given voltage.
+        /// Convert VA to amperes at a given voltage (defaults to the profile's service voltage).
         /// </summary>
-        public static float ConvertVAToAmps(float va, float voltage = 240f)
+        public static float ConvertVAToAmps(float va, float? voltage = null)
         {
-            return voltage > 0f ? va / voltage : 0f;
+            float v = voltage ?? Tables.serviceVoltage;
+            return v > 0f ? va / v : 0f;
         }
 
         /// <summary>
         /// Calculate the minimum service size in amps for a given load.
-        /// Rounds up to the next standard breaker size.
+        /// Rounds up to the next standard size in the profile's table.
         /// </summary>
-        public static int GetMinimumServiceAmps(float totalVA, float voltage = 240f)
+        public static int GetMinimumServiceAmps(float totalVA, float? voltage = null)
         {
             float amps = ConvertVAToAmps(totalVA, voltage);
-            int[] standardSizes = { 60, 100, 125, 150, 200, 225, 300, 400 };
+            int[] standardSizes = Tables.standardServiceSizes;
 
             foreach (int size in standardSizes)
             {
                 if (size >= amps) return size;
             }
 
-            return 400; // Maximum standard residential
+            return standardSizes[standardSizes.Length - 1]; // Maximum standard size
         }
     }
 }
