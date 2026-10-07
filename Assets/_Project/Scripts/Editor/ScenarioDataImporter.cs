@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEditor;
 using NECInspector.Core;
@@ -14,6 +12,7 @@ namespace NECInspector.Editor
     /// Builds ScenarioDefinitionSO and ViolationDefinitionSO assets from the JSON files in
     /// Assets/_Project/Content/Scenarios. Scenario content lives in data, so adding or changing
     /// a scenario (or a credential-specific content pack) does not require editing C#.
+    /// Files are checked by ScenarioFileValidator before any asset is touched.
     /// Asset paths match the earlier per-scenario generators, so existing references stay valid.
     /// </summary>
     public static class ScenarioDataImporter
@@ -21,40 +20,6 @@ namespace NECInspector.Editor
         private const string CONTENT_DIR = "Assets/_Project/Content/Scenarios";
         private const string VIOLATION_ROOT = "Assets/_Project/ScriptableObjects/Violations";
         private const string SCENARIO_DIR = "Assets/_Project/ScriptableObjects/Scenarios";
-
-        [Serializable]
-        private class ScenarioFile
-        {
-            public string id;
-            public string sceneName;
-            public string displayName;
-            public string description;
-            public string environmentDescription;
-            public string[] necChapters;
-            public int expertTimeLimit;
-            public string[] availableDifficulties;
-            public string assetPrefix;         // violation asset names: VD_{assetPrefix}_{violationId}
-            public string violationFolder;     // under ScriptableObjects/Violations
-            public string scenarioAssetName;   // ScenarioDefinition_{scenarioAssetName}.asset
-            public ViolationEntry[] violations;
-        }
-
-        [Serializable]
-        private class ViolationEntry
-        {
-            public string violationId;
-            public string conceptId;
-            public string description;
-            public string necArticle;
-            public string necArticleText;
-            public string severity;            // Minor | Major | Critical
-            public string minimumDifficulty;   // Beginner | Standard | Expert
-            public bool isSubtle;
-            public string componentObjectName;
-            public string hintText;
-            public string componentType;
-            public string inspectionNote;
-        }
 
         [MenuItem("NEC Inspector/Import Scenario Data")]
         public static void ImportAll()
@@ -85,10 +50,10 @@ namespace NECInspector.Editor
 
         private static bool ImportFile(string path)
         {
-            ScenarioFile data;
+            ScenarioFileData data;
             try
             {
-                data = JsonUtility.FromJson<ScenarioFile>(File.ReadAllText(path));
+                data = JsonUtility.FromJson<ScenarioFileData>(File.ReadAllText(path));
             }
             catch (Exception e)
             {
@@ -96,7 +61,7 @@ namespace NECInspector.Editor
                 return false;
             }
 
-            var errors = Validate(data);
+            var errors = ScenarioFileValidator.Validate(data);
             if (errors.Count > 0)
             {
                 foreach (string error in errors)
@@ -173,76 +138,6 @@ namespace NECInspector.Editor
 
             Debug.Log($"[NEC Inspector] Imported '{data.displayName}': {data.violations.Length} violations + 1 scenario definition.");
             return true;
-        }
-
-        /// <summary>
-        /// Check a scenario file before touching any assets. Returns one message per problem.
-        /// </summary>
-        private static List<string> Validate(ScenarioFile data)
-        {
-            var errors = new List<string>();
-
-            if (data == null)
-            {
-                errors.Add("file is empty or not a scenario");
-                return errors;
-            }
-
-            RequireText(errors, data.id, "id");
-            RequireText(errors, data.sceneName, "sceneName");
-            RequireText(errors, data.displayName, "displayName");
-            RequireName(errors, data.assetPrefix, "assetPrefix");
-            RequireName(errors, data.violationFolder, "violationFolder");
-            RequireName(errors, data.scenarioAssetName, "scenarioAssetName");
-
-            if (data.availableDifficulties == null || data.availableDifficulties.Length == 0)
-                errors.Add("availableDifficulties is empty");
-            else
-                foreach (string d in data.availableDifficulties)
-                    if (!Enum.TryParse<DifficultyLevel>(d, out _))
-                        errors.Add($"unknown difficulty '{d}' in availableDifficulties");
-
-            if (data.violations == null || data.violations.Length == 0)
-            {
-                errors.Add("violations is empty");
-                return errors;
-            }
-
-            var seen = new HashSet<string>();
-            foreach (var v in data.violations)
-            {
-                string label = string.IsNullOrEmpty(v.violationId) ? "(violation without id)" : v.violationId;
-
-                RequireName(errors, v.violationId, $"{label}: violationId");
-                if (!string.IsNullOrEmpty(v.violationId) && !seen.Add(v.violationId))
-                    errors.Add($"duplicate violationId '{v.violationId}'");
-
-                if (!ConceptIds.IsKnown(v.conceptId))
-                    errors.Add($"{label}: unknown conceptId '{v.conceptId}'");
-                if (!Enum.TryParse<ViolationSeverity>(v.severity, out _))
-                    errors.Add($"{label}: unknown severity '{v.severity}'");
-                if (!Enum.TryParse<DifficultyLevel>(v.minimumDifficulty, out _))
-                    errors.Add($"{label}: unknown minimumDifficulty '{v.minimumDifficulty}'");
-
-                RequireText(errors, v.description, $"{label}: description");
-                RequireText(errors, v.necArticle, $"{label}: necArticle");
-                RequireText(errors, v.componentObjectName, $"{label}: componentObjectName");
-            }
-
-            return errors;
-        }
-
-        private static void RequireText(List<string> errors, string value, string field)
-        {
-            if (string.IsNullOrWhiteSpace(value))
-                errors.Add($"{field} is missing");
-        }
-
-        // Names become folder and asset names, so only allow plain identifiers.
-        private static void RequireName(List<string> errors, string value, string field)
-        {
-            if (string.IsNullOrEmpty(value) || !Regex.IsMatch(value, "^[A-Za-z0-9_-]+$"))
-                errors.Add($"{field} must contain only letters, digits, '_' or '-' (got '{value}')");
         }
 
         private static void EnsureFolder(string parent, string name)

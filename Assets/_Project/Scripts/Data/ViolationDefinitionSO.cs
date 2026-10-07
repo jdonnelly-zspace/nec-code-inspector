@@ -3,13 +3,6 @@ using NECInspector.Core;
 
 namespace NECInspector.Data
 {
-    public enum ViolationSeverity
-    {
-        Minor,
-        Major,
-        Critical
-    }
-
     [CreateAssetMenu(fileName = "ViolationDefinition", menuName = "NEC Inspector/Violation Definition")]
     public class ViolationDefinitionSO : ScriptableObject
     {

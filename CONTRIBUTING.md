@@ -20,6 +20,16 @@ git lfs pull
 3. Import TextMeshPro essentials when prompted
 4. Run **NEC Code Inspector > Generate All** from the Unity Editor menu to create ScriptableObject assets
 
+## Tests
+
+Engine-independent logic (code profile types, electrical tables, load calculation, citation matching) and the content JSON files (scenarios, NEC articles) are checked by a plain .NET project that compiles the Unity scripts directly from `Assets`. It needs only the [.NET 8 SDK](https://dotnet.microsoft.com/download), not Unity or the zSpace SDK:
+
+```bash
+dotnet run --project tests/LogicTests
+```
+
+The same command runs in CI on every pull request (`.github/workflows/logic-tests.yml`). Failures exit non-zero; warnings (for example dangling related-article references) are listed but do not fail the run. This does not replace opening the project in Unity: scripts that use TextMeshPro, uGUI or the zSpace SDK are not compiled by it.
+
 ## Key Documentation
 
 | File | What it covers |

@@ -1,0 +1,23 @@
+name: Logic tests
+
+# Engine-independent checks: electrical tables, load calculation, citation matching,
+# and validation of the scenario and article JSON files. No Unity license or zSpace SDK needed.
+# A full Unity compile is a separate, later job (see TODO.md).
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  logic-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Run logic tests
+        run: dotnet run --project tests/LogicTests --configuration Release

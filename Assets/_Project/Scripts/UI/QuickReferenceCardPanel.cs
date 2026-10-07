@@ -7,6 +7,7 @@ using NECInspector.Data;
 using NECInspector.Core;
 using NECInspector.NEC;
 using NECInspector.Codes;
+using NECInspector.Inspection;
 
 namespace NECInspector.UI
 {
