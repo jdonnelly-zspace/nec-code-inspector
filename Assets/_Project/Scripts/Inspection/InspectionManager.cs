@@ -66,10 +66,15 @@ namespace NECInspector.Inspection
             _flaggedViolations.Clear();
             _markedCompliant.Clear();
 
-            // Filter violations by difficulty
+            // Filter violations by code profile and difficulty
+            string profileId = CodeProfiles.ActiveId;
             foreach (var violation in _scenarioDefinition.violations)
             {
                 if (violation == null) continue;
+
+                // A violation without a citation for the active code does not apply to it
+                if (!violation.AppliesTo(profileId)) continue;
+
                 if ((int)violation.minimumDifficulty <= (int)difficulty)
                 {
                     // Skip subtle violations unless Expert
@@ -143,6 +148,7 @@ namespace NECInspector.Inspection
             int correctFlags = 0;
             int correctCitations = 0;
             int falsePositives = 0;
+            string profileId = CodeProfiles.ActiveId;
 
             foreach (var flagged in _flaggedViolations)
             {
@@ -153,8 +159,9 @@ namespace NECInspector.Inspection
                 {
                     correctFlags++;
 
-                    // Check if NEC citation is correct
-                    if (IsNECCitationCorrect(flagged.citedNECArticle, matchingViolation.necArticle))
+                    // Check the citation against the active code's reference for this violation
+                    var expected = matchingViolation.GetCitation(profileId);
+                    if (expected != null && IsNECCitationCorrect(flagged.citedNECArticle, expected.reference))
                         correctCitations++;
                 }
                 else

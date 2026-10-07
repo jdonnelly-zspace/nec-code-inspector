@@ -94,8 +94,7 @@ namespace NECInspector.Editor
                     asset.violationId = entry.violationId;
                     asset.conceptId = entry.conceptId;
                     asset.description = entry.description;
-                    asset.necArticle = entry.necArticle;
-                    asset.necArticleText = entry.necArticleText;
+                    asset.citations = entry.citations;
                     asset.severity = Enum.Parse<ViolationSeverity>(entry.severity);
                     asset.minimumDifficulty = Enum.Parse<DifficultyLevel>(entry.minimumDifficulty);
                     asset.isSubtle = entry.isSubtle;

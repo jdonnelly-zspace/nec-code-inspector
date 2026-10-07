@@ -22,6 +22,19 @@ namespace NECInspector.Codes
             }
         }
 
+        /// <summary>
+        /// ID of the active profile. Falls back to the NEC when none is loaded, matching the
+        /// fallback used for Tables, so content filtering and scoring still work in a bare scene.
+        /// </summary>
+        public static string ActiveId
+        {
+            get
+            {
+                var profile = Active;
+                return profile != null ? profile.ProfileId : CodeProfileIds.Nec;
+            }
+        }
+
         private static ElectricalTables _fallbackTables;
 
         /// <summary>

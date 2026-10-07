@@ -32,6 +32,22 @@ namespace NECInspector.Data
         [Header("Environment")]
         public string environmentDescription;
 
+        /// <summary>
+        /// True if at least one violation in this scenario applies to the code profile.
+        /// </summary>
+        public bool AppliesTo(string profileId)
+        {
+            if (violations == null) return false;
+
+            foreach (var violation in violations)
+            {
+                if (violation != null && violation.AppliesTo(profileId))
+                    return true;
+            }
+
+            return false;
+        }
+
         private void OnValidate()
         {
             if (string.IsNullOrEmpty(id))

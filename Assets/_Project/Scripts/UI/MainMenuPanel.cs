@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using NECInspector.Codes;
 using NECInspector.Core;
 using NECInspector.Data;
 
@@ -113,9 +114,13 @@ namespace NECInspector.UI
             ClearContent(_scenarioListContent);
             if (_scenarioCatalog == null) return;
 
+            string profileId = CodeProfiles.ActiveId;
             foreach (var scenario in _scenarioCatalog.scenarios)
             {
                 if (scenario == null) continue;
+
+                // Only list scenarios that have violations for the active code profile
+                if (!scenario.AppliesTo(profileId)) continue;
 
                 var item = Instantiate(_scenarioListItemPrefab, _scenarioListContent);
                 var text = item.GetComponentInChildren<TMP_Text>();

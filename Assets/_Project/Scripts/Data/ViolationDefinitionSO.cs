@@ -15,10 +15,9 @@ namespace NECInspector.Data
         [Tooltip("Code-neutral concept this violation tests. Use a value from ConceptIds.")]
         public string conceptId;
 
-        [Header("NEC Reference")]
-        public string necArticle;        // e.g., "250.24(A)(1)" (legacy: per-code citations will move to code profiles)
-        [TextArea(3, 6)]
-        public string necArticleText;    // Full text for display
+        [Header("Citations")]
+        [Tooltip("One citation per code profile this violation applies to. No citation for a profile = does not apply to it.")]
+        public ViolationCitation[] citations;
 
         [Header("Classification")]
         public ViolationSeverity severity = ViolationSeverity.Major;
@@ -40,5 +39,16 @@ namespace NECInspector.Data
         public string componentType;     // e.g., "Breaker", "Conductor", "Receptacle"
         [TextArea(1, 3)]
         public string inspectionNote;    // What the student should observe
+
+        /// <summary>The citation for a code profile, or null if this violation does not apply to it.</summary>
+        public ViolationCitation GetCitation(string profileId)
+        {
+            return ViolationCitations.Find(citations, profileId);
+        }
+
+        public bool AppliesTo(string profileId)
+        {
+            return GetCitation(profileId) != null;
+        }
     }
 }

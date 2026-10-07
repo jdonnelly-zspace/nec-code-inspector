@@ -27,10 +27,12 @@ Status key: `[x]` done and merged, `[~]` built and in review (PR open), `[ ]` no
 - [!] Unity compile gate in CI. Blocked: the repo has no `ProjectSettings/` or `Packages/`, the zSpace SDK is proprietary and git-ignored, and CI would need a Unity license secret. Decision needed on how to make the project compilable in CI (stub the SDK, or a self-hosted runner)
 
 **B2. Finish the data layer**
-- [ ] Per-profile citations on violations: replace `necArticle` / `necArticleText` with a citation map, and score by concept + active profile
+- [~] Per-profile citations on violations: `citations` list (profileId, reference, text) replaces `necArticle` / `necArticleText`; scoring compares the student's citation to the active profile's reference (this branch)
+- [ ] Concept-aware scoring: let a citation in the same concept count (for example 210.8(A)(1) vs 210.8(A)(5)). Needs article-to-concept tags in each profile's article data and a policy decision on how much credit it earns
 - [ ] Credential profile: tier names and mapping per credential, topic weights, exam style, code profile ID
 - [ ] Record progress and certificates per credential
-- [ ] Scenario and violation applicability (`appliesTo` profiles), since some rules are code-specific
+- [~] Violation and scenario applicability, derived from citations: a violation applies to a profile only if it has a citation for it; a scenario applies if any violation does. `InspectionManager` skips non-applicable violations and the main menu hides non-applicable scenarios (this branch)
+- [ ] Rename leftover NEC-named API from the citation change (`FlagViolation(... necArticle)`, `citedNECArticle`, `FlaggedNECArticle`) as part of Phase C
 - [ ] Move remaining editor-script content to JSON: panel sandbox circuits, quick-reference cards, certificate templates, difficulty settings
 
 ### Phase C - Neutral wording and units (old refactor step 5)
@@ -67,6 +69,7 @@ Status key: `[x]` done and merged, `[~]` built and in review (PR open), `[ ]` no
 2. How to get a Unity compile in CI (Phase B1)
 3. First credential after Canada, if a customer is waiting on the UK or EU
 4. Language localization in or out of scope
+5. Scoring policy for concept-level credit (Phase B2)
 
 ## Current Phase: Alpha - Unity Editor Integration
 

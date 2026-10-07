@@ -22,8 +22,13 @@
     {
       "violationId": "RP-WORK-PANEL-001",
       "description": "Unsecured conductors in panel with poor workmanship",
-      "necArticle": "110.12",
-      "necArticleText": "Electrical equipment shall be installed in a neat and workmanlike manner.",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.12",
+          "text": "Electrical equipment shall be installed in a neat and workmanlike manner."
+        }
+      ],
       "componentObjectName": "Panel_LooseConductors",
       "hintText": "Look at how the wires are arranged inside the panel. Are they neat and properly secured?",
       "componentType": "Panel Wiring",
@@ -36,8 +41,13 @@
     {
       "violationId": "RP-CONN-LUG-001",
       "description": "Aluminum service entrance conductor terminated on copper-only rated lug",
-      "necArticle": "110.14",
-      "necArticleText": "Connection of conductors to terminal parts shall ensure a thoroughly good connection without damaging the conductors. Connectors and terminals shall be identified for the conductor material.",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.14",
+          "text": "Connection of conductors to terminal parts shall ensure a thoroughly good connection without damaging the conductors. Connectors and terminals shall be identified for the conductor material."
+        }
+      ],
       "componentObjectName": "Panel_MainLug_Aluminum",
       "hintText": "Check the main lugs. Is the conductor material compatible with the lug rating? Look for AL/CU markings.",
       "componentType": "Termination",
@@ -50,8 +60,13 @@
     {
       "violationId": "RP-CLEAR-FRONT-001",
       "description": "Working space in front of panel is less than 36 inches deep",
-      "necArticle": "110.26(A)(1)",
-      "necArticleText": "The depth of the working space in the direction of live parts shall not be less than that specified in Table 110.26(A)(1). For 0-150V nominal, the minimum clear distance is 3 feet.",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.26(A)(1)",
+          "text": "The depth of the working space in the direction of live parts shall not be less than that specified in Table 110.26(A)(1). For 0-150V nominal, the minimum clear distance is 3 feet."
+        }
+      ],
       "componentObjectName": "Panel_WorkingSpace_Obstruction",
       "hintText": "Measure the clear space in front of the panel. Is there at least 36 inches of unobstructed working space?",
       "componentType": "Working Space",
@@ -64,8 +79,13 @@
     {
       "violationId": "RP-DISC-LOC-001",
       "description": "Service disconnect located in an area not readily accessible",
-      "necArticle": "230.70(A)",
-      "necArticleText": "The service disconnecting means shall be installed at a readily accessible location either outside of a building or structure or inside nearest the point of entrance of the service conductors.",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "230.70(A)",
+          "text": "The service disconnecting means shall be installed at a readily accessible location either outside of a building or structure or inside nearest the point of entrance of the service conductors."
+        }
+      ],
       "componentObjectName": "ServiceDisconnect_Inaccessible",
       "hintText": "The service disconnect must be readily accessible. Can you reach it without moving obstacles or using a ladder?",
       "componentType": "Service Disconnect",
@@ -78,8 +98,13 @@
     {
       "violationId": "RP-WIRE-OVER-001",
       "description": "12 AWG conductor protected by a 30-ampere overcurrent device",
-      "necArticle": "240.4",
-      "necArticleText": "Conductors, other than flexible cords, shall be protected against overcurrent in accordance with their ampacity.",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "240.4",
+          "text": "Conductors, other than flexible cords, shall be protected against overcurrent in accordance with their ampacity."
+        }
+      ],
       "componentObjectName": "Panel_Breaker30A_12AWG",
       "hintText": "Verify that each conductor's ampacity matches or exceeds its breaker rating. 12 AWG is rated for 20A max.",
       "componentType": "Overcurrent Protection",
@@ -92,8 +117,13 @@
     {
       "violationId": "RP-PANEL-HEIGHT-001",
       "description": "Breaker operating handle center is mounted above 6 feet 7 inches",
-      "necArticle": "240.24(A)",
-      "necArticleText": "Overcurrent devices shall be readily accessible and installed so that the center of the grip of the operating handle of the switch or circuit breaker, when in its highest position, is not more than 2.0 m (6 ft 7 in.) above the floor or working platform.",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "240.24(A)",
+          "text": "Overcurrent devices shall be readily accessible and installed so that the center of the grip of the operating handle of the switch or circuit breaker, when in its highest position, is not more than 2.0 m (6 ft 7 in.) above the floor or working platform."
+        }
+      ],
       "componentObjectName": "Panel_TopBreaker_High",
       "hintText": "Check the height of the topmost breaker handle. The center of the grip must not exceed 6 feet 7 inches.",
       "componentType": "Panel Mounting",
@@ -106,8 +136,13 @@
     {
       "violationId": "RP-DIR-MISS-001",
       "description": "Panel circuit directory is missing or has inaccurate circuit descriptions",
-      "necArticle": "408.4",
-      "necArticleText": "Every circuit and circuit modification shall be legibly identified as to its clear, evident, and specific purpose or use. The identification shall include an approved degree of detail sufficient to allow each circuit to be distinguished from all others.",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "408.4",
+          "text": "Every circuit and circuit modification shall be legibly identified as to its clear, evident, and specific purpose or use. The identification shall include an approved degree of detail sufficient to allow each circuit to be distinguished from all others."
+        }
+      ],
       "componentObjectName": "Panel_CircuitDirectory",
       "hintText": "Examine the circuit directory inside the panel door. Is every circuit clearly and accurately labeled?",
       "componentType": "Panel Directory",
@@ -120,8 +155,13 @@
     {
       "violationId": "RP-BUS-EXCEED-001",
       "description": "More circuit breakers installed than the panel's rated number of spaces",
-      "necArticle": "408.36",
-      "necArticleText": "Panelboards shall be provided with physical means to prevent the installation of more overcurrent devices than that number for which the panelboard was designed, rated, and listed.",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "408.36",
+          "text": "Panelboards shall be provided with physical means to prevent the installation of more overcurrent devices than that number for which the panelboard was designed, rated, and listed."
+        }
+      ],
       "componentObjectName": "Panel_OverfilledBus",
       "hintText": "Count the breakers and compare with the panel's rated space count. Are tandem breakers used in non-approved locations?",
       "componentType": "Panel Bus",

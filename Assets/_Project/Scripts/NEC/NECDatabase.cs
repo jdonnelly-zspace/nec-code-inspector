@@ -19,7 +19,7 @@ namespace NECInspector.NEC
         private List<CodeArticle> _allArticles = new();
         private bool _isLoaded = false;
 
-        public string ProfileId => "nec";
+        public string ProfileId => CodeProfileIds.Nec;
         public string DisplayName => "NEC (NFPA 70)";
         public string Edition => "2026";
         public bool IsLoaded => _isLoaded;

@@ -100,8 +100,17 @@ namespace NECInspector.Inspection
             if (_missedIndexText != null) _missedIndexText.text = $"Missed Violation {violationIndex} of {totalMissed}";
             if (_missedComponentText != null) _missedComponentText.text = violation.componentObjectName;
             if (_missedDescriptionText != null) _missedDescriptionText.text = violation.description;
-            if (_missedNECArticleText != null) _missedNECArticleText.text = $"Art. {violation.necArticle}";
-            if (_missedNECTextContent != null) _missedNECTextContent.text = article?.text ?? violation.necArticleText;
+            var citation = violation.GetCitation(CodeProfiles.ActiveId);
+            if (_missedNECArticleText != null)
+            {
+                // Show the violation's own reference; the looked-up article can be a broader prefix match
+                bool sameReference = article != null && citation != null && article.reference == citation.reference;
+                _missedNECArticleText.text = sameReference
+                    ? article.referenceLabel
+                    : (citation != null ? $"Art. {citation.reference}" : "");
+            }
+            if (_missedNECTextContent != null)
+                _missedNECTextContent.text = article?.text ?? citation?.text;
 
             gameObject.SetActive(true);
             OnContinuePressed = null;

@@ -64,8 +64,9 @@ namespace NECInspector.Inspection
 
                 // Show NEC article in the reference panel
                 CodeArticle article = null;
-                if (CodeProfiles.Active != null)
-                    article = CodeProfiles.Active.GetArticle(violation.necArticle);
+                var citation = violation.GetCitation(CodeProfiles.ActiveId);
+                if (CodeProfiles.Active != null && citation != null)
+                    article = CodeProfiles.Active.GetArticle(citation.reference);
 
                 if (_reviewPanel != null)
                 {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using NECInspector.Codes;
 using NECInspector.Core;
 using NECInspector.Data;
 
@@ -58,8 +59,32 @@ namespace NECInspector.LogicTests
             t.IsTrue(HasError(noViolations, "violations is empty"), "empty violation list is rejected");
 
             var noCitation = MakeValid();
-            noCitation.violations[0].necArticle = "";
-            t.IsTrue(HasError(noCitation, "necArticle"), "missing citation is rejected");
+            noCitation.violations[0].citations = new ViolationCitation[0];
+            t.IsTrue(HasError(noCitation, "citations is empty"), "violation without any citation is rejected");
+
+            var noReference = MakeValid();
+            noReference.violations[0].citations[0].reference = "";
+            t.IsTrue(HasError(noReference, "citation reference"), "citation without a reference is rejected");
+
+            var badProfile = MakeValid();
+            badProfile.violations[0].citations[0].profileId = "bad profile!";
+            t.IsTrue(HasError(badProfile, "citation profileId"), "citation with an unsafe profile id is rejected");
+
+            var twoForOneProfile = MakeValid();
+            twoForOneProfile.violations[0].citations = new[]
+            {
+                new ViolationCitation { profileId = CodeProfileIds.Nec, reference = "210.8" },
+                new ViolationCitation { profileId = CodeProfileIds.Nec, reference = "210.12" }
+            };
+            t.IsTrue(HasError(twoForOneProfile, "more than one citation"), "two citations for one profile are rejected");
+
+            var twoProfiles = MakeValid();
+            twoProfiles.violations[0].citations = new[]
+            {
+                new ViolationCitation { profileId = CodeProfileIds.Nec, reference = "210.8" },
+                new ViolationCitation { profileId = "cec", reference = "26-700" }
+            };
+            t.Equal(0, ScenarioFileValidator.Validate(twoProfiles).Count, "citations for different profiles are accepted");
         }
 
         private static void ContentFilesAreValid(TestContext t)
@@ -95,8 +120,14 @@ namespace NECInspector.LogicTests
                         $"{name}: asset path for '{v.violationId}' is unique");
                     conceptsUsed.Add(v.conceptId);
 
-                    t.IsTrue(ArticleDatabaseTests.Resolves(articleRefs, v.necArticle),
-                        $"{name}: {v.violationId} cites '{v.necArticle}' which is not in nec_articles.json");
+                    foreach (var citation in v.citations ?? new ViolationCitation[0])
+                    {
+                        // Only the NEC has an article database so far; other profiles are checked when they get one
+                        if (citation.profileId != CodeProfileIds.Nec) continue;
+
+                        t.IsTrue(ArticleDatabaseTests.Resolves(articleRefs, citation.reference),
+                            $"{name}: {v.violationId} cites '{citation.reference}' which is not in nec_articles.json");
+                    }
                 }
             }
 
@@ -124,7 +155,7 @@ namespace NECInspector.LogicTests
                         violationId = "T-001",
                         conceptId = ConceptIds.ShockProtection,
                         description = "d",
-                        necArticle = "210.8",
+                        citations = new[] { new ViolationCitation { profileId = CodeProfileIds.Nec, reference = "210.8", text = "t" } },
                         severity = "Major",
                         minimumDifficulty = "Beginner",
                         componentObjectName = "Obj"

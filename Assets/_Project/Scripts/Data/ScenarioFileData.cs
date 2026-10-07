@@ -33,8 +33,7 @@ namespace NECInspector.Data
         public string violationId;
         public string conceptId;
         public string description;
-        public string necArticle;
-        public string necArticleText;
+        public ViolationCitation[] citations;   // one per code profile the violation applies to
         public string severity;            // Minor | Major | Critical
         public string minimumDifficulty;   // Beginner | Standard | Expert
         public bool isSubtle;
@@ -100,11 +99,37 @@ namespace NECInspector.Data
                     errors.Add($"{label}: unknown minimumDifficulty '{v.minimumDifficulty}'");
 
                 RequireText(errors, v.description, $"{label}: description");
-                RequireText(errors, v.necArticle, $"{label}: necArticle");
                 RequireText(errors, v.componentObjectName, $"{label}: componentObjectName");
+                ValidateCitations(errors, v.citations, label);
             }
 
             return errors;
+        }
+
+        // A violation needs at least one citation, with one citation at most per code profile.
+        private static void ValidateCitations(List<string> errors, ViolationCitation[] citations, string label)
+        {
+            if (citations == null || citations.Length == 0)
+            {
+                errors.Add($"{label}: citations is empty (a violation needs a citation for at least one code profile)");
+                return;
+            }
+
+            var profiles = new HashSet<string>();
+            foreach (var citation in citations)
+            {
+                if (citation == null)
+                {
+                    errors.Add($"{label}: citations contains an empty entry");
+                    continue;
+                }
+
+                RequireName(errors, citation.profileId, $"{label}: citation profileId");
+                RequireText(errors, citation.reference, $"{label}: citation reference");
+
+                if (!string.IsNullOrEmpty(citation.profileId) && !profiles.Add(citation.profileId))
+                    errors.Add($"{label}: more than one citation for profile '{citation.profileId}'");
+            }
         }
 
         // Enum.TryParse also accepts numbers such as "7"; require a real member name.
