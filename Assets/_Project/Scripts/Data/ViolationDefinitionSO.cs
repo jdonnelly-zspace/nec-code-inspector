@@ -18,8 +18,12 @@ namespace NECInspector.Data
         [TextArea(2, 4)]
         public string description;
 
+        [Header("Concept")]
+        [Tooltip("Code-neutral concept this violation tests. Use a value from ConceptIds.")]
+        public string conceptId;
+
         [Header("NEC Reference")]
-        public string necArticle;        // e.g., "250.24(A)(1)"
+        public string necArticle;        // e.g., "250.24(A)(1)" (legacy: per-code citations will move to code profiles)
         [TextArea(3, 6)]
         public string necArticleText;    // Full text for display
 

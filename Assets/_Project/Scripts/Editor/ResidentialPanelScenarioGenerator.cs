@@ -10,6 +10,7 @@ namespace NECInspector.Editor
         private struct ViolationData
         {
             public string violationId;
+            public string conceptId;
             public string description;
             public string necArticle;
             public string necArticleText;
@@ -28,6 +29,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "RP-WORK-PANEL-001",
+                conceptId = ConceptIds.EquipmentInstallation,
                 description = "Unsecured conductors in panel with poor workmanship",
                 necArticle = "110.12",
                 necArticleText = "Electrical equipment shall be installed in a neat and workmanlike manner.",
@@ -42,6 +44,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "RP-CONN-LUG-001",
+                conceptId = ConceptIds.EquipmentInstallation,
                 description = "Aluminum service entrance conductor terminated on copper-only rated lug",
                 necArticle = "110.14",
                 necArticleText = "Connection of conductors to terminal parts shall ensure a thoroughly good connection without damaging the conductors. Connectors and terminals shall be identified for the conductor material.",
@@ -56,6 +59,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "RP-CLEAR-FRONT-001",
+                conceptId = ConceptIds.WorkingSpaceAccess,
                 description = "Working space in front of panel is less than 36 inches deep",
                 necArticle = "110.26(A)(1)",
                 necArticleText = "The depth of the working space in the direction of live parts shall not be less than that specified in Table 110.26(A)(1). For 0-150V nominal, the minimum clear distance is 3 feet.",
@@ -72,6 +76,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "RP-DISC-LOC-001",
+                conceptId = ConceptIds.DisconnectingMeans,
                 description = "Service disconnect located in an area not readily accessible",
                 necArticle = "230.70(A)",
                 necArticleText = "The service disconnecting means shall be installed at a readily accessible location either outside of a building or structure or inside nearest the point of entrance of the service conductors.",
@@ -86,6 +91,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "RP-WIRE-OVER-001",
+                conceptId = ConceptIds.OvercurrentProtection,
                 description = "12 AWG conductor protected by a 30-ampere overcurrent device",
                 necArticle = "240.4",
                 necArticleText = "Conductors, other than flexible cords, shall be protected against overcurrent in accordance with their ampacity.",
@@ -100,6 +106,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "RP-PANEL-HEIGHT-001",
+                conceptId = ConceptIds.WorkingSpaceAccess,
                 description = "Breaker operating handle center is mounted above 6 feet 7 inches",
                 necArticle = "240.24(A)",
                 necArticleText = "Overcurrent devices shall be readily accessible and installed so that the center of the grip of the operating handle of the switch or circuit breaker, when in its highest position, is not more than 2.0 m (6 ft 7 in.) above the floor or working platform.",
@@ -116,6 +123,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "RP-DIR-MISS-001",
+                conceptId = ConceptIds.IdentificationMarking,
                 description = "Panel circuit directory is missing or has inaccurate circuit descriptions",
                 necArticle = "408.4",
                 necArticleText = "Every circuit and circuit modification shall be legibly identified as to its clear, evident, and specific purpose or use. The identification shall include an approved degree of detail sufficient to allow each circuit to be distinguished from all others.",
@@ -130,6 +138,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "RP-BUS-EXCEED-001",
+                conceptId = ConceptIds.EquipmentInstallation,
                 description = "More circuit breakers installed than the panel's rated number of spaces",
                 necArticle = "408.36",
                 necArticleText = "Panelboards shall be provided with physical means to prevent the installation of more overcurrent devices than that number for which the panelboard was designed, rated, and listed.",
@@ -179,6 +188,7 @@ namespace NECInspector.Editor
                     }
 
                     asset.violationId = data.violationId;
+                    asset.conceptId = data.conceptId;
                     asset.description = data.description;
                     asset.necArticle = data.necArticle;
                     asset.necArticleText = data.necArticleText;
