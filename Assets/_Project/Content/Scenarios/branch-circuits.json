@@ -21,7 +21,7 @@
         {
           "profileId": "nec",
           "reference": "210.8(A)(1)",
-          "text": "All 125-volt through 250-volt receptacles in bathrooms of dwelling units shall have GFCI protection."
+          "text": "In a home's bathrooms, every 125 V to 250 V receptacle needs GFCI protection."
         }
       ],
       "componentObjectName": "BathroomReceptacle_Sink",
@@ -40,7 +40,7 @@
         {
           "profileId": "nec",
           "reference": "210.8(A)(5)",
-          "text": "All 125-volt through 250-volt receptacles that serve countertop surfaces in kitchens of dwelling units shall have GFCI protection."
+          "text": "Kitchen receptacles (125 V to 250 V) that feed countertop surfaces in a home need GFCI protection."
         }
       ],
       "componentObjectName": "KitchenReceptacle_Counter1",
@@ -59,7 +59,7 @@
         {
           "profileId": "nec",
           "reference": "210.8(A)(2)",
-          "text": "All 125-volt through 250-volt receptacles in garages and accessory buildings with floors at or below grade level shall have GFCI protection."
+          "text": "Garages and outbuildings need GFCI protection on 125 V to 250 V receptacles when the floor is at or below grade."
         }
       ],
       "componentObjectName": "GarageReceptacle_Workbench",
@@ -78,7 +78,7 @@
         {
           "profileId": "nec",
           "reference": "210.52(A)",
-          "text": "Receptacle outlets shall be installed so that no point measured horizontally along the floor line of any wall space is more than 6 feet from a receptacle outlet."
+          "text": "Place receptacles so every point along a wall's floor line is within 6 feet of one."
         }
       ],
       "componentObjectName": "LivingRoom_WallGap",
@@ -97,7 +97,7 @@
         {
           "profileId": "nec",
           "reference": "240.4(D)",
-          "text": "The overcurrent protection shall not exceed 15 amperes for 14 AWG, 20 amperes for 12 AWG, and 30 amperes for 10 AWG copper."
+          "text": "Small copper conductors have breaker limits: 15 A for 14 AWG, 20 A for 12 AWG and 30 A for 10 AWG."
         }
       ],
       "componentObjectName": "KitchenCircuit_Wire",
@@ -116,7 +116,7 @@
         {
           "profileId": "nec",
           "reference": "210.12(A)",
-          "text": "All 120-volt, single-phase, 15- and 20-ampere branch circuits supplying outlets and devices installed in dwelling unit kitchens, family rooms, dining rooms, living rooms, parlors, libraries, dens, bedrooms, sunrooms, recreation rooms, closets, hallways, laundry areas, and similar rooms or areas shall be protected by any of the means described in 210.12(A)(1) through (A)(6)."
+          "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the methods in 210.12(A)(1) through (A)(6)."
         }
       ],
       "componentObjectName": "BedroomCircuit_Breaker",
@@ -135,7 +135,7 @@
         {
           "profileId": "nec",
           "reference": "210.12(A)",
-          "text": "All 120-volt, single-phase, 15- and 20-ampere branch circuits supplying outlets and devices installed in dwelling unit kitchens, family rooms, dining rooms, living rooms, parlors, libraries, dens, bedrooms, sunrooms, recreation rooms, closets, hallways, laundry areas, and similar rooms or areas shall be protected by any of the means described in 210.12(A)(1) through (A)(6)."
+          "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the methods in 210.12(A)(1) through (A)(6)."
         }
       ],
       "componentObjectName": "LivingRoomCircuit_Breaker",
@@ -154,7 +154,7 @@
         {
           "profileId": "nec",
           "reference": "210.52(C)",
-          "text": "Receptacle outlets for countertop spaces shall be installed so that no point along the wall line is more than 24 inches measured horizontally from a receptacle outlet in that space."
+          "text": "Space countertop receptacles so that nowhere along the counter's back wall are you over 24 inches (horizontally) from one."
         }
       ],
       "componentObjectName": "KitchenCountertop_Gap",
@@ -173,7 +173,7 @@
         {
           "profileId": "nec",
           "reference": "210.11(C)(1)",
-          "text": "At least one 120-volt, 20-ampere branch circuit shall be provided to supply bathroom receptacle outlet(s)."
+          "text": "Provide at least one 120 V, 20 A circuit for the bathroom receptacles."
         }
       ],
       "componentObjectName": "BathroomCircuit_SharedBreaker",
@@ -192,7 +192,7 @@
         {
           "profileId": "nec",
           "reference": "210.11(C)(3)",
-          "text": "Two or more 20-ampere small-appliance branch circuits shall be provided for kitchen receptacle outlets."
+          "text": "Provide two or more 20 A small-appliance circuits for the kitchen receptacles."
         }
       ],
       "componentObjectName": "KitchenPanel_SmallAppliance",
@@ -211,7 +211,7 @@
         {
           "profileId": "nec",
           "reference": "334.80",
-          "text": "Where more than two NM cables containing two or more current-carrying conductors are installed through the same opening in wood framing without maintaining spacing, the ampacity of each conductor shall be adjusted in accordance with Table 310.15(C)(1)."
+          "text": "Bundling more than two NM cables (each with at least two current-carrying conductors) in a single hole in wood framing, without any gap between them, calls for derating each conductor's ampacity per Table 310.15(C)(1)."
         }
       ],
       "componentObjectName": "KitchenWall_CableBundleHole",
@@ -230,7 +230,7 @@
         {
           "profileId": "nec",
           "reference": "210.8(D)",
-          "text": "GFCI protection shall be provided for dishwashers in dwelling unit locations. The branch circuit supplying the dishwasher shall be protected by a listed GFCI device."
+          "text": "Dishwashers in homes need GFCI protection, and the dishwasher's branch circuit must use a listed GFCI device."
         }
       ],
       "componentObjectName": "KitchenDishwasher_Circuit",

@@ -39,9 +39,11 @@ BS 7671 and others) are copyrighted, and because the app should teach what crede
 
 ## Current status
 
-The existing citation texts and article texts were written before this policy and mostly use statutory
-wording. They need a paraphrase pass (tracked in `TODO.md`, Phase F). Until then the content test reports
-how many texts still use statutory wording, and the number should go to zero.
+The violation citation texts and the article texts have been paraphrased (see `docs/CONTENT_REVIEW.md`),
+and `ContentPolicyTests` now fails if any student-facing text in the content files uses statutory wording.
+A credential expert still has to review the paraphrases for accuracy, and some references need checking
+(listed in `docs/CONTENT_REVIEW.md`). Text that still lives in editor scripts has not been through the
+same check yet.
 
 ## Adding or changing content: checklist
 

@@ -65,8 +65,10 @@ Status key: `[x]` done and merged, `[~]` built and in review (PR open), `[ ]` no
 - [ ] Pluggable compliance rule sets per profile (rule logic is still in C#; only numbers, citations and on/off are data)
 
 ### Phase F - Governance
-- [ ] **Paraphrase pass (high priority, content policy in `docs/CONTENT_POLICY.md`):** 41 of 42 violation citation texts and 96 of 98 NEC article texts use statutory wording ("shall") and read as copied code text. Rewrite them in our own words, shorter than the source, covering only skills a credential requires; have a credential expert review them. Then make the wording check in `ContentPolicyTests` fail instead of warn
-- [ ] Trim `nec_articles.json` to articles that support skills required by a credential (the policy limits content to credential skills)
+- [~] Paraphrase pass (this branch): all 42 violation citation texts and 98 article texts rewritten in new words (facts and references kept, shorter than the source, no six-word runs copied); the wording check in `ContentPolicyTests` now fails on any statutory wording. Notes for the reviewer are in `docs/CONTENT_REVIEW.md`
+- [ ] **Credential expert review** of the paraphrases for accuracy and edition (2026), and of the suspected reference problems in `docs/CONTENT_REVIEW.md` (two swapped citation pairs, a mismatched load-calc citation, `210.8(A)` numbering)
+- [ ] Run the same paraphrase check on the text in editor scripts (quick-reference cards, sandbox descriptions, certificates) when it moves to JSON
+- [ ] Trim `nec_articles.json` to articles that support skills required by a credential: 43 of 98 are not tied to any current violation (list in `docs/CONTENT_REVIEW.md`); decide which to keep
 - [ ] Licensing status per profile (NEC, CEC, BS 7671 are copyrighted); record it in the profile
 - [~] Content policy documented and enforced: scope (content only for skills a credential requires) fails the tests; wording is reported as a warning (this branch)
 - [ ] Coverage report: each credential's blueprint vs the concepts and scenarios that cover it

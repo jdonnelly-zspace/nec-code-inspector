@@ -21,7 +21,7 @@
         {
           "profileId": "nec",
           "reference": "110.12",
-          "text": "Electrical equipment shall be installed in a neat and workmanlike manner."
+          "text": "Install electrical equipment tidily, with good workmanship."
         }
       ],
       "componentObjectName": "Panel_LooseConductors",
@@ -40,7 +40,7 @@
         {
           "profileId": "nec",
           "reference": "110.14",
-          "text": "Connection of conductors to terminal parts shall ensure a thoroughly good connection without damaging the conductors. Connectors and terminals shall be identified for the conductor material."
+          "text": "Terminations must make a solid connection without damaging the conductor, and connectors and terminals must be rated for the conductor's material."
         }
       ],
       "componentObjectName": "Panel_MainLug_Aluminum",
@@ -59,7 +59,7 @@
         {
           "profileId": "nec",
           "reference": "110.26(A)(1)",
-          "text": "The depth of the working space in the direction of live parts shall not be less than that specified in Table 110.26(A)(1). For 0-150V nominal, the minimum clear distance is 3 feet."
+          "text": "Working space in front of live parts must be at least as deep as Table 110.26(A)(1) requires; for 0 to 150 V nominal that is 3 feet."
         }
       ],
       "componentObjectName": "Panel_WorkingSpace_Obstruction",
@@ -78,7 +78,7 @@
         {
           "profileId": "nec",
           "reference": "230.70(A)",
-          "text": "The service disconnecting means shall be installed at a readily accessible location either outside of a building or structure or inside nearest the point of entrance of the service conductors."
+          "text": "Put the service disconnect where it is readily accessible, outside the building or inside near where the service conductors enter."
         }
       ],
       "componentObjectName": "ServiceDisconnect_Inaccessible",
@@ -97,7 +97,7 @@
         {
           "profileId": "nec",
           "reference": "240.4",
-          "text": "Conductors, other than flexible cords, shall be protected against overcurrent in accordance with their ampacity."
+          "text": "Protect conductors (except flexible cords) from overcurrent according to their ampacity."
         }
       ],
       "componentObjectName": "Panel_Breaker30A_12AWG",
@@ -116,7 +116,7 @@
         {
           "profileId": "nec",
           "reference": "240.24(A)",
-          "text": "Overcurrent devices shall be readily accessible and installed so that the center of the grip of the operating handle of the switch or circuit breaker, when in its highest position, is not more than 2.0 m (6 ft 7 in.) above the floor or working platform."
+          "text": "Keep breakers and switches within easy reach: with the handle raised to its top position, the middle of its grip must be no higher than 6 ft 7 in. (2.0 m) off the floor or working platform."
         }
       ],
       "componentObjectName": "Panel_TopBreaker_High",
@@ -135,7 +135,7 @@
         {
           "profileId": "nec",
           "reference": "408.4",
-          "text": "Every circuit and circuit modification shall be legibly identified as to its clear, evident, and specific purpose or use. The identification shall include an approved degree of detail sufficient to allow each circuit to be distinguished from all others."
+          "text": "Label every circuit, and every change to a circuit, clearly with its specific purpose, in enough detail to tell it apart from all others."
         }
       ],
       "componentObjectName": "Panel_CircuitDirectory",
@@ -154,7 +154,7 @@
         {
           "profileId": "nec",
           "reference": "408.36",
-          "text": "Panelboards shall be provided with physical means to prevent the installation of more overcurrent devices than that number for which the panelboard was designed, rated, and listed."
+          "text": "A panelboard must physically prevent installing more overcurrent devices than the number it was designed, rated and listed for."
         }
       ],
       "componentObjectName": "Panel_OverfilledBus",

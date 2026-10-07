@@ -1,0 +1,64 @@
+# Content Review Notes
+
+For the credential expert who reviews the paraphrased content. See `docs/CONTENT_POLICY.md` for the rules.
+This file deliberately contains no code wording: compare each text in the app with the code book yourself.
+
+## What was rewritten
+
+- All 42 violation citation texts (`Assets/_Project/Content/Scenarios/*.json`, `citations[].text`).
+- All 98 reference article texts (`Assets/_Project/StreamingAssets/NECDatabase/nec_articles.json`, `text`).
+
+Each new text keeps the facts of the text it replaced (numbers, limits, conditions, which parts of the code
+it points to) in new words, is shorter than the original, and has no run of six or more identical
+consecutive words with it. Code references are kept exactly. Article titles were not rewritten.
+The check that did this is described in the pull request; it ran once against the old text, which is no
+longer in the repository. The standing check (`ContentPolicyTests`) fails if any student-facing text
+uses statutory wording.
+
+## What the reviewer should check
+
+1. **Accuracy.** Does each paraphrase say what the referenced rule says? Paraphrasing can lose a condition
+   or an exception. Pay attention to texts with numbers, exceptions or lists (`240.4(D)`, `250.53(A)(2)`,
+   `220.42`, `220.55`, `430.110`, `210.52` items).
+2. **Edition.** The data targets the 2026 NEC. Confirm numbers and exceptions against that edition, and
+   confirm which items were added or changed in it (`isNewInEdition` flags).
+3. **Neutrality of explanation.** Plain language a student can follow; no hidden new rules.
+
+## Suspected reference problems (existing data, not changed here)
+
+These came to light while paraphrasing. The reference numbers were left as they were.
+
+- `BC-DEDICATED-BATH-001` cites `210.11(C)(1)` and `BC-DEDICATED-KITCHEN-001` cites `210.11(C)(3)`. The
+  descriptions suggest the two references are swapped. The article data is also inconsistent with itself:
+  the `220.52` article points to `210.11(C)(1)` for small-appliance circuits.
+- `COM-DISC-SIGHT-001` (disconnect not in sight) cites `430.110`, and `COM-MOTOR-CTRL-001` (disconnect
+  rating) cites `430.102(B)`. The citation texts describe the other violation, so these also look swapped.
+- `COM-RECPT-LOAD-001` (a per-outlet load amount) cites `220.44`, which is about demand factors; the
+  per-outlet amount is in the `220.14` article.
+- `BC-GFCI-KITCHEN-001` cites `210.8(A)(5)`. Check the numbering of the `210.8(A)` items (kitchen,
+  laundry, bathtub, outdoor) against the 2026 edition; the article data uses `(A)(5)`, `(A)(7)`, `(A)(9)`
+  and `(A)(3)`.
+
+## Articles not tied to any current violation
+
+Content policy limits content to skills a credential requires. The articles below are neither cited by a
+violation nor listed as related to a cited article. Some support the panel sandbox load calculation
+(`220.x`, `230.79`, `210.x`); others belong to skills no credential requires yet (pool, battery, outdoor
+and wet locations, wiring methods). They were paraphrased, not removed. Decide which to keep.
+
+`110.14(A)`, `110.14(B)`, `110.3(B)`, `200.6`, `210.3`, `210.8(A)(3)`, `210.8(A)(7)`, `210.8(A)(9)`,
+`210.12(B)`, `210.19(A)`, `210.23`, `210.52(C)(5)`, `210.52(D)`, `210.52(E)(1)`, `210.52(F)`, `210.52(G)`,
+`220.18`, `220.52`, `220.54`, `220.55`, `220.83`, `225.18`, `230.79`, `250.4(A)(5)`, `250.66`, `250.118`,
+`300.4(A)`, `300.5`, `314.16`, `334.30`, `404.2(C)`, `406.4(D)`, `406.9(A)`, `406.9(B)`, `410.10(A)`,
+`480.3`, `480.4`, `480.7`, `680.7`, `680.12`, `680.22(A)(1)`, `680.26`, `680.44`.
+
+Also open: 13 related-article references point to articles that are not in the data (the logic tests list
+them as warnings).
+
+## Not covered by this pass
+
+- Quick-reference card text, panel sandbox descriptions and certificate text still live in editor scripts
+  (tracked in `TODO.md`); they are written in an instructional voice without statutory wording, but have
+  not been through the same paraphrase check.
+- Article titles and the violation `description`, `hintText` and `inspectionNote` fields (checked only for
+  statutory wording).
