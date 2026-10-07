@@ -4,7 +4,7 @@
     Plain .NET tests for the engine-independent logic: code profile types, electrical tables,
     load calculation, citation matching, and the JSON content files. The Unity scripts are
     compiled directly from Assets (no copies), with UnityStubs.cs standing in for the few
-    UnityEngine types they touch. Run: dotnet run --project tests/LogicTests
+    UnityEngine types they touch. Run with: dotnet run, passing the project path tests/LogicTests
   -->
 
   <PropertyGroup>
