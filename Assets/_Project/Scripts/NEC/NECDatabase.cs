@@ -25,8 +25,10 @@ namespace NECInspector.NEC
         public bool IsLoaded => _isLoaded;
         public int ArticleCount => _allArticles.Count;
         public ElectricalTables Tables => _tables ??= ElectricalTables.CreateNecDefaults();
+        public CodeTerminology Terminology => _terminology ??= CodeTerminology.CreateNecDefaults();
 
         private ElectricalTables _tables;
+        private CodeTerminology _terminology;
 
         private void Awake()
         {
@@ -38,6 +40,7 @@ namespace NECInspector.NEC
 
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            LoadTerminology();
             LoadArticles();
             LoadTables();
             CodeProfiles.SetActive(this);
@@ -129,20 +132,54 @@ namespace NECInspector.NEC
         }
 
         /// <summary>
+        /// Load the code name, reference format, section names and vocabulary from
+        /// StreamingAssets/NECDatabase/terminology.json. Missing file falls back to NEC defaults.
+        /// </summary>
+        private void LoadTerminology()
+        {
+            string path = Path.Combine(Application.streamingAssetsPath, "NECDatabase", "terminology.json");
+
+            if (!File.Exists(path))
+            {
+                Debug.LogWarning($"[NECDatabase] Terminology not found at {path}; using built-in NEC labels");
+                return;
+            }
+
+            try
+            {
+                var terminology = JsonUtility.FromJson<CodeTerminology>(File.ReadAllText(path));
+                if (terminology == null)
+                {
+                    Debug.LogError("[NECDatabase] Failed to parse terminology; using built-in NEC labels");
+                    return;
+                }
+
+                if (terminology.terms == null)
+                    terminology.terms = CodeTerminology.CreateNecDefaults().terms;
+
+                _terminology = terminology;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"[NECDatabase] Error loading terminology: {e.Message}; using built-in NEC labels");
+            }
+        }
+
+        /// <summary>
         /// Convert the NEC JSON record into the code-neutral article type.
         /// </summary>
-        private static CodeArticle ToCodeArticle(NECArticle source)
+        private CodeArticle ToCodeArticle(NECArticle source)
         {
             return new CodeArticle
             {
                 reference = source.FullReference,
-                referenceLabel = $"Art. {source.FullReference}",
+                referenceLabel = Terminology.ReferenceLabel(source.FullReference),
                 title = source.title,
                 text = source.text,
                 chapter = source.chapter,
                 keywords = source.keywords,
                 relatedReferences = source.relatedArticles,
-                isNewInEdition = source.isNewIn2026
+                isNewInEdition = source.isNewInEdition
             };
         }
 

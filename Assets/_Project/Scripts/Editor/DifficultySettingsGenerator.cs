@@ -29,13 +29,13 @@ namespace NECInspector.Editor
                     showScaffolding: true,
                     scaffoldingTimeoutSeconds: 60f,
                     hintCooldownSeconds: 15f,
-                    citationMode: NECCitationMode.Dropdown,
+                    citationMode: CitationMode.Dropdown,
                     enableTimeLimit: false,
                     timeLimitSeconds: 0,
                     penalizeFalsePositives: false,
                     falsePositivePenalty: 0f,
                     showSimplifiedTerminology: true,
-                    highlight2026Changes: true,
+                    highlightNewInEdition: true,
                     includeSubtleViolations: false
                 );
 
@@ -47,13 +47,13 @@ namespace NECInspector.Editor
                     showScaffolding: false,
                     scaffoldingTimeoutSeconds: -1f,
                     hintCooldownSeconds: 30f,
-                    citationMode: NECCitationMode.SearchableDropdown,
+                    citationMode: CitationMode.SearchableDropdown,
                     enableTimeLimit: false,
                     timeLimitSeconds: 0,
                     penalizeFalsePositives: false,
                     falsePositivePenalty: 0.1f,
                     showSimplifiedTerminology: false,
-                    highlight2026Changes: true,
+                    highlightNewInEdition: true,
                     includeSubtleViolations: false
                 );
 
@@ -65,13 +65,13 @@ namespace NECInspector.Editor
                     showScaffolding: false,
                     scaffoldingTimeoutSeconds: -1f,
                     hintCooldownSeconds: -1f,
-                    citationMode: NECCitationMode.FreeText,
+                    citationMode: CitationMode.FreeText,
                     enableTimeLimit: true,
                     timeLimitSeconds: 1200,
                     penalizeFalsePositives: true,
                     falsePositivePenalty: 0.25f,
                     showSimplifiedTerminology: false,
-                    highlight2026Changes: false,
+                    highlightNewInEdition: false,
                     includeSubtleViolations: true
                 );
             }
@@ -88,9 +88,9 @@ namespace NECInspector.Editor
 
         private static void CreateOrUpdate(string path, DifficultyLevel level, string displayName,
             bool showHighlightHints, bool showScaffolding, float scaffoldingTimeoutSeconds,
-            float hintCooldownSeconds, NECCitationMode citationMode, bool enableTimeLimit,
+            float hintCooldownSeconds, CitationMode citationMode, bool enableTimeLimit,
             int timeLimitSeconds, bool penalizeFalsePositives, float falsePositivePenalty,
-            bool showSimplifiedTerminology, bool highlight2026Changes, bool includeSubtleViolations)
+            bool showSimplifiedTerminology, bool highlightNewInEdition, bool includeSubtleViolations)
         {
             var asset = AssetDatabase.LoadAssetAtPath<DifficultySettingsSO>(path);
             if (asset == null)
@@ -111,7 +111,7 @@ namespace NECInspector.Editor
             asset.penalizeFalsePositives = penalizeFalsePositives;
             asset.falsePositivePenalty = falsePositivePenalty;
             asset.showSimplifiedTerminology = showSimplifiedTerminology;
-            asset.highlight2026Changes = highlight2026Changes;
+            asset.highlightNewInEdition = highlightNewInEdition;
             asset.includeSubtleViolations = includeSubtleViolations;
 
             EditorUtility.SetDirty(asset);

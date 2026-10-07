@@ -102,7 +102,7 @@ namespace NECInspector.Inspection
                 _isInspecting = true;
 
                 var citationMode = GameManager.Instance?.Difficulty.CurrentSettings?.citationMode
-                    ?? NECCitationMode.SearchableDropdown;
+                    ?? CitationMode.SearchableDropdown;
 
                 _flaggingPanel.Show(component, citationMode);
 

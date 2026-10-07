@@ -18,7 +18,6 @@ namespace NECInspector.Data
         public string displayName;
         public string description;
         public string environmentDescription;
-        public string[] necChapters;
         public int expertTimeLimit;
         public string[] availableDifficulties;
         public string assetPrefix;         // violation asset names: VD_{assetPrefix}_{violationId}

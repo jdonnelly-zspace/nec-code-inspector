@@ -36,6 +36,7 @@ namespace NECInspector.Codes
         }
 
         private static ElectricalTables _fallbackTables;
+        private static CodeTerminology _fallbackTerminology;
 
         /// <summary>
         /// Tables for the active profile. Falls back to NEC defaults when no profile is loaded
@@ -51,6 +52,22 @@ namespace NECInspector.Codes
 
                 _fallbackTables ??= ElectricalTables.CreateNecDefaults();
                 return _fallbackTables;
+            }
+        }
+
+        /// <summary>
+        /// Terminology for the active profile, with NEC labels when none is loaded.
+        /// </summary>
+        public static CodeTerminology Terminology
+        {
+            get
+            {
+                var profile = Active;
+                if (profile != null && profile.Terminology != null)
+                    return profile.Terminology;
+
+                _fallbackTerminology ??= CodeTerminology.CreateNecDefaults();
+                return _fallbackTerminology;
             }
         }
 

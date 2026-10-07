@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using NECInspector.Codes;
 using NECInspector.StateMachine;
 
 namespace NECInspector.Inspection
@@ -32,7 +33,7 @@ namespace NECInspector.Inspection
                     scenario.displayName,
                     scenario.description,
                     $"Violations to find: {_inspectionManager.TotalActiveViolations}",
-                    scenario.necChapters
+                    scenario.GetSections(CodeProfiles.Active)
                 );
             }
 

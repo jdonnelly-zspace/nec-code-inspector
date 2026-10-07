@@ -107,7 +107,7 @@ namespace NECInspector.Inspection
                 bool sameReference = article != null && citation != null && article.reference == citation.reference;
                 _missedNECArticleText.text = sameReference
                     ? article.referenceLabel
-                    : (citation != null ? $"Art. {citation.reference}" : "");
+                    : (citation != null ? CodeProfiles.Terminology.ReferenceLabel(citation.reference) : "");
             }
             if (_missedNECTextContent != null)
                 _missedNECTextContent.text = article?.text ?? citation?.text;
@@ -151,7 +151,7 @@ namespace NECInspector.Inspection
             }
 
             if (_accuracyText != null) _accuracyText.text = $"Detection: {score.Accuracy:P0}";
-            if (_citationText != null) _citationText.text = $"NEC Citations: {score.CitationAccuracy:P0}";
+            if (_citationText != null) _citationText.text = $"{CodeProfiles.Terminology.CitationsHeading}: {score.CitationAccuracy:P0}";
             if (_totalTimeText != null) _totalTimeText.text = $"Time: {FormatTime(score.timeElapsed)}";
 
             gameObject.SetActive(true);

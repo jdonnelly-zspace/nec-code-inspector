@@ -199,12 +199,12 @@ namespace NECInspector.UI
             var level = GameManager.Instance?.Difficulty?.CurrentLevel ?? DifficultyLevel.Standard;
             string desc = level switch
             {
-                DifficultyLevel.Beginner => "CTE Students: Guided inspection with dropdown NEC citations, highlight hints, and scaffolding. Fewer violations to find.",
-                DifficultyLevel.Standard => "Apprentices: Searchable NEC citations, no hints. All standard violations active.",
-                DifficultyLevel.Expert => "Licensed Electricians: Free-text NEC citations, time limits, subtle violations, false positive penalties.",
+                DifficultyLevel.Beginner => "CTE Students: Guided inspection with dropdown {code} citations, highlight hints, and scaffolding. Fewer violations to find.",
+                DifficultyLevel.Standard => "Apprentices: Searchable {code} citations, no hints. All standard violations active.",
+                DifficultyLevel.Expert => "Licensed Electricians: Free-text {code} citations, time limits, subtle violations, false positive penalties.",
                 _ => ""
             };
-            SetText(_difficultyDescription, $"Current: {level}\n\n{desc}");
+            SetText(_difficultyDescription, $"Current: {level}\n\n{CodeProfiles.Terminology.Format(desc)}");
         }
 
         #endregion

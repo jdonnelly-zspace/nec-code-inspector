@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace NECInspector.Data
 {
@@ -29,7 +30,8 @@ namespace NECInspector.Data
         public string summary;
         [TextArea(2, 4)]
         public string keyRule;
-        public string[] necReferences;      // e.g., "210.8(A)", "240.4(D)"
+        [FormerlySerializedAs("necReferences")]
+        public string[] codeReferences;     // e.g., "210.8(A)", "240.4(D)"
         public string[] keywords;
 
         [Header("Visual")]

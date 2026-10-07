@@ -41,6 +41,10 @@ namespace NECInspector.Codes
         public float doublePoleVoltage = 240f;
         public float serviceVoltage = 240f;
 
+        // Units and defaults shown to students
+        public string areaUnitLabel = "sq ft";        // unit of dwelling area used by the lighting load constant
+        public string defaultConductor = "12 AWG";    // conductor used when a wire has none set
+
         // Dwelling load calculation constants
         public float lightingVAPerArea = 3f;
         public float smallApplianceVA = 1500f;

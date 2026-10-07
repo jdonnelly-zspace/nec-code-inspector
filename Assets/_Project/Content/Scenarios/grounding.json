@@ -4,9 +4,6 @@
   "displayName": "Grounding & Bonding Inspection",
   "description": "Inspect a residential service entrance and grounding electrode system for code violations. Verify proper grounding electrode installation, bonding connections, conductor sizing, and system grounding integrity.",
   "environmentDescription": "A residential utility room and exterior service entrance showing the grounding electrode system, service panel, water pipe bonding, and ground rods.",
-  "necChapters": [
-    "2"
-  ],
   "expertTimeLimit": 1200,
   "availableDifficulties": [
     "Beginner",

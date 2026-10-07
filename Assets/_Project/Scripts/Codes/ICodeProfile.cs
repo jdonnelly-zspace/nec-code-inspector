@@ -17,6 +17,9 @@ namespace NECInspector.Codes
         /// <summary>Voltages, ampacities, load-calc constants and compliance rule settings.</summary>
         ElectricalTables Tables { get; }
 
+        /// <summary>Names and labels this code uses (reference format, section names, vocabulary).</summary>
+        CodeTerminology Terminology { get; }
+
         /// <summary>Exact or partial (parent article) lookup by reference.</summary>
         CodeArticle GetArticle(string reference);
 

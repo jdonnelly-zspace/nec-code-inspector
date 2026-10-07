@@ -1,4 +1,5 @@
 using UnityEngine;
+using NECInspector.Codes;
 using TMPro;
 
 namespace NECInspector.Tools
@@ -39,7 +40,7 @@ namespace NECInspector.Tools
 
             string reading = _currentMode switch
             {
-                MeasurementMode.Voltage => $"{measurable.voltage:F1} V",
+                MeasurementMode.Voltage => $"{measurable.Voltage:F1} V",
                 MeasurementMode.Current => $"{measurable.current:F2} A",
                 MeasurementMode.Resistance => measurable.resistance < 1f ? $"{measurable.resistance * 1000:F0} mΩ" : $"{measurable.resistance:F1} Ω",
                 MeasurementMode.Continuity => measurable.hasContinuity ? "BEEP" : "OL",
@@ -68,7 +69,8 @@ namespace NECInspector.Tools
     /// </summary>
     public class MeasurementPoint : MonoBehaviour
     {
-        public float voltage = 120f;
+        public float voltage = -1f;     // negative = the active profile's single-pole voltage
+        public float Voltage => voltage >= 0f ? voltage : CodeProfiles.Tables.singlePoleVoltage;
         public float current = 0f;
         public float resistance = 0f;
         public bool hasContinuity = true;

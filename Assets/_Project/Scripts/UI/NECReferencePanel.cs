@@ -60,7 +60,7 @@ namespace NECInspector.Inspection
             if (_articleRefText != null) _articleRefText.text = article.referenceLabel;
             if (_articleTitleText != null) _articleTitleText.text = article.title;
             if (_articleBodyText != null) _articleBodyText.text = article.text;
-            if (_chapterText != null) _chapterText.text = $"Chapter {article.chapter}";
+            if (_chapterText != null) _chapterText.text = CodeProfiles.Terminology.SectionName(article.chapter);
             _newIn2026Badge?.SetActive(article.isNewInEdition);
 
             // Populate related articles

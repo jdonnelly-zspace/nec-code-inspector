@@ -30,10 +30,9 @@ namespace NECInspector.Editor
             definition.description = "Design a complete residential electrical panel for a 2,000 sq ft single-family dwelling. Select and place the correct breakers for all required circuits, route wiring with proper gauge conductors, and verify NEC compliance.";
             definition.totalAmps = 200;
             definition.totalSlots = 40;
-            definition.dwellingSquareFootage = 2000f;
+            definition.dwellingArea = 2000f;
             definition.loadCalcTolerancePercent = 10f;
             definition.expertTimeLimit = 1800;
-            definition.necChapters = new[] { "2", "3" };
             definition.availableDifficulties = new[]
             {
                 DifficultyLevel.Beginner,
@@ -56,7 +55,7 @@ namespace NECInspector.Editor
                     poleCount = 1,
                     requiresGFCI = true,
                     requiresAFCI = true,
-                    necReference = "210.11(C)(3)",
+                    codeReference = "210.11(C)(3)",
                     isRequired = true,
                     description = "First of two required 20A small-appliance branch circuits for kitchen countertop receptacles."
                 },
@@ -68,7 +67,7 @@ namespace NECInspector.Editor
                     poleCount = 1,
                     requiresGFCI = true,
                     requiresAFCI = true,
-                    necReference = "210.11(C)(3)",
+                    codeReference = "210.11(C)(3)",
                     isRequired = true,
                     description = "Second of two required 20A small-appliance branch circuits for kitchen countertop receptacles."
                 },
@@ -80,7 +79,7 @@ namespace NECInspector.Editor
                     poleCount = 1,
                     requiresGFCI = true,
                     requiresAFCI = false,
-                    necReference = "210.11(C)(1)",
+                    codeReference = "210.11(C)(1)",
                     isRequired = true,
                     description = "Dedicated 20A branch circuit for bathroom receptacle outlets."
                 },
@@ -92,7 +91,7 @@ namespace NECInspector.Editor
                     poleCount = 1,
                     requiresGFCI = true,
                     requiresAFCI = true,
-                    necReference = "210.11(C)(2)",
+                    codeReference = "210.11(C)(2)",
                     isRequired = true,
                     description = "Dedicated 20A branch circuit for laundry room receptacle."
                 },
@@ -104,7 +103,7 @@ namespace NECInspector.Editor
                     poleCount = 1,
                     requiresGFCI = true,
                     requiresAFCI = false,
-                    necReference = "210.8(D)",
+                    codeReference = "210.8(D)",
                     isRequired = true,
                     description = "Dedicated circuit for dishwasher with GFCI protection (2026 NEC)."
                 },
@@ -116,7 +115,7 @@ namespace NECInspector.Editor
                     poleCount = 1,
                     requiresGFCI = true,
                     requiresAFCI = false,
-                    necReference = "210.8(A)(5)",
+                    codeReference = "210.8(A)(5)",
                     isRequired = true,
                     description = "Dedicated circuit for garbage disposal under kitchen sink."
                 },
@@ -128,7 +127,7 @@ namespace NECInspector.Editor
                     poleCount = 2,
                     requiresGFCI = false,
                     requiresAFCI = false,
-                    necReference = "220.55",
+                    codeReference = "220.55",
                     isRequired = true,
                     description = "240V circuit for electric range/oven. 50A with 6 AWG conductors."
                 },
@@ -140,7 +139,7 @@ namespace NECInspector.Editor
                     poleCount = 2,
                     requiresGFCI = false,
                     requiresAFCI = false,
-                    necReference = "220.54",
+                    codeReference = "220.54",
                     isRequired = true,
                     description = "240V circuit for electric clothes dryer. 30A with 10 AWG conductors."
                 },
@@ -152,7 +151,7 @@ namespace NECInspector.Editor
                     poleCount = 2,
                     requiresGFCI = false,
                     requiresAFCI = false,
-                    necReference = "440.4",
+                    codeReference = "440.4",
                     isRequired = true,
                     description = "240V circuit for central air conditioning condensing unit."
                 },
@@ -164,7 +163,7 @@ namespace NECInspector.Editor
                     poleCount = 1,
                     requiresGFCI = false,
                     requiresAFCI = true,
-                    necReference = "220.12",
+                    codeReference = "220.12",
                     isRequired = true,
                     description = "General lighting circuit for living areas. AFCI required for dwelling unit."
                 },
@@ -176,7 +175,7 @@ namespace NECInspector.Editor
                     poleCount = 1,
                     requiresGFCI = false,
                     requiresAFCI = true,
-                    necReference = "210.52(A)",
+                    codeReference = "210.52(A)",
                     isRequired = true,
                     description = "General receptacle circuit for bedrooms and living areas. AFCI required."
                 },
@@ -188,7 +187,7 @@ namespace NECInspector.Editor
                     poleCount = 1,
                     requiresGFCI = true,
                     requiresAFCI = false,
-                    necReference = "210.8(A)(2)",
+                    codeReference = "210.8(A)(2)",
                     isRequired = true,
                     description = "Garage receptacle circuit with GFCI protection."
                 }

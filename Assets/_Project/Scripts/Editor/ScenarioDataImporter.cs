@@ -124,7 +124,6 @@ namespace NECInspector.Editor
                     .Select(d => Enum.Parse<DifficultyLevel>(d))
                     .ToArray();
                 scenario.violations = violationAssets;
-                scenario.necChapters = data.necChapters ?? new string[0];
                 scenario.expertTimeLimit = data.expertTimeLimit;
                 scenario.environmentDescription = data.environmentDescription;
 

@@ -1,0 +1,17 @@
+{
+  "codeName": "NEC",
+  "referencePrefix": "Art. ",
+  "referenceNoun": "Article",
+  "sectionLabel": "Chapter",
+  "generalPracticeLabel": "General practice",
+  "terms": [
+    { "key": "grounding", "text": "grounding" },
+    { "key": "ground-rod", "text": "ground rod" },
+    { "key": "receptacle", "text": "receptacle" },
+    { "key": "breaker", "text": "breaker" },
+    { "key": "panel", "text": "panel" },
+    { "key": "shock-protection-device", "text": "GFCI" },
+    { "key": "arc-fault-device", "text": "AFCI" },
+    { "key": "service-disconnect", "text": "service disconnect" }
+  ]
+}

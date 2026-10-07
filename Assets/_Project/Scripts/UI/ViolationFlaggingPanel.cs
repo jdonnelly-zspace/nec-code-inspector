@@ -41,8 +41,8 @@ namespace NECInspector.Inspection
         public event Action<InspectableComponent> OnMarkedCompliant;
 
         private InspectableComponent _currentComponent;
-        private NECCitationMode _citationMode;
-        private string _selectedNECArticle;
+        private CitationMode _citationMode;
+        private string _selectedReference;
 
         private void Awake()
         {
@@ -60,11 +60,11 @@ namespace NECInspector.Inspection
         /// <summary>
         /// Show the panel for a specific component
         /// </summary>
-        public void Show(InspectableComponent component, NECCitationMode citationMode)
+        public void Show(InspectableComponent component, CitationMode citationMode)
         {
             _currentComponent = component;
             _citationMode = citationMode;
-            _selectedNECArticle = null;
+            _selectedReference = null;
 
             if (_componentNameText != null) _componentNameText.text = component.componentName;
             if (_componentTypeText != null) _componentTypeText.text = component.componentType;
@@ -87,10 +87,10 @@ namespace NECInspector.Inspection
         {
             _violationEntryGroup?.SetActive(true);
             _descriptionInput?.SetTextWithoutNotify("");
-            _selectedNECArticle = null;
+            _selectedReference = null;
 
             // Show appropriate citation input based on difficulty
-            bool isDropdown = _citationMode == NECCitationMode.Dropdown;
+            bool isDropdown = _citationMode == CitationMode.Dropdown;
             _necDropdown?.gameObject.SetActive(isDropdown);
             _necSearchInput?.gameObject.SetActive(!isDropdown);
             _searchResultsPanel?.SetActive(false);
@@ -111,7 +111,7 @@ namespace NECInspector.Inspection
             if (_necDropdown == null || CodeProfiles.Active == null) return;
 
             _necDropdown.ClearOptions();
-            var options = new List<TMP_Dropdown.OptionData> { new("Select NEC Article...") };
+            var options = new List<TMP_Dropdown.OptionData> { new(CodeProfiles.Terminology.SelectReferencePrompt) };
 
             foreach (var display in CodeProfiles.Active.GetAllDisplayStrings())
             {
@@ -126,13 +126,13 @@ namespace NECInspector.Inspection
         {
             if (index <= 0)
             {
-                _selectedNECArticle = null;
+                _selectedReference = null;
                 return;
             }
 
             var refs = CodeProfiles.Active.GetAllReferences();
             if (index - 1 < refs.Count)
-                _selectedNECArticle = refs[index - 1];
+                _selectedReference = refs[index - 1];
         }
 
         private void OnSearchTextChanged(string text)
@@ -168,7 +168,7 @@ namespace NECInspector.Inspection
                     string articleRef = article.reference;
                     button?.onClick.AddListener(() =>
                     {
-                        _selectedNECArticle = articleRef;
+                        _selectedReference = articleRef;
                         _necSearchInput?.SetTextWithoutNotify(article.DisplayString);
                         _searchResultsPanel?.SetActive(false);
                     });
@@ -183,18 +183,18 @@ namespace NECInspector.Inspection
             string description = _descriptionInput != null ? _descriptionInput.text : "";
 
             // For FreeText mode (Expert), use whatever they typed
-            if (_citationMode == NECCitationMode.FreeText && string.IsNullOrEmpty(_selectedNECArticle))
+            if (_citationMode == CitationMode.FreeText && string.IsNullOrEmpty(_selectedReference))
             {
-                _selectedNECArticle = _necSearchInput != null ? _necSearchInput.text : "";
+                _selectedReference = _necSearchInput != null ? _necSearchInput.text : "";
             }
 
-            if (string.IsNullOrEmpty(_selectedNECArticle))
+            if (string.IsNullOrEmpty(_selectedReference))
             {
                 Debug.LogWarning("[FlaggingPanel] No NEC article selected");
                 return;
             }
 
-            OnViolationSubmitted?.Invoke(_currentComponent, description, _selectedNECArticle);
+            OnViolationSubmitted?.Invoke(_currentComponent, description, _selectedReference);
             Hide();
         }
 

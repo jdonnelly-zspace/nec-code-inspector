@@ -10,15 +10,15 @@ namespace NECInspector.PanelSandbox
     {
         public string ruleId;
         public string ruleName;
-        public string necReference;
+        public string codeReference;
         public bool passed;
         public string message;
 
-        public ComplianceResult(string ruleId, string ruleName, string necReference, bool passed, string message)
+        public ComplianceResult(string ruleId, string ruleName, string codeReference, bool passed, string message)
         {
             this.ruleId = ruleId;
             this.ruleName = ruleName;
-            this.necReference = necReference;
+            this.codeReference = codeReference;
             this.passed = passed;
             this.message = message;
         }

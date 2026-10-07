@@ -38,13 +38,18 @@ Status key: `[x]` done and merged, `[~]` built and in review (PR open), `[ ]` no
 - [ ] Credential-specific readiness reports and certificates (a printable view of a credential's requirements against skills)
 - [ ] Update `docs/CREDENTIAL_FRAMEWORK.md` (PR #1) with the skill-based progress decision
 - [~] Violation and scenario applicability, derived from citations: a violation applies to a profile only if it has a citation for it; a scenario applies if any violation does. `InspectionManager` skips non-applicable violations and the main menu hides non-applicable scenarios (this branch)
-- [ ] Rename leftover NEC-named API from the citation change (`FlagViolation(... necArticle)`, `citedNECArticle`, `FlaggedNECArticle`) as part of Phase C
+- [~] Rename leftover NEC-named API from the citation change (`FlagViolation(... necArticle)`, `citedNECArticle`, `FlaggedNECArticle`): done in Phase C (this branch)
 - [ ] Move remaining editor-script content to JSON: panel sandbox circuits, quick-reference cards, certificate templates, difficulty settings
 
 ### Phase C - Neutral wording and units (old refactor step 5)
-- [ ] Rename NEC-specific names: `NECCitationMode`, `necChapters`, `highlight2026Changes`, `isNewIn2026` JSON field, and UI strings such as "NEC Citations" and "NEC Chapters"
-- [ ] Terminology table per profile (grounding/earthing, panel/consumer unit, breaker/MCB)
-- [ ] Unit system: AWG or mm2, ft or m, 120/240 V or 230/400 V; fix remaining hard-coded defaults (`WireConnection` "12 AWG", `Multimeter` 120 V, HUD "Art." prefix)
+- [~] Neutral names (this branch): `NECCitationMode` -> `CitationMode`, `highlight2026Changes` -> `highlightNewInEdition`, `isNewIn2026` -> `isNewInEdition` (JSON and DTO), `necReference(s)` -> `codeReference(s)`, `dwellingSquareFootage` -> `dwellingArea`, `citedNECArticle` / `FlaggedNECArticle` -> `citedReference` / `FlaggedReference`. Serialized fields keep their old names through `FormerlySerializedAs`
+- [~] Scenario sections are derived from the violations' citations in the active profile; the stored NEC `necChapters` lists (scenario and panel definitions) are removed
+- [~] Terminology per profile (`CodeTerminology`, `terminology.json`): code name, reference format, section names, dropdown prompt and vocabulary (grounding/earthing, panel, breaker, ...). UI strings ("NEC Citations", "NEC Chapters", "Art.", "Chapter") now come from the active profile, and `{code}` / `{term:key}` tokens work in UI text
+- [~] Units and defaults from the profile tables: area unit label, default conductor, single-pole voltage for measurements; the HUD no longer prints "Art. General Practice"
+- [ ] Use `{term:key}` tokens in scenario and violation text so one scenario reads correctly for each code (grounding vs earthing)
+- [ ] Metric profile data: mm2 conductor table, 230/400 V, m and m2 labels (needed with the first non-NEC profile, Phase D/G)
+- [ ] Move the remaining NEC wording out of editor-script content (quick-reference cards, panel sandbox descriptions, certificate text) into JSON content files (see B2)
+- [ ] Rename MonoBehaviour classes, scene-serialized fields and files that carry NEC names (`NECReferencePanel`, `NECReviewStep`, `_necDropdown`, ...). Deferred on purpose: it can break scene and prefab references, so do it in the Unity Editor with the references visible
 - [ ] Decide on renaming the `NECInspector` namespace (cosmetic, defer)
 
 ### Phase D - Prove it with Canada (CEC + Red Seal)
@@ -60,7 +65,10 @@ Status key: `[x]` done and merged, `[~]` built and in review (PR open), `[ ]` no
 - [ ] Pluggable compliance rule sets per profile (rule logic is still in C#; only numbers, citations and on/off are data)
 
 ### Phase F - Governance
-- [ ] Licensing status per profile (NEC, CEC, BS 7671 are copyrighted); store clause numbers and paraphrased text unless licensed; check the verbatim NEC text in `nec_articles.json` and `necArticleText`
+- [ ] **Paraphrase pass (high priority, content policy in `docs/CONTENT_POLICY.md`):** 41 of 42 violation citation texts and 96 of 98 NEC article texts use statutory wording ("shall") and read as copied code text. Rewrite them in our own words, shorter than the source, covering only skills a credential requires; have a credential expert review them. Then make the wording check in `ContentPolicyTests` fail instead of warn
+- [ ] Trim `nec_articles.json` to articles that support skills required by a credential (the policy limits content to credential skills)
+- [ ] Licensing status per profile (NEC, CEC, BS 7671 are copyrighted); record it in the profile
+- [~] Content policy documented and enforced: scope (content only for skills a credential requires) fails the tests; wording is reported as a warning (this branch)
 - [ ] Coverage report: each credential's blueprint vs the concepts and scenarios that cover it
 - [ ] Naming: `ConceptIds` constants are PascalCase but `.claude/CLAUDE.md` says UPPER_SNAKE_CASE; decide and align
 - [ ] Citation matcher accepts string prefixes (`250.2` matches `250.24`); tighten to segment-aware matching

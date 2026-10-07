@@ -1,14 +1,8 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace NECInspector.Core
 {
-    public enum NECCitationMode
-    {
-        Dropdown,           // Beginner: pick from list
-        SearchableDropdown, // Standard: type to search
-        FreeText            // Expert: type exact article
-    }
-
     [CreateAssetMenu(fileName = "DifficultySettings", menuName = "NEC Inspector/Difficulty Settings")]
     public class DifficultySettingsSO : ScriptableObject
     {
@@ -22,8 +16,8 @@ namespace NECInspector.Core
         public float scaffoldingTimeoutSeconds = -1f;
         public float hintCooldownSeconds = 30f;
 
-        [Header("NEC Citation")]
-        public NECCitationMode citationMode = NECCitationMode.SearchableDropdown;
+        [Header("Citation")]
+        public CitationMode citationMode = CitationMode.SearchableDropdown;
 
         [Header("Time")]
         public bool enableTimeLimit = false;
@@ -35,7 +29,8 @@ namespace NECInspector.Core
 
         [Header("Content")]
         public bool showSimplifiedTerminology = false;
-        public bool highlight2026Changes = false;
+        [FormerlySerializedAs("highlight2026Changes")]
+        public bool highlightNewInEdition = false;
         public bool includeSubtleViolations = false;
     }
 }

@@ -108,9 +108,9 @@ namespace NECInspector.Inspection
             }
         }
 
-        private void OnViolationSubmitted(InspectableComponent component, string description, string necArticle)
+        private void OnViolationSubmitted(InspectableComponent component, string description, string reference)
         {
-            _inspectionManager.FlagViolation(component, description, necArticle);
+            _inspectionManager.FlagViolation(component, description, reference);
             _hud?.UpdateFlaggedCount(_inspectionManager.FlaggedCount);
         }
 

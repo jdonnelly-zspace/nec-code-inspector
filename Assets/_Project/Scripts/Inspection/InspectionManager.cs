@@ -113,22 +113,22 @@ namespace NECInspector.Inspection
         /// <summary>
         /// Student flags a violation on a component
         /// </summary>
-        public void FlagViolation(InspectableComponent component, string violationDescription, string necArticle)
+        public void FlagViolation(InspectableComponent component, string violationDescription, string reference)
         {
             var flagged = new FlaggedViolation
             {
                 componentName = component.gameObject.name,
                 componentDisplayName = component.componentName,
                 description = violationDescription,
-                citedNECArticle = necArticle,
+                citedReference = reference,
                 timeStamp = ElapsedTime
             };
 
             _flaggedViolations.Add(flagged);
-            component.FlagViolation(flagged.description, necArticle);
+            component.FlagViolation(flagged.description, reference);
             OnViolationFlagged?.Invoke(flagged);
 
-            Debug.Log($"[InspectionManager] Violation flagged on {component.componentName}: {necArticle}");
+            Debug.Log($"[InspectionManager] Violation flagged on {component.componentName}: {reference}");
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace NECInspector.Inspection
 
                     // Check the citation against the active code's reference for this violation
                     var expected = matchingViolation.GetCitation(profileId);
-                    if (expected != null && IsNECCitationCorrect(flagged.citedNECArticle, expected.reference))
+                    if (expected != null && IsCitationCorrect(flagged.citedReference, expected.reference))
                         correctCitations++;
                 }
                 else
@@ -201,7 +201,7 @@ namespace NECInspector.Inspection
 
                 var expected = violation.GetCitation(profileId);
                 bool citationCorrect = found && expected != null
-                    && IsNECCitationCorrect(flagged.citedNECArticle, expected.reference);
+                    && IsCitationCorrect(flagged.citedReference, expected.reference);
 
                 evidence.Add(new SkillEvidence(
                     violation.conceptId,
@@ -245,7 +245,7 @@ namespace NECInspector.Inspection
             }
         }
 
-        private bool IsNECCitationCorrect(string cited, string actual)
+        private bool IsCitationCorrect(string cited, string actual)
         {
             // Matching rules belong to the active code profile; fall back to the default matcher.
             var profile = CodeProfiles.Active;
@@ -261,7 +261,7 @@ namespace NECInspector.Inspection
         public string componentName;
         public string componentDisplayName;
         public string description;
-        public string citedNECArticle;
+        public string citedReference;
         public float timeStamp;
     }
 }

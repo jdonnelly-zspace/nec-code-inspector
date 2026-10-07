@@ -2,6 +2,8 @@
   "singlePoleVoltage": 120,
   "doublePoleVoltage": 240,
   "serviceVoltage": 240,
+  "areaUnitLabel": "sq ft",
+  "defaultConductor": "12 AWG",
   "lightingVAPerArea": 3,
   "smallApplianceVA": 1500,
   "laundryVA": 1500,

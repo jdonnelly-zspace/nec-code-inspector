@@ -30,6 +30,8 @@ namespace NECInspector.LogicTests
             t.Equal(defaults.singlePoleVoltage, fromFile.singlePoleVoltage, "singlePoleVoltage");
             t.Equal(defaults.doublePoleVoltage, fromFile.doublePoleVoltage, "doublePoleVoltage");
             t.Equal(defaults.serviceVoltage, fromFile.serviceVoltage, "serviceVoltage");
+            t.Equal(defaults.areaUnitLabel, fromFile.areaUnitLabel, "areaUnitLabel");
+            t.Equal(defaults.defaultConductor, fromFile.defaultConductor, "defaultConductor");
             t.Equal(defaults.lightingVAPerArea, fromFile.lightingVAPerArea, "lightingVAPerArea");
             t.Equal(defaults.smallApplianceVA, fromFile.smallApplianceVA, "smallApplianceVA");
             t.Equal(defaults.laundryVA, fromFile.laundryVA, "laundryVA");
@@ -76,6 +78,7 @@ namespace NECInspector.LogicTests
             t.Equal(20, tables.GetMaxAmps("12 AWG"), "12 AWG ampacity");
             t.Equal(30, tables.GetMaxAmps("10 AWG"), "10 AWG ampacity");
             t.Equal(195, tables.GetMaxAmps("4/0 AWG"), "4/0 AWG ampacity");
+            t.Equal(20, tables.GetMaxAmps(tables.defaultConductor), "the default conductor exists in the conductor table");
             t.Equal(0, tables.GetMaxAmps("99 AWG"), "unknown conductor returns 0");
             t.Equal(0, tables.GetMaxAmps(null), "null conductor returns 0");
 

@@ -12,7 +12,7 @@ namespace NECInspector.NEC
         public int chapter;
         public string[] keywords;
         public string[] relatedArticles;
-        public bool isNewIn2026;
+        public bool isNewInEdition;     // new or changed in this edition of the code
 
         /// <summary>
         /// Full article reference string (e.g., "250.24(A)(1)")
@@ -20,11 +20,6 @@ namespace NECInspector.NEC
         public string FullReference => string.IsNullOrEmpty(subsection)
             ? article
             : $"{article}{subsection}";
-
-        /// <summary>
-        /// Display string for UI (e.g., "Art. 250.24(A)(1) - Grounding Electrode Conductor Connection")
-        /// </summary>
-        public string DisplayString => $"Art. {FullReference} - {title}";
     }
 
     [Serializable]

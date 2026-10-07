@@ -4,10 +4,6 @@
   "displayName": "Commercial Installation Inspection",
   "description": "Inspect a small commercial building's electrical installation including motor circuits, feeders, load calculations, and equipment disconnects. Verify proper conductor sizing, overcurrent protection, and NEC compliance for commercial occupancies.",
   "environmentDescription": "A small commercial space with multiple motor installations (HVAC compressors, exhaust fans), a mechanical room with subpanel and feeders, a battery/UPS closet, and an office area with general receptacle and lighting circuits.",
-  "necChapters": [
-    "2",
-    "4"
-  ],
   "expertTimeLimit": 1500,
   "availableDifficulties": [
     "Beginner",

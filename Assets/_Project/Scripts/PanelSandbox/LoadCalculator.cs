@@ -29,9 +29,9 @@ namespace NECInspector.PanelSandbox
         /// <summary>
         /// Calculate general lighting load (NEC Table 220.12: 3 VA per square foot for dwelling units).
         /// </summary>
-        public static float CalculateGeneralLighting(float squareFootage)
+        public static float CalculateGeneralLighting(float area)
         {
-            return squareFootage * Tables.lightingVAPerArea;
+            return area * Tables.lightingVAPerArea;
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace NECInspector.PanelSandbox
         /// Combines general lighting (with demand factor), fixed appliances, and large loads.
         /// </summary>
         public static float CalculateTotalServiceLoad(
-            float squareFootage,
+            float area,
             int smallApplianceCircuits = 2,
             bool hasLaundry = true,
             bool hasDryer = true,
@@ -85,7 +85,7 @@ namespace NECInspector.PanelSandbox
             List<CircuitLoad> additionalLoads = null)
         {
             // Step 1: General lighting + small appliance + laundry
-            float lightingVA = CalculateGeneralLighting(squareFootage);
+            float lightingVA = CalculateGeneralLighting(area);
             float smallAppVA = CalculateSmallApplianceLoad(smallApplianceCircuits);
             float laundryVA = hasLaundry ? CalculateLaundryLoad() : 0f;
 

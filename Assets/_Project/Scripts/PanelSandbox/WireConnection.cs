@@ -7,7 +7,7 @@ namespace NECInspector.PanelSandbox
     public class WireConnection : MonoBehaviour
     {
         [Header("Wire Properties")]
-        [SerializeField] private string _wireGauge = "12 AWG";
+        [SerializeField] private string _wireGauge = "";   // empty = the profile's default conductor
 
         [Header("Endpoints")]
         [SerializeField] private Transform _startPoint;
@@ -20,7 +20,7 @@ namespace NECInspector.PanelSandbox
 
         private LineRenderer _lineRenderer;
 
-        public string WireGauge => _wireGauge;
+        public string WireGauge => string.IsNullOrEmpty(_wireGauge) ? CodeProfiles.Tables.defaultConductor : _wireGauge;
         public Transform StartPoint => _startPoint;
         public Transform EndPoint => _endPoint;
         public PlacedBreaker ConnectedBreaker { get; set; }
@@ -73,7 +73,7 @@ namespace NECInspector.PanelSandbox
         {
             if (ConnectedBreaker?.BreakerData == null) return false;
 
-            int maxAmps = GetMaxAmpsForGauge(_wireGauge);
+            int maxAmps = GetMaxAmpsForGauge(WireGauge);
             return ConnectedBreaker.BreakerData.ampRating <= maxAmps;
         }
 

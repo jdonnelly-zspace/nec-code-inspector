@@ -4,11 +4,6 @@
   "displayName": "Residential Service Panel Inspection",
   "description": "Inspect a 200A residential service entrance panel for code violations including workmanship, terminations, working space clearances, overcurrent protection, and panel configuration.",
   "environmentDescription": "A residential garage with a 200A service entrance panel, exposed conductors, breakers, main disconnect, and surrounding working space.",
-  "necChapters": [
-    "1",
-    "2",
-    "4"
-  ],
   "expertTimeLimit": 1200,
   "availableDifficulties": [
     "Beginner",
