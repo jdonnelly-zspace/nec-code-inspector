@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using NECInspector.Core;
 using NECInspector.NEC;
+using NECInspector.Codes;
 
 namespace NECInspector.Inspection
 {
@@ -107,12 +108,12 @@ namespace NECInspector.Inspection
 
         private void PopulateDropdown()
         {
-            if (_necDropdown == null || NECDatabase.Instance == null) return;
+            if (_necDropdown == null || CodeProfiles.Active == null) return;
 
             _necDropdown.ClearOptions();
             var options = new List<TMP_Dropdown.OptionData> { new("Select NEC Article...") };
 
-            foreach (var display in NECDatabase.Instance.GetAllDisplayStrings())
+            foreach (var display in CodeProfiles.Active.GetAllDisplayStrings())
             {
                 options.Add(new TMP_Dropdown.OptionData(display));
             }
@@ -129,7 +130,7 @@ namespace NECInspector.Inspection
                 return;
             }
 
-            var refs = NECDatabase.Instance.GetAllReferences();
+            var refs = CodeProfiles.Active.GetAllReferences();
             if (index - 1 < refs.Count)
                 _selectedNECArticle = refs[index - 1];
         }
@@ -142,9 +143,9 @@ namespace NECInspector.Inspection
                 return;
             }
 
-            if (NECDatabase.Instance == null) return;
+            if (CodeProfiles.Active == null) return;
 
-            var results = NECDatabase.Instance.Search(text, 8);
+            var results = CodeProfiles.Active.Search(text, 8);
             _searchResultsPanel?.SetActive(results.Count > 0);
 
             // Clear existing results
@@ -164,7 +165,7 @@ namespace NECInspector.Inspection
                     if (text_comp != null) text_comp.text = article.DisplayString;
 
                     var button = item.GetComponent<UnityEngine.UI.Button>();
-                    string articleRef = article.FullReference;
+                    string articleRef = article.reference;
                     button?.onClick.AddListener(() =>
                     {
                         _selectedNECArticle = articleRef;

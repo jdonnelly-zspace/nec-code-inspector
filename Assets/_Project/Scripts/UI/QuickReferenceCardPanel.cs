@@ -6,6 +6,7 @@ using TMPro;
 using NECInspector.Data;
 using NECInspector.Core;
 using NECInspector.NEC;
+using NECInspector.Codes;
 
 namespace NECInspector.UI
 {
@@ -150,8 +151,8 @@ namespace NECInspector.UI
         /// </summary>
         public void OpenNECArticle(string reference)
         {
-            if (_necPanel == null || NECDatabase.Instance == null) return;
-            var article = NECDatabase.Instance.GetArticle(reference);
+            if (_necPanel == null || CodeProfiles.Active == null) return;
+            var article = CodeProfiles.Active.GetArticle(reference);
             if (article != null)
                 _necPanel.ShowArticle(article);
         }

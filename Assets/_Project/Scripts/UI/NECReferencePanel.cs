@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using NECInspector.NEC;
+using NECInspector.Codes;
 
 namespace NECInspector.Inspection
 {
@@ -49,32 +50,32 @@ namespace NECInspector.Inspection
             gameObject.SetActive(false);
         }
 
-        public void ShowArticle(NECArticle article)
+        public void ShowArticle(CodeArticle article)
         {
             if (article == null) return;
 
             _articleGroup?.SetActive(true);
             gameObject.SetActive(true);
 
-            if (_articleRefText != null) _articleRefText.text = $"Art. {article.FullReference}";
+            if (_articleRefText != null) _articleRefText.text = article.referenceLabel;
             if (_articleTitleText != null) _articleTitleText.text = article.title;
             if (_articleBodyText != null) _articleBodyText.text = article.text;
             if (_chapterText != null) _chapterText.text = $"Chapter {article.chapter}";
-            _newIn2026Badge?.SetActive(article.isNewIn2026);
+            _newIn2026Badge?.SetActive(article.isNewInEdition);
 
             // Populate related articles
-            PopulateRelated(article.relatedArticles);
+            PopulateRelated(article.relatedReferences);
         }
 
         private void OnSearchChanged(string query)
         {
-            if (string.IsNullOrWhiteSpace(query) || query.Length < 2 || NECDatabase.Instance == null)
+            if (string.IsNullOrWhiteSpace(query) || query.Length < 2 || CodeProfiles.Active == null)
             {
                 ClearSearchResults();
                 return;
             }
 
-            var results = NECDatabase.Instance.Search(query, 10);
+            var results = CodeProfiles.Active.Search(query, 10);
             ClearSearchResults();
 
             foreach (var article in results)
@@ -99,11 +100,11 @@ namespace NECInspector.Inspection
             foreach (Transform child in _relatedContent)
                 Destroy(child.gameObject);
 
-            if (relatedRefs == null || NECDatabase.Instance == null) return;
+            if (relatedRefs == null || CodeProfiles.Active == null) return;
 
             foreach (var refStr in relatedRefs)
             {
-                var related = NECDatabase.Instance.GetArticle(refStr);
+                var related = CodeProfiles.Active.GetArticle(refStr);
                 if (related == null) continue;
 
                 if (_relatedItemPrefab != null)

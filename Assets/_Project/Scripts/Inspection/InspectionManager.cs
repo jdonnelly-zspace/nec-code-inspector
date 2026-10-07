@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using NECInspector.Codes;
 using NECInspector.Core;
 using NECInspector.Data;
 
@@ -207,19 +208,11 @@ namespace NECInspector.Inspection
 
         private bool IsNECCitationCorrect(string cited, string actual)
         {
-            if (string.IsNullOrEmpty(cited) || string.IsNullOrEmpty(actual))
-                return false;
-
-            string normalizedCited = cited.Replace(" ", "").Replace("Art.", "").Replace("art.", "").Trim();
-            string normalizedActual = actual.Replace(" ", "").Replace("Art.", "").Replace("art.", "").Trim();
-
-            // Exact match
-            if (normalizedCited == normalizedActual) return true;
-
-            // Partial match (student cites parent article, actual is subsection)
-            if (normalizedActual.StartsWith(normalizedCited)) return true;
-
-            return false;
+            // Matching rules belong to the active code profile; fall back to the default matcher.
+            var profile = CodeProfiles.Active;
+            return profile != null
+                ? profile.CitationMatches(cited, actual)
+                : CitationMatcher.Default(cited, actual);
         }
     }
 

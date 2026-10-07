@@ -80,17 +80,17 @@ namespace NECInspector.Core
 
         private IEnumerator VerifyDatabase()
         {
-            // Wait a frame for NECDatabase singleton to initialize
+            // Wait a frame for the code profile to initialize and register itself
             yield return null;
 
-            var db = NEC.NECDatabase.Instance;
-            if (db != null)
+            var profile = Codes.CodeProfiles.Active;
+            if (profile != null && profile.IsLoaded)
             {
-                Debug.Log("[Boot] NEC database loaded successfully.");
+                Debug.Log($"[Boot] Code profile loaded: {profile.DisplayName} {profile.Edition} ({profile.ArticleCount} articles).");
             }
             else
             {
-                Debug.LogWarning("[Boot] NEC database not available. Reference features will be limited.");
+                Debug.LogWarning("[Boot] Code profile not available. Reference features will be limited.");
             }
         }
     }

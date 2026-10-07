@@ -5,6 +5,7 @@ using TMPro;
 using NECInspector.Core;
 using NECInspector.Data;
 using NECInspector.NEC;
+using NECInspector.Codes;
 
 namespace NECInspector.Inspection
 {
@@ -90,7 +91,7 @@ namespace NECInspector.Inspection
         }
 
         public void ShowMissedViolation(int violationIndex, int totalMissed,
-            ViolationDefinitionSO violation, NECArticle article)
+            ViolationDefinitionSO violation, CodeArticle article)
         {
             HideAll();
             _missedGroup?.SetActive(true);

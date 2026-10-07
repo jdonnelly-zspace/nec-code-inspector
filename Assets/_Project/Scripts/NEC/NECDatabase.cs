@@ -3,21 +3,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
+using NECInspector.Codes;
 
 namespace NECInspector.NEC
 {
     /// <summary>
-    /// Singleton that loads NEC article data from StreamingAssets/NECDatabase/nec_articles.json
-    /// and provides search/lookup functionality.
+    /// NEC code profile. Loads NEC article data from StreamingAssets/NECDatabase/nec_articles.json,
+    /// exposes it through ICodeProfile, and registers itself as the active profile.
     /// </summary>
-    public class NECDatabase : MonoBehaviour
+    public class NECDatabase : MonoBehaviour, ICodeProfile
     {
         public static NECDatabase Instance { get; private set; }
 
-        private Dictionary<string, NECArticle> _articlesByReference = new();
-        private List<NECArticle> _allArticles = new();
+        private Dictionary<string, CodeArticle> _articlesByReference = new();
+        private List<CodeArticle> _allArticles = new();
         private bool _isLoaded = false;
 
+        public string ProfileId => "nec";
+        public string DisplayName => "NEC (NFPA 70)";
+        public string Edition => "2026";
         public bool IsLoaded => _isLoaded;
         public int ArticleCount => _allArticles.Count;
 
@@ -32,6 +36,13 @@ namespace NECInspector.NEC
             Instance = this;
             DontDestroyOnLoad(gameObject);
             LoadArticles();
+            CodeProfiles.SetActive(this);
+        }
+
+        private void OnDestroy()
+        {
+            if (Instance == this) Instance = null;
+            CodeProfiles.Clear(this);
         }
 
         private void LoadArticles()
@@ -55,12 +66,12 @@ namespace NECInspector.NEC
                     return;
                 }
 
-                _allArticles = new List<NECArticle>(collection.articles);
+                _allArticles = collection.articles.Select(ToCodeArticle).ToList();
                 _articlesByReference.Clear();
 
                 foreach (var article in _allArticles)
                 {
-                    string key = article.FullReference;
+                    string key = article.reference;
                     if (!_articlesByReference.ContainsKey(key))
                     {
                         _articlesByReference[key] = article;
@@ -81,10 +92,31 @@ namespace NECInspector.NEC
         }
 
         /// <summary>
+        /// Convert the NEC JSON record into the code-neutral article type.
+        /// </summary>
+        private static CodeArticle ToCodeArticle(NECArticle source)
+        {
+            return new CodeArticle
+            {
+                reference = source.FullReference,
+                referenceLabel = $"Art. {source.FullReference}",
+                title = source.title,
+                text = source.text,
+                chapter = source.chapter,
+                keywords = source.keywords,
+                relatedReferences = source.relatedArticles,
+                isNewInEdition = source.isNewIn2026
+            };
+        }
+
+        /// <summary>
         /// Get an article by exact reference (e.g., "250.24(A)(1)" or "250.24")
         /// </summary>
-        public NECArticle GetArticle(string reference)
+        public CodeArticle GetArticle(string reference)
         {
+            if (string.IsNullOrEmpty(reference))
+                return null;
+
             if (_articlesByReference.TryGetValue(reference, out var article))
                 return article;
 
@@ -101,36 +133,36 @@ namespace NECInspector.NEC
         /// <summary>
         /// Get all articles in a chapter
         /// </summary>
-        public List<NECArticle> GetChapter(int chapter)
+        public List<CodeArticle> GetChapter(int chapter)
         {
             return _allArticles.Where(a => a.chapter == chapter).ToList();
         }
 
         /// <summary>
-        /// Get articles new or changed in NEC 2026
+        /// Get articles new or changed in the current edition (NEC 2026)
         /// </summary>
-        public List<NECArticle> GetNew2026Articles()
+        public List<CodeArticle> GetNewInEditionArticles()
         {
-            return _allArticles.Where(a => a.isNewIn2026).ToList();
+            return _allArticles.Where(a => a.isNewInEdition).ToList();
         }
 
         /// <summary>
         /// Full-text search across article numbers, titles, keywords, and text
         /// </summary>
-        public List<NECArticle> Search(string query, int maxResults = 20)
+        public List<CodeArticle> Search(string query, int maxResults = 20)
         {
             if (string.IsNullOrWhiteSpace(query))
-                return new List<NECArticle>();
+                return new List<CodeArticle>();
 
             string lowerQuery = query.ToLowerInvariant();
-            var results = new List<(NECArticle article, int score)>();
+            var results = new List<(CodeArticle article, int score)>();
 
             foreach (var article in _allArticles)
             {
                 int score = 0;
 
                 // Exact article number match (highest priority)
-                if (article.FullReference.ToLowerInvariant().Contains(lowerQuery))
+                if (article.reference.ToLowerInvariant().Contains(lowerQuery))
                     score += 100;
 
                 // Title match
@@ -170,7 +202,7 @@ namespace NECInspector.NEC
         /// </summary>
         public List<string> GetAllReferences()
         {
-            return _allArticles.Select(a => a.FullReference).OrderBy(r => r).ToList();
+            return _allArticles.Select(a => a.reference).OrderBy(r => r).ToList();
         }
 
         /// <summary>
@@ -179,6 +211,14 @@ namespace NECInspector.NEC
         public List<string> GetAllDisplayStrings()
         {
             return _allArticles.Select(a => a.DisplayString).OrderBy(s => s).ToList();
+        }
+
+        /// <summary>
+        /// NEC references are hierarchical ("250.24(A)(1)"), so the default matcher applies.
+        /// </summary>
+        public bool CitationMatches(string cited, string expected)
+        {
+            return CitationMatcher.Default(cited, expected);
         }
     }
 }
