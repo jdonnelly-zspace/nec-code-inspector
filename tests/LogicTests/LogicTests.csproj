@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Plain .NET tests for the engine-independent logic: code profile types, electrical tables,
+    load calculation, citation matching, and the JSON content files. The Unity scripts are
+    compiled directly from Assets (no copies), with UnityStubs.cs standing in for the few
+    UnityEngine types they touch. Run: dotnet run --project tests/LogicTests
+  -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>9.0</LangVersion>
+    <RootNamespace>NECInspector.LogicTests</RootNamespace>
+    <AssemblyName>LogicTests</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Scripts>$(MSBuildThisFileDirectory)../../Assets/_Project/Scripts/</Scripts>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="$(Scripts)Codes/*.cs" Link="Unity/Codes/%(Filename)%(Extension)" />
+    <Compile Include="$(Scripts)Data/ConceptIds.cs" Link="Unity/Data/ConceptIds.cs" />
+    <Compile Include="$(Scripts)Data/ViolationSeverity.cs" Link="Unity/Data/ViolationSeverity.cs" />
+    <Compile Include="$(Scripts)Data/ScenarioFileData.cs" Link="Unity/Data/ScenarioFileData.cs" />
+    <Compile Include="$(Scripts)Core/DifficultyLevel.cs" Link="Unity/Core/DifficultyLevel.cs" />
+    <Compile Include="$(Scripts)PanelSandbox/LoadCalculator.cs" Link="Unity/PanelSandbox/LoadCalculator.cs" />
+  </ItemGroup>
+
+</Project>
