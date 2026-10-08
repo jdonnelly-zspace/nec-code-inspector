@@ -755,6 +755,150 @@
       "keywords": ["standard ratings", "breaker sizes", "overcurrent device", "ampere rating"],
       "related": ["240.4(B)"],
       "isNewInEdition": false
+    },
+    {
+      "reference": "210.23",
+      "title": "Permissible Loads, Individual Branch Circuits",
+      "text": "A single-load branch circuit can feed any load within its rating; one that feeds several outlets or receptacles is restricted to the loads allowed for its size.",
+      "section": 2,
+      "keywords": ["branch circuit", "loads", "individual", "rating", "permissible"],
+      "related": ["210.3", "210.19(A)"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "220.18",
+      "title": "Maximum Loads",
+      "text": "The total load cannot go beyond the branch circuit's rating or past the limits in 220.18(A) through (C) when their conditions apply.",
+      "section": 2,
+      "keywords": ["maximum", "load", "branch circuit", "rating"],
+      "related": ["210.23"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "225.18",
+      "title": "Clearance for Overhead Conductors and Cables",
+      "text": "Overhead conductors of 1000 V or less need clearance above grade: 10 ft where only pedestrians can reach them and the supply is 150 V or less to ground; 12 ft over residential property, driveways and commercial areas without truck traffic at 300 V or less to ground; 15 ft over those areas at higher voltages; and 18 ft over public streets, alleys, roads and parking areas with truck traffic.",
+      "section": 2,
+      "keywords": ["overhead", "clearance", "conductors", "outside", "grade", "driveway"],
+      "related": [],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "404.2(C)",
+      "title": "Switches - Grounded Conductor at the Switch",
+      "text": "A switch that controls lighting loads needs a grounded (neutral) conductor at the switch location, with exceptions such as where the cable is run in a way that lets a conductor be added later.",
+      "section": 4,
+      "keywords": ["switch", "neutral", "grounded conductor", "smart switch", "dimmer"],
+      "related": ["200.6"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "406.9(A)",
+      "title": "Receptacles in Damp Locations",
+      "text": "A receptacle outdoors under cover from weather, or in another damp location, needs an enclosure that is weatherproof when the covers are closed.",
+      "section": 4,
+      "keywords": ["receptacle", "outdoor", "damp", "weatherproof", "cover"],
+      "related": ["406.9(B)"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "406.9(B)",
+      "title": "Receptacles in Wet Locations",
+      "text": "In wet locations, the receptacle's enclosure must stay weatherproof with or without a plug inserted, which in practice means an in-use (bubble) cover.",
+      "section": 4,
+      "keywords": ["receptacle", "wet location", "weatherproof", "in-use cover"],
+      "related": ["406.9(A)"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "410.10(A)",
+      "title": "Luminaires in Specific Locations - Wet or Damp",
+      "text": "Mount luminaires in damp or wet locations so water can neither get into nor pool inside their wiring compartments, lampholders and other components.",
+      "section": 4,
+      "keywords": ["luminaire", "light", "wet", "damp", "location", "weatherproof"],
+      "related": ["406.9(B)"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "480.3",
+      "title": "Storage Batteries - Equipment",
+      "text": "Battery system equipment and wiring follow the rest of the Code plus Article 480's own rules.",
+      "section": 4,
+      "keywords": ["battery", "storage", "equipment", "UPS"],
+      "related": ["480.7"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "480.4",
+      "title": "Battery and Cell Terminations",
+      "text": "Where corrosion is a concern at battery and cell terminals, use an antioxidant or other protective material on the connections, and make intercell and intertier connections with conductors and connectors suited to the system.",
+      "section": 4,
+      "keywords": ["battery", "terminals", "corrosion", "connections"],
+      "related": ["480.7"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "480.7",
+      "title": "Battery DC Disconnect Methods",
+      "text": "A stationary battery system above 60 V DC nominal needs a disconnect for all of its ungrounded conductors, located where it can be reached and operated safely.",
+      "section": 4,
+      "keywords": ["battery", "disconnect", "stationary", "DC", "60 volts"],
+      "related": ["480.3", "480.10"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "480.10",
+      "title": "Battery Locations - Ventilation",
+      "text": "Provide enough diffusion and ventilation to stop battery gases building up an explosive mixture. Dedicated battery rooms need ventilation that holds hydrogen to no more than 1 percent of the room volume.",
+      "section": 4,
+      "keywords": ["battery", "ventilation", "hydrogen", "explosive", "battery room"],
+      "related": ["480.7"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.7",
+      "title": "Pool Equipment - Cord-and-Plug Connections",
+      "text": "Fixed or stationary pool equipment, other than underwater luminaires, may be connected with a flexible cord and plug so it can be removed for servicing, with a cord of 3 ft or less, a copper equipment grounding conductor of at least 12 AWG and a grounding-type plug.",
+      "section": 6,
+      "keywords": ["pool", "cord and plug", "equipment", "grounding", "cord length"],
+      "related": ["680.26"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.12",
+      "title": "Maintenance Disconnecting Means",
+      "text": "Utilization equipment other than lighting needs a disconnect that opens all ungrounded conductors at the same time. Put each one where the equipment it serves is visible and easy to reach, and 5 ft (1.5 m) or more away from the inner walls of any pool, spa or hot tub.",
+      "section": 6,
+      "keywords": ["pool", "disconnect", "maintenance", "5 feet", "accessible"],
+      "related": ["680.22(B)", "680.26"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.22(B)",
+      "title": "Pool Area Lighting - Luminaire Height",
+      "text": "Keep luminaires, lighting outlets and ceiling fans out of the airspace above a pool and the 5 ft strip around it (measured horizontally from the inner walls) unless they sit 12 ft or more above the highest water level.",
+      "section": 6,
+      "keywords": ["pool", "luminaire", "height", "12 feet", "5 feet", "water level"],
+      "related": ["680.26"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.26",
+      "title": "Equipotential Bonding",
+      "text": "Bond the pool's conductive parts together with solid copper no smaller than 8 AWG so they form an equipotential grid. The parts include the shell, the perimeter surface, metal ladders and rails, pumps and other metal equipment, and fixtures.",
+      "section": 6,
+      "keywords": ["pool", "bonding", "equipotential", "grid", "ladder", "8 AWG"],
+      "related": ["680.22(B)", "250.4(A)(5)"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.44",
+      "title": "Protection for Spas and Hot Tubs",
+      "text": "The outlets and circuits that supply spas and hot tubs need GFCI protection, with the details depending on the type of unit.",
+      "section": 6,
+      "keywords": ["spa", "hot tub", "GFCI", "ground-fault", "protection"],
+      "related": ["210.8(A)(1)"],
+      "isNewInEdition": false
     }
   ]
 }

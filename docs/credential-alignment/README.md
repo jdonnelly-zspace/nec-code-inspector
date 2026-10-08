@@ -23,6 +23,15 @@ by the app or included in a build.
   (`nec_progress.json` in the app's data folder) records mastery per skill and tier, so any alignment
   file can be read against it.
 
+## Skills added after the first eleven
+
+| Skill | Why it was added | What a credential assesses |
+|---|---|---|
+| `wiring-methods` | The Red Seal task C-16 (raceways, conductors, cables and enclosures, 9 questions) sits in the largest work activity of the exam, wiring systems, and no skill covered installing cables and boxes. Journeyman exams also test bored-hole protection, cable support, burial depth, box fill and overhead clearances | NEC 300.4, 300.5, 314.16, 334.30, 225.18; CEC Section 12 and the related Section 4 rules (not yet in the app) |
+| `special-locations` | Pools and spas, weatherproof receptacles and storage batteries are separate articles of the NEC and are tested as such. The app had dropped them for lack of a skill | NEC Articles 680, 406.9 and 480; the CEC's Sections 68 and 26 equivalents (not yet in the app) |
+
+Both skills have NEC content only (8 violations in two scenarios). Under the CEC they are marked deferred until an expert supplies the rules. A credential expert still needs to review the reason and the content for each.
+
 ## Reading a student's progress against an alignment file
 
 ```bash

@@ -1,0 +1,171 @@
+{
+  "status": "draft",
+  "note": "Dwelling-unit protection scope as described for the 2023 NEC (210.8(A), 210.8(D) and 210.12(A)) from public summaries; 2026 numbering and any widening of AFCI scope are unverified. A credential expert must check every rule.",
+  "rules": [
+    {
+      "id": "gfci-bathrooms",
+      "protection": "gfci",
+      "reference": "210.8(A)(1)",
+      "rooms": [
+        "bathroom"
+      ],
+      "minVolts": 125,
+      "maxVolts": 250
+    },
+    {
+      "id": "gfci-garages",
+      "protection": "gfci",
+      "reference": "210.8(A)(2)",
+      "rooms": [
+        "garage"
+      ],
+      "minVolts": 125,
+      "maxVolts": 250
+    },
+    {
+      "id": "gfci-accessory-buildings",
+      "protection": "gfci",
+      "reference": "210.8(A)(2)",
+      "rooms": [
+        "accessory-building"
+      ],
+      "floorAtOrBelowGrade": true,
+      "minVolts": 125,
+      "maxVolts": 250
+    },
+    {
+      "id": "gfci-outdoors",
+      "protection": "gfci",
+      "reference": "210.8(A)(3)",
+      "rooms": [
+        "outdoors"
+      ],
+      "minVolts": 125,
+      "maxVolts": 250
+    },
+    {
+      "id": "gfci-crawl-spaces",
+      "protection": "gfci",
+      "reference": "210.8(A)(4)",
+      "rooms": [
+        "crawl-space"
+      ],
+      "floorAtOrBelowGrade": true,
+      "minVolts": 125,
+      "maxVolts": 250
+    },
+    {
+      "id": "gfci-basements",
+      "protection": "gfci",
+      "reference": "210.8(A)(5)",
+      "rooms": [
+        "basement"
+      ],
+      "minVolts": 125,
+      "maxVolts": 250
+    },
+    {
+      "id": "gfci-kitchens",
+      "protection": "gfci",
+      "reference": "210.8(A)(6)",
+      "rooms": [
+        "kitchen"
+      ],
+      "minVolts": 125,
+      "maxVolts": 250
+    },
+    {
+      "id": "gfci-sinks",
+      "protection": "gfci",
+      "reference": "210.8(A)(7)",
+      "excludeRooms": [
+        "kitchen"
+      ],
+      "nearFixtureTypes": [
+        "sink"
+      ],
+      "nearFixtureMaxM": 1.83,
+      "minVolts": 125,
+      "maxVolts": 250
+    },
+    {
+      "id": "gfci-boathouses",
+      "protection": "gfci",
+      "reference": "210.8(A)(8)",
+      "rooms": [
+        "boathouse"
+      ],
+      "minVolts": 125,
+      "maxVolts": 250
+    },
+    {
+      "id": "gfci-tubs-showers",
+      "protection": "gfci",
+      "reference": "210.8(A)(9)",
+      "nearFixtureTypes": [
+        "bathtub",
+        "shower"
+      ],
+      "nearFixtureMaxM": 1.83,
+      "minVolts": 125,
+      "maxVolts": 250
+    },
+    {
+      "id": "gfci-laundry",
+      "protection": "gfci",
+      "reference": "210.8(A)(10)",
+      "rooms": [
+        "laundry"
+      ],
+      "minVolts": 125,
+      "maxVolts": 250
+    },
+    {
+      "id": "gfci-damp-wet",
+      "protection": "gfci",
+      "reference": "210.8(A)(11)",
+      "rooms": [
+        "indoor-damp-wet"
+      ],
+      "minVolts": 125,
+      "maxVolts": 250
+    },
+    {
+      "id": "gfci-dishwasher",
+      "protection": "gfci",
+      "reference": "210.8(D)",
+      "appliance": "dishwasher",
+      "minVolts": 125,
+      "maxVolts": 250
+    },
+    {
+      "id": "afci-habitable-rooms",
+      "protection": "afci",
+      "reference": "210.12(A)",
+      "rooms": [
+        "kitchen",
+        "family-room",
+        "dining-room",
+        "living-room",
+        "parlor",
+        "library",
+        "den",
+        "bedroom",
+        "sunroom",
+        "recreation-room",
+        "closet",
+        "hallway",
+        "laundry"
+      ],
+      "minVolts": 120,
+      "maxVolts": 125,
+      "minAmps": 15,
+      "maxAmps": 20
+    }
+  ],
+  "exemptions": [],
+  "notModeled": [
+    "Non-dwelling occupancies (210.8(B)) and the 2026 changes to the outdoor threshold and to AFCI scope",
+    "AFCI for dormitory units and guest rooms (210.12(B), (C)) and for extensions or modifications"
+  ]
+}

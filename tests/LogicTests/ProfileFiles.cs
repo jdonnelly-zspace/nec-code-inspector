@@ -17,12 +17,13 @@ namespace NECInspector.LogicTests
         public CodeArticleData[] articles;
         public ElectricalTables tables;         // null when the folder has no tables.json
         public CodeTerminology terminology;
+        public ProtectionScope scope;           // null when the folder has no scope.json
 
         public string Id => manifest?.id ?? folder;
 
         public DataCodeProfile Build()
         {
-            return new DataCodeProfile(manifest, articles, tables, terminology);
+            return new DataCodeProfile(manifest, articles, tables, terminology) { Scope = scope };
         }
 
         public bool HasReference(string reference)
@@ -53,7 +54,8 @@ namespace NECInspector.LogicTests
                     manifest = Read<CodeProfileManifest>(Path.Combine(dir, "profile.json")),
                     articles = Read<CodeArticleFile>(Path.Combine(dir, "articles.json"))?.articles,
                     tables = Read<ElectricalTables>(Path.Combine(dir, "tables.json")),
-                    terminology = Read<CodeTerminology>(Path.Combine(dir, "terminology.json"))
+                    terminology = Read<CodeTerminology>(Path.Combine(dir, "terminology.json")),
+                    scope = Read<ProtectionScope>(Path.Combine(dir, "scope.json"))
                 });
             }
 

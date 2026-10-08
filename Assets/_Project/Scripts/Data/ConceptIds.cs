@@ -18,6 +18,8 @@ namespace NECInspector.Data
         public const string WorkingSpaceAccess = "working-space-access";          // clearances, mounting heights, accessibility
         public const string EquipmentInstallation = "equipment-installation";     // workmanship, terminations, panel capacity
         public const string IdentificationMarking = "identification-marking";     // directories, nameplates, labels
+        public const string WiringMethods = "wiring-methods";                     // cable and raceway installation, support, burial depth, box fill, overhead clearances
+        public const string SpecialLocations = "special-locations";               // pools and spas, wet-location devices, storage batteries
 
         public static readonly string[] All =
         {
@@ -31,7 +33,9 @@ namespace NECInspector.Data
             DisconnectingMeans,
             WorkingSpaceAccess,
             EquipmentInstallation,
-            IdentificationMarking
+            IdentificationMarking,
+            WiringMethods,
+            SpecialLocations
         };
 
         public static bool IsKnown(string conceptId)

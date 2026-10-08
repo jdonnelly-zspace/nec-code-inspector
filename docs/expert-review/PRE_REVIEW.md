@@ -142,6 +142,16 @@ All CEC rows are low to medium confidence; the 2026 NEC rows are low.
 5. Which edition the Red Seal exam is written against, and whether 14-104 sub-rule letters and the 3 m rod numbers are right.
 6. The rows in section 7 marked "no verified rule", and the CEC GFCI and AFCI scope in section 10.
 
+## 12. Follow-up: the dropped articles, two new skills and the scope checker
+
+At the owner's request the work in sections 5 and 10 was extended after the pre-review:
+
+- **Two skills added**, `wiring-methods` and `special-locations`, with reasons in `docs/credential-alignment/README.md`. All 15 articles dropped in section 5 were restored (with the corrections found in the pre-review: 680.22(A)(1) is now 680.22(B), 680.7 is the cord-and-plug rule, 680.44 covers spas and hot tubs, 404.2(C) is the neutral conductor at switches, 225.18 lists all four clearance heights, and Article 480 uses the 480.7 and 480.10 numbering) and `480.10` was added. The NEC now has 100 entries. The four wiring-method entries are no longer parked: they belong to the new skill.
+- **Eight new violations** in two scenarios (`wiring-methods.json`: bored-hole protection, NM support, burial depth, box fill, overhead clearance; `special-locations.json`: pool luminaire height, pool bonding, weatherproof receptacle cover). They have NEC citations only, so both skills are deferred under the CEC. The Red Seal task C-16 now maps to wiring methods.
+- **Confidence.** The wiring-methods and pool facts are high to medium-high. **Article 480 (storage batteries) is medium-low**: the numbering and the 60 V threshold come from a single agent's reading of secondary sources, and the entries are generic. The worksheets flag every restored entry ("Restored for the wiring-methods or special-locations skill"). I did not write battery violations for that reason.
+- **Scope checker.** `scope.json` for the NEC (14 rules, from the 2023 NEC as described in public summaries) and the CEC (3 rules and 4 exemptions, from C22.1:24 sources), a validator, and `ProtectionScopeChecker`. Six GFCI and AFCI violations now describe their offending receptacle, and the tests confirm each breaks every code it cites. The comparison in section 10 is now executable; its low-confidence rows are listed under `notModeled` in each file.
+- **Still for the expert:** confirm the two skills and their content, the Article 480 entries, every `scope.json` rule (especially the CEC rows and the NEC's 2026 scope), and add the CEC rules for both new skills.
+
 ## Sources (all public)
 
 NEC: ecmweb.com (GFCI and AFCI requirements; key revisions to Chapter 2 of the 2026 NEC; NEC motors series; one-family dwelling load calculations), IAEI Magazine (210.8 GFCI requirements), electricianu.com (2023 NEC 210.11), Mike Holt forums (220.14(I), 408.54), St. Paul building department electrical checklist (210.52).

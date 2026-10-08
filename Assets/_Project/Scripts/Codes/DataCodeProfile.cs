@@ -42,6 +42,9 @@ namespace NECInspector.Codes
         public int ArticleCount => _articles.Count;
         public CodeTerminology Terminology { get; }
 
+        /// <summary>Where this code requires GFCI and AFCI protection in a dwelling, or null if the folder has no scope.json.</summary>
+        public ProtectionScope Scope { get; set; }
+
         /// <summary>False when the profile has no tables.json; sandbox calculations then use NEC values and must not count as evidence.</summary>
         public bool HasOwnTables => _tables != null;
 

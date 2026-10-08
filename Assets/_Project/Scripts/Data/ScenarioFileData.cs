@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using NECInspector.Codes;
 using NECInspector.Core;
 
 namespace NECInspector.Data
@@ -42,6 +43,7 @@ namespace NECInspector.Data
         public string inspectionNote;
         public SceneFact sceneFact;       // optional: the measured value that makes the scene break the rule
         public SceneFact compliantFact;   // optional: the scene's compliant parts of the same kind
+        public ScopeSceneFact sceneScope; // optional: the receptacle that lacks GFCI or AFCI protection (checked against each code's scope.json)
     }
 
     public static class ScenarioFileValidator

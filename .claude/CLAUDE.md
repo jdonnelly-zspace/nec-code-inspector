@@ -18,7 +18,7 @@ Unity 6.3 LTS + zCore 6.3. Target: Windows 11 on zSpace Inspire 2.
 - **GameManager** is the only persistent singleton (DontDestroyOnLoad). Access via `GameManager.Instance`.
 - Each inspection scenario and sandbox mode is its own scene.
 - All content data is defined in ScriptableObjects under `Assets/_Project/ScriptableObjects/`.
-- Installation code data (NEC, CEC, ...) lives in `StreamingAssets/Codes/<id>/` as JSON (`profile.json`, `articles.json`, `terminology.json`, optional `tables.json`), loaded by `CodeProfileLibrary`. Adding a code means adding a folder. Content must follow `docs/CONTENT_POLICY.md`.
+- Installation code data (NEC, CEC, ...) lives in `StreamingAssets/Codes/<id>/` as JSON (`profile.json`, `articles.json`, `terminology.json`, optional `tables.json` and `scope.json`), loaded by `CodeProfileLibrary`. Adding a code means adding a folder. Content must follow `docs/CONTENT_POLICY.md`.
 - Scenarios extend `StateMachine` from `Utils/StateMachine.cs` with named `StateID`s and `Step` sequences.
 
 ## Input Patterns

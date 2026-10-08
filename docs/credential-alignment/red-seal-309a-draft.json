@@ -10,15 +10,8 @@
     "Journeyperson",
     "Advanced"
   ],
-  "coverageNote": "Draft. Built from the exam breakdown of the 309A exam: the tasks mapped here (B-7, B-8, B-9, B-11, C-16, C-17, D-22, D-24) account for 48 of the 100 questions (task numbers, titles and counts were checked against the occupational standard in the pre-review). The app can teach about 24 questions' worth of that so far under the CEC. The task-to-skill mapping is an estimate to be confirmed by a credential expert; the C-17 mapping is the least certain. Skills marked deferred have no Practitioner-level CEC content yet.",
+  "coverageNote": "Draft. Built from the exam breakdown of the 309A exam: the tasks mapped here (B-7, B-8, B-9, B-11, C-16, C-17, D-22, D-24) account for 48 of the 100 questions (task numbers, titles and counts were checked against the occupational standard in the pre-review). The app can teach about 24 questions' worth of that so far under the CEC. The task-to-skill mapping is an estimate to be confirmed by a credential expert; the C-17 mapping is the least certain. Skills marked deferred have no Practitioner-level CEC content yet (wiring methods has NEC content only).",
   "requirements": [
-    {
-      "skillId": "conductor-sizing",
-      "tier": "Practitioner",
-      "weight": 9.17,
-      "deferred": true,
-      "basis": "Red Seal 309A exam tasks C-16, D-22, D-24"
-    },
     {
       "skillId": "overcurrent-protection",
       "tier": "Practitioner",
@@ -27,9 +20,16 @@
       "basis": "Red Seal 309A exam tasks B-8, C-17, D-22, D-24 (the C-17 link is inferred: the standard's C-17 text does not name this skill)"
     },
     {
+      "skillId": "conductor-sizing",
+      "tier": "Practitioner",
+      "weight": 7.67,
+      "deferred": true,
+      "basis": "Red Seal 309A exam tasks C-16, D-22, D-24"
+    },
+    {
       "skillId": "equipment-installation",
       "tier": "Practitioner",
-      "weight": 6.83,
+      "weight": 5.33,
       "deferred": true,
       "basis": "Red Seal 309A exam tasks B-7, B-9, C-16"
     },
@@ -67,6 +67,13 @@
       "weight": 3.33,
       "deferred": true,
       "basis": "Red Seal 309A exam tasks B-9, D-24"
+    },
+    {
+      "skillId": "wiring-methods",
+      "tier": "Practitioner",
+      "weight": 3.0,
+      "deferred": true,
+      "basis": "Red Seal 309A exam tasks C-16"
     },
     {
       "skillId": "branch-circuit-requirements",

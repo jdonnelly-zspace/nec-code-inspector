@@ -11,9 +11,9 @@ compare each row with the book yourself. Open them in Excel or any spreadsheet t
 
 | File | Rows | What it is |
 |---|---|---|
-| `1-violation-citations.csv` | 56 | Each violation in the four inspection scenarios and the rule it cites, per code (42 NEC, 14 CEC). Rows with a concern come first. |
+| `1-violation-citations.csv` | 64 | Each violation in the six inspection scenarios and the rule it cites, per code (50 NEC, 14 CEC). Rows with a concern come first. |
 | `2-articles-cec.csv` | 12 | Draft Canadian Electrical Code reference entries (C22.1:24 numbering). Written from public sources, not the book. |
-| `3-articles-nec.csv` | 84 | NEC reference entries. Rows with a concern first, then cited ones, then 30 not tied to any violation. |
+| `3-articles-nec.csv` | 100 | NEC reference entries. Rows with a concern first (including the entries restored for the two new skills), then cited ones, then 36 not tied to any violation. |
 
 ## What to check
 
@@ -34,8 +34,8 @@ changes to the JSON data.
 
 ## Decisions we need from you
 
-- **Untied articles.** The 30 NEC articles marked "not tied to a violation" were kept after the desk check; confirm,
-  and decide whether to add a wiring-methods skill or drop the four parked wiring-method entries.
+- **Untied articles.** The 36 NEC articles marked "not tied to a violation" were kept; confirm. The dropped articles were restored with two new skills (wiring methods and special locations): please review those skills
+  and the restored entries, especially Article 480.
 - **CEC rules we could not confirm.** Violations hidden under the CEC until a rule is supplied (GFCI in kitchens and garages,
   motor rules, grounding and bonding details, service disconnect, panel directory and others). A reference and a one-line
   description of the rule is enough.

@@ -1,0 +1,86 @@
+{
+  "status": "draft",
+  "note": "Dwelling protection scope as described for C22.1:24 (Rules 26-704 and 26-658) from CSA's public index, provincial bulletins and trade guides. Only rules with a public source are modeled; every other location is listed in notModeled. A credential expert must check every rule.",
+  "rules": [
+    {
+      "id": "gfci-near-fixtures",
+      "protection": "gfci",
+      "reference": "26-704",
+      "nearFixtureTypes": [
+        "sink",
+        "bathtub",
+        "shower"
+      ],
+      "nearFixtureMaxM": 1.5,
+      "minVolts": 125,
+      "maxVolts": 125,
+      "minAmps": 15,
+      "maxAmps": 20
+    },
+    {
+      "id": "gfci-outdoors-near-grade",
+      "protection": "gfci",
+      "reference": "26-704",
+      "rooms": [
+        "outdoors"
+      ],
+      "heightAboveGradeMaxM": 2.5,
+      "minVolts": 125,
+      "maxVolts": 125,
+      "minAmps": 15,
+      "maxAmps": 20
+    },
+    {
+      "id": "afci-dwelling-circuits",
+      "protection": "afci",
+      "reference": "26-658",
+      "minVolts": 125,
+      "maxVolts": 125,
+      "maxAmps": 20
+    }
+  ],
+  "exemptions": [
+    {
+      "id": "gfci-behind-fixed-appliance",
+      "protection": "gfci",
+      "reference": "26-704",
+      "behindAppliance": true
+    },
+    {
+      "id": "afci-refrigeration",
+      "protection": "afci",
+      "reference": "26-658",
+      "appliances": [
+        "refrigerator",
+        "freezer"
+      ]
+    },
+    {
+      "id": "afci-kitchen-counter",
+      "protection": "afci",
+      "reference": "26-658",
+      "rooms": [
+        "kitchen"
+      ],
+      "onCounter": true
+    },
+    {
+      "id": "afci-bathroom-near-basin",
+      "protection": "afci",
+      "reference": "26-658",
+      "rooms": [
+        "bathroom"
+      ],
+      "nearFixtureTypes": [
+        "sink"
+      ],
+      "nearFixtureMaxM": 1.0
+    }
+  ],
+  "notModeled": [
+    "GFCI for kitchens away from a sink, garages, basements, crawl spaces, laundry rooms without a tub, and dishwashers: no public source found for a national CEC requirement",
+    "Provincial amendments (for example Ontario's kitchen counter rule)",
+    "Further AFCI exemptions (a single sump or septic pump, central heating equipment, dedicated medical equipment) and outlet-branch-circuit AFCI at the first outlet",
+    "The edition-dependent AFCI scope of C22.1:18 and C22.1:21"
+  ]
+}
