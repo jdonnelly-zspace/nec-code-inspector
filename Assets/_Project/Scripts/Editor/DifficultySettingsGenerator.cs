@@ -1,79 +1,33 @@
 using UnityEngine;
 using UnityEditor;
 using NECInspector.Core;
+using NECInspector.Data;
 
 namespace NECInspector.Editor
 {
+    /// <summary>
+    /// Creates or updates the difficulty settings assets from
+    /// Assets/_Project/Content/Difficulty/difficulty-settings.json.
+    /// </summary>
     public static class DifficultySettingsGenerator
     {
+        private const string CONTENT_PATH = "Assets/_Project/Content/Difficulty/difficulty-settings.json";
+        private const string SETTINGS_DIR = "Assets/_Project/ScriptableObjects/Settings";
+
         [MenuItem("NEC Inspector/Generate Difficulty Settings")]
         public static void Generate()
         {
-            const string SETTINGS_DIR = "Assets/_Project/ScriptableObjects/Settings";
+            var file = ContentFileLoader.Load<DifficultySettingsFile>(CONTENT_PATH, ContentFileValidator.Validate);
+            if (file == null) return;
 
-            if (!AssetDatabase.IsValidFolder(SETTINGS_DIR))
-            {
-                if (!AssetDatabase.IsValidFolder("Assets/_Project/ScriptableObjects"))
-                    AssetDatabase.CreateFolder("Assets/_Project", "ScriptableObjects");
-                AssetDatabase.CreateFolder("Assets/_Project/ScriptableObjects", "Settings");
-            }
+            ContentFileLoader.EnsureFolder("Assets/_Project", "ScriptableObjects");
+            ContentFileLoader.EnsureFolder("Assets/_Project/ScriptableObjects", "Settings");
 
             AssetDatabase.StartAssetEditing();
             try
             {
-                // === Beginner ===
-                CreateOrUpdate($"{SETTINGS_DIR}/DifficultySettings_Beginner.asset",
-                    level: DifficultyLevel.Beginner,
-                    displayName: "Beginner",
-                    showHighlightHints: true,
-                    showScaffolding: true,
-                    scaffoldingTimeoutSeconds: 60f,
-                    hintCooldownSeconds: 15f,
-                    citationMode: CitationMode.Dropdown,
-                    enableTimeLimit: false,
-                    timeLimitSeconds: 0,
-                    penalizeFalsePositives: false,
-                    falsePositivePenalty: 0f,
-                    showSimplifiedTerminology: true,
-                    highlightNewInEdition: true,
-                    includeSubtleViolations: false
-                );
-
-                // === Standard ===
-                CreateOrUpdate($"{SETTINGS_DIR}/DifficultySettings_Standard.asset",
-                    level: DifficultyLevel.Standard,
-                    displayName: "Standard",
-                    showHighlightHints: false,
-                    showScaffolding: false,
-                    scaffoldingTimeoutSeconds: -1f,
-                    hintCooldownSeconds: 30f,
-                    citationMode: CitationMode.SearchableDropdown,
-                    enableTimeLimit: false,
-                    timeLimitSeconds: 0,
-                    penalizeFalsePositives: false,
-                    falsePositivePenalty: 0.1f,
-                    showSimplifiedTerminology: false,
-                    highlightNewInEdition: true,
-                    includeSubtleViolations: false
-                );
-
-                // === Expert ===
-                CreateOrUpdate($"{SETTINGS_DIR}/DifficultySettings_Expert.asset",
-                    level: DifficultyLevel.Expert,
-                    displayName: "Expert",
-                    showHighlightHints: false,
-                    showScaffolding: false,
-                    scaffoldingTimeoutSeconds: -1f,
-                    hintCooldownSeconds: -1f,
-                    citationMode: CitationMode.FreeText,
-                    enableTimeLimit: true,
-                    timeLimitSeconds: 1200,
-                    penalizeFalsePositives: true,
-                    falsePositivePenalty: 0.25f,
-                    showSimplifiedTerminology: false,
-                    highlightNewInEdition: false,
-                    includeSubtleViolations: true
-                );
+                foreach (var entry in file.settings)
+                    CreateOrUpdate($"{SETTINGS_DIR}/DifficultySettings_{entry.level}.asset", entry);
             }
             finally
             {
@@ -83,14 +37,10 @@ namespace NECInspector.Editor
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
 
-            Debug.Log("[NEC Inspector] Difficulty settings generated: Beginner, Standard, Expert.");
+            Debug.Log($"[NEC Inspector] Difficulty settings generated: {file.settings.Length} levels.");
         }
 
-        private static void CreateOrUpdate(string path, DifficultyLevel level, string displayName,
-            bool showHighlightHints, bool showScaffolding, float scaffoldingTimeoutSeconds,
-            float hintCooldownSeconds, CitationMode citationMode, bool enableTimeLimit,
-            int timeLimitSeconds, bool penalizeFalsePositives, float falsePositivePenalty,
-            bool showSimplifiedTerminology, bool highlightNewInEdition, bool includeSubtleViolations)
+        private static void CreateOrUpdate(string path, DifficultySettingsEntry entry)
         {
             var asset = AssetDatabase.LoadAssetAtPath<DifficultySettingsSO>(path);
             if (asset == null)
@@ -99,20 +49,20 @@ namespace NECInspector.Editor
                 AssetDatabase.CreateAsset(asset, path);
             }
 
-            asset.level = level;
-            asset.displayName = displayName;
-            asset.showHighlightHints = showHighlightHints;
-            asset.showScaffolding = showScaffolding;
-            asset.scaffoldingTimeoutSeconds = scaffoldingTimeoutSeconds;
-            asset.hintCooldownSeconds = hintCooldownSeconds;
-            asset.citationMode = citationMode;
-            asset.enableTimeLimit = enableTimeLimit;
-            asset.timeLimitSeconds = timeLimitSeconds;
-            asset.penalizeFalsePositives = penalizeFalsePositives;
-            asset.falsePositivePenalty = falsePositivePenalty;
-            asset.showSimplifiedTerminology = showSimplifiedTerminology;
-            asset.highlightNewInEdition = highlightNewInEdition;
-            asset.includeSubtleViolations = includeSubtleViolations;
+            asset.level = ContentFileLoader.ParseEnum<DifficultyLevel>(entry.level);
+            asset.displayName = entry.displayName;
+            asset.showHighlightHints = entry.showHighlightHints;
+            asset.showScaffolding = entry.showScaffolding;
+            asset.scaffoldingTimeoutSeconds = entry.scaffoldingTimeoutSeconds;
+            asset.hintCooldownSeconds = entry.hintCooldownSeconds;
+            asset.citationMode = ContentFileLoader.ParseEnum<CitationMode>(entry.citationMode);
+            asset.enableTimeLimit = entry.enableTimeLimit;
+            asset.timeLimitSeconds = entry.timeLimitSeconds;
+            asset.penalizeFalsePositives = entry.penalizeFalsePositives;
+            asset.falsePositivePenalty = entry.falsePositivePenalty;
+            asset.showSimplifiedTerminology = entry.showSimplifiedTerminology;
+            asset.highlightNewInEdition = entry.highlightNewInEdition;
+            asset.includeSubtleViolations = entry.includeSubtleViolations;
 
             EditorUtility.SetDirty(asset);
         }

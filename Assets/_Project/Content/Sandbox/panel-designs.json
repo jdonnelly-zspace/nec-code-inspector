@@ -1,0 +1,180 @@
+{
+  "designs": [
+    {
+      "assetName": "Residential200A",
+      "profileId": "nec",
+      "panelType": "Residential 200A",
+      "displayName": "Residential Panel Design - 200A Service",
+      "description": "Design a complete residential electrical panel for a 2,000 sq ft single-family dwelling. Select and place the correct breakers for all required circuits, route wiring with proper gauge conductors, and verify code compliance.",
+      "totalAmps": 200,
+      "totalSlots": 40,
+      "dwellingArea": 2000,
+      "targetLoadVA": 18625,
+      "loadCalcTolerancePercent": 10,
+      "expertTimeLimit": 1800,
+      "availableDifficulties": [
+        "Beginner",
+        "Standard",
+        "Expert"
+      ],
+      "requiredCircuits": [
+        {
+          "circuitName": "Kitchen Small Appliance 1",
+          "ampsRequired": 20,
+          "wireGauge": "12 AWG",
+          "poleCount": 1,
+          "requiresGFCI": true,
+          "requiresAFCI": true,
+          "codeReference": "210.11(C)(1)",
+          "isRequired": true,
+          "description": "First of two required 20A small-appliance branch circuits for kitchen countertop receptacles.",
+          "room": "kitchen",
+          "appliance": ""
+        },
+        {
+          "circuitName": "Kitchen Small Appliance 2",
+          "ampsRequired": 20,
+          "wireGauge": "12 AWG",
+          "poleCount": 1,
+          "requiresGFCI": true,
+          "requiresAFCI": true,
+          "codeReference": "210.11(C)(1)",
+          "isRequired": true,
+          "description": "Second of two required 20A small-appliance branch circuits for kitchen countertop receptacles.",
+          "room": "kitchen",
+          "appliance": ""
+        },
+        {
+          "circuitName": "Bathroom Receptacles",
+          "ampsRequired": 20,
+          "wireGauge": "12 AWG",
+          "poleCount": 1,
+          "requiresGFCI": true,
+          "requiresAFCI": false,
+          "codeReference": "210.11(C)(3)",
+          "isRequired": true,
+          "description": "Dedicated 20A branch circuit for bathroom receptacle outlets.",
+          "room": "bathroom",
+          "appliance": ""
+        },
+        {
+          "circuitName": "Laundry",
+          "ampsRequired": 20,
+          "wireGauge": "12 AWG",
+          "poleCount": 1,
+          "requiresGFCI": true,
+          "requiresAFCI": true,
+          "codeReference": "210.11(C)(2)",
+          "isRequired": true,
+          "description": "Dedicated 20A branch circuit for laundry room receptacle.",
+          "room": "laundry",
+          "appliance": ""
+        },
+        {
+          "circuitName": "Dishwasher",
+          "ampsRequired": 20,
+          "wireGauge": "12 AWG",
+          "poleCount": 1,
+          "requiresGFCI": true,
+          "requiresAFCI": true,
+          "codeReference": "210.8(D)",
+          "isRequired": true,
+          "description": "Dedicated circuit for dishwasher with GFCI and AFCI protection (a dual-function breaker does both).",
+          "room": "kitchen",
+          "appliance": "dishwasher"
+        },
+        {
+          "circuitName": "Garbage Disposal",
+          "ampsRequired": 20,
+          "wireGauge": "12 AWG",
+          "poleCount": 1,
+          "requiresGFCI": true,
+          "requiresAFCI": true,
+          "codeReference": "210.8(A)(6)",
+          "isRequired": true,
+          "description": "Dedicated circuit for garbage disposal under kitchen sink, with GFCI and AFCI protection.",
+          "room": "kitchen",
+          "appliance": ""
+        },
+        {
+          "circuitName": "Electric Range",
+          "ampsRequired": 50,
+          "wireGauge": "6 AWG",
+          "poleCount": 2,
+          "requiresGFCI": false,
+          "requiresAFCI": false,
+          "codeReference": "220.55",
+          "isRequired": true,
+          "description": "240V circuit for electric range/oven. 50A with 6 AWG conductors.",
+          "room": "",
+          "appliance": ""
+        },
+        {
+          "circuitName": "Clothes Dryer",
+          "ampsRequired": 30,
+          "wireGauge": "10 AWG",
+          "poleCount": 2,
+          "requiresGFCI": false,
+          "requiresAFCI": false,
+          "codeReference": "220.54",
+          "isRequired": true,
+          "description": "240V circuit for electric clothes dryer. 30A with 10 AWG conductors.",
+          "room": "",
+          "appliance": ""
+        },
+        {
+          "circuitName": "Air Conditioning",
+          "ampsRequired": 30,
+          "wireGauge": "10 AWG",
+          "poleCount": 2,
+          "requiresGFCI": false,
+          "requiresAFCI": false,
+          "codeReference": "440.4",
+          "isRequired": true,
+          "description": "240V circuit for central air conditioning condensing unit.",
+          "room": "",
+          "appliance": ""
+        },
+        {
+          "circuitName": "General Lighting",
+          "ampsRequired": 15,
+          "wireGauge": "14 AWG",
+          "poleCount": 1,
+          "requiresGFCI": false,
+          "requiresAFCI": true,
+          "codeReference": "220.12",
+          "isRequired": true,
+          "description": "General lighting circuit for living areas. AFCI required for dwelling unit.",
+          "room": "living-room",
+          "appliance": ""
+        },
+        {
+          "circuitName": "General Receptacles",
+          "ampsRequired": 15,
+          "wireGauge": "14 AWG",
+          "poleCount": 1,
+          "requiresGFCI": false,
+          "requiresAFCI": true,
+          "codeReference": "210.52(A)",
+          "isRequired": true,
+          "description": "General receptacle circuit for bedrooms and living areas. AFCI required.",
+          "room": "bedroom",
+          "appliance": ""
+        },
+        {
+          "circuitName": "Garage Receptacles",
+          "ampsRequired": 20,
+          "wireGauge": "12 AWG",
+          "poleCount": 1,
+          "requiresGFCI": true,
+          "requiresAFCI": false,
+          "codeReference": "210.8(A)(2)",
+          "isRequired": true,
+          "description": "Garage receptacle circuit with GFCI protection.",
+          "room": "garage",
+          "appliance": ""
+        }
+      ]
+    }
+  ]
+}

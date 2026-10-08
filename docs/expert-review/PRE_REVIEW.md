@@ -152,6 +152,19 @@ At the owner's request the work in sections 5 and 10 was extended after the pre-
 - **Scope checker.** `scope.json` for the NEC (14 rules, from the 2023 NEC as described in public summaries) and the CEC (3 rules and 4 exemptions, from C22.1:24 sources), a validator, and `ProtectionScopeChecker`. Six GFCI and AFCI violations now describe their offending receptacle, and the tests confirm each breaks every code it cites. The comparison in section 10 is now executable; its low-confidence rows are listed under `notModeled` in each file.
 - **Still for the expert:** confirm the two skills and their content, the Article 480 entries, every `scope.json` rule (especially the CEC rows and the NEC's 2026 scope), and add the CEC rules for both new skills.
 
+## 13. Follow-up: content moved out of editor scripts
+
+The difficulty settings, certificate templates, quick reference cards and the panel sandbox design now live in JSON under `Assets/_Project/Content` (`Difficulty/`, `Certificates/`, `QuickReference/`, `Sandbox/`) with validators and tests, like the scenarios. Moving them let the tests check them for the first time, and the checks found problems that were fixed in the move:
+
+- **Sandbox references.** The required circuits cited the swapped `210.11(C)` numbers (kitchen as (C)(3), bathroom as (C)(1)) and `210.8(A)(5)` for the garbage disposal; now `210.11(C)(1)`, `(C)(3)` and `210.8(A)(6)`. A new test requires every reference to exist in the code's article data, which also found that `440.4` (air-conditioning nameplate) was missing; it was added (medium-high).
+- **Sandbox protection flags.** The dishwasher and garbage disposal circuits did not require AFCI, but under the 2023 NEC kitchens are in the AFCI list. The circuits now name the room they serve, and a test requires the GFCI and AFCI flags to agree with the code's `scope.json`. This changes what the panel sandbox rule for AFCI expects for those two circuits.
+- **Claims about 2026.** The dishwasher circuit text said "(2026 NEC)" and the card "Key 2026 NEC Changes" listed changes that are not new in 2026 or cannot be verified. The text was corrected and the card removed; tests now reject unverified "2026 NEC requires/added" claims.
+- **Cards** were corrected where the pre-review found errors: kitchen GFCI is `210.8(A)(6)` and includes basements and sinks, islands are `210.52(C)(2)`, bundled NM cable derating needs the sealed opening, and the AFCI card no longer claims "virtually all" rooms. Cards now carry the code they are written for (`profileId`), and the card panel shows only the active code's cards.
+- **Certificates** no longer name the NEC in the overall certificate's title and text (the app teaches skills under any code); the overall certificate still requires all 13 skills.
+- **Sandbox load check.** The expected load (18,625 VA) is now tested against the load calculator for the design's area, and the conductor and breaker pairs against the code's conductor table.
+
+Still for the expert: the wording of every card and circuit description (worksheet `4-cards-and-sandbox.csv`), the card selection, and the AFCI flags for kitchen appliance circuits against the 2026 NEC.
+
 ## Sources (all public)
 
 NEC: ecmweb.com (GFCI and AFCI requirements; key revisions to Chapter 2 of the 2026 NEC; NEC motors series; one-family dwelling load calculations), IAEI Magazine (210.8 GFCI requirements), electricianu.com (2023 NEC 210.11), Mike Holt forums (220.14(I), 408.54), St. Paul building department electrical checklist (210.52).

@@ -3,14 +3,6 @@ using NECInspector.Skills;
 
 namespace NECInspector.Data
 {
-    public enum CertificateType
-    {
-        SkillAttainment,
-        ScenarioMastery,
-        SandboxProficiency,
-        OverallProficiency
-    }
-
     [CreateAssetMenu(fileName = "CertificateTemplate", menuName = "NEC Inspector/Certificate Template")]
     public class CertificateTemplateSO : ScriptableObject
     {

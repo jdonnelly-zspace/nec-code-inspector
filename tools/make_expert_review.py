@@ -14,6 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "docs", "expert-review")
 CODES = os.path.join(ROOT, "Assets", "_Project", "StreamingAssets", "Codes")
 SCENARIOS = os.path.join(ROOT, "Assets", "_Project", "Content", "Scenarios")
+CONTENT = os.path.join(ROOT, "Assets", "_Project", "Content")
 
 # Known concerns from docs/CONTENT_REVIEW.md, keyed by (violationId, profileId)
 VIOLATION_FLAGS = {
@@ -51,6 +52,7 @@ ARTICLE_FLAGS = {
     "680.44": RESTORED + " (spas and hot tubs; text is generic)",
     "404.2(C)": RESTORED + " (rewritten as the neutral conductor at switches; medium)",
     "225.18": RESTORED + " (clearances rewritten; 2026 unverified)",
+    "440.4": "Added for the sandbox air-conditioning circuit (found by the content tests); confirm number and text",
     "406.9(A)": RESTORED, "406.9(B)": RESTORED, "410.10(A)": RESTORED, "210.23": RESTORED, "220.18": RESTORED,
 }
 
@@ -117,6 +119,22 @@ def article_rows(profile_id, cited):
     return rows
 
 
+def card_and_sandbox_rows():
+    """Quick reference cards and sandbox circuits (content that used to live in editor scripts)."""
+    rows = []
+    for path in sorted(glob.glob(os.path.join(CONTENT, "QuickReference", "*.json"))):
+        for c in load_json(path)["cards"]:
+            rows.append(["", "Quick reference card", c["profileId"], c["cardId"], c["title"], ", ".join(c["codeReferences"]),
+                         c["summary"] + " Key rule: " + c["keyRule"]])
+    for path in sorted(glob.glob(os.path.join(CONTENT, "Sandbox", "*.json"))):
+        for d in load_json(path)["designs"]:
+            for c in d["requiredCircuits"]:
+                protection = " and ".join(p for p, on in (("GFCI", c["requiresGFCI"]), ("AFCI", c["requiresAFCI"])) if on) or "none"
+                rows.append(["", "Sandbox circuit", d["profileId"], d["assetName"], c["circuitName"], c["codeReference"],
+                             f'{c["ampsRequired"]} A on {c["wireGauge"]}, {c["poleCount"]}-pole, protection: {protection}. {c["description"]}'])
+    return rows
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     vrows = violation_rows()
@@ -129,11 +147,12 @@ def main():
         cited.setdefault(r[5], set()).add(r[6])
 
     counts = {}
+    n_extra = write_csv("4-cards-and-sandbox.csv", ["Concern", "Kind", "Code", "Id", "Title or circuit", "References", "What it says"], card_and_sandbox_rows())
     for i, pid in enumerate(sorted(d for d in os.listdir(CODES) if os.path.isdir(os.path.join(CODES, d))), start=2):
         counts[pid] = write_csv(f"{i}-articles-{pid}.csv",
                                 ["Concern", "Reference", "Title", "Our paraphrase", "New in edition", "Use in app"],
                                 article_rows(pid, cited.get(pid, set())))
-    print("violation citations:", n_v, "| articles:", counts)
+    print("violation citations:", n_v, "| articles:", counts, "| cards and sandbox circuits:", n_extra)
 
 
 if __name__ == "__main__":

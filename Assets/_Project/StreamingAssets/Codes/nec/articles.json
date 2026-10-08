@@ -899,6 +899,15 @@
       "keywords": ["spa", "hot tub", "GFCI", "ground-fault", "protection"],
       "related": ["210.8(A)(1)"],
       "isNewInEdition": false
+    },
+    {
+      "reference": "440.4",
+      "title": "Marking on Air-Conditioning and Refrigeration Equipment",
+      "text": "Air-conditioning and refrigeration equipment carries a nameplate that gives its minimum circuit ampacity and its maximum overcurrent device rating. Size the circuit conductors and the breaker from that nameplate.",
+      "section": 4,
+      "keywords": ["air conditioning", "nameplate", "minimum circuit ampacity", "maximum overcurrent", "condensing unit"],
+      "related": ["430.6(A)(1)", "240.4(B)"],
+      "isNewInEdition": false
     }
   ]
 }

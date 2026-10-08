@@ -3,25 +3,13 @@ using UnityEngine.Serialization;
 
 namespace NECInspector.Data
 {
-    public enum CardCategory
-    {
-        General,
-        Grounding,
-        BranchCircuits,
-        Overcurrent,
-        WireSizing,
-        GFCIProtection,
-        AFCIProtection,
-        LoadCalculation,
-        PanelDesign,
-        SpecialLocations
-    }
-
     [CreateAssetMenu(fileName = "QuickReferenceCard", menuName = "NEC Inspector/Quick Reference Card")]
     public class QuickReferenceCardSO : ScriptableObject
     {
         [Header("Identity")]
         public string cardId;
+        [Tooltip("The installation code this card is written for (for example nec); empty shows it under every code")]
+        public string profileId;
         public string title;
         public CardCategory category;
 

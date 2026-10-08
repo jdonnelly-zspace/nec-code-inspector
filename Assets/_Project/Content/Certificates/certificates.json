@@ -1,0 +1,80 @@
+{
+  "templates": [
+    {
+      "assetName": "ChapterCompletion",
+      "certificateId": "CERT-CHAPTER-001",
+      "certificateTitle": "Skill Proficiency",
+      "descriptionTemplate": "This certifies that {StudentName} has demonstrated proficiency in electrical code skills on {Date}, achieving {Score} accuracy at {Difficulty} difficulty.",
+      "type": "SkillAttainment",
+      "minimumAccuracy": 0.7,
+      "requiredSkills": [],
+      "requiresAllSkills": false,
+      "requiredTier": "",
+      "requiredScenarios": [],
+      "requiresSandbox": false,
+      "accentColor": [
+        0.2,
+        0.4,
+        0.8,
+        1.0
+      ]
+    },
+    {
+      "assetName": "ScenarioMastery",
+      "certificateId": "CERT-SCENARIO-001",
+      "certificateTitle": "Scenario Mastery Certificate",
+      "descriptionTemplate": "This certifies that {StudentName} has achieved mastery-level performance in electrical inspection on {Date}, with {Score} accuracy at {Difficulty} difficulty.",
+      "type": "ScenarioMastery",
+      "minimumAccuracy": 0.85,
+      "requiredSkills": [],
+      "requiresAllSkills": false,
+      "requiredTier": "",
+      "requiredScenarios": [],
+      "requiresSandbox": false,
+      "accentColor": [
+        0.85,
+        0.65,
+        0.13,
+        1.0
+      ]
+    },
+    {
+      "assetName": "SandboxProficiency",
+      "certificateId": "CERT-SANDBOX-001",
+      "certificateTitle": "Panel Design Proficiency",
+      "descriptionTemplate": "This certifies that {StudentName} has demonstrated proficiency in code-compliant panel design on {Date}, with {Score} compliance rate at {Difficulty} difficulty.",
+      "type": "SandboxProficiency",
+      "minimumAccuracy": 0.8,
+      "requiredSkills": [],
+      "requiresAllSkills": false,
+      "requiredTier": "",
+      "requiredScenarios": [],
+      "requiresSandbox": true,
+      "accentColor": [
+        0.2,
+        0.7,
+        0.3,
+        1.0
+      ]
+    },
+    {
+      "assetName": "OverallProficiency",
+      "certificateId": "CERT-OVERALL-001",
+      "certificateTitle": "Code Inspector - Overall Proficiency",
+      "descriptionTemplate": "This certifies that {StudentName} has achieved overall proficiency across all Code Inspector modules on {Date}, demonstrating comprehensive electrical code knowledge with {Score} average accuracy at {Difficulty} difficulty.",
+      "type": "OverallProficiency",
+      "minimumAccuracy": 0.8,
+      "requiredSkills": [],
+      "requiresAllSkills": true,
+      "requiredTier": "",
+      "requiredScenarios": [],
+      "requiresSandbox": true,
+      "accentColor": [
+        0.1,
+        0.15,
+        0.4,
+        1.0
+      ]
+    }
+  ]
+}
