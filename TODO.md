@@ -33,7 +33,7 @@ Status key: `[x]` done and merged into the stack branch, `[~]` built and in revi
 - [ ] Fix the 13 dangling `related` references in `Codes/nec/articles.json` (13 of the 15 test warnings; the reference panel silently skips them). Needs the expert to say whether to add the missing entries or drop the links
 - [x] Tests for the 10 panel compliance rules: the rules moved into `ComplianceRules` (plain data in, results out, tables passed in) and `ComplianceChecker` only reads the scene objects into that data (52 checks in `ComplianceRulesTests`; boundary mutations were confirmed to fail them). The reader in `ComplianceChecker` still needs a Unity compile check; the public `Check*` methods it used to have were only called from inside the class and are gone
 - [x] Document how to run the tests locally (CONTRIBUTING.md > Tests); `tests/**/bin` and `obj` are git-ignored
-- [!] Unity compile gate in CI. Blocked: the repo has no `ProjectSettings/` or `Packages/`, the zSpace SDK is proprietary and git-ignored, and CI would need a Unity license secret. Decision needed on how to make the project compilable in CI (stub the SDK, or a self-hosted runner)
+- [!] Unity compile gate in CI (a local check now exists: `tools/unity-compile-check`). Blocked: the repo has no `ProjectSettings/` or `Packages/`, the zSpace SDK is proprietary and git-ignored, and CI would need a Unity license secret. Decision needed on how to make the project compilable in CI (stub the SDK, or a self-hosted runner)
 
 **B2. Finish the data layer**
 - [~] Per-profile citations on violations: `citations` list (profileId, reference, text) replaces `necArticle` / `necArticleText`; scoring compares the student's citation to the active profile's reference (this branch)
@@ -120,7 +120,7 @@ Decided: region-specific art is one set per region group (`docs/SCENE_DESIGN.md`
 - [ ] Residential panel 3D scene with embedded violations + prefab wiring
 - [ ] Kitchen/bathroom/living area 3D scene (Branch Circuit scenario)
 - [ ] Run NEC Inspector > Import Scenario Data + PanelDesignSandboxGenerator in Editor (run it after any change to the scenario JSON)
-- [ ] Compile the project in Unity and fix anything the logic tests cannot see (uGUI, TextMeshPro and zSpace code): `CodePickerSceneSetup`, `MainMenuSceneGenerator`, `MainMenuPanel`, `CodeProfilePickerPanel`
+- [~] Compile the project in Unity and fix anything the logic tests cannot see. `python tools/unity-compile-check/check.py` compiles 84 of the 106 scripts against the installed Unity 6000.4.1 libraries with uGUI/TextMeshPro stand-ins and finds no errors, including `CodePickerSceneSetup`, `MainMenuSceneGenerator`, `MainMenuPanel`, `CodeProfilePickerPanel` and the panel sandbox scripts. Still needed in the Unity project itself: the 22 scripts that need the zSpace SDK, PrimeTween or Localization (input, legacy step code, `InspectionScenarioRunner`, `PanelDesignRunner`, two UI panels), and the exact uGUI and TextMeshPro shapes
 - [ ] Panel sandbox scene with 3D panel, breaker tray, slot GameObjects
 - [ ] Wire Quick Reference Cards to inspection HUD
 - [ ] Certificate UI panel visual design

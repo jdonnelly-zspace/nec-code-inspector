@@ -30,6 +30,14 @@ dotnet run --project tests/LogicTests
 
 The same command runs in CI on every pull request (`.github/workflows/logic-tests.yml`). Failures exit non-zero; warnings (for example dangling related-article references) are listed but do not fail the run. This does not replace opening the project in Unity: scripts that use TextMeshPro, uGUI or the zSpace SDK are not compiled by it.
 
+A second check compiles the Unity-dependent scripts against the libraries of an installed Unity editor (Unity 6000.4.1f1 in the Hub by default; pass the editor's `Data` folder to use another), with minimal stand-ins for uGUI and TextMeshPro:
+
+```bash
+python tools/unity-compile-check/check.py --list
+```
+
+It leaves out the files that need packages not installed on a machine (the zSpace SDK, PrimeTween, Localization; 22 of 106 script files at the time of writing, listed by `--list`) and checks everything else in full, method bodies included. It fails on any real compiler error. It is local only (CI has no Unity install), and the files it leaves out still need a compile in Unity.
+
 ## Key Documentation
 
 | File | What it covers |
