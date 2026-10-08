@@ -114,7 +114,7 @@ def article_rows(profile_id, cited):
         ref = a["reference"]
         tied = "cited" if ref in cited else ("related to a cited article" if ref in related else "not tied to a violation")
         flag = CEC_NOTE if profile_id == "cec" else ARTICLE_FLAGS.get(ref, "")
-        rows.append([flag, ref, a["title"], a["text"], "yes" if a.get("isNewInEdition") else "", tied])
+        rows.append([flag, ref, a["title"], a["text"], "yes" if a.get("isNewInEdition") else "", tied, a.get("conceptId", "")])
     rows.sort(key=lambda r: (r[0] == "", r[5] == "not tied to a violation"))
     return rows
 
@@ -150,7 +150,7 @@ def main():
     n_extra = write_csv("4-cards-and-sandbox.csv", ["Concern", "Kind", "Code", "Id", "Title or circuit", "References", "What it says"], card_and_sandbox_rows())
     for i, pid in enumerate(sorted(d for d in os.listdir(CODES) if os.path.isdir(os.path.join(CODES, d))), start=2):
         counts[pid] = write_csv(f"{i}-articles-{pid}.csv",
-                                ["Concern", "Reference", "Title", "Our paraphrase", "New in edition", "Use in app"],
+                                ["Concern", "Reference", "Title", "Our paraphrase", "New in edition", "Use in app", "Skill tag"],
                                 article_rows(pid, cited.get(pid, set())))
     print("violation citations:", n_v, "| articles:", counts, "| cards and sandbox circuits:", n_extra)
 

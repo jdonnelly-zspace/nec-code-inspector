@@ -17,6 +17,7 @@ namespace NECInspector.Codes
         public int chapter;                 // section, chapter or part number in the source code
         public string[] keywords;
         public string[] relatedReferences;
+        public string conceptId;            // the skill (concept ID) this entry belongs to; empty if untagged
         public bool isNewInEdition;         // new or changed in the profile's current edition
 
         /// <summary>

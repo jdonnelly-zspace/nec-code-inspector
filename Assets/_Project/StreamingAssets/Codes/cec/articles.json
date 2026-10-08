@@ -7,6 +7,7 @@
       "section": 2,
       "keywords": ["working space", "clearance", "panel", "access"],
       "related": [],
+      "conceptId": "working-space-access",
       "isNewInEdition": false
     },
     {
@@ -16,6 +17,7 @@
       "section": 6,
       "keywords": ["service equipment", "service disconnect", "accessible", "location"],
       "related": [],
+      "conceptId": "disconnecting-means",
       "isNewInEdition": false
     },
     {
@@ -25,6 +27,7 @@
       "section": 10,
       "keywords": ["ground rod", "grounding electrode", "water pipe", "rod length"],
       "related": [],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -34,6 +37,7 @@
       "section": 10,
       "keywords": ["grounding electrodes", "interconnection", "bonding", "ground rod"],
       "related": [],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -43,6 +47,7 @@
       "section": 10,
       "keywords": ["bonding", "water pipe", "equipotential", "metal piping"],
       "related": [],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -52,6 +57,7 @@
       "section": 14,
       "keywords": ["overcurrent", "breaker", "small conductors", "14 AWG", "12 AWG", "10 AWG"],
       "related": [],
+      "conceptId": "overcurrent-protection",
       "isNewInEdition": false
     },
     {
@@ -61,6 +67,7 @@
       "section": 26,
       "keywords": ["breaker height", "handle height", "dwelling", "panel"],
       "related": [],
+      "conceptId": "working-space-access",
       "isNewInEdition": false
     },
     {
@@ -70,6 +77,7 @@
       "section": 26,
       "keywords": ["afci", "arc fault", "bedroom", "combination type"],
       "related": [],
+      "conceptId": "arc-fault-protection",
       "isNewInEdition": false
     },
     {
@@ -79,6 +87,7 @@
       "section": 26,
       "keywords": ["gfci", "ground fault", "sink", "bathroom", "shower", "bathtub"],
       "related": [],
+      "conceptId": "shock-protection",
       "isNewInEdition": false
     },
     {
@@ -88,6 +97,7 @@
       "section": 26,
       "keywords": ["receptacle spacing", "wall space", "1.8 m", "dwelling"],
       "related": ["26-722(d)(iii)"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -97,6 +107,7 @@
       "section": 26,
       "keywords": ["counter", "split receptacle", "900 mm", "kitchen"],
       "related": ["26-722"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -106,6 +117,7 @@
       "section": 28,
       "keywords": ["motor", "disconnect", "within sight", "starter"],
       "related": [],
+      "conceptId": "disconnecting-means",
       "isNewInEdition": false
     }
   ]

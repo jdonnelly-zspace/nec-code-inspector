@@ -185,7 +185,8 @@ namespace NECInspector.Inspection
         /// <summary>
         /// One piece of skill evidence per active violation: the violation's concept at the tier of its
         /// difficulty, with full credit for finding it and citing it correctly, partial credit for
-        /// finding it with a wrong citation, and none if it was missed.
+        /// finding it with a wrong citation (three quarters if the citation is another entry of the same skill),
+        /// and none if it was missed.
         /// </summary>
         public List<SkillEvidence> GetSkillEvidence()
         {
@@ -200,13 +201,14 @@ namespace NECInspector.Inspection
                 bool found = flagged != null;
 
                 var expected = violation.GetCitation(profileId);
-                bool citationCorrect = found && expected != null
-                    && IsCitationCorrect(flagged.citedReference, expected.reference);
+                float outcome = !found ? SkillOutcomes.Missed
+                    : expected == null ? SkillOutcomes.FoundWrongCitation
+                    : CitationCredit.Outcome(CodeProfiles.Active, violation.conceptId, flagged.citedReference, expected.reference);
 
                 evidence.Add(new SkillEvidence(
                     violation.conceptId,
                     SkillTiers.FromDifficulty(violation.minimumDifficulty),
-                    SkillOutcomes.ForInspection(found, citationCorrect),
+                    outcome,
                     SkillEvidenceSources.Inspection));
             }
 
