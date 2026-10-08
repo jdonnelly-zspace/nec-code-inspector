@@ -11,6 +11,8 @@ namespace NECInspector.Codes
         string ProfileId { get; }       // e.g., "nec"
         string DisplayName { get; }     // e.g., "NEC (NFPA 70)"
         string Edition { get; }         // e.g., "2026"
+        string Region { get; }          // e.g., "US", "CA"
+        string ReviewStatus { get; }    // app-defined, draft or reviewed (see CodeProfileManifest)
         bool IsLoaded { get; }
         int ArticleCount { get; }
 

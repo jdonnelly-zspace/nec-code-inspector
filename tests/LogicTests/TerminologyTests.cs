@@ -120,6 +120,8 @@ namespace NECInspector.LogicTests
             public string ProfileId => "uk";
             public string DisplayName => "UK";
             public string Edition => "test";
+            public string Region => "UK";
+            public string ReviewStatus => "draft";
             public bool IsLoaded => true;
             public int ArticleCount => 0;
             public bool HasOwnTables => true;
