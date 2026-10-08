@@ -13,14 +13,15 @@ namespace NECInspector.LogicTests
         {
             Ordering(t);
             Wording(t);
+            ArtAvailability(t);
             RegionNames(t);
             RealProfiles(t);
             ActiveChangedEvent(t);
         }
 
-        private static DataCodeProfile Make(string id, string name, string region, string status, bool tables)
+        private static DataCodeProfile Make(string id, string name, string region, string status, bool tables, string artSet = ArtSets.NorthAmerica)
         {
-            var manifest = new CodeProfileManifest { id = id, displayName = name, edition = "2030", region = region, reviewStatus = status };
+            var manifest = new CodeProfileManifest { id = id, displayName = name, edition = "2030", region = region, reviewStatus = status, artSet = artSet };
             var terminology = new CodeTerminology { codeName = id.ToUpperInvariant(), terms = new TermEntry[0] };
             var articles = new[] { new CodeArticleData { reference = "1-1", title = "T", text = "x", section = 1 } };
             return new DataCodeProfile(manifest, articles, tables ? ElectricalTables.CreateNecDefaults() : null, terminology);
@@ -77,6 +78,32 @@ namespace NECInspector.LogicTests
             t.Equal("Canada", lines[0], "details start with the region");
             t.Equal(4, lines.Length, "details: region, status, scenarios, sandbox");
             t.Equal(3, necChoice.Details.Split('\n').Length, "details leave out empty lines");
+        }
+
+        private static void ArtAvailability(TestContext t)
+        {
+            t.Begin("picker with an art set that has no art");
+
+            var nec = Make("nec", "NEC (NFPA 70)", "US", "app-defined", true);
+            var uk = Make("uk", "UK Code", "UK", "draft", true, "uk");
+
+            var choices = CodeProfileChoices.Build(new ICodeProfile[] { nec, uk }, "nec", id => 4, 4);
+            var necChoice = choices.Single(c => c.id == "nec");
+            var ukChoice = choices.Single(c => c.id == "uk");
+
+            t.IsTrue(necChoice.artAvailable && necChoice.availableScenarios == 4, "a code with art keeps its scenarios");
+            t.IsTrue(!ukChoice.artAvailable, "a code whose art set has no art is flagged");
+            t.Equal(0, ukChoice.availableScenarios, "no scenarios are counted for a code without art, even if violations apply");
+            t.IsTrue(ukChoice.ScenarioText.StartsWith("Scenarios not available"), "the picker says why there are no scenarios");
+            t.IsTrue(ukChoice.Details.Contains("no scene art"), "the details include the reason");
+            t.IsTrue(!necChoice.ScenarioText.Contains("art"), "a code with art says nothing about art");
+
+            var noArtSet = Make("x", "X", "US", "draft", true, null);
+            t.Equal(0, CodeProfileChoices.Build(new ICodeProfile[] { noArtSet }, "x", id => 4, 4)[0].availableScenarios,
+                "a profile with no art set offers no scenarios");
+
+            var withoutCatalog = CodeProfileChoices.Build(new ICodeProfile[] { uk }, "uk", id => 4, 0)[0];
+            t.IsTrue(withoutCatalog.ScenarioText.StartsWith("Scenarios not available"), "the art message shows even without a scenario catalog");
         }
 
         private static void RegionNames(TestContext t)
