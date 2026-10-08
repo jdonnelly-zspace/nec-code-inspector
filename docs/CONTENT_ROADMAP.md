@@ -39,7 +39,7 @@ Students reach inside a 3D electrical panel — open the cover, examine bus bars
 | Overcurrent protection of conductors | Art. 240.4, 240.4(B), 240.4(D) | Built |
 | Overcurrent device accessibility | Art. 240.24(A) | Built |
 | Circuit directory / labeling | Art. 408.4 (2026 change) | Built |
-| Panelboard bus rating / spaces | Art. 408.36 | Built |
+| Panelboard bus rating / spaces | Art. 408.54 | Built |
 | **Sandbox: Panel Design** | | |
 | Breaker/conductor matching | Art. 240.4 | Built |
 | Required branch circuits | Art. 210.11(C)(1-3) | Built |
@@ -47,7 +47,7 @@ Students reach inside a 3D electrical panel — open the cover, examine bus bars
 | AFCI breaker selection | Art. 210.12 | Built |
 | Load balance (bus sides) | General practice | Built |
 | Main breaker sizing | Art. 230.79 | Built |
-| Panel space limits | Art. 408.36 | Built |
+| Panel space limits | Art. 408.54 | Built |
 | Wire connections check | General practice | Built |
 | Conductor ampacity match | Art. 310.14 | Built |
 | No double-tapped breakers | Art. 110.14 | Built |

@@ -21,7 +21,7 @@
         {
           "profileId": "nec",
           "reference": "250.52(A)(5)",
-          "text": "A ground rod (stainless, copper, or zinc-plated steel) needs a minimum length of 8 feet and a 5/8 inch diameter.",
+          "text": "A ground rod needs a length of at least 8 feet and a diameter of at least 5/8 inch (1/2 inch is allowed for listed stainless or nonferrous rods).",
           "limit": {
             "quantity": "ground-rod-length",
             "kind": "min",
@@ -31,8 +31,8 @@
         },
         {
           "profileId": "cec",
-          "reference": "10-700",
-          "text": "A manufactured grounding electrode can be made of rods 3 m long, driven in full length, with at least two spaced 3 m apart and bonded together.",
+          "reference": "10-102",
+          "text": "A manufactured grounding electrode is normally two rods, each 3 m long, driven in full length, spaced at least 3 m apart and bonded together.",
           "description": "Ground rod shorter than the 3 m rod length",
           "hintText": "A manufactured ground electrode uses 3 m rods driven in full length. Check the rod length.",
           "inspectionNote": "This ground rod is only 6 feet (about 1.8 m) long, shorter than the 3 m rods the code expects.",
@@ -91,6 +91,11 @@
           "profileId": "nec",
           "reference": "250.104(A)",
           "text": "Bond the metal water pipe system to any one of these: the service enclosure, the service's grounded conductor, a grounding electrode conductor of adequate size, or the electrodes in use."
+        },
+        {
+          "profileId": "cec",
+          "reference": "10-700",
+          "text": "Bond the building's metal water piping to the electrical grounding system with a bonding conductor."
         }
       ],
       "componentObjectName": "WaterPipe_Bonding",
@@ -129,6 +134,11 @@
           "profileId": "nec",
           "reference": "250.50",
           "text": "Bond together every electrode of the types listed in 250.52(A)(1) through (A)(7) at a building so they act as one system."
+        },
+        {
+          "profileId": "cec",
+          "reference": "10-104",
+          "text": "Connect together all the grounding electrodes at a building so that they act as one grounding system."
         }
       ],
       "componentObjectName": "Electrode_BondingJumper",

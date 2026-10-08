@@ -149,7 +149,7 @@ namespace NECInspector.Codes
                     Rule("RULE-06", "230.79", ConceptIds.LoadCalculation),
                     Rule("RULE-07", "110.14", ConceptIds.EquipmentInstallation),
                     Rule("RULE-08", "310.14", ConceptIds.ConductorSizing),
-                    Rule("RULE-09", "408.36", ConceptIds.EquipmentInstallation),
+                    Rule("RULE-09", "408.54", ConceptIds.EquipmentInstallation),
                     Rule("RULE-10", "General Practice", ConceptIds.EquipmentInstallation)
                 }
             };

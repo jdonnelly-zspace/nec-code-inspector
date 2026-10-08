@@ -110,6 +110,12 @@
           "profileId": "nec",
           "reference": "230.70(A)",
           "text": "Put the service disconnect where it is readily accessible, outside the building or inside near where the service conductors enter."
+        },
+        {
+          "profileId": "cec",
+          "reference": "6-206",
+          "text": "Put the consumer's service equipment where it is readily accessible and close to where the service conductors enter the building, and not in places such as clothes closets, bathrooms or stairways.",
+          "inspectionNote": "Service disconnect is located behind stored equipment and requires moving obstacles to access. It must be readily accessible under the CEC."
         }
       ],
       "componentObjectName": "ServiceDisconnect_Inaccessible",
@@ -152,17 +158,48 @@
         {
           "profileId": "nec",
           "reference": "240.24(A)",
-          "text": "Keep breakers and switches within easy reach: with the handle raised to its top position, the middle of its grip must be no higher than 6 ft 7 in. (2.0 m) off the floor or working platform."
+          "text": "Keep breakers and switches within easy reach: with the handle raised to its top position, the middle of its grip must be no higher than 6 ft 7 in. (2.0 m) off the floor or working platform.",
+          "limit": {
+            "quantity": "highest-breaker-handle-height",
+            "kind": "max",
+            "value": 79,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "cec",
+          "reference": "26-600",
+          "text": "In a dwelling unit, mount no branch-circuit breaker or switch with its handle more than 1.7 m above the finished floor. The main is excepted.",
+          "description": "Breaker operating handle is mounted above 1.7 m",
+          "hintText": "Check the height of the topmost branch-circuit breaker handle. In a dwelling it must not be above 1.7 m from the floor.",
+          "inspectionNote": "The top branch-circuit breaker's operating handle is at approximately 2.2 m (7 ft 4 in). This exceeds the 1.7 m maximum for a dwelling.",
+          "limit": {
+            "quantity": "highest-breaker-handle-height",
+            "kind": "max",
+            "value": 1.7,
+            "unit": "m"
+          }
         }
       ],
       "componentObjectName": "Panel_TopBreaker_High",
       "hintText": "Check the height of the topmost breaker handle. The center of the grip must not exceed 6 feet 7 inches.",
       "componentType": "Panel Mounting",
-      "inspectionNote": "The top breaker's operating handle center is at approximately 7 feet. This exceeds the NEC maximum of 6 ft 7 in.",
+      "inspectionNote": "The top breaker's operating handle center is at approximately 7 ft 4 in. This exceeds the NEC maximum of 6 ft 7 in.",
       "conceptId": "working-space-access",
       "severity": "Major",
       "minimumDifficulty": "Standard",
-      "isSubtle": false
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "highest-breaker-handle-height",
+        "value": 88,
+        "unit": "in",
+        "note": "Height of the center of the highest branch-circuit breaker handle above the finished floor"
+      },
+      "compliantFact": {
+        "quantity": "highest-breaker-handle-height",
+        "value": 60,
+        "unit": "in"
+      }
     },
     {
       "violationId": "RP-DIR-MISS-001",
@@ -189,7 +226,7 @@
       "citations": [
         {
           "profileId": "nec",
-          "reference": "408.36",
+          "reference": "408.54",
           "text": "A panelboard must physically prevent installing more overcurrent devices than the number it was designed, rated and listed for."
         }
       ],

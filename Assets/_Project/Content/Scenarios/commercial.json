@@ -58,8 +58,15 @@
       "citations": [
         {
           "profileId": "nec",
-          "reference": "430.110",
-          "text": "The disconnect for a motor circuit of 600 V or less must be rated at 115 percent or more of the motor's full-load current."
+          "reference": "430.102(B)",
+          "text": "A motor disconnect must be in sight of the motor and of the machinery the motor drives."
+        },
+        {
+          "profileId": "cec",
+          "reference": "28-604",
+          "text": "Install a motor's disconnecting means in sight of the motor and its starter, and within 9 m of them.",
+          "hintText": "The disconnect must be within sight of the motor and its starter, and within 9 m of them.",
+          "inspectionNote": "The motor disconnect is located around a corner, out of sight from the motor. The CEC requires the disconnect to be within sight of the motor and within 9 m of it."
         }
       ],
       "componentObjectName": "Motor1_Disconnect_Remote",
@@ -78,13 +85,13 @@
         {
           "profileId": "nec",
           "reference": "430.32",
-          "text": "A continuous-duty motor over 1 hp needs its own overload device that responds to motor current, set to trip at (or rated for) no more than 115 percent of nameplate full-load current when the motor's service factor is 1.15 or higher."
+          "text": "A continuous-duty motor over 1 hp needs its own overload device set to trip at no more than 115 percent of nameplate full-load current, or 125 percent when the motor has a service factor of 1.15 or more or a marked temperature rise of 40 C or less."
         }
       ],
       "componentObjectName": "Motor2_OverloadRelay",
-      "hintText": "Check the overload relay setting against the motor nameplate current. For motors with SF >= 1.15, the maximum is 115% of nameplate FLA.",
+      "hintText": "Check the overload relay setting against the motor nameplate current. Unless the motor has a service factor of 1.15 or more (or a marked temperature rise of 40 C or less), the maximum is 115% of nameplate FLA.",
       "componentType": "Motor Overload",
-      "inspectionNote": "The overload relay is set to 30A for a motor with 22A nameplate FLA (136% of FLA). Maximum should be 25.3A (115% of 22A) for a motor with service factor 1.15.",
+      "inspectionNote": "The overload relay is set to 30A for a motor with 22A nameplate FLA (136% of FLA). Maximum should be 25.3A (115% of 22A) for a motor with a service factor of 1.0.",
       "conceptId": "overcurrent-protection",
       "severity": "Major",
       "minimumDifficulty": "Beginner",
@@ -134,8 +141,8 @@
       "citations": [
         {
           "profileId": "nec",
-          "reference": "220.44",
-          "text": "Receptacle loads figured under 220.14 may use the demand factors in Table 220.44."
+          "reference": "220.14",
+          "text": "Outside dwelling units, count at least 180 VA for each single or multiple receptacle on one yoke when calculating the load."
         }
       ],
       "componentObjectName": "Office_ReceptacleLoadCalc",
@@ -191,8 +198,8 @@
       "citations": [
         {
           "profileId": "nec",
-          "reference": "430.102(B)",
-          "text": "A disconnect must be in sight of both the motor and the driven machinery, and it must open the motor and controller from every ungrounded supply conductor."
+          "reference": "430.110",
+          "text": "A motor circuit's disconnect must be rated at 115 percent or more of the motor's full-load current, and a switch must also suit the motor's horsepower or locked-rotor current."
         }
       ],
       "componentObjectName": "Motor2_Controller_Disc",
