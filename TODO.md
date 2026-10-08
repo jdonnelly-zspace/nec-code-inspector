@@ -78,7 +78,7 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 
 ### Phase F - Governance
 - [~] Paraphrase pass (this branch): all 42 violation citation texts and 98 article texts rewritten in new words (facts and references kept, shorter than the source, no six-word runs copied); the wording check in `ContentPolicyTests` now fails on any statutory wording. Notes for the reviewer are in `docs/CONTENT_REVIEW.md`
-- [ ] **Credential expert review** of the paraphrases for accuracy and edition (2026), and of the suspected reference problems in `docs/CONTENT_REVIEW.md` (two swapped citation pairs, a mismatched load-calc citation, `210.8(A)` numbering)
+- [~] **Credential expert review** (packet ready in `docs/expert-review/`: worksheets for 51 violation citations, 98 NEC and 7 CEC articles, regenerated with `tools/make_expert_review.py`; waiting on the expert) of the paraphrases for accuracy and edition (2026), and of the suspected reference problems in `docs/CONTENT_REVIEW.md` (two swapped citation pairs, a mismatched load-calc citation, `210.8(A)` numbering)
 - [ ] Run the same paraphrase check on the text in editor scripts (quick-reference cards, sandbox descriptions, certificates) when it moves to JSON
 - [ ] Trim `Codes/nec/articles.json` to articles that support the app's skills: 43 of 98 are not tied to any current violation (list in `docs/CONTENT_REVIEW.md`); decide which to keep
 - [ ] Licensing status per profile (NEC, CEC, BS 7671 are copyrighted); record it in the profile
