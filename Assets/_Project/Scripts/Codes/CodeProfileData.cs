@@ -54,6 +54,34 @@ namespace NECInspector.Codes
             CodeProfileManifest.StatusAppDefined, CodeProfileManifest.StatusDraft, CodeProfileManifest.StatusReviewed
         };
 
+        /// <summary>Problems with a profile's compliance rule set (tables.json, complianceRules).</summary>
+        public static List<string> ValidateRules(ElectricalTables tables)
+        {
+            var errors = new List<string>();
+            var ids = new HashSet<string>();
+            foreach (var rule in tables?.complianceRules ?? new ComplianceRuleConfig[0])
+            {
+                string label = string.IsNullOrEmpty(rule?.ruleId) ? "(rule without id)" : rule.ruleId;
+                if (rule == null || string.IsNullOrEmpty(rule.ruleId)) { errors.Add("a compliance rule has no ruleId"); continue; }
+                if (!ids.Add(rule.ruleId)) errors.Add($"{label}: duplicate ruleId");
+
+                string kind = ComplianceRuleKinds.Resolve(rule);
+                if (string.IsNullOrEmpty(kind)) errors.Add($"{label}: no kind (a rule with its own id needs a kind: {string.Join(", ", ComplianceRuleKinds.All)})");
+                else if (!ComplianceRuleKinds.IsKnown(kind)) errors.Add($"{label}: unknown kind '{kind}'");
+
+                if (kind == ComplianceRuleKinds.ProtectionRequired
+                    && Array.IndexOf(ComplianceRuleKinds.Protections, ComplianceRuleKinds.ResolveProtection(rule)) < 0)
+                    errors.Add($"{label}: a protection-required rule needs protection gfci or afci");
+
+                if (rule.maxRatio < 0f) errors.Add($"{label}: maxRatio is negative");
+                if (rule.margin < 0f) errors.Add($"{label}: margin is negative");
+                if (rule.maxImbalance < 0f || rule.maxImbalance > 1f) errors.Add($"{label}: maxImbalance must be between 0 and 1");
+                if (!string.IsNullOrEmpty(rule.conceptId) && !ConceptIds.IsKnown(rule.conceptId)) errors.Add($"{label}: unknown conceptId '{rule.conceptId}'");
+            }
+
+            return errors;
+        }
+
         /// <summary>One message per problem; empty if the profile data is usable.</summary>
         public static List<string> Validate(CodeProfileManifest manifest, CodeArticleData[] articles,
             ElectricalTables tables, CodeTerminology terminology)
@@ -87,6 +115,7 @@ namespace NECInspector.Codes
                     errors.Add("tables.json has no conductorSizes");
                 if (!string.IsNullOrEmpty(tables.defaultConductor) && tables.GetMaxAmps(tables.defaultConductor) <= 0)
                     errors.Add($"tables defaultConductor '{tables.defaultConductor}' is not in conductorSizes");
+                errors.AddRange(ValidateRules(tables));
             }
 
             if (articles == null || articles.Length == 0)

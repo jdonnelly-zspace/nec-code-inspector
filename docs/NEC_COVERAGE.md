@@ -70,6 +70,8 @@
 **ComplianceChecker:** `Assets/_Project/Scripts/PanelSandbox/ComplianceChecker.cs`
 **Generator:** `Assets/_Project/Scripts/Editor/PanelDesignSandboxGenerator.cs` (menu: NEC Inspector > Generate Panel Sandbox Data)
 
+The rule set is data in each profile's `tables.json` (kinds, ids, names, citations, parameters): see `docs/COMPLIANCE_RULES.md`. The table below is the NEC's.
+
 | Rule ID | Rule Name | NEC Reference | Description |
 |---------|-----------|:-------------:|-------------|
 | RULE-01 | Breaker/Conductor Match | Art. 240.4 | Breaker amps must not exceed wire ampacity |

@@ -101,7 +101,7 @@ namespace NECInspector.LogicTests
             var terms = CodeProfiles.Terminology;
 
             var clean = ComplianceRules.RunAll(tables, Input(("Lights", 6, 1, "1.5 mm²"), ("Sockets", 20, 1, "2.5 mm²")), terms);
-            t.Equal(9, clean.Count, "the profile switched off the left/right balance rule, so nine rules run");
+            t.Equal(10, clean.Count, "nine built-in rules run (the profile switched off the balance rule) plus the code's own margin rule");
             t.IsTrue(clean.All(r => r.ruleId != "RULE-05"), "the balance rule is the one missing");
             t.IsTrue(clean.All(r => r.passed), "a design that fits the metric table passes");
             t.Equal("433.1", clean.First(r => r.ruleId == "RULE-01").codeReference, "citations come from the profile");

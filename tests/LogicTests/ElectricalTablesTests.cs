@@ -63,6 +63,8 @@ namespace NECInspector.LogicTests
                 t.Equal(defaults.complianceRules[i].enabled, fromFile.complianceRules[i].enabled, $"rule {i} enabled");
                 t.Equal(defaults.complianceRules[i].reference, fromFile.complianceRules[i].reference, $"rule {i} reference");
                 t.Equal(defaults.complianceRules[i].conceptId, fromFile.complianceRules[i].conceptId, $"rule {i} conceptId");
+                t.Equal(defaults.complianceRules[i].kind, fromFile.complianceRules[i].kind, $"rule {i} kind");
+                t.Equal(defaults.complianceRules[i].protection ?? "", fromFile.complianceRules[i].protection ?? "", $"rule {i} protection");
             }
         }
 

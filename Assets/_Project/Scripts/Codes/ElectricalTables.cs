@@ -22,10 +22,19 @@ namespace NECInspector.Codes
     [Serializable]
     public class ComplianceRuleConfig
     {
-        public string ruleId;       // e.g., "RULE-01"
+        public string ruleId;       // e.g., "RULE-01"; a code may add its own ids
         public bool enabled = true;
         public string reference;    // citation shown for this rule in the active code
         public string conceptId;    // skill (concept) this rule gives evidence of
+
+        // What the rule checks and how (see ComplianceRuleKinds). Files written before kinds existed leave
+        // these empty and get them from the built-in rule id.
+        public string kind;         // which check runs
+        public string name;         // display name, may use terminology tokens; empty = the kind's default name
+        public string protection;   // protection-required: gfci | afci
+        public float maxRatio;      // breaker-conductor-match and conductor-ampacity: breaker rating may be up to this multiple of the ampacity (0 = 1)
+        public float margin;        // main-breaker-sizing: the main must be at least this multiple of the load (0 = 1)
+        public float maxImbalance;  // load-balance: overrides loadBalanceMaxImbalance when above 0
     }
 
     /// <summary>
@@ -102,6 +111,9 @@ namespace NECInspector.Codes
             // Files written before rules carried a concept still work: take it from the defaults
             foreach (var rule in complianceRules)
             {
+                if (string.IsNullOrEmpty(rule.kind)) rule.kind = ComplianceRuleKinds.Infer(rule.ruleId);
+                if (string.IsNullOrEmpty(rule.protection)) rule.protection = ComplianceRuleKinds.InferProtection(rule.ruleId);
+
                 if (!string.IsNullOrEmpty(rule.conceptId)) continue;
                 var fallback = defaults.GetRuleConfig(rule.ruleId);
                 if (fallback != null) rule.conceptId = fallback.conceptId;
@@ -162,7 +174,11 @@ namespace NECInspector.Codes
 
         private static ComplianceRuleConfig Rule(string ruleId, string reference, string conceptId)
         {
-            return new ComplianceRuleConfig { ruleId = ruleId, enabled = true, reference = reference, conceptId = conceptId };
+            return new ComplianceRuleConfig
+            {
+                ruleId = ruleId, enabled = true, reference = reference, conceptId = conceptId,
+                kind = ComplianceRuleKinds.Infer(ruleId), protection = ComplianceRuleKinds.InferProtection(ruleId)
+            };
         }
     }
 }
