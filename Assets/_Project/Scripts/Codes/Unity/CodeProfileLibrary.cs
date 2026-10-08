@@ -78,10 +78,13 @@ namespace NECInspector.Codes
                     var articles = ReadJson<CodeArticleFile>(Path.Combine(dir, "articles.json"));
                     var terminology = ReadJson<CodeTerminology>(Path.Combine(dir, "terminology.json"));
                     var tables = ReadJson<ElectricalTables>(Path.Combine(dir, "tables.json"));
+                    var scope = ReadJson<ProtectionScope>(Path.Combine(dir, "scope.json"));
 
                     var errors = CodeProfileValidator.Validate(manifest, articles?.articles, tables, terminology);
                     if (manifest != null && manifest.id != name)
                         errors.Add($"id '{manifest.id}' must match the folder name '{name}'");
+                    if (scope != null)
+                        errors.AddRange(ProtectionScopeValidator.Validate(scope).Select(e => "scope.json: " + e));
 
                     if (errors.Count > 0)
                     {
@@ -93,7 +96,7 @@ namespace NECInspector.Codes
                     if (terminology.terms == null)
                         terminology.terms = new TermEntry[0];
 
-                    var profile = new DataCodeProfile(manifest, articles.articles, tables, terminology);
+                    var profile = new DataCodeProfile(manifest, articles.articles, tables, terminology) { Scope = scope };
                     _all.Add(profile);
                     Debug.Log($"[CodeProfileLibrary] Loaded {profile.DisplayName} {profile.Edition}: {profile.ArticleCount} entries, " +
                               $"{(profile.HasOwnTables ? "own tables" : "no tables")}, status {manifest.reviewStatus}");

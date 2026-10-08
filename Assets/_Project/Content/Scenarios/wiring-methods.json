@@ -1,0 +1,113 @@
+{
+  "id": "scenario-wiring-methods",
+  "sceneName": "WiringMethodsInspection",
+  "displayName": "Wiring Methods Inspection",
+  "description": "Inspect a residential rough-in and its exterior feeders for wiring method violations: cable protection, support, burial depth, box fill and overhead clearances.",
+  "environmentDescription": "A partly framed house with cables and boxes visible in the studs and joists, a trench to a detached garage, and an overhead feeder crossing the driveway.",
+  "expertTimeLimit": 1200,
+  "availableDifficulties": [
+    "Beginner",
+    "Standard",
+    "Expert"
+  ],
+  "assetPrefix": "WM",
+  "violationFolder": "WiringMethods",
+  "scenarioAssetName": "WiringMethods",
+  "violations": [
+    {
+      "violationId": "WM-BORED-HOLE-001",
+      "description": "Cable runs through a bored hole 3/4 inch from the edge of a stud with no protective plate",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "300.4(A)",
+          "text": "Cables and raceways through bored holes in wood framing need to sit at least 1-1/4 in from the nearest edge of the framing member; closer than that, a steel plate or sleeve at least 1/16 in thick must protect them."
+        }
+      ],
+      "componentObjectName": "Stud_BoredHole_Cable",
+      "hintText": "Check how far the hole is from the edge of the stud and whether a steel plate covers the cable.",
+      "componentType": "Framing Member",
+      "inspectionNote": "The cable passes through a hole 3/4 in from the stud edge with no steel plate, so a nail or screw could reach it.",
+      "conceptId": "wiring-methods",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "WM-NM-SUPPORT-001",
+      "description": "NM cable runs 6 feet along a joist with no staples or straps",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "334.30",
+          "text": "Secure NM cable within 12 in of each box and fitting, and at least every 4-1/2 ft between those points."
+        }
+      ],
+      "componentObjectName": "Joist_NMCable_Run",
+      "hintText": "Look at how the cable is held along the joist. Count the supports between the boxes.",
+      "componentType": "NM Cable",
+      "inspectionNote": "The cable hangs free for about 6 ft between boxes. It needs support at least every 4-1/2 ft and within 12 in of each box.",
+      "conceptId": "wiring-methods",
+      "severity": "Minor",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "WM-BURIAL-001",
+      "description": "Direct-buried UF cable to the detached garage is only 10 inches deep",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "300.5",
+          "text": "Direct-buried cable needs the cover depth in Table 300.5, normally 24 in. Shallower depths are allowed only in listed cases, such as 12 in for GFCI-protected residential circuits."
+        }
+      ],
+      "componentObjectName": "Trench_UFCable_Depth",
+      "hintText": "Measure the depth of the trench and check whether the cable is in conduit.",
+      "componentType": "Buried Cable",
+      "inspectionNote": "The UF cable is 10 in below grade with no conduit. Direct-buried cable needs 24 in of cover, or 12 in on a GFCI-protected residential circuit.",
+      "conceptId": "wiring-methods",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "WM-BOX-FILL-001",
+      "description": "Device box holds more conductors than its volume allows",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "314.16",
+          "text": "A box must be large enough for everything in it: count each conductor, two for each device yoke, one for all the clamps and one for all the equipment grounds together, and multiply by the volume allowance for the conductor size."
+        }
+      ],
+      "componentObjectName": "Switch_Box_Crowded",
+      "hintText": "Count the conductors, the switch and the clamps in the box, then compare with the volume marked in the box.",
+      "componentType": "Outlet Box",
+      "inspectionNote": "A 12.5 cubic inch box holds six 12 AWG conductors, a switch, clamps and the grounds: about 22.5 cubic inches of required volume.",
+      "conceptId": "wiring-methods",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "WM-OVERHEAD-001",
+      "description": "Feeder to the garage crosses a residential driveway 9 feet above grade",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "225.18",
+          "text": "Overhead conductors of 300 V or less to ground need 12 ft of clearance over residential driveways; 10 ft is enough only where only pedestrians can reach them, and 18 ft is needed over public roads."
+        }
+      ],
+      "componentObjectName": "Driveway_Overhead_Feeder",
+      "hintText": "Check how high the conductors are above the driveway where a vehicle passes.",
+      "componentType": "Overhead Conductors",
+      "inspectionNote": "The feeder is about 9 ft above the driveway. A residential driveway needs 12 ft of clearance.",
+      "conceptId": "wiring-methods",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    }
+  ]
+}

@@ -26,9 +26,9 @@ The earlier version of this design had a fourth in-app layer, the *credential pr
 
 ### Skills
 
-The 11 skills (concept IDs): shock protection, arc-fault protection, overcurrent protection, conductor sizing, earthing and bonding, branch-circuit requirements, load calculation, disconnecting means, working space and access, equipment installation, identification and marking.
+The 13 skills (concept IDs): shock protection, arc-fault protection, overcurrent protection, conductor sizing, earthing and bonding, branch-circuit requirements, load calculation, disconnecting means, working space and access, equipment installation, identification and marking, wiring methods, and special locations. The last two were added after the first eleven, with reasons in `docs/credential-alignment/README.md`.
 
-Europe's national codes share one skeleton of sections (shock protection, thermal effects, wiring systems, special locations) because they derive from IEC 60364 / HD 60364. That shared skeleton is why skills can be code-neutral. Skills still to add include wiring methods, special locations, and testing and verification.
+Europe's national codes share one skeleton of sections (shock protection, thermal effects, wiring systems, special locations) because they derive from IEC 60364 / HD 60364. That shared skeleton is why skills can be code-neutral. A skill still to add is testing and verification.
 
 ### Tiers
 

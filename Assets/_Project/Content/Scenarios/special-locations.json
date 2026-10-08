@@ -1,0 +1,75 @@
+{
+  "id": "scenario-special-locations",
+  "sceneName": "SpecialLocationsInspection",
+  "displayName": "Special Locations Inspection",
+  "description": "Inspect a backyard with a swimming pool and an outdoor receptacle for special location violations: pool luminaire height, pool bonding and weatherproof receptacle covers.",
+  "environmentDescription": "A residential backyard with an in-ground pool, a metal ladder and rail, a luminaire hung over the water, and a receptacle on the patio wall.",
+  "expertTimeLimit": 900,
+  "availableDifficulties": [
+    "Beginner",
+    "Standard",
+    "Expert"
+  ],
+  "assetPrefix": "SL",
+  "violationFolder": "SpecialLocations",
+  "scenarioAssetName": "SpecialLocations",
+  "violations": [
+    {
+      "violationId": "SL-POOL-LUMINAIRE-001",
+      "description": "Luminaire hangs 9 feet above the water over a backyard pool",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "680.22(B)",
+          "text": "Keep luminaires, lighting outlets and ceiling fans out of the airspace above a pool and the 5 ft strip around it unless they sit 12 ft or more above the highest water level."
+        }
+      ],
+      "componentObjectName": "Pool_Luminaire_Overhead",
+      "hintText": "Check how high the light is above the water, and whether it is over the pool or within 5 ft of its edge.",
+      "componentType": "Luminaire",
+      "inspectionNote": "The luminaire is about 9 ft above the water level. Over a pool it needs to be at least 12 ft above.",
+      "conceptId": "special-locations",
+      "severity": "Critical",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "SL-POOL-BOND-001",
+      "description": "Metal pool ladder and handrail are not bonded to the pool's bonding grid",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "680.26",
+          "text": "Bond the pool's conductive parts together with solid copper no smaller than 8 AWG so they form an equipotential grid, including metal ladders and rails."
+        }
+      ],
+      "componentObjectName": "Pool_Ladder_Unbonded",
+      "hintText": "Look for a bonding conductor on the metal ladder and rail.",
+      "componentType": "Pool Ladder",
+      "inspectionNote": "The metal ladder and rail have no bonding conductor to the bonding grid, so they could carry a different voltage than the water.",
+      "conceptId": "special-locations",
+      "severity": "Critical",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "SL-WET-COVER-001",
+      "description": "Outdoor patio receptacle has a cover that is only weatherproof when closed",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "406.9(B)",
+          "text": "In wet locations the receptacle's enclosure must stay weatherproof with or without a plug inserted, which means an in-use (bubble) cover."
+        }
+      ],
+      "componentObjectName": "Patio_Receptacle_Cover",
+      "hintText": "Check the cover on the patio receptacle: does it still close over a plugged-in cord?",
+      "componentType": "Receptacle",
+      "inspectionNote": "The patio receptacle has a flip cover that cannot close over a plug, so rain reaches the plug and the receptacle while it is in use.",
+      "conceptId": "special-locations",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    }
+  ]
+}

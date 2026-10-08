@@ -63,3 +63,11 @@ Both spacing violations measure the distance from the farthest point on the wall
 Still to do:
 - Facts for the remaining shared violations whose rules are tables or scope (wire sizes and breaker ratings, GFCI and AFCI areas). They have no single number, so they need a different kind of check.
 - The scenes and art themselves.
+
+## GFCI and AFCI scope
+
+Where a code requires ground-fault and arc-fault protection differs by test, not just by number: the NEC lists rooms, the CEC mostly uses distance from a sink, tub or shower, height above grade, and exemptions. Each code folder can ship a `scope.json` (draft for both codes today) that states its rules in one shape, and `ProtectionScopeChecker` (engine-independent, tested) answers whether a receptacle needs GFCI or AFCI and whether it has it.
+
+- **Scene facts for protection violations.** A GFCI or AFCI violation carries `sceneScope`: the receptacle its scene shows (room, fixture distances, height, appliance, protection). The logic tests require the scene to break every code the violation cites, the same pass-both rule as the numeric limits. A code whose scope would also require it gets a warning that it could carry a citation; a code whose scope does not is why the violation stays hidden under it (kitchen GFCI away from a sink, garage and dishwasher GFCI under the CEC).
+- **Only verified rules are modeled.** Each `scope.json` lists what it does not model. The CEC rows come from public sources and are draft; the 2026 NEC scope is unverified.
+- **Scenes will tag objects the same way.** When the 3D scenes exist, each receptacle gets the same fields (room type, floor relative to grade, fixture distances, protection), so the checker can run on the scene itself.

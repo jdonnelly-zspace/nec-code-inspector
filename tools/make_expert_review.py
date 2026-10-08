@@ -37,6 +37,23 @@ VIOLATION_FLAGS = {
 }
 CEC_NOTE = "Draft from public summaries: check rule number, sub-item and edition"
 
+# NEC articles restored at the owner's request for the wiring-methods and special-locations skills
+RESTORED = "Restored for the wiring-methods or special-locations skill; confirm number, title and text"
+ARTICLE_FLAGS = {
+    "480.3": RESTORED + " (Article 480 numbering is medium-low confidence)",
+    "480.4": RESTORED + " (Article 480 numbering is medium-low confidence; text is generic)",
+    "480.7": RESTORED + " (Article 480 numbering is medium-low confidence; the 60 V threshold is unconfirmed)",
+    "480.10": RESTORED + " (Article 480 numbering is medium-low confidence)",
+    "680.7": RESTORED + " (cord-and-plug equipment; medium-high)",
+    "680.12": RESTORED,
+    "680.22(B)": RESTORED + " (was 680.22(A)(1); medium-high)",
+    "680.26": RESTORED,
+    "680.44": RESTORED + " (spas and hot tubs; text is generic)",
+    "404.2(C)": RESTORED + " (rewritten as the neutral conductor at switches; medium)",
+    "225.18": RESTORED + " (clearances rewritten; 2026 unverified)",
+    "406.9(A)": RESTORED, "406.9(B)": RESTORED, "410.10(A)": RESTORED, "210.23": RESTORED, "220.18": RESTORED,
+}
+
 REVIEW_COLUMNS = ["Reference correct? (Y/N)", "Text accurate? (Y/N)", "Correct reference", "Edition notes", "Comments"]
 
 
@@ -94,7 +111,7 @@ def article_rows(profile_id, cited):
     for a in data:
         ref = a["reference"]
         tied = "cited" if ref in cited else ("related to a cited article" if ref in related else "not tied to a violation")
-        flag = CEC_NOTE if profile_id == "cec" else ""
+        flag = CEC_NOTE if profile_id == "cec" else ARTICLE_FLAGS.get(ref, "")
         rows.append([flag, ref, a["title"], a["text"], "yes" if a.get("isNewInEdition") else "", tied])
     rows.sort(key=lambda r: (r[0] == "", r[5] == "not tied to a violation"))
     return rows
