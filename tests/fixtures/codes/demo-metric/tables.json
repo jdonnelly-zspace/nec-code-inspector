@@ -64,61 +64,82 @@
       "ruleId": "RULE-01",
       "enabled": true,
       "reference": "433.1",
-      "conceptId": "overcurrent-protection"
+      "conceptId": "overcurrent-protection",
+      "kind": "breaker-conductor-match"
     },
     {
       "ruleId": "RULE-02",
       "enabled": true,
       "reference": "311.1",
-      "conceptId": "branch-circuit-requirements"
+      "conceptId": "branch-circuit-requirements",
+      "kind": "required-circuits"
     },
     {
       "ruleId": "RULE-03",
       "enabled": true,
       "reference": "415.1",
-      "conceptId": "shock-protection"
+      "conceptId": "shock-protection",
+      "kind": "protection-required",
+      "protection": "gfci"
     },
     {
       "ruleId": "RULE-04",
       "enabled": true,
       "reference": "421.1",
-      "conceptId": "arc-fault-protection"
+      "conceptId": "arc-fault-protection",
+      "kind": "protection-required",
+      "protection": "afci"
     },
     {
       "ruleId": "RULE-05",
       "enabled": false,
       "reference": "General Practice",
-      "conceptId": "load-calculation"
+      "conceptId": "load-calculation",
+      "kind": "load-balance"
     },
     {
       "ruleId": "RULE-06",
       "enabled": true,
       "reference": "132.16",
-      "conceptId": "load-calculation"
+      "conceptId": "load-calculation",
+      "kind": "main-breaker-sizing"
     },
     {
       "ruleId": "RULE-07",
       "enabled": true,
       "reference": "526.1",
-      "conceptId": "equipment-installation"
+      "conceptId": "equipment-installation",
+      "kind": "double-tap"
     },
     {
       "ruleId": "RULE-08",
       "enabled": true,
       "reference": "523.1",
-      "conceptId": "conductor-sizing"
+      "conceptId": "conductor-sizing",
+      "kind": "conductor-ampacity"
     },
     {
       "ruleId": "RULE-09",
       "enabled": true,
       "reference": "132.18",
-      "conceptId": "equipment-installation"
+      "conceptId": "equipment-installation",
+      "kind": "panel-spaces"
     },
     {
       "ruleId": "RULE-10",
       "enabled": true,
       "reference": "General Practice",
-      "conceptId": "equipment-installation"
+      "conceptId": "equipment-installation",
+      "kind": "wire-connections"
+    },
+    {
+      "ruleId": "DM-MAIN-25",
+      "enabled": true,
+      "reference": "132.17",
+      "conceptId": "load-calculation",
+      "kind": "main-breaker-sizing",
+      "name": "Main {term:breaker} with a 25% margin",
+      "margin": 1.25
     }
   ]
 }

@@ -108,61 +108,73 @@
       "ruleId": "RULE-01",
       "enabled": true,
       "reference": "240.4",
-      "conceptId": "overcurrent-protection"
+      "conceptId": "overcurrent-protection",
+      "kind": "breaker-conductor-match"
     },
     {
       "ruleId": "RULE-02",
       "enabled": true,
       "reference": "210.11",
-      "conceptId": "branch-circuit-requirements"
+      "conceptId": "branch-circuit-requirements",
+      "kind": "required-circuits"
     },
     {
       "ruleId": "RULE-03",
       "enabled": true,
       "reference": "210.8",
-      "conceptId": "shock-protection"
+      "conceptId": "shock-protection",
+      "kind": "protection-required",
+      "protection": "gfci"
     },
     {
       "ruleId": "RULE-04",
       "enabled": true,
       "reference": "210.12",
-      "conceptId": "arc-fault-protection"
+      "conceptId": "arc-fault-protection",
+      "kind": "protection-required",
+      "protection": "afci"
     },
     {
       "ruleId": "RULE-05",
       "enabled": true,
       "reference": "General Practice",
-      "conceptId": "load-calculation"
+      "conceptId": "load-calculation",
+      "kind": "load-balance"
     },
     {
       "ruleId": "RULE-06",
       "enabled": true,
       "reference": "230.79",
-      "conceptId": "load-calculation"
+      "conceptId": "load-calculation",
+      "kind": "main-breaker-sizing"
     },
     {
       "ruleId": "RULE-07",
       "enabled": true,
       "reference": "110.14",
-      "conceptId": "equipment-installation"
+      "conceptId": "equipment-installation",
+      "kind": "double-tap"
     },
     {
       "ruleId": "RULE-08",
       "enabled": true,
       "reference": "310.14",
-      "conceptId": "conductor-sizing"
+      "conceptId": "conductor-sizing",
+      "kind": "conductor-ampacity"
     },
     {
       "ruleId": "RULE-09",
       "enabled": true,
       "reference": "408.54",
-      "conceptId": "equipment-installation"
+      "conceptId": "equipment-installation",
+      "kind": "panel-spaces"
     },
     {
       "ruleId": "RULE-10",
       "enabled": true,
       "reference": "General Practice",
-      "conceptId": "equipment-installation"
+      "conceptId": "equipment-installation",
+      "kind": "wire-connections"
     }
   ]
 }

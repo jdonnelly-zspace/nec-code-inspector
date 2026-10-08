@@ -35,12 +35,12 @@ namespace NECInspector.PanelSandbox
     }
 
     /// <summary>
-    /// The 10 panel design compliance rules, with no Unity types, so they are tested without Unity.
-    /// Which rules run, the citation shown for each, and the numeric limits come from the tables
-    /// passed in (the active code profile's). Names and messages use the code's own words through
-    /// terminology tokens ({term:breaker}, {term:shock-protection-device}, ...), so a code that says
-    /// MCB, RCD or consumer unit reads correctly. `ComplianceChecker` reads the scene objects
-    /// and calls this.
+    /// The panel design compliance checks, with no Unity types, so they are tested without Unity.
+    /// A code profile chooses its rule set in tables.json: which kinds of check run (<see cref="ComplianceRuleKinds"/>),
+    /// in what order, how many of each, and each rule's id, name, citation and parameters. The numeric limits
+    /// come from the same tables. Names and messages use the code's own words through terminology tokens
+    /// ({term:breaker}, {term:shock-protection-device}, ...), so a code that says MCB, RCD or consumer unit reads
+    /// correctly. `ComplianceChecker` reads the scene objects and calls this.
     /// </summary>
     public static class ComplianceRules
     {
@@ -49,73 +49,95 @@ namespace NECInspector.PanelSandbox
         // Fills the tokens with the code's words; NEC words when no terminology is given
         private static string Fmt(CodeTerminology terms, string text) => (terms ?? DefaultTerms).Format(text);
 
-        private static ComplianceResult Result(CodeTerminology terms, string ruleId, string ruleName, string reference, bool passed, string message)
+        private static ComplianceResult Result(CodeTerminology terms, ComplianceRuleConfig config, string defaultId, string defaultName,
+            string fallbackReference, bool passed, string message)
         {
-            return new ComplianceResult(ruleId, Fmt(terms, ruleName), reference, passed, Fmt(terms, message));
+            string id = !string.IsNullOrEmpty(config?.ruleId) ? config.ruleId : defaultId;
+            string name = !string.IsNullOrEmpty(config?.name) ? config.name : defaultName;
+            string reference = !string.IsNullOrEmpty(config?.reference) ? config.reference : fallbackReference;
+            return new ComplianceResult(id, Fmt(terms, name), reference, passed, Fmt(terms, message));
         }
 
-        /// <summary>Run every enabled rule, in rule order.</summary>
+        /// <summary>
+        /// Run the profile's rule set: every enabled rule in <c>complianceRules</c>, in order, each by its kind.
+        /// A profile with no rule set runs the NEC's ten.
+        /// </summary>
         public static List<ComplianceResult> RunAll(ElectricalTables tables, PanelRuleInput input, CodeTerminology terms = null)
         {
-            var checks = new (string ruleId, Func<ComplianceResult> run)[]
-            {
-                ("RULE-01", () => BreakerConductorMatch(tables, input.breakers, terms)),
-                ("RULE-02", () => RequiredCircuits(tables, input.requiredCircuits, input.breakers, terms)),
-                ("RULE-03", () => GfciProtection(tables, input.requiredCircuits, input.breakers, terms)),
-                ("RULE-04", () => AfciProtection(tables, input.requiredCircuits, input.breakers, terms)),
-                ("RULE-05", () => LoadBalance(tables, input.breakers, terms)),
-                ("RULE-06", () => MainBreakerSizing(tables, input.totalAmps, input.breakers, terms)),
-                ("RULE-07", () => DoubleTap(tables, input.slotUse, terms)),
-                ("RULE-08", () => ConductorAmpacity(tables, input.breakers, terms)),
-                ("RULE-09", () => PanelSpaces(tables, input.totalSlots, input.breakers, terms)),
-                ("RULE-10", () => WireConnections(tables, input.breakers, terms))
-            };
+            var rules = tables.complianceRules != null && tables.complianceRules.Length > 0
+                ? tables.complianceRules
+                : ElectricalTables.CreateNecDefaults().complianceRules;
 
             var results = new List<ComplianceResult>();
-            foreach (var check in checks)
+            foreach (var rule in rules)
             {
-                if (IsEnabled(tables, check.ruleId))
-                    results.Add(check.run());
+                if (rule == null || !rule.enabled) continue;
+
+                var result = Run(rule, tables, input, terms);
+                if (result != null)
+                    results.Add(result);
             }
 
             return results;
         }
 
-        /// <summary>Citation for a rule from the profile's tables, or the built-in NEC citation if none is configured.</summary>
-        private static string Ref(ElectricalTables tables, string ruleId, string fallback)
+        /// <summary>Run one rule by its kind. Null for a kind this build does not know (the profile validator rejects those).</summary>
+        public static ComplianceResult Run(ComplianceRuleConfig rule, ElectricalTables tables, PanelRuleInput input, CodeTerminology terms = null)
         {
-            var config = tables.GetRuleConfig(ruleId);
-            return config != null && !string.IsNullOrEmpty(config.reference) ? config.reference : fallback;
+            switch (ComplianceRuleKinds.Resolve(rule))
+            {
+                case ComplianceRuleKinds.BreakerConductorMatch: return CheckBreakerConductorMatch(rule, tables, input.breakers, terms);
+                case ComplianceRuleKinds.RequiredCircuits: return CheckRequiredCircuits(rule, tables, input.requiredCircuits, input.breakers, terms);
+                case ComplianceRuleKinds.ProtectionRequired: return CheckProtection(rule, tables, input.requiredCircuits, input.breakers, terms);
+                case ComplianceRuleKinds.LoadBalance: return CheckLoadBalance(rule, tables, input.breakers, terms);
+                case ComplianceRuleKinds.MainBreakerSizing: return CheckMainBreakerSizing(rule, tables, input.totalAmps, input.breakers, terms);
+                case ComplianceRuleKinds.DoubleTap: return CheckDoubleTap(rule, tables, input.slotUse, terms);
+                case ComplianceRuleKinds.ConductorAmpacity: return CheckConductorAmpacity(rule, tables, input.breakers, terms);
+                case ComplianceRuleKinds.PanelSpaces: return CheckPanelSpaces(rule, tables, input.totalSlots, input.breakers, terms);
+                case ComplianceRuleKinds.WireConnections: return CheckWireConnections(rule, tables, input.breakers, terms);
+                default: return null;
+            }
         }
 
-        private static bool IsEnabled(ElectricalTables tables, string ruleId)
-        {
-            var config = tables.GetRuleConfig(ruleId);
-            return config == null || config.enabled;
-        }
+        private static float Ratio(ComplianceRuleConfig rule) => rule != null && rule.maxRatio > 0f ? rule.maxRatio : 1f;
 
-        /// <summary>Rule 1: a breaker's rating must not exceed its wire's ampacity.</summary>
-        public static ComplianceResult BreakerConductorMatch(ElectricalTables tables, List<PanelBreakerState> breakers, CodeTerminology terms = null)
+        // ---- The built-in rules by their original ids: the same checks with the profile's settings for that id
+
+        public static ComplianceResult BreakerConductorMatch(ElectricalTables t, List<PanelBreakerState> b, CodeTerminology terms = null) => CheckBreakerConductorMatch(t.GetRuleConfig("RULE-01"), t, b, terms);
+        public static ComplianceResult RequiredCircuits(ElectricalTables t, RequiredCircuit[] r, List<PanelBreakerState> b, CodeTerminology terms = null) => CheckRequiredCircuits(t.GetRuleConfig("RULE-02"), t, r, b, terms);
+        public static ComplianceResult GfciProtection(ElectricalTables t, RequiredCircuit[] r, List<PanelBreakerState> b, CodeTerminology terms = null) => CheckProtection(t.GetRuleConfig("RULE-03") ?? new ComplianceRuleConfig { ruleId = "RULE-03" }, t, r, b, terms);
+        public static ComplianceResult AfciProtection(ElectricalTables t, RequiredCircuit[] r, List<PanelBreakerState> b, CodeTerminology terms = null) => CheckProtection(t.GetRuleConfig("RULE-04") ?? new ComplianceRuleConfig { ruleId = "RULE-04" }, t, r, b, terms);
+        public static ComplianceResult LoadBalance(ElectricalTables t, List<PanelBreakerState> b, CodeTerminology terms = null) => CheckLoadBalance(t.GetRuleConfig("RULE-05"), t, b, terms);
+        public static ComplianceResult MainBreakerSizing(ElectricalTables t, int mainAmps, List<PanelBreakerState> b, CodeTerminology terms = null) => CheckMainBreakerSizing(t.GetRuleConfig("RULE-06"), t, mainAmps, b, terms);
+        public static ComplianceResult DoubleTap(ElectricalTables t, List<SlotUse> s, CodeTerminology terms = null) => CheckDoubleTap(t.GetRuleConfig("RULE-07"), t, s, terms);
+        public static ComplianceResult ConductorAmpacity(ElectricalTables t, List<PanelBreakerState> b, CodeTerminology terms = null) => CheckConductorAmpacity(t.GetRuleConfig("RULE-08"), t, b, terms);
+        public static ComplianceResult PanelSpaces(ElectricalTables t, int totalSlots, List<PanelBreakerState> b, CodeTerminology terms = null) => CheckPanelSpaces(t.GetRuleConfig("RULE-09"), t, totalSlots, b, terms);
+        public static ComplianceResult WireConnections(ElectricalTables t, List<PanelBreakerState> b, CodeTerminology terms = null) => CheckWireConnections(t.GetRuleConfig("RULE-10"), t, b, terms);
+
+        // ---- The kinds
+
+        /// <summary>A breaker's rating must not exceed its wire's ampacity (times maxRatio).</summary>
+        private static ComplianceResult CheckBreakerConductorMatch(ComplianceRuleConfig rule, ElectricalTables tables, List<PanelBreakerState> breakers, CodeTerminology terms)
         {
+            float ratio = Ratio(rule);
             foreach (var breaker in breakers)
             {
                 if (!breaker.hasWire) continue;
 
                 int wireMax = tables.GetMaxAmps(breaker.wireGauge);
-                if (breaker.data.ampRating > wireMax)
+                if (breaker.data.ampRating > wireMax * ratio + 1e-4f)
                 {
-                    return Result(terms, "RULE-01", "{Term:breaker}/Conductor Match", Ref(tables, "RULE-01", "240.4"),
-                        false,
+                    return Result(terms, rule, "RULE-01", "{Term:breaker}/Conductor Match", "240.4", false,
                         $"{breaker.circuitName}: {breaker.data.ampRating}A {{term:breaker}} exceeds {breaker.wireGauge} capacity ({wireMax}A).");
                 }
             }
 
-            return Result(terms, "RULE-01", "{Term:breaker}/Conductor Match", Ref(tables, "RULE-01", "240.4"),
-                true, "All {term:breaker}s match their conductor ampacity.");
+            return Result(terms, rule, "RULE-01", "{Term:breaker}/Conductor Match", "240.4", true,
+                "All {term:breaker}s match their conductor ampacity.");
         }
 
-        /// <summary>Rule 2: every required branch circuit is present at its required rating or higher.</summary>
-        public static ComplianceResult RequiredCircuits(ElectricalTables tables, RequiredCircuit[] required, List<PanelBreakerState> breakers, CodeTerminology terms = null)
+        /// <summary>Every required branch circuit is present at its required rating or higher.</summary>
+        private static ComplianceResult CheckRequiredCircuits(ComplianceRuleConfig rule, ElectricalTables tables, RequiredCircuit[] required, List<PanelBreakerState> breakers, CodeTerminology terms)
         {
             var missing = new List<string>();
             foreach (var req in required ?? new RequiredCircuit[0])
@@ -131,66 +153,44 @@ namespace NECInspector.PanelSandbox
             }
 
             if (missing.Count > 0)
-            {
-                return Result(terms, "RULE-02", "Required Branch Circuits", Ref(tables, "RULE-02", "210.11"),
-                    false,
+                return Result(terms, rule, "RULE-02", "Required Branch Circuits", "210.11", false,
                     $"Missing required circuits: {string.Join(", ", missing)}.");
-            }
 
-            return Result(terms, "RULE-02", "Required Branch Circuits", Ref(tables, "RULE-02", "210.11"),
-                true, "All required branch circuits are present.");
+            return Result(terms, rule, "RULE-02", "Required Branch Circuits", "210.11", true, "All required branch circuits are present.");
         }
 
-        /// <summary>Rule 3: circuits that need ground-fault protection use a GFCI or dual-function breaker.</summary>
-        public static ComplianceResult GfciProtection(ElectricalTables tables, RequiredCircuit[] required, List<PanelBreakerState> breakers, CodeTerminology terms = null)
+        /// <summary>
+        /// Circuits that need ground-fault or arc-fault protection (the rule's <c>protection</c>) use a breaker or
+        /// device that provides it, or a dual-function one.
+        /// </summary>
+        private static ComplianceResult CheckProtection(ComplianceRuleConfig rule, ElectricalTables tables, RequiredCircuit[] required, List<PanelBreakerState> breakers, CodeTerminology terms)
         {
+            bool gfci = ComplianceRuleKinds.ResolveProtection(rule) != "afci";
+            string term = gfci ? "shock-protection-device" : "arc-fault-device";
+            string defaultId = gfci ? "RULE-03" : "RULE-04";
+            string fallbackReference = gfci ? "210.8" : "210.12";
+            string defaultName = "{term:" + term + "} Protection";
+
             var violations = new List<string>();
             foreach (var req in required ?? new RequiredCircuit[0])
             {
-                if (!req.requiresGFCI) continue;
+                if (!(gfci ? req.requiresGFCI : req.requiresAFCI)) continue;
 
                 var breaker = breakers.FirstOrDefault(b => b.circuitName == req.circuitName);
-                if (breaker != null && !breaker.data.SatisfiesGFCI)
+                if (breaker != null && !(gfci ? breaker.data.SatisfiesGFCI : breaker.data.SatisfiesAFCI))
                     violations.Add(req.circuitName);
             }
 
             if (violations.Count > 0)
-            {
-                return Result(terms, "RULE-03", "{term:shock-protection-device} Protection", Ref(tables, "RULE-03", "210.8"),
-                    false,
-                    $"Missing {{term:shock-protection-device}} protection: {string.Join(", ", violations)}.");
-            }
+                return Result(terms, rule, defaultId, defaultName, fallbackReference, false,
+                    $"Missing {{term:{term}}} protection: {string.Join(", ", violations)}.");
 
-            return Result(terms, "RULE-03", "{term:shock-protection-device} Protection", Ref(tables, "RULE-03", "210.8"),
-                true, "All required circuits have {term:shock-protection-device} protection.");
+            return Result(terms, rule, defaultId, defaultName, fallbackReference, true,
+                $"All required circuits have {{term:{term}}} protection.");
         }
 
-        /// <summary>Rule 4: circuits that need arc-fault protection use an AFCI or dual-function breaker.</summary>
-        public static ComplianceResult AfciProtection(ElectricalTables tables, RequiredCircuit[] required, List<PanelBreakerState> breakers, CodeTerminology terms = null)
-        {
-            var violations = new List<string>();
-            foreach (var req in required ?? new RequiredCircuit[0])
-            {
-                if (!req.requiresAFCI) continue;
-
-                var breaker = breakers.FirstOrDefault(b => b.circuitName == req.circuitName);
-                if (breaker != null && !breaker.data.SatisfiesAFCI)
-                    violations.Add(req.circuitName);
-            }
-
-            if (violations.Count > 0)
-            {
-                return Result(terms, "RULE-04", "{term:arc-fault-device} Protection", Ref(tables, "RULE-04", "210.12"),
-                    false,
-                    $"Missing {{term:arc-fault-device}} protection: {string.Join(", ", violations)}.");
-            }
-
-            return Result(terms, "RULE-04", "{term:arc-fault-device} Protection", Ref(tables, "RULE-04", "210.12"),
-                true, "All required circuits have {term:arc-fault-device} protection.");
-        }
-
-        /// <summary>Rule 5: load is balanced between the left and right bus (general practice).</summary>
-        public static ComplianceResult LoadBalance(ElectricalTables tables, List<PanelBreakerState> breakers, CodeTerminology terms = null)
+        /// <summary>Load is balanced between the left and right bus (general practice).</summary>
+        private static ComplianceResult CheckLoadBalance(ComplianceRuleConfig rule, ElectricalTables tables, List<PanelBreakerState> breakers, CodeTerminology terms)
         {
             float leftLoad = 0f, rightLoad = 0f;
 
@@ -207,78 +207,67 @@ namespace NECInspector.PanelSandbox
 
             float totalLoad = leftLoad + rightLoad;
             if (totalLoad <= 0f)
-            {
-                return Result(terms, "RULE-05", "Load Balance", Ref(tables, "RULE-05", "General Practice"),
-                    true, "No load to balance.");
-            }
+                return Result(terms, rule, "RULE-05", "Load Balance", "General Practice", true, "No load to balance.");
 
-            float maxImbalance = tables.loadBalanceMaxImbalance;
+            float maxImbalance = rule != null && rule.maxImbalance > 0f ? rule.maxImbalance : tables.loadBalanceMaxImbalance;
             float imbalance = Math.Abs(leftLoad - rightLoad) / totalLoad;
             bool balanced = imbalance <= maxImbalance;
 
-            return Result(terms, "RULE-05", "Load Balance", Ref(tables, "RULE-05", "General Practice"),
-                balanced,
+            return Result(terms, rule, "RULE-05", "Load Balance", "General Practice", balanced,
                 balanced
                     ? $"Load is balanced ({imbalance:P0} imbalance)."
                     : $"Load imbalance is {imbalance:P0} (max {maxImbalance:P0}). Left: {leftLoad:N0} VA, Right: {rightLoad:N0} VA.");
         }
 
-        /// <summary>Rule 6: the main breaker is sized for the total of the breaker loads.</summary>
-        public static ComplianceResult MainBreakerSizing(ElectricalTables tables, int mainAmps, List<PanelBreakerState> breakers, CodeTerminology terms = null)
+        /// <summary>The main breaker is sized for the total of the breaker loads (times the rule's margin).</summary>
+        private static ComplianceResult CheckMainBreakerSizing(ComplianceRuleConfig rule, ElectricalTables tables, int mainAmps, List<PanelBreakerState> breakers, CodeTerminology terms)
         {
             float totalLoadVA = 0f;
             foreach (var breaker in breakers)
                 totalLoadVA += breaker.data != null ? breaker.data.GetLoadVA(tables) : 0f;
 
+            float margin = rule != null && rule.margin > 0f ? rule.margin : 1f;
             float loadAmps = LoadCalculator.ConvertVAToAmps(totalLoadVA, tables.serviceVoltage);
-            bool adequate = mainAmps >= loadAmps;
+            bool adequate = mainAmps >= loadAmps * margin;
 
-            return Result(terms, "RULE-06", "Main {Term:breaker} Sizing", Ref(tables, "RULE-06", "230.79"),
-                adequate,
+            return Result(terms, rule, "RULE-06", "Main {Term:breaker} Sizing", "230.79", adequate,
                 adequate
                     ? $"Main {{term:breaker}} ({mainAmps}A) adequate for {loadAmps:N0}A calculated load."
                     : $"Main {{term:breaker}} ({mainAmps}A) undersized for {loadAmps:N0}A calculated load.");
         }
 
-        /// <summary>Rule 7: no breaker takes more slots than it has poles (a double-pole breaker takes two).</summary>
-        public static ComplianceResult DoubleTap(ElectricalTables tables, List<SlotUse> slotUse, CodeTerminology terms = null)
+        /// <summary>No breaker takes more slots than it has poles (a double-pole breaker takes two).</summary>
+        private static ComplianceResult CheckDoubleTap(ComplianceRuleConfig rule, ElectricalTables tables, List<SlotUse> slotUse, CodeTerminology terms)
         {
             foreach (var use in slotUse)
             {
                 if (use.slotsOccupied > use.poleCount)
-                {
-                    return Result(terms, "RULE-07", "No Double-Tapped {Term:breaker}s", Ref(tables, "RULE-07", "110.14"),
-                        false,
+                    return Result(terms, rule, "RULE-07", "No Double-Tapped {Term:breaker}s", "110.14", false,
                         $"{{Term:breaker}} '{use.circuitName}' occupies {use.slotsOccupied} slots but is only {use.poleCount}-pole.");
-                }
             }
 
-            return Result(terms, "RULE-07", "No Double-Tapped {Term:breaker}s", Ref(tables, "RULE-07", "110.14"),
-                true, "No double-tapped {term:breaker}s found.");
+            return Result(terms, rule, "RULE-07", "No Double-Tapped {Term:breaker}s", "110.14", true, "No double-tapped {term:breaker}s found.");
         }
 
-        /// <summary>Rule 8: each wire's conductor size carries its breaker's rating.</summary>
-        public static ComplianceResult ConductorAmpacity(ElectricalTables tables, List<PanelBreakerState> breakers, CodeTerminology terms = null)
+        /// <summary>Each wire's conductor size carries its breaker's rating (times maxRatio).</summary>
+        private static ComplianceResult CheckConductorAmpacity(ComplianceRuleConfig rule, ElectricalTables tables, List<PanelBreakerState> breakers, CodeTerminology terms)
         {
+            float ratio = Ratio(rule);
             foreach (var breaker in breakers)
             {
                 if (!breaker.hasWire) continue;
 
-                bool valid = breaker.wireLinked && breaker.data.ampRating <= tables.GetMaxAmps(breaker.wireGauge);
+                bool valid = breaker.wireLinked && breaker.data.ampRating <= tables.GetMaxAmps(breaker.wireGauge) * ratio + 1e-4f;
                 if (!valid)
-                {
-                    return Result(terms, "RULE-08", "Conductor Ampacity", Ref(tables, "RULE-08", "310.14"),
-                        false,
+                    return Result(terms, rule, "RULE-08", "Conductor Ampacity", "310.14", false,
                         $"{breaker.circuitName}: {breaker.wireGauge} insufficient for {breaker.data.ampRating}A {{term:breaker}}.");
-                }
             }
 
-            return Result(terms, "RULE-08", "Conductor Ampacity", Ref(tables, "RULE-08", "310.14"),
-                true, "All conductor ampacities match {term:breaker} ratings.");
+            return Result(terms, rule, "RULE-08", "Conductor Ampacity", "310.14", true, "All conductor ampacities match {term:breaker} ratings.");
         }
 
-        /// <summary>Rule 9: the breakers fit in the panel's spaces.</summary>
-        public static ComplianceResult PanelSpaces(ElectricalTables tables, int totalSlots, List<PanelBreakerState> breakers, CodeTerminology terms = null)
+        /// <summary>The breakers fit in the panel's spaces.</summary>
+        private static ComplianceResult CheckPanelSpaces(ComplianceRuleConfig rule, ElectricalTables tables, int totalSlots, List<PanelBreakerState> breakers, CodeTerminology terms)
         {
             int usedSlots = 0;
             foreach (var breaker in breakers)
@@ -286,15 +275,14 @@ namespace NECInspector.PanelSandbox
 
             bool withinLimit = usedSlots <= totalSlots;
 
-            return Result(terms, "RULE-09", "{Term:panel} Spaces", Ref(tables, "RULE-09", "408.54"),
-                withinLimit,
+            return Result(terms, rule, "RULE-09", "{Term:panel} Spaces", "408.54", withinLimit,
                 withinLimit
                     ? $"Using {usedSlots} of {totalSlots} {{term:panel}} spaces."
                     : $"{{Term:panel}} exceeded: {usedSlots} spaces used, {totalSlots} available.");
         }
 
-        /// <summary>Rule 10: every placed breaker has a wire connected.</summary>
-        public static ComplianceResult WireConnections(ElectricalTables tables, List<PanelBreakerState> breakers, CodeTerminology terms = null)
+        /// <summary>Every placed breaker has a wire connected.</summary>
+        private static ComplianceResult CheckWireConnections(ComplianceRuleConfig rule, ElectricalTables tables, List<PanelBreakerState> breakers, CodeTerminology terms)
         {
             var unwired = new List<string>();
             foreach (var breaker in breakers)
@@ -304,14 +292,10 @@ namespace NECInspector.PanelSandbox
             }
 
             if (unwired.Count > 0)
-            {
-                return Result(terms, "RULE-10", "Wire Connections", Ref(tables, "RULE-10", "General Practice"),
-                    false,
+                return Result(terms, rule, "RULE-10", "Wire Connections", "General Practice", false,
                     $"{{Term:breaker}}s without wire connections: {string.Join(", ", unwired)}.");
-            }
 
-            return Result(terms, "RULE-10", "Wire Connections", Ref(tables, "RULE-10", "General Practice"),
-                true, "All {term:breaker}s have wire connections.");
+            return Result(terms, rule, "RULE-10", "Wire Connections", "General Practice", true, "All {term:breaker}s have wire connections.");
         }
     }
 }
