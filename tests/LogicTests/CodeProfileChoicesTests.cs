@@ -14,6 +14,7 @@ namespace NECInspector.LogicTests
             Ordering(t);
             Wording(t);
             ArtAvailability(t);
+            EmptyListMessages(t);
             RegionNames(t);
             RealProfiles(t);
             ActiveChangedEvent(t);
@@ -104,6 +105,22 @@ namespace NECInspector.LogicTests
 
             var withoutCatalog = CodeProfileChoices.Build(new ICodeProfile[] { uk }, "uk", id => 4, 0)[0];
             t.IsTrue(withoutCatalog.ScenarioText.StartsWith("Scenarios not available"), "the art message shows even without a scenario catalog");
+        }
+
+        private static void EmptyListMessages(TestContext t)
+        {
+            t.Begin("empty scenario list message");
+
+            var nec = Make("nec", "NEC (NFPA 70)", "US", "app-defined", true);
+            var uk = Make("uk", "UK Code", "UK", "draft", true, "uk");
+
+            t.Equal("", ScenarioListMessage.For(nec, 3), "no message when scenarios are listed");
+            t.IsTrue(ScenarioListMessage.For(nec, 0).Contains("No scenarios cover NEC (NFPA 70)"), "a code with art but no matching scenarios says so");
+            t.IsTrue(ScenarioListMessage.For(uk, 0).Contains("no scene art"), "a code without art says why");
+            t.IsTrue(ScenarioListMessage.For(uk, 0).Contains("UK Code"), "the message names the code");
+            t.IsTrue(ScenarioListMessage.For(uk, 0).Contains("still study"), "the message says references still work");
+            t.IsTrue(ScenarioListMessage.For(uk, 5).Contains("no scene art"), "no art is explained even if scenarios would apply");
+            t.IsTrue(ScenarioListMessage.For(null, 0).Contains("No installation code"), "no code loaded is explained");
         }
 
         private static void RegionNames(TestContext t)

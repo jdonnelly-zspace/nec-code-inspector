@@ -27,6 +27,7 @@ namespace NECInspector.UI
         [SerializeField] private Transform _scenarioListContent;
         [SerializeField] private GameObject _scenarioListItemPrefab;
         [SerializeField] private ScenarioCatalogSO _scenarioCatalog;
+        [SerializeField] private TextMeshProUGUI _noScenariosText;   // optional: explains an empty list
 
         [Header("Scenario Detail")]
         [SerializeField] private GameObject _scenarioDetailPanel;
@@ -134,14 +135,17 @@ namespace NECInspector.UI
         private void PopulateScenarioList()
         {
             ClearContent(_scenarioListContent);
+            SetText(_noScenariosText, "");
             if (_scenarioCatalog == null) return;
 
             // No scenario is offered under a code whose scene art does not exist yet (see ArtSets)
-            if (!ArtSets.IsAvailable(CodeProfiles.Active?.ArtSet)) return;
+            bool artAvailable = ArtSets.IsAvailable(CodeProfiles.Active?.ArtSet);
 
+            int listed = 0;
             string profileId = CodeProfiles.ActiveId;
             foreach (var scenario in _scenarioCatalog.scenarios)
             {
+                if (!artAvailable) break;
                 if (scenario == null) continue;
 
                 // Only list scenarios that have violations for the active code profile
@@ -154,7 +158,11 @@ namespace NECInspector.UI
                 var button = item.GetComponent<UnityEngine.UI.Button>();
                 var captured = scenario;
                 button?.onClick.AddListener(() => SelectScenario(captured));
+                listed++;
             }
+
+            // An empty list always says why
+            SetText(_noScenariosText, ScenarioListMessage.For(CodeProfiles.Active, listed));
         }
 
         private void SelectScenario(ScenarioDefinitionSO scenario)

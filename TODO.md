@@ -111,7 +111,7 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - [ ] Certificate UI panel visual design
 - [ ] Audio clips (SFX, ambient)
 - [~] Main menu scene: `NEC Inspector > Scene Setup > Generate Main Menu Scene` (`MainMenuSceneGenerator`) builds and saves `Scenes/MainMenu/MainMenu.unity` (mode, scenario, difficulty, settings panels, wired to `MainMenuPanel`) and adds the code picker with `CodePickerSceneSetup`. The scene file does not exist until someone runs it in the Unity Editor; then add a ZCamera rig, check the layout for stylus/stereo, add the scene to Build Settings, and commit the `.unity` file. Neither editor tool has been compiled in Unity yet. Progress dashboard and reference panels are not in the menu scene yet
-- [ ] Main menu: explain an empty scenario list. Under a code whose art set has no art, `MainMenuPanel` lists no scenarios and shows no reason (only the code picker explains it). Add an optional message field to `MainMenuPanel` (for example "Scenarios are not available for this code yet") and show it when the list is empty
+- [x] Main menu: explain an empty scenario list. `MainMenuPanel` has an optional `_noScenariosText`, filled from `ScenarioListMessage` (no art for the code's region, no scenarios cover the code, or no code loaded). The scene generator adds and assigns it; existing scenes need the field assigned by hand
 - [ ] Performance testing on zSpace hardware + Windows build
 
 ### Next: Alpha Content
