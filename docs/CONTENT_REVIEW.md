@@ -6,7 +6,7 @@ This file deliberately contains no code wording: compare each text in the app wi
 ## What was rewritten
 
 - All 42 violation citation texts (`Assets/_Project/Content/Scenarios/*.json`, `citations[].text`).
-- All 98 reference article texts (`Assets/_Project/StreamingAssets/Codes/nec/articles.json`, `text`); 100 remain after the pre-review and the restore of the dropped topics (section 12 of the pre-review).
+- All 98 reference article texts (`Assets/_Project/StreamingAssets/Codes/nec/articles.json`, `text`); 101 remain after the pre-review and the restore of the dropped topics (section 12 of the pre-review).
 
 Each new text keeps the facts of the text it replaced (numbers, limits, conditions, which parts of the code
 it points to) in new words, is shorter than the original, and has no run of six or more identical
@@ -67,16 +67,17 @@ became 26-658; 2-308 and 14-104 were already right. Please check every entry:
 
 ## Articles not tied to any current violation
 
-Content policy limits content to the app's skills. The pre-review dropped 15 NEC articles whose topics had no skill, and at the owner's request they were restored together with two new skills, `wiring-methods` and `special-locations` (see `docs/credential-alignment/README.md` and section 12 of the pre-review). 36 entries still have no violation: they support the panel sandbox, belong to one of the 13 skills, or are restored topics without a scenario yet (batteries, spas, weatherproof devices).
+Content policy limits content to the app's skills. The pre-review dropped 15 NEC articles whose topics had no skill, and at the owner's request they were restored together with two new skills, `wiring-methods` and `special-locations` (see `docs/credential-alignment/README.md` and section 12 of the pre-review). 37 entries still have no violation: they support the panel sandbox, belong to one of the 13 skills, or are restored topics without a scenario yet (batteries, spas, weatherproof devices).
 
-`110.14(A)`, `110.14(B)`, `110.3(B)`, `200.6`, `210.12(B)`, `210.19(A)`, `210.23`, `210.3`, `210.52(C)(2)`, `210.52(D)`, `210.52(E)(1)`, `210.52(G)`, `210.52(H)`, `210.8(A)(10)`, `210.8(A)(3)`, `210.8(A)(9)`, `220.18`, `220.52`, `220.54`, `220.55`, `220.83`, `230.79`, `240.6`, `250.118`, `250.66`, `404.2(C)`, `406.4(D)`, `410.10(A)`, `430.6(A)(1)`, `480.10`, `480.3`, `480.4`, `480.7`, `680.12`, `680.44`, `680.7`
+`110.14(A)`, `110.14(B)`, `110.3(B)`, `200.6`, `210.12(B)`, `210.19(A)`, `210.23`, `210.3`, `210.52(C)(2)`, `210.52(D)`, `210.52(E)(1)`, `210.52(G)`, `210.52(H)`, `210.8(A)(10)`, `210.8(A)(3)`, `210.8(A)(9)`, `220.18`, `220.52`, `220.54`, `220.55`, `220.83`, `230.79`, `240.6`, `250.118`, `250.66`, `404.2(C)`, `406.4(D)`, `410.10(A)`, `430.6(A)(1)`, `440.4`, `480.10`, `480.3`, `480.4`, `480.7`, `680.12`, `680.44`, `680.7`
 
 The Article 480 (storage batteries) entries are medium-low confidence and have no violations. The 13 related-article references that pointed at missing entries are resolved.
 
 ## Not covered by this pass
 
-- Quick-reference card text, panel sandbox descriptions and certificate text still live in editor scripts
-  (tracked in `TODO.md`); they are written in an instructional voice without statutory wording, but have
-  not been through the same paraphrase check.
+- Quick-reference card text, panel sandbox descriptions and certificate text now live in JSON under
+  `Assets/_Project/Content` (see section 13 of `docs/expert-review/PRE_REVIEW.md`). Tests reject statutory wording
+  in them and check their references and numbers, but an expert has not reviewed their wording; the worksheet
+  `4-cards-and-sandbox.csv` lists every card and sandbox circuit.
 - Article titles and the violation `description`, `hintText` and `inspectionNote` fields (checked only for
   statutory wording).

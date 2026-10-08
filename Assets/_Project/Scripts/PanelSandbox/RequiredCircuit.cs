@@ -16,6 +16,8 @@ namespace NECInspector.PanelSandbox
         [FormerlySerializedAs("necReference")]
         public string codeReference;   // e.g., "210.11(C)(3)"
         public bool isRequired = true;
+        public string room;            // room type the circuit serves (see ScopeVocabulary), so its GFCI/AFCI flags can be checked against the code's scope
+        public string appliance;       // the appliance it serves, if any
 
         [TextArea(1, 2)]
         public string description;

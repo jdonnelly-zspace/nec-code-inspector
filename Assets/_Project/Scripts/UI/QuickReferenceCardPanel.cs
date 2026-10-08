@@ -93,6 +93,7 @@ namespace NECInspector.UI
             {
                 if (card == null) continue;
                 if ((int)card.minimumDifficulty > (int)difficulty) continue;
+                if (!string.IsNullOrEmpty(card.profileId) && card.profileId != CodeProfiles.ActiveId) continue;
                 if (_selectedCategory.HasValue && card.category != _selectedCategory.Value) continue;
 
                 if (!string.IsNullOrEmpty(search))

@@ -1,0 +1,52 @@
+{
+  "settings": [
+    {
+      "level": "Beginner",
+      "displayName": "Beginner",
+      "showHighlightHints": true,
+      "showScaffolding": true,
+      "scaffoldingTimeoutSeconds": 60,
+      "hintCooldownSeconds": 15,
+      "citationMode": "Dropdown",
+      "enableTimeLimit": false,
+      "timeLimitSeconds": 0,
+      "penalizeFalsePositives": false,
+      "falsePositivePenalty": 0,
+      "showSimplifiedTerminology": true,
+      "highlightNewInEdition": true,
+      "includeSubtleViolations": false
+    },
+    {
+      "level": "Standard",
+      "displayName": "Standard",
+      "showHighlightHints": false,
+      "showScaffolding": false,
+      "scaffoldingTimeoutSeconds": -1,
+      "hintCooldownSeconds": 30,
+      "citationMode": "SearchableDropdown",
+      "enableTimeLimit": false,
+      "timeLimitSeconds": 0,
+      "penalizeFalsePositives": false,
+      "falsePositivePenalty": 0.1,
+      "showSimplifiedTerminology": false,
+      "highlightNewInEdition": true,
+      "includeSubtleViolations": false
+    },
+    {
+      "level": "Expert",
+      "displayName": "Expert",
+      "showHighlightHints": false,
+      "showScaffolding": false,
+      "scaffoldingTimeoutSeconds": -1,
+      "hintCooldownSeconds": -1,
+      "citationMode": "FreeText",
+      "enableTimeLimit": true,
+      "timeLimitSeconds": 1200,
+      "penalizeFalsePositives": true,
+      "falsePositivePenalty": 0.25,
+      "showSimplifiedTerminology": false,
+      "highlightNewInEdition": false,
+      "includeSubtleViolations": true
+    }
+  ]
+}

@@ -48,7 +48,7 @@ Status key: `[x]` done and on `main`, `[~]` built and on `main` but still waitin
 - [x] Update `docs/CREDENTIAL_FRAMEWORK.md` (PR #1): rewritten to the skill-based design (PR #17, merged into PR #1's branch). It describes the stacked branches, so keep it in step as they merge
 - [x] Violation and scenario applicability, derived from citations: a violation applies to a profile only if it has a citation for it; a scenario applies if any violation does. `InspectionManager` skips non-applicable violations and the main menu hides non-applicable scenarios
 - [x] Rename leftover NEC-named API from the citation change (`FlagViolation(... necArticle)`, `citedNECArticle`, `FlaggedNECArticle`): done in Phase C
-- [ ] Move remaining editor-script content to JSON: panel sandbox circuits, quick-reference cards, certificate templates, difficulty settings
+- [x] Editor-script content moved to JSON: difficulty settings, certificate templates, quick reference cards and the panel sandbox design are under `Assets/_Project/Content` with validators and tests (`ContentFileData`, `ContentFilesTests`); the four generators read them. Needs a run in the Unity Editor (`Generate All Data`) and the card panel check
 
 ### Phase C - Neutral wording and units (old refactor step 5)
 - [x] Neutral names: `NECCitationMode` -> `CitationMode`, `highlight2026Changes` -> `highlightNewInEdition`, `isNewIn2026` -> `isNewInEdition` (JSON and DTO), `necReference(s)` -> `codeReference(s)`, `dwellingSquareFootage` -> `dwellingArea`, `citedNECArticle` / `FlaggedNECArticle` -> `citedReference` / `FlaggedReference`. Serialized fields keep their old names through `FormerlySerializedAs`
@@ -57,7 +57,7 @@ Status key: `[x]` done and on `main`, `[~]` built and on `main` but still waitin
 - [x] Units and defaults from the profile tables: area unit label, default conductor, single-pole voltage for measurements; the HUD no longer prints "Art. General Practice"
 - [~] `{term:key}` and `{code}` tokens in scenario and violation text are filled from the active code's terminology (`ViolationDefinitionSO` getters, scenario title and description in the menu and intro step). One violation (`BC-GFCI-BATH-001`) uses them as the working example, and a test checks every key used exists in the NEC terms and warns when another code lacks it. Still to do: convert more text when a code with different words arrives (UK earthing, consumer unit)
 - [ ] Metric profile data: mm2 conductor table, 230/400 V, m and m2 labels (needed with the first non-NEC profile, Phase D/G)
-- [ ] Move the remaining NEC wording out of editor-script content (quick-reference cards, panel sandbox descriptions, certificate text) into JSON content files (see B2)
+- [x] NEC wording moved out of editor-script content into JSON (see above); the overall certificate no longer names the NEC, and cards carry the code they are written for
 - [ ] Rename MonoBehaviour classes, scene-serialized fields and files that carry NEC names (`NECReferencePanel`, `NECReviewStep`, `_necDropdown`, ...). Deferred on purpose: it can break scene and prefab references, so do it in the Unity Editor with the references visible
 - [ ] Decide on renaming the `NECInspector` namespace (cosmetic, defer)
 
@@ -93,7 +93,7 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 ### Phase F - Governance
 - [x] Paraphrase pass: all 42 violation citation texts and 98 article texts rewritten in new words (facts and references kept, shorter than the source, no six-word runs copied); the wording check in `ContentPolicyTests` now fails on any statutory wording. Notes for the reviewer are in `docs/CONTENT_REVIEW.md`
 - [~] **Credential expert review**: a desk check against public sources (`docs/expert-review/PRE_REVIEW.md`) confirmed and corrected the seven suspected problems and more, with confidence levels; the expert now confirms the corrected rows against the 2026 NEC and C22.1:24, and answers the items in section 11 of the pre-review. Packet in `docs/expert-review/` (worksheets regenerated with `tools/make_expert_review.py`)
-- [ ] Run the same paraphrase check on the text in editor scripts (quick-reference cards, sandbox descriptions, certificates) when it moves to JSON
+- [~] Paraphrase check on the moved text: tests reject statutory wording and unverified 2026 claims in the cards, certificates and sandbox text; an expert still reviews the wording (`docs/expert-review/4-cards-and-sandbox.csv`)
 - [x] `Codes/nec/articles.json`: the pre-review dropped 15 articles that needed skills the app lacked; at the owner's request they were restored (corrected) together with two new skills, `wiring-methods` and `special-locations` (100 entries). Article 480 (storage batteries) is medium-low confidence and has no violations yet
 - [ ] Licensing status per profile (NEC, CEC, BS 7671 are copyrighted); record it in the profile
 - [x] Content policy documented and enforced: content only for skills in `ConceptIds`, no credentials or credential code in the app (both fail the tests), and statutory wording fails the tests
