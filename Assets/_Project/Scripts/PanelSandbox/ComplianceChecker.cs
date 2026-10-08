@@ -1,53 +1,18 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using NECInspector.Codes;
 
 namespace NECInspector.PanelSandbox
 {
-    [Serializable]
-    public class ComplianceResult
-    {
-        public string ruleId;
-        public string ruleName;
-        public string codeReference;
-        public bool passed;
-        public string message;
-
-        public ComplianceResult(string ruleId, string ruleName, string codeReference, bool passed, string message)
-        {
-            this.ruleId = ruleId;
-            this.ruleName = ruleName;
-            this.codeReference = codeReference;
-            this.passed = passed;
-            this.message = message;
-        }
-    }
-
     /// <summary>
-    /// Validates a panel design against 10 compliance rules. Which rules run, the citation
+    /// Validates a panel design against the 10 compliance rules. This class only reads the scene
+    /// objects (slots, placed breakers, wires) into plain data; the rules themselves are in
+    /// <see cref="ComplianceRules"/>, which is tested without Unity. Which rules run, the citation
     /// shown for each, and numeric limits come from the active code profile's tables
     /// (NEC values by default).
     /// </summary>
     public class ComplianceChecker
     {
-        private static ElectricalTables Tables => CodeProfiles.Tables;
-
-        /// <summary>
-        /// Citation for a rule from the active profile, or the built-in NEC citation if none is configured.
-        /// </summary>
-        private static string Ref(string ruleId, string fallback)
-        {
-            var config = Tables.GetRuleConfig(ruleId);
-            return config != null && !string.IsNullOrEmpty(config.reference) ? config.reference : fallback;
-        }
-
-        private static bool IsEnabled(string ruleId)
-        {
-            var config = Tables.GetRuleConfig(ruleId);
-            return config == null || config.enabled;
-        }
-
         /// <summary>
         /// Run every enabled compliance check against the current panel state.
         /// </summary>
@@ -56,321 +21,56 @@ namespace NECInspector.PanelSandbox
             BreakerSlot[] slots,
             List<PlacedBreaker> placedBreakers)
         {
-            var checks = new (string ruleId, Func<ComplianceResult> run)[]
+            var input = new PanelRuleInput
             {
-                ("RULE-01", () => CheckBreakerConductorMatch(placedBreakers)),
-                ("RULE-02", () => CheckRequiredCircuits(definition, placedBreakers)),
-                ("RULE-03", () => CheckGFCIProtection(definition, placedBreakers)),
-                ("RULE-04", () => CheckAFCIProtection(definition, placedBreakers)),
-                ("RULE-05", () => CheckLoadBalance(slots, placedBreakers)),
-                ("RULE-06", () => CheckMainBreakerSizing(definition, placedBreakers)),
-                ("RULE-07", () => CheckDoubleTap(slots)),
-                ("RULE-08", () => CheckConductorAmpacity(placedBreakers)),
-                ("RULE-09", () => CheckPanelSpaces(definition, slots, placedBreakers)),
-                ("RULE-10", () => CheckWireConnections(placedBreakers))
+                totalAmps = definition.totalAmps,
+                totalSlots = definition.totalSlots,
+                requiredCircuits = definition.requiredCircuits,
+                breakers = placedBreakers.Select(ToState).ToList(),
+                slotUse = BuildSlotUse(slots)
             };
 
-            var results = new List<ComplianceResult>();
-            foreach (var check in checks)
-            {
-                if (IsEnabled(check.ruleId))
-                    results.Add(check.run());
-            }
-
-            return results;
+            return ComplianceRules.RunAll(CodeProfiles.Tables, input);
         }
 
-        /// <summary>
-        /// Rule 1: Breaker amperage must not exceed wire ampacity (Art. 240.4).
-        /// </summary>
-        public ComplianceResult CheckBreakerConductorMatch(List<PlacedBreaker> breakers)
+        private static PanelBreakerState ToState(PlacedBreaker breaker)
         {
-            foreach (var breaker in breakers)
+            var wire = breaker.ConnectedWire;
+            return new PanelBreakerState
             {
-                if (breaker.ConnectedWire == null) continue;
-
-                int wireMax = WireConnection.GetMaxAmpsForGauge(breaker.ConnectedWire.WireGauge);
-                if (breaker.BreakerData.ampRating > wireMax)
-                {
-                    return new ComplianceResult(
-                        "RULE-01", "Breaker/Conductor Match", Ref("RULE-01", "240.4"),
-                        false,
-                        $"{breaker.AssignedCircuitName}: {breaker.BreakerData.ampRating}A breaker exceeds {breaker.ConnectedWire.WireGauge} capacity ({wireMax}A)."
-                    );
-                }
-            }
-
-            return new ComplianceResult(
-                "RULE-01", "Breaker/Conductor Match", Ref("RULE-01", "240.4"),
-                true, "All breakers match their conductor ampacity."
-            );
+                circuitName = breaker.AssignedCircuitName,
+                data = breaker.BreakerData,
+                hasWire = wire != null,
+                wireGauge = wire != null ? wire.WireGauge : null,
+                wireLinked = wire != null && wire.ConnectedBreaker?.BreakerData != null,
+                side = breaker.CurrentSlot != null ? breaker.CurrentSlot.BusSide : (BusSide?)null
+            };
         }
 
-        /// <summary>
-        /// Rule 2: All required branch circuits must be present (Art. 210.11).
-        /// </summary>
-        public ComplianceResult CheckRequiredCircuits(PanelDesignDefinitionSO definition, List<PlacedBreaker> breakers)
+        // A double-pole breaker occupies two slots, which is valid; the rule compares that count to its poles
+        private static List<SlotUse> BuildSlotUse(BreakerSlot[] slots)
         {
-            var missing = new List<string>();
-            foreach (var req in definition.requiredCircuits)
-            {
-                if (!req.isRequired) continue;
+            var order = new List<PlacedBreaker>();
+            var counts = new Dictionary<PlacedBreaker, int>();
 
-                bool found = breakers.Any(b =>
-                    b.AssignedCircuitName == req.circuitName &&
-                    b.BreakerData.ampRating >= req.ampsRequired);
-
-                if (!found)
-                    missing.Add(req.circuitName);
-            }
-
-            if (missing.Count > 0)
-            {
-                return new ComplianceResult(
-                    "RULE-02", "Required Branch Circuits", Ref("RULE-02", "210.11"),
-                    false,
-                    $"Missing required circuits: {string.Join(", ", missing)}."
-                );
-            }
-
-            return new ComplianceResult(
-                "RULE-02", "Required Branch Circuits", Ref("RULE-02", "210.11"),
-                true, "All required branch circuits are present."
-            );
-        }
-
-        /// <summary>
-        /// Rule 3: Circuits requiring GFCI must use GFCI or dual-function breakers (Art. 210.8).
-        /// </summary>
-        public ComplianceResult CheckGFCIProtection(PanelDesignDefinitionSO definition, List<PlacedBreaker> breakers)
-        {
-            var violations = new List<string>();
-            foreach (var req in definition.requiredCircuits)
-            {
-                if (!req.requiresGFCI) continue;
-
-                var breaker = breakers.FirstOrDefault(b => b.AssignedCircuitName == req.circuitName);
-                if (breaker != null && !breaker.BreakerData.SatisfiesGFCI)
-                {
-                    violations.Add(req.circuitName);
-                }
-            }
-
-            if (violations.Count > 0)
-            {
-                return new ComplianceResult(
-                    "RULE-03", "GFCI Protection", Ref("RULE-03", "210.8"),
-                    false,
-                    $"Missing GFCI protection: {string.Join(", ", violations)}."
-                );
-            }
-
-            return new ComplianceResult(
-                "RULE-03", "GFCI Protection", Ref("RULE-03", "210.8"),
-                true, "All required circuits have GFCI protection."
-            );
-        }
-
-        /// <summary>
-        /// Rule 4: Circuits requiring AFCI must use AFCI or dual-function breakers (Art. 210.12).
-        /// </summary>
-        public ComplianceResult CheckAFCIProtection(PanelDesignDefinitionSO definition, List<PlacedBreaker> breakers)
-        {
-            var violations = new List<string>();
-            foreach (var req in definition.requiredCircuits)
-            {
-                if (!req.requiresAFCI) continue;
-
-                var breaker = breakers.FirstOrDefault(b => b.AssignedCircuitName == req.circuitName);
-                if (breaker != null && !breaker.BreakerData.SatisfiesAFCI)
-                {
-                    violations.Add(req.circuitName);
-                }
-            }
-
-            if (violations.Count > 0)
-            {
-                return new ComplianceResult(
-                    "RULE-04", "AFCI Protection", Ref("RULE-04", "210.12"),
-                    false,
-                    $"Missing AFCI protection: {string.Join(", ", violations)}."
-                );
-            }
-
-            return new ComplianceResult(
-                "RULE-04", "AFCI Protection", Ref("RULE-04", "210.12"),
-                true, "All required circuits have AFCI protection."
-            );
-        }
-
-        /// <summary>
-        /// Rule 5: Load balance between left and right bus sides (general practice, ≤20% imbalance).
-        /// </summary>
-        public ComplianceResult CheckLoadBalance(BreakerSlot[] slots, List<PlacedBreaker> breakers)
-        {
-            float leftLoad = 0f, rightLoad = 0f;
-
-            foreach (var breaker in breakers)
-            {
-                if (breaker.CurrentSlot == null) continue;
-                float load = breaker.GetLoadVA();
-
-                if (breaker.CurrentSlot.BusSide == BusSide.Left)
-                    leftLoad += load;
-                else
-                    rightLoad += load;
-            }
-
-            float totalLoad = leftLoad + rightLoad;
-            if (totalLoad <= 0f)
-            {
-                return new ComplianceResult(
-                    "RULE-05", "Load Balance", Ref("RULE-05", "General Practice"),
-                    true, "No load to balance."
-                );
-            }
-
-            float maxImbalance = Tables.loadBalanceMaxImbalance;
-            float imbalance = Math.Abs(leftLoad - rightLoad) / totalLoad;
-            bool balanced = imbalance <= maxImbalance;
-
-            return new ComplianceResult(
-                "RULE-05", "Load Balance", Ref("RULE-05", "General Practice"),
-                balanced,
-                balanced
-                    ? $"Load is balanced ({imbalance:P0} imbalance)."
-                    : $"Load imbalance is {imbalance:P0} (max {maxImbalance:P0}). Left: {leftLoad:N0} VA, Right: {rightLoad:N0} VA."
-            );
-        }
-
-        /// <summary>
-        /// Rule 6: Main breaker must be sized for calculated load (Art. 230.79).
-        /// </summary>
-        public ComplianceResult CheckMainBreakerSizing(PanelDesignDefinitionSO definition, List<PlacedBreaker> breakers)
-        {
-            float totalLoadVA = 0f;
-            foreach (var breaker in breakers)
-                totalLoadVA += breaker.GetLoadVA();
-
-            float loadAmps = LoadCalculator.ConvertVAToAmps(totalLoadVA);
-            bool adequate = definition.totalAmps >= loadAmps;
-
-            return new ComplianceResult(
-                "RULE-06", "Main Breaker Sizing", Ref("RULE-06", "230.79"),
-                adequate,
-                adequate
-                    ? $"Main breaker ({definition.totalAmps}A) adequate for {loadAmps:N0}A calculated load."
-                    : $"Main breaker ({definition.totalAmps}A) undersized for {loadAmps:N0}A calculated load."
-            );
-        }
-
-        /// <summary>
-        /// Rule 7: No double-tapped breakers — one circuit per breaker terminal.
-        /// </summary>
-        public ComplianceResult CheckDoubleTap(BreakerSlot[] slots)
-        {
-            // In our model, each slot can hold only one breaker, so double-tap
-            // would mean multiple wires on one breaker. Check PlacedBreaker references.
-            // This is inherently prevented by the data model but we validate anyway.
-            var breakerCounts = new Dictionary<PlacedBreaker, int>();
             foreach (var slot in slots)
             {
-                if (!slot.IsOccupied) continue;
-                if (!breakerCounts.ContainsKey(slot.PlacedBreaker))
-                    breakerCounts[slot.PlacedBreaker] = 0;
-                breakerCounts[slot.PlacedBreaker]++;
-            }
+                if (!slot.IsOccupied || slot.PlacedBreaker == null) continue;
 
-            // A double-pole breaker occupies 2 slots, which is valid
-            foreach (var kvp in breakerCounts)
-            {
-                if (kvp.Value > kvp.Key.BreakerData.poleCount)
+                if (!counts.ContainsKey(slot.PlacedBreaker))
                 {
-                    return new ComplianceResult(
-                        "RULE-07", "No Double-Tapped Breakers", Ref("RULE-07", "110.14"),
-                        false,
-                        $"Breaker '{kvp.Key.AssignedCircuitName}' occupies {kvp.Value} slots but is only {kvp.Key.BreakerData.poleCount}-pole."
-                    );
+                    counts[slot.PlacedBreaker] = 0;
+                    order.Add(slot.PlacedBreaker);
                 }
+                counts[slot.PlacedBreaker]++;
             }
 
-            return new ComplianceResult(
-                "RULE-07", "No Double-Tapped Breakers", Ref("RULE-07", "110.14"),
-                true, "No double-tapped breakers found."
-            );
-        }
-
-        /// <summary>
-        /// Rule 8: Conductor ampacity must match breaker rating (Art. 310.14).
-        /// </summary>
-        public ComplianceResult CheckConductorAmpacity(List<PlacedBreaker> breakers)
-        {
-            foreach (var breaker in breakers)
+            return order.Select(b => new SlotUse
             {
-                if (breaker.ConnectedWire == null) continue;
-                if (!breaker.ConnectedWire.Validate())
-                {
-                    return new ComplianceResult(
-                        "RULE-08", "Conductor Ampacity", Ref("RULE-08", "310.14"),
-                        false,
-                        $"{breaker.AssignedCircuitName}: {breaker.ConnectedWire.WireGauge} insufficient for {breaker.BreakerData.ampRating}A breaker."
-                    );
-                }
-            }
-
-            return new ComplianceResult(
-                "RULE-08", "Conductor Ampacity", Ref("RULE-08", "310.14"),
-                true, "All conductor ampacities match breaker ratings."
-            );
-        }
-
-        /// <summary>
-        /// Rule 9: Panel spaces must not be exceeded (Art. 408.36).
-        /// </summary>
-        public ComplianceResult CheckPanelSpaces(PanelDesignDefinitionSO definition, BreakerSlot[] slots, List<PlacedBreaker> breakers)
-        {
-            int usedSlots = 0;
-            foreach (var breaker in breakers)
-            {
-                usedSlots += breaker.BreakerData.poleCount;
-            }
-
-            bool withinLimit = usedSlots <= definition.totalSlots;
-
-            return new ComplianceResult(
-                "RULE-09", "Panel Spaces", Ref("RULE-09", "408.36"),
-                withinLimit,
-                withinLimit
-                    ? $"Using {usedSlots} of {definition.totalSlots} panel spaces."
-                    : $"Panel exceeded: {usedSlots} spaces used, {definition.totalSlots} available."
-            );
-        }
-
-        /// <summary>
-        /// Rule 10: All placed breakers must have wire connections.
-        /// </summary>
-        public ComplianceResult CheckWireConnections(List<PlacedBreaker> breakers)
-        {
-            var unwired = new List<string>();
-            foreach (var breaker in breakers)
-            {
-                if (!breaker.IsWired)
-                    unwired.Add(breaker.AssignedCircuitName ?? breaker.BreakerData.DisplayName);
-            }
-
-            if (unwired.Count > 0)
-            {
-                return new ComplianceResult(
-                    "RULE-10", "Wire Connections", Ref("RULE-10", "General Practice"),
-                    false,
-                    $"Breakers without wire connections: {string.Join(", ", unwired)}."
-                );
-            }
-
-            return new ComplianceResult(
-                "RULE-10", "Wire Connections", Ref("RULE-10", "General Practice"),
-                true, "All breakers have wire connections."
-            );
+                circuitName = b.AssignedCircuitName,
+                poleCount = b.BreakerData.poleCount,
+                slotsOccupied = counts[b]
+            }).ToList();
         }
     }
 }

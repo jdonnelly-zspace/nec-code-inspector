@@ -58,9 +58,7 @@ namespace NECInspector.PanelSandbox
         public float GetLoadVA()
         {
             if (_breakerData == null) return 0f;
-            var tables = CodeProfiles.Tables;
-            float voltage = _breakerData.poleCount == 2 ? tables.doublePoleVoltage : tables.singlePoleVoltage;
-            return _breakerData.ampRating * voltage;
+            return _breakerData.GetLoadVA(CodeProfiles.Tables);
         }
     }
 }

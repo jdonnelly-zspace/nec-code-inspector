@@ -32,6 +32,11 @@
     <Compile Include="$(Scripts)Skills/*.cs" Link="Unity/Skills/%(Filename)%(Extension)" />
     <Compile Include="$(Scripts)Core/DifficultyLevel.cs" Link="Unity/Core/DifficultyLevel.cs" />
     <Compile Include="$(Scripts)PanelSandbox/LoadCalculator.cs" Link="Unity/PanelSandbox/LoadCalculator.cs" />
+    <Compile Include="$(Scripts)PanelSandbox/BusSide.cs" Link="Unity/PanelSandbox/BusSide.cs" />
+    <Compile Include="$(Scripts)PanelSandbox/BreakerData.cs" Link="Unity/PanelSandbox/BreakerData.cs" />
+    <Compile Include="$(Scripts)PanelSandbox/RequiredCircuit.cs" Link="Unity/PanelSandbox/RequiredCircuit.cs" />
+    <Compile Include="$(Scripts)PanelSandbox/ComplianceResult.cs" Link="Unity/PanelSandbox/ComplianceResult.cs" />
+    <Compile Include="$(Scripts)PanelSandbox/ComplianceRules.cs" Link="Unity/PanelSandbox/ComplianceRules.cs" />
   </ItemGroup>
 
 </Project>

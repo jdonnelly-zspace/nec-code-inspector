@@ -3,8 +3,6 @@ using UnityEngine;
 
 namespace NECInspector.PanelSandbox
 {
-    public enum BusSide { Left, Right }
-
     public class BreakerSlot : MonoBehaviour
     {
         [Header("Slot Configuration")]

@@ -1,4 +1,5 @@
 using System;
+using NECInspector.Codes;
 
 namespace NECInspector.PanelSandbox
 {
@@ -31,5 +32,15 @@ namespace NECInspector.PanelSandbox
 
         public bool SatisfiesGFCI => isGFCI || isDualFunction;
         public bool SatisfiesAFCI => isAFCI || isDualFunction;
+
+        /// <summary>
+        /// Load in VA for this breaker's circuit: rating times the single-pole or double-pole voltage
+        /// from the profile's tables (120 V and 240 V for the NEC).
+        /// </summary>
+        public float GetLoadVA(ElectricalTables tables)
+        {
+            float voltage = poleCount == 2 ? tables.doublePoleVoltage : tables.singlePoleVoltage;
+            return ampRating * voltage;
+        }
     }
 }

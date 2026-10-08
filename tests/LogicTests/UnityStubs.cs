@@ -15,10 +15,29 @@ namespace UnityEngine
         SubsystemRegistration
     }
 
+    [System.AttributeUsage(System.AttributeTargets.Field)]
+    public sealed class TextAreaAttribute : System.Attribute
+    {
+        public TextAreaAttribute(int minLines, int maxLines)
+        {
+        }
+    }
+
     [System.AttributeUsage(System.AttributeTargets.Method)]
     public sealed class RuntimeInitializeOnLoadMethodAttribute : System.Attribute
     {
         public RuntimeInitializeOnLoadMethodAttribute(RuntimeInitializeLoadType loadType)
+        {
+        }
+    }
+}
+
+namespace UnityEngine.Serialization
+{
+    [System.AttributeUsage(System.AttributeTargets.Field | System.AttributeTargets.Property)]
+    public sealed class FormerlySerializedAsAttribute : System.Attribute
+    {
+        public FormerlySerializedAsAttribute(string oldName)
         {
         }
     }
