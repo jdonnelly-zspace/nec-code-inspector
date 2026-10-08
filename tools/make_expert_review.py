@@ -8,6 +8,7 @@ import csv
 import glob
 import json
 import os
+import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "docs", "expert-review")
@@ -44,6 +45,19 @@ def write_csv(name, header, rows):
     return len(rows)
 
 
+_TERMS = {}
+
+
+def fill_tokens(text, profile_id):
+    """Fill {code} and {term:key} the way the app does, with the profile's own terminology."""
+    if profile_id not in _TERMS:
+        _TERMS[profile_id] = load_json(os.path.join(CODES, profile_id, "terminology.json"))
+    t = _TERMS[profile_id]
+    words = {e["key"]: e["text"] for e in t.get("terms", [])}
+    text = text.replace("{code}", t.get("codeName", ""))
+    return re.sub(r"\{term:([A-Za-z0-9-]+)\}", lambda m: words.get(m.group(1), m.group(1)), text)
+
+
 def violation_rows():
     rows = []
     for path in sorted(glob.glob(os.path.join(SCENARIOS, "*.json"))):
@@ -55,7 +69,8 @@ def violation_rows():
                     flag = CEC_NOTE
                 rows.append([
                     flag, scenario["displayName"], v["violationId"], v["conceptId"], v["severity"],
-                    c["profileId"], c["reference"], c["text"], v["description"],
+                    c["profileId"], c["reference"], c["text"],
+                    fill_tokens(c.get("description") or v["description"], c["profileId"]),
                 ])
     # flagged rows first, then by scenario order
     rows.sort(key=lambda r: r[0] == "")

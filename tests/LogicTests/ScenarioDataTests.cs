@@ -21,6 +21,7 @@ namespace NECInspector.LogicTests
             SceneFactRules(t);
             ContentFilesAreValid(t);
             SharedNumericViolationsHaveSceneFacts(t);
+            TermTokensInContent(t);
         }
 
         private static void ValidatorCatchesBadData(TestContext t)
@@ -157,6 +158,46 @@ namespace NECInspector.LogicTests
             t.IsTrue(SceneFacts.TryBreach(new SceneFact { quantity = "q", value = 12, unit = "in" },
                 new SceneLimit { quantity = "q", kind = "max", value = 1, unit = "ft" }, out double zero) && Math.Abs(zero) < 1e-9,
                 "units are converted before comparing");
+        }
+
+        // {code} and {term:key} tokens in scenario content are filled from the active code's terminology.
+        // A key that no profile defines would show up as the raw key, so every key must exist in the NEC terms
+        // (the reference set); other codes that lack a key get a warning because they would fall back to it.
+        private static void TermTokensInContent(TestContext t)
+        {
+            t.Begin("term tokens in scenario content");
+
+            string dir = Path.Combine(TestContext.RepoRoot(), "Assets/_Project/Content/Scenarios");
+            var options = new JsonSerializerOptions { IncludeFields = true };
+            var profiles = ProfileFiles.LoadAll(TestContext.RepoRoot());
+            var necKeys = new HashSet<string>(
+                profiles.First(p => p.folder == CodeProfileIds.Nec).terminology.terms.Select(e => e.key));
+
+            var used = new SortedSet<string>();
+            foreach (string file in Directory.GetFiles(dir, "*.json"))
+            {
+                var data = JsonSerializer.Deserialize<ScenarioFileData>(File.ReadAllText(file), options);
+                var texts = new List<string> { data.displayName, data.description, data.environmentDescription };
+                foreach (var v in data.violations)
+                {
+                    texts.AddRange(new[] { v.description, v.hintText, v.inspectionNote });
+                    foreach (var c in v.citations)
+                        texts.AddRange(new[] { c.text, c.description, c.hintText, c.inspectionNote });
+                }
+
+                foreach (string text in texts.Where(x => !string.IsNullOrEmpty(x)))
+                    foreach (System.Text.RegularExpressions.Match m in System.Text.RegularExpressions.Regex.Matches(text, @"\{term:([^}]*)\}"))
+                        used.Add(m.Groups[1].Value);
+            }
+
+            foreach (string key in used)
+            {
+                t.IsTrue(necKeys.Contains(key), $"term token '{{term:{key}}}' is a term the NEC profile defines");
+                foreach (var p in profiles.Where(p => p.terminology != null && !p.terminology.terms.Any(e => e.key == key)))
+                    t.Warn($"term token '{{term:{key}}}' has no entry in Codes/{p.folder}/terminology.json, so it would read as '{key}'");
+            }
+
+            t.IsTrue(used.Count > 0, "scenario content uses at least one term token (so this check has something to check)");
         }
 
         private static void SharedNumericViolationsHaveSceneFacts(TestContext t)

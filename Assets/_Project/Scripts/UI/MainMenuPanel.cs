@@ -153,7 +153,7 @@ namespace NECInspector.UI
 
                 var item = Instantiate(_scenarioListItemPrefab, _scenarioListContent);
                 var text = item.GetComponentInChildren<TMP_Text>();
-                if (text != null) text.text = scenario.displayName;
+                if (text != null) text.text = CodeProfiles.Terminology.Format(scenario.displayName);
 
                 var button = item.GetComponent<UnityEngine.UI.Button>();
                 var captured = scenario;
@@ -171,8 +171,8 @@ namespace NECInspector.UI
             AudioManager.Instance?.PlayButtonClick();
 
             SetActive(_scenarioDetailPanel, true);
-            SetText(_scenarioTitle, scenario.displayName);
-            SetText(_scenarioDescription, scenario.description);
+            SetText(_scenarioTitle, CodeProfiles.Terminology.Format(scenario.displayName));
+            SetText(_scenarioDescription, CodeProfiles.Terminology.Format(scenario.description));
 
             // Show available difficulties
             var diffs = new List<string>();

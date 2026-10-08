@@ -16,7 +16,7 @@
   "violations": [
     {
       "violationId": "BC-GFCI-BATH-001",
-      "description": "Standard receptacle at bathroom sink without GFCI protection",
+      "description": "Standard {term:receptacle} at bathroom sink without {term:shock-protection-device} protection",
       "citations": [
         {
           "profileId": "nec",
@@ -30,9 +30,9 @@
         }
       ],
       "componentObjectName": "BathroomReceptacle_Sink",
-      "hintText": "Check if bathroom outlets have GFCI protection. Look for the TEST/RESET buttons on the receptacle face.",
+      "hintText": "Check if bathroom outlets have {term:shock-protection-device} protection. Look for the TEST/RESET buttons on the {term:receptacle} face.",
       "componentType": "Receptacle",
-      "inspectionNote": "This bathroom receptacle lacks required GFCI protection. Water proximity creates an electrocution hazard.",
+      "inspectionNote": "This bathroom {term:receptacle} lacks required {term:shock-protection-device} protection. Water proximity creates an electrocution hazard.",
       "conceptId": "shock-protection",
       "severity": "Critical",
       "minimumDifficulty": "Beginner",
