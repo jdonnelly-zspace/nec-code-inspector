@@ -6,16 +6,16 @@ Goal: a skill-based app that helps people build the skills to get an electrician
 **Acceptance test:** a new installation code (Canada's CEC was the first) is added using only data files: a code profile folder, citations on the scenarios, and region-specific scenes where needed. If C# has to change, the abstraction has a leak.
 
 Status key: `[x]` done and on `main`, `[~]` built and on `main` but still waiting on someone outside the code (the credential expert, or work in the Unity Editor), `[ ]` not started, `[!]` blocked or needs a decision.
-**Update these statuses in the same PR as the work.** Last refreshed against `main` at 27241d9.
+**Update these statuses in the same PR as the work.** Last refreshed against `main` at c2abebf.
 
-**Where the work lives.** All of it is on `main`. The stack (PRs #2 to #9) and the docs PR #1 were merged with an admin override because the required review could not be given by the author; #9 was retargeted to `main` and carried the commits from #3 to #8, so those six PRs were closed with a note. The merged branches are deleted. `docs/REVIEW_GUIDE.md` still maps the history for anyone reviewing it after the fact. The logic tests (`dotnet run --project tests/LogicTests`, .NET 8 SDK) pass locally and in CI; the stack has not had a second person's review.
+**Where the work lives.** All of it is on `main`. Nothing has had a second person's review: PRs #1, #2, #9, #31, #32 and #33 were merged with an admin override because the author cannot approve their own PR (#3 to #8 were closed because #9 contained them), and PRs #10 to #30 were merged into the stack branch without review. The merged branches are deleted. `docs/REVIEW_GUIDE.md` maps the history for a reviewer. The app now has 13 skills, six inspection scenarios (50 violations, all with NEC citations and 14 with CEC citations) and two installation codes (NEC with 100 entries, CEC draft with 12). The logic tests (`dotnet run --project tests/LogicTests`, .NET 8 SDK) pass locally and in CI.
 
 ### What is left, grouped by who can do it
-- **Project owner and reviewers:** a second person to review what was merged without review (`docs/REVIEW_GUIDE.md`); answer the open decisions below.
-- **Credential expert** (packet in `docs/expert-review/`): accuracy and edition of the paraphrased NEC and draft CEC content; the suspected reference problems; how both codes measure receptacle spacing; which untied articles to keep; CEC rules for violations still hidden under the CEC; the Red Seal task-to-skill mapping.
-- **Unity Editor** (the project has never been opened in the Editor): run `Generate Main Menu Scene` and commit the scene; add a ZCamera rig and check layouts; open the project once to compile the 22 scripts that need the zSpace SDK, PrimeTween or Localization (a local check already compiles the other 84 against Unity 6000.4.1: `tools/unity-compile-check`); build the 3D scenes and the North American art set; rename NEC-named MonoBehaviours with references visible.
-- **Code, can start now:** moving editor-script content (panel sandbox circuits, quick-reference cards, certificate templates, difficulty settings) to JSON; a metric profile scaffold; concept-aware scoring once the policy is decided. Not started on purpose: scene facts for the other five shared violations need expert-verified scope data (which rooms and circuits each code covers for GFCI and AFCI) before a check is worth building.
-- **Blocked on a decision:** Unity compile in CI; first code after Canada; localization; concept-level scoring policy.
+- **Project owner and reviewers:** a second person to review everything merged with the admin override (`docs/REVIEW_GUIDE.md`, `docs/expert-review/PRE_REVIEW.md`); answer the open decisions below, including whether to keep the two new skills.
+- **Credential expert** (start with `docs/expert-review/PRE_REVIEW.md`): confirm every row marked "Corrected in pre-review" against the 2026 NEC and C22.1:24; the doubts left unchanged (section 11); the two new skills (`wiring-methods`, `special-locations`) and the restored articles, especially Article 480 (medium-low confidence); every `scope.json` rule (CEC rows are draft, the 2026 NEC scope is unverified); the CEC rules for the 28 hidden violations and for the two new skills; the Red Seal task-to-skill mapping (C-17 is inferred); which edition the exam uses; and the receptacle spacing measurement.
+- **Unity Editor** (the project has never been opened in the Editor): run `Generate Main Menu Scene` and commit the scene; add a ZCamera rig and check layouts; open the project once to compile the 22 scripts that need the zSpace SDK, PrimeTween or Localization (a local check already compiles the other 85 of 107 against Unity 6000.4.1: `tools/unity-compile-check`); re-run Import Scenario Data and Generate Scenario Catalog (six scenarios now); build the six scenarios' 3D scenes and the North American art set; rename NEC-named MonoBehaviours with references visible.
+- **Code, can start now:** moving editor-script content (panel sandbox circuits, quick-reference cards, certificate templates, difficulty settings) to JSON; a metric profile scaffold; concept-aware scoring once the policy is decided; running the scope checker on scene objects once scenes exist. Waiting on others: scene facts for the two wire and breaker violations need a CEC conductor table; battery violations need the expert's Article 480 numbering; CEC tables need a CSA licence.
+- **Blocked on a decision:** Unity compile in CI; first code after Canada; localization; concept-level scoring policy; which menu panels beyond the five built.
 
 ### Phase A - Foundations (refactor steps 1-4)
 - [x] A1. Code-neutral concept IDs on violations
@@ -81,7 +81,7 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - Sandbox results were always checked against NEC tables: sandbox evidence now needs the active code to have its own tables
 - The citation matcher accepted `26-70` for `26-700`: it now matches only at a level boundary (this also closes the matching item in Phase F)
 - Facts differ between codes (GFCI scope, rod length and count, spacing limits), so a scene must break the rule under every code it is offered for, or be shown to one code only. Rules accepted in `docs/SCENE_DESIGN.md` (margin, pass-both, split when incompatible, SI units, automatic check). Done: measured values, limits and the logic test for the four single-number violations (wall and counter spacing, ground rod, working space), and the counter gap violation redone (`SceneFacts`). Still to do: shared violations whose rules are tables or scope (wire sizes and breaker ratings, GFCI and AFCI areas) need a different kind of check than a single limit
-- [~] Scene facts for the other violations shared by the NEC and CEC: the GFCI and AFCI ones (`BC-GFCI-BATH-001`, `BC-AFCI-BEDROOM-001`, `BC-AFCI-LIVING-001`) now describe their receptacle and the tests check it against each code's `scope.json`. Still to do: `BC-WIRE-14AWG-001` and `RP-WIRE-OVER-001` (wire and breaker pairs need a conductor table the CEC does not have yet)
+- [~] Scene facts for the violations shared by the NEC and CEC: the four numeric ones carry scene values and limits, and the GFCI and AFCI ones describe their receptacle and are checked against each code's `scope.json`. Still to do: `BC-WIRE-14AWG-001` and `RP-WIRE-OVER-001` (wire and breaker pairs need a conductor table the CEC does not have yet)
 
 ### Phase E - Hard problems (decide early)
 - [x] Decision: region-specific scene art and prefab variants: accepted in `docs/SCENE_DESIGN.md` (one art set per region group, North American set first, other groups blocked until a second code is committed). Done: `artSet` in `profile.json` with validation (`ArtSets`), and the menu and the picker offer no scenarios under a code whose art set has no art (`ArtSets.IsAvailable`)
@@ -123,7 +123,7 @@ Decided: region-specific art is one set per region group (`docs/SCENE_DESIGN.md`
 - [ ] Wiring methods and special locations 3D scenes (`WiringMethodsInspection`, `SpecialLocationsInspection`): framed house with cables and boxes, a trench, an overhead feeder, a backyard pool; re-run Import Scenario Data and Generate Scenario Catalog after adding the scenario files
 - [ ] Kitchen/bathroom/living area 3D scene (Branch Circuit scenario)
 - [ ] Run NEC Inspector > Import Scenario Data + PanelDesignSandboxGenerator in Editor (run it after any change to the scenario JSON)
-- [~] Compile the project in Unity and fix anything the logic tests cannot see. `python tools/unity-compile-check/check.py` compiles 84 of the 106 scripts against the installed Unity 6000.4.1 libraries with uGUI/TextMeshPro stand-ins and finds no errors, including `CodePickerSceneSetup`, `MainMenuSceneGenerator`, `MainMenuPanel`, `CodeProfilePickerPanel` and the panel sandbox scripts. Still needed in the Unity project itself: the 22 scripts that need the zSpace SDK, PrimeTween or Localization (input, legacy step code, `InspectionScenarioRunner`, `PanelDesignRunner`, two UI panels), and the exact uGUI and TextMeshPro shapes
+- [~] Compile the project in Unity and fix anything the logic tests cannot see. `python tools/unity-compile-check/check.py` compiles 85 of the 107 scripts against the installed Unity 6000.4.1 libraries with uGUI/TextMeshPro stand-ins and finds no errors, including `CodePickerSceneSetup`, `MainMenuSceneGenerator`, `MainMenuPanel`, `CodeProfilePickerPanel`, the panel sandbox scripts and the scope checker. Still needed in the Unity project itself: the 22 scripts that need the zSpace SDK, PrimeTween or Localization (input, legacy step code, `InspectionScenarioRunner`, `PanelDesignRunner`, two UI panels), and the exact uGUI and TextMeshPro shapes
 - [ ] Panel sandbox scene with 3D panel, breaker tray, slot GameObjects
 - [ ] Wire Quick Reference Cards to inspection HUD
 - [ ] Certificate UI panel visual design
@@ -133,11 +133,11 @@ Decided: region-specific art is one set per region group (`docs/SCENE_DESIGN.md`
 - [ ] Performance testing on zSpace hardware + Windows build
 
 ### Next: Alpha Content
-- [ ] Scenario 4: Commercial Installation
-- [ ] Scenario 5: Outdoor/Wet Location
+- [~] Scenario 4: Commercial Installation: the data exists (`commercial.json`, 12 violations); the 3D scene does not
+- [~] Scenario 5: Outdoor/Wet Location: covered in data by the Special Locations scenario (`special-locations.json`, 3 violations: pool luminaire height, pool bonding, weatherproof cover) and the Wiring Methods scenario; more violations (spas, outdoor GFCI scope, batteries) wait on the expert's numbering; no 3D scene yet
 - [ ] Virtual clamp meter tool
 - [ ] Tutorial system
-- [ ] Expand to 200+ NEC articles
+- [ ] Expand beyond the 100 NEC entries now in `Codes/nec/articles.json`, only for topics inside the app's 13 skills (content policy)
 
 ### Future
 See docs/CONTENT_ROADMAP.md and docs/COMPLETED_STEPS.md
