@@ -69,10 +69,10 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - (Removed again) Credentials could require skills a code's content does not cover, so requirements got a `deferred` flag; this went away when credentials left the app. The skill coverage test now reports the same gaps per code
 - Sandbox results were always checked against NEC tables: sandbox evidence now needs the active code to have its own tables
 - The citation matcher accepted `26-70` for `26-700`: it now matches only at a level boundary (this also closes the matching item in Phase F)
-- Facts differ between codes (GFCI scope, rod length and count, spacing limits), so a scene must break the rule under every code it is offered for, or be shown to one code only. Rules proposed in `docs/SCENE_DESIGN.md` (margin, pass-both, split when incompatible, automatic check); awaiting owner confirmation, then add scene values and limits plus the logic test
+- Facts differ between codes (GFCI scope, rod length and count, spacing limits), so a scene must break the rule under every code it is offered for, or be shown to one code only. Rules accepted in `docs/SCENE_DESIGN.md` (margin, pass-both, split when incompatible, SI units, automatic check). Still to do: add measured values and limits to the data and the logic test; redo the counter gap violation
 
 ### Phase E - Hard problems (decide early)
-- [~] Decision: region-specific scene art and prefab variants: proposed in `docs/SCENE_DESIGN.md` (one art set per region group, North American set first, other groups blocked until a second code is committed). Awaiting owner confirmation
+- [~] Decision: region-specific scene art and prefab variants: accepted in `docs/SCENE_DESIGN.md` (one art set per region group, North American set first, other groups blocked until a second code is committed). Still to do: `artSet` field in `profile.json`, and the art itself
 - [ ] Generalize or add a panel sandbox model beyond split-phase US panels (UK consumer units with RCD/RCBO, 230 V single phase)
 - [ ] Pluggable compliance rule sets per profile (rule logic is still in C#; only numbers, citations and on/off are data)
 

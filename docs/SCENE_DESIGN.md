@@ -1,6 +1,6 @@
 # Scene Design Across Codes
 
-Status: **proposed**, for the project owner to confirm. No 3D scenes exist in the repo yet, so this is the time to set the rules.
+Status: **accepted** by the project owner. No 3D scenes exist in the repo yet, so these rules are set before any are built.
 
 Two questions: how a scene stays correct when the facts differ between installation codes, and whether each region needs its own art.
 
