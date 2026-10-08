@@ -12,7 +12,7 @@
 | Art. 240.4 | Protection of conductors | Oversized breaker for conductor |
 | Art. 240.24 | Overcurrent device location | Improper location, accessibility |
 | Art. 408.4 | Panel directory | Missing/inaccurate circuit directory |
-| Art. 408.36 | Overcurrent protection | Bus rating exceeded |
+| Art. 408.54 | Maximum number of overcurrent devices | More breakers than spaces |
 
 ### Scenario 2: Branch Circuit Wiring (MVP) - 12 Violations
 | NEC Article | Topic | Violation ID | Difficulty | Severity |
@@ -80,7 +80,7 @@
 | RULE-06 | Main Breaker Sizing | Art. 230.79 | Main breaker ≥ calculated load in amps |
 | RULE-07 | No Double-Tapped Breakers | Art. 110.14 | One circuit per breaker terminal |
 | RULE-08 | Conductor Ampacity | Art. 310.14 | Wire gauge matches breaker rating per Table 310.16 |
-| RULE-09 | Panel Spaces | Art. 408.36 | Total breaker poles ≤ panel slot count |
+| RULE-09 | Panel Spaces | Art. 408.54 | Total breaker poles ≤ panel slot count |
 | RULE-10 | Wire Connections | General Practice | All placed breakers must have wire connections |
 
 ### Load Calculation (Art. 220)

@@ -105,7 +105,7 @@ namespace NECInspector.Editor
                 category = CardCategory.PanelDesign,
                 summary = "Panelboards must not exceed their bus rating. All circuits must be identified in a directory. Working space: 30\" wide, 36\" deep, 6.5' high minimum. Balance loads between bus sides. Main breaker must handle the calculated service load.",
                 keyRule = "Panel directory required. Do not exceed bus rating. Maintain working clearance.",
-                codeReferences = new[] { "408.4", "408.36", "110.26(A)", "230.79" },
+                codeReferences = new[] { "408.4", "408.54", "110.26(A)", "230.79" },
                 keywords = new[] { "panel", "directory", "bus rating", "working space", "clearance", "breaker" },
                 minimumDifficulty = DifficultyLevel.Standard
             },

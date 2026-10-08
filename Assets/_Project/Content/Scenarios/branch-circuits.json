@@ -25,8 +25,8 @@
         },
         {
           "profileId": "cec",
-          "reference": "26-700",
-          "text": "A receptacle within 1.5 m of a sink, bathtub or shower stall needs Class A GFCI protection."
+          "reference": "26-704",
+          "text": "A 5-15R or 5-20R receptacle within 1.5 m of a sink, bathtub or shower stall needs Class A GFCI protection."
         }
       ],
       "componentObjectName": "BathroomReceptacle_Sink",
@@ -44,8 +44,8 @@
       "citations": [
         {
           "profileId": "nec",
-          "reference": "210.8(A)(5)",
-          "text": "Kitchen receptacles (125 V to 250 V) that feed countertop surfaces in a home need GFCI protection."
+          "reference": "210.8(A)(6)",
+          "text": "In a home's kitchens, every 125 V to 250 V receptacle needs GFCI protection, not only the ones that serve the countertop."
         }
       ],
       "componentObjectName": "KitchenReceptacle_Counter1",
@@ -93,7 +93,7 @@
         },
         {
           "profileId": "cec",
-          "reference": "26-712",
+          "reference": "26-722",
           "text": "Place dwelling receptacles so that every spot along the floor line of usable wall space is within 1.8 m of one.",
           "description": "Wall receptacles about 4.3 m (14 ft) apart, farther than the 3.6 m maximum",
           "hintText": "No point along the floor line of usable wall space may be more than 1.8 m from a receptacle, so receptacles can be at most 3.6 m apart.",
@@ -161,8 +161,8 @@
         },
         {
           "profileId": "cec",
-          "reference": "26-724(f)",
-          "text": "Branch circuits for 125 V receptacles rated 20 A or less in bedrooms, living and dining rooms, kitchens, hallways, closets, laundry areas and similar rooms of a dwelling need combination-type AFCI protection, with exceptions such as circuits that already need ground-fault protection."
+          "reference": "26-658",
+          "text": "Branch circuits that supply 125 V receptacles rated 20 A or less in a dwelling need combination-type AFCI protection, with listed exemptions such as refrigerator, kitchen counter and bathroom receptacles."
         }
       ],
       "componentObjectName": "BedroomCircuit_Breaker",
@@ -185,8 +185,8 @@
         },
         {
           "profileId": "cec",
-          "reference": "26-724(f)",
-          "text": "Branch circuits for 125 V receptacles rated 20 A or less in bedrooms, living and dining rooms, kitchens, hallways, closets, laundry areas and similar rooms of a dwelling need combination-type AFCI protection, with exceptions such as circuits that already need ground-fault protection.",
+          "reference": "26-658",
+          "text": "Branch circuits that supply 125 V receptacles rated 20 A or less in a dwelling need combination-type AFCI protection, with listed exemptions such as refrigerator, kitchen counter and bathroom receptacles.",
           "inspectionNote": "Living room circuit lacks AFCI protection. Combination-type AFCI protection is required for receptacle circuits in most dwelling living spaces."
         }
       ],
@@ -216,7 +216,7 @@
         },
         {
           "profileId": "cec",
-          "reference": "26-712(d)(iii)",
+          "reference": "26-722(d)(iii)",
           "text": "Behind kitchen counter work surfaces, install split receptacles so that you are never farther than 900 mm, measured along the wall line, from one.",
           "description": "Kitchen countertop point 42 inches (about 1.07 m) from the nearest receptacle, over the 900 mm limit",
           "hintText": "Along the counter wall line, no point may be more than 900 mm from a receptacle.",
@@ -255,7 +255,7 @@
       "citations": [
         {
           "profileId": "nec",
-          "reference": "210.11(C)(1)",
+          "reference": "210.11(C)(3)",
           "text": "Provide at least one 120 V, 20 A circuit for the bathroom receptacles."
         }
       ],
@@ -274,7 +274,7 @@
       "citations": [
         {
           "profileId": "nec",
-          "reference": "210.11(C)(3)",
+          "reference": "210.11(C)(1)",
           "text": "Provide two or more 20 A small-appliance circuits for the kitchen receptacles."
         }
       ],
@@ -308,18 +308,18 @@
     },
     {
       "violationId": "BC-GFCI-DISHWASHER-001",
-      "description": "Dishwasher branch circuit lacks GFCI protection per 2026 NEC requirement",
+      "description": "Dishwasher branch circuit lacks GFCI protection",
       "citations": [
         {
           "profileId": "nec",
           "reference": "210.8(D)",
-          "text": "Dishwashers in homes need GFCI protection, and the dishwasher's branch circuit must use a listed GFCI device."
+          "text": "The outlets that supply dishwashers in homes need GFCI protection, whether the dishwasher is plugged in or hard-wired."
         }
       ],
       "componentObjectName": "KitchenDishwasher_Circuit",
-      "hintText": "The 2026 NEC added GFCI requirements for dishwashers. Check the breaker type.",
+      "hintText": "Dishwashers in homes need GFCI protection on the outlet that supplies them. Check the breaker or outlet type.",
       "componentType": "Appliance Circuit",
-      "inspectionNote": "Dishwasher circuit lacks GFCI protection. This is a new requirement in the 2026 NEC edition (Art. 210.8(D)).",
+      "inspectionNote": "Dishwasher circuit lacks GFCI protection (210.8(D)).",
       "conceptId": "shock-protection",
       "severity": "Major",
       "minimumDifficulty": "Expert",

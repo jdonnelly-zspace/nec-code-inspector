@@ -1,7 +1,8 @@
 # Expert review packet
 
-For the credential expert checking the app's content against the code books. Background and the full list of
-concerns are in `docs/CONTENT_REVIEW.md`; the rules the content follows are in `docs/CONTENT_POLICY.md`.
+For the credential expert checking the app's content against the code books. **Start with `PRE_REVIEW.md`**: a desk
+check against public sources that has already corrected the confident problems, with its confidence levels and the
+items left for you. Background and the earlier list of concerns are in `docs/CONTENT_REVIEW.md`; the rules the content follows are in `docs/CONTENT_POLICY.md`.
 
 The worksheets hold **our own paraphrases** and the references we cite. They contain no code-book wording, so
 compare each row with the book yourself. Open them in Excel or any spreadsheet tool.
@@ -10,19 +11,20 @@ compare each row with the book yourself. Open them in Excel or any spreadsheet t
 
 | File | Rows | What it is |
 |---|---|---|
-| `1-violation-citations.csv` | 51 | Each violation in the four inspection scenarios and the rule it cites, per code (42 NEC, 9 CEC). Rows with a concern come first. |
-| `2-articles-cec.csv` | 7 | Draft Canadian Electrical Code reference entries. Written from public summaries, not the book. |
-| `3-articles-nec.csv` | 98 | NEC reference entries. Rows with a concern first, then cited ones, then 44 not tied to any violation. |
+| `1-violation-citations.csv` | 56 | Each violation in the four inspection scenarios and the rule it cites, per code (42 NEC, 14 CEC). Rows with a concern come first. |
+| `2-articles-cec.csv` | 12 | Draft Canadian Electrical Code reference entries (C22.1:24 numbering). Written from public sources, not the book. |
+| `3-articles-nec.csv` | 84 | NEC reference entries. Rows with a concern first, then cited ones, then 30 not tied to any violation. |
 
 ## What to check
 
-1. **Reference.** Is the cited number and sub-item the right rule for what the scene shows? Seven NEC rows are flagged
-   as suspected wrong or swapped; every CEC row is flagged as draft.
+1. **Reference.** Is the cited number and sub-item the right rule for what the scene shows? Rows marked "Corrected in
+   pre-review" were changed by the desk check and need your confirmation against the 2026 NEC; rows marked "Doubt" were
+   left unchanged; every CEC row is flagged as draft.
 2. **Accuracy.** Does the paraphrase keep every number, condition and exception of the rule? Paraphrasing can lose one.
 3. **Edition.** The NEC data targets the 2026 edition. For the CEC, tell us which edition the credential exam uses; rule
    numbers move between editions.
 4. **Scene.** For CEC rows, does the scene (the "What the scene shows" column) actually break that rule? Some margins are
-   narrow (a 36 in counter gap against a 900 mm limit).
+   narrow; the counter scene was redrawn for that reason.
 
 ## Filling it in
 
@@ -32,8 +34,8 @@ changes to the JSON data.
 
 ## Decisions we need from you
 
-- **Untied articles.** The 44 NEC articles marked "not tied to a violation": keep for the panel sandbox, keep for future
-  skills, or drop?
+- **Untied articles.** The 30 NEC articles marked "not tied to a violation" were kept after the desk check; confirm,
+  and decide whether to add a wiring-methods skill or drop the four parked wiring-method entries.
 - **CEC rules we could not confirm.** Violations hidden under the CEC until a rule is supplied (GFCI in kitchens and garages,
   motor rules, grounding and bonding details, service disconnect, panel directory and others). A reference and a one-line
   description of the rule is enough.

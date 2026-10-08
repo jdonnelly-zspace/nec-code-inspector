@@ -17,13 +17,23 @@ SCENARIOS = os.path.join(ROOT, "Assets", "_Project", "Content", "Scenarios")
 
 # Known concerns from docs/CONTENT_REVIEW.md, keyed by (violationId, profileId)
 VIOLATION_FLAGS = {
-    ("BC-DEDICATED-BATH-001", "nec"): "Reference may be swapped with BC-DEDICATED-KITCHEN-001",
-    ("BC-DEDICATED-KITCHEN-001", "nec"): "Reference may be swapped with BC-DEDICATED-BATH-001",
-    ("COM-DISC-SIGHT-001", "nec"): "Reference may be swapped with COM-MOTOR-CTRL-001",
-    ("COM-MOTOR-CTRL-001", "nec"): "Reference may be swapped with COM-DISC-SIGHT-001",
-    ("COM-RECPT-LOAD-001", "nec"): "Per-outlet load may belong to the 220.14 article, not 220.44",
-    ("BC-GFCI-KITCHEN-001", "nec"): "Check the numbering of the 210.8(A) items",
-    ("COM-MOTOR-OL-001", "nec"): "Check the overload percentage for motors with a service factor of 1.15 or more",
+    # Corrected in the pre-review (docs/expert-review/PRE_REVIEW.md); the expert confirms against the 2026 book
+    ("BC-DEDICATED-BATH-001", "nec"): "Corrected in pre-review: was 210.11(C)(1); confirm 2026 numbering",
+    ("BC-DEDICATED-KITCHEN-001", "nec"): "Corrected in pre-review: was 210.11(C)(3); confirm 2026 numbering",
+    ("COM-DISC-SIGHT-001", "nec"): "Corrected in pre-review: was 430.110; confirm (A) or (B) of 430.102",
+    ("COM-MOTOR-CTRL-001", "nec"): "Corrected in pre-review: was 430.102(B); confirm whether 430.109 should also be cited",
+    ("COM-RECPT-LOAD-001", "nec"): "Corrected in pre-review: was 220.44; the rule is 220.14(I), cited at article level",
+    ("BC-GFCI-KITCHEN-001", "nec"): "Corrected in pre-review: was 210.8(A)(5); text widened to all kitchen receptacles (2023 wording); confirm 2026",
+    ("COM-MOTOR-OL-001", "nec"): "Corrected in pre-review: 125% applies to service factor 1.15 or more; scene now uses a service factor 1.0 motor",
+    ("RP-BUS-EXCEED-001", "nec"): "Corrected in pre-review: was 408.36; the number-of-devices rule is 408.54",
+    ("BC-GFCI-DISHWASHER-001", "nec"): "Corrected in pre-review: dishwasher GFCI is not new in 2026 (it dates to 2014); confirm",
+    ("GND-ELECTRODE-001", "nec"): "Text now notes 1/2 in is allowed for listed stainless or nonferrous rods; confirm",
+    ("BC-WIRE-KITCHEN-001", "nec"): "Text now includes the sealed-opening condition (medium confidence); confirm",
+    ("COM-FEEDER-TAP-001", "nec"): "Text now lists all four tap conditions (medium confidence); confirm",
+    # Doubts left for the expert
+    ("COM-MULTI-MOTOR-001", "nec"): "Doubt: title is about overcurrent protection but 430.24 covers conductors; protection may be 430.53 or 430.62",
+    ("GND-GEC-001", "nec"): "Doubt: confirm the sub-item of 250.24(A) for connecting the grounding electrode conductor",
+    ("GND-SUPPLEMENT-001", "nec"): "Doubt: confirm the single-rod supplement rule and its exception in the 2026 edition",
 }
 CEC_NOTE = "Draft from public summaries: check rule number, sub-item and edition"
 

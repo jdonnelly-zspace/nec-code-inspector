@@ -10,11 +10,38 @@
       "isNewInEdition": false
     },
     {
-      "reference": "10-700",
-      "title": "Grounding electrodes up to 750 V",
-      "text": "For systems up to 750 V the code names what can serve as a grounding electrode. A manufactured electrode can be made of rods 3 m long, driven in full length, with at least two spaced 3 m apart and bonded together. A buried metal water piping system is also a permitted electrode.",
+      "reference": "6-206",
+      "title": "Location of the consumer's service equipment",
+      "text": "Put the consumer's service equipment where it is readily accessible and close to where the service conductors enter the building. It does not belong in places such as clothes closets, bathrooms, stairways or spaces with low headroom.",
+      "section": 6,
+      "keywords": ["service equipment", "service disconnect", "accessible", "location"],
+      "related": [],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "10-102",
+      "title": "Grounding electrodes",
+      "text": "The code names what can serve as a grounding electrode for a system. A manufactured electrode is normally two rods, each 3 m long, driven in full length, spaced at least 3 m apart and bonded together. Whether a buried metal water pipe may serve as an electrode depends on the province.",
       "section": 10,
       "keywords": ["ground rod", "grounding electrode", "water pipe", "rod length"],
+      "related": [],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "10-104",
+      "title": "Interconnection of grounding electrodes",
+      "text": "Connect together all the grounding electrodes at a building, such as ground rods and a water pipe electrode, so that they act as one grounding system.",
+      "section": 10,
+      "keywords": ["grounding electrodes", "interconnection", "bonding", "ground rod"],
+      "related": [],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "10-700",
+      "title": "Equipotential bonding of non-electrical equipment",
+      "text": "Metal piping and other non-electrical equipment that could become energized are bonded to the electrical grounding system. This includes the building's metal water piping, which is bonded with a bonding conductor.",
+      "section": 10,
+      "keywords": ["bonding", "water pipe", "equipotential", "metal piping"],
       "related": [],
       "isNewInEdition": false
     },
@@ -28,38 +55,56 @@
       "isNewInEdition": false
     },
     {
-      "reference": "26-700",
+      "reference": "26-600",
+      "title": "Mounting height of branch-circuit overcurrent devices in dwellings",
+      "text": "In a dwelling unit, mount no branch-circuit breaker or switch with its handle more than 1.7 m above the finished floor. The main is excepted.",
+      "section": 26,
+      "keywords": ["breaker height", "handle height", "dwelling", "panel"],
+      "related": [],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "26-658",
+      "title": "Arc-fault protection in dwelling units",
+      "text": "Branch circuits that supply 125 V receptacles rated 20 A or less in a dwelling need combination-type AFCI protection. Listed locations are exempt, such as refrigerator receptacles, kitchen counter, island and peninsula receptacles, and bathroom receptacles within 1 m of the wash basin.",
+      "section": 26,
+      "keywords": ["afci", "arc fault", "bedroom", "combination type"],
+      "related": [],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "26-704",
       "title": "Receptacles near sinks and wet areas",
-      "text": "A receptacle within 1.5 m of a sink, bathtub or shower stall needs Class A GFCI protection. The exception is a receptacle behind a fixed appliance, such as a clothes washer, that portable appliances cannot reach. A Class A GFCI opens the circuit at a ground-fault current of 6 mA or more, and never below 4 mA.",
+      "text": "A 5-15R or 5-20R receptacle within 1.5 m of a sink, bathtub or shower stall, or outdoors within 2.5 m of finished grade, needs Class A GFCI protection. The exception is a receptacle behind a fixed appliance, such as a clothes washer, that portable appliances cannot reach. A Class A GFCI opens the circuit at a ground-fault current of 6 mA or more, and never below 4 mA.",
       "section": 26,
       "keywords": ["gfci", "ground fault", "sink", "bathroom", "shower", "bathtub"],
       "related": [],
       "isNewInEdition": false
     },
     {
-      "reference": "26-712",
+      "reference": "26-722",
       "title": "Receptacles in dwelling units",
-      "text": "Place dwelling-unit receptacles in finished walls so that every spot along the floor line of usable wall space is within 1.8 m of one. Bathrooms, hallways, laundry and utility rooms, water closets and closets are treated separately.",
+      "text": "Place dwelling-unit receptacles in finished walls so that every spot along the floor line of usable wall space (an unbroken run of 900 mm or more) is within 1.8 m of one. The practical maximum gap between two receptacles is therefore 3.6 m.",
       "section": 26,
       "keywords": ["receptacle spacing", "wall space", "1.8 m", "dwelling"],
-      "related": ["26-712(d)(iii)"],
+      "related": ["26-722(d)(iii)"],
       "isNewInEdition": false
     },
     {
-      "reference": "26-712(d)(iii)",
+      "reference": "26-722(d)(iii)",
       "title": "Receptacles at kitchen counter work surfaces",
       "text": "Behind kitchen counter work surfaces, install split receptacles so that you are never farther than 900 mm, measured along the wall line, from one. Sinks, built-in equipment and isolated work surfaces shorter than 300 mm at the wall line do not count.",
       "section": 26,
       "keywords": ["counter", "split receptacle", "900 mm", "kitchen"],
-      "related": ["26-712"],
+      "related": ["26-722"],
       "isNewInEdition": false
     },
     {
-      "reference": "26-724(f)",
-      "title": "Arc-fault protection in dwelling units",
-      "text": "Branch circuits that supply 125 V receptacles rated 20 A or less in kitchens, family, dining and living rooms, bedrooms, closets, hallways, laundry areas and similar spaces of a dwelling need combination-type AFCI protection. Circuits that already need ground-fault protection (washrooms, kitchen counter work surfaces) and receptacles for refrigeration or sump pumps are exempt.",
-      "section": 26,
-      "keywords": ["afci", "arc fault", "bedroom", "combination type"],
+      "reference": "28-604",
+      "title": "Location of motor disconnecting means",
+      "text": "Install a motor's disconnecting means in sight of the motor and its starter, and within 9 m of them.",
+      "section": 28,
+      "keywords": ["motor", "disconnect", "within sight", "starter"],
       "related": [],
       "isNewInEdition": false
     }

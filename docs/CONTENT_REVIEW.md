@@ -6,7 +6,7 @@ This file deliberately contains no code wording: compare each text in the app wi
 ## What was rewritten
 
 - All 42 violation citation texts (`Assets/_Project/Content/Scenarios/*.json`, `citations[].text`).
-- All 98 reference article texts (`Assets/_Project/StreamingAssets/Codes/nec/articles.json`, `text`).
+- All 98 reference article texts (`Assets/_Project/StreamingAssets/Codes/nec/articles.json`, `text`); 84 remain after the pre-review.
 
 Each new text keeps the facts of the text it replaced (numbers, limits, conditions, which parts of the code
 it points to) in new words, is shorter than the original, and has no run of six or more identical
@@ -24,64 +24,62 @@ uses statutory wording.
    confirm which items were added or changed in it (`isNewInEdition` flags).
 3. **Neutrality of explanation.** Plain language a student can follow; no hidden new rules.
 
-## Suspected reference problems (existing data, not changed here)
+## Reference problems found, and what was done
 
-These came to light while paraphrasing. The reference numbers were left as they were.
+Seven suspected problems were raised while paraphrasing (the swapped `210.11(C)` pair, the swapped motor disconnect
+pair, the `220.44` per-outlet citation, the `210.8(A)` item numbers, the `430.32` percentage, and two doubts about
+spacing and kitchen GFCI). A desk check against public sources (`docs/expert-review/PRE_REVIEW.md`) confirmed all
+seven and found more (408.36 should be 408.54; 220.83's first tier is 8 kVA; the 210.52 hallway and island
+lettering; the dishwasher GFCI rule dates to 2014, not 2026). The confident ones were corrected in the data; the
+worksheets flag each corrected row as "Corrected in pre-review" for the expert to confirm against the 2026 NEC.
+The numbering is verified for the 2020 and 2023 editions only. Doubts that were left unchanged are listed in
+section 11 of the pre-review (the several-motors violation, the 250.24(A) sub-item, the single-rod supplement rule,
+the letter of the 210.12 extensions rule, and the `isNewInEdition` flags).
 
-- `BC-DEDICATED-BATH-001` cites `210.11(C)(1)` and `BC-DEDICATED-KITCHEN-001` cites `210.11(C)(3)`. The
-  descriptions suggest the two references are swapped. The article data is also inconsistent with itself:
-  the `220.52` article points to `210.11(C)(1)` for small-appliance circuits.
-- `COM-DISC-SIGHT-001` (disconnect not in sight) cites `430.110`, and `COM-MOTOR-CTRL-001` (disconnect
-  rating) cites `430.102(B)`. The citation texts describe the other violation, so these also look swapped.
-- `COM-RECPT-LOAD-001` (a per-outlet load amount) cites `220.44`, which is about demand factors; the
-  per-outlet amount is in the `220.14` article.
-- `BC-SPACING-COUNTER-001` (and the wall spacing violation) now measure the distance from the farthest point on the wall line to the nearest receptacle, with scene values and limits per code (`docs/SCENE_DESIGN.md`). Please confirm that is how both codes measure it; the counter scene was redrawn as an 84 in stretch without a receptacle (42 in from the nearest one) because the old 36 in gap was only about 15 mm past the CEC limit.
-- `BC-GFCI-KITCHEN-001` cites `210.8(A)(5)`. Check the numbering of the `210.8(A)` items (kitchen,
-  laundry, bathtub, outdoor) against the 2026 edition; the article data uses `(A)(5)`, `(A)(7)`, `(A)(9)`
-  and `(A)(3)`.
-
-- `COM-MOTOR-OL-001` and the `430.32` text: the existing data says the overload limit is 115 percent for motors
-  with a service factor of 1.15 or more. To the best of my knowledge the NEC gives a higher limit for those motors
-  and 115 percent for the others. Please check this against the edition; the scenario was built on the same figure.
+Spacing: `BC-SPACING-WALL-001` and `BC-SPACING-COUNTER-001` measure the distance from the farthest point on the wall
+line to the nearest receptacle, with scene values and limits per code (`docs/SCENE_DESIGN.md`). Public sources describe
+both codes that way (medium-high); please confirm. The counter scene was redrawn as an 84 in stretch without a
+receptacle (42 in from the nearest one) because the old 36 in gap was only about 15 mm past the CEC limit.
 
 ## Canada (CEC) content, draft
 
 `Assets/_Project/StreamingAssets/Codes/cec/` and the citations marked `"profileId": "cec"` were written from public
-summaries (provincial safety authority bulletins, trade-press guides to the code), not from the code book, and
-explained in our own words. Please check every entry:
+sources (CSA's public C22.1:21 index, provincial safety authority bulletins, trade-press guides), not from the code
+book, and explained in our own words. The pre-review (`docs/expert-review/PRE_REVIEW.md`, sections 6 to 9) found that
+the first draft used older rule numbers, and updated them to **C22.1:24**, the edition the Red Seal exam provides:
+10-700 became 10-102, 26-700 became 26-704, 26-712 became 26-722 (and 26-722(d)(iii) for counters), and 26-724(f)
+became 26-658; 2-308 and 14-104 were already right. Please check every entry:
 
-- **Edition.** Rule numbers move between editions (older editions number the dwelling receptacle rules 26-722; newer ones
-  26-712). The profile says 2024; confirm which edition the Red Seal exam is written against. The AFCI rule (26-724(f))
-  was expanded from bedrooms to most living spaces in a recent edition; confirm it for that edition.
-- **Rules used:** 2-308 (working space, 1 m), 10-700 (grounding electrodes, 3 m rods), 14-104 (overcurrent rating, small
-  conductors), 26-700 (GFCI within 1.5 m of sinks, tubs and showers), 26-712 and 26-712(d)(iii) (dwelling and counter
-  receptacle spacing, 1.8 m and 900 mm), 26-724(f) (AFCI). Sub-item letters were taken from secondary sources.
-- **Violations that apply to the CEC (9 of 42):** the scene facts must break the CEC rule as well as the NEC rule. The
-  14 ft wall gap (limit 3.6 m), the 36 in counter gap (about 915 mm against 900 mm, a narrow margin), the 6 ft ground rod
-  (3 m rods) and the 24 in panel clearance (1 m) were checked against the figures in the summaries.
-- **Not mapped on purpose:** violations whose CEC rule I could not confirm from public sources (GFCI in kitchens and garages,
-  motor rules, grounding and bonding details, service disconnect, panel directory, and others). Rather than guess a rule
-  number, they stay hidden under the CEC until an expert supplies the rule.
-- **Red Seal alignment draft** (`docs/credential-alignment/red-seal-309a-draft.json`, not shipped in the app): the task list and
-  question counts come from the published exam breakdown. Which skills each task exercises, and the weights that follow, are my
-  estimate; please confirm or correct them. The full occupational standard could not be read, so task contents are inferred
-  from their titles.
+- **Edition.** Confirm that the Red Seal exam is written against C22.1:24. The 2018 numbering is uncertain (provincial
+  bulletins disagree), so it is not recorded.
+- **Entries (12) and violations that apply (14 of 42).** The scene facts must break the CEC rule as well as the NEC
+  rule. Five violations were added with public support: motor disconnect (28-604, with its 9 m limit), service
+  disconnect location (6-206), water pipe bonding (10-700), electrode interconnection (10-104) and breaker handle
+  height (26-600, 1.7 m in a dwelling against 6 ft 7 in; the scene was redrawn and has scene values and limits).
+- **Not mapped on purpose (28 violations):** no verified CEC rule, or only the section is known, or the scene would
+  differ materially (reasons in section 7 of the pre-review). They stay hidden under the CEC until the expert supplies
+  the rule.
+- **Tables:** not entered. CSA's tables are copyrighted; they need a licensed copy and written permission.
+- **Red Seal alignment draft** (`docs/credential-alignment/red-seal-309a-draft.json`, not shipped in the app): task
+  numbers, titles and question counts were checked against the occupational standard; the task-to-skill mapping was
+  extended (D-22 and conductor sizing, D-24 and overcurrent protection, B-7 and earthing and bonding). The C-17 link
+  to shock, arc-fault and overcurrent protection is inferred and is the least certain. Please confirm the mapping.
 
 ## Articles not tied to any current violation
 
-Content policy limits content to the app's skill list. The articles below are neither cited by a
-violation nor listed as related to a cited article. Some support the panel sandbox load calculation
-(`220.x`, `230.79`, `210.x`); others belong to skills the app does not have yet (pool, battery, outdoor
-and wet locations, wiring methods). They were paraphrased, not removed. Decide which to keep.
+Content policy limits content to the app's skills. Of the 44 NEC articles that no violation cited, 15 were dropped in
+the pre-review because they need a skill the app lacks (pools, storage batteries, wet-location devices, luminaires,
+overhead clearances) or had doubtful references, and 240.6 (standard breaker ratings) was added. 30 stay
+without a violation: they support the panel sandbox or belong to one of the 11 skills.
 
-`110.14(A)`, `110.14(B)`, `110.3(B)`, `200.6`, `210.3`, `210.8(A)(3)`, `210.8(A)(7)`, `210.8(A)(9)`,
-`210.12(B)`, `210.19(A)`, `210.23`, `210.52(C)(5)`, `210.52(D)`, `210.52(E)(1)`, `210.52(F)`, `210.52(G)`,
-`220.18`, `220.52`, `220.54`, `220.55`, `220.83`, `225.18`, `230.79`, `250.4(A)(5)`, `250.66`, `250.118`,
-`300.4(A)`, `300.5`, `314.16`, `334.30`, `404.2(C)`, `406.4(D)`, `406.9(A)`, `406.9(B)`, `410.10(A)`,
-`430.6(A)(1)`, `480.3`, `480.4`, `480.7`, `680.7`, `680.12`, `680.22(A)(1)`, `680.26`, `680.44`.
+`110.14(A)`, `110.14(B)`, `110.3(B)`, `200.6`, `210.12(B)`, `210.19(A)`, `210.3`, `210.52(C)(2)`, `210.52(D)`, `210.52(E)(1)`, `210.52(G)`, `210.52(H)`, `210.8(A)(10)`, `210.8(A)(3)`, `210.8(A)(9)`, `220.52`, `220.54`, `220.55`, `220.83`, `230.79`, `240.6`, `250.118`, `250.4(A)(5)`, `250.66`, `300.4(A)`, `300.5`, `314.16`, `334.30`, `406.4(D)`, `430.6(A)(1)`
 
-Also open: 13 related-article references point to articles that are not in the data (the logic tests list
-them as warnings).
+`300.4(A)`, `300.5`, `314.16` and `334.30` are wiring-method entries kept as parked content: wiring methods are
+the largest area of the Red Seal exam, but the app has no wiring-methods skill. The owner and expert decide whether
+to add that skill (with an alignment note) or drop them.
+
+The 13 related-article references that pointed at missing entries are resolved (one entry added, the other links
+removed), so the logic tests no longer warn about them.
 
 ## Not covered by this pass
 

@@ -305,7 +305,7 @@ namespace NECInspector.PanelSandbox
             bool withinLimit = usedSlots <= totalSlots;
 
             return new ComplianceResult(
-                "RULE-09", "Panel Spaces", Ref(tables, "RULE-09", "408.36"),
+                "RULE-09", "Panel Spaces", Ref(tables, "RULE-09", "408.54"),
                 withinLimit,
                 withinLimit
                     ? $"Using {usedSlots} of {totalSlots} panel spaces."
