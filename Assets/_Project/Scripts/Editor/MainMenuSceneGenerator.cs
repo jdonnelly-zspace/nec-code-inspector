@@ -115,6 +115,8 @@ namespace NECInspector.Editor
             var listContent = CodePickerSceneSetup.NewUI("ScenarioListContent", scenarios);
             CodePickerSceneSetup.Anchor(listContent, new Vector2(0.05f, 0.18f), new Vector2(0.95f, 0.95f));
             ConfigureStack(listContent.gameObject.AddComponent<VerticalLayoutGroup>(), 12, 0);
+            var noScenarios = Label("NoScenariosText", scenarios, "", 26, TextAlignmentOptions.TopLeft, 0.62f, 0.95f);
+            noScenarios.color = new Color(1f, 0.85f, 0.5f);
             BackButton(scenarios, menu);
 
             var detail = Panel("ScenarioDetailPanel", root, 0.5f, 0.05f, 0.95f, 0.75f);
@@ -154,6 +156,7 @@ namespace NECInspector.Editor
             Set(so, "_scenarioListContent", listContent);
             Set(so, "_scenarioListItemPrefab", itemPrefab);
             Set(so, "_scenarioCatalog", AssetDatabase.LoadAssetAtPath<ScenarioCatalogSO>(CATALOG_PATH));
+            Set(so, "_noScenariosText", noScenarios);
             Set(so, "_scenarioDetailPanel", detail.gameObject);
             Set(so, "_scenarioTitle", detailTitle);
             Set(so, "_scenarioDescription", detailDesc);
