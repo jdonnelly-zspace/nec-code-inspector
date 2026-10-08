@@ -11,6 +11,7 @@ namespace NECInspector.Editor
         private struct ViolationData
         {
             public string violationId;
+            public string conceptId;
             public string description;
             public string necArticle;
             public string necArticleText;
@@ -29,6 +30,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "BC-GFCI-BATH-001",
+                conceptId = ConceptIds.ShockProtection,
                 description = "Standard receptacle at bathroom sink without GFCI protection",
                 necArticle = "210.8(A)(1)",
                 necArticleText = "All 125-volt through 250-volt receptacles in bathrooms of dwelling units shall have GFCI protection.",
@@ -43,6 +45,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "BC-GFCI-KITCHEN-001",
+                conceptId = ConceptIds.ShockProtection,
                 description = "Kitchen countertop receptacle lacks GFCI protection",
                 necArticle = "210.8(A)(5)",
                 necArticleText = "All 125-volt through 250-volt receptacles that serve countertop surfaces in kitchens of dwelling units shall have GFCI protection.",
@@ -57,6 +60,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "BC-GFCI-GARAGE-001",
+                conceptId = ConceptIds.ShockProtection,
                 description = "Garage receptacle without GFCI protection",
                 necArticle = "210.8(A)(2)",
                 necArticleText = "All 125-volt through 250-volt receptacles in garages and accessory buildings with floors at or below grade level shall have GFCI protection.",
@@ -71,6 +75,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "BC-SPACING-WALL-001",
+                conceptId = ConceptIds.BranchCircuitRequirements,
                 description = "Wall receptacles spaced 14 feet apart, exceeding 12-foot maximum",
                 necArticle = "210.52(A)",
                 necArticleText = "Receptacle outlets shall be installed so that no point measured horizontally along the floor line of any wall space is more than 6 feet from a receptacle outlet.",
@@ -85,6 +90,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "BC-WIRE-14AWG-001",
+                conceptId = ConceptIds.OvercurrentProtection,
                 description = "14 AWG conductor connected to a 20-ampere breaker",
                 necArticle = "240.4(D)",
                 necArticleText = "The overcurrent protection shall not exceed 15 amperes for 14 AWG, 20 amperes for 12 AWG, and 30 amperes for 10 AWG copper.",
@@ -101,6 +107,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "BC-AFCI-BEDROOM-001",
+                conceptId = ConceptIds.ArcFaultProtection,
                 description = "Bedroom branch circuit protected by standard breaker instead of AFCI",
                 necArticle = "210.12(A)",
                 necArticleText = "All 120-volt, single-phase, 15- and 20-ampere branch circuits supplying outlets and devices installed in dwelling unit kitchens, family rooms, dining rooms, living rooms, parlors, libraries, dens, bedrooms, sunrooms, recreation rooms, closets, hallways, laundry areas, and similar rooms or areas shall be protected by any of the means described in 210.12(A)(1) through (A)(6).",
@@ -115,6 +122,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "BC-AFCI-LIVING-001",
+                conceptId = ConceptIds.ArcFaultProtection,
                 description = "Living room branch circuit missing AFCI protection at panel",
                 necArticle = "210.12(A)",
                 necArticleText = "All 120-volt, single-phase, 15- and 20-ampere branch circuits supplying outlets and devices installed in dwelling unit kitchens, family rooms, dining rooms, living rooms, parlors, libraries, dens, bedrooms, sunrooms, recreation rooms, closets, hallways, laundry areas, and similar rooms or areas shall be protected by any of the means described in 210.12(A)(1) through (A)(6).",
@@ -129,6 +137,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "BC-SPACING-COUNTER-001",
+                conceptId = ConceptIds.BranchCircuitRequirements,
                 description = "Kitchen countertop gap exceeds 24-inch receptacle spacing rule",
                 necArticle = "210.52(C)",
                 necArticleText = "Receptacle outlets for countertop spaces shall be installed so that no point along the wall line is more than 24 inches measured horizontally from a receptacle outlet in that space.",
@@ -143,6 +152,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "BC-DEDICATED-BATH-001",
+                conceptId = ConceptIds.BranchCircuitRequirements,
                 description = "Bathroom receptacle circuit shared with hallway, not a dedicated branch circuit",
                 necArticle = "210.11(C)(1)",
                 necArticleText = "At least one 120-volt, 20-ampere branch circuit shall be provided to supply bathroom receptacle outlet(s).",
@@ -157,6 +167,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "BC-DEDICATED-KITCHEN-001",
+                conceptId = ConceptIds.BranchCircuitRequirements,
                 description = "Only one small-appliance branch circuit serving kitchen instead of required two",
                 necArticle = "210.11(C)(3)",
                 necArticleText = "Two or more 20-ampere small-appliance branch circuits shall be provided for kitchen receptacle outlets.",
@@ -173,6 +184,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "BC-WIRE-KITCHEN-001",
+                conceptId = ConceptIds.ConductorSizing,
                 description = "Four NM cables bundled through single stud hole without ampacity derate",
                 necArticle = "334.80",
                 necArticleText = "Where more than two NM cables containing two or more current-carrying conductors are installed through the same opening in wood framing without maintaining spacing, the ampacity of each conductor shall be adjusted in accordance with Table 310.15(C)(1).",
@@ -187,6 +199,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "BC-GFCI-DISHWASHER-001",
+                conceptId = ConceptIds.ShockProtection,
                 description = "Dishwasher branch circuit lacks GFCI protection per 2026 NEC requirement",
                 necArticle = "210.8(D)",
                 necArticleText = "GFCI protection shall be provided for dishwashers in dwelling unit locations. The branch circuit supplying the dishwasher shall be protected by a listed GFCI device.",
@@ -237,6 +250,7 @@ namespace NECInspector.Editor
                     }
 
                     asset.violationId = data.violationId;
+                    asset.conceptId = data.conceptId;
                     asset.description = data.description;
                     asset.necArticle = data.necArticle;
                     asset.necArticleText = data.necArticleText;

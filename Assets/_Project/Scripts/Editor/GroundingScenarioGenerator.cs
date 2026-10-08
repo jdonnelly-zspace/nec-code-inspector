@@ -10,6 +10,7 @@ namespace NECInspector.Editor
         private struct ViolationData
         {
             public string violationId;
+            public string conceptId;
             public string description;
             public string necArticle;
             public string necArticleText;
@@ -28,6 +29,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "GND-ELECTRODE-001",
+                conceptId = ConceptIds.EarthingBonding,
                 description = "Ground rod not meeting minimum 8-foot length requirement",
                 necArticle = "250.52(A)(5)",
                 necArticleText = "Rod-type grounding electrodes of stainless steel, copper, or zinc coated steel shall be at least 8 feet in length and 5/8 inch in diameter.",
@@ -42,6 +44,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "GND-GEC-001",
+                conceptId = ConceptIds.EarthingBonding,
                 description = "Grounding electrode conductor not connected to service equipment",
                 necArticle = "250.24(A)(1)",
                 necArticleText = "A grounding electrode conductor shall be used to connect the equipment grounding conductors, the service-equipment enclosures, and, where the system is grounded, the grounded conductor to the grounding electrode(s).",
@@ -56,6 +59,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "GND-BOND-WATER-001",
+                conceptId = ConceptIds.EarthingBonding,
                 description = "Metal water piping not bonded to grounding system",
                 necArticle = "250.104(A)",
                 necArticleText = "The metal water piping system shall be bonded to the service equipment enclosure, the grounded conductor at the service, the grounding electrode conductor where of sufficient size, or to the one or more grounding electrodes used.",
@@ -70,6 +74,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "GND-EGC-SIZE-001",
+                conceptId = ConceptIds.EarthingBonding,
                 description = "Equipment grounding conductor undersized for circuit",
                 necArticle = "250.122",
                 necArticleText = "Equipment grounding conductors of the wire type shall not be smaller than shown in Table 250.122.",
@@ -86,6 +91,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "GND-ELECTRODE-SYS-001",
+                conceptId = ConceptIds.EarthingBonding,
                 description = "Multiple grounding electrodes present but not bonded together",
                 necArticle = "250.50",
                 necArticleText = "All grounding electrodes as described in 250.52(A)(1) through (A)(7) that are present at each building or structure served shall be bonded together to form the grounding electrode system.",
@@ -100,6 +106,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "GND-SYSTEM-001",
+                conceptId = ConceptIds.EarthingBonding,
                 description = "Electrical system grounding does not limit voltage from lightning or surges",
                 necArticle = "250.4(A)(1)",
                 necArticleText = "Electrical systems that are grounded shall be connected to earth in a manner that will limit the voltage imposed by lightning, line surges, or unintentional contact with higher-voltage lines and that will stabilize the voltage to earth during normal operation.",
@@ -114,6 +121,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "GND-GEC-ALUM-001",
+                conceptId = ConceptIds.EarthingBonding,
                 description = "Bare aluminum grounding electrode conductor in contact with earth",
                 necArticle = "250.64(A)",
                 necArticleText = "Bare aluminum or copper-clad aluminum grounding electrode conductors shall not be used where in direct contact with masonry or the earth or where subject to corrosive conditions.",
@@ -128,6 +136,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "GND-WATERPIPE-001",
+                conceptId = ConceptIds.EarthingBonding,
                 description = "Water pipe electrode not meeting 10-foot earth contact requirement",
                 necArticle = "250.52(A)(1)",
                 necArticleText = "A metal underground water pipe in direct contact with the earth for 10 feet or more, including any metal well casing that is bonded to the pipe and that is in direct contact with the earth.",
@@ -144,6 +153,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "GND-INTERSYSTEM-001",
+                conceptId = ConceptIds.EarthingBonding,
                 description = "Missing intersystem bonding termination for communications grounding",
                 necArticle = "250.94",
                 necArticleText = "An intersystem bonding termination shall be provided external to enclosures at the service equipment or metering equipment enclosure and at the disconnecting means for any additional buildings or structures.",
@@ -158,6 +168,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "GND-SUPPLEMENT-001",
+                conceptId = ConceptIds.EarthingBonding,
                 description = "Single ground rod used as sole electrode without supplemental electrode",
                 necArticle = "250.53(A)(2)",
                 necArticleText = "A single rod, pipe, or plate electrode shall be supplemented by an additional electrode. The supplemental electrode shall be bonded to one of the following: the rod, pipe, or plate electrode, the grounding electrode conductor, the grounded service-entrance conductor, or the service equipment enclosure.",
@@ -203,6 +214,7 @@ namespace NECInspector.Editor
                     }
 
                     asset.violationId = data.violationId;
+                    asset.conceptId = data.conceptId;
                     asset.description = data.description;
                     asset.necArticle = data.necArticle;
                     asset.necArticleText = data.necArticleText;

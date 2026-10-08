@@ -10,6 +10,7 @@ namespace NECInspector.Editor
         private struct ViolationData
         {
             public string violationId;
+            public string conceptId;
             public string description;
             public string necArticle;
             public string necArticleText;
@@ -28,6 +29,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "COM-MOTOR-OCPD-001",
+                conceptId = ConceptIds.OvercurrentProtection,
                 description = "Motor branch circuit overcurrent protection device exceeds Table 430.52 maximum",
                 necArticle = "430.52",
                 necArticleText = "The motor branch-circuit short-circuit and ground-fault protective device shall comply with the percentages listed in Table 430.52 and shall not exceed the maximum value resulting from application of Table 430.52.",
@@ -42,6 +44,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "COM-MOTOR-WIRE-001",
+                conceptId = ConceptIds.ConductorSizing,
                 description = "Motor branch circuit conductors undersized — not 125% of motor full-load current",
                 necArticle = "430.22",
                 necArticleText = "Conductors supplying a single motor used in a continuous duty application shall have an ampacity of not less than 125 percent of the motor full-load current rating as determined by 430.6(A)(1).",
@@ -56,6 +59,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "COM-DISC-SIGHT-001",
+                conceptId = ConceptIds.DisconnectingMeans,
                 description = "Motor disconnect is not within sight of the motor controller",
                 necArticle = "430.110",
                 necArticleText = "The disconnecting means for motor circuits rated 600 volts nominal or less shall have an ampere rating not less than 115 percent of the full-load current rating of the motor.",
@@ -70,6 +74,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "COM-MOTOR-OL-001",
+                conceptId = ConceptIds.OvercurrentProtection,
                 description = "Motor overload protection exceeds 115% of nameplate full-load amperes",
                 necArticle = "430.32",
                 necArticleText = "Each continuous-duty motor rated more than 1 hp shall be protected against overload by a separate overload device that is responsive to motor current. This device shall be selected to trip or shall be rated at not more than 115 percent of the motor nameplate full-load current rating for motors marked with a service factor not less than 1.15.",
@@ -86,6 +91,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "COM-LOAD-CALC-001",
+                conceptId = ConceptIds.LoadCalculation,
                 description = "Calculated service load does not account for all connected loads",
                 necArticle = "220.40",
                 necArticleText = "The calculated load of a feeder or service shall not be less than the sum of the loads on the branch circuits supplied, as determined by Part II of this article, after any applicable demand factors permitted by Parts III or IV or V have been applied.",
@@ -100,6 +106,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "COM-FEEDER-SIZE-001",
+                conceptId = ConceptIds.ConductorSizing,
                 description = "Feeder conductor undersized for the calculated load it serves",
                 necArticle = "215.2",
                 necArticleText = "Feeder conductors shall have an ampacity not less than required to supply the load as calculated in Parts III, IV, and V of Article 220.",
@@ -114,6 +121,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "COM-RECPT-LOAD-001",
+                conceptId = ConceptIds.LoadCalculation,
                 description = "Receptacle outlets not calculated at minimum 180 VA per outlet",
                 necArticle = "220.44",
                 necArticleText = "Receptacle loads calculated in accordance with 220.14 shall be permitted to be made subject to the demand factors given in Table 220.44.",
@@ -128,6 +136,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "COM-MOTOR-GND-001",
+                conceptId = ConceptIds.EarthingBonding,
                 description = "Equipment grounding conductor undersized for the motor branch circuit OCPD",
                 necArticle = "250.122",
                 necArticleText = "Equipment grounding conductors shall not be smaller than shown in Table 250.122 based on the rating or setting of the overcurrent device protecting the circuit conductors.",
@@ -144,6 +153,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "COM-MULTI-MOTOR-001",
+                conceptId = ConceptIds.OvercurrentProtection,
                 description = "Multiple motors on a single branch circuit without proper overcurrent protection sizing",
                 necArticle = "430.24",
                 necArticleText = "Conductors supplying several motors, or a motor(s) and other load(s), shall have an ampacity not less than 125 percent of the full-load current rating of the highest rated motor plus the sum of the full-load current ratings of all the other motors in the group.",
@@ -158,6 +168,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "COM-MOTOR-CTRL-001",
+                conceptId = ConceptIds.DisconnectingMeans,
                 description = "Motor controller disconnect not rated for locked-rotor current",
                 necArticle = "430.102(B)",
                 necArticleText = "A disconnecting means shall be located in sight from the motor location and the driven machinery location. The disconnecting means shall disconnect the motor and the controller from all ungrounded supply conductors.",
@@ -172,6 +183,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "COM-MOTOR-MARK-001",
+                conceptId = ConceptIds.IdentificationMarking,
                 description = "Motor nameplate data missing or illegible",
                 necArticle = "430.7",
                 necArticleText = "A motor shall be marked with the manufacturer's name, rated volts, rated frequency, number of phases, rated full-load current, rated temperature rise or insulation system class and rated ambient temperature, time rating, rated horsepower, locked-rotor code letter.",
@@ -186,6 +198,7 @@ namespace NECInspector.Editor
             new ViolationData
             {
                 violationId = "COM-FEEDER-TAP-001",
+                conceptId = ConceptIds.OvercurrentProtection,
                 description = "Feeder tap conductor does not meet the 10-foot tap rule requirements",
                 necArticle = "240.21(B)(1)",
                 necArticleText = "Conductors shall be permitted to be tapped, without overcurrent protection at the tap, to a feeder where: the length of the tap conductors does not exceed 3.0 m (10 ft), the ampacity of the tap conductors is not less than the combined calculated loads on the circuits supplied by the tap conductors, and the tap conductors are enclosed in a raceway.",
@@ -235,6 +248,7 @@ namespace NECInspector.Editor
                     }
 
                     asset.violationId = data.violationId;
+                    asset.conceptId = data.conceptId;
                     asset.description = data.description;
                     asset.necArticle = data.necArticle;
                     asset.necArticleText = data.necArticleText;
