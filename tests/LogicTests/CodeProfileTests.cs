@@ -66,6 +66,8 @@ namespace NECInspector.LogicTests
             public string ProfileId { get; }
             public string DisplayName => ProfileId;
             public string Edition => "test";
+            public string Region => "US";
+            public string ReviewStatus => "draft";
             public bool IsLoaded => true;
             public int ArticleCount => 0;
             public bool HasOwnTables => true;

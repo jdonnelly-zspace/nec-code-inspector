@@ -33,7 +33,7 @@ Status key: `[x]` done and merged, `[~]` built and in review (PR open), `[ ]` no
 - [x] Credentials removed from the app (decision: it is a skill-based app that helps people get the credential). Deleted credential profiles, readiness, deferred requirements and the credential files; progress is per skill and the student's chosen installation code is stored in the progress file and applied at startup. Alignment notes live outside the app in `docs/credential-alignment/` (this branch)
 - [~] Certificates are earned from skills (`requiredSkills` + `requiredTier`) instead of NEC chapters; the dead chapter-mastery code is removed; the dashboard shows skill mastery
 - [ ] Alignment notes outside the app for other credentials (NCCER Electrical, ...), drafted in our own words and reviewed by a credential expert; the Red Seal 309A draft is in `docs/credential-alignment/`
-- [~] The student's chosen installation code is stored in the progress file and applied at startup (`ProgressManager.SetActiveCodeProfile`). A picker screen is still missing
+- [~] The student's chosen installation code is stored in the progress file and applied at startup (`ProgressManager.SetActiveCodeProfile`). The picker screen is built (`CodeProfilePickerPanel`, see Phase D); it still has to be wired into the main menu scene in the Unity Editor
 - [ ] Finer skill taxonomy: the 11 concepts are the skills for now; motors or hazardous locations may need sub-skills (each new skill needs a documented reason in `docs/credential-alignment/`)
 - [ ] An alignment report outside the app: read the progress file (mastery per skill and tier) against an alignment file and show what is left to learn
 - [ ] Update `docs/CREDENTIAL_FRAMEWORK.md` (PR #1): progress is per skill, and credentials are not part of the app
@@ -61,7 +61,7 @@ Status key: `[x]` done and merged, `[~]` built and in review (PR open), `[ ]` no
 - [ ] CEC tables (conductor ampacities, demand factors) so the panel sandbox can count toward the CEC; the sandbox is gated by `HasOwnTables` until then
 - [ ] Confirm the Red Seal task-to-skill mapping and weights in `docs/credential-alignment/` with a credential expert; read the full 309A occupational standard (the PDF could not be read here, only the exam breakdown page)
 - [ ] CSA licensing check before shipping CEC content (see Phase F)
-- [ ] Code picker in the UI: choose the installation code (NEC, CEC, ...); `ProgressManager.SetActiveCodeProfile` exists, there is no screen to call it
+- [~] Code picker in the UI: `CodeProfilePickerPanel` lists the loaded codes with their review status, scenario coverage and a sandbox note, applies the choice at once and saves it; `MainMenuPanel` has `ShowCodePicker()`, an optional `_activeCodeText` label, and refreshes the scenario list and difficulty text when the code changes. Choice wording is tested without Unity (`CodeProfileChoices`). **Needs Unity Editor work** (see Alpha, Active)
 
 Defects found in the abstraction while adding Canada (all fixed here unless noted):
 - The NEC was a C# class, so a second code needed code. Fixed once: `DataCodeProfile` and `CodeProfileLibrary` load any folder under `StreamingAssets/Codes/`; the NEC data moved to `Codes/nec/` and is loaded the same way
@@ -110,6 +110,7 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - [ ] Wire Quick Reference Cards to inspection HUD
 - [ ] Certificate UI panel visual design
 - [ ] Audio clips (SFX, ambient)
+- [ ] Wire the code picker into the main menu scene: add a `CodeProfilePickerPanel` (world-space canvas) with a list content transform, a list item prefab (Button + TMP text, same as the scenario list item), a current-code label, a detail label, a close button and the `ScenarioCatalog`; assign it to `MainMenuPanel._codePickerPanel`; add a mode-selection button that calls `MainMenuPanel.ShowCodePicker()`; optionally assign `_activeCodeText`
 - [ ] Performance testing on zSpace hardware + Windows build
 
 ### Next: Alpha Content

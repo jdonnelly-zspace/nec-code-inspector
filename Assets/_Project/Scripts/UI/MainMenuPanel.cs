@@ -39,6 +39,10 @@ namespace NECInspector.UI
         [SerializeField] private GameObject _difficultyPanel;
         [SerializeField] private TextMeshProUGUI _difficultyDescription;
 
+        [Header("Installation Code")]
+        [SerializeField] private CodeProfilePickerPanel _codePickerPanel;
+        [SerializeField] private TextMeshProUGUI _activeCodeText;   // optional: shows the code in use on the menu
+
         [Header("Settings")]
         [SerializeField] private GameObject _settingsPanel;
         [SerializeField] private UnityEngine.UI.Slider _masterVolumeSlider;
@@ -48,9 +52,20 @@ namespace NECInspector.UI
 
         private ScenarioDefinitionSO _selectedScenario;
 
+        private void OnEnable()
+        {
+            CodeProfiles.ActiveChanged += RefreshForActiveCode;
+        }
+
+        private void OnDisable()
+        {
+            CodeProfiles.ActiveChanged -= RefreshForActiveCode;
+        }
+
         private void Start()
         {
             ShowModeSelection();
+            UpdateActiveCodeText();
 
             if (_masterVolumeSlider != null)
                 _masterVolumeSlider.onValueChanged.AddListener(v => { if (AudioManager.Instance != null) AudioManager.Instance.MasterVolume = v; });
@@ -96,6 +111,13 @@ namespace NECInspector.UI
         {
             HideAllPanels();
             // Progress dashboard is shown in-scene via ProgressDashboardPanel
+        }
+
+        public void ShowCodePicker()
+        {
+            HideAllPanels();
+            AudioManager.Instance?.PlayButtonClick();
+            if (_codePickerPanel != null) _codePickerPanel.Show();
         }
 
         public void ShowSettings()
@@ -234,8 +256,26 @@ namespace NECInspector.UI
 
         #region Helpers
 
+        // The installation code decides which scenarios apply and how references are worded
+        private void RefreshForActiveCode()
+        {
+            UpdateActiveCodeText();
+
+            if (_scenarioSelectionPanel != null && _scenarioSelectionPanel.activeSelf)
+                PopulateScenarioList();
+            if (_difficultyPanel != null && _difficultyPanel.activeSelf)
+                UpdateDifficultyDisplay();
+        }
+
+        private void UpdateActiveCodeText()
+        {
+            var profile = CodeProfiles.Active;
+            SetText(_activeCodeText, profile != null ? $"Code: {profile.DisplayName} {profile.Edition}" : "");
+        }
+
         private void HideAllPanels()
         {
+            if (_codePickerPanel != null) _codePickerPanel.Hide();
             SetActive(_modeSelectionPanel, false);
             SetActive(_scenarioSelectionPanel, false);
             SetActive(_scenarioDetailPanel, false);

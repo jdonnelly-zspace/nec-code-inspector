@@ -35,6 +35,7 @@ namespace NECInspector.Codes
         public string ProfileId => _manifest.id;
         public string DisplayName => _manifest.displayName;
         public string Edition => _manifest.edition;
+        public string Region => _manifest.region;
         public string ReviewStatus => _manifest.reviewStatus;
         public bool IsLoaded => true;
         public int ArticleCount => _articles.Count;

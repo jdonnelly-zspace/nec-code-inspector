@@ -84,21 +84,30 @@ namespace NECInspector.Codes
             }
         }
 
+        /// <summary>Raised when the active profile changes, so screens can refresh.</summary>
+        public static event System.Action ActiveChanged;
+
         public static void SetActive(ICodeProfile profile)
         {
+            if (ReferenceEquals(_active, profile)) return;
+
             _active = profile;
+            ActiveChanged?.Invoke();
         }
 
         public static void Clear(ICodeProfile profile)
         {
-            if (ReferenceEquals(_active, profile))
-                _active = null;
+            if (!ReferenceEquals(_active, profile)) return;
+
+            _active = null;
+            ActiveChanged?.Invoke();
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void ResetOnLoad()
         {
             _active = null;
+            ActiveChanged = null;   // handlers from a previous play session must not survive
         }
     }
 }
