@@ -23,6 +23,17 @@ by the app or included in a build.
   (`nec_progress.json` in the app's data folder) records mastery per skill and tier, so any alignment
   file can be read against it.
 
+## Reading a student's progress against an alignment file
+
+```bash
+python tools/alignment-report/report.py PATH/TO/nec_progress.json docs/credential-alignment/red-seal-309a-draft.json
+```
+
+The report lists, by weight, which skills the student has attained at the required tier, which the app can
+still teach under the credential's installation code, and which are waiting on content. It also flags an
+alignment file whose `deferred` flags no longer match the scenario content. The tool lives outside the app
+(`tools/alignment-report`) and has its own tests, run in CI.
+
 ## Adding another credential
 
 Write an alignment file in this folder in your own words from the issuing body's published outline,
