@@ -63,14 +63,21 @@ namespace NECInspector.Codes
         }
 
         /// <summary>
-        /// Replaces {code} with the code name and {term:key} with that code's word for the term.
+        /// Replaces {code} with the code name, {term:key} with that code's word for the term, and
+        /// {Term:key} with the same word starting with a capital letter (for the start of a name or sentence).
         /// </summary>
         public string Format(string text)
         {
             if (string.IsNullOrEmpty(text)) return text;
 
             string result = text.Replace("{code}", codeName);
-            return Regex.Replace(result, @"\{term:([A-Za-z0-9-]+)\}", match => Term(match.Groups[1].Value));
+            return Regex.Replace(result, @"\{(term|Term):([A-Za-z0-9-]+)\}", match =>
+            {
+                string word = Term(match.Groups[2].Value);
+                return match.Groups[1].Value == "Term" && word.Length > 0
+                    ? char.ToUpperInvariant(word[0]) + word.Substring(1)
+                    : word;
+            });
         }
 
         /// <summary>

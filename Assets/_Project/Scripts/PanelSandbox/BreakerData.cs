@@ -14,20 +14,23 @@ namespace NECInspector.PanelSandbox
         public bool isDualFunction;    // Combined GFCI + AFCI
         public string wireGauge;       // Expected wire gauge, e.g., "12 AWG"
 
-        public string DisplayName => $"{ampRating}A {PoleLabel}{ProtectionLabel}";
+        /// <summary>Label with the NEC words for the protection kinds (GFCI, AFCI).</summary>
+        public string DisplayName => GetDisplayName(null);
 
-        private string PoleLabel => poleCount == 2 ? "2P " : "";
-
-        private string ProtectionLabel
+        /// <summary>Label with the code's own words for the protection kinds (for example RCD and AFDD).</summary>
+        public string GetDisplayName(CodeTerminology terms)
         {
-            get
-            {
-                if (isDualFunction) return " DF";
-                if (isGFCI && isAFCI) return " GFCI/AFCI";
-                if (isGFCI) return " GFCI";
-                if (isAFCI) return " AFCI";
-                return "";
-            }
+            terms = terms ?? CodeTerminology.CreateNecDefaults();
+            string gfci = terms.Term("shock-protection-device");
+            string afci = terms.Term("arc-fault-device");
+
+            string protection = "";
+            if (isDualFunction) protection = " DF";
+            else if (isGFCI && isAFCI) protection = $" {gfci}/{afci}";
+            else if (isGFCI) protection = $" {gfci}";
+            else if (isAFCI) protection = $" {afci}";
+
+            return $"{ampRating}A {(poleCount == 2 ? "2P " : "")}{protection}";
         }
 
         public bool SatisfiesGFCI => isGFCI || isDualFunction;
