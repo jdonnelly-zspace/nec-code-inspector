@@ -72,7 +72,7 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - Facts differ between codes (GFCI scope, rod length and count, spacing limits), so a scene must break the rule under every code it is offered for, or be shown to one code only. Rules accepted in `docs/SCENE_DESIGN.md` (margin, pass-both, split when incompatible, SI units, automatic check). Done: measured values, limits and the logic test for the four single-number violations (wall and counter spacing, ground rod, working space), and the counter gap violation redone (`SceneFacts`). Still to do: shared violations whose rules are tables or scope (wire sizes, GFCI/AFCI areas)
 
 ### Phase E - Hard problems (decide early)
-- [~] Decision: region-specific scene art and prefab variants: accepted in `docs/SCENE_DESIGN.md` (one art set per region group, North American set first, other groups blocked until a second code is committed). Done: `artSet` in `profile.json` with validation (`ArtSets`). Still to do: hide scenes in the menu and picker under codes whose art set is not available, and the art itself
+- [~] Decision: region-specific scene art and prefab variants: accepted in `docs/SCENE_DESIGN.md` (one art set per region group, North American set first, other groups blocked until a second code is committed). Done: `artSet` in `profile.json` with validation (`ArtSets`). Done: the menu and the picker offer no scenarios under a code whose art set has no art (`ArtSets.IsAvailable`). Still to do: the art itself
 - [ ] Generalize or add a panel sandbox model beyond split-phase US panels (UK consumer units with RCD/RCBO, 230 V single phase)
 - [ ] Pluggable compliance rule sets per profile (rule logic is still in C#; only numbers, citations and on/off are data)
 
@@ -111,6 +111,7 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - [ ] Certificate UI panel visual design
 - [ ] Audio clips (SFX, ambient)
 - [~] Main menu scene: `NEC Inspector > Scene Setup > Generate Main Menu Scene` (`MainMenuSceneGenerator`) builds and saves `Scenes/MainMenu/MainMenu.unity` (mode, scenario, difficulty, settings panels, wired to `MainMenuPanel`) and adds the code picker with `CodePickerSceneSetup`. The scene file does not exist until someone runs it in the Unity Editor; then add a ZCamera rig, check the layout for stylus/stereo, add the scene to Build Settings, and commit the `.unity` file. Neither editor tool has been compiled in Unity yet. Progress dashboard and reference panels are not in the menu scene yet
+- [ ] Main menu: explain an empty scenario list. Under a code whose art set has no art, `MainMenuPanel` lists no scenarios and shows no reason (only the code picker explains it). Add an optional message field to `MainMenuPanel` (for example "Scenarios are not available for this code yet") and show it when the list is empty
 - [ ] Performance testing on zSpace hardware + Windows build
 
 ### Next: Alpha Content

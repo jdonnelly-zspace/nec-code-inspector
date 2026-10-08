@@ -19,6 +19,7 @@ namespace NECInspector.Codes
         public bool hasOwnTables;
         public int availableScenarios;
         public int totalScenarios;
+        public bool artAvailable = true;   // false when no art exists for the code's art set (see ArtSets)
 
         public string Label => $"{displayName} {edition}" + (isActive ? "  (current)" : "");
 
@@ -40,6 +41,7 @@ namespace NECInspector.Codes
         {
             get
             {
+                if (!artAvailable) return "Scenarios not available for this code yet: no scene art for its region";
                 if (totalScenarios <= 0) return "";
                 if (availableScenarios >= totalScenarios) return $"All {totalScenarios} scenarios available";
                 if (availableScenarios <= 0) return "No scenarios available yet";
@@ -68,7 +70,8 @@ namespace NECInspector.Codes
     {
         /// <summary>
         /// Choices for every loaded profile: the default code first, then the rest by name.
-        /// availableScenarios tells how many scenarios apply to a profile.
+        /// availableScenarios tells how many scenarios apply to a profile; it is not used (zero) for a
+        /// profile whose art set has no art.
         /// </summary>
         public static List<CodeProfileChoice> Build(IEnumerable<ICodeProfile> profiles, string activeId,
             Func<string, int> availableScenarios, int totalScenarios)
@@ -78,6 +81,9 @@ namespace NECInspector.Codes
 
             foreach (var profile in profiles)
             {
+                // Scenes are only offered under codes whose art exists (docs/SCENE_DESIGN.md)
+                bool art = ArtSets.IsAvailable(profile.ArtSet);
+
                 choices.Add(new CodeProfileChoice
                 {
                     id = profile.ProfileId,
@@ -87,8 +93,9 @@ namespace NECInspector.Codes
                     reviewStatus = profile.ReviewStatus,
                     isActive = profile.ProfileId == activeId,
                     hasOwnTables = profile.HasOwnTables,
-                    availableScenarios = availableScenarios != null ? availableScenarios(profile.ProfileId) : 0,
-                    totalScenarios = totalScenarios
+                    availableScenarios = art && availableScenarios != null ? availableScenarios(profile.ProfileId) : 0,
+                    totalScenarios = totalScenarios,
+                    artAvailable = art
                 });
             }
 

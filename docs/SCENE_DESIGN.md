@@ -58,7 +58,8 @@ Both spacing violations measure the distance from the farthest point on the wall
 
 - `artSet` in `profile.json` (`nec` and `cec` use `north-america`). The validator requires a plain lower-case name; `ArtSets.IsAvailable` says whether art exists for it, and a test requires every shipped profile to use an available set. A profile may name a set whose art is not built yet, which keeps a draft code loadable.
 
+- Scenes are blocked under a code whose art set has no art: the main menu lists no scenarios for it, and the code picker shows "Scenarios not available for this code yet: no scene art for its region" with zero counted. Studying the code's references still works.
+
 Still to do:
-- Block scenes under a code whose art set is not available (the menu and the picker do not check `ArtSets.IsAvailable` yet).
 - Facts for the remaining shared violations whose rules are tables or scope (wire sizes and breaker ratings, GFCI and AFCI areas). They have no single number, so they need a different kind of check.
 - The scenes and art themselves.

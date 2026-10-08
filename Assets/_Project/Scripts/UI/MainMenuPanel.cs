@@ -136,6 +136,9 @@ namespace NECInspector.UI
             ClearContent(_scenarioListContent);
             if (_scenarioCatalog == null) return;
 
+            // No scenario is offered under a code whose scene art does not exist yet (see ArtSets)
+            if (!ArtSets.IsAvailable(CodeProfiles.Active?.ArtSet)) return;
+
             string profileId = CodeProfiles.ActiveId;
             foreach (var scenario in _scenarioCatalog.scenarios)
             {
