@@ -34,7 +34,7 @@ Unity 6.3 LTS + zCore 6.3. Target: Windows 11 on zSpace Inspire 2.
 
 - Private fields: `_camelCase` with underscore prefix
 - ScriptableObjects: PascalCase with SO suffix (`ScenarioDefinitionSO.cs`)
-- Constants: UPPER_SNAKE_CASE
+- Constants: private and local constants are UPPER_SNAKE_CASE (`SCENE_PATH`); public constants and static data are PascalCase (`ConceptIds.ShockProtection`, `ArtSets.NorthAmerica`)
 - All code under `Assets/_Project/Scripts/` by domain. One class per file, filename = class name.
 
 ## Performance Targets

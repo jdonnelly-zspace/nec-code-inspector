@@ -55,7 +55,7 @@ Status key: `[x]` done and merged into the stack branch, `[~]` built and in revi
 - [~] Scenario sections are derived from the violations' citations in the active profile; the stored NEC `necChapters` lists (scenario and panel definitions) are removed
 - [~] Terminology per profile (`CodeTerminology`, `terminology.json`): code name, reference format, section names, dropdown prompt and vocabulary (grounding/earthing, panel, breaker, ...). UI strings ("NEC Citations", "NEC Chapters", "Art.", "Chapter") now come from the active profile, and `{code}` / `{term:key}` tokens work in UI text
 - [~] Units and defaults from the profile tables: area unit label, default conductor, single-pole voltage for measurements; the HUD no longer prints "Art. General Practice"
-- [ ] Use `{term:key}` tokens in scenario and violation text so one scenario reads correctly for each code (grounding vs earthing)
+- [~] `{term:key}` and `{code}` tokens in scenario and violation text are filled from the active code's terminology (`ViolationDefinitionSO` getters, scenario title and description in the menu and intro step). One violation (`BC-GFCI-BATH-001`) uses them as the working example, and a test checks every key used exists in the NEC terms and warns when another code lacks it. Still to do: convert more text when a code with different words arrives (UK earthing, consumer unit)
 - [ ] Metric profile data: mm2 conductor table, 230/400 V, m and m2 labels (needed with the first non-NEC profile, Phase D/G)
 - [ ] Move the remaining NEC wording out of editor-script content (quick-reference cards, panel sandbox descriptions, certificate text) into JSON content files (see B2)
 - [ ] Rename MonoBehaviour classes, scene-serialized fields and files that carry NEC names (`NECReferencePanel`, `NECReviewStep`, `_necDropdown`, ...). Deferred on purpose: it can break scene and prefab references, so do it in the Unity Editor with the references visible
@@ -96,7 +96,7 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - [ ] Licensing status per profile (NEC, CEC, BS 7671 are copyrighted); record it in the profile
 - [~] Content policy documented and enforced: content only for skills in `ConceptIds`, no credentials or credential code in the app (both fail the tests), and statutory wording fails the tests
 - [~] Skill coverage per installation code: the tests fail if the NEC lacks Practitioner-level content for any skill and warn about gaps in other codes. A report that compares coverage with an alignment file belongs outside the app
-- [ ] Naming: `ConceptIds` constants are PascalCase but `.claude/CLAUDE.md` says UPPER_SNAKE_CASE; decide and align
+- [x] Naming: public constants and static data (`ConceptIds.ShockProtection`, `ArtSets.NorthAmerica`) are PascalCase as in the rest of C#; private and local constants stay UPPER_SNAKE_CASE (`SCENE_PATH`). `.claude/CLAUDE.md` now says so
 - [x] Citation matcher is segment-aware (`250.2` no longer matches `250.24`, `26-70` no longer matches `26-700`) (Phase D)
 
 ### Phase G - Later: UK and Europe

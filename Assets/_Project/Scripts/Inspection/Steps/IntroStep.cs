@@ -30,8 +30,8 @@ namespace NECInspector.Inspection
             if (_hud != null)
             {
                 _hud.ShowIntroPanel(
-                    scenario.displayName,
-                    scenario.description,
+                    CodeProfiles.Terminology.Format(scenario.displayName),
+                    CodeProfiles.Terminology.Format(scenario.description),
                     $"Violations to find: {_inspectionManager.TotalActiveViolations}",
                     scenario.GetSections(CodeProfiles.Active)
                 );
