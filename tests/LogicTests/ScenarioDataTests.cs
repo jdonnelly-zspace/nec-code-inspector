@@ -18,7 +18,9 @@ namespace NECInspector.LogicTests
         public static void Run(TestContext t)
         {
             ValidatorCatchesBadData(t);
+            SceneFactRules(t);
             ContentFilesAreValid(t);
+            SharedNumericViolationsHaveSceneFacts(t);
         }
 
         private static void ValidatorCatchesBadData(TestContext t)
@@ -85,6 +87,101 @@ namespace NECInspector.LogicTests
                 new ViolationCitation { profileId = "cec", reference = "26-700" }
             };
             t.Equal(0, ScenarioFileValidator.Validate(twoProfiles).Count, "citations for different profiles are accepted");
+        }
+
+        // Violations that mix codes need scene values that break every code (docs/SCENE_DESIGN.md)
+        private static ScenarioFileData WithFacts(float sceneValue, float necLimit, float cecLimitMetres, float compliantValue = 5)
+        {
+            var data = MakeValid();
+            var v = data.violations[0];
+            v.sceneFact = new SceneFact { quantity = "q", value = sceneValue, unit = "ft" };
+            v.compliantFact = new SceneFact { quantity = "q", value = compliantValue, unit = "ft" };
+            v.citations = new[]
+            {
+                new ViolationCitation { profileId = CodeProfileIds.Nec, reference = "210.8", text = "t",
+                    limit = new SceneLimit { quantity = "q", kind = "max", value = necLimit, unit = "ft" } },
+                new ViolationCitation { profileId = "cec", reference = "26-700", text = "t",
+                    limit = new SceneLimit { quantity = "q", kind = "max", value = cecLimitMetres, unit = "m" } }
+            };
+            return data;
+        }
+
+        private static void SceneFactRules(TestContext t)
+        {
+            t.Begin("scene value rules");
+
+            t.Equal(0, ScenarioFileValidator.Validate(WithFacts(7, 6, 1.8f)).Count, "a value past every limit by the margin is accepted");
+
+            // 6.3 ft is 5% past 6 ft and 6.3 ft = 1.92 m is 6.7% past 1.8 m
+            t.IsTrue(HasError(WithFacts(6.3f, 6, 1.8f), "only"), "a value less than the margin past a limit is rejected");
+
+            // 6.9 ft is 15% past 6 ft but 2.10 m is 16.8% past 1.8 m: both fine; 6.5 ft is 8% past the NEC limit only
+            t.IsTrue(HasError(WithFacts(6.5f, 6, 3.0f), "'cec'"), "breaking one code but not the other is rejected, naming the code");
+
+            // A compliant value that breaks one of the codes
+            t.IsTrue(HasError(WithFacts(7, 6, 1.8f, 6.5f), "compliant value"), "a compliant value that breaks a code is rejected");
+
+            var noLimit = WithFacts(7, 6, 1.8f);
+            noLimit.violations[0].citations[1].limit = null;
+            t.IsTrue(HasError(noLimit, "has no limit"), "a citation without a limit is rejected when the scene has a value");
+
+            var limitOnly = WithFacts(7, 6, 1.8f);
+            limitOnly.violations[0].sceneFact = null;
+            t.IsTrue(HasError(limitOnly, "no sceneFact"), "a limit without a scene value is rejected");
+
+            var orphanCompliant = MakeValid();
+            orphanCompliant.violations[0].compliantFact = new SceneFact { quantity = "q", value = 1, unit = "ft" };
+            t.IsTrue(HasError(orphanCompliant, "compliantFact needs"), "a compliant value without a scene value is rejected");
+
+            var wrongQuantity = WithFacts(7, 6, 1.8f);
+            wrongQuantity.violations[0].citations[0].limit.quantity = "other";
+            t.IsTrue(HasError(wrongQuantity, "scene measures"), "a limit on another quantity is rejected");
+
+            var badUnit = WithFacts(7, 6, 1.8f);
+            badUnit.violations[0].citations[0].limit.unit = "cubits";
+            t.IsTrue(HasError(badUnit, "unknown unit"), "an unknown unit is rejected");
+
+            var badKind = WithFacts(7, 6, 1.8f);
+            badKind.violations[0].citations[0].limit.kind = "about";
+            t.IsTrue(HasError(badKind, "unknown unit or kind"), "an unknown limit kind is rejected");
+
+            // A minimum limit works the other way: the scene value must be below it by the margin
+            var minimum = WithFacts(6, 8, 3);
+            minimum.violations[0].compliantFact.value = 10;
+            foreach (var c in minimum.violations[0].citations) c.limit.kind = "min";
+            minimum.violations[0].citations[1].limit.unit = "m";
+            t.Equal(0, ScenarioFileValidator.Validate(minimum).Count, "a value under every minimum by the margin is accepted");
+            minimum.violations[0].sceneFact.value = 7.5f;
+            t.IsTrue(HasError(minimum, "only"), "a value only slightly under a minimum is rejected");
+
+            t.IsTrue(SceneFacts.TryBreach(new SceneFact { quantity = "q", value = 12, unit = "in" },
+                new SceneLimit { quantity = "q", kind = "max", value = 1, unit = "ft" }, out double zero) && Math.Abs(zero) < 1e-9,
+                "units are converted before comparing");
+        }
+
+        private static void SharedNumericViolationsHaveSceneFacts(TestContext t)
+        {
+            t.Begin("scene values on shared violations");
+
+            string dir = Path.Combine(TestContext.RepoRoot(), "Assets/_Project/Content/Scenarios");
+            var options = new JsonSerializerOptions { IncludeFields = true };
+            var all = Directory.GetFiles(dir, "*.json")
+                .SelectMany(f => JsonSerializer.Deserialize<ScenarioFileData>(File.ReadAllText(f), options).violations)
+                .ToDictionary(v => v.violationId);
+
+            // Violations whose rule is a single number that differs between codes
+            string[] numeric = { "BC-SPACING-WALL-001", "BC-SPACING-COUNTER-001", "GND-ELECTRODE-001", "RP-CLEAR-FRONT-001" };
+            foreach (string id in numeric)
+            {
+                t.IsTrue(all.ContainsKey(id), $"{id} exists");
+                if (!all.ContainsKey(id)) continue;
+
+                var v = all[id];
+                t.IsTrue(v.sceneFact != null && v.sceneFact.IsSet, $"{id} has a scene value");
+                t.IsTrue(v.compliantFact != null && v.compliantFact.IsSet, $"{id} has a compliant value");
+                t.IsTrue(v.citations.Length >= 2 && v.citations.All(c => c.limit != null && c.limit.IsSet),
+                    $"{id} has a limit for every code it lists");
+            }
         }
 
         private static void ContentFilesAreValid(TestContext t)

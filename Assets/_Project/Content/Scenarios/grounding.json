@@ -21,7 +21,13 @@
         {
           "profileId": "nec",
           "reference": "250.52(A)(5)",
-          "text": "A ground rod (stainless, copper, or zinc-plated steel) needs a minimum length of 8 feet and a 5/8 inch diameter."
+          "text": "A ground rod (stainless, copper, or zinc-plated steel) needs a minimum length of 8 feet and a 5/8 inch diameter.",
+          "limit": {
+            "quantity": "ground-rod-length",
+            "kind": "min",
+            "value": 8,
+            "unit": "ft"
+          }
         },
         {
           "profileId": "cec",
@@ -29,7 +35,13 @@
           "text": "A manufactured grounding electrode can be made of rods 3 m long, driven in full length, with at least two spaced 3 m apart and bonded together.",
           "description": "Ground rod shorter than the 3 m rod length",
           "hintText": "A manufactured ground electrode uses 3 m rods driven in full length. Check the rod length.",
-          "inspectionNote": "This ground rod is only 6 feet (about 1.8 m) long, shorter than the 3 m rods the code expects."
+          "inspectionNote": "This ground rod is only 6 feet (about 1.8 m) long, shorter than the 3 m rods the code expects.",
+          "limit": {
+            "quantity": "ground-rod-length",
+            "kind": "min",
+            "value": 3,
+            "unit": "m"
+          }
         }
       ],
       "componentObjectName": "GroundRod_Main",
@@ -39,7 +51,18 @@
       "conceptId": "earthing-bonding",
       "severity": "Critical",
       "minimumDifficulty": "Beginner",
-      "isSubtle": false
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "ground-rod-length",
+        "value": 6,
+        "unit": "ft",
+        "note": "Length of the driven rod"
+      },
+      "compliantFact": {
+        "quantity": "ground-rod-length",
+        "value": 10,
+        "unit": "ft"
+      }
     },
     {
       "violationId": "GND-GEC-001",

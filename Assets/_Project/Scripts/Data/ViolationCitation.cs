@@ -18,6 +18,9 @@ namespace NECInspector.Data
         public string description;
         public string hintText;
         public string inspectionNote;
+
+        // Optional: this code's limit on the quantity the scene measures (see SceneFacts)
+        public SceneLimit limit;
     }
 
     public static class ViolationCitations

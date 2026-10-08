@@ -35,6 +35,7 @@ These came to light while paraphrasing. The reference numbers were left as they 
   rating) cites `430.102(B)`. The citation texts describe the other violation, so these also look swapped.
 - `COM-RECPT-LOAD-001` (a per-outlet load amount) cites `220.44`, which is about demand factors; the
   per-outlet amount is in the `220.14` article.
+- `BC-SPACING-COUNTER-001` (and the wall spacing violation) now measure the distance from the farthest point on the wall line to the nearest receptacle, with scene values and limits per code (`docs/SCENE_DESIGN.md`). Please confirm that is how both codes measure it; the counter scene was redrawn as an 84 in stretch without a receptacle (42 in from the nearest one) because the old 36 in gap was only about 15 mm past the CEC limit.
 - `BC-GFCI-KITCHEN-001` cites `210.8(A)(5)`. Check the numbering of the `210.8(A)` items (kitchen,
   laundry, bathtub, outdoor) against the 2026 edition; the article data uses `(A)(5)`, `(A)(7)`, `(A)(9)`
   and `(A)(3)`.
