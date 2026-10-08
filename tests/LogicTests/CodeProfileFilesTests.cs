@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using NECInspector.Codes;
@@ -35,6 +36,47 @@ namespace NECInspector.LogicTests
             }
 
             NecFilesMatchBuiltInDefaults(t, profiles.FirstOrDefault(p => p.folder == CodeProfileIds.Nec));
+            ArtSetRules(t, profiles.FirstOrDefault(p => p.folder == CodeProfileIds.Nec));
+            ProfilesUseAvailableArt(t, profiles);
+        }
+
+        // A profile names the art its scenes use; unknown sets are allowed (the art may not exist yet) but bad names are not
+        private static void ArtSetRules(TestContext t, LoadedProfile nec)
+        {
+            t.Begin("profile art sets");
+
+            t.IsTrue(ArtSets.IsAvailable(ArtSets.NorthAmerica), "the North American set is available");
+            t.IsTrue(!ArtSets.IsAvailable("uk"), "a set with no art is not available");
+            t.IsTrue(ArtSets.IsValidName("north-america") && ArtSets.IsValidName("uk"), "plain set names are valid");
+            t.IsTrue(!ArtSets.IsValidName("") && !ArtSets.IsValidName(null) && !ArtSets.IsValidName("North America")
+                     && !ArtSets.IsValidName("../x") && !ArtSets.IsValidName("a--b"), "empty and unsafe names are invalid");
+
+            if (nec == null || nec.manifest == null) return;
+
+            Func<string, bool> flagged = artSet =>
+            {
+                var m = new CodeProfileManifest
+                {
+                    id = nec.manifest.id, displayName = nec.manifest.displayName, edition = nec.manifest.edition,
+                    region = nec.manifest.region, reviewStatus = nec.manifest.reviewStatus, artSet = artSet
+                };
+                return CodeProfileValidator.Validate(m, nec.articles, nec.tables, nec.terminology).Any(e => e.Contains("artSet"));
+            };
+
+            t.IsTrue(flagged(null), "a profile without an artSet is rejected");
+            t.IsTrue(flagged("Bad Name!"), "a profile with an unsafe artSet is rejected");
+            t.IsTrue(!flagged("north-america"), "a profile with a valid artSet is accepted");
+            t.IsTrue(!flagged("uk"), "an artSet whose art is not built yet is accepted by the validator");
+        }
+
+        // Scenes are only offered under codes whose art exists (docs/SCENE_DESIGN.md)
+        private static void ProfilesUseAvailableArt(TestContext t, List<LoadedProfile> profiles)
+        {
+            t.Begin("profiles use available art sets");
+            foreach (var p in profiles)
+                if (p.manifest != null)
+                    t.IsTrue(ArtSets.IsAvailable(p.manifest.artSet),
+                        $"Codes/{p.folder}: art set '{p.manifest.artSet}' has art (add it to ArtSets when built, or use an existing set)");
         }
 
         // Related references the UI cannot resolve are silently skipped, so report them
