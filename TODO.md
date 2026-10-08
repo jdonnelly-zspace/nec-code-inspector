@@ -31,7 +31,7 @@ Status key: `[x]` done and merged into the stack branch, `[~]` built and in revi
 - [~] Move `ViolationSeverity` into its own file and share the scenario file validator between the importer and the tests
 - [ ] Get the PR stack approved and merged into `main` in order: #2 to #9 (retarget each to `main` as the one below merges), plus the docs PR #1. `main` requires an approving review, so this needs a reviewer. PR #9 also carries everything merged into it since (#10 to #16, #18 to #23)
 - [ ] Fix the 13 dangling `related` references in `Codes/nec/articles.json` (13 of the 15 test warnings; the reference panel silently skips them). Needs the expert to say whether to add the missing entries or drop the links
-- [ ] Tests for the 10 `ComplianceChecker` rules (needs the rules separated from the MonoBehaviours and ScriptableObjects they read)
+- [x] Tests for the 10 panel compliance rules: the rules moved into `ComplianceRules` (plain data in, results out, tables passed in) and `ComplianceChecker` only reads the scene objects into that data (52 checks in `ComplianceRulesTests`; boundary mutations were confirmed to fail them). The reader in `ComplianceChecker` still needs a Unity compile check; the public `Check*` methods it used to have were only called from inside the class and are gone
 - [x] Document how to run the tests locally (CONTRIBUTING.md > Tests); `tests/**/bin` and `obj` are git-ignored
 - [!] Unity compile gate in CI. Blocked: the repo has no `ProjectSettings/` or `Packages/`, the zSpace SDK is proprietary and git-ignored, and CI would need a Unity license secret. Decision needed on how to make the project compilable in CI (stub the SDK, or a self-hosted runner)
 

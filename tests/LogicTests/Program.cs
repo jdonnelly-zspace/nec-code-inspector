@@ -20,6 +20,7 @@ namespace NECInspector.LogicTests
             CodeProfileFilesTests.Run(ctx);
             DataCodeProfileTests.Run(ctx);
             CodeProfileChoicesTests.Run(ctx);
+            ComplianceRulesTests.Run(ctx);
 
             foreach (string warning in ctx.Warnings)
                 Console.WriteLine($"WARN  {warning}");
