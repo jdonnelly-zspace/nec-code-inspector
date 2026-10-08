@@ -5,8 +5,17 @@
 Goal: a skill-based app that helps people build the skills to get an electrician credential (US, Canada, UK, EU, ...). **The app contains skills and installation codes, never credentials**: no credential names, blueprints, exam breakdowns or readiness scores ship in it (the tests enforce this). How skills line up with a credential is worked out outside the app (`docs/credential-alignment/`).
 **Acceptance test:** a new installation code (Canada's CEC was the first) is added using only data files: a code profile folder, citations on the scenarios, and region-specific scenes where needed. If C# has to change, the abstraction has a leak.
 
-Status key: `[x]` done and merged, `[~]` built and in review (PR open), `[ ]` not started, `[!]` blocked or needs a decision.
-**Update these statuses in the same PR as the work.** Background: the framework design is in PR #1 (`docs/CREDENTIAL_FRAMEWORK.md`); it still describes credential profiles inside the app and needs updating (see B2).
+Status key: `[x]` done and merged into the stack branch, `[~]` built and in review (a PR is open) or waiting on someone outside the code, `[ ]` not started, `[!]` blocked or needs a decision.
+**Update these statuses in the same PR as the work.**
+
+**Where the work lives.** Nothing below is on `main` yet. The stack is PRs #2 to #9, each targeting the branch below it (`main` needs an approving review), plus the docs PR #1 (`docs/CERTIFICATION_BODIES.md`, `docs/CREDENTIAL_FRAMEWORK.md`, already updated to the skill-based design). Everything merged since (PRs #10 to #16 and #18 to #23: paraphrased content, Canada, credential removal, picker, scene tools, expert packet, scene values, `artSet`, art-set blocking, empty-list message) was merged into PR #9's branch, `feature/neutral-wording`, so PR #9 is large: review it commit by commit. The logic tests (`dotnet run --project tests/LogicTests`, .NET 8 SDK) pass locally and in CI.
+
+### What is left, grouped by who can do it
+- **Project owner and reviewers:** approve and merge the PR stack (#2 to #9, #1); answer the open decisions below.
+- **Credential expert** (packet in `docs/expert-review/`): accuracy and edition of the paraphrased NEC and draft CEC content; the suspected reference problems; how both codes measure receptacle spacing; which untied articles to keep; CEC rules for violations still hidden under the CEC; the Red Seal task-to-skill mapping.
+- **Unity Editor** (nothing here has been compiled in Unity): run `Generate Main Menu Scene` and commit the scene; add a ZCamera rig and check layouts; compile-check `CodePickerSceneSetup`, `MainMenuSceneGenerator`, `MainMenuPanel` and `CodeProfilePickerPanel`; build the 3D scenes and the North American art set; rename NEC-named MonoBehaviours with references visible.
+- **Code, can start now:** scene facts for the shared violations whose rules are tables or scope; tests for the `ComplianceChecker` rules; the dangling `related` references; `{term:key}` tokens in scenario text; moving editor-script content to JSON; the alignment report outside the app.
+- **Blocked on a decision:** Unity compile in CI; first code after Canada; localization; concept-level scoring policy.
 
 ### Phase A - Foundations (refactor steps 1-4)
 - [~] A1. Code-neutral concept IDs on violations (PR #2)
@@ -20,10 +29,10 @@ Status key: `[x]` done and merged, `[~]` built and in review (PR open), `[ ]` no
 - [~] Logic test project (`tests/LogicTests`) and GitHub Actions workflow (`.github/workflows/logic-tests.yml`): tables JSON matches built-in defaults, load calculator parity, citation matching, scenario and article JSON validation
 - [~] Fix compile error found by a local compile: `QuickReferenceCardPanel` used `NECReferencePanel` without `using NECInspector.Inspection`
 - [~] Move `ViolationSeverity` into its own file and share the scenario file validator between the importer and the tests
-- [ ] Merge the PR stack in order: #2, #3, #4, #5 (retarget each to `main` as the one below merges), plus the docs PR #1 and the B-phase PR
-- [ ] Fix the 13 dangling `related` references in `Codes/nec/articles.json` (reported as warnings by the tests; the reference panel silently skips them)
+- [ ] Get the PR stack approved and merged into `main` in order: #2 to #9 (retarget each to `main` as the one below merges), plus the docs PR #1. `main` requires an approving review, so this needs a reviewer. PR #9 also carries everything merged into it since (#10 to #16, #18 to #23)
+- [ ] Fix the 13 dangling `related` references in `Codes/nec/articles.json` (13 of the 15 test warnings; the reference panel silently skips them). Needs the expert to say whether to add the missing entries or drop the links
 - [ ] Tests for the 10 `ComplianceChecker` rules (needs the rules separated from the MonoBehaviours and ScriptableObjects they read)
-- [~] Document how to run the tests locally (CONTRIBUTING.md > Tests)
+- [x] Document how to run the tests locally (CONTRIBUTING.md > Tests); `tests/**/bin` and `obj` are git-ignored
 - [!] Unity compile gate in CI. Blocked: the repo has no `ProjectSettings/` or `Packages/`, the zSpace SDK is proprietary and git-ignored, and CI would need a Unity license secret. Decision needed on how to make the project compilable in CI (stub the SDK, or a self-hosted runner)
 
 **B2. Finish the data layer**
@@ -36,7 +45,7 @@ Status key: `[x]` done and merged, `[~]` built and in review (PR open), `[ ]` no
 - [~] The student's chosen installation code is stored in the progress file and applied at startup (`ProgressManager.SetActiveCodeProfile`). The picker screen is built (`CodeProfilePickerPanel`, see Phase D); it still has to be wired into the main menu scene in the Unity Editor
 - [ ] Finer skill taxonomy: the 11 concepts are the skills for now; motors or hazardous locations may need sub-skills (each new skill needs a documented reason in `docs/credential-alignment/`)
 - [ ] An alignment report outside the app: read the progress file (mastery per skill and tier) against an alignment file and show what is left to learn
-- [ ] Update `docs/CREDENTIAL_FRAMEWORK.md` (PR #1): progress is per skill, and credentials are not part of the app
+- [x] Update `docs/CREDENTIAL_FRAMEWORK.md` (PR #1): rewritten to the skill-based design (PR #17, merged into PR #1's branch). It describes the stacked branches, so keep it in step as they merge
 - [~] Violation and scenario applicability, derived from citations: a violation applies to a profile only if it has a citation for it; a scenario applies if any violation does. `InspectionManager` skips non-applicable violations and the main menu hides non-applicable scenarios (this branch)
 - [~] Rename leftover NEC-named API from the citation change (`FlagViolation(... necArticle)`, `citedNECArticle`, `FlaggedNECArticle`): done in Phase C (this branch)
 - [ ] Move remaining editor-script content to JSON: panel sandbox circuits, quick-reference cards, certificate templates, difficulty settings
@@ -69,10 +78,13 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - (Removed again) Credentials could require skills a code's content does not cover, so requirements got a `deferred` flag; this went away when credentials left the app. The skill coverage test now reports the same gaps per code
 - Sandbox results were always checked against NEC tables: sandbox evidence now needs the active code to have its own tables
 - The citation matcher accepted `26-70` for `26-700`: it now matches only at a level boundary (this also closes the matching item in Phase F)
-- Facts differ between codes (GFCI scope, rod length and count, spacing limits), so a scene must break the rule under every code it is offered for, or be shown to one code only. Rules accepted in `docs/SCENE_DESIGN.md` (margin, pass-both, split when incompatible, SI units, automatic check). Done: measured values, limits and the logic test for the four single-number violations (wall and counter spacing, ground rod, working space), and the counter gap violation redone (`SceneFacts`). Still to do: shared violations whose rules are tables or scope (wire sizes, GFCI/AFCI areas)
+- Facts differ between codes (GFCI scope, rod length and count, spacing limits), so a scene must break the rule under every code it is offered for, or be shown to one code only. Rules accepted in `docs/SCENE_DESIGN.md` (margin, pass-both, split when incompatible, SI units, automatic check). Done: measured values, limits and the logic test for the four single-number violations (wall and counter spacing, ground rod, working space), and the counter gap violation redone (`SceneFacts`). Still to do: shared violations whose rules are tables or scope (wire sizes and breaker ratings, GFCI and AFCI areas) need a different kind of check than a single limit
+- [ ] Scene facts for the five other violations shared by the NEC and CEC (`BC-GFCI-BATH-001`, `BC-WIRE-14AWG-001`, `RP-WIRE-OVER-001`, `BC-AFCI-BEDROOM-001`, `BC-AFCI-LIVING-001`): design the check (table lookup for wire and breaker pairs; room scope for GFCI and AFCI)
 
 ### Phase E - Hard problems (decide early)
-- [~] Decision: region-specific scene art and prefab variants: accepted in `docs/SCENE_DESIGN.md` (one art set per region group, North American set first, other groups blocked until a second code is committed). Done: `artSet` in `profile.json` with validation (`ArtSets`). Done: the menu and the picker offer no scenarios under a code whose art set has no art (`ArtSets.IsAvailable`). Still to do: the art itself
+- [x] Decision: region-specific scene art and prefab variants: accepted in `docs/SCENE_DESIGN.md` (one art set per region group, North American set first, other groups blocked until a second code is committed). Done: `artSet` in `profile.json` with validation (`ArtSets`), and the menu and the picker offer no scenarios under a code whose art set has no art (`ArtSets.IsAvailable`)
+- [ ] Build the North American art set (Unity Editor): panels, receptacles, breakers, wire colours. Scenes must follow the accepted scene design rules: scene values break every listed code's limit by 10%, compliant parts pass every offered code
+- [ ] Expert to confirm both spacing violations measure from the farthest point on the wall line to the nearest receptacle (asked in `docs/CONTENT_REVIEW.md`); the counter scene was redrawn on that reading
 - [ ] Generalize or add a panel sandbox model beyond split-phase US panels (UK consumer units with RCD/RCBO, 230 V single phase)
 - [ ] Pluggable compliance rule sets per profile (rule logic is still in C#; only numbers, citations and on/off are data)
 
@@ -80,7 +92,7 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - [~] Paraphrase pass (this branch): all 42 violation citation texts and 98 article texts rewritten in new words (facts and references kept, shorter than the source, no six-word runs copied); the wording check in `ContentPolicyTests` now fails on any statutory wording. Notes for the reviewer are in `docs/CONTENT_REVIEW.md`
 - [~] **Credential expert review** (packet ready in `docs/expert-review/`: worksheets for 51 violation citations, 98 NEC and 7 CEC articles, regenerated with `tools/make_expert_review.py`; waiting on the expert) of the paraphrases for accuracy and edition (2026), and of the suspected reference problems in `docs/CONTENT_REVIEW.md` (two swapped citation pairs, a mismatched load-calc citation, `210.8(A)` numbering)
 - [ ] Run the same paraphrase check on the text in editor scripts (quick-reference cards, sandbox descriptions, certificates) when it moves to JSON
-- [ ] Trim `Codes/nec/articles.json` to articles that support the app's skills: 43 of 98 are not tied to any current violation (list in `docs/CONTENT_REVIEW.md`); decide which to keep
+- [ ] Trim `Codes/nec/articles.json` to articles that support the app's skills: 44 of 98 are not tied to any current violation (list in `docs/CONTENT_REVIEW.md`, flagged in `docs/expert-review/3-articles-nec.csv`); the expert decides which to keep
 - [ ] Licensing status per profile (NEC, CEC, BS 7671 are copyrighted); record it in the profile
 - [~] Content policy documented and enforced: content only for skills in `ConceptIds`, no credentials or credential code in the app (both fail the tests), and statutory wording fails the tests
 - [~] Skill coverage per installation code: the tests fail if the NEC lacks Practitioner-level content for any skill and warn about gaps in other codes. A report that compares coverage with an alignment file belongs outside the app
@@ -93,25 +105,28 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - [ ] Decide whether UI language localization (French, German) is in scope
 
 ### Open decisions
-1. Region-specific scenes vs one adaptive scene (Phase E)
-2. How to get a Unity compile in CI (Phase B1)
-3. First installation code after Canada, if a customer is waiting on the UK or EU
-4. Language localization in or out of scope
-5. Scoring policy for concept-level credit (Phase B2)
+1. How to get a Unity compile in CI (Phase B1)
+2. First installation code after Canada, if a customer is waiting on the UK or EU
+3. Language localization in or out of scope
+4. Scoring policy for concept-level credit (Phase B2)
+5. Which panels beyond mode, scenarios, difficulty, settings and code picker go into the menu scene (progress dashboard, reference panels)
+
+Decided: region-specific art is one set per region group (`docs/SCENE_DESIGN.md`).
 
 ## Current Phase: Alpha - Unity Editor Integration
 
 ### Active (Unity Editor Required)
-- [ ] Boot + MainMenu scenes
+- [ ] Boot scene (not started) and MainMenu scene (generator below; the scene file still has to be generated and committed)
 - [ ] Residential panel 3D scene with embedded violations + prefab wiring
 - [ ] Kitchen/bathroom/living area 3D scene (Branch Circuit scenario)
-- [ ] Run NEC Inspector > Import Scenario Data + PanelDesignSandboxGenerator in Editor
+- [ ] Run NEC Inspector > Import Scenario Data + PanelDesignSandboxGenerator in Editor (run it after any change to the scenario JSON)
+- [ ] Compile the project in Unity and fix anything the logic tests cannot see (uGUI, TextMeshPro and zSpace code): `CodePickerSceneSetup`, `MainMenuSceneGenerator`, `MainMenuPanel`, `CodeProfilePickerPanel`
 - [ ] Panel sandbox scene with 3D panel, breaker tray, slot GameObjects
 - [ ] Wire Quick Reference Cards to inspection HUD
 - [ ] Certificate UI panel visual design
 - [ ] Audio clips (SFX, ambient)
 - [~] Main menu scene: `NEC Inspector > Scene Setup > Generate Main Menu Scene` (`MainMenuSceneGenerator`) builds and saves `Scenes/MainMenu/MainMenu.unity` (mode, scenario, difficulty, settings panels, wired to `MainMenuPanel`) and adds the code picker with `CodePickerSceneSetup`. The scene file does not exist until someone runs it in the Unity Editor; then add a ZCamera rig, check the layout for stylus/stereo, add the scene to Build Settings, and commit the `.unity` file. Neither editor tool has been compiled in Unity yet. Progress dashboard and reference panels are not in the menu scene yet
-- [x] Main menu: explain an empty scenario list. `MainMenuPanel` has an optional `_noScenariosText`, filled from `ScenarioListMessage` (no art for the code's region, no scenarios cover the code, or no code loaded). The scene generator adds and assigns it; existing scenes need the field assigned by hand
+- [x] Main menu: explain an empty scenario list (PR #22). `MainMenuPanel` has an optional `_noScenariosText`, filled from `ScenarioListMessage` (no art for the code's region, no scenarios cover the code, or no code loaded). The scene generator adds and assigns it; existing scenes need the field assigned by hand
 - [ ] Performance testing on zSpace hardware + Windows build
 
 ### Next: Alpha Content
