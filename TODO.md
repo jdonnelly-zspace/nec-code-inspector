@@ -110,7 +110,7 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - [ ] Wire Quick Reference Cards to inspection HUD
 - [ ] Certificate UI panel visual design
 - [ ] Audio clips (SFX, ambient)
-- [~] Wire the code picker into the main menu scene: there is no main menu scene in the repo yet (`Scenes/MainMenu` is empty). `NEC Inspector > Scene Setup > Add Code Picker To Main Menu` (`CodePickerSceneSetup`) builds the picker panel, the list item prefab and an open button, and assigns all fields, in whichever open scene has a `MainMenuPanel` under a canvas. Still to do: run it once the menu scene exists, check the layout, save the scene. Not yet compiled in Unity
+- [~] Main menu scene: `NEC Inspector > Scene Setup > Generate Main Menu Scene` (`MainMenuSceneGenerator`) builds and saves `Scenes/MainMenu/MainMenu.unity` (mode, scenario, difficulty, settings panels, wired to `MainMenuPanel`) and adds the code picker with `CodePickerSceneSetup`. The scene file does not exist until someone runs it in the Unity Editor; then add a ZCamera rig, check the layout for stylus/stereo, add the scene to Build Settings, and commit the `.unity` file. Neither editor tool has been compiled in Unity yet. Progress dashboard and reference panels are not in the menu scene yet
 - [ ] Performance testing on zSpace hardware + Windows build
 
 ### Next: Alpha Content

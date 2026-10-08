@@ -125,7 +125,11 @@ namespace NECInspector.Editor
             var button = NewButton("CodePickerButton", parent, label);
 
             // Sit under the existing buttons when the layout allows; otherwise the author moves it
-            if (parent.GetComponent<LayoutGroup>() == null)
+            if (parent.GetComponent<LayoutGroup>() != null)
+            {
+                button.gameObject.AddComponent<LayoutElement>().preferredHeight = 100;
+            }
+            else
             {
                 var rt = button.GetComponent<RectTransform>();
                 rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.1f);
@@ -140,7 +144,7 @@ namespace NECInspector.Editor
         // ------------------------------------------------------------------
         // List item prefab (same shape as the scenario list item: a Button with a TMP label)
         // ------------------------------------------------------------------
-        private static GameObject GetOrCreateItemPrefab()
+        internal static GameObject GetOrCreateItemPrefab()
         {
             var existing = AssetDatabase.LoadAssetAtPath<GameObject>(ITEM_PREFAB_PATH);
             if (existing != null) return existing;
@@ -163,14 +167,14 @@ namespace NECInspector.Editor
         // ------------------------------------------------------------------
         // UI building helpers
         // ------------------------------------------------------------------
-        private static RectTransform NewUI(string name, Transform parent)
+        internal static RectTransform NewUI(string name, Transform parent)
         {
             var go = new GameObject(name, typeof(RectTransform));
             if (parent != null) go.transform.SetParent(parent, false);
             return go.GetComponent<RectTransform>();
         }
 
-        private static TextMeshProUGUI NewText(string name, Transform parent, string text, float size, TextAlignmentOptions align)
+        internal static TextMeshProUGUI NewText(string name, Transform parent, string text, float size, TextAlignmentOptions align)
         {
             var rt = NewUI(name, parent);
             var tmp = rt.gameObject.AddComponent<TextMeshProUGUI>();
@@ -180,7 +184,7 @@ namespace NECInspector.Editor
             return tmp;
         }
 
-        private static Button NewButton(string name, Transform parent, TextMeshProUGUI label)
+        internal static Button NewButton(string name, Transform parent, TextMeshProUGUI label)
         {
             var rt = NewUI(name, parent);
             var image = rt.gameObject.AddComponent<Image>();
@@ -193,7 +197,7 @@ namespace NECInspector.Editor
             return button;
         }
 
-        private static void Anchor(RectTransform rt, Vector2 min, Vector2 max)
+        internal static void Anchor(RectTransform rt, Vector2 min, Vector2 max)
         {
             rt.anchorMin = min;
             rt.anchorMax = max;
