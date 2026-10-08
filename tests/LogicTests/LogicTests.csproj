@@ -28,6 +28,7 @@
     <Compile Include="$(Scripts)Data/ViolationSeverity.cs" Link="Unity/Data/ViolationSeverity.cs" />
     <Compile Include="$(Scripts)Data/ScenarioFileData.cs" Link="Unity/Data/ScenarioFileData.cs" />
     <Compile Include="$(Scripts)Data/ViolationCitation.cs" Link="Unity/Data/ViolationCitation.cs" />
+    <Compile Include="$(Scripts)Data/SceneFacts.cs" Link="Unity/Data/SceneFacts.cs" />
     <Compile Include="$(Scripts)Skills/*.cs" Link="Unity/Skills/%(Filename)%(Extension)" />
     <Compile Include="$(Scripts)Core/DifficultyLevel.cs" Link="Unity/Core/DifficultyLevel.cs" />
     <Compile Include="$(Scripts)PanelSandbox/LoadCalculator.cs" Link="Unity/PanelSandbox/LoadCalculator.cs" />

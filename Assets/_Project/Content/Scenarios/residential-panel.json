@@ -59,7 +59,13 @@
         {
           "profileId": "nec",
           "reference": "110.26(A)(1)",
-          "text": "Working space in front of live parts must be at least as deep as Table 110.26(A)(1) requires; for 0 to 150 V nominal that is 3 feet."
+          "text": "Working space in front of live parts must be at least as deep as Table 110.26(A)(1) requires; for 0 to 150 V nominal that is 3 feet.",
+          "limit": {
+            "quantity": "panel-working-depth",
+            "kind": "min",
+            "value": 36,
+            "unit": "in"
+          }
         },
         {
           "profileId": "cec",
@@ -67,7 +73,13 @@
           "text": "Keep at least 1 m of clear working space about electrical equipment wherever it must be reached for operation or maintenance.",
           "description": "Working space in front of panel is less than 1 m deep",
           "hintText": "Measure the clear space in front of the panel. Is there at least 1 m of unobstructed working space?",
-          "inspectionNote": "Storage boxes are stacked within 24 inches (about 610 mm) of the panel face. The code calls for at least 1 m of working space."
+          "inspectionNote": "Storage boxes are stacked within 24 inches (about 610 mm) of the panel face. The code calls for at least 1 m of working space.",
+          "limit": {
+            "quantity": "panel-working-depth",
+            "kind": "min",
+            "value": 1,
+            "unit": "m"
+          }
         }
       ],
       "componentObjectName": "Panel_WorkingSpace_Obstruction",
@@ -77,7 +89,18 @@
       "conceptId": "working-space-access",
       "severity": "Major",
       "minimumDifficulty": "Beginner",
-      "isSubtle": false
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "panel-working-depth",
+        "value": 24,
+        "unit": "in",
+        "note": "Clear depth in front of the panel face"
+      },
+      "compliantFact": {
+        "quantity": "panel-working-depth",
+        "value": 42,
+        "unit": "in"
+      }
     },
     {
       "violationId": "RP-DISC-LOC-001",

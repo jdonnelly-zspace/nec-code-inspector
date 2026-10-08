@@ -83,7 +83,13 @@
         {
           "profileId": "nec",
           "reference": "210.52(A)",
-          "text": "Place receptacles so every point along a wall's floor line is within 6 feet of one."
+          "text": "Place receptacles so every point along a wall's floor line is within 6 feet of one.",
+          "limit": {
+            "quantity": "max-distance-to-receptacle",
+            "kind": "max",
+            "value": 6,
+            "unit": "ft"
+          }
         },
         {
           "profileId": "cec",
@@ -91,7 +97,13 @@
           "text": "Place dwelling receptacles so that every spot along the floor line of usable wall space is within 1.8 m of one.",
           "description": "Wall receptacles about 4.3 m (14 ft) apart, farther than the 3.6 m maximum",
           "hintText": "No point along the floor line of usable wall space may be more than 1.8 m from a receptacle, so receptacles can be at most 3.6 m apart.",
-          "inspectionNote": "This wall section has a gap of about 4.3 m (14 ft) between receptacles, more than the 3.6 m that the 1.8 m rule allows."
+          "inspectionNote": "This wall section has a gap of about 4.3 m (14 ft) between receptacles, more than the 3.6 m that the 1.8 m rule allows.",
+          "limit": {
+            "quantity": "max-distance-to-receptacle",
+            "kind": "max",
+            "value": 1.8,
+            "unit": "m"
+          }
         }
       ],
       "componentObjectName": "LivingRoom_WallGap",
@@ -101,7 +113,18 @@
       "conceptId": "branch-circuit-requirements",
       "severity": "Major",
       "minimumDifficulty": "Beginner",
-      "isSubtle": false
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "max-distance-to-receptacle",
+        "value": 7,
+        "unit": "ft",
+        "note": "Distance from the farthest point along the wall line to the nearest receptacle. Twice this is the gap between two receptacles. The 14 ft gap puts the middle of the wall 7 ft from either receptacle."
+      },
+      "compliantFact": {
+        "quantity": "max-distance-to-receptacle",
+        "value": 5,
+        "unit": "ft"
+      }
     },
     {
       "violationId": "BC-WIRE-14AWG-001",
@@ -178,30 +201,53 @@
     },
     {
       "violationId": "BC-SPACING-COUNTER-001",
-      "description": "Kitchen countertop gap exceeds 24-inch receptacle spacing rule",
+      "description": "Kitchen countertop point 42 inches from the nearest receptacle, over the 24-inch limit",
       "citations": [
         {
           "profileId": "nec",
           "reference": "210.52(C)",
-          "text": "Space countertop receptacles so that nowhere along the counter's back wall are you over 24 inches (horizontally) from one."
+          "text": "Space countertop receptacles so that nowhere along the counter's back wall are you over 24 inches (horizontally) from one.",
+          "limit": {
+            "quantity": "max-distance-to-receptacle",
+            "kind": "max",
+            "value": 24,
+            "unit": "in"
+          }
         },
         {
           "profileId": "cec",
           "reference": "26-712(d)(iii)",
           "text": "Behind kitchen counter work surfaces, install split receptacles so that you are never farther than 900 mm, measured along the wall line, from one.",
-          "description": "Kitchen countertop gap of 36 inches (about 915 mm) exceeds the 900 mm receptacle spacing limit",
+          "description": "Kitchen countertop point 42 inches (about 1.07 m) from the nearest receptacle, over the 900 mm limit",
           "hintText": "Along the counter wall line, no point may be more than 900 mm from a receptacle.",
-          "inspectionNote": "This countertop section has a 36 inch (about 915 mm) gap without a receptacle, over the 900 mm limit."
+          "inspectionNote": "This countertop has an 84 inch (about 2.1 m) stretch with no receptacle, so its middle is about 1.07 m from the nearest one, over the 900 mm limit.",
+          "limit": {
+            "quantity": "max-distance-to-receptacle",
+            "kind": "max",
+            "value": 900,
+            "unit": "mm"
+          }
         }
       ],
       "componentObjectName": "KitchenCountertop_Gap",
       "hintText": "Countertop receptacles must be within 24 inches of any point along the counter wall line.",
       "componentType": "Countertop Space",
-      "inspectionNote": "This countertop section has a 36-inch gap without a receptacle, exceeding the 24-inch maximum.",
+      "inspectionNote": "This countertop has an 84-inch stretch with no receptacle, so its middle is 42 inches from the nearest one, over the 24-inch maximum.",
       "conceptId": "branch-circuit-requirements",
       "severity": "Major",
       "minimumDifficulty": "Standard",
-      "isSubtle": false
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "max-distance-to-receptacle",
+        "value": 42,
+        "unit": "in",
+        "note": "Distance from the farthest point along the wall line to the nearest receptacle. Twice this is the gap between two receptacles. An 84 in stretch of counter with no receptacle puts its middle 42 in from the nearest one."
+      },
+      "compliantFact": {
+        "quantity": "max-distance-to-receptacle",
+        "value": 20,
+        "unit": "in"
+      }
     },
     {
       "violationId": "BC-DEDICATED-BATH-001",

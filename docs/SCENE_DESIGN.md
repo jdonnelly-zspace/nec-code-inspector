@@ -46,9 +46,17 @@ North America and the rest differ most:
 3. **Keep scenes layout-neutral where it is cheap**: rooms, circuits and violations are described in data, and only device and panel prefabs come from the art set.
 4. **Panel sandbox follows the same split.** The split-phase model stays North American. A consumer unit with RCD/RCBO is a separate model, added with the first UK or European code (`TODO.md`, Phase E).
 
-## Impact on the repo
+## Implementation
 
-- `ViolationDefinitionSO` / scenario JSON: optional measured value on violations, optional limit on citations.
-- A logic test for the margin and pass-both rules, over the real scenario files.
-- `profile.json`: `artSet` field, validated by the profile validator.
-- No scene or art work yet.
+Done:
+- `SceneFact` (violation: `sceneFact`, `compliantFact`) and `SceneLimit` (citation: `limit`) in `Scripts/Data/SceneFacts.cs`. Units: ft, in, m, mm. Limit kinds: `max`, `min`.
+- `ScenarioFileValidator` runs `SceneFacts.Validate`, so the Unity importer and the logic tests apply the same rules: every code a violation lists needs a limit on the same quantity, the scene value must break each by at least 10%, and the compliant value must pass each.
+- The four violations whose rule is one number that differs between codes carry values and limits: wall spacing, counter spacing, ground rod length, panel working space. Logic tests cover the validator and require those four to keep their values.
+- The counter spacing scene was redrawn: the old 36 in gap was about 1.7% past the CEC limit. It is now an 84 in stretch with no receptacle, so its middle is 42 in from the nearest one (75% past the NEC limit, 19% past the CEC limit).
+
+Both spacing violations measure the distance from the farthest point on the wall line to the nearest receptacle, which is half the gap between two receptacles. This is the reading both codes use; the expert should confirm it.
+
+Still to do:
+- `artSet` in `profile.json` and its validation.
+- Facts for the remaining shared violations whose rules are tables or scope (wire sizes and breaker ratings, GFCI and AFCI areas). They have no single number, so they need a different kind of check.
+- The scenes and art themselves.

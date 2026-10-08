@@ -40,6 +40,8 @@ namespace NECInspector.Data
         public string hintText;
         public string componentType;
         public string inspectionNote;
+        public SceneFact sceneFact;       // optional: the measured value that makes the scene break the rule
+        public SceneFact compliantFact;   // optional: the scene's compliant parts of the same kind
     }
 
     public static class ScenarioFileValidator
@@ -100,6 +102,7 @@ namespace NECInspector.Data
                 RequireText(errors, v.description, $"{label}: description");
                 RequireText(errors, v.componentObjectName, $"{label}: componentObjectName");
                 ValidateCitations(errors, v.citations, label);
+                errors.AddRange(SceneFacts.Validate(label, v.sceneFact, v.compliantFact, v.citations));
             }
 
             return errors;
