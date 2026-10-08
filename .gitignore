@@ -75,3 +75,6 @@ Thumbs.db
 
 # Hand-written test project (the *.csproj rule above targets Unity-generated files)
 !/tests/**/*.csproj
+# Build output of the test project
+/tests/**/bin/
+/tests/**/obj/
