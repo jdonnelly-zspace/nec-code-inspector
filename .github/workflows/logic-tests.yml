@@ -21,3 +21,6 @@ jobs:
 
       - name: Run logic tests
         run: dotnet run --project tests/LogicTests --configuration Release
+
+      - name: Test the alignment report tool
+        run: python3 -m unittest discover -s tools/alignment-report -v
