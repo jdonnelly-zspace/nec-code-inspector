@@ -1,21 +1,36 @@
-# Credential-Agnostic Three-Tier Design
+# Skill-Based, Credential-Agnostic Design
 
-Goal: one app with three competency tiers that can be aligned to any electrician credential (US, Canada, France, Germany, UK, and others) by swapping data, not code.
+Goal: an app that helps people build the skills they need to **get** an electrician credential. The app teaches and measures skills. It does not contain, name or award any credential. It works under any installation code (NEC, CEC, BS 7671, ...) by swapping data, not code.
 
 Items marked *(unverified)* come from background knowledge, not a source checked during research.
 
-## Core idea: separate four things that are currently fused
+> This document describes the design as built on the stacked branches (PRs #2 to #9) and what is still open. Research on certification bodies is in `CERTIFICATION_BODIES.md`. The rules the content follows are in `CONTENT_POLICY.md` on those branches.
 
-| Layer | What it is | Example values |
-|-------|-----------|----------------|
-| **Tier** | Competency level, independent of any credential | Foundation, Practitioner, Authority |
-| **Concept** | A code-neutral electrical topic or hazard | shock protection, overcurrent protection, earthing/grounding, conductor sizing, wiring methods, special locations, load calculation, testing and verification |
-| **Code profile** | An installation code and how it expresses each concept | NEC, CEC, BS 7671, NF C 15-100, DIN VDE 0100, HD 60364 / IEC 60364 |
-| **Credential profile** | A real qualification mapped onto tiers, topics and a code profile | NCCER L1-L4, Red Seal 309A, CAP Electricien, Gesellenprüfung, NVQ L3 + AM2 |
+## Principles
 
-Today the README ties tiers directly to NEC articles. Under this design a scenario's violation is authored against a **concept**, and each code profile supplies the citation, limits and wording. A student on the UK profile and a student on the US profile can inspect the same 3D scene and cite different rules.
+1. **Skills, not credentials.** Progress is tracked per skill. No credential, exam, licence or certification body appears in the app's code, data or screens.
+2. **Credential alignment lives outside the app.** A separate document or report compares a person's skill progress with what a credential asks for. Today that is `docs/credential-alignment/` (a Red Seal draft, not shipped in the app).
+3. **Content follows the skills.** The app only teaches skills that credentials require, explained in our own words. No statutory wording, no "shall".
+4. **Codes are data.** An installation code is a folder of JSON files. Adding a code means adding a folder.
 
-## Tier definitions (credential-neutral)
+## Four layers
+
+| Layer | What it is | In the app? |
+|-------|-----------|-------------|
+| **Skill** | A code-neutral electrical topic (11 today, below) | Yes: `ConceptIds`, `Scripts/Skills/` |
+| **Tier** | Competency level in a skill: Foundation, Practitioner, Authority | Yes: `SkillTier` |
+| **Code profile** | An installation code and how it expresses each skill | Yes: `StreamingAssets/Codes/<id>/` |
+| **Credential alignment** | A real qualification mapped onto skills and tiers | **No.** Lives in `docs/credential-alignment/` |
+
+The earlier version of this design had a fourth in-app layer, the *credential profile*. It was removed: a credential is something a person works towards, not something the app contains.
+
+### Skills
+
+The 11 skills (concept IDs): shock protection, arc-fault protection, overcurrent protection, conductor sizing, earthing and bonding, branch-circuit requirements, load calculation, disconnecting means, working space and access, equipment installation, identification and marking.
+
+Europe's national codes share one skeleton of sections (shock protection, thermal effects, wiring systems, special locations) because they derive from IEC 60364 / HD 60364. That shared skeleton is why skills can be code-neutral. Skills still to add include wiring methods, special locations, and testing and verification.
+
+### Tiers
 
 | Tier | Learner outcome | Typical credential stage |
 |------|-----------------|--------------------------|
@@ -23,22 +38,56 @@ Today the README ties tiers directly to NEC articles. Under this design a scenar
 | Practitioner | Select, size and install to code; find violations unaided; run basic load calcs and tests | Apprentice to journeyman / Gesellenprüfung / NVQ L3 + AM2 |
 | Authority | Design, verify, inspect and certify; handle special locations, edge cases and code changes | Master, Meister, inspector, designer |
 
-Aligning to a framework gives a neutral cross-check: EQF has eight levels described by knowledge, skills, and responsibility and autonomy ([DQR and EQF](https://www.dqr.de/dqr/en/the-dqr/dqr-and-eqf/dqr-and-eqf_node.html)). Germany's DQR references a three-year initial vocational qualification to level 4, and a Meister or bachelor's to level 6.
+The tiers are credential-neutral. EQF gives a neutral cross-check: eight levels described by knowledge, skills, and responsibility and autonomy ([DQR and EQF](https://www.dqr.de/dqr/en/the-dqr/dqr-and-eqf/dqr-and-eqf_node.html)).
 
-## Credential map: Europe and UK
+## How progress works
+
+- Each violation and sandbox rule belongs to one skill and has a minimum tier.
+- Evidence from an attempt is recorded against the skill: a violation found with the right citation counts 1.0, found with the wrong citation 0.5, missed 0. Sandbox rules count too, but only under codes that have their own tables.
+- Each skill keeps a running average. A tier is **attained** in a skill after at least 3 attempts and 80% mastery at that tier; a higher tier covers the lower ones.
+- Progress is stored per skill (`ProgressData.skills`), so it carries across codes and has nothing to do with any credential.
+
+Citation matching is code-aware: a citation counts if it matches the active code's reference at the right level (a parent only at a level boundary), ignoring labels and case.
+
+## Code profiles
+
+Each code lives in `Assets/_Project/StreamingAssets/Codes/<id>/`:
+
+| File | Purpose |
+|------|---------|
+| `profile.json` | id, display name, edition, region, review status (`app-defined`, `draft`, `reviewed`) |
+| `articles.json` | Reference entries: reference, title, our paraphrase, section, keywords, related articles |
+| `terminology.json` | Code name, reference prefix, section names, vocabulary (grounding vs earthing, breaker vs MCB) |
+| `tables.json` | Optional: voltages, conductors, demand tiers, rule configuration, units |
+
+`CodeProfileLibrary` loads every folder, validates it and activates one. The student's choice is saved with their progress and applied at startup. A picker screen lists the codes with their review status and scenario coverage.
+
+Variation that is data, not code: units (AWG vs mm², ft vs m), electrical system (120/240 V 60 Hz vs 230/400 V 50 Hz), terminology, reference numbering, and the rules and tables behind the panel sandbox. Text may use `{code}` and `{term:key}` tokens.
+
+### Violations across codes
+
+A violation is authored against a skill. It carries one **citation per code** (reference, our paraphrase, and optional description, hint and inspection-note overrides). A violation applies to a code only if it has a citation for it, and a scenario applies if any of its violations does. This answers the earlier open question about code-specific rules: nothing is assumed to work everywhere.
+
+Today: 42 violations, all with NEC citations, 9 with CEC citations. The commercial scenario is hidden under the CEC until an expert supplies rules for the rest.
+
+## Alignment outside the app
+
+To help someone get a credential, a report outside the app takes their skill progress and compares it with a credential's task list. `docs/credential-alignment/red-seal-309a-draft.json` is a first draft for the Red Seal 309A exam. Which skills each task exercises, and the weights, are estimates awaiting an expert. Alignment is approximate: credentials are not equivalent, so each alignment should state its own gaps.
+
+## Credential map (research reference)
+
+Not part of the app. This is the research behind alignment work; details and sources are in `CERTIFICATION_BODIES.md`.
 
 | Country | Entry / journeyman level | Higher level | Code | Notes |
 |---------|-------------------------|--------------|------|-------|
 | Germany | Elektroniker/-in für Energie- und Gebäudetechnik: 3.5-year dual training, Gesellenprüfung in two parts, issued via the Handwerkskammer ([BIBB](https://www.bibb.de/dienst/berufesuche/de/index_berufesuche.php/certificate_supplement/en/elektroniker_fr_energietechnik_e.pdf)) | Elektrotechnikermeister *(unverified)* | DIN VDE 0100 | Graduates count as qualified electrical personnel under accident prevention rules |
-| France | CAP Électricien; Bac Pro MELEC (3 years) | BTS Électrotechnique (Bac+2) | NF C 15-100 | Safety authorization (*habilitation électrique*, NF C 18-510, codes such as B0/H0/BR/BC) *(unverified)*; EU diplomas recognized via the CMA ([service-public.fr](https://entreprendre.service-public.fr/vosdroits/F38552?lang=en)) |
-| UK | City & Guilds 2357 Level 3 NVQ plus AM2 practical assessment ([source](https://www.logic4training.co.uk/courses/electrical/electrical-level-3-nvq/am2-assessment/)) | Inspection and testing quals (for example 2391) *(unverified)* | BS 7671 (18th Ed.) | ECS/JIB Gold Card and competent-person schemes (NICEIC, NAPIT); not in the EU |
+| France | CAP Électricien; Bac Pro MELEC (3 years) | BTS Électrotechnique (Bac+2) | NF C 15-100 | Safety authorization (*habilitation électrique*, NF C 18-510) *(unverified)*; EU diplomas recognized via the CMA ([service-public.fr](https://entreprendre.service-public.fr/vosdroits/F38552?lang=en)) |
+| UK | City & Guilds 2357 Level 3 NVQ plus AM2 practical assessment ([source](https://www.logic4training.co.uk/courses/electrical/electrical-level-3-nvq/am2-assessment/)) | Inspection and testing quals (for example 2391) *(unverified)* | BS 7671 (18th Ed.) | ECS/JIB Gold Card and competent-person schemes; not in the EU |
 | Netherlands | Not researched | Not researched | NEN 1010 | Dutch implementation of HD 60364 ([source](https://vanmoofer.com/wiresketch/standards/nen-1010/)) |
 | Spain / Italy | Not researched | Not researched | REBT / CEI 64-8 | |
 | Ireland | Not researched | Not researched | ETCI rules *(unverified)* | |
 
-Europe's national codes share one skeleton of sections (shock protection, thermal effects, wiring systems, special locations) because they derive from IEC 60364 / HD 60364. That shared skeleton is the basis for the concept layer.
-
-## Proposed tier-to-credential alignment
+Tier-to-stage mapping is approximate:
 
 | Tier | US | Canada | Germany | France | UK |
 |------|----|--------|---------|--------|----|
@@ -46,77 +95,29 @@ Europe's national codes share one skeleton of sections (shock protection, therma
 | Practitioner | NCCER L3-L4, journeyman exam | L3-L4, Red Seal 309A | Gesellenprüfung Part 2 | Bac Pro MELEC | NVQ L3 + AM2 |
 | Authority | Master exam, inspector certs | Red Seal holders, inspectors | Meister *(unverified)* | BTS Électrotechnique and above | Inspection and testing, design |
 
-Alignment is approximate. Credentials are not equivalent, so each profile should state its own coverage gaps.
+## NEC coupling review: outcome
 
-## Proposed data model
+The original review (NEC names in 414 places across 60 files) found the NEC hard-coded in four areas. Status:
 
-Keep this data-driven so a new credential is a content pack, not a code change. The repo already stores the NEC database as JSON in `StreamingAssets` and scenario data as ScriptableObjects; extend that pattern.
-
-```
-Concept            id, name, tier-introduced, description (neutral wording)
-CodeProfile        id, name, edition, region, units, voltage/frequency defaults,
-                   wiring colour codes, per-concept rule references
-CredentialProfile  id, name, region, issuing body, exam format,
-                   tier mapping, concept weights, code profile id, coverage gaps
-Scenario           3D scene + violations, each violation = concept id + parameters
-Violation          concept id, severity, per-code rule citation + explanation text
-```
-
-Variation that must be data, not hard-coded:
-- **Units:** AWG vs mm² conductors; ft vs m.
-- **Electrical system:** 120/240 V 60 Hz vs 230/400 V 50 Hz.
-- **Conductor colour codes** and symbols.
-- **Terminology:** grounding vs earthing; breaker vs MCB; panel vs consumer unit / distribution board.
-- **Inspection and exam style:** written exam only, practical assessment, or both.
-
-## Current NEC coupling review
-
-Reviewed the scripts under `Assets/_Project/Scripts` (core data, database, compliance, load and wire files read in full; the rest by search). NEC-related names appear 414 times across 60 files, mostly as names and labels rather than logic. Overall coupling is moderate: the data model is a good base, but the NEC is hard-coded in four places. UI scripts and editor generators were not read in full.
-
-### Where the coupling is
-1. **Violations are authored against NEC citations, not concepts (high effort).**
-   - `ViolationDefinitionSO` has `necArticle` and `necArticleText` and no concept ID (`Data/ViolationDefinitionSO.cs:22`).
-   - `InspectionManager` scores a flag by comparing the student's citation to `violation.necArticle` (`Inspection/InspectionManager.cs:156`).
-   - The four scenario generators in `Editor/` (about 1,080 lines) hard-code violation text, so content lives in C#, not in swappable data.
-2. **One global NEC database (medium effort).**
-   - `NECDatabase` is a singleton that loads one JSON file with 98 entries (`NEC/NECDatabase.cs:39`).
-   - Six files call `NECDatabase.Instance` directly: the boot sequence, the review step, and the reference, flagging and quick-reference panels.
-   - `NECArticle.isNewIn2026` assumes a single edition, and references are numeric strings like `250.24(A)(1)` that will not fit BS 7671 or VDE numbering.
-3. **Rules and numbers are hard-coded in logic (highest effort).**
-   - `ComplianceChecker` has 10 fixed rules with NEC citations in the strings (`PanelSandbox/ComplianceChecker.cs:58`).
-   - `LoadCalculator` embeds Art. 220 constants: 3 VA/ft², the 3,000 / 35% / 25% demand tiers, 240 V and a US breaker size list (`PanelSandbox/LoadCalculator.cs:12`).
-   - `WireConnection` hard-codes AWG sizes and Table 310.16 ampacities (`PanelSandbox/WireConnection.cs:90`).
-   - Units are AWG, square feet and 120/240 V 60 Hz throughout.
-4. **Tiers and difficulty (low effort).**
-   - `DifficultyLevel` is a three-value enum with credential labels only in comments (`Core/DifficultyLevel.cs:3`).
-   - `DifficultySettingsSO` is already data-driven, but `NECCitationMode` and `highlight2026Changes` are NEC-named.
-   - UI labels such as "NEC Chapters" and "NEC Citations" are baked into strings.
-
-### What already helps
-- Scenarios, violations, difficulty settings and quick-reference cards are already ScriptableObjects, so they can be swapped as data.
-- Violations already carry severity, minimum difficulty and a subtle flag, which map naturally to tiers.
-- The article database is external JSON in `StreamingAssets`.
-- The inspection flow itself (pointer, flagging, steps, scoring) is code-neutral apart from the citation comparison.
-
-### Rough refactor order
-1. Add a concept ID to violations, keeping `necArticle` as a legacy field. Smallest change, and it unlocks the rest.
-2. Introduce a `CodeProfile` interface to replace `NECDatabase.Instance`, with the NEC as the first implementation, plus a profile-aware citation matcher.
-3. Make rules and tables data-driven: ampacity table, demand factors, standard sizes and voltage move into the profile, and the 10 compliance rules become configurable.
-4. Move scenario content out of the generators into JSON or SO assets so a credential pack does not need C# edits.
-5. Rename UI strings and `NECCitationMode` to neutral terms and add a unit setting (AWG vs mm²).
-
-### Licensing check needed
-`necArticleText` and the `text` fields in `nec_articles.json` contain code language, and several look close to verbatim NEC wording. The NEC is copyrighted by NFPA. Confirm the license position before shipping, and especially before adding more codes.
+| Coupling found | Status |
+|----------------|--------|
+| Violations authored against NEC citations | Done: skill IDs plus per-code citations; scenario content moved from C# generators to JSON (`Content/Scenarios`) |
+| One global NEC database singleton | Done: `ICodeProfile` / `CodeProfiles` registry, data-driven profiles, citation matcher |
+| Rules and numbers hard-coded in logic (compliance rules, load constants, AWG ampacities) | Done for data: rules and tables come from the active profile. Open: the panel sandbox only runs under codes that ship tables, and the CEC has none yet |
+| Tiers, difficulty labels and UI strings named for the NEC | Done: neutral wording and `{code}` tokens. Open: quick-reference cards, sandbox descriptions and certificate text still live in editor scripts |
 
 ## Risks and open questions
-1. **Copyright.** NEC, CEC, BS 7671 and the VDE/NF standards are copyrighted. Store clause numbers and paraphrased explanations only, and check licensing before using exam blueprints.
-2. **Scenario reuse.** Some violations are code-specific (for example GFCI placement rules). Each violation needs an "applies to profiles" list, not an assumption that it works everywhere.
-3. **Localization scope.** Language is separate from credential. Decide whether French and German UI text is in scope.
-4. **Existing code.** Coupling has been reviewed (see above). The biggest risks are hard-coded compliance rules, load constants and scenario content in editor generators.
+
+1. **Copyright.** NEC, CEC, BS 7671 and the VDE/NF standards are copyrighted. The app stores reference numbers and our own paraphrases only, under `CONTENT_POLICY.md`. All 42 violation texts and 98 NEC articles were rewritten and a standing test rejects statutory wording. Licensing for exam blueprints still needs checking, and the paraphrases need an expert's accuracy review (packet in `docs/expert-review/`).
+2. **Facts that differ between codes.** Per-code citation text covers wording. How scenes are designed when the facts differ (a gap that breaks one code's limit but not another's) is an open decision.
+3. **Sandbox under other codes.** It needs per-code tables before it counts as evidence.
+4. **Localization.** Language is separate from the installation code. Decide whether French and German UI text is in scope.
 5. **Research gaps.** Netherlands, Spain, Italy, Ireland and the German Meister and French habilitation details still need sourcing.
 
-## Suggested next steps
-1. Confirm the NEC text licensing position (see the coupling review).
-2. Define the concept list from the topics shared by IEC 60364 and the NEC and tag existing scenarios with it.
-3. Build `CodeProfile` and `CredentialProfile` data types, with NEC and one other profile (BS 7671 is the easiest second code to add).
-4. Convert one scenario end to end as a proof of concept.
+## Next steps
+
+1. Expert review of the paraphrased NEC content and the draft CEC content (packet ready).
+2. Scene-design rule for facts that differ between codes.
+3. More CEC content and CEC tables (needs verified rules).
+4. Add a second European code (BS 7671 is the easiest) to prove the data-only path.
+5. Alignment reports outside the app for other credentials, reviewed by a credential expert.
