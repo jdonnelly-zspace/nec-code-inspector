@@ -22,7 +22,7 @@ Each PR targets the branch below it. Merge from the bottom, and retarget the nex
 
 - **#2 to #7** are small and focused. Read the diff normally.
 - **#8** was written when credentials were still part of the app. A later PR removes them (see below). Skim it for the skill progress logic (`Scripts/Skills/`, `ProgressManager`) and judge the final state in #9.
-- **#9** is large because fourteen PRs were merged into it after it was opened. Review it by area, using the merged PRs as the unit, not as one 99-file diff.
+- **#9** is large because nineteen PRs were merged into it after it was opened. Review it by area, using the merged PRs as the unit, not as one 99-file diff.
 
 ### Inside #9, in the order it was built
 
@@ -37,7 +37,11 @@ Each PR targets the branch below it. Merge from the bottom, and retarget the nex
 | [#16](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/16) | Expert review packet (`docs/expert-review/`) and its generator |
 | [#18](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/18), [#19](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/19) | Scene design rules, then scene values and limits for four shared violations (`SceneFacts`) |
 | [#20](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/20), [#21](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/21), [#22](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/22) | `artSet` on profiles; scenarios hidden under a code with no art; an empty-list message on the menu |
-| [#23](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/23), [#24](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/24) | `.gitignore` for test output; TODO refresh |
+| [#23](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/23), [#24](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/24), [#25](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/25) | `.gitignore` for test output; TODO refresh; this guide |
+| [#26](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/26) | The 10 panel compliance rules moved into `ComplianceRules` (plain data) so they are tested; `ComplianceChecker` only reads the scene objects. Read this one closely: it is the one place existing runtime behaviour was restructured |
+| [#27](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/27) | `tools/unity-compile-check`: compiles the scripts against an installed Unity editor |
+| [#28](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/28) | `{code}` and `{term:key}` tokens filled in scenario and violation text |
+| [#29](https://github.com/jdonnelly-zspace/nec-code-inspector/pull/29) | `tools/alignment-report`: skill progress against a credential alignment file, outside the app |
 
 PR #17 updated the design doc and was merged into #1's branch.
 
@@ -63,7 +67,7 @@ The data and test files are large but mechanical. The logic to read closely is i
 dotnet run --project tests/LogicTests
 ```
 
-Needs the .NET 8 SDK only, not Unity. At the time of writing: 1309 checks, 0 failed, 15 warnings (13 dangling related-article references and 2 skill-coverage notes about gaps in the draft CEC content). CI runs the same command on every PR.
+Needs the .NET 8 SDK only, not Unity. At the time of writing: 1364 checks, 0 failed, 15 warnings (13 dangling related-article references and 2 skill-coverage notes about gaps in the draft CEC content). CI runs the same command on every PR.
 
 ## What has not been verified
 
