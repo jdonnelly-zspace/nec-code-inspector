@@ -1,0 +1,294 @@
+{
+  "articles": [
+    {
+      "reference": "411.3.3",
+      "title": "RCD protection for socket-outlets",
+      "text": "Socket-outlets rated up to 32 A on AC final circuits need additional protection from an RCD with a rated trip current of 30 mA or less. Amendment 2 rewrote the rule in three groups (everyday users, other locations, and mobile equipment used outdoors); only the other-locations group can be left out, and only after a documented risk assessment.",
+      "section": 4,
+      "keywords": ["RCD", "socket-outlet", "30 mA", "additional protection"],
+      "related": ["411.3.4"],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "411.3.4",
+      "title": "RCD protection for domestic lighting circuits",
+      "text": "In domestic (household) premises, AC final circuits that supply luminaires need additional protection from an RCD of 30 mA or less.",
+      "section": 4,
+      "keywords": ["RCD", "lighting", "domestic", "30 mA"],
+      "related": ["411.3.3"],
+      "conceptId": "shock-protection",
+      "isNewInEdition": true
+    },
+    {
+      "reference": "421.1.7",
+      "title": "Arc fault detection devices (AFDD)",
+      "text": "An AFDD detects dangerous arcing in a final circuit. Amendment 2 recommends AFDDs on single-phase AC circuits that feed socket-outlets up to 32 A, and trade sources describe them as required in higher-risk residential buildings, houses in multiple occupation, student accommodation and care homes. The sources disagree on the exact wording, so the current text needs checking.",
+      "section": 4,
+      "keywords": ["AFDD", "arc fault", "socket-outlet", "fire"],
+      "related": [],
+      "conceptId": "arc-fault-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "421.1.201",
+      "title": "Consumer unit enclosure",
+      "text": "In domestic premises, consumer units and similar boards follow BS EN 61439-3 and are either made of non-combustible material (steel counts) or housed in a non-combustible cabinet.",
+      "section": 4,
+      "keywords": ["consumer unit", "non-combustible", "enclosure", "steel"],
+      "related": [],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "312.2",
+      "title": "Earthing arrangements: TN-S, TN-C-S and TT",
+      "text": "The supply's earthing arrangement decides how a fault is cleared. TN-S: the supplier provides a separate earth. TN-C-S (also called PME): the supplier combines neutral and earth, so the installation's earth comes from the neutral. TT: the installation uses its own earth electrode, so RCD protection is needed to clear faults.",
+      "section": 3,
+      "keywords": ["TN-S", "TN-C-S", "PME", "TT", "earthing arrangement"],
+      "related": ["542.2"],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "411.3.1.2",
+      "title": "Main protective bonding",
+      "text": "Extraneous metal that enters the building, such as gas and water service pipes and structural steel, is bonded to the main earthing terminal so touch voltages stay low if a fault occurs.",
+      "section": 4,
+      "keywords": ["main bonding", "extraneous", "water pipe", "gas pipe", "earthing terminal"],
+      "related": ["544.1"],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "544.1",
+      "title": "Main bonding conductor size",
+      "text": "The size of the main bonding conductor follows from the size of the supply neutral or earthing conductor. The usual copper minimum is 6 mm2 and the maximum 25 mm2, and 10 mm2 is common on PME supplies. The table that fixes the sizes is copyrighted and is not reproduced.",
+      "section": 5,
+      "keywords": ["bonding conductor", "mm2", "PME", "main bonding"],
+      "related": ["411.3.1.2"],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "701.415.2",
+      "title": "Supplementary bonding in bathrooms",
+      "text": "Extra bonding between metal parts in a room with a bath or shower can be left out only if all circuits there have RCD protection and automatic disconnection, and all incoming metal is already main-bonded.",
+      "section": 7,
+      "keywords": ["supplementary bonding", "bathroom", "shower", "RCD"],
+      "related": ["701"],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "543.1",
+      "title": "Circuit protective conductor size",
+      "text": "Size the circuit protective conductor (cpc) either by the adiabatic equation, which limits heating during a fault, or from a simplified table that relates it to the line conductor size. The table is copyrighted and is not reproduced.",
+      "section": 5,
+      "keywords": ["cpc", "protective conductor", "earth conductor", "adiabatic"],
+      "related": [],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "542.3",
+      "title": "Earthing conductor and main earthing terminal",
+      "text": "The earthing conductor runs from the main earthing terminal to the earth electrode or the supplier's earth terminal. It must be sized, protected against corrosion and mechanical damage, and connected at the main earthing terminal.",
+      "section": 5,
+      "keywords": ["earthing conductor", "main earthing terminal", "earth electrode"],
+      "related": ["542.2"],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "542.2",
+      "title": "Earth electrodes for TT systems",
+      "text": "A TT installation relies on its own earth electrode (a rod or pipe, tape or wire, or plate) and on RCD protection. The electrode resistance multiplied by the RCD trip current must stay at or below 50 V.",
+      "section": 5,
+      "keywords": ["earth electrode", "TT", "RCD", "rod", "earth resistance"],
+      "related": ["312.2", "542.3"],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "433.1",
+      "title": "Overload protection and cable coordination",
+      "text": "The protective device rating must sit between the circuit's design current and the cable's current-carrying capacity (Ib <= In <= Iz), and the device's guaranteed tripping current must not exceed 1.45 times the cable capacity.",
+      "section": 4,
+      "keywords": ["overload", "MCB", "current-carrying capacity", "design current"],
+      "related": ["434.5", "523"],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "434.5",
+      "title": "Short-circuit protection",
+      "text": "The device must clear a short circuit before the cable overheats: the cable's heat-withstand limit must be higher than the let-through energy of the device.",
+      "section": 4,
+      "keywords": ["short circuit", "let-through", "fault current", "MCB"],
+      "related": ["433.1"],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "314.1",
+      "title": "Dividing an installation into circuits",
+      "text": "The installation is divided into several circuits so that a fault affects as little as possible, safe maintenance is possible and nuisance tripping is limited. The UK has no fixed list of dedicated circuits like the NEC's.",
+      "section": 3,
+      "keywords": ["final circuit", "circuit division", "ring final", "radial"],
+      "related": [],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "311.1",
+      "title": "Maximum demand",
+      "text": "The designer assesses the maximum demand, with diversity, to size the supply and the conductors. The standard diversity tables are in IET guidance, not in BS 7671 itself.",
+      "section": 3,
+      "keywords": ["maximum demand", "diversity", "design current"],
+      "related": [],
+      "conceptId": "load-calculation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "523",
+      "title": "Current-carrying capacity and derating",
+      "text": "A cable's current-carrying capacity depends on how it is installed, the ambient temperature, grouping with other circuits and thermal insulation. The capacity tables are in Appendix 4 and are copyrighted, so the figures are not reproduced.",
+      "section": 5,
+      "keywords": ["current-carrying capacity", "derating", "grouping", "thermal insulation", "Appendix 4"],
+      "related": ["433.1", "525"],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "525",
+      "title": "Voltage drop",
+      "text": "Voltage drop from the origin of the installation to the load must stay within the limits in Appendix 12, commonly given as 3 percent for lighting and 5 percent for other circuits on a 230 V public supply.",
+      "section": 5,
+      "keywords": ["voltage drop", "Appendix 12", "cable size"],
+      "related": ["523"],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "462",
+      "title": "Isolation and switching, and the main switch",
+      "text": "Every installation can be isolated by a main switch at its origin that opens all live conductors, and each circuit or item of equipment has isolation and switching suited to its use. The main switch must be accessible and isolators can be secured against being switched on by mistake.",
+      "section": 4,
+      "keywords": ["isolation", "main switch", "switching", "isolator", "lockable"],
+      "related": [],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "514.9.1",
+      "title": "Circuit charts and schedules",
+      "text": "A durable, legible chart, diagram or schedule at each consumer unit or distribution board shows the type and make-up of every circuit. In homes, the schedule from the electrical certificate fixed at the board usually meets this.",
+      "section": 5,
+      "keywords": ["circuit chart", "schedule", "consumer unit", "labelling"],
+      "related": [],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "514.12",
+      "title": "RCD test notice",
+      "text": "A notice at the consumer unit tells users to press the RCD test button every six months.",
+      "section": 5,
+      "keywords": ["RCD", "test notice", "consumer unit"],
+      "related": ["411.3.3"],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "514.3",
+      "title": "Conductor colours",
+      "text": "Single-phase installations use brown for the line, blue for the neutral and green-and-yellow for the circuit protective conductor; three-phase installations use brown, black and grey for the lines.",
+      "section": 5,
+      "keywords": ["colours", "brown", "blue", "green and yellow", "identification"],
+      "related": [],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "522.6.202",
+      "title": "Cables concealed in walls and partitions",
+      "text": "A cable concealed less than 50 mm below a wall surface must run in a safe zone (vertical and horizontal runs tied to accessories and corners) and have 30 mA RCD protection, unless it has another protection listed in 522.6.204.",
+      "section": 5,
+      "keywords": ["concealed cable", "safe zone", "50 mm", "wall", "RCD"],
+      "related": ["522.6.204", "411.3.3"],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "522.6.204",
+      "title": "Alternatives to RCD protection for concealed cables",
+      "text": "A concealed cable can avoid the RCD requirement if it has an earthed metal sheath or earthed conduit or trunking, is protected against nails and screws by its construction or an earthed barrier, or is a SELV or PELV circuit.",
+      "section": 5,
+      "keywords": ["concealed cable", "metal sheath", "conduit", "nail", "SELV"],
+      "related": ["522.6.202"],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "701",
+      "title": "Bathrooms and shower rooms",
+      "text": "A room with a bath or shower is divided into zones. Zone 0 is inside the bath or shower tray, zone 1 is above it up to 2.25 m, and zone 2 extends 0.6 m beyond zone 1. Only very low voltage (SELV) equipment is allowed in zone 0. Socket-outlets other than shaver units are not allowed in zones 0 to 2, and IP ratings and RCD protection apply across the zones.",
+      "section": 7,
+      "keywords": ["bathroom", "zones", "shower", "socket-outlet", "IP rating"],
+      "related": ["701.415.2"],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "702",
+      "title": "Swimming pools and basins",
+      "text": "A swimming pool is divided into zones 0, 1 and 2. Zone 0 is the basin itself, where only very low voltage (SELV) equipment is allowed. Equipment and wiring in the other zones follow zone rules, and metal parts in zones 0 to 2 are supplementary-bonded.",
+      "section": 7,
+      "keywords": ["swimming pool", "zones", "SELV", "bonding"],
+      "related": ["702.415.2"],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "702.415.2",
+      "title": "Supplementary bonding at pools",
+      "text": "Extraneous conductive parts and exposed conductive parts in the pool zones, such as metal ladders and rails, are connected together by a supplementary bonding conductor.",
+      "section": 7,
+      "keywords": ["pool", "supplementary bonding", "ladder", "metal"],
+      "related": ["702"],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "722",
+      "title": "Electric vehicle charging points",
+      "text": "Each charging point needs 30 mA RCD protection plus protection against residual direct current (a Type B RCD, or a Type A or F RCD with a 6 mA residual direct current detecting device). Special rules limit the use of a PME earth for outdoor charging points. Amendment 4 reportedly changes the residual direct current wording, so the current text needs checking.",
+      "section": 7,
+      "keywords": ["EV charging", "RCD", "PME", "residual direct current"],
+      "related": ["411.3.3"],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "132.12",
+      "title": "Accessibility and maintenance",
+      "text": "Equipment is installed so that it can be reached for operating, inspecting, testing and maintaining. BS 7671 gives no fixed clearance dimensions; a duty to provide adequate working space comes from the Electricity at Work Regulations 1989.",
+      "section": 1,
+      "keywords": ["accessibility", "maintenance", "working space", "access"],
+      "related": ["421.1.201"],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "134.1.1",
+      "title": "Workmanship and materials",
+      "text": "Installation work is carried out by competent people with proper materials, and connections are secure, suitable for the conductor and accessible for inspection.",
+      "section": 1,
+      "keywords": ["workmanship", "connections", "materials", "competent"],
+      "related": [],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    }
+  ]
+}

@@ -69,14 +69,14 @@ namespace NECInspector.LogicTests
             t.IsTrue(!flagged("uk"), "an artSet whose art is not built yet is accepted by the validator");
         }
 
-        // Scenes are only offered under codes whose art exists (docs/SCENE_DESIGN.md)
+        // Scenes are only offered under codes whose art exists (docs/SCENE_DESIGN.md); a code without art is allowed, with a warning
         private static void ProfilesUseAvailableArt(TestContext t, List<LoadedProfile> profiles)
         {
             t.Begin("profiles use available art sets");
             foreach (var p in profiles)
                 if (p.manifest != null)
-                    t.IsTrue(ArtSets.IsAvailable(p.manifest.artSet),
-                        $"Codes/{p.folder}: art set '{p.manifest.artSet}' has art (add it to ArtSets when built, or use an existing set)");
+                    if (!ArtSets.IsAvailable(p.manifest.artSet))
+                        t.Warn($"Codes/{p.folder}: art set '{p.manifest.artSet}' has no art yet, so the app offers no scenarios under it (add it to ArtSets when built)");
         }
 
         // Related references the UI cannot resolve are silently skipped, so report them

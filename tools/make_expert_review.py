@@ -37,6 +37,15 @@ VIOLATION_FLAGS = {
     ("GND-SUPPLEMENT-001", "nec"): "Doubt: confirm the single-rod supplement rule and its exception in the 2026 edition",
 }
 CEC_NOTE = "Draft from public summaries: check rule number, sub-item and edition"
+UK_NOTE = "Draft from public summaries: check regulation number, amendment and edition (18th edition, amendments to 2026 unchecked)"
+# BS 7671 entries where public sources disagree or the amendment history is unclear
+UK_ARTICLE_FLAGS = {
+    "421.1.7": "Doubt: sources disagree on whether AFDDs are required or recommended, and for which buildings",
+    "514.12": "Doubt: confirm the number of the RCD test notice (514.12.2) and its wording",
+    "544.1": "Doubt: confirm the main bonding conductor size rule and the 6 mm2 / 10 mm2 figures",
+    "462": "Doubt: confirm Section 462 versus Chapter 46 numbering for the main switch and isolation",
+    "722": "Doubt: Amendment 4 reportedly changes the residual direct current wording",
+}
 
 # NEC articles restored at the owner's request for the wiring-methods and special-locations skills
 RESTORED = "Restored for the wiring-methods or special-locations skill; confirm number, title and text"
@@ -95,7 +104,7 @@ def violation_rows():
             for c in v["citations"]:
                 flag = VIOLATION_FLAGS.get((v["violationId"], c["profileId"]), "")
                 if not flag and c["profileId"] != "nec":
-                    flag = CEC_NOTE
+                    flag = UK_NOTE if c["profileId"] == "bs7671" else CEC_NOTE
                 rows.append([
                     flag, scenario["displayName"], v["violationId"], v["conceptId"], v["severity"],
                     c["profileId"], c["reference"], c["text"],
@@ -113,7 +122,12 @@ def article_rows(profile_id, cited):
     for a in data:
         ref = a["reference"]
         tied = "cited" if ref in cited else ("related to a cited article" if ref in related else "not tied to a violation")
-        flag = CEC_NOTE if profile_id == "cec" else ARTICLE_FLAGS.get(ref, "")
+        if profile_id == "cec":
+            flag = CEC_NOTE
+        elif profile_id == "bs7671":
+            flag = UK_ARTICLE_FLAGS.get(ref, UK_NOTE)
+        else:
+            flag = ARTICLE_FLAGS.get(ref, "")
         rows.append([flag, ref, a["title"], a["text"], "yes" if a.get("isNewInEdition") else "", tied, a.get("conceptId", "")])
     rows.sort(key=lambda r: (r[0] == "", r[5] == "not tied to a violation"))
     return rows
@@ -148,7 +162,10 @@ def main():
 
     counts = {}
     n_extra = write_csv("4-cards-and-sandbox.csv", ["Concern", "Kind", "Code", "Id", "Title or circuit", "References", "What it says"], card_and_sandbox_rows())
-    for i, pid in enumerate(sorted(d for d in os.listdir(CODES) if os.path.isdir(os.path.join(CODES, d))), start=2):
+    # Numbers 2 and 3 stay with the CEC and NEC and 4 with the cards worksheet, so existing references keep working; later codes follow
+    folders = sorted(d for d in os.listdir(CODES) if os.path.isdir(os.path.join(CODES, d)))
+    numbered = [(2, 'cec'), (3, 'nec')] + [(5 + i, d) for i, d in enumerate(d for d in folders if d not in ('cec', 'nec'))]
+    for i, pid in [(n, d) for n, d in numbered if d in folders]:
         counts[pid] = write_csv(f"{i}-articles-{pid}.csv",
                                 ["Concern", "Reference", "Title", "Our paraphrase", "New in edition", "Use in app", "Skill tag"],
                                 article_rows(pid, cited.get(pid, set())))

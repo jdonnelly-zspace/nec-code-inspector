@@ -72,6 +72,14 @@
           "profileId": "nec",
           "reference": "250.24(A)(1)",
           "text": "The grounding electrode conductor is the link between the grounding electrode(s) and the service's equipment grounding conductors and enclosures and, if the system is grounded, its grounded conductor."
+        },
+        {
+          "profileId": "bs7671",
+          "reference": "542.3",
+          "text": "The earthing conductor runs from the main earthing terminal to the earth electrode or the supplier's earth terminal and must be connected at the main earthing terminal.",
+          "description": "Earthing conductor not connected to the main earthing terminal",
+          "hintText": "The earthing conductor must connect the main earthing terminal to the earth electrode or the supplier's earth terminal. Look for a disconnected or missing conductor.",
+          "inspectionNote": "The earthing conductor is disconnected at the main earthing terminal. No path to earth exists."
         }
       ],
       "componentObjectName": "GEC_ServicePanel",
@@ -96,6 +104,14 @@
           "profileId": "cec",
           "reference": "10-700",
           "text": "Bond the building's metal water piping to the electrical grounding system with a bonding conductor."
+        },
+        {
+          "profileId": "bs7671",
+          "reference": "411.3.1.2",
+          "text": "Extraneous metal that enters the building, such as a metal water service pipe, is bonded to the main earthing terminal.",
+          "description": "Metal water service pipe not main-bonded to the earthing terminal",
+          "hintText": "Look for a main bonding clamp and conductor on the water pipe near where it enters the building.",
+          "inspectionNote": "The metal water service pipe enters the building without a main protective bonding conductor to the main earthing terminal."
         }
       ],
       "componentObjectName": "WaterPipe_Bonding",
@@ -115,6 +131,14 @@
           "profileId": "nec",
           "reference": "250.122",
           "text": "Wire-type equipment grounding conductors are at least the size Table 250.122 specifies."
+        },
+        {
+          "profileId": "bs7671",
+          "reference": "543.1",
+          "text": "Size the circuit protective conductor (cpc) for the fault energy, or from the line conductor size, so it can carry a fault safely.",
+          "description": "Circuit protective conductor undersized for the circuit",
+          "hintText": "The cpc is sized for the fault energy or from the line conductor size, not just for the protective device rating.",
+          "inspectionNote": "The circuit protective conductor is too small for the circuit it serves."
         }
       ],
       "componentObjectName": "EGC_SubPanel",

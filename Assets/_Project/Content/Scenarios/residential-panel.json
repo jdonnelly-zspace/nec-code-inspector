@@ -22,6 +22,14 @@
           "profileId": "nec",
           "reference": "110.12",
           "text": "Install electrical equipment tidily, with good workmanship."
+        },
+        {
+          "profileId": "bs7671",
+          "reference": "134.1.1",
+          "text": "Installation work is carried out by competent people with proper materials, and connections are secure and accessible for inspection.",
+          "description": "Unsecured conductors in the consumer unit with poor workmanship",
+          "hintText": "Look at how the conductors are arranged inside the consumer unit. Are they neat and properly secured?",
+          "inspectionNote": "Conductors inside the consumer unit are loose and crossing over each other. Good workmanship needs neat, secure connections."
         }
       ],
       "componentObjectName": "Panel_LooseConductors",
@@ -116,6 +124,14 @@
           "reference": "6-206",
           "text": "Put the consumer's service equipment where it is readily accessible and close to where the service conductors enter the building, and not in places such as clothes closets, bathrooms or stairways.",
           "inspectionNote": "Service disconnect is located behind stored equipment and requires moving obstacles to access. It must be readily accessible under the CEC."
+        },
+        {
+          "profileId": "bs7671",
+          "reference": "462",
+          "text": "Every installation can be isolated by a main switch at its origin, and the main switch must be accessible.",
+          "description": "Main switch located in an area not readily accessible",
+          "hintText": "The main switch must be accessible. Can you reach it without moving obstacles or using a ladder?",
+          "inspectionNote": "The main switch is behind stored equipment and needs obstacles moved to reach it. It must be accessible."
         }
       ],
       "componentObjectName": "ServiceDisconnect_Inaccessible",
@@ -209,6 +225,14 @@
           "profileId": "nec",
           "reference": "408.4",
           "text": "Label every circuit, and every change to a circuit, clearly with its specific purpose, in enough detail to tell it apart from all others."
+        },
+        {
+          "profileId": "bs7671",
+          "reference": "514.9.1",
+          "text": "A durable, legible chart, diagram or schedule at each consumer unit shows the type and make-up of every circuit.",
+          "description": "Consumer unit circuit chart is missing or inaccurate",
+          "hintText": "Look at the circuit chart at the consumer unit. Is every circuit clearly and accurately identified?",
+          "inspectionNote": "Several circuits are labelled generically as 'spare' or 'misc' while serving loads. A durable chart or schedule must identify each circuit."
         }
       ],
       "componentObjectName": "Panel_CircuitDirectory",
