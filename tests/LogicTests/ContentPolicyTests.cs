@@ -48,6 +48,16 @@ namespace NECInspector.LogicTests
                 "no credential files ship in StreamingAssets");
             t.IsTrue(!Directory.Exists(Path.Combine(root, "Assets/_Project/Scripts/Credentials")),
                 "no credential code ships in the app");
+
+            // The three difficulty levels are generic: they describe what the student can do, not a pathway or a body
+            string[] pathwayWords = { "CTE", "apprentice", "journeyman", "licensed", "trade school", "NCCER", "Red Seal", "high school" };
+            foreach (string rel in new[] { "Assets/_Project/Scripts/Core/DifficultyLevel.cs", "Assets/_Project/Scripts/UI/MainMenuPanel.cs" })
+            {
+                string text = File.ReadAllText(Path.Combine(root, rel));
+                foreach (string word in pathwayWords)
+                    t.IsTrue(!Regex.IsMatch(text, $@"{Regex.Escape(word)}", RegexOptions.IgnoreCase),
+                        $"{rel} does not name a training pathway or credential body ('{word}')");
+            }
         }
 
         // Statutory wording ("shall") is a sign that text was copied from a code book.
