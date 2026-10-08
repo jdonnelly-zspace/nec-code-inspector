@@ -67,7 +67,7 @@ Needs the .NET 8 SDK only, not Unity. At the time of writing: 1309 checks, 0 fai
 
 ## What has not been verified
 
-- **Nothing has been compiled or run in Unity.** The logic tests compile engine-independent scripts only. Scripts using uGUI, TextMeshPro or the zSpace SDK are not checked: `MainMenuPanel`, `CodeProfilePickerPanel`, `CodePickerSceneSetup`, `MainMenuSceneGenerator`, and the UI renames.
+- **Nothing has been run in Unity, and the project has not been opened in the Editor.** The logic tests compile engine-independent scripts only. A second local check (`python tools/unity-compile-check/check.py`) compiles 84 of the 106 scripts against Unity 6000.4.1's libraries, with stand-ins for uGUI and TextMeshPro, and finds no errors; that covers `MainMenuPanel`, `CodeProfilePickerPanel`, `CodePickerSceneSetup`, `MainMenuSceneGenerator` and the panel sandbox scripts. The other 22 need the zSpace SDK, PrimeTween or Localization and have not been compiled.
 - **No scene file exists.** `Scenes/MainMenu/` is empty until someone runs *NEC Inspector > Scene Setup > Generate Main Menu Scene* in the Editor.
 - **`FormerlySerializedAs`** keeps old serialized values through the renames, but only an Editor session can confirm that existing assets still load.
 
