@@ -165,6 +165,18 @@ The difficulty settings, certificate templates, quick reference cards and the pa
 
 Still for the expert: the wording of every card and circuit description (worksheet `4-cards-and-sandbox.csv`), the card selection, and the AFCI flags for kitchen appliance circuits against the 2026 NEC.
 
+## 14. BS 7671 draft profile (UK)
+
+`StreamingAssets/Codes/bs7671/` is the first non-NEC, metric code: 29 entries, UK terminology (earthing, consumer unit, socket-outlet, RCD, AFDD), a scope file for RCD protection of socket-outlets, and nine violations that now also cite BS 7671 with UK-worded descriptions, hints and notes. It is `draft` and licence `unreviewed`, with art set `uk`, which has no art yet, so no scenarios are offered under it. There are no tables (Appendix 4 and the bonding and cpc size tables are copyrighted), so the panel sandbox does not count toward it.
+
+- **Sources:** public only (IET, NICEIC, NAPIT, trade press, manufacturer guidance). Nobody has read the regulations.
+- **Edition:** the 18th edition with amendments; the effect of Amendment 3 (2024) and the reported Amendment 4 (2026) on individual clauses is unchecked.
+- **Low confidence:** 421.1.7 (AFDD required or recommended), 514.12 (RCD test notice number), 544.1 (bonding conductor size), Section 462 (main switch numbering), and 722 (residual direct current).
+- **Not modeled in `scope.json`:** the risk-assessment exception in 411.3.3, domestic lighting-circuit RCDs (411.3.4), bathroom and pool zone rules, AFDDs and EV charging.
+- **Gaps in the engine this exposed:** the sandbox cannot run without tables; the panel and load rules are shaped for US dwellings (listed in the TODO). The UK has no fixed dedicated-circuit list, so `314.1` carries no violation.
+- **Skill coverage:** the nine violations cover shock protection, earthing and bonding, marking, special locations, disconnecting means and equipment installation; seven skills have no UK violation yet (arc-fault, overcurrent, conductor sizing, branch circuits, load calculation, working space, wiring methods).
+- **Still for the expert:** every entry, the edition, and the licence decision.
+
 ## Sources (all public)
 
 NEC: ecmweb.com (GFCI and AFCI requirements; key revisions to Chapter 2 of the 2026 NEC; NEC motors series; one-family dwelling load calculations), IAEI Magazine (210.8 GFCI requirements), electricianu.com (2023 NEC 210.11), Mike Holt forums (220.14(I), 408.54), St. Paul building department electrical checklist (210.52).

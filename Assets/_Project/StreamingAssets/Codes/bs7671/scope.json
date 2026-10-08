@@ -1,0 +1,20 @@
+{
+  "status": "draft",
+  "note": "Where BS 7671 requires RCD protection for socket-outlets, from the 18th edition (411.3.3) as described in public sources; AFDDs are recommended and required only in some building types, so none is modeled. A UK expert must check every rule.",
+  "rules": [
+    {
+      "id": "rcd-socket-outlets",
+      "protection": "gfci",
+      "reference": "411.3.3",
+      "maxAmps": 32
+    }
+  ],
+  "exemptions": [],
+  "notModeled": [
+    "The documented-risk-assessment exception for socket-outlets in locations other than domestic and similar everyday use (411.3.3)",
+    "RCD protection of lighting circuits in domestic premises (411.3.4): the checker is receptacle based",
+    "Location rules for bathrooms (701.512.3) and the zones around baths, showers and pools",
+    "AFDDs (421.1.7): recommended generally and required in higher-risk residential buildings, houses in multiple occupation, student accommodation and care homes",
+    "Electric vehicle charging points (Section 722)"
+  ]
+}

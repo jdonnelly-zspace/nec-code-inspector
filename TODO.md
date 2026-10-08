@@ -102,7 +102,7 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - [x] Citation matcher is segment-aware (`250.2` no longer matches `250.24`, `26-70` no longer matches `26-700`) (Phase D)
 
 ### Phase G - Later: UK and Europe
-- [ ] BS 7671 profile (UK; metric conductors, 230 V, different terminology) as the stress test
+- [~] BS 7671 profile (UK; metric conductors, 230 V, different terminology) as the stress test: a draft with 29 own-words entries, UK terminology, an RCD scope file and nine UK-worded violation citations (`StreamingAssets/Codes/bs7671`, `docs/expert-review/PRE_REVIEW.md` section 14). No tables (copyrighted), no UK art, so it offers no scenarios and no sandbox. Needs a UK-qualified expert, the licence decision, UK art, and violations for seven skills
 - [ ] France (NF C 15-100), Germany (DIN VDE 0100) and other HD 60364 national codes
 - [ ] Decide whether UI language localization (French, German) is in scope
 

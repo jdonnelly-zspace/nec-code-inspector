@@ -41,6 +41,13 @@
           "profileId": "nec",
           "reference": "680.26",
           "text": "Bond the pool's conductive parts together with solid copper no smaller than 8 AWG so they form an equipotential grid, including metal ladders and rails."
+        },
+        {
+          "profileId": "bs7671",
+          "reference": "702.415.2",
+          "text": "Metal parts in the pool zones, such as ladders and rails, are connected together by a supplementary bonding conductor.",
+          "hintText": "Look for a supplementary bonding conductor on the metal ladder and rail.",
+          "inspectionNote": "The metal ladder and rail have no supplementary bonding conductor, so they could carry a different voltage than other metal in the zones."
         }
       ],
       "componentObjectName": "Pool_Ladder_Unbonded",
