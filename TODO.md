@@ -14,8 +14,8 @@ Status key: `[x]` done and on `main`, `[~]` built and on `main` but still waitin
 - **Project owner and reviewers:** a second person to review everything merged with the admin override (`docs/REVIEW_GUIDE.md`, `docs/expert-review/PRE_REVIEW.md`); answer the open decisions below, including whether to keep the two new skills.
 - **Credential expert** (start with `docs/expert-review/PRE_REVIEW.md`): confirm every row marked "Corrected in pre-review" against the 2026 NEC and C22.1:24; the doubts left unchanged (section 11); the two new skills (`wiring-methods`, `special-locations`) and the restored articles, especially Article 480 (medium-low confidence); every `scope.json` rule (CEC rows are draft, the 2026 NEC scope is unverified); the CEC rules for the 28 hidden violations and for the two new skills; the Red Seal task-to-skill mapping (C-17 is inferred); which edition the exam uses; and the receptacle spacing measurement.
 - **Unity Editor** (the project has never been opened in the Editor): run `Generate Main Menu Scene` and commit the scene; add a ZCamera rig and check layouts; open the project once to compile the 22 scripts that need the zSpace SDK, PrimeTween or Localization (a local check already compiles the other 89 of 111 against Unity 6000.4.1: `tools/unity-compile-check`); run NEC Inspector > Generate All Data (the scenarios, difficulty settings, certificates, quick reference cards and sandbox design now come from JSON, and these importers have never run in the Editor) and Generate Scenario Catalog (six scenarios), then open the quick reference card panel to check the per-code filter, and the panel sandbox HUD and breaker labels (they now take their wording and voltage from the active code); build the six scenarios' 3D scenes and the North American art set; rename NEC-named MonoBehaviours with references visible.
-- **Code, can start now:** concept-aware scoring once the policy is decided; running the scope checker on scene objects once scenes exist; a per-profile licensing field; pluggable compliance rule sets (rule logic is still C#). Best done with the first real non-NEC code (BS 7671), not before: making the dwelling load method data-driven (`LoadCalculator` is shaped like Article 220), the left/right bus balance rule, and the split-phase meaning of single and double pole. Waiting on others: scene facts for the two wire and breaker violations need a CEC conductor table; battery violations need the expert's Article 480 numbering; CEC tables need a CSA licence.
-- **Blocked on a decision:** Unity compile in CI; first code after Canada; localization; concept-level scoring policy; which menu panels beyond the five built.
+- **Code, can start now:** running the scope checker on scene objects once scenes exist; a per-profile licensing field; pluggable compliance rule sets (rule logic is still C#). Best done with the first real non-NEC code (BS 7671), not before: making the dwelling load method data-driven (`LoadCalculator` is shaped like Article 220), the left/right bus balance rule, and the split-phase meaning of single and double pole. Waiting on others: scene facts for the two wire and breaker violations need a CEC conductor table; battery violations need the expert's Article 480 numbering; CEC tables need a CSA licence.
+- **Blocked on a decision:** Unity compile in CI; first code after Canada; localization; which menu panels beyond the five built.
 
 ### Phase A - Foundations (refactor steps 1-4)
 - [x] A1. Code-neutral concept IDs on violations
@@ -37,7 +37,7 @@ Status key: `[x]` done and on `main`, `[~]` built and on `main` but still waitin
 
 **B2. Finish the data layer**
 - [x] Per-profile citations on violations: `citations` list (profileId, reference, text) replaces `necArticle` / `necArticleText`; scoring compares the student's citation to the active profile's reference
-- [ ] Concept-aware scoring: let a citation in the same concept count (for example 210.8(A)(1) vs 210.8(A)(5)). Needs article-to-concept tags in each profile's article data and a policy decision on how much credit it earns
+- [x] Concept-aware scoring: every code entry carries a `conceptId`; citing another entry of the violation's skill earns 0.75 of the evidence (full credit 1, other wrong citation 0.5, missed 0). `CitationCredit`, `docs/SKILL_SCORING.md`, 101 NEC and 12 CEC entries tagged, tests that every violation's citations belong to its skill. The 0.75 is a policy choice for the owner to change in `SkillOutcomes`; the expert confirms the tags (worksheet column "Skill tag")
 - [x] Skill-based progress (decision: progress is per skill, never per credential). Evidence from inspections and the sandbox updates a running mastery per skill and tier; a skill is attained at 3+ attempts and 80% mastery; a higher tier covers a lower one
 - [x] Credentials removed from the app (decision: it is a skill-based app that helps people get the credential). Deleted credential profiles, readiness, deferred requirements and the credential files; progress is per skill and the student's chosen installation code is stored in the progress file and applied at startup. Alignment notes live outside the app in `docs/credential-alignment/`
 - [x] Certificates are earned from skills (`requiredSkills` + `requiredTier`) instead of NEC chapters; the dead chapter-mastery code is removed; the dashboard shows skill mastery
@@ -110,10 +110,9 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 1. How to get a Unity compile in CI (Phase B1)
 2. First installation code after Canada, if a customer is waiting on the UK or EU
 3. Language localization in or out of scope
-4. Scoring policy for concept-level credit (Phase B2)
-5. Which panels beyond mode, scenarios, difficulty, settings and code picker go into the menu scene (progress dashboard, reference panels)
+4. Which panels beyond mode, scenarios, difficulty, settings and code picker go into the menu scene (progress dashboard, reference panels)
 
-Decided: region-specific art is one set per region group (`docs/SCENE_DESIGN.md`).
+Decided: region-specific art is one set per region group (`docs/SCENE_DESIGN.md`); citing another entry of the violation's skill earns 0.75 (`docs/SKILL_SCORING.md`).
 
 ## Current Phase: Alpha - Unity Editor Integration
 

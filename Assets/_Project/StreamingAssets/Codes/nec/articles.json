@@ -7,6 +7,7 @@
       "section": 1,
       "keywords": ["workmanship", "installation", "neat", "professional"],
       "related": ["110.14"],
+      "conceptId": "equipment-installation",
       "isNewInEdition": false
     },
     {
@@ -16,6 +17,7 @@
       "section": 1,
       "keywords": ["connections", "terminals", "splicing", "conductors", "aluminum", "copper"],
       "related": ["110.12"],
+      "conceptId": "equipment-installation",
       "isNewInEdition": false
     },
     {
@@ -25,6 +27,7 @@
       "section": 1,
       "keywords": ["terminals", "conductors", "pressure connectors", "solder"],
       "related": ["110.14"],
+      "conceptId": "equipment-installation",
       "isNewInEdition": false
     },
     {
@@ -34,6 +37,7 @@
       "section": 1,
       "keywords": ["working space", "clearance", "access", "depth", "distance"],
       "related": ["110.26(A)(2)", "110.26(A)(3)"],
+      "conceptId": "working-space-access",
       "isNewInEdition": false
     },
     {
@@ -43,6 +47,7 @@
       "section": 1,
       "keywords": ["working space", "width", "30 inches", "clearance"],
       "related": ["110.26(A)(1)"],
+      "conceptId": "working-space-access",
       "isNewInEdition": false
     },
     {
@@ -52,6 +57,7 @@
       "section": 1,
       "keywords": ["working space", "height", "6.5 feet", "clearance"],
       "related": ["110.26(A)(1)"],
+      "conceptId": "working-space-access",
       "isNewInEdition": false
     },
     {
@@ -61,6 +67,7 @@
       "section": 2,
       "keywords": ["GFCI", "ground fault", "dwelling", "receptacle", "protection", "personnel"],
       "related": ["210.8(D)"],
+      "conceptId": "shock-protection",
       "isNewInEdition": true
     },
     {
@@ -70,6 +77,7 @@
       "section": 2,
       "keywords": ["GFCI", "bathroom", "dwelling", "receptacle"],
       "related": ["210.8(A)"],
+      "conceptId": "shock-protection",
       "isNewInEdition": false
     },
     {
@@ -79,6 +87,7 @@
       "section": 2,
       "keywords": ["GFCI", "garage", "accessory building", "grade level"],
       "related": ["210.8(A)"],
+      "conceptId": "shock-protection",
       "isNewInEdition": false
     },
     {
@@ -88,6 +97,7 @@
       "section": 2,
       "keywords": ["GFCI", "kitchen", "countertop", "dwelling"],
       "related": ["210.8(A)"],
+      "conceptId": "shock-protection",
       "isNewInEdition": false
     },
     {
@@ -97,6 +107,7 @@
       "section": 2,
       "keywords": ["GFCI", "laundry", "dwelling"],
       "related": ["210.8(A)"],
+      "conceptId": "shock-protection",
       "isNewInEdition": false
     },
     {
@@ -106,6 +117,7 @@
       "section": 2,
       "keywords": ["branch circuit", "kitchen", "small appliance", "20 ampere", "two circuits"],
       "related": ["210.52(B)"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -115,6 +127,7 @@
       "section": 2,
       "keywords": ["branch circuit", "laundry", "20 ampere", "required"],
       "related": ["210.11(C)(1)"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -124,6 +137,7 @@
       "section": 2,
       "keywords": ["branch circuit", "bathroom", "20 ampere", "required"],
       "related": ["210.11(C)(2)", "210.11(C)(1)"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -133,6 +147,7 @@
       "section": 2,
       "keywords": ["AFCI", "arc fault", "dwelling", "bedroom", "living room", "protection"],
       "related": ["210.8"],
+      "conceptId": "arc-fault-protection",
       "isNewInEdition": true
     },
     {
@@ -142,6 +157,7 @@
       "section": 2,
       "keywords": ["receptacle", "outlet", "spacing", "6 feet", "wall", "dwelling"],
       "related": ["210.52(B)", "210.52(C)"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -151,6 +167,7 @@
       "section": 2,
       "keywords": ["small appliance", "kitchen", "countertop", "20 ampere"],
       "related": ["210.11(C)(1)", "210.52(C)"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -160,6 +177,7 @@
       "section": 2,
       "keywords": ["countertop", "kitchen", "24 inches", "receptacle", "spacing"],
       "related": ["210.52(A)", "210.52(B)"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -169,6 +187,7 @@
       "section": 2,
       "keywords": ["lighting", "load", "calculation", "VA", "occupancy"],
       "related": ["220.40", "220.42"],
+      "conceptId": "load-calculation",
       "isNewInEdition": false
     },
     {
@@ -178,6 +197,7 @@
       "section": 2,
       "keywords": ["load calculation", "service", "feeder", "demand factor"],
       "related": ["220.12", "220.42", "220.82"],
+      "conceptId": "load-calculation",
       "isNewInEdition": false
     },
     {
@@ -187,6 +207,7 @@
       "section": 2,
       "keywords": ["optional calculation", "dwelling", "load", "service"],
       "related": ["220.40", "220.83"],
+      "conceptId": "load-calculation",
       "isNewInEdition": false
     },
     {
@@ -196,6 +217,7 @@
       "section": 2,
       "keywords": ["service disconnect", "location", "accessible", "entrance"],
       "related": [],
+      "conceptId": "disconnecting-means",
       "isNewInEdition": false
     },
     {
@@ -205,6 +227,7 @@
       "section": 2,
       "keywords": ["service disconnect", "rating", "ampere", "load"],
       "related": ["230.70"],
+      "conceptId": "disconnecting-means",
       "isNewInEdition": false
     },
     {
@@ -214,6 +237,7 @@
       "section": 2,
       "keywords": ["overcurrent", "protection", "conductor", "ampacity", "breaker"],
       "related": ["240.4(B)", "240.4(D)", "310.14"],
+      "conceptId": "overcurrent-protection",
       "isNewInEdition": false
     },
     {
@@ -223,6 +247,7 @@
       "section": 2,
       "keywords": ["small conductor", "14 AWG", "12 AWG", "10 AWG", "overcurrent", "ampere"],
       "related": ["240.4"],
+      "conceptId": "overcurrent-protection",
       "isNewInEdition": false
     },
     {
@@ -232,6 +257,7 @@
       "section": 2,
       "keywords": ["overcurrent", "accessible", "height", "6 feet 7 inches", "breaker"],
       "related": [],
+      "conceptId": "working-space-access",
       "isNewInEdition": false
     },
     {
@@ -241,6 +267,7 @@
       "section": 2,
       "keywords": ["grounding", "earth", "lightning", "voltage", "system"],
       "related": ["250.24", "250.50"],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -250,6 +277,7 @@
       "section": 2,
       "keywords": ["grounding electrode", "conductor", "service", "equipment", "connection"],
       "related": ["250.4", "250.50", "250.64"],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -259,6 +287,7 @@
       "section": 2,
       "keywords": ["grounding electrode", "system", "bonding", "building"],
       "related": ["250.52", "250.24"],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -268,6 +297,7 @@
       "section": 2,
       "keywords": ["grounding electrode", "water pipe", "underground", "10 feet"],
       "related": ["250.50"],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -277,6 +307,7 @@
       "section": 2,
       "keywords": ["ground rod", "8 feet", "5/8 inch", "electrode", "copper", "steel"],
       "related": ["250.50", "250.53"],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -286,6 +317,7 @@
       "section": 2,
       "keywords": ["grounding electrode conductor", "aluminum", "masonry", "earth", "corrosion"],
       "related": [],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -295,6 +327,7 @@
       "section": 2,
       "keywords": ["bonding", "water pipe", "metal", "service equipment"],
       "related": ["250.50", "250.52"],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -304,6 +337,7 @@
       "section": 2,
       "keywords": ["equipment grounding", "conductor size", "table", "wire"],
       "related": ["250.4"],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -313,6 +347,7 @@
       "section": 3,
       "keywords": ["ampacity", "conductor", "table", "wire size", "current"],
       "related": ["240.4", "310.16"],
+      "conceptId": "conductor-sizing",
       "isNewInEdition": false
     },
     {
@@ -322,6 +357,7 @@
       "section": 3,
       "keywords": ["ampacity", "table", "insulated", "conductor", "temperature", "AWG"],
       "related": ["310.14", "240.4"],
+      "conceptId": "conductor-sizing",
       "isNewInEdition": false
     },
     {
@@ -331,6 +367,7 @@
       "section": 3,
       "keywords": ["NM cable", "Romex", "dwelling", "permitted", "residential"],
       "related": ["334.30"],
+      "conceptId": "wiring-methods",
       "isNewInEdition": false
     },
     {
@@ -340,6 +377,7 @@
       "section": 3,
       "keywords": ["NM cable", "securing", "staple", "support", "4.5 feet", "12 inches"],
       "related": ["334.10"],
+      "conceptId": "wiring-methods",
       "isNewInEdition": false
     },
     {
@@ -349,6 +387,7 @@
       "section": 4,
       "keywords": ["receptacle", "replacement", "GFCI", "grounding", "no ground"],
       "related": ["210.8"],
+      "conceptId": "shock-protection",
       "isNewInEdition": false
     },
     {
@@ -358,6 +397,7 @@
       "section": 4,
       "keywords": ["circuit directory", "panel schedule", "labeling", "identification"],
       "related": ["408.54"],
+      "conceptId": "identification-marking",
       "isNewInEdition": true
     },
     {
@@ -367,6 +407,7 @@
       "section": 4,
       "keywords": ["panelboard", "overcurrent", "protection", "bus rating", "spaces"],
       "related": ["408.4"],
+      "conceptId": "equipment-installation",
       "isNewInEdition": false
     },
     {
@@ -376,6 +417,7 @@
       "section": 4,
       "keywords": ["appliance", "flexible cord", "connection", "interchange"],
       "related": [],
+      "conceptId": "equipment-installation",
       "isNewInEdition": false
     },
     {
@@ -385,6 +427,7 @@
       "section": 4,
       "keywords": ["motor", "ampere", "table", "conductor", "protection"],
       "related": ["430.22", "430.52"],
+      "conceptId": "conductor-sizing",
       "isNewInEdition": false
     },
     {
@@ -394,6 +437,7 @@
       "section": 4,
       "keywords": ["motor", "branch circuit", "short circuit", "ground fault", "protection"],
       "related": ["430.6"],
+      "conceptId": "overcurrent-protection",
       "isNewInEdition": false
     },
     {
@@ -403,6 +447,7 @@
       "section": 2,
       "keywords": ["GFCI", "outdoor", "dwelling", "receptacle", "porch", "patio", "deck"],
       "related": ["210.8(A)", "210.8(A)(2)"],
+      "conceptId": "shock-protection",
       "isNewInEdition": false
     },
     {
@@ -412,6 +457,7 @@
       "section": 2,
       "keywords": ["GFCI", "bathtub", "shower", "6 feet", "receptacle", "dwelling"],
       "related": ["210.8(A)", "210.8(A)(1)"],
+      "conceptId": "shock-protection",
       "isNewInEdition": false
     },
     {
@@ -421,6 +467,7 @@
       "section": 2,
       "keywords": ["GFCI", "dishwasher", "appliance", "dwelling", "branch circuit"],
       "related": ["210.8(A)", "422.16"],
+      "conceptId": "shock-protection",
       "isNewInEdition": false
     },
     {
@@ -430,6 +477,7 @@
       "section": 2,
       "keywords": ["AFCI", "arc fault", "modification", "extension", "branch circuit"],
       "related": ["210.12(A)"],
+      "conceptId": "arc-fault-protection",
       "isNewInEdition": false
     },
     {
@@ -439,6 +487,7 @@
       "section": 2,
       "keywords": ["island", "peninsular", "countertop", "receptacle", "kitchen", "24 inches"],
       "related": ["210.52(C)", "210.52(B)"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -448,6 +497,7 @@
       "section": 2,
       "keywords": ["bathroom", "receptacle", "basin", "36 inches", "countertop"],
       "related": ["210.8(A)(1)", "210.11(C)(1)"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -457,6 +507,7 @@
       "section": 2,
       "keywords": ["outdoor", "receptacle", "dwelling", "grade", "front", "back"],
       "related": ["210.8(A)(3)", "210.52(A)"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -466,6 +517,7 @@
       "section": 2,
       "keywords": ["basement", "garage", "accessory building", "receptacle", "dwelling"],
       "related": ["210.8(A)(2)", "210.52(A)"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -475,6 +527,7 @@
       "section": 2,
       "keywords": ["overcurrent", "next size up", "standard rating", "conductor", "protection"],
       "related": ["240.4", "240.4(D)", "240.6"],
+      "conceptId": "overcurrent-protection",
       "isNewInEdition": false
     },
     {
@@ -484,6 +537,7 @@
       "section": 3,
       "keywords": ["NM cable", "ampacity", "bundling", "derate", "current-carrying", "adjustment"],
       "related": ["310.14", "310.16", "334.10"],
+      "conceptId": "conductor-sizing",
       "isNewInEdition": false
     },
     {
@@ -493,6 +547,7 @@
       "section": 2,
       "keywords": ["demand factor", "lighting", "load calculation", "dwelling", "VA", "3000"],
       "related": ["220.12", "220.40"],
+      "conceptId": "load-calculation",
       "isNewInEdition": false
     },
     {
@@ -502,6 +557,7 @@
       "section": 2,
       "keywords": ["small appliance", "laundry", "1500 VA", "load calculation", "dwelling", "demand"],
       "related": ["210.11(C)(1)", "210.11(C)(3)", "220.42"],
+      "conceptId": "load-calculation",
       "isNewInEdition": false
     },
     {
@@ -511,6 +567,7 @@
       "section": 2,
       "keywords": ["dryer", "5000 watts", "load calculation", "dwelling", "demand factor"],
       "related": ["220.40", "220.82"],
+      "conceptId": "load-calculation",
       "isNewInEdition": false
     },
     {
@@ -520,6 +577,7 @@
       "section": 2,
       "keywords": ["range", "oven", "cooking", "8 kW", "12 kW", "demand", "load calculation"],
       "related": ["210.19", "220.40"],
+      "conceptId": "load-calculation",
       "isNewInEdition": false
     },
     {
@@ -529,6 +587,7 @@
       "section": 2,
       "keywords": ["optional calculation", "existing dwelling", "10 kVA", "40 percent", "demand"],
       "related": ["220.82", "220.40"],
+      "conceptId": "load-calculation",
       "isNewInEdition": false
     },
     {
@@ -538,6 +597,7 @@
       "section": 2,
       "keywords": ["supplemental electrode", "ground rod", "25 ohms", "resistance", "additional"],
       "related": ["250.50", "250.52(A)(5)"],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -547,6 +607,7 @@
       "section": 2,
       "keywords": ["intersystem", "bonding", "communications", "termination", "cable", "telephone"],
       "related": ["250.50", "250.24"],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -556,6 +617,7 @@
       "section": 1,
       "keywords": ["listed", "labeled", "installation", "instructions", "equipment"],
       "related": ["110.12"],
+      "conceptId": "equipment-installation",
       "isNewInEdition": false
     },
     {
@@ -565,6 +627,7 @@
       "section": 1,
       "keywords": ["temperature", "rating", "termination", "conductor", "ampacity", "60C", "75C"],
       "related": ["110.14", "310.16"],
+      "conceptId": "equipment-installation",
       "isNewInEdition": false
     },
     {
@@ -574,6 +637,7 @@
       "section": 2,
       "keywords": ["grounded", "conductor", "white", "gray", "neutral", "identification"],
       "related": ["250.24"],
+      "conceptId": "identification-marking",
       "isNewInEdition": false
     },
     {
@@ -583,6 +647,7 @@
       "section": 2,
       "keywords": ["branch circuit", "rating", "ampere", "overcurrent", "15", "20", "30", "40", "50"],
       "related": ["210.11", "240.4"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -592,6 +657,7 @@
       "section": 2,
       "keywords": ["branch circuit", "conductor", "ampacity", "minimum", "sizing"],
       "related": ["210.3", "310.16", "240.4"],
+      "conceptId": "conductor-sizing",
       "isNewInEdition": false
     },
     {
@@ -601,6 +667,7 @@
       "section": 2,
       "keywords": ["hallway", "receptacle", "dwelling", "10 feet"],
       "related": ["210.52(A)"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -610,6 +677,7 @@
       "section": 2,
       "keywords": ["feeder", "conductor", "ampacity", "minimum", "sizing", "continuous", "load"],
       "related": ["220.40", "310.16"],
+      "conceptId": "conductor-sizing",
       "isNewInEdition": false
     },
     {
@@ -619,6 +687,7 @@
       "section": 2,
       "keywords": ["receptacle", "load", "180 VA", "outlet", "commercial", "occupancy"],
       "related": ["220.12", "220.44"],
+      "conceptId": "load-calculation",
       "isNewInEdition": false
     },
     {
@@ -628,6 +697,7 @@
       "section": 2,
       "keywords": ["receptacle", "load", "commercial", "demand factor", "non-dwelling"],
       "related": ["220.14", "220.40"],
+      "conceptId": "load-calculation",
       "isNewInEdition": false
     },
     {
@@ -637,6 +707,7 @@
       "section": 2,
       "keywords": ["feeder", "tap", "10 foot", "overcurrent", "raceway", "conductor"],
       "related": ["240.4", "215.2"],
+      "conceptId": "overcurrent-protection",
       "isNewInEdition": false
     },
     {
@@ -646,6 +717,7 @@
       "section": 2,
       "keywords": ["ground-fault", "current path", "impedance", "overcurrent", "bonding"],
       "related": ["250.4(A)(1)", "250.122"],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -655,6 +727,7 @@
       "section": 2,
       "keywords": ["grounding electrode conductor", "GEC", "sizing", "table", "service"],
       "related": ["250.24", "250.52"],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -664,6 +737,7 @@
       "section": 2,
       "keywords": ["equipment grounding conductor", "EGC", "types", "conduit", "raceway"],
       "related": ["250.122", "250.4(A)(5)"],
+      "conceptId": "earthing-bonding",
       "isNewInEdition": false
     },
     {
@@ -673,6 +747,7 @@
       "section": 3,
       "keywords": ["protection", "physical damage", "cable", "framing", "nail plate", "boring"],
       "related": ["334.30", "300.5"],
+      "conceptId": "wiring-methods",
       "isNewInEdition": false
     },
     {
@@ -682,6 +757,7 @@
       "section": 3,
       "keywords": ["underground", "burial", "depth", "cover", "direct-buried", "raceway"],
       "related": ["300.4"],
+      "conceptId": "wiring-methods",
       "isNewInEdition": false
     },
     {
@@ -691,6 +767,7 @@
       "section": 3,
       "keywords": ["box fill", "conductor", "volume", "junction box", "outlet box", "device box"],
       "related": [],
+      "conceptId": "wiring-methods",
       "isNewInEdition": false
     },
     {
@@ -700,6 +777,7 @@
       "section": 4,
       "keywords": ["motor", "nameplate", "marking", "horsepower", "full-load current", "code letter"],
       "related": ["430.6", "430.52"],
+      "conceptId": "identification-marking",
       "isNewInEdition": false
     },
     {
@@ -709,6 +787,7 @@
       "section": 4,
       "keywords": ["motor", "conductor", "branch circuit", "125 percent", "sizing", "full-load current"],
       "related": ["430.6", "310.16"],
+      "conceptId": "conductor-sizing",
       "isNewInEdition": false
     },
     {
@@ -718,6 +797,7 @@
       "section": 4,
       "keywords": ["multiple motors", "conductor sizing", "125 percent", "group", "feeder"],
       "related": ["430.22", "430.52"],
+      "conceptId": "overcurrent-protection",
       "isNewInEdition": false
     },
     {
@@ -727,6 +807,7 @@
       "section": 4,
       "keywords": ["motor", "overload", "protection", "115 percent", "service factor", "nameplate"],
       "related": ["430.6", "430.52"],
+      "conceptId": "overcurrent-protection",
       "isNewInEdition": false
     },
     {
@@ -736,6 +817,7 @@
       "section": 4,
       "keywords": ["motor", "disconnect", "controller", "in sight", "locked-rotor"],
       "related": ["430.110", "430.52"],
+      "conceptId": "disconnecting-means",
       "isNewInEdition": false
     },
     {
@@ -745,6 +827,7 @@
       "section": 4,
       "keywords": ["motor", "disconnect", "ampere rating", "115 percent", "in sight"],
       "related": ["430.102", "430.6"],
+      "conceptId": "disconnecting-means",
       "isNewInEdition": false
     },
     {
@@ -754,6 +837,7 @@
       "section": 2,
       "keywords": ["standard ratings", "breaker sizes", "overcurrent device", "ampere rating"],
       "related": ["240.4(B)"],
+      "conceptId": "overcurrent-protection",
       "isNewInEdition": false
     },
     {
@@ -763,6 +847,7 @@
       "section": 2,
       "keywords": ["branch circuit", "loads", "individual", "rating", "permissible"],
       "related": ["210.3", "210.19(A)"],
+      "conceptId": "branch-circuit-requirements",
       "isNewInEdition": false
     },
     {
@@ -772,6 +857,7 @@
       "section": 2,
       "keywords": ["maximum", "load", "branch circuit", "rating"],
       "related": ["210.23"],
+      "conceptId": "load-calculation",
       "isNewInEdition": false
     },
     {
@@ -781,6 +867,7 @@
       "section": 2,
       "keywords": ["overhead", "clearance", "conductors", "outside", "grade", "driveway"],
       "related": [],
+      "conceptId": "wiring-methods",
       "isNewInEdition": false
     },
     {
@@ -790,6 +877,7 @@
       "section": 4,
       "keywords": ["switch", "neutral", "grounded conductor", "smart switch", "dimmer"],
       "related": ["200.6"],
+      "conceptId": "equipment-installation",
       "isNewInEdition": false
     },
     {
@@ -799,6 +887,7 @@
       "section": 4,
       "keywords": ["receptacle", "outdoor", "damp", "weatherproof", "cover"],
       "related": ["406.9(B)"],
+      "conceptId": "special-locations",
       "isNewInEdition": false
     },
     {
@@ -808,6 +897,7 @@
       "section": 4,
       "keywords": ["receptacle", "wet location", "weatherproof", "in-use cover"],
       "related": ["406.9(A)"],
+      "conceptId": "special-locations",
       "isNewInEdition": false
     },
     {
@@ -817,6 +907,7 @@
       "section": 4,
       "keywords": ["luminaire", "light", "wet", "damp", "location", "weatherproof"],
       "related": ["406.9(B)"],
+      "conceptId": "special-locations",
       "isNewInEdition": false
     },
     {
@@ -826,6 +917,7 @@
       "section": 4,
       "keywords": ["battery", "storage", "equipment", "UPS"],
       "related": ["480.7"],
+      "conceptId": "special-locations",
       "isNewInEdition": false
     },
     {
@@ -835,6 +927,7 @@
       "section": 4,
       "keywords": ["battery", "terminals", "corrosion", "connections"],
       "related": ["480.7"],
+      "conceptId": "special-locations",
       "isNewInEdition": false
     },
     {
@@ -844,6 +937,7 @@
       "section": 4,
       "keywords": ["battery", "disconnect", "stationary", "DC", "60 volts"],
       "related": ["480.3", "480.10"],
+      "conceptId": "special-locations",
       "isNewInEdition": false
     },
     {
@@ -853,6 +947,7 @@
       "section": 4,
       "keywords": ["battery", "ventilation", "hydrogen", "explosive", "battery room"],
       "related": ["480.7"],
+      "conceptId": "special-locations",
       "isNewInEdition": false
     },
     {
@@ -862,6 +957,7 @@
       "section": 6,
       "keywords": ["pool", "cord and plug", "equipment", "grounding", "cord length"],
       "related": ["680.26"],
+      "conceptId": "special-locations",
       "isNewInEdition": false
     },
     {
@@ -871,6 +967,7 @@
       "section": 6,
       "keywords": ["pool", "disconnect", "maintenance", "5 feet", "accessible"],
       "related": ["680.22(B)", "680.26"],
+      "conceptId": "special-locations",
       "isNewInEdition": false
     },
     {
@@ -880,6 +977,7 @@
       "section": 6,
       "keywords": ["pool", "luminaire", "height", "12 feet", "5 feet", "water level"],
       "related": ["680.26"],
+      "conceptId": "special-locations",
       "isNewInEdition": false
     },
     {
@@ -889,6 +987,7 @@
       "section": 6,
       "keywords": ["pool", "bonding", "equipotential", "grid", "ladder", "8 AWG"],
       "related": ["680.22(B)", "250.4(A)(5)"],
+      "conceptId": "special-locations",
       "isNewInEdition": false
     },
     {
@@ -898,6 +997,7 @@
       "section": 6,
       "keywords": ["spa", "hot tub", "GFCI", "ground-fault", "protection"],
       "related": ["210.8(A)(1)"],
+      "conceptId": "special-locations",
       "isNewInEdition": false
     },
     {
@@ -907,6 +1007,7 @@
       "section": 4,
       "keywords": ["air conditioning", "nameplate", "minimum circuit ampacity", "maximum overcurrent", "condensing unit"],
       "related": ["430.6(A)(1)", "240.4(B)"],
+      "conceptId": "conductor-sizing",
       "isNewInEdition": false
     }
   ]

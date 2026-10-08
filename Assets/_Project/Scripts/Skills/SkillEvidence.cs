@@ -40,6 +40,7 @@ namespace NECInspector.Skills
     {
         public const float Missed = 0f;
         public const float FoundWrongCitation = 0.5f;
+        public const float FoundSameSkillCitation = 0.75f;   // cited a different entry of the same skill (see CitationCredit)
         public const float FoundCorrectCitation = 1f;
 
         public static float ForInspection(bool found, bool citationCorrect)

@@ -63,7 +63,8 @@ namespace NECInspector.Codes
                 chapter = source.section,
                 keywords = source.keywords,
                 relatedReferences = source.related,
-                isNewInEdition = source.isNewInEdition
+                isNewInEdition = source.isNewInEdition,
+                conceptId = source.conceptId
             };
         }
 

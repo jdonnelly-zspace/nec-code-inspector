@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using NECInspector.Data;
 
 namespace NECInspector.Codes
 {
@@ -36,6 +37,7 @@ namespace NECInspector.Codes
         public string[] keywords;
         public string[] related;            // references of related entries
         public bool isNewInEdition;
+        public string conceptId;            // the skill (ConceptIds) the entry belongs to; scoring gives partial credit for citing another entry of the same skill
     }
 
     [Serializable]
@@ -104,6 +106,7 @@ namespace NECInspector.Codes
                 if (string.IsNullOrWhiteSpace(a.title)) errors.Add($"{a.reference}: title is missing");
                 if (string.IsNullOrWhiteSpace(a.text)) errors.Add($"{a.reference}: text is missing");
                 if (a.section <= 0) errors.Add($"{a.reference}: section must be 1 or more");
+                if (!string.IsNullOrEmpty(a.conceptId) && !ConceptIds.IsKnown(a.conceptId)) errors.Add($"{a.reference}: unknown conceptId '{a.conceptId}'");
             }
 
             return errors;

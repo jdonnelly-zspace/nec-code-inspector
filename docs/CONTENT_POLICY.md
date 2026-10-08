@@ -13,6 +13,7 @@ BS 7671 and others) are copyrighted, and because the app should teach the skills
 - A violation tests exactly one skill (`conceptId`); a sandbox rule gives evidence for exactly one skill.
 - Adding a skill needs a documented reason in `docs/credential-alignment/` (what a credential assesses that
   the app does not yet teach), reviewed by a credential expert. Alignment notes are never shipped.
+- Every entry in a code's `articles.json` carries the skill it belongs to (`conceptId`). Scoring gives partial credit for citing another entry of the violation's skill (`docs/SKILL_SCORING.md`), and the tests check that each violation's citations belong to its skill.
 - Enforced by `tests/LogicTests/ContentPolicyTests.cs` (fails the build).
 
 ## 2. Wording: paraphrase, never copy
