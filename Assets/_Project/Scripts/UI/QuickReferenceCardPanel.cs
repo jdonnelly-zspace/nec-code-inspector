@@ -6,6 +6,8 @@ using TMPro;
 using NECInspector.Data;
 using NECInspector.Core;
 using NECInspector.NEC;
+using NECInspector.Codes;
+using NECInspector.Inspection;
 
 namespace NECInspector.UI
 {
@@ -69,11 +71,11 @@ namespace NECInspector.UI
         /// <summary>
         /// Show a specific card by ID, e.g., from a violation review context.
         /// </summary>
-        public void ShowCardForContext(string necReference)
+        public void ShowCardForContext(string reference)
         {
             Show();
             var card = _allCards.FirstOrDefault(c =>
-                c.necReferences != null && c.necReferences.Any(r => r == necReference));
+                c.codeReferences != null && c.codeReferences.Any(r => r == reference));
 
             if (card != null)
                 DisplayCard(card);
@@ -135,11 +137,11 @@ namespace NECInspector.UI
             SetText(_cardKeyRule, card.keyRule);
 
             // Build NEC references with links
-            if (_cardNECRefs != null && card.necReferences != null)
+            if (_cardNECRefs != null && card.codeReferences != null)
             {
                 var refs = new List<string>();
-                foreach (var r in card.necReferences)
-                    refs.Add($"Art. {r}");
+                foreach (var r in card.codeReferences)
+                    refs.Add(CodeProfiles.Terminology.ReferenceLabel(r));
                 _cardNECRefs.text = string.Join("  |  ", refs);
             }
         }
@@ -150,8 +152,8 @@ namespace NECInspector.UI
         /// </summary>
         public void OpenNECArticle(string reference)
         {
-            if (_necPanel == null || NECDatabase.Instance == null) return;
-            var article = NECDatabase.Instance.GetArticle(reference);
+            if (_necPanel == null || CodeProfiles.Active == null) return;
+            var article = CodeProfiles.Active.GetArticle(reference);
             if (article != null)
                 _necPanel.ShowArticle(article);
         }

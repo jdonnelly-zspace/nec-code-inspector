@@ -11,35 +11,26 @@ namespace NECInspector.Editor
             Debug.Log("[NEC Inspector] === Starting full data generation ===");
 
             // 1. Settings (no dependencies)
-            Debug.Log("[NEC Inspector] [1/8] Generating difficulty settings...");
+            Debug.Log("[NEC Inspector] [1/5] Generating difficulty settings...");
             DifficultySettingsGenerator.Generate();
 
-            // 2-5. Scenario generators (independent of each other)
-            Debug.Log("[NEC Inspector] [2/8] Generating Residential Panel scenario...");
-            ResidentialPanelScenarioGenerator.Generate();
+            // 2. Inspection scenarios and violations, from the JSON files in Content/Scenarios
+            Debug.Log("[NEC Inspector] [2/5] Importing scenario data...");
+            ScenarioDataImporter.ImportAll();
 
-            Debug.Log("[NEC Inspector] [3/8] Generating Branch Circuit scenario...");
-            BranchCircuitScenarioGenerator.Generate();
-
-            Debug.Log("[NEC Inspector] [4/8] Generating Grounding scenario...");
-            GroundingScenarioGenerator.Generate();
-
-            Debug.Log("[NEC Inspector] [5/8] Generating Commercial scenario...");
-            CommercialScenarioGenerator.Generate();
-
-            // 6. Panel sandbox (independent)
-            Debug.Log("[NEC Inspector] [6/8] Generating Panel Sandbox data...");
+            // 3. Panel sandbox (independent)
+            Debug.Log("[NEC Inspector] [3/5] Generating Panel Sandbox data...");
             PanelDesignSandboxGenerator.Generate();
 
-            // 7. Quick Reference Cards (independent)
-            Debug.Log("[NEC Inspector] [7/8] Generating Quick Reference Cards...");
+            // 4. Quick Reference Cards (independent)
+            Debug.Log("[NEC Inspector] [4/5] Generating Quick Reference Cards...");
             QuickReferenceCardGenerator.Generate();
 
-            // 8. Certificate templates (independent)
-            Debug.Log("[NEC Inspector] [8/8] Generating Certificate Templates...");
+            // 5. Certificate templates (independent)
+            Debug.Log("[NEC Inspector] [5/5] Generating Certificate Templates...");
             CertificateTemplateGenerator.Generate();
 
-            // 9. Catalog (must run last — discovers scenario assets)
+            // 6. Catalog (must run last — discovers scenario assets)
             Debug.Log("[NEC Inspector] [FINAL] Generating Scenario Catalog...");
             ScenarioCatalogGenerator.Generate();
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using NECInspector.Core;
 
 namespace NECInspector.PanelSandbox
@@ -24,8 +25,9 @@ namespace NECInspector.PanelSandbox
         public float targetLoadVA;
         [Tooltip("Acceptable % error for load calculation (e.g., 10 = within 10%)")]
         public float loadCalcTolerancePercent = 10f;
-        [Tooltip("Dwelling square footage for general lighting calculation")]
-        public float dwellingSquareFootage = 2000f;
+        [Tooltip("Dwelling floor area for the general lighting calculation, in the active profile's area unit")]
+        [FormerlySerializedAs("dwellingSquareFootage")]
+        public float dwellingArea = 2000f;
 
         [Header("Difficulty")]
         public DifficultyLevel[] availableDifficulties = {
@@ -37,9 +39,6 @@ namespace NECInspector.PanelSandbox
         [Header("Time")]
         [Tooltip("Time limit in seconds for Expert mode. 0 = no limit.")]
         public int expertTimeLimit = 1800; // 30 minutes
-
-        [Header("NEC Reference")]
-        public string[] necChapters;
 
         private void OnValidate()
         {

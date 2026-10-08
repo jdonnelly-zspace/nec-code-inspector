@@ -65,7 +65,7 @@ This document maps each team to the documentation and artifacts most relevant to
 - **Common workflows:** Select difficulty → Pick scenario → Inspect → Flag violations with NEC citation → Review missed → See score → View certificates
 - **Data locations:** Progress saves to `%APPDATA%/../LocalLow/[CompanyName]/NECCodeInspector/nec_progress.json`. Settings in `nec_settings.json` same directory.
 - **Known limitations:** Requires zSpace Inspire 2 hardware. Mouse fallback works in editor only. 3D scenes require Unity-assembled environments (not yet built).
-- **Troubleshooting:** If NEC database fails to load, check StreamingAssets/NECDatabase/nec_articles.json exists. If progress resets, check persistentDataPath file permissions.
+- **Troubleshooting:** If NEC database fails to load, check StreamingAssets/Codes/nec/articles.json exists. If progress resets, check persistentDataPath file permissions.
 
 ---
 

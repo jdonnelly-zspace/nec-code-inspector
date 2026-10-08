@@ -33,7 +33,7 @@ namespace NECInspector.Inspection
         public bool HasBeenInspected => _hasBeenInspected;
         public bool HasBeenFlagged => _hasBeenFlagged;
         public string FlaggedViolationId { get; private set; }
-        public string FlaggedNECArticle { get; private set; }
+        public string FlaggedReference { get; private set; }
 
         public event Action<InspectableComponent> OnInspected;
         public event Action<InspectableComponent> OnFlagged;
@@ -80,17 +80,17 @@ namespace NECInspector.Inspection
         /// <summary>
         /// Called when the student flags a violation on this component
         /// </summary>
-        public void FlagViolation(string violationId, string necArticle)
+        public void FlagViolation(string violationId, string reference)
         {
             _hasBeenFlagged = true;
             FlaggedViolationId = violationId;
-            FlaggedNECArticle = necArticle;
+            FlaggedReference = reference;
             OnFlagged?.Invoke(this);
 
             if (_outline != null)
                 _outline.OutlineColor = _flaggedColor;
 
-            Debug.Log($"[Inspect] {componentName} flagged: {violationId} ({necArticle})");
+            Debug.Log($"[Inspect] {componentName} flagged: {violationId} ({reference})");
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace NECInspector.Inspection
             _hasBeenInspected = true;
             _hasBeenFlagged = false;
             FlaggedViolationId = null;
-            FlaggedNECArticle = null;
+            FlaggedReference = null;
             OnMarkedCompliant?.Invoke(this);
 
             if (_outline != null)
@@ -118,7 +118,7 @@ namespace NECInspector.Inspection
             _hasBeenInspected = false;
             _hasBeenFlagged = false;
             FlaggedViolationId = null;
-            FlaggedNECArticle = null;
+            FlaggedReference = null;
             SetHighlighted(false);
         }
 

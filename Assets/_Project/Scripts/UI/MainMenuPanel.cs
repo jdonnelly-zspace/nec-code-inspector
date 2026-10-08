@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using NECInspector.Codes;
 using NECInspector.Core;
 using NECInspector.Data;
 
@@ -26,6 +27,7 @@ namespace NECInspector.UI
         [SerializeField] private Transform _scenarioListContent;
         [SerializeField] private GameObject _scenarioListItemPrefab;
         [SerializeField] private ScenarioCatalogSO _scenarioCatalog;
+        [SerializeField] private TextMeshProUGUI _noScenariosText;   // optional: explains an empty list
 
         [Header("Scenario Detail")]
         [SerializeField] private GameObject _scenarioDetailPanel;
@@ -38,6 +40,10 @@ namespace NECInspector.UI
         [SerializeField] private GameObject _difficultyPanel;
         [SerializeField] private TextMeshProUGUI _difficultyDescription;
 
+        [Header("Installation Code")]
+        [SerializeField] private CodeProfilePickerPanel _codePickerPanel;
+        [SerializeField] private TextMeshProUGUI _activeCodeText;   // optional: shows the code in use on the menu
+
         [Header("Settings")]
         [SerializeField] private GameObject _settingsPanel;
         [SerializeField] private UnityEngine.UI.Slider _masterVolumeSlider;
@@ -47,9 +53,20 @@ namespace NECInspector.UI
 
         private ScenarioDefinitionSO _selectedScenario;
 
+        private void OnEnable()
+        {
+            CodeProfiles.ActiveChanged += RefreshForActiveCode;
+        }
+
+        private void OnDisable()
+        {
+            CodeProfiles.ActiveChanged -= RefreshForActiveCode;
+        }
+
         private void Start()
         {
             ShowModeSelection();
+            UpdateActiveCodeText();
 
             if (_masterVolumeSlider != null)
                 _masterVolumeSlider.onValueChanged.AddListener(v => { if (AudioManager.Instance != null) AudioManager.Instance.MasterVolume = v; });
@@ -97,6 +114,13 @@ namespace NECInspector.UI
             // Progress dashboard is shown in-scene via ProgressDashboardPanel
         }
 
+        public void ShowCodePicker()
+        {
+            HideAllPanels();
+            AudioManager.Instance?.PlayButtonClick();
+            if (_codePickerPanel != null) _codePickerPanel.Show();
+        }
+
         public void ShowSettings()
         {
             HideAllPanels();
@@ -111,20 +135,34 @@ namespace NECInspector.UI
         private void PopulateScenarioList()
         {
             ClearContent(_scenarioListContent);
+            SetText(_noScenariosText, "");
             if (_scenarioCatalog == null) return;
 
+            // No scenario is offered under a code whose scene art does not exist yet (see ArtSets)
+            bool artAvailable = ArtSets.IsAvailable(CodeProfiles.Active?.ArtSet);
+
+            int listed = 0;
+            string profileId = CodeProfiles.ActiveId;
             foreach (var scenario in _scenarioCatalog.scenarios)
             {
+                if (!artAvailable) break;
                 if (scenario == null) continue;
+
+                // Only list scenarios that have violations for the active code profile
+                if (!scenario.AppliesTo(profileId)) continue;
 
                 var item = Instantiate(_scenarioListItemPrefab, _scenarioListContent);
                 var text = item.GetComponentInChildren<TMP_Text>();
-                if (text != null) text.text = scenario.displayName;
+                if (text != null) text.text = CodeProfiles.Terminology.Format(scenario.displayName);
 
                 var button = item.GetComponent<UnityEngine.UI.Button>();
                 var captured = scenario;
                 button?.onClick.AddListener(() => SelectScenario(captured));
+                listed++;
             }
+
+            // An empty list always says why
+            SetText(_noScenariosText, ScenarioListMessage.For(CodeProfiles.Active, listed));
         }
 
         private void SelectScenario(ScenarioDefinitionSO scenario)
@@ -133,8 +171,8 @@ namespace NECInspector.UI
             AudioManager.Instance?.PlayButtonClick();
 
             SetActive(_scenarioDetailPanel, true);
-            SetText(_scenarioTitle, scenario.displayName);
-            SetText(_scenarioDescription, scenario.description);
+            SetText(_scenarioTitle, CodeProfiles.Terminology.Format(scenario.displayName));
+            SetText(_scenarioDescription, CodeProfiles.Terminology.Format(scenario.description));
 
             // Show available difficulties
             var diffs = new List<string>();
@@ -194,12 +232,12 @@ namespace NECInspector.UI
             var level = GameManager.Instance?.Difficulty?.CurrentLevel ?? DifficultyLevel.Standard;
             string desc = level switch
             {
-                DifficultyLevel.Beginner => "CTE Students: Guided inspection with dropdown NEC citations, highlight hints, and scaffolding. Fewer violations to find.",
-                DifficultyLevel.Standard => "Apprentices: Searchable NEC citations, no hints. All standard violations active.",
-                DifficultyLevel.Expert => "Licensed Electricians: Free-text NEC citations, time limits, subtle violations, false positive penalties.",
+                DifficultyLevel.Beginner => "CTE Students: Guided inspection with dropdown {code} citations, highlight hints, and scaffolding. Fewer violations to find.",
+                DifficultyLevel.Standard => "Apprentices: Searchable {code} citations, no hints. All standard violations active.",
+                DifficultyLevel.Expert => "Licensed Electricians: Free-text {code} citations, time limits, subtle violations, false positive penalties.",
                 _ => ""
             };
-            SetText(_difficultyDescription, $"Current: {level}\n\n{desc}");
+            SetText(_difficultyDescription, $"Current: {level}\n\n{CodeProfiles.Terminology.Format(desc)}");
         }
 
         #endregion
@@ -229,8 +267,26 @@ namespace NECInspector.UI
 
         #region Helpers
 
+        // The installation code decides which scenarios apply and how references are worded
+        private void RefreshForActiveCode()
+        {
+            UpdateActiveCodeText();
+
+            if (_scenarioSelectionPanel != null && _scenarioSelectionPanel.activeSelf)
+                PopulateScenarioList();
+            if (_difficultyPanel != null && _difficultyPanel.activeSelf)
+                UpdateDifficultyDisplay();
+        }
+
+        private void UpdateActiveCodeText()
+        {
+            var profile = CodeProfiles.Active;
+            SetText(_activeCodeText, profile != null ? $"Code: {profile.DisplayName} {profile.Edition}" : "");
+        }
+
         private void HideAllPanels()
         {
+            if (_codePickerPanel != null) _codePickerPanel.Hide();
             SetActive(_modeSelectionPanel, false);
             SetActive(_scenarioSelectionPanel, false);
             SetActive(_scenarioDetailPanel, false);

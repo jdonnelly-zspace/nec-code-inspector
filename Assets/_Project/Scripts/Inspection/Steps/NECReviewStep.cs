@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using NECInspector.Data;
 using NECInspector.NEC;
+using NECInspector.Codes;
 using NECInspector.StateMachine;
 
 namespace NECInspector.Inspection
@@ -62,9 +63,10 @@ namespace NECInspector.Inspection
                     component.ShowHintPulse();
 
                 // Show NEC article in the reference panel
-                NECArticle article = null;
-                if (NECDatabase.Instance != null)
-                    article = NECDatabase.Instance.GetArticle(violation.necArticle);
+                CodeArticle article = null;
+                var citation = violation.GetCitation(CodeProfiles.ActiveId);
+                if (CodeProfiles.Active != null && citation != null)
+                    article = CodeProfiles.Active.GetArticle(citation.reference);
 
                 if (_reviewPanel != null)
                 {

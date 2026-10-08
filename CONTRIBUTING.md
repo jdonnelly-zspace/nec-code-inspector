@@ -20,6 +20,24 @@ git lfs pull
 3. Import TextMeshPro essentials when prompted
 4. Run **NEC Code Inspector > Generate All** from the Unity Editor menu to create ScriptableObject assets
 
+## Tests
+
+Engine-independent logic (code profile types, electrical tables, load calculation, citation matching) and the content JSON files (scenarios, NEC articles) are checked by a plain .NET project that compiles the Unity scripts directly from `Assets`. It needs only the [.NET 8 SDK](https://dotnet.microsoft.com/download), not Unity or the zSpace SDK:
+
+```bash
+dotnet run --project tests/LogicTests
+```
+
+The same command runs in CI on every pull request (`.github/workflows/logic-tests.yml`). Failures exit non-zero; warnings (for example dangling related-article references) are listed but do not fail the run. This does not replace opening the project in Unity: scripts that use TextMeshPro, uGUI or the zSpace SDK are not compiled by it.
+
+A second check compiles the Unity-dependent scripts against the libraries of an installed Unity editor (Unity 6000.4.1f1 in the Hub by default; pass the editor's `Data` folder to use another), with minimal stand-ins for uGUI and TextMeshPro:
+
+```bash
+python tools/unity-compile-check/check.py --list
+```
+
+It leaves out the files that need packages not installed on a machine (the zSpace SDK, PrimeTween, Localization; 22 of 106 script files at the time of writing, listed by `--list`) and checks everything else in full, method bodies included. It fails on any real compiler error. It is local only (CI has no Unity install), and the files it leaves out still need a compile in Unity.
+
 ## Key Documentation
 
 | File | What it covers |
@@ -60,5 +78,5 @@ These scripts came from another project and should not be refactored:
 - **GameManager** is the only singleton (`GameManager.Instance`)
 - Each scenario is its own Unity scene
 - Content data lives in ScriptableObjects under `Assets/_Project/ScriptableObjects/`
-- NEC articles are JSON in `Assets/_Project/StreamingAssets/NECDatabase/`
+- Code profiles (NEC, CEC, ...) are folders of JSON in `Assets/_Project/StreamingAssets/Codes/`; the app contains no credentials (alignment notes live in `docs/credential-alignment/` and are not shipped)
 - Scenarios use the StateMachine pattern with named StateIDs and Step sequences

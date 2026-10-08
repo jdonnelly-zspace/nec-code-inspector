@@ -1,0 +1,67 @@
+{
+  "articles": [
+    {
+      "reference": "2-308",
+      "title": "Working space about electrical equipment",
+      "text": "Leave at least 1 m of clear working space about electrical equipment wherever it must be reached for operation or maintenance. This covers the front and, where access is needed there, the sides or back. Add any extra room that draw-out devices such as breakers or starters need when fully withdrawn.",
+      "section": 2,
+      "keywords": ["working space", "clearance", "panel", "access"],
+      "related": [],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "10-700",
+      "title": "Grounding electrodes up to 750 V",
+      "text": "For systems up to 750 V the code names what can serve as a grounding electrode. A manufactured electrode can be made of rods 3 m long, driven in full length, with at least two spaced 3 m apart and bonded together. A buried metal water piping system is also a permitted electrode.",
+      "section": 10,
+      "keywords": ["ground rod", "grounding electrode", "water pipe", "rod length"],
+      "related": [],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "14-104",
+      "title": "Rating of overcurrent devices",
+      "text": "An overcurrent device generally cannot be rated above the ampacity of the conductors it protects. For copper conductors from 14 AWG to 10 AWG the maximum device rating is 15 A for 14 AWG, 20 A for 12 AWG and 30 A for 10 AWG. A few small cords and wires, and the Table 13 correlation, have their own exceptions.",
+      "section": 14,
+      "keywords": ["overcurrent", "breaker", "small conductors", "14 AWG", "12 AWG", "10 AWG"],
+      "related": [],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "26-700",
+      "title": "Receptacles near sinks and wet areas",
+      "text": "A receptacle within 1.5 m of a sink, bathtub or shower stall needs Class A GFCI protection. The exception is a receptacle behind a fixed appliance, such as a clothes washer, that portable appliances cannot reach. A Class A GFCI opens the circuit at a ground-fault current of 6 mA or more, and never below 4 mA.",
+      "section": 26,
+      "keywords": ["gfci", "ground fault", "sink", "bathroom", "shower", "bathtub"],
+      "related": [],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "26-712",
+      "title": "Receptacles in dwelling units",
+      "text": "Place dwelling-unit receptacles in finished walls so that every spot along the floor line of usable wall space is within 1.8 m of one. Bathrooms, hallways, laundry and utility rooms, water closets and closets are treated separately.",
+      "section": 26,
+      "keywords": ["receptacle spacing", "wall space", "1.8 m", "dwelling"],
+      "related": ["26-712(d)(iii)"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "26-712(d)(iii)",
+      "title": "Receptacles at kitchen counter work surfaces",
+      "text": "Behind kitchen counter work surfaces, install split receptacles so that you are never farther than 900 mm, measured along the wall line, from one. Sinks, built-in equipment and isolated work surfaces shorter than 300 mm at the wall line do not count.",
+      "section": 26,
+      "keywords": ["counter", "split receptacle", "900 mm", "kitchen"],
+      "related": ["26-712"],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "26-724(f)",
+      "title": "Arc-fault protection in dwelling units",
+      "text": "Branch circuits that supply 125 V receptacles rated 20 A or less in kitchens, family, dining and living rooms, bedrooms, closets, hallways, laundry areas and similar spaces of a dwelling need combination-type AFCI protection. Circuits that already need ground-fault protection (washrooms, kitchen counter work surfaces) and receptacles for refrigeration or sump pumps are exempt.",
+      "section": 26,
+      "keywords": ["afci", "arc fault", "bedroom", "combination type"],
+      "related": [],
+      "isNewInEdition": false
+    }
+  ]
+}

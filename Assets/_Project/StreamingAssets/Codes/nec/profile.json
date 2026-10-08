@@ -1,0 +1,9 @@
+{
+  "id": "nec",
+  "displayName": "NEC (NFPA 70)",
+  "edition": "2026",
+  "region": "US",
+  "artSet": "north-america",
+  "reviewStatus": "app-defined",
+  "note": "Reference entries are paraphrased explanations, not code text. Pending review by a credential expert (see docs/CONTENT_REVIEW.md)."
+}

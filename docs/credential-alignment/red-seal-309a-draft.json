@@ -1,0 +1,93 @@
+{
+  "id": "red-seal-309a",
+  "displayName": "Red Seal Construction Electrician (309A)",
+  "issuingBody": "Red Seal Program (ESDC and the Canadian Council of Directors of Apprenticeship)",
+  "region": "CA",
+  "codeProfileId": "cec",
+  "reviewStatus": "draft",
+  "tierLabels": [
+    "Apprentice",
+    "Journeyperson",
+    "Advanced"
+  ],
+  "coverageNote": "Draft. Built from the exam breakdown of the 309A exam: the tasks mapped here (B-7, B-8, B-9, B-11, C-16, C-17, D-22, D-24) account for 48 of the 100 questions, and the app can teach about 13 questions' worth of that so far. The task-to-skill mapping is an estimate to be confirmed by a credential expert; skills marked deferred have no CEC content yet.",
+  "requirements": [
+    {
+      "skillId": "overcurrent-protection",
+      "tier": "Practitioner",
+      "weight": 7.58,
+      "deferred": false,
+      "basis": "Red Seal 309A exam tasks B-8, C-17, D-22"
+    },
+    {
+      "skillId": "conductor-sizing",
+      "tier": "Practitioner",
+      "weight": 7.5,
+      "deferred": true,
+      "basis": "Red Seal 309A exam tasks C-16, D-24"
+    },
+    {
+      "skillId": "equipment-installation",
+      "tier": "Practitioner",
+      "weight": 7.17,
+      "deferred": true,
+      "basis": "Red Seal 309A exam tasks B-7, B-9, C-16"
+    },
+    {
+      "skillId": "disconnecting-means",
+      "tier": "Practitioner",
+      "weight": 5.33,
+      "deferred": true,
+      "basis": "Red Seal 309A exam tasks B-7, D-22"
+    },
+    {
+      "skillId": "identification-marking",
+      "tier": "Practitioner",
+      "weight": 4.33,
+      "deferred": true,
+      "basis": "Red Seal 309A exam tasks B-9, D-24"
+    },
+    {
+      "skillId": "earthing-bonding",
+      "tier": "Practitioner",
+      "weight": 4.0,
+      "deferred": true,
+      "basis": "Red Seal 309A exam tasks B-11"
+    },
+    {
+      "skillId": "shock-protection",
+      "tier": "Practitioner",
+      "weight": 3.58,
+      "deferred": true,
+      "basis": "Red Seal 309A exam tasks B-8, C-17"
+    },
+    {
+      "skillId": "arc-fault-protection",
+      "tier": "Practitioner",
+      "weight": 3.58,
+      "deferred": false,
+      "basis": "Red Seal 309A exam tasks B-8, C-17"
+    },
+    {
+      "skillId": "branch-circuit-requirements",
+      "tier": "Practitioner",
+      "weight": 2.25,
+      "deferred": false,
+      "basis": "Red Seal 309A exam tasks C-17"
+    },
+    {
+      "skillId": "load-calculation",
+      "tier": "Practitioner",
+      "weight": 1.33,
+      "deferred": true,
+      "basis": "Red Seal 309A exam tasks B-7"
+    },
+    {
+      "skillId": "working-space-access",
+      "tier": "Practitioner",
+      "weight": 1.33,
+      "deferred": true,
+      "basis": "Red Seal 309A exam tasks B-9"
+    }
+  ]
+}

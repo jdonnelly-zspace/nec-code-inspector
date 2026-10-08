@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Compiles every script under Assets/_Project/Scripts against the Unity libraries of an installed
+    Unity editor, with minimal stand-ins for uGUI and TextMeshPro (Stubs.cs). Packages that are not
+    installed here (zSpace SDK, PrimeTween, Localization) show up as "type or namespace not found"
+    errors; run check.py to separate those from real errors. It does not replace opening the project
+    in Unity.
+  -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <NoWarn>CS0618;CS0649;CS0414;CS0169;CS0067;CS8632;CS1591</NoWarn>
+    <DefineConstants>UNITY_EDITOR;UNITY_2021_1_OR_NEWER;UNITY_6000_0_OR_NEWER</DefineConstants>
+    <!-- Override with -p:UnityData="C:/path/to/Unity/Editor/Data/" -->
+    <UnityData Condition="'$(UnityData)' == ''">C:/Program Files/Unity/Hub/Editor/6000.4.1f1/Editor/Data/</UnityData>
+    <Repo>$(MSBuildThisFileDirectory)../../</Repo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The UnityEngine folder holds the engine and editor module assemblies -->
+    <Reference Include="$(UnityData)Managed/UnityEngine/*.dll" />
+    <Compile Include="Stubs.cs" />
+    <Compile Include="$(Repo)Assets/_Project/Scripts/**/*.cs" />
+    <!-- Replaced by reduced versions in Stubs.cs -->
+    <Compile Remove="$(Repo)Assets/_Project/Scripts/Utils/GlowEffect.cs" />
+    <Compile Remove="$(Repo)Assets/_Project/Scripts/PanelSandbox/PanelDesignManager.cs" />
+  </ItemGroup>
+
+  <!-- Written by check.py: files left out because they need packages that are not installed here -->
+  <Import Project="excluded.props" Condition="Exists('excluded.props')" />
+
+</Project>

@@ -1,0 +1,246 @@
+{
+  "id": "scenario-commercial",
+  "sceneName": "CommercialInspection",
+  "displayName": "Commercial Installation Inspection",
+  "description": "Inspect a small commercial building's electrical installation including motor circuits, feeders, load calculations, and equipment disconnects. Verify proper conductor sizing, overcurrent protection, and NEC compliance for commercial occupancies.",
+  "environmentDescription": "A small commercial space with multiple motor installations (HVAC compressors, exhaust fans), a mechanical room with subpanel and feeders, a battery/UPS closet, and an office area with general receptacle and lighting circuits.",
+  "expertTimeLimit": 1500,
+  "availableDifficulties": [
+    "Beginner",
+    "Standard",
+    "Expert"
+  ],
+  "assetPrefix": "COM",
+  "violationFolder": "Commercial",
+  "scenarioAssetName": "Commercial",
+  "violations": [
+    {
+      "violationId": "COM-MOTOR-OCPD-001",
+      "description": "Motor branch circuit overcurrent protection device exceeds Table 430.52 maximum",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "430.52",
+          "text": "A motor branch circuit's short-circuit and ground-fault device follows the percentages in Table 430.52 and stays at or below the maximum they give."
+        }
+      ],
+      "componentObjectName": "Motor1_BranchBreaker",
+      "hintText": "Check the breaker size against the motor's full-load current. Table 430.52 sets the maximum OCPD size for different motor types.",
+      "componentType": "Motor OCPD",
+      "inspectionNote": "The 50A breaker on this 10HP motor exceeds the maximum allowed by Table 430.52 for an inverse-time breaker (typically 250% of FLC).",
+      "conceptId": "overcurrent-protection",
+      "severity": "Critical",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-MOTOR-WIRE-001",
+      "description": "Motor branch circuit conductors undersized — not 125% of motor full-load current",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "430.22",
+          "text": "Conductors for one continuously running motor need ampacity of at least 125 percent of its full-load current (taken per 430.6(A)(1))."
+        }
+      ],
+      "componentObjectName": "Motor2_BranchConductor",
+      "hintText": "Motor branch circuit conductors must be sized at 125% of the motor's full-load current from Table 430.248/250.",
+      "componentType": "Motor Conductor",
+      "inspectionNote": "10 AWG conductors supply a 7.5HP motor with 22A FLC. Required ampacity is 27.5A (125% of 22A), but 10 AWG is only rated 30A at 60C — marginal with temperature derating applied.",
+      "conceptId": "conductor-sizing",
+      "severity": "Critical",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-DISC-SIGHT-001",
+      "description": "Motor disconnect is not within sight of the motor controller",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "430.110",
+          "text": "The disconnect for a motor circuit of 600 V or less must be rated at 115 percent or more of the motor's full-load current."
+        }
+      ],
+      "componentObjectName": "Motor1_Disconnect_Remote",
+      "hintText": "The disconnect must be within sight from the motor and its controller. 'Within sight' means visible and not more than 50 feet away.",
+      "componentType": "Motor Disconnect",
+      "inspectionNote": "The motor disconnect is located around a corner, out of sight from the motor. NEC requires the disconnect to be within sight of the motor it controls.",
+      "conceptId": "disconnecting-means",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-MOTOR-OL-001",
+      "description": "Motor overload protection exceeds 115% of nameplate full-load amperes",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "430.32",
+          "text": "A continuous-duty motor over 1 hp needs its own overload device that responds to motor current, set to trip at (or rated for) no more than 115 percent of nameplate full-load current when the motor's service factor is 1.15 or higher."
+        }
+      ],
+      "componentObjectName": "Motor2_OverloadRelay",
+      "hintText": "Check the overload relay setting against the motor nameplate current. For motors with SF >= 1.15, the maximum is 115% of nameplate FLA.",
+      "componentType": "Motor Overload",
+      "inspectionNote": "The overload relay is set to 30A for a motor with 22A nameplate FLA (136% of FLA). Maximum should be 25.3A (115% of 22A) for a motor with service factor 1.15.",
+      "conceptId": "overcurrent-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-LOAD-CALC-001",
+      "description": "Calculated service load does not account for all connected loads",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "220.40",
+          "text": "A feeder or service load must equal at least the sum of the branch-circuit loads it supplies (Part II), after any demand factors allowed by Parts III, IV or V."
+        }
+      ],
+      "componentObjectName": "ServicePanel_LoadSchedule",
+      "hintText": "Verify the load schedule accounts for all connected loads: lighting, receptacles, motors, HVAC, and special equipment.",
+      "componentType": "Service Load",
+      "inspectionNote": "The load schedule omits the rooftop HVAC unit (15 kVA) from the total service calculation, resulting in an undersized service.",
+      "conceptId": "load-calculation",
+      "severity": "Critical",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-FEEDER-SIZE-001",
+      "description": "Feeder conductor undersized for the calculated load it serves",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "215.2",
+          "text": "Size feeder conductors to carry the load worked out by the Article 220 calculation methods (its Parts III, IV and V)."
+        }
+      ],
+      "componentObjectName": "Feeder_SubPanel_Conductor",
+      "hintText": "Calculate the total load on this feeder and compare it to the conductor ampacity. Don't forget to add 125% for continuous loads.",
+      "componentType": "Feeder Conductor",
+      "inspectionNote": "The feeder to the mechanical room subpanel uses 4 AWG copper (85A at 75C) but serves a calculated load of 95A including continuous lighting.",
+      "conceptId": "conductor-sizing",
+      "severity": "Critical",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-RECPT-LOAD-001",
+      "description": "Receptacle outlets not calculated at minimum 180 VA per outlet",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "220.44",
+          "text": "Receptacle loads figured under 220.14 may use the demand factors in Table 220.44."
+        }
+      ],
+      "componentObjectName": "Office_ReceptacleLoadCalc",
+      "hintText": "In commercial occupancies, each general-use receptacle outlet must be calculated at a minimum of 180 VA per strap.",
+      "componentType": "Receptacle Load",
+      "inspectionNote": "The load calculation uses 90 VA per receptacle instead of the required minimum 180 VA per outlet per NEC 220.14.",
+      "conceptId": "load-calculation",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-MOTOR-GND-001",
+      "description": "Equipment grounding conductor undersized for the motor branch circuit OCPD",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "250.122",
+          "text": "Pick the equipment grounding conductor size from Table 250.122, using the ampere rating or trip setting of the protective device ahead of the circuit."
+        }
+      ],
+      "componentObjectName": "Motor1_EGC",
+      "hintText": "The equipment grounding conductor must be sized based on the rating of the overcurrent device, per Table 250.122.",
+      "componentType": "Equipment Grounding Conductor",
+      "inspectionNote": "A 14 AWG EGC is used on a motor circuit protected by a 40A breaker. Table 250.122 requires a minimum 10 AWG copper EGC for a 40A OCPD.",
+      "conceptId": "earthing-bonding",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-MULTI-MOTOR-001",
+      "description": "Multiple motors on a single branch circuit without proper overcurrent protection sizing",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "430.24",
+          "text": "For several motors, or a motor plus other loads, conductor ampacity is 125 percent of the largest motor's full-load current plus the full-load currents of the other motors."
+        }
+      ],
+      "componentObjectName": "MechRoom_MultiMotorFeeder",
+      "hintText": "When multiple motors share a feeder, size it at 125% of the largest motor FLC plus 100% of all other motor FLCs.",
+      "componentType": "Multi-Motor Feeder",
+      "inspectionNote": "The mechanical room feeder supplies three motors but is sized at only 100% of the largest motor plus the sum of the others, missing the required 125% factor on the largest motor.",
+      "conceptId": "overcurrent-protection",
+      "severity": "Critical",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "COM-MOTOR-CTRL-001",
+      "description": "Motor controller disconnect not rated for locked-rotor current",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "430.102(B)",
+          "text": "A disconnect must be in sight of both the motor and the driven machinery, and it must open the motor and controller from every ungrounded supply conductor."
+        }
+      ],
+      "componentObjectName": "Motor2_Controller_Disc",
+      "hintText": "The disconnect for a motor controller must be rated to handle the motor's locked-rotor current, not just full-load current.",
+      "componentType": "Motor Controller",
+      "inspectionNote": "The disconnect switch at the VFD is rated for 30A but the motor has a locked-rotor current of 145A. The disconnect must be horsepower-rated or capable of interrupting locked-rotor current.",
+      "conceptId": "disconnecting-means",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "COM-MOTOR-MARK-001",
+      "description": "Motor nameplate data missing or illegible",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "430.7",
+          "text": "Motor nameplates carry the maker, voltage, frequency, phase count, full-load amps, temperature rise or insulation class, ambient temperature, time rating, horsepower and locked-rotor code letter."
+        }
+      ],
+      "componentObjectName": "Motor3_Nameplate",
+      "hintText": "Every motor must have a legible nameplate with all required markings. Can you read the nameplate on this motor?",
+      "componentType": "Motor Nameplate",
+      "inspectionNote": "The nameplate on this exhaust fan motor is painted over and illegible. Without readable nameplate data, proper conductor sizing and overcurrent protection cannot be verified.",
+      "conceptId": "identification-marking",
+      "severity": "Minor",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "COM-FEEDER-TAP-001",
+      "description": "Feeder tap conductor does not meet the 10-foot tap rule requirements",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "240.21(B)(1)",
+          "text": "A feeder tap needs no overcurrent device at the tap if it is no longer than 3.0 m (10 ft), has ampacity of at least the combined calculated loads it serves, and runs in a raceway."
+        }
+      ],
+      "componentObjectName": "Feeder_TapConductor",
+      "hintText": "Feeder taps without overcurrent protection at the tap point must meet strict length, ampacity, and raceway requirements.",
+      "componentType": "Feeder Tap",
+      "inspectionNote": "A 12-foot feeder tap is run without overcurrent protection at the tap point and without being enclosed in a raceway. The 10-foot tap rule requires the tap to be no longer than 10 feet and enclosed in a raceway.",
+      "conceptId": "overcurrent-protection",
+      "severity": "Critical",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    }
+  ]
+}

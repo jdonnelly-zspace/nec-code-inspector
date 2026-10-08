@@ -1,0 +1,9 @@
+{
+  "id": "cec",
+  "displayName": "CEC (CSA C22.1)",
+  "edition": "2024",
+  "region": "CA",
+  "artSet": "north-america",
+  "reviewStatus": "draft",
+  "note": "Partial draft: only the rules that the scenarios cite, explained in our own words from public summaries (provincial authority and trade-press guides). Rule numbers and wording depend on the edition (older editions number dwelling receptacle rules 26-722, newer ones 26-712); a credential expert must check each entry against the edition the Red Seal exam uses. No tables yet, so the panel sandbox does not count toward this code."
+}

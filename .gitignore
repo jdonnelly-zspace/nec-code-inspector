@@ -72,3 +72,14 @@ Thumbs.db
 
 # Claude Code local settings (machine-specific permissions)
 .claude/settings.local.json
+
+# Hand-written test project (the *.csproj rule above targets Unity-generated files)
+!/tests/**/*.csproj
+# Build output of the test project
+/tests/**/bin/
+/tests/**/obj/
+# The Unity compile check tool (a project file in tools/, plus its build output)
+!/tools/**/*.csproj
+/tools/**/bin/
+/tools/**/obj/
+/tools/**/excluded.props

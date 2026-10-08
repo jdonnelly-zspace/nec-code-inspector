@@ -1,0 +1,206 @@
+{
+  "id": "scenario-residential-panel",
+  "sceneName": "ResidentialPanelInspection",
+  "displayName": "Residential Service Panel Inspection",
+  "description": "Inspect a 200A residential service entrance panel for code violations including workmanship, terminations, working space clearances, overcurrent protection, and panel configuration.",
+  "environmentDescription": "A residential garage with a 200A service entrance panel, exposed conductors, breakers, main disconnect, and surrounding working space.",
+  "expertTimeLimit": 1200,
+  "availableDifficulties": [
+    "Beginner",
+    "Standard",
+    "Expert"
+  ],
+  "assetPrefix": "RP",
+  "violationFolder": "ResidentialPanel",
+  "scenarioAssetName": "ResidentialPanel",
+  "violations": [
+    {
+      "violationId": "RP-WORK-PANEL-001",
+      "description": "Unsecured conductors in panel with poor workmanship",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.12",
+          "text": "Install electrical equipment tidily, with good workmanship."
+        }
+      ],
+      "componentObjectName": "Panel_LooseConductors",
+      "hintText": "Look at how the wires are arranged inside the panel. Are they neat and properly secured?",
+      "componentType": "Panel Wiring",
+      "inspectionNote": "Conductors inside the panel are loose and crossing over each other. NEC requires neat and workmanlike installation.",
+      "conceptId": "equipment-installation",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-CONN-LUG-001",
+      "description": "Aluminum service entrance conductor terminated on copper-only rated lug",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.14",
+          "text": "Terminations must make a solid connection without damaging the conductor, and connectors and terminals must be rated for the conductor's material."
+        }
+      ],
+      "componentObjectName": "Panel_MainLug_Aluminum",
+      "hintText": "Check the main lugs. Is the conductor material compatible with the lug rating? Look for AL/CU markings.",
+      "componentType": "Termination",
+      "inspectionNote": "Aluminum conductor is terminated on a lug rated for copper only. This can cause overheating due to dissimilar metal expansion rates.",
+      "conceptId": "equipment-installation",
+      "severity": "Critical",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-CLEAR-FRONT-001",
+      "description": "Working space in front of panel is less than 36 inches deep",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.26(A)(1)",
+          "text": "Working space in front of live parts must be at least as deep as Table 110.26(A)(1) requires; for 0 to 150 V nominal that is 3 feet.",
+          "limit": {
+            "quantity": "panel-working-depth",
+            "kind": "min",
+            "value": 36,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "cec",
+          "reference": "2-308",
+          "text": "Keep at least 1 m of clear working space about electrical equipment wherever it must be reached for operation or maintenance.",
+          "description": "Working space in front of panel is less than 1 m deep",
+          "hintText": "Measure the clear space in front of the panel. Is there at least 1 m of unobstructed working space?",
+          "inspectionNote": "Storage boxes are stacked within 24 inches (about 610 mm) of the panel face. The code calls for at least 1 m of working space.",
+          "limit": {
+            "quantity": "panel-working-depth",
+            "kind": "min",
+            "value": 1,
+            "unit": "m"
+          }
+        }
+      ],
+      "componentObjectName": "Panel_WorkingSpace_Obstruction",
+      "hintText": "Measure the clear space in front of the panel. Is there at least 36 inches of unobstructed working space?",
+      "componentType": "Working Space",
+      "inspectionNote": "Storage boxes are stacked within 24 inches of the panel face. NEC requires a minimum 36-inch clear working space.",
+      "conceptId": "working-space-access",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "panel-working-depth",
+        "value": 24,
+        "unit": "in",
+        "note": "Clear depth in front of the panel face"
+      },
+      "compliantFact": {
+        "quantity": "panel-working-depth",
+        "value": 42,
+        "unit": "in"
+      }
+    },
+    {
+      "violationId": "RP-DISC-LOC-001",
+      "description": "Service disconnect located in an area not readily accessible",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "230.70(A)",
+          "text": "Put the service disconnect where it is readily accessible, outside the building or inside near where the service conductors enter."
+        }
+      ],
+      "componentObjectName": "ServiceDisconnect_Inaccessible",
+      "hintText": "The service disconnect must be readily accessible. Can you reach it without moving obstacles or using a ladder?",
+      "componentType": "Service Disconnect",
+      "inspectionNote": "Service disconnect is located behind stored equipment and requires moving obstacles to access. Must be readily accessible per NEC.",
+      "conceptId": "disconnecting-means",
+      "severity": "Critical",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-WIRE-OVER-001",
+      "description": "12 AWG conductor protected by a 30-ampere overcurrent device",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "240.4",
+          "text": "Protect conductors (except flexible cords) from overcurrent according to their ampacity."
+        },
+        {
+          "profileId": "cec",
+          "reference": "14-104",
+          "text": "A device protecting copper conductors from 14 AWG to 10 AWG is limited to 15 A for 14 AWG, 20 A for 12 AWG and 30 A for 10 AWG, and generally cannot be rated above the conductor's ampacity."
+        }
+      ],
+      "componentObjectName": "Panel_Breaker30A_12AWG",
+      "hintText": "Verify that each conductor's ampacity matches or exceeds its breaker rating. 12 AWG is rated for 20A max.",
+      "componentType": "Overcurrent Protection",
+      "inspectionNote": "A 12 AWG conductor (rated 20A) is connected to a 30A breaker. The conductor could overheat before the breaker trips.",
+      "conceptId": "overcurrent-protection",
+      "severity": "Critical",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-PANEL-HEIGHT-001",
+      "description": "Breaker operating handle center is mounted above 6 feet 7 inches",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "240.24(A)",
+          "text": "Keep breakers and switches within easy reach: with the handle raised to its top position, the middle of its grip must be no higher than 6 ft 7 in. (2.0 m) off the floor or working platform."
+        }
+      ],
+      "componentObjectName": "Panel_TopBreaker_High",
+      "hintText": "Check the height of the topmost breaker handle. The center of the grip must not exceed 6 feet 7 inches.",
+      "componentType": "Panel Mounting",
+      "inspectionNote": "The top breaker's operating handle center is at approximately 7 feet. This exceeds the NEC maximum of 6 ft 7 in.",
+      "conceptId": "working-space-access",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-DIR-MISS-001",
+      "description": "Panel circuit directory is missing or has inaccurate circuit descriptions",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "408.4",
+          "text": "Label every circuit, and every change to a circuit, clearly with its specific purpose, in enough detail to tell it apart from all others."
+        }
+      ],
+      "componentObjectName": "Panel_CircuitDirectory",
+      "hintText": "Examine the circuit directory inside the panel door. Is every circuit clearly and accurately labeled?",
+      "componentType": "Panel Directory",
+      "inspectionNote": "Several circuits are labeled generically as 'spare' or 'misc' while actively serving loads. The 2026 NEC requires specific, clear identification.",
+      "conceptId": "identification-marking",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "RP-BUS-EXCEED-001",
+      "description": "More circuit breakers installed than the panel's rated number of spaces",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "408.36",
+          "text": "A panelboard must physically prevent installing more overcurrent devices than the number it was designed, rated and listed for."
+        }
+      ],
+      "componentObjectName": "Panel_OverfilledBus",
+      "hintText": "Count the breakers and compare with the panel's rated space count. Are tandem breakers used in non-approved locations?",
+      "componentType": "Panel Bus",
+      "inspectionNote": "Tandem breakers are installed in slots not designed for them, exceeding the panel's rated number of circuits. This overloads the bus bars.",
+      "conceptId": "equipment-installation",
+      "severity": "Critical",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    }
+  ]
+}

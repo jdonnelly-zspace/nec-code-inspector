@@ -2,11 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using NECInspector.Skills;
 
 namespace NECInspector.Core
 {
     /// <summary>
     /// Persists student progress across sessions as JSON in Application.persistentDataPath.
+    /// Progress is recorded per skill (Data.skills). The app does not contain credentials; how the
+    /// skills line up with a credential is worked out outside the app.
     /// </summary>
     public class ProgressManager
     {
@@ -53,7 +56,8 @@ namespace NECInspector.Core
             }
         }
 
-        public void RecordInspectionScore(string scenarioId, DifficultyLevel difficulty, InspectionScore score)
+        public void RecordInspectionScore(string scenarioId, DifficultyLevel difficulty, InspectionScore score,
+            IEnumerable<SkillEvidence> evidence = null)
         {
             var entry = new ScenarioProgress
             {
@@ -69,39 +73,33 @@ namespace NECInspector.Core
             };
 
             Data.completedScenarios.Add(entry);
+            Data.skills.Record(evidence, DateTime.UtcNow.ToString("o"));
             Save();
         }
 
         /// <summary>
-        /// Mark a chapter as mastered when the student achieves minimum accuracy across all its scenarios.
+        /// The installation code the student studies under (empty = the default). Skill progress
+        /// is not tied to it: the same skills count whichever code the student practiced with.
         /// </summary>
-        public void RecordChapterMastery(string chapter)
+        public string GetActiveCodeProfileId()
         {
-            if (!Data.masteredChapters.Contains(chapter))
-            {
-                Data.masteredChapters.Add(chapter);
-                Save();
-                Debug.Log($"[ProgressManager] Chapter {chapter} mastered!");
-            }
+            return string.IsNullOrEmpty(Data.activeCodeProfileId) ? Codes.CodeProfileLibrary.DefaultProfileId : Data.activeCodeProfileId;
         }
 
-        /// <summary>
-        /// Check if a chapter is mastered based on completed scenarios.
-        /// A chapter is mastered when all its scenarios have ≥80% accuracy.
-        /// </summary>
-        public bool IsChapterMastered(string chapter, string[] scenarioIdsForChapter, float threshold = 0.8f)
+        public void SetActiveCodeProfile(string profileId)
         {
-            foreach (var id in scenarioIdsForChapter)
-            {
-                var best = GetBestScenarioAttempt(id);
-                if (best == null) return false;
+            if (!Codes.CodeProfileLibrary.Activate(profileId)) return;
 
-                float accuracy = best.totalViolations > 0
-                    ? (float)best.violationsFound / best.totalViolations
-                    : 0f;
-                if (accuracy < threshold) return false;
-            }
-            return true;
+            Data.activeCodeProfileId = profileId;
+            Save();
+        }
+
+        /// <summary>Activate the student's code profile (called at startup); falls back to the default.</summary>
+        public void ApplyActiveCodeProfile()
+        {
+            string id = GetActiveCodeProfileId();
+            if (!Codes.CodeProfileLibrary.Activate(id) && id != Codes.CodeProfileLibrary.DefaultProfileId)
+                Codes.CodeProfileLibrary.Activate(Codes.CodeProfileLibrary.DefaultProfileId);
         }
 
         /// <summary>
@@ -127,7 +125,8 @@ namespace NECInspector.Core
             return best;
         }
 
-        public void RecordSandboxScore(string panelType, SandboxScore score)
+        public void RecordSandboxScore(string panelType, SandboxScore score,
+            IEnumerable<SkillEvidence> evidence = null)
         {
             var entry = new SandboxProgress
             {
@@ -140,6 +139,7 @@ namespace NECInspector.Core
             };
 
             Data.completedSandboxes.Add(entry);
+            Data.skills.Record(evidence, DateTime.UtcNow.ToString("o"));
             Save();
         }
     }
@@ -150,7 +150,8 @@ namespace NECInspector.Core
         public string studentName = "";
         public List<ScenarioProgress> completedScenarios = new List<ScenarioProgress>();
         public List<SandboxProgress> completedSandboxes = new List<SandboxProgress>();
-        public List<string> masteredChapters = new List<string>();
+        public SkillProgress skills = new SkillProgress();
+        public string activeCodeProfileId = "";
         public List<EarnedCertificate> earnedCertificates = new List<EarnedCertificate>();
         public float totalTimeSpent = 0f;
     }

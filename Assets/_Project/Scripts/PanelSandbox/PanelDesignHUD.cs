@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using NECInspector.Codes;
 
 namespace NECInspector.PanelSandbox
 {
@@ -72,7 +73,7 @@ namespace NECInspector.PanelSandbox
             // Build requirements list
             var lines = new System.Text.StringBuilder();
             lines.AppendLine($"Panel: {definition.panelType} ({definition.totalAmps}A, {definition.totalSlots} spaces)");
-            lines.AppendLine($"Square Footage: {definition.dwellingSquareFootage:N0} sq ft");
+            lines.AppendLine($"Dwelling area: {definition.dwellingArea:N0} {CodeProfiles.Tables.areaUnitLabel}");
             lines.AppendLine();
             lines.AppendLine("Required Circuits:");
 
@@ -138,7 +139,7 @@ namespace NECInspector.PanelSandbox
             foreach (var result in results)
             {
                 string icon = result.passed ? "[PASS]" : "[FAIL]";
-                lines.AppendLine($"{icon} {result.ruleName} (Art. {result.necReference})");
+                lines.AppendLine($"{icon} {result.ruleName} ({CodeProfiles.Terminology.ReferenceLabel(result.codeReference)})");
                 lines.AppendLine($"    {result.message}");
                 lines.AppendLine();
 

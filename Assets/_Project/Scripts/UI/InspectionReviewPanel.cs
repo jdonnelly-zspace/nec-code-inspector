@@ -5,6 +5,7 @@ using TMPro;
 using NECInspector.Core;
 using NECInspector.Data;
 using NECInspector.NEC;
+using NECInspector.Codes;
 
 namespace NECInspector.Inspection
 {
@@ -90,7 +91,7 @@ namespace NECInspector.Inspection
         }
 
         public void ShowMissedViolation(int violationIndex, int totalMissed,
-            ViolationDefinitionSO violation, NECArticle article)
+            ViolationDefinitionSO violation, CodeArticle article)
         {
             HideAll();
             _missedGroup?.SetActive(true);
@@ -98,9 +99,18 @@ namespace NECInspector.Inspection
 
             if (_missedIndexText != null) _missedIndexText.text = $"Missed Violation {violationIndex} of {totalMissed}";
             if (_missedComponentText != null) _missedComponentText.text = violation.componentObjectName;
-            if (_missedDescriptionText != null) _missedDescriptionText.text = violation.description;
-            if (_missedNECArticleText != null) _missedNECArticleText.text = $"Art. {violation.necArticle}";
-            if (_missedNECTextContent != null) _missedNECTextContent.text = article?.text ?? violation.necArticleText;
+            if (_missedDescriptionText != null) _missedDescriptionText.text = violation.GetDescription(CodeProfiles.ActiveId);
+            var citation = violation.GetCitation(CodeProfiles.ActiveId);
+            if (_missedNECArticleText != null)
+            {
+                // Show the violation's own reference; the looked-up article can be a broader prefix match
+                bool sameReference = article != null && citation != null && article.reference == citation.reference;
+                _missedNECArticleText.text = sameReference
+                    ? article.referenceLabel
+                    : (citation != null ? CodeProfiles.Terminology.ReferenceLabel(citation.reference) : "");
+            }
+            if (_missedNECTextContent != null)
+                _missedNECTextContent.text = article?.text ?? citation?.text;
 
             gameObject.SetActive(true);
             OnContinuePressed = null;
@@ -141,7 +151,7 @@ namespace NECInspector.Inspection
             }
 
             if (_accuracyText != null) _accuracyText.text = $"Detection: {score.Accuracy:P0}";
-            if (_citationText != null) _citationText.text = $"NEC Citations: {score.CitationAccuracy:P0}";
+            if (_citationText != null) _citationText.text = $"{CodeProfiles.Terminology.CitationsHeading}: {score.CitationAccuracy:P0}";
             if (_totalTimeText != null) _totalTimeText.text = $"Time: {FormatTime(score.timeElapsed)}";
 
             gameObject.SetActive(true);

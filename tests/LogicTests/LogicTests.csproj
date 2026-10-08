@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Plain .NET tests for the engine-independent logic: code profile types, electrical tables,
+    load calculation, citation matching, and the JSON content files. The Unity scripts are
+    compiled directly from Assets (no copies), with UnityStubs.cs standing in for the few
+    UnityEngine types they touch. Run with: dotnet run, passing the project path tests/LogicTests
+  -->
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>9.0</LangVersion>
+    <RootNamespace>NECInspector.LogicTests</RootNamespace>
+    <AssemblyName>LogicTests</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Scripts>$(MSBuildThisFileDirectory)../../Assets/_Project/Scripts/</Scripts>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Codes/*.cs is engine-independent; files that need Unity live in Codes/Unity/ and are not compiled here -->
+    <Compile Include="$(Scripts)Codes/*.cs" Link="Unity/Codes/%(Filename)%(Extension)" />
+    <Compile Include="$(Scripts)Data/ConceptIds.cs" Link="Unity/Data/ConceptIds.cs" />
+    <Compile Include="$(Scripts)Data/ViolationSeverity.cs" Link="Unity/Data/ViolationSeverity.cs" />
+    <Compile Include="$(Scripts)Data/ScenarioFileData.cs" Link="Unity/Data/ScenarioFileData.cs" />
+    <Compile Include="$(Scripts)Data/ViolationCitation.cs" Link="Unity/Data/ViolationCitation.cs" />
+    <Compile Include="$(Scripts)Data/SceneFacts.cs" Link="Unity/Data/SceneFacts.cs" />
+    <Compile Include="$(Scripts)Skills/*.cs" Link="Unity/Skills/%(Filename)%(Extension)" />
+    <Compile Include="$(Scripts)Core/DifficultyLevel.cs" Link="Unity/Core/DifficultyLevel.cs" />
+    <Compile Include="$(Scripts)PanelSandbox/LoadCalculator.cs" Link="Unity/PanelSandbox/LoadCalculator.cs" />
+    <Compile Include="$(Scripts)PanelSandbox/BusSide.cs" Link="Unity/PanelSandbox/BusSide.cs" />
+    <Compile Include="$(Scripts)PanelSandbox/BreakerData.cs" Link="Unity/PanelSandbox/BreakerData.cs" />
+    <Compile Include="$(Scripts)PanelSandbox/RequiredCircuit.cs" Link="Unity/PanelSandbox/RequiredCircuit.cs" />
+    <Compile Include="$(Scripts)PanelSandbox/ComplianceResult.cs" Link="Unity/PanelSandbox/ComplianceResult.cs" />
+    <Compile Include="$(Scripts)PanelSandbox/ComplianceRules.cs" Link="Unity/PanelSandbox/ComplianceRules.cs" />
+  </ItemGroup>
+
+</Project>

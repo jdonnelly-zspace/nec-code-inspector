@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using NECInspector.Codes;
 using NECInspector.Core;
 using NECInspector.Data;
+using NECInspector.Skills;
 
 namespace NECInspector.Inspection
 {
@@ -65,10 +67,15 @@ namespace NECInspector.Inspection
             _flaggedViolations.Clear();
             _markedCompliant.Clear();
 
-            // Filter violations by difficulty
+            // Filter violations by code profile and difficulty
+            string profileId = CodeProfiles.ActiveId;
             foreach (var violation in _scenarioDefinition.violations)
             {
                 if (violation == null) continue;
+
+                // A violation without a citation for the active code does not apply to it
+                if (!violation.AppliesTo(profileId)) continue;
+
                 if ((int)violation.minimumDifficulty <= (int)difficulty)
                 {
                     // Skip subtle violations unless Expert
@@ -106,22 +113,22 @@ namespace NECInspector.Inspection
         /// <summary>
         /// Student flags a violation on a component
         /// </summary>
-        public void FlagViolation(InspectableComponent component, string violationDescription, string necArticle)
+        public void FlagViolation(InspectableComponent component, string violationDescription, string reference)
         {
             var flagged = new FlaggedViolation
             {
                 componentName = component.gameObject.name,
                 componentDisplayName = component.componentName,
                 description = violationDescription,
-                citedNECArticle = necArticle,
+                citedReference = reference,
                 timeStamp = ElapsedTime
             };
 
             _flaggedViolations.Add(flagged);
-            component.FlagViolation(flagged.description, necArticle);
+            component.FlagViolation(flagged.description, reference);
             OnViolationFlagged?.Invoke(flagged);
 
-            Debug.Log($"[InspectionManager] Violation flagged on {component.componentName}: {necArticle}");
+            Debug.Log($"[InspectionManager] Violation flagged on {component.componentName}: {reference}");
         }
 
         /// <summary>
@@ -142,6 +149,7 @@ namespace NECInspector.Inspection
             int correctFlags = 0;
             int correctCitations = 0;
             int falsePositives = 0;
+            string profileId = CodeProfiles.ActiveId;
 
             foreach (var flagged in _flaggedViolations)
             {
@@ -152,8 +160,9 @@ namespace NECInspector.Inspection
                 {
                     correctFlags++;
 
-                    // Check if NEC citation is correct
-                    if (IsNECCitationCorrect(flagged.citedNECArticle, matchingViolation.necArticle))
+                    // Check the citation against the active code's reference for this violation
+                    var expected = matchingViolation.GetCitation(profileId);
+                    if (expected != null && IsCitationCorrect(flagged.citedReference, expected.reference))
                         correctCitations++;
                 }
                 else
@@ -171,6 +180,37 @@ namespace NECInspector.Inspection
                 totalCitations = correctFlags, // Only count correct flags for citation scoring
                 timeElapsed = ElapsedTime
             };
+        }
+
+        /// <summary>
+        /// One piece of skill evidence per active violation: the violation's concept at the tier of its
+        /// difficulty, with full credit for finding it and citing it correctly, partial credit for
+        /// finding it with a wrong citation, and none if it was missed.
+        /// </summary>
+        public List<SkillEvidence> GetSkillEvidence()
+        {
+            var evidence = new List<SkillEvidence>();
+            string profileId = CodeProfiles.ActiveId;
+
+            foreach (var violation in _activeViolations)
+            {
+                if (string.IsNullOrEmpty(violation.conceptId)) continue;
+
+                var flagged = _flaggedViolations.FirstOrDefault(f => f.componentName == violation.componentObjectName);
+                bool found = flagged != null;
+
+                var expected = violation.GetCitation(profileId);
+                bool citationCorrect = found && expected != null
+                    && IsCitationCorrect(flagged.citedReference, expected.reference);
+
+                evidence.Add(new SkillEvidence(
+                    violation.conceptId,
+                    SkillTiers.FromDifficulty(violation.minimumDifficulty),
+                    SkillOutcomes.ForInspection(found, citationCorrect),
+                    SkillEvidenceSources.Inspection));
+            }
+
+            return evidence;
         }
 
         /// <summary>
@@ -205,21 +245,13 @@ namespace NECInspector.Inspection
             }
         }
 
-        private bool IsNECCitationCorrect(string cited, string actual)
+        private bool IsCitationCorrect(string cited, string actual)
         {
-            if (string.IsNullOrEmpty(cited) || string.IsNullOrEmpty(actual))
-                return false;
-
-            string normalizedCited = cited.Replace(" ", "").Replace("Art.", "").Replace("art.", "").Trim();
-            string normalizedActual = actual.Replace(" ", "").Replace("Art.", "").Replace("art.", "").Trim();
-
-            // Exact match
-            if (normalizedCited == normalizedActual) return true;
-
-            // Partial match (student cites parent article, actual is subsection)
-            if (normalizedActual.StartsWith(normalizedCited)) return true;
-
-            return false;
+            // Matching rules belong to the active code profile; fall back to the default matcher.
+            var profile = CodeProfiles.Active;
+            return profile != null
+                ? profile.CitationMatches(cited, actual)
+                : CitationMatcher.Default(cited, actual);
         }
     }
 
@@ -229,7 +261,7 @@ namespace NECInspector.Inspection
         public string componentName;
         public string componentDisplayName;
         public string description;
-        public string citedNECArticle;
+        public string citedReference;
         public float timeStamp;
     }
 }

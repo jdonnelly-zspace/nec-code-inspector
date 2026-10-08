@@ -56,7 +56,8 @@ namespace NECInspector.PanelSandbox
             var score = _manager.CalculateScore();
             GameManager.Instance.Progress.RecordSandboxScore(
                 _manager.Definition.panelType,
-                score
+                score,
+                _manager.GetSkillEvidence(score, GameManager.Instance.Difficulty.CurrentLevel)
             );
             Debug.Log($"[PanelDesignRunner] Complete. Compliance: {score.ComplianceRate:P0}, Load accuracy: {score.loadCalcAccuracy:P0}");
         }

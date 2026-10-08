@@ -1,0 +1,239 @@
+{
+  "id": "scenario-grounding",
+  "sceneName": "GroundingInspection",
+  "displayName": "Grounding & Bonding Inspection",
+  "description": "Inspect a residential service entrance and grounding electrode system for code violations. Verify proper grounding electrode installation, bonding connections, conductor sizing, and system grounding integrity.",
+  "environmentDescription": "A residential utility room and exterior service entrance showing the grounding electrode system, service panel, water pipe bonding, and ground rods.",
+  "expertTimeLimit": 1200,
+  "availableDifficulties": [
+    "Beginner",
+    "Standard",
+    "Expert"
+  ],
+  "assetPrefix": "GND",
+  "violationFolder": "Grounding",
+  "scenarioAssetName": "Grounding",
+  "violations": [
+    {
+      "violationId": "GND-ELECTRODE-001",
+      "description": "Ground rod not meeting minimum 8-foot length requirement",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "250.52(A)(5)",
+          "text": "A ground rod (stainless, copper, or zinc-plated steel) needs a minimum length of 8 feet and a 5/8 inch diameter.",
+          "limit": {
+            "quantity": "ground-rod-length",
+            "kind": "min",
+            "value": 8,
+            "unit": "ft"
+          }
+        },
+        {
+          "profileId": "cec",
+          "reference": "10-700",
+          "text": "A manufactured grounding electrode can be made of rods 3 m long, driven in full length, with at least two spaced 3 m apart and bonded together.",
+          "description": "Ground rod shorter than the 3 m rod length",
+          "hintText": "A manufactured ground electrode uses 3 m rods driven in full length. Check the rod length.",
+          "inspectionNote": "This ground rod is only 6 feet (about 1.8 m) long, shorter than the 3 m rods the code expects.",
+          "limit": {
+            "quantity": "ground-rod-length",
+            "kind": "min",
+            "value": 3,
+            "unit": "m"
+          }
+        }
+      ],
+      "componentObjectName": "GroundRod_Main",
+      "hintText": "Ground rods must be at least 8 feet long and 5/8 inch diameter. Check the rod length.",
+      "componentType": "Ground Rod",
+      "inspectionNote": "This ground rod is only 6 feet long, failing to meet the 8-foot minimum required by code.",
+      "conceptId": "earthing-bonding",
+      "severity": "Critical",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "ground-rod-length",
+        "value": 6,
+        "unit": "ft",
+        "note": "Length of the driven rod"
+      },
+      "compliantFact": {
+        "quantity": "ground-rod-length",
+        "value": 10,
+        "unit": "ft"
+      }
+    },
+    {
+      "violationId": "GND-GEC-001",
+      "description": "Grounding electrode conductor not connected to service equipment",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "250.24(A)(1)",
+          "text": "The grounding electrode conductor is the link between the grounding electrode(s) and the service's equipment grounding conductors and enclosures and, if the system is grounded, its grounded conductor."
+        }
+      ],
+      "componentObjectName": "GEC_ServicePanel",
+      "hintText": "The grounding electrode conductor must connect from the panel to the grounding electrode. Look for a disconnected or missing conductor.",
+      "componentType": "Conductor",
+      "inspectionNote": "Grounding electrode conductor is disconnected at the service panel. No path to earth exists.",
+      "conceptId": "earthing-bonding",
+      "severity": "Critical",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "GND-BOND-WATER-001",
+      "description": "Metal water piping not bonded to grounding system",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "250.104(A)",
+          "text": "Bond the metal water pipe system to any one of these: the service enclosure, the service's grounded conductor, a grounding electrode conductor of adequate size, or the electrodes in use."
+        }
+      ],
+      "componentObjectName": "WaterPipe_Bonding",
+      "hintText": "Metal water pipes must be bonded to the grounding system. Look for a bonding clamp and conductor.",
+      "componentType": "Bonding Connection",
+      "inspectionNote": "Metal water pipe enters the building without a bonding connection to the electrical grounding system.",
+      "conceptId": "earthing-bonding",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "GND-EGC-SIZE-001",
+      "description": "Equipment grounding conductor undersized for circuit",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "250.122",
+          "text": "Wire-type equipment grounding conductors are at least the size Table 250.122 specifies."
+        }
+      ],
+      "componentObjectName": "EGC_SubPanel",
+      "hintText": "Equipment grounding conductors must be sized per Table 250.122 based on the overcurrent device rating.",
+      "componentType": "Conductor",
+      "inspectionNote": "Equipment grounding conductor is 14 AWG on a 30A circuit. Table 250.122 requires minimum 10 AWG for 30A.",
+      "conceptId": "earthing-bonding",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "GND-ELECTRODE-SYS-001",
+      "description": "Multiple grounding electrodes present but not bonded together",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "250.50",
+          "text": "Bond together every electrode of the types listed in 250.52(A)(1) through (A)(7) at a building so they act as one system."
+        }
+      ],
+      "componentObjectName": "Electrode_BondingJumper",
+      "hintText": "All grounding electrodes at a building must be bonded together into one system.",
+      "componentType": "Bonding Connection",
+      "inspectionNote": "Ground rod and water pipe electrode are both present but not bonded together. They must form a single grounding electrode system.",
+      "conceptId": "earthing-bonding",
+      "severity": "Critical",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "GND-SYSTEM-001",
+      "description": "Electrical system grounding does not limit voltage from lightning or surges",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "250.4(A)(1)",
+          "text": "Grounding a system ties it to earth to hold down surge voltages (from lightning, line surges, or an accidental touch of higher-voltage lines) and to keep voltage to earth stable during normal use."
+        }
+      ],
+      "componentObjectName": "ServiceGround_Connection",
+      "hintText": "The system ground must provide a low-impedance path to earth for lightning and surge protection.",
+      "componentType": "System Ground",
+      "inspectionNote": "Service grounding connection uses a corroded clamp with high resistance, failing to provide adequate surge protection.",
+      "conceptId": "earthing-bonding",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "GND-GEC-ALUM-001",
+      "description": "Bare aluminum grounding electrode conductor in contact with earth",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "250.64(A)",
+          "text": "Aluminum grounding electrode conductors, whether bare or copper-clad, are off limits where they would touch masonry or soil directly or sit in a corrosive environment."
+        }
+      ],
+      "componentObjectName": "GEC_AluminumRun",
+      "hintText": "Aluminum grounding electrode conductors cannot contact masonry or earth directly.",
+      "componentType": "Conductor",
+      "inspectionNote": "Bare aluminum grounding electrode conductor is run through earth to the ground rod. Aluminum corrodes in contact with soil.",
+      "conceptId": "earthing-bonding",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "GND-WATERPIPE-001",
+      "description": "Water pipe electrode not meeting 10-foot earth contact requirement",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "250.52(A)(1)",
+          "text": "A metal underground water pipe counts as an electrode only when 10 feet or more of it touches the earth, including bonded metal well casing in contact with earth."
+        }
+      ],
+      "componentObjectName": "WaterPipe_Underground",
+      "hintText": "To qualify as a grounding electrode, a metal water pipe must have at least 10 feet of earth contact.",
+      "componentType": "Grounding Electrode",
+      "inspectionNote": "Metal water pipe transitions to plastic 4 feet after entering the building. Less than 10 feet of metal is in contact with earth, so it does not qualify as a grounding electrode on its own.",
+      "conceptId": "earthing-bonding",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "GND-INTERSYSTEM-001",
+      "description": "Missing intersystem bonding termination for communications grounding",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "250.94",
+          "text": "Provide an intersystem bonding termination outside enclosures at the service or meter enclosure, and at the disconnect of any additional building or structure."
+        }
+      ],
+      "componentObjectName": "ServicePanel_IntersystemBond",
+      "hintText": "An intersystem bonding termination is required for communications (cable, phone, antenna) grounding.",
+      "componentType": "Bonding Termination",
+      "inspectionNote": "No intersystem bonding termination is provided at the service equipment for communications system grounding connections.",
+      "conceptId": "earthing-bonding",
+      "severity": "Minor",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "GND-SUPPLEMENT-001",
+      "description": "Single ground rod used as sole electrode without supplemental electrode",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "250.53(A)(2)",
+          "text": "When the only electrode is one rod, pipe or plate, add a second electrode and bond it to the first, to the grounding electrode conductor, to the incoming grounded conductor at the service, or to the service enclosure."
+        }
+      ],
+      "componentObjectName": "GroundRod_Supplemental",
+      "hintText": "A single ground rod must be supplemented by an additional electrode unless it can achieve 25 ohms or less.",
+      "componentType": "Ground Rod",
+      "inspectionNote": "Only one ground rod is installed with no supplemental electrode. Unless resistance is verified at 25 ohms or less, a second rod is required.",
+      "conceptId": "earthing-bonding",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    }
+  ]
+}

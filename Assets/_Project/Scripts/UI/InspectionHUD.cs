@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using TMPro;
+using NECInspector.Codes;
 
 namespace NECInspector.Inspection
 {
@@ -44,7 +45,7 @@ namespace NECInspector.Inspection
             _hintButton?.onClick.AddListener(() => OnHintPressed?.Invoke());
         }
 
-        public void ShowIntroPanel(string title, string description, string objectives, string[] chapters)
+        public void ShowIntroPanel(string title, string description, string objectives, string[] sections)
         {
             _introPanel?.SetActive(true);
             _inspectionPanel?.SetActive(false);
@@ -52,8 +53,8 @@ namespace NECInspector.Inspection
             if (_introTitleText != null) _introTitleText.text = title;
             if (_introDescriptionText != null) _introDescriptionText.text = description;
             if (_introObjectivesText != null) _introObjectivesText.text = objectives;
-            if (_introChaptersText != null && chapters != null)
-                _introChaptersText.text = "NEC Chapters: " + string.Join(", ", chapters);
+            if (_introChaptersText != null && sections != null)
+                _introChaptersText.text = CodeProfiles.Terminology.SectionsHeading + ": " + string.Join(", ", sections);
         }
 
         public void HideIntroPanel()
