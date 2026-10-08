@@ -24,6 +24,7 @@ namespace NECInspector.Codes
         public string artSet;               // device and panel art the scenes use, e.g. "north-america" (see ArtSets)
         public string reviewStatus;         // app-defined | draft | reviewed (by a credential expert)
         public string note;                 // what is covered and what is not
+        public CodeLicense license;         // who holds the copyright and whether shipping the material has been decided (see CodeLicense)
     }
 
     /// <summary>One reference entry in articles.json.</summary>
@@ -73,6 +74,7 @@ namespace NECInspector.Codes
                 errors.Add($"artSet must be lower-case words joined by '-', like 'north-america' (got '{manifest.artSet}')");
             if (Array.IndexOf(Statuses, manifest.reviewStatus) < 0)
                 errors.Add($"reviewStatus must be one of {string.Join(", ", Statuses)} (got '{manifest.reviewStatus}')");
+            errors.AddRange(CodeLicenseValidator.Validate(manifest.license));
 
             if (terminology == null)
                 errors.Add("terminology.json is missing or empty");

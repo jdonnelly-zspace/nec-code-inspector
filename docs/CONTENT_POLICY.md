@@ -53,3 +53,25 @@ same check yet.
 2. Is the explanation in my own words, and shorter than the source? (Wording)
 3. Does the UI text come from the profile terminology, not a hard-coded code name? (Labels)
 4. Do the logic tests pass: `dotnet run --project tests/LogicTests`?
+
+## 7. Licensing
+
+Installation codes (NEC, CEC, BS 7671, ...) are copyrighted. The app stores reference numbers and its own
+paraphrases and never reproduces code text or tables. Whether that is enough to ship is a decision for the owner
+and counsel, so every code profile records it in `profile.json`, in a `license` block:
+
+| Field | Meaning |
+|---|---|
+| `status` | `unreviewed` (nobody has decided; the starting point for any new code), `own-words` (decided: own-words content and reference numbers need no licence) or `licensed` (a licence or written permission is held) |
+| `holder` | Who holds the copyright |
+| `note` | What the app uses and what is left to decide |
+| `evidence` | For `licensed`: where the agreement or permission is kept |
+| `checkedOn` | `yyyy-MM-dd` of the decision (required once the status is not `unreviewed`) |
+
+The tests refuse a profile without a complete record, and the logic test run prints a warning naming every code that
+is not yet cleared (`own-words` or `licensed`). The editor logs the same warning when it loads such a code. Neither
+fails the build: it is a release gate for the owner, not a developer error. Nothing in the repository decides a
+status; an agent or developer must not change `unreviewed` to a cleared status without the owner's decision.
+
+Today `nec` and `cec` are `unreviewed`. CSA's tables are a separate matter: they need a licence and written
+permission before they are entered (`docs/expert-review/PRE_REVIEW.md`, section 8).

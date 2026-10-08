@@ -97,6 +97,8 @@ namespace NECInspector.Codes
                         terminology.terms = new TermEntry[0];
 
                     var profile = new DataCodeProfile(manifest, articles.articles, tables, terminology) { Scope = scope };
+                    if (!profile.License.IsCleared)
+                        Debug.LogWarning($"[CodeProfileLibrary] Codes/{name}: licence status is '{profile.License.status}'. Settle it before shipping this code (docs/CONTENT_POLICY.md, Licensing).");
                     _all.Add(profile);
                     Debug.Log($"[CodeProfileLibrary] Loaded {profile.DisplayName} {profile.Edition}: {profile.ArticleCount} entries, " +
                               $"{(profile.HasOwnTables ? "own tables" : "no tables")}, status {manifest.reviewStatus}");

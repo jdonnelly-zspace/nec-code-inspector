@@ -25,6 +25,7 @@ namespace NECInspector.LogicTests
             ContentFilesTests.Run(ctx);
             MetricProfileTests.Run(ctx);
             CitationCreditTests.Run(ctx);
+            LicenseTests.Run(ctx);
 
             foreach (string warning in ctx.Warnings)
                 Console.WriteLine($"WARN  {warning}");

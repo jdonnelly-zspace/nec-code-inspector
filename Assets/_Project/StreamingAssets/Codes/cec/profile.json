@@ -5,5 +5,12 @@
   "region": "CA",
   "artSet": "north-america",
   "reviewStatus": "draft",
-  "note": "Partial draft: only the rules that the scenarios cite, explained in our own words from public sources (CSA's public C22.1:21 index, provincial safety authority bulletins and trade-press guides). Rule numbers follow C22.1:24, which the Red Seal exam provides as of June 2025 (per Skilled Trades BC); older editions number several rules differently (for example dwelling receptacles 26-712, arc-fault 26-724). A credential expert must check each entry. No tables yet: CSA's tables are copyrighted, so the panel sandbox does not count toward this code."
+  "note": "Partial draft: only the rules that the scenarios cite, explained in our own words from public sources (CSA's public C22.1:21 index, provincial safety authority bulletins and trade-press guides). Rule numbers follow C22.1:24, which the Red Seal exam provides as of June 2025 (per Skilled Trades BC); older editions number several rules differently (for example dwelling receptacles 26-712, arc-fault 26-724). A credential expert must check each entry. No tables yet: CSA's tables are copyrighted, so the panel sandbox does not count toward this code.",
+  "license": {
+    "status": "unreviewed",
+    "holder": "CSA Group",
+    "note": "The CEC (CSA C22.1) is copyrighted. The app stores reference numbers and its own paraphrases from public sources and does not reproduce code text or tables (docs/CONTENT_POLICY.md). CSA's tables need a licence and written permission before they can be entered. No licence has been sought and no one has decided that the paraphrases are enough to ship. Needs the owner and counsel before release.",
+    "evidence": "",
+    "checkedOn": ""
+  }
 }
