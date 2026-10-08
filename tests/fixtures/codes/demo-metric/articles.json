@@ -1,0 +1,65 @@
+{
+  "articles": [
+    {
+      "reference": "411",
+      "title": "Protection against electric shock",
+      "text": "Demo entry for the metric fixture.",
+      "section": 4,
+      "keywords": [
+        "protection against electric shock"
+      ],
+      "related": [
+        "411.3"
+      ],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "411.3",
+      "title": "Protective earthing",
+      "text": "Demo entry: protective measures use earthing and equipotential bonding.",
+      "section": 4,
+      "keywords": [
+        "protective earthing"
+      ],
+      "related": [
+        "411.3.3"
+      ],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "411.3.3",
+      "title": "Additional protection by RCD",
+      "text": "Demo entry: socket-outlets need RCD protection.",
+      "section": 4,
+      "keywords": [
+        "additional protection by rcd"
+      ],
+      "related": [],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "433.1",
+      "title": "Overload protection",
+      "text": "Demo entry: the MCB rating must not exceed the cable's current-carrying capacity.",
+      "section": 4,
+      "keywords": [
+        "overload protection"
+      ],
+      "related": [],
+      "isNewInEdition": false
+    },
+    {
+      "reference": "433.1.1",
+      "title": "Coordination",
+      "text": "Demo entry about coordinating the MCB with the cable.",
+      "section": 4,
+      "keywords": [
+        "coordination"
+      ],
+      "related": [
+        "433.1"
+      ],
+      "isNewInEdition": false
+    }
+  ]
+}

@@ -30,7 +30,7 @@ namespace NECInspector.PanelSandbox
                 slotUse = BuildSlotUse(slots)
             };
 
-            return ComplianceRules.RunAll(CodeProfiles.Tables, input);
+            return ComplianceRules.RunAll(CodeProfiles.Tables, input, CodeProfiles.Terminology);
         }
 
         private static PanelBreakerState ToState(PlacedBreaker breaker)

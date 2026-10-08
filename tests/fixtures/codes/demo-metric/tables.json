@@ -1,0 +1,124 @@
+{
+  "singlePoleVoltage": 230,
+  "doublePoleVoltage": 230,
+  "serviceVoltage": 230,
+  "areaUnitLabel": "m²",
+  "defaultConductor": "2.5 mm²",
+  "lightingVAPerArea": 32,
+  "smallApplianceVA": 0,
+  "laundryVA": 0,
+  "dryerVA": 0,
+  "rangeDemandVA": 0,
+  "generalLoadDemandTiers": [
+    {
+      "upToVA": 5000,
+      "factor": 1
+    },
+    {
+      "upToVA": -1,
+      "factor": 0.4
+    }
+  ],
+  "fixedApplianceDemandThreshold": 99,
+  "fixedApplianceDemandFactor": 1,
+  "standardServiceSizes": [
+    60,
+    80,
+    100
+  ],
+  "loadBalanceMaxImbalance": 0.2,
+  "conductorSizes": [
+    {
+      "name": "1.5 mm²",
+      "maxAmps": 16,
+      "visualWidth": 0.003
+    },
+    {
+      "name": "2.5 mm²",
+      "maxAmps": 24,
+      "visualWidth": 0.005
+    },
+    {
+      "name": "4 mm²",
+      "maxAmps": 32,
+      "visualWidth": 0.007
+    },
+    {
+      "name": "6 mm²",
+      "maxAmps": 41,
+      "visualWidth": 0.009
+    },
+    {
+      "name": "10 mm²",
+      "maxAmps": 57,
+      "visualWidth": 0.012
+    },
+    {
+      "name": "16 mm²",
+      "maxAmps": 76,
+      "visualWidth": 0
+    }
+  ],
+  "complianceRules": [
+    {
+      "ruleId": "RULE-01",
+      "enabled": true,
+      "reference": "433.1",
+      "conceptId": "overcurrent-protection"
+    },
+    {
+      "ruleId": "RULE-02",
+      "enabled": true,
+      "reference": "311.1",
+      "conceptId": "branch-circuit-requirements"
+    },
+    {
+      "ruleId": "RULE-03",
+      "enabled": true,
+      "reference": "415.1",
+      "conceptId": "shock-protection"
+    },
+    {
+      "ruleId": "RULE-04",
+      "enabled": true,
+      "reference": "421.1",
+      "conceptId": "arc-fault-protection"
+    },
+    {
+      "ruleId": "RULE-05",
+      "enabled": false,
+      "reference": "General Practice",
+      "conceptId": "load-calculation"
+    },
+    {
+      "ruleId": "RULE-06",
+      "enabled": true,
+      "reference": "132.16",
+      "conceptId": "load-calculation"
+    },
+    {
+      "ruleId": "RULE-07",
+      "enabled": true,
+      "reference": "526.1",
+      "conceptId": "equipment-installation"
+    },
+    {
+      "ruleId": "RULE-08",
+      "enabled": true,
+      "reference": "523.1",
+      "conceptId": "conductor-sizing"
+    },
+    {
+      "ruleId": "RULE-09",
+      "enabled": true,
+      "reference": "132.18",
+      "conceptId": "equipment-installation"
+    },
+    {
+      "ruleId": "RULE-10",
+      "enabled": true,
+      "reference": "General Practice",
+      "conceptId": "equipment-installation"
+    }
+  ]
+}

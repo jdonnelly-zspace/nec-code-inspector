@@ -44,9 +44,20 @@ namespace NECInspector.LogicTests
 
         public static List<LoadedProfile> LoadAll(string root)
         {
+            return LoadFolders(CodesDir(root));
+        }
+
+        /// <summary>Synthetic profiles used only by the tests (tests/fixtures/codes); the app never loads them.</summary>
+        public static LoadedProfile LoadFixture(string root, string name)
+        {
+            return LoadFolders(Path.Combine(root, "tests/fixtures/codes")).FirstOrDefault(p => p.folder == name);
+        }
+
+        private static List<LoadedProfile> LoadFolders(string codesDir)
+        {
             var profiles = new List<LoadedProfile>();
 
-            foreach (string dir in Directory.GetDirectories(CodesDir(root)).OrderBy(d => d, StringComparer.Ordinal))
+            foreach (string dir in Directory.GetDirectories(codesDir).OrderBy(d => d, StringComparer.Ordinal))
             {
                 profiles.Add(new LoadedProfile
                 {

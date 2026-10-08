@@ -72,7 +72,8 @@ namespace NECInspector.PanelSandbox
 
             // Build requirements list
             var lines = new System.Text.StringBuilder();
-            lines.AppendLine($"Panel: {definition.panelType} ({definition.totalAmps}A, {definition.totalSlots} spaces)");
+            var terms = CodeProfiles.Terminology;
+            lines.AppendLine($"{terms.Format("{Term:panel}")}: {definition.panelType} ({definition.totalAmps}A, {definition.totalSlots} spaces)");
             lines.AppendLine($"Dwelling area: {definition.dwellingArea:N0} {CodeProfiles.Tables.areaUnitLabel}");
             lines.AppendLine();
             lines.AppendLine("Required Circuits:");
@@ -81,11 +82,13 @@ namespace NECInspector.PanelSandbox
             {
                 if (!circuit.isRequired) continue;
                 string protection = "";
-                if (circuit.requiresGFCI && circuit.requiresAFCI) protection = " [GFCI+AFCI]";
-                else if (circuit.requiresGFCI) protection = " [GFCI]";
-                else if (circuit.requiresAFCI) protection = " [AFCI]";
+                string gfci = terms.Term("shock-protection-device");
+                string afci = terms.Term("arc-fault-device");
+                if (circuit.requiresGFCI && circuit.requiresAFCI) protection = $" [{gfci}+{afci}]";
+                else if (circuit.requiresGFCI) protection = $" [{gfci}]";
+                else if (circuit.requiresAFCI) protection = $" [{afci}]";
 
-                string poles = circuit.poleCount == 2 ? " (240V)" : "";
+                string poles = circuit.poleCount == 2 ? $" ({CodeProfiles.Tables.doublePoleVoltage:0}V)" : "";
                 lines.AppendLine($"  - {circuit.circuitName}: {circuit.ampsRequired}A, {circuit.wireGauge}{poles}{protection}");
             }
 
@@ -100,7 +103,7 @@ namespace NECInspector.PanelSandbox
         {
             HideAllPanels();
             SetActive(_designPanel, true);
-            SetText(_instructionText, "Drag breakers from the tray to the panel slots. Assign each breaker to a required circuit.");
+            SetText(_instructionText, CodeProfiles.Terminology.Format("Drag {term:breaker}s from the tray to the {term:panel} slots. Assign each {term:breaker} to a required circuit."));
         }
 
         public void UpdateBreakerCount(int placed, int required)
@@ -121,7 +124,7 @@ namespace NECInspector.PanelSandbox
         {
             HideAllPanels();
             SetActive(_wiringPanel, true);
-            SetText(_wiringInstructionText, "Connect wires between each breaker and its load point. Select the correct wire gauge for each circuit.");
+            SetText(_wiringInstructionText, CodeProfiles.Terminology.Format("Connect wires between each {term:breaker} and its load point. Select the correct conductor size for each circuit."));
         }
 
         #endregion

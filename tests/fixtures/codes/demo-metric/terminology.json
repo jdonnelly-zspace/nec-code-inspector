@@ -1,0 +1,41 @@
+{
+  "codeName": "DM",
+  "referencePrefix": "Reg. ",
+  "referenceNoun": "Regulation",
+  "sectionLabel": "Part",
+  "generalPracticeLabel": "General practice",
+  "terms": [
+    {
+      "key": "grounding",
+      "text": "earthing"
+    },
+    {
+      "key": "ground-rod",
+      "text": "earth rod"
+    },
+    {
+      "key": "receptacle",
+      "text": "socket-outlet"
+    },
+    {
+      "key": "breaker",
+      "text": "MCB"
+    },
+    {
+      "key": "panel",
+      "text": "consumer unit"
+    },
+    {
+      "key": "shock-protection-device",
+      "text": "RCD"
+    },
+    {
+      "key": "arc-fault-device",
+      "text": "AFDD"
+    },
+    {
+      "key": "service-disconnect",
+      "text": "main switch"
+    }
+  ]
+}
