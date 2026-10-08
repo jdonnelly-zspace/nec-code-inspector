@@ -5,5 +5,12 @@
   "region": "GB",
   "artSet": "uk",
   "reviewStatus": "draft",
-  "note": "Synthetic data for the logic tests. It is not any real code and must never ship in StreamingAssets/Codes. It proves a 230 V, millimetre-squared, non-North-American code runs through the engine with data only."
+  "note": "Synthetic data for the logic tests. It is not any real code and must never ship in StreamingAssets/Codes. It proves a 230 V, millimetre-squared, non-North-American code runs through the engine with data only.",
+  "license": {
+    "status": "own-words",
+    "holder": "None (synthetic test data)",
+    "note": "Made up for the logic tests; it is not any real code and never ships.",
+    "evidence": "",
+    "checkedOn": "2026-10-08"
+  }
 }

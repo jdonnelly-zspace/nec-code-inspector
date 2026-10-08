@@ -5,5 +5,12 @@
   "region": "US",
   "artSet": "north-america",
   "reviewStatus": "app-defined",
-  "note": "Reference entries are paraphrased explanations, not code text. Pending review by a credential expert (see docs/CONTENT_REVIEW.md)."
+  "note": "Reference entries are paraphrased explanations, not code text. Pending review by a credential expert (see docs/CONTENT_REVIEW.md).",
+  "license": {
+    "status": "unreviewed",
+    "holder": "National Fire Protection Association (NFPA)",
+    "note": "The NEC (NFPA 70) is copyrighted. The app stores reference numbers and its own paraphrases and does not reproduce code text (docs/CONTENT_POLICY.md). No licence or permission has been sought and no one has decided that this is enough to ship. Needs the owner and counsel before release.",
+    "evidence": "",
+    "checkedOn": ""
+  }
 }

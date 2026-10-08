@@ -38,6 +38,9 @@ namespace NECInspector.Codes
         public string Region => _manifest.region;
         public string ArtSet => _manifest.artSet;
         public string ReviewStatus => _manifest.reviewStatus;
+
+        /// <summary>The licensing record from profile.json (see CodeLicense).</summary>
+        public CodeLicense License => _manifest.license;
         public bool IsLoaded => true;
         public int ArticleCount => _articles.Count;
         public CodeTerminology Terminology { get; }
