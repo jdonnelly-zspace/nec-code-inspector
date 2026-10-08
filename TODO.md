@@ -110,7 +110,7 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - [ ] Wire Quick Reference Cards to inspection HUD
 - [ ] Certificate UI panel visual design
 - [ ] Audio clips (SFX, ambient)
-- [ ] Wire the code picker into the main menu scene: add a `CodeProfilePickerPanel` (world-space canvas) with a list content transform, a list item prefab (Button + TMP text, same as the scenario list item), a current-code label, a detail label, a close button and the `ScenarioCatalog`; assign it to `MainMenuPanel._codePickerPanel`; add a mode-selection button that calls `MainMenuPanel.ShowCodePicker()`; optionally assign `_activeCodeText`
+- [~] Wire the code picker into the main menu scene: there is no main menu scene in the repo yet (`Scenes/MainMenu` is empty). `NEC Inspector > Scene Setup > Add Code Picker To Main Menu` (`CodePickerSceneSetup`) builds the picker panel, the list item prefab and an open button, and assigns all fields, in whichever open scene has a `MainMenuPanel` under a canvas. Still to do: run it once the menu scene exists, check the layout, save the scene. Not yet compiled in Unity
 - [ ] Performance testing on zSpace hardware + Windows build
 
 ### Next: Alpha Content
