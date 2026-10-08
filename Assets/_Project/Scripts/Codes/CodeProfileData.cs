@@ -20,6 +20,7 @@ namespace NECInspector.Codes
         public string displayName;          // e.g. "CEC (CSA C22.1)"
         public string edition;              // e.g. "2026"
         public string region;               // e.g. "US", "CA"
+        public string artSet;               // device and panel art the scenes use, e.g. "north-america" (see ArtSets)
         public string reviewStatus;         // app-defined | draft | reviewed (by a credential expert)
         public string note;                 // what is covered and what is not
     }
@@ -66,6 +67,8 @@ namespace NECInspector.Codes
                 errors.Add($"id must contain only letters, digits, '_' or '-' (got '{manifest.id}')");
             if (string.IsNullOrWhiteSpace(manifest.displayName)) errors.Add("displayName is missing");
             if (string.IsNullOrWhiteSpace(manifest.edition)) errors.Add("edition is missing");
+            if (!ArtSets.IsValidName(manifest.artSet))
+                errors.Add($"artSet must be lower-case words joined by '-', like 'north-america' (got '{manifest.artSet}')");
             if (Array.IndexOf(Statuses, manifest.reviewStatus) < 0)
                 errors.Add($"reviewStatus must be one of {string.Join(", ", Statuses)} (got '{manifest.reviewStatus}')");
 

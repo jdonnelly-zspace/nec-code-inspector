@@ -121,6 +121,7 @@ namespace NECInspector.LogicTests
             public string DisplayName => "UK";
             public string Edition => "test";
             public string Region => "UK";
+            public string ArtSet => "north-america";
             public string ReviewStatus => "draft";
             public bool IsLoaded => true;
             public int ArticleCount => 0;

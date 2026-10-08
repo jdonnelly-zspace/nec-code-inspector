@@ -72,7 +72,7 @@ Defects found in the abstraction while adding Canada (all fixed here unless note
 - Facts differ between codes (GFCI scope, rod length and count, spacing limits), so a scene must break the rule under every code it is offered for, or be shown to one code only. Rules accepted in `docs/SCENE_DESIGN.md` (margin, pass-both, split when incompatible, SI units, automatic check). Done: measured values, limits and the logic test for the four single-number violations (wall and counter spacing, ground rod, working space), and the counter gap violation redone (`SceneFacts`). Still to do: shared violations whose rules are tables or scope (wire sizes, GFCI/AFCI areas)
 
 ### Phase E - Hard problems (decide early)
-- [~] Decision: region-specific scene art and prefab variants: accepted in `docs/SCENE_DESIGN.md` (one art set per region group, North American set first, other groups blocked until a second code is committed). Still to do: `artSet` field in `profile.json`, and the art itself
+- [~] Decision: region-specific scene art and prefab variants: accepted in `docs/SCENE_DESIGN.md` (one art set per region group, North American set first, other groups blocked until a second code is committed). Done: `artSet` in `profile.json` with validation (`ArtSets`). Still to do: hide scenes in the menu and picker under codes whose art set is not available, and the art itself
 - [ ] Generalize or add a panel sandbox model beyond split-phase US panels (UK consumer units with RCD/RCBO, 230 V single phase)
 - [ ] Pluggable compliance rule sets per profile (rule logic is still in C#; only numbers, citations and on/off are data)
 

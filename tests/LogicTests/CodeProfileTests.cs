@@ -67,6 +67,7 @@ namespace NECInspector.LogicTests
             public string DisplayName => ProfileId;
             public string Edition => "test";
             public string Region => "US";
+            public string ArtSet => "north-america";
             public string ReviewStatus => "draft";
             public bool IsLoaded => true;
             public int ArticleCount => 0;
