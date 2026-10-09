@@ -96,12 +96,12 @@ The most heavily tested safety topic on licensing exams. zSpace advantage: walk 
 | Garages / accessory buildings | Art. 210.8(A)(2) | Built |
 | Outdoors | Art. 210.8(A)(3) | Built |
 | Kitchens (countertop) | Art. 210.8(A)(5) | Built |
-| Laundry areas | Art. 210.8(A)(7) | Built |
-| Bathtubs / shower stalls (6 ft rule) | Art. 210.8(A)(9) | Built |
+| Laundry areas | Art. 210.8(A)(11) | Built |
+| Bathtubs / shower stalls (6 ft rule) | Art. 210.8(A)(10) | Built |
 | Dishwashers (2026 NEW) | Art. 210.8(D) | Built |
 | Crawl spaces | Art. 210.8(A)(4) | Planned |
 | Unfinished basements | Art. 210.8(A)(6) | Planned |
-| Boathouses | Art. 210.8(A)(8) | Planned |
+| Boathouses | Art. 210.8(A)(9) | Planned |
 | **AFCI — Dwelling Unit** | | |
 | AFCI required rooms | Art. 210.12(B) (2026: updated list) | Built |
 | Branch circuit extensions | Art. 210.12(E) | Built |
