@@ -177,6 +177,30 @@ Still for the expert: the wording of every card and circuit description (workshe
 - **Skill coverage:** the nine violations cover shock protection, earthing and bonding, marking, special locations, disconnecting means and equipment installation; seven skills have no UK violation yet (arc-fault, overcurrent, conductor sizing, branch circuits, load calculation, working space, wiring methods).
 - **Still for the expert:** every entry, the edition, and the licence decision.
 
+## 15. Phase 1, first batch (content plan)
+
+22 new NEC violations in four skills were drafted, then checked by a separate pass against public sources; the per-item evidence is
+in `PHASE1_VERIFICATION.md`. **No official NEC text could be opened** (the NFPA viewer needs a login), so every item, and the 12 new
+reference entries, still need the expert.
+
+- **Shipped:** arc-fault protection 7 of 10, working space and access 6 of 9, identification and marking 9 of 10. Only items the check
+  marked confirmed or corrected were kept; the corrections were applied.
+- **Held out:** every item that rested on one source (the downstream-outlet and refrigerator arc-fault cases, the lighting and the
+  stair-panel cases), the shared-neutral case (no source linked it to arc-fault protection), a drip-protection case whose scene cannot
+  work in an ordinary garage, and a marking case that duplicated another. The whole load-calculation batch (10) is held, see below.
+- **Errors the check found in existing content:** the AFCI letters (fixed in an earlier change). The drafts also had wrong letters for
+  250.119, which is (A) for the green finish and (B) for the marking of larger conductors.
+- **Edition problem (needs a decision).** Sources say the 2023 NEC renumbered part of Article 220 and that the 2026 NEC moves Article 220
+  to Article 120, renumbers Article 200 (200.6 becomes 200.7, 200.7 becomes 200.8), turns 215.2 into 215.4 and adds a 230.70(D)
+  plaque duty and new 230.70(B) wording. The app's content is written to 2023 numbering (and part of the load calculation entries
+  look like 2020 numbering), while the project targets the 2026 edition. These are secondary-source findings. Until the owner and the
+  expert decide which edition's numbering the NEC content follows, the load-calculation batch stays out, and the marking items that
+  cite Article 200 and 705.10 carry the 2023 numbers with a flag.
+- **Scene notes for the builders:** the headroom case is only a violation in new construction or for panels over 200 A (the scene must
+  say so); the panel-in-closet case needs combustible material touching or next to the panel; the pipe case needs the pipe inside the
+  panel's footprint column; re-identified white conductors only apply inside a cable assembly or cord, so the scene should be NM cable
+  or conduit.
+
 ## Sources (all public)
 
 NEC: ecmweb.com (GFCI and AFCI requirements; key revisions to Chapter 2 of the 2026 NEC; NEC motors series; one-family dwelling load calculations), IAEI Magazine (210.8 GFCI requirements), electricianu.com (2023 NEC 210.11), Mike Holt forums (220.14(I), 408.54), St. Paul building department electrical checklist (210.52).

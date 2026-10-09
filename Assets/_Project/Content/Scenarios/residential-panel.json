@@ -262,6 +262,327 @@
       "severity": "Critical",
       "minimumDifficulty": "Expert",
       "isSubtle": true
+    },
+    {
+      "violationId": "RP-CLOSET-PANEL-001",
+      "description": "The {term:panel} is mounted inside a clothes closet, with coats hanging against it",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "240.24(D)",
+          "text": "Overcurrent devices must not be placed where easily ignited material is nearby, such as inside a clothes closet."
+        }
+      ],
+      "componentObjectName": "Panel_InClothesCloset",
+      "hintText": "Look at what is stored right next to the {term:panel} enclosure.",
+      "componentType": "Panel",
+      "inspectionNote": "The {term:panel} sits inside a closet with clothing and boxes hanging directly beside and in front of it. A fault or hot connection could ignite this material.",
+      "conceptId": "working-space-access",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-BATH-PANEL-001",
+      "description": "The {term:panel} is installed inside a bathroom next to the garage wall",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "240.24(E)",
+          "text": "In dwelling units (and hotel or motel guest rooms and suites), overcurrent devices other than supplementary overcurrent protection must not be located in bathrooms."
+        }
+      ],
+      "componentObjectName": "Panel_InBathroom",
+      "hintText": "Check which room the {term:panel} is actually standing in.",
+      "componentType": "Panel",
+      "inspectionNote": "The {term:panel} is on a bathroom wall, a few feet from a shower and toilet. Moisture and the chance of a wet person touching it make this location unsuitable.",
+      "conceptId": "working-space-access",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-PIPE-ABOVE-001",
+      "description": "A water supply pipe runs straight down past the top of the {term:panel}, through the space above it",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.26(E)(1)(a)",
+          "text": "The space equal to the width and depth of the panel, from the floor up to 6 ft above the equipment or the structural ceiling (whichever is lower), is reserved for the electrical installation. Pipes, ducts, leak protection apparatus and other foreign equipment cannot be in it."
+        }
+      ],
+      "componentObjectName": "Panel_PipeAbove",
+      "hintText": "Look at the space directly above the {term:panel}.",
+      "componentType": "Working Space",
+      "inspectionNote": "A copper water pipe and a drain run vertically in the area directly above the {term:panel}. A leak or condensation would fall straight onto live parts.",
+      "conceptId": "working-space-access",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-WIDTH-001",
+      "description": "The clear working space beside and in front of the {term:panel} is only about 20 inches wide because a water heater and a shelving unit crowd both sides",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.26(A)(2)",
+          "text": "The clear space in front of the equipment must be at least 30 in wide, or as wide as the equipment if that is greater, and may be centred or offset.",
+          "limit": {
+            "quantity": "clear working space width",
+            "kind": "min",
+            "value": 30,
+            "unit": "in"
+          }
+        }
+      ],
+      "componentObjectName": "Panel_WorkingSpace_Narrow",
+      "hintText": "Measure across the open floor in front of the {term:panel}, wall to wall.",
+      "componentType": "Working Space",
+      "inspectionNote": "A water heater and a steel shelf leave roughly 20 in of open width in front of the {term:panel}. The cover is about 15 in wide, so the standard 30 in minimum is what applies.",
+      "conceptId": "working-space-access",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "clear working space width",
+        "value": 20,
+        "unit": "in",
+        "note": "measured between the water heater and the shelf at the panel front"
+      },
+      "compliantFact": {
+        "quantity": "clear working space width",
+        "value": 32,
+        "unit": "in",
+        "note": "same measurement with items moved back"
+      }
+    },
+    {
+      "violationId": "RP-HEADROOM-001",
+      "description": "A low soffit and duct run in front of the {term:panel}, over the standing spot, leave only about 5.5 feet of headroom in the working space of this new-construction house",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.26(A)(3)",
+          "text": "The working space must be clear from the floor to at least 6.5 ft, or the equipment height if taller. Exception: service equipment or panelboards of 200 A or less in an existing dwelling unit may have less headroom.",
+          "limit": {
+            "quantity": "headroom over working space",
+            "kind": "min",
+            "value": 6.5,
+            "unit": "ft"
+          }
+        }
+      ],
+      "componentObjectName": "Panel_Headroom_Duct",
+      "hintText": "Look up at what hangs above the standing spot in front of the {term:panel}.",
+      "componentType": "Working Space",
+      "inspectionNote": "A heating duct and soffit hang low in front of the {term:panel}, so a person must stoop to work there. Measure from the floor to the lowest object above the working space.",
+      "conceptId": "working-space-access",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "headroom over working space",
+        "value": 5.5,
+        "unit": "ft",
+        "note": "floor to underside of duct over the working space"
+      },
+      "compliantFact": {
+        "quantity": "headroom over working space",
+        "value": 7,
+        "unit": "ft",
+        "note": "floor to garage ceiling"
+      }
+    },
+    {
+      "violationId": "RP-DOOR-SWING-001",
+      "description": "The {term:panel} door cannot swing open to a right angle because a bicycle rack and wall corner stop it partway",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.26(A)(2)",
+          "text": "The working space must allow equipment doors and hinged panels to open to at least 90 degrees."
+        }
+      ],
+      "componentObjectName": "Panel_DoorSwing_Blocked",
+      "hintText": "Try opening the {term:panel} door fully and see what stops it.",
+      "componentType": "Working Space",
+      "inspectionNote": "The hinged door of the {term:panel} stops at about 60 degrees against a rack mounted nearby. There is open floor in front, so the problem is only found by opening the door.",
+      "conceptId": "working-space-access",
+      "severity": "Minor",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "RP-IDMARK-DISC-001",
+      "description": "A disconnect switch in the garage has no label saying what it controls",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.22(A)",
+          "text": "Each service, feeder and branch-circuit disconnecting means is legibly marked to show what it is for, unless its location and arrangement already make the purpose obvious."
+        }
+      ],
+      "componentObjectName": "Garage_Disconnect_Unlabeled",
+      "hintText": "Look at the disconnect boxes on the garage wall. Could someone tell what each one switches off?",
+      "componentType": "Disconnect",
+      "inspectionNote": "A gray disconnect enclosure on the garage wall feeds equipment that is not beside it. The cover has no label or tag of any kind.",
+      "conceptId": "identification-marking",
+      "severity": "Minor",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-IDMARK-NEUTRAL-RED-001",
+      "description": "A small branch-circuit neutral is red instead of white or gray",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "200.6(A)",
+          "text": "An insulated grounded conductor of 6 AWG or smaller is identified by a continuous white or gray outer finish, or by three continuous white or gray stripes on other than green insulation."
+        }
+      ],
+      "componentObjectName": "Panel_NeutralConductor_Red",
+      "hintText": "Follow the conductors that land on the neutral bar. Check the colour of each one.",
+      "componentType": "Conductor",
+      "inspectionNote": "A 12 AWG conductor with solid red insulation runs to the {term:panel} neutral bar from a 120 V circuit. Nothing about it is marked white or gray.",
+      "conceptId": "identification-marking",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-IDMARK-EGC-GREEN-001",
+      "description": "A green conductor is connected to a breaker and used as a live wire",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "250.119(A)",
+          "text": "Insulated equipment grounding conductors of the wire type have a continuous green or green-with-yellow-stripe finish, and conductors with that finish are not used as ungrounded or grounded circuit conductors."
+        }
+      ],
+      "componentObjectName": "Panel_GreenWire_OnBreaker",
+      "hintText": "Look at which colours land on a {term:breaker} terminal. One of them should never be there.",
+      "componentType": "Conductor",
+      "inspectionNote": "A conductor with solid green insulation is clamped under a {term:breaker} terminal and carries load current. The ground bar next to it holds only bare and green wires from other circuits.",
+      "conceptId": "identification-marking",
+      "severity": "Critical",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-IDMARK-WHITE-HOT-001",
+      "description": "A white conductor is used as an ungrounded (hot) conductor with no re-identification",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "200.7",
+          "text": "White, gray, or three-white-stripe insulation is for grounded conductors only. On circuits of 50 V or more it may serve as an ungrounded conductor only inside a cable assembly (for example a switch-loop supply) or a flexible cord, and in a cable it must be permanently re-marked a colour other than white, gray or green at its termination and wherever visible and accessible."
+        }
+      ],
+      "componentObjectName": "Panel_WhiteWire_OnBreaker",
+      "hintText": "Check the wire colours on the {term:breaker} terminals, not just the neutral bar.",
+      "componentType": "Conductor",
+      "inspectionNote": "A white 12 AWG conductor from NM cable (or a loose white THHN in conduit) is landed on a single-pole 20 A {term:breaker} in the garage {term:panel}. No tape or paint shows it was re-identified.",
+      "conceptId": "identification-marking",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-IDMARK-SVCDISC-001",
+      "description": "The main disconnect at the service is not marked as the service disconnect",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "230.70(B)",
+          "text": "Each service disconnect is permanently marked to show that it is a service disconnect, so people can tell the one device that cuts off the whole supply."
+        }
+      ],
+      "componentObjectName": "ServicePanel_MainUnmarked",
+      "hintText": "Find the device that shuts off the entire house. Does anything on it say what it is?",
+      "componentType": "Disconnect",
+      "inspectionNote": "A main {term:breaker} at the top of the garage {term:panel} is the only way to kill the whole supply, but it has no permanent marking calling it the {term:service-disconnect}. Only the individual circuit labels are present.",
+      "conceptId": "identification-marking",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-IDMARK-NEUTRAL-FEEDER-001",
+      "description": "A large black feeder neutral has no white marking at its ends",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "200.6(B)",
+          "text": "A grounded conductor of 4 AWG or larger is identified by white or gray finish, three white stripes, or a distinctive white or gray marking put on at its terminations when installed."
+        }
+      ],
+      "componentObjectName": "Feeder_NeutralUnmarked",
+      "hintText": "Look at the heavy feeder conductors. Which one is the neutral, and how can you tell?",
+      "componentType": "Conductor",
+      "inspectionNote": "A 2 AWG black conductor lands on the neutral bar of the garage {term:panel}. Its ends carry no white or gray tape, paint or sleeve.",
+      "conceptId": "identification-marking",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-IDMARK-PV-PLAQUE-001",
+      "description": "Rooftop solar feeds the {term:panel} but no multiple-sources plaque at the service shows where the solar disconnect is",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "705.10",
+          "text": "A permanent plaque, label or directory at each service equipment location (or an approved readily visible spot) shows where each power source disconnecting means is, lists emergency phone numbers of off-site entities servicing the sources, and carries the wording 'CAUTION: MULTIPLE SOURCES OF POWER'."
+        }
+      ],
+      "componentObjectName": "ServicePanel_SourcePlaque_Missing",
+      "hintText": "The house makes some of its own power. Where would someone shutting down the building learn that?",
+      "componentType": "Label",
+      "inspectionNote": "A solar inverter on the garage wall is tied to the {term:panel} through a backfed {term:breaker}. The service equipment has no plaque or directory naming the solar source or where it is.",
+      "conceptId": "identification-marking",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-IDMARK-EGC-LARGE-001",
+      "description": "A large black equipment grounding conductor has no green marking at its ends",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "250.119(B)",
+          "text": "An insulated equipment grounding conductor of 4 AWG or larger that is not green must be permanently identified as an EGC at each end and at every accessible point, by stripping the insulation, coloring it green at the termination, or green tape or labels at the termination; conductor bodies with no splices or unused hubs are exempt."
+        }
+      ],
+      "componentObjectName": "Feeder_EGC_BlackUnmarked",
+      "hintText": "Check the heavy conductor that ends on the ground bar. How would the next person know its role?",
+      "componentType": "Conductor",
+      "inspectionNote": "A 4 AWG black insulated conductor runs from the main {term:panel} to the garage {term:panel} ground bar. Its ends have no green tape, paint or exposed bare section.",
+      "conceptId": "identification-marking",
+      "severity": "Minor",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "RP-IDMARK-GENINLET-SIGN-001",
+      "description": "A generator inlet beside the garage has no warning sign about the type of system it supplies",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "702.7(C)",
+          "text": "Where a power inlet is used for a temporary connection to a portable generator, a warning sign near the inlet states the type of system the inlet is wired for, based on the transfer equipment: bonded-neutral (separately derived) only, or floating-neutral (non-separately derived) only."
+        }
+      ],
+      "componentObjectName": "Garage_GeneratorInlet_NoSign",
+      "hintText": "Find the plug-in point for a portable generator. Does anything tell the person plugging in which kind of generator it needs?",
+      "componentType": "Label",
+      "inspectionNote": "A generator inlet box is mounted on the exterior garage wall next to a transfer switch. There is no sign naming the neutral arrangement the generator must have.",
+      "conceptId": "identification-marking",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false
     }
   ]
 }
