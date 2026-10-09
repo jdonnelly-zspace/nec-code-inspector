@@ -152,6 +152,11 @@ NEC warning reports the 106 new violations needed); an authoring checklist and s
 yet and no scene uses `ViolationVariant`, since neither the scenes nor the extra violations exist. Mark a code `enforce` when it
 reaches its target.
 
+**Phase 1 status (third batch).** 24 more violations are in (shock protection 8, branch circuits 6, wiring methods 6, overcurrent protection 4), so 74
+of the 106 are done and the NEC pool shortfall is 32. The check also found the app's 210.8(A) item numbers were the 2020 list; they are now the 2023 list.
+Still to author: load calculation (waits on the edition decision) and the remaining arc-fault, marking, working-space, overcurrent, disconnecting means
+and special locations items listed in the test warning (`dotnet run --project tests/LogicTests`).
+
 **Phase 1 status (second batch).** 28 more violations are in (conductor sizing 7, disconnecting means 8, equipment installation 7, special
 locations 6), so 50 of the 106 are done and the NEC pool shortfall is 56. Same two-step process; the drafters now loaded web tools and listed the
 pages they fetched, and the verifiers still found corrections in about half the items. Evidence is in `docs/expert-review/PHASE1_VERIFICATION_BATCH2.md`.

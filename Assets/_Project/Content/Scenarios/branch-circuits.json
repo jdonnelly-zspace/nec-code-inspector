@@ -618,6 +618,481 @@
       "severity": "Major",
       "minimumDifficulty": "Expert",
       "isSubtle": false
+    },
+    {
+      "violationId": "BC-GFCI-OUTDOOR-001",
+      "description": "Exterior wall {term:receptacle} on the back porch has no {term:shock-protection-device} protection",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.8(A)(3)",
+          "text": "Receptacles installed outdoors at a dwelling unit need ground-fault circuit-interrupter protection for personnel, from a GFCI receptacle or a GFCI breaker."
+        }
+      ],
+      "componentObjectName": "BackPorch_Receptacle_Exterior",
+      "hintText": "Look at the outlets on the outside of the house. What would protect a person standing on wet ground?",
+      "componentType": "Receptacle",
+      "inspectionNote": "The weatherproof outlet on the exterior back wall is a plain duplex with no test or reset buttons, and the circuit feeding it has an ordinary breaker. Nothing upstream gives it ground-fault protection.",
+      "conceptId": "shock-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneScope": {
+        "protection": "gfci",
+        "receptacle": {
+          "id": "BackPorch_Receptacle_Exterior",
+          "room": "outdoors",
+          "protectedBy": [],
+          "volts": 125,
+          "amps": 20
+        }
+      }
+    },
+    {
+      "violationId": "BC-GFCI-BASEMENT-001",
+      "description": "Basement workbench {term:receptacle} is not GFCI protected",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.8(A)(5)",
+          "text": "Receptacles in dwelling-unit basements need ground-fault protection for personnel. Since the 2020 edition this covers the whole basement, finished or not."
+        }
+      ],
+      "componentObjectName": "Basement_Workbench_Receptacle",
+      "hintText": "Basements sit below grade. Check what is protecting the outlets where tools get plugged in.",
+      "componentType": "Receptacle",
+      "inspectionNote": "The duplex outlet above the basement workbench is a standard device fed from an ordinary breaker, with no test button. The room is a finished-wall basement, so do not assume only bare unfinished areas count.",
+      "conceptId": "shock-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false,
+      "sceneScope": {
+        "protection": "gfci",
+        "receptacle": {
+          "id": "Basement_Workbench_Receptacle",
+          "room": "basement",
+          "floorAtOrBelowGrade": true,
+          "protectedBy": [],
+          "volts": 125,
+          "amps": 20
+        }
+      }
+    },
+    {
+      "violationId": "BC-GFCI-LAUNDRY-001",
+      "description": "Laundry area {term:receptacle} beside the washer has no {term:shock-protection-device} protection",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.8(A)(11)",
+          "text": "Receptacles in the laundry area of a dwelling unit need ground-fault protection for personnel, whether or not a sink is nearby."
+        }
+      ],
+      "componentObjectName": "LaundryRoom_Washer_Receptacle",
+      "hintText": "Think about which rooms in a house are damp. Is the washer outlet treated like a bathroom outlet?",
+      "componentType": "Receptacle",
+      "inspectionNote": "The duplex outlet behind the washer has no test or reset buttons and is not downstream of any GFCI device. There is no sink in the room, so the sink distance rule is not what applies.",
+      "conceptId": "shock-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false,
+      "sceneScope": {
+        "protection": "gfci",
+        "receptacle": {
+          "id": "LaundryRoom_Washer_Receptacle",
+          "room": "laundry",
+          "protectedBy": [],
+          "volts": 125,
+          "amps": 20
+        }
+      }
+    },
+    {
+      "violationId": "BC-GFCI-CRAWL-001",
+      "description": "Service {term:receptacle} in the crawl space has no {term:shock-protection-device} protection",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.8(A)(4)",
+          "text": "Receptacles in dwelling-unit crawl spaces at or below grade need ground-fault protection for personnel."
+        }
+      ],
+      "componentObjectName": "CrawlSpace_Service_Receptacle",
+      "hintText": "Look under the floor. A crawl space is damp and close to the ground.",
+      "componentType": "Receptacle",
+      "inspectionNote": "A duplex outlet is mounted on a joist near the crawl space hatch. It is a standard device, and the feeding breaker has no test button.",
+      "conceptId": "shock-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false,
+      "sceneScope": {
+        "protection": "gfci",
+        "receptacle": {
+          "id": "CrawlSpace_Service_Receptacle",
+          "room": "crawl-space",
+          "floorAtOrBelowGrade": true,
+          "protectedBy": [],
+          "volts": 125,
+          "amps": 15
+        }
+      }
+    },
+    {
+      "violationId": "BC-GFCI-WETBAR-001",
+      "description": "{Term:receptacle} about 4 ft from a wet-bar sink has no {term:shock-protection-device} protection",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.8(A)(8)",
+          "text": "A receptacle within 6 ft of the top inside edge of a dwelling-unit sink bowl needs ground-fault protection for personnel, even outside the kitchen."
+        }
+      ],
+      "componentObjectName": "FamilyRoom_WetBar_Receptacle",
+      "hintText": "Find the sink outside the kitchen and see what protects the nearest outlet on the wall.",
+      "componentType": "Receptacle",
+      "inspectionNote": "A utility-style sink with no beverage or food provisions sits in the family room. The wall outlet beside it is about 4 ft from the bowl by the shortest cord path, a standard device with no test button.",
+      "conceptId": "shock-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false,
+      "sceneScope": {
+        "protection": "gfci",
+        "receptacle": {
+          "id": "FamilyRoom_WetBar_Receptacle",
+          "room": "family-room",
+          "fixtures": [
+            {
+              "type": "sink",
+              "distanceM": 1.2
+            }
+          ],
+          "protectedBy": [],
+          "volts": 125,
+          "amps": 20
+        }
+      }
+    },
+    {
+      "violationId": "BC-GFCI-SUMP-001",
+      "description": "Dedicated sump-pump {term:receptacle} in the basement is on an ordinary circuit with no ground-fault protection",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.8(A)(5)",
+          "text": "Basement receptacles need ground-fault protection for personnel. A sump pump is also listed in 210.8(D) (item 6 in 2023). The old dedicated-appliance exception for a single receptacle is not in the 2023 text."
+        }
+      ],
+      "componentObjectName": "Basement_SumpPump_Receptacle",
+      "hintText": "A pump in its own pit looks like a special case. Ask whether the rules for basements still give it a pass.",
+      "componentType": "Receptacle",
+      "inspectionNote": "A single receptacle in the basement, mounted near the sump pit, serves only the pump and its cord is plugged in. The receptacle is a standard device with no test button, and the breaker feeding it is ordinary.",
+      "conceptId": "shock-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true,
+      "sceneScope": {
+        "protection": "gfci",
+        "receptacle": {
+          "id": "Basement_SumpPump_Receptacle",
+          "room": "basement",
+          "floorAtOrBelowGrade": true,
+          "protectedBy": [],
+          "volts": 125,
+          "amps": 15
+        }
+      }
+    },
+    {
+      "violationId": "BC-GFCI-SINKPATH-001",
+      "description": "Hallway {term:receptacle} just outside a mudroom doorway is within 6 ft of the utility sink by cord path but has no {term:shock-protection-device} protection",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.8(A)(8)",
+          "text": "The 6 ft distance to a sink is measured along the shortest cord path without piercing a wall or fixed barrier. An open door or window opening in that path no longer lets the receptacle escape."
+        }
+      ],
+      "componentObjectName": "Hallway_Receptacle_MudroomDoor",
+      "hintText": "Do not stop at the wall. Imagine pulling a cord from the sink to this outlet and see which way it goes.",
+      "componentType": "Receptacle",
+      "inspectionNote": "The mudroom utility sink and the hallway outlet are on opposite sides of an open doorway. A cord could run straight through the opening, about 5 ft, and the hallway outlet is a standard device with no test button.",
+      "conceptId": "shock-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true,
+      "sceneScope": {
+        "protection": "gfci",
+        "receptacle": {
+          "id": "Hallway_Receptacle_MudroomDoor",
+          "room": "hallway",
+          "fixtures": [
+            {
+              "type": "sink",
+              "distanceM": 1.5
+            }
+          ],
+          "protectedBy": [],
+          "volts": 125,
+          "amps": 15
+        }
+      }
+    },
+    {
+      "violationId": "BC-GFCI-SHOWER-001",
+      "description": "{Term:receptacle} about 4 ft from a shower stall outside any bathroom has no {term:shock-protection-device} protection",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.8(A)(10)",
+          "text": "A receptacle within 6 ft of the outside edge of a bathtub or shower stall that is not in a bathroom needs ground-fault protection for personnel."
+        }
+      ],
+      "componentObjectName": "Mudroom_Receptacle_ShowerStall",
+      "hintText": "This shower is not in a bathroom. Ask how close the nearest outlet is to the stall.",
+      "componentType": "Receptacle",
+      "inspectionNote": "A shower stall is built into the mudroom, with no toilet or basin, so it is not a bathroom. The wall outlet beside it is about 4 ft from the stall edge and is a standard device with no test button.",
+      "conceptId": "shock-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false,
+      "sceneScope": {
+        "protection": "gfci",
+        "receptacle": {
+          "id": "Mudroom_Receptacle_ShowerStall",
+          "room": "hallway",
+          "fixtures": [
+            {
+              "type": "shower",
+              "distanceM": 1.2
+            }
+          ],
+          "protectedBy": [],
+          "volts": 125,
+          "amps": 15
+        }
+      }
+    },
+    {
+      "violationId": "BC-OUTDOOR-HEIGHT-001",
+      "description": "The only back-of-house outdoor {term:receptacle} is mounted 8 ft above the ground, out of easy reach",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.52(E)(1)",
+          "text": "A one-family house needs an outdoor receptacle at the front and one at the back. Each must be reachable from ground level and sit no higher than 6.5 ft above grade.",
+          "limit": {
+            "quantity": "outdoor receptacle height above grade",
+            "kind": "max",
+            "value": 6.5,
+            "unit": "ft"
+          }
+        }
+      ],
+      "componentObjectName": "BackWall_OutdoorReceptacle_High",
+      "hintText": "Stand on the lawn behind the house and check whether you could plug something in without a ladder.",
+      "componentType": "Receptacle",
+      "inspectionNote": "The back wall {term:receptacle} is up under the eave, well above head height. Measure from the ground to the centre of the device.",
+      "conceptId": "branch-circuit-requirements",
+      "severity": "Minor",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "outdoor receptacle height above grade",
+        "value": 8,
+        "unit": "ft",
+        "note": "from finished grade to the centre of the receptacle"
+      },
+      "compliantFact": {
+        "quantity": "outdoor receptacle height above grade",
+        "value": 4,
+        "unit": "ft",
+        "note": "from finished grade to the centre of the receptacle"
+      }
+    },
+    {
+      "violationId": "BC-GARAGE-HEIGHT-001",
+      "description": "The only garage {term:receptacle} is mounted 7 ft above the floor",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.52(G)",
+          "text": "A garage with electric power needs a receptacle in each vehicle bay, installed no higher than 5.5 ft above the floor. This applies to attached and detached garages of one- and two-family dwellings.",
+          "limit": {
+            "quantity": "garage receptacle height above floor",
+            "kind": "max",
+            "value": 5.5,
+            "unit": "ft"
+          }
+        }
+      ],
+      "componentObjectName": "Garage_Receptacle_TooHigh",
+      "hintText": "Look at the wall of the car bay and ask whether a person could reach the only outlet while standing on the floor.",
+      "componentType": "Receptacle",
+      "inspectionNote": "The single garage {term:receptacle} sits high on the wall near the ceiling. Measure from the garage floor to the centre of the device.",
+      "conceptId": "branch-circuit-requirements",
+      "severity": "Minor",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "garage receptacle height above floor",
+        "value": 7,
+        "unit": "ft",
+        "note": "from garage floor to the centre of the receptacle"
+      },
+      "compliantFact": {
+        "quantity": "garage receptacle height above floor",
+        "value": 4,
+        "unit": "ft",
+        "note": "from garage floor to the centre of the receptacle"
+      }
+    },
+    {
+      "violationId": "BC-BATH-BASIN-001",
+      "description": "The bathroom's only {term:receptacle} is on the far wall, 48 in from the sink basin",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.52(D)",
+          "text": "A bathroom needs a 125 V 15 or 20 A receptacle within 3 ft of the outside edge of each basin, on the adjacent wall, on the countertop, or on the side or face of the vanity.",
+          "limit": {
+            "quantity": "distance from basin outside edge to receptacle",
+            "kind": "max",
+            "value": 36,
+            "unit": "in"
+          }
+        }
+      ],
+      "componentObjectName": "Bathroom_Receptacle_FarFromBasin",
+      "hintText": "Find the sink, then look for the nearest outlet and judge how far a hair dryer cord would have to stretch.",
+      "componentType": "Receptacle",
+      "inspectionNote": "The only bathroom {term:receptacle} is by the door, well away from the vanity. Measure from the outside edge of the basin to the device.",
+      "conceptId": "branch-circuit-requirements",
+      "severity": "Minor",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "distance from basin outside edge to receptacle",
+        "value": 48,
+        "unit": "in",
+        "note": "measured horizontally from the outside edge of the basin"
+      },
+      "compliantFact": {
+        "quantity": "distance from basin outside edge to receptacle",
+        "value": 24,
+        "unit": "in",
+        "note": "measured horizontally from the outside edge of the basin"
+      }
+    },
+    {
+      "violationId": "BC-COUNTER-HEIGHT-001",
+      "description": "A kitchen countertop {term:receptacle} is mounted 28 in above the counter, counted as a required countertop outlet",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.52(C)(3)",
+          "text": "Receptacles that serve a kitchen countertop must sit on the counter or no more than 20 in above it, or be a listed assembly built into the countertop.",
+          "limit": {
+            "quantity": "receptacle height above countertop",
+            "kind": "max",
+            "value": 20,
+            "unit": "in"
+          }
+        }
+      ],
+      "componentObjectName": "KitchenCounter_Receptacle_High",
+      "hintText": "Compare the height of the counter outlets to the work surface, not to the floor.",
+      "componentType": "Receptacle",
+      "inspectionNote": "The counter {term:receptacle} is up near the bottom of the wall cabinets. Measure straight up from the countertop surface to the centre of the device.",
+      "conceptId": "branch-circuit-requirements",
+      "severity": "Minor",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "receptacle height above countertop",
+        "value": 28,
+        "unit": "in",
+        "note": "from the countertop surface to the centre of the receptacle"
+      },
+      "compliantFact": {
+        "quantity": "receptacle height above countertop",
+        "value": 14,
+        "unit": "in",
+        "note": "from the countertop surface to the centre of the receptacle"
+      }
+    },
+    {
+      "violationId": "BC-HVAC-RECEPT-001",
+      "description": "The furnace in the attic has its service {term:receptacle} 40 ft away, near the attic hatch",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.63(A)",
+          "text": "A 125 V, single-phase, 15 or 20 A receptacle must be installed at an accessible location for servicing heating, air-conditioning and refrigeration equipment. It must be on the same level as the equipment, within 25 ft of it, and not on the load side of the equipment disconnect.",
+          "limit": {
+            "quantity": "distance from equipment to service receptacle",
+            "kind": "max",
+            "value": 25,
+            "unit": "ft"
+          }
+        }
+      ],
+      "componentObjectName": "AtticFurnace_ServiceReceptacle_Far",
+      "hintText": "Follow the technician's route to the attic equipment and see where the nearest outlet is.",
+      "componentType": "Receptacle",
+      "inspectionNote": "The only service {term:receptacle} is by the attic hatch, far along the floor joists from the furnace. Measure the straight-line distance from the equipment to the device.",
+      "conceptId": "branch-circuit-requirements",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "distance from equipment to service receptacle",
+        "value": 40,
+        "unit": "ft",
+        "note": "measured from the equipment to the receptacle on the same level"
+      },
+      "compliantFact": {
+        "quantity": "distance from equipment to service receptacle",
+        "value": 10,
+        "unit": "ft",
+        "note": "measured from the equipment to the receptacle on the same level"
+      }
+    },
+    {
+      "violationId": "BC-FLOOR-RECEPT-001",
+      "description": "A floor {term:receptacle} 30 in from the wall is the only outlet serving a bedroom wall space",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.52(A)(3)",
+          "text": "A floor receptacle only counts as the required wall-space receptacle when it sits within 18 in of the wall.",
+          "limit": {
+            "quantity": "floor receptacle distance from wall",
+            "kind": "max",
+            "value": 18,
+            "unit": "in"
+          }
+        }
+      ],
+      "componentObjectName": "Bedroom_FloorReceptacle_FarFromWall",
+      "hintText": "Not every outlet in the room counts. Look at where the floor box sits relative to the wall it is meant to serve.",
+      "componentType": "Receptacle",
+      "inspectionNote": "A floor box in the middle of the bedroom stands in for a wall outlet on the long wall. Measure from the wall to the centre of the floor box.",
+      "conceptId": "branch-circuit-requirements",
+      "severity": "Minor",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "floor receptacle distance from wall",
+        "value": 30,
+        "unit": "in",
+        "note": "measured from the wall to the receptacle"
+      },
+      "compliantFact": {
+        "quantity": "floor receptacle distance from wall",
+        "value": 12,
+        "unit": "in",
+        "note": "measured from the wall to the receptacle"
+      }
     }
   ]
 }

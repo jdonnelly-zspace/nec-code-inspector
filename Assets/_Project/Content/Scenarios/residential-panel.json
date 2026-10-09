@@ -904,6 +904,82 @@
       "severity": "Major",
       "minimumDifficulty": "Expert",
       "isSubtle": false
+    },
+    {
+      "violationId": "RP-OCPD-STAIRS-001",
+      "description": "The {term:panel} is mounted directly over the steps of the stairway leading from the garage into the house",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "240.24(F)",
+          "text": "Overcurrent devices are not to be placed over the steps of a stairway, because someone servicing or resetting them would have to stand on uneven treads."
+        }
+      ],
+      "componentObjectName": "Panel_OverStairs",
+      "hintText": "Look at the floor in front of the {term:panel}. Is it level where a person would have to stand?",
+      "componentType": "Panel",
+      "inspectionNote": "The {term:panel} is on the wall above the garage-to-house steps. A person resetting a {term:breaker} would have to stand on the stair treads.",
+      "conceptId": "working-space-access",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-OCPD-MAIN-OVER-PANEL-001",
+      "description": "The main {term:breaker} is rated higher than the maximum ampere rating on the {term:panel}'s own label",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "408.36",
+          "text": "A panelboard must be protected by an overcurrent device rated no higher than the panelboard's own rating. The device can be a main breaker in the panelboard or one on the supply side of it."
+        }
+      ],
+      "componentObjectName": "Panel_MainBreaker_OverPanelRating",
+      "hintText": "Compare the number on the main {term:breaker} with the rating printed on the {term:panel} label.",
+      "componentType": "Breaker",
+      "inspectionNote": "The main {term:breaker} handle reads 200 A. The {term:panel} nameplate inside the door shows a 125 A rating.",
+      "conceptId": "overcurrent-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-OCPD-PHYSDAMAGE-001",
+      "description": "The garage {term:panel} sits at vehicle bumper height beside the parking bay with no guard or protection",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "240.24(C)",
+          "text": "Overcurrent devices go where they are not exposed to physical damage, so equipment where vehicles can strike it needs relocation or a guard."
+        }
+      ],
+      "componentObjectName": "Panel_VehicleExposed",
+      "hintText": "Think about what in a garage could hit the {term:panel}.",
+      "componentType": "Panel",
+      "inspectionNote": "The {term:panel} is on the wall at the front of the car space. There is no bollard, guard or setback, and dents show on the cover.",
+      "conceptId": "working-space-access",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-OCPD-EDISON-FUSE-001",
+      "description": "A fuse block in the panel has plain Edison-base fuse sockets with no Type S adapters, so any size plug fuse fits",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "240.52",
+          "text": "Edison-base fuseholders may be installed only where adapters make them accept Type S fuses, which resist swapping in a larger fuse. Once fitted, a Type S adapter is designed not to be removed (240.54)."
+        }
+      ],
+      "componentObjectName": "Panel_EdisonFuseholder",
+      "hintText": "Look closely at the screw-in sockets on the fuse block. Could a larger fuse be threaded into any of them?",
+      "componentType": "Breaker",
+      "inspectionNote": "The fuse sockets are bare Edison-base screw bases with no Type S adapter ring in any of them, so any plug fuse within the base's rating would thread in.",
+      "conceptId": "overcurrent-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
     }
   ]
 }
