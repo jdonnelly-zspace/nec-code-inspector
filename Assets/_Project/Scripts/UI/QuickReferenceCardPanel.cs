@@ -38,7 +38,7 @@ namespace NECInspector.UI
         [SerializeField] private TextMeshProUGUI _cardKeyRule;
         [SerializeField] private TextMeshProUGUI _cardNECRefs;
 
-        [Header("NEC Link")]
+        [Header("Rule Reference Link")]
         [SerializeField] private NECReferencePanel _necPanel;
 
         [Header("Controls")]

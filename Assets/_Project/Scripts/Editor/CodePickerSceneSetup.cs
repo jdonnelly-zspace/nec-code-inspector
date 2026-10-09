@@ -69,7 +69,7 @@ namespace NECInspector.Editor
             Anchor(root, new Vector2(0.15f, 0.1f), new Vector2(0.85f, 0.9f));
             root.gameObject.AddComponent<Image>().color = new Color(0.08f, 0.1f, 0.14f, 0.96f);
 
-            var title = NewText("Title", root, "Installation Code", 44, TextAlignmentOptions.Center);
+            var title = NewText("Title", root, "Your Region", 44, TextAlignmentOptions.Center);
             Anchor(title.rectTransform, new Vector2(0f, 0.9f), new Vector2(1f, 1f));
 
             var current = NewText("CurrentCodeText", root, "", 30, TextAlignmentOptions.Center);
@@ -121,7 +121,7 @@ namespace NECInspector.Editor
             var modePanel = modeSO.FindProperty("_modeSelectionPanel").objectReferenceValue as GameObject;
             var parent = modePanel != null ? modePanel.transform : canvas;
 
-            var label = NewText("Label", null, "Installation Code", 32, TextAlignmentOptions.Center);
+            var label = NewText("Label", null, "Region", 32, TextAlignmentOptions.Center);
             var button = NewButton("CodePickerButton", parent, label);
 
             // Sit under the existing buttons when the layout allows; otherwise the author moves it
@@ -151,7 +151,7 @@ namespace NECInspector.Editor
 
             Directory.CreateDirectory(Path.GetDirectoryName(ITEM_PREFAB_PATH));
 
-            var label = NewText("Label", null, "Code", 30, TextAlignmentOptions.Left);
+            var label = NewText("Label", null, "Region", 30, TextAlignmentOptions.Left);
             var button = NewButton("CodeListItem", null, label);
             Anchor(label.rectTransform, Vector2.zero, Vector2.one);
             label.rectTransform.offsetMin = new Vector2(20, 0);

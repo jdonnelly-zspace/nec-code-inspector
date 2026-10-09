@@ -12,6 +12,7 @@ namespace NECInspector.Codes
         string DisplayName { get; }     // e.g., "NEC (NFPA 70)"
         string Edition { get; }         // e.g., "2026"
         string Region { get; }          // e.g., "US", "CA"
+        string Units { get; }           // "imperial" or "metric" (see UnitSystems)
         string ArtSet { get; }          // art the scenes use, e.g., "north-america" (see ArtSets)
         string ReviewStatus { get; }    // app-defined, draft or reviewed (see CodeProfileManifest)
         bool IsLoaded { get; }

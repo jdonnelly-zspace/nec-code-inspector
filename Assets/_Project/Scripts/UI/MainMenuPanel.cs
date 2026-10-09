@@ -42,7 +42,7 @@ namespace NECInspector.UI
 
         [Header("Installation Code")]
         [SerializeField] private CodeProfilePickerPanel _codePickerPanel;
-        [SerializeField] private TextMeshProUGUI _activeCodeText;   // optional: shows the code in use on the menu
+        [SerializeField] private TextMeshProUGUI _activeCodeText;   // optional: shows the student's region on the menu
 
         [Header("Settings")]
         [SerializeField] private GameObject _settingsPanel;
@@ -232,9 +232,9 @@ namespace NECInspector.UI
             var level = GameManager.Instance?.Difficulty?.CurrentLevel ?? DifficultyLevel.Standard;
             string desc = level switch
             {
-                DifficultyLevel.Beginner => "Building familiarity: Guided inspection with dropdown {code} citations, highlight hints, and scaffolding. Fewer violations to find.",
-                DifficultyLevel.Standard => "Working knowledge: Searchable {code} citations, no hints. All standard violations active.",
-                DifficultyLevel.Expert => "Full fluency: Free-text {code} citations, time limits, subtle violations, false positive penalties.",
+                DifficultyLevel.Beginner => "Building familiarity: Guided inspection with dropdown rule references, highlight hints, and scaffolding. Fewer violations to find.",
+                DifficultyLevel.Standard => "Working knowledge: Searchable rule references, no hints. All standard violations active.",
+                DifficultyLevel.Expert => "Full fluency: Free-text rule references, time limits, subtle violations, false positive penalties.",
                 _ => ""
             };
             SetText(_difficultyDescription, $"Current: {level}\n\n{CodeProfiles.Terminology.Format(desc)}");
@@ -281,7 +281,7 @@ namespace NECInspector.UI
         private void UpdateActiveCodeText()
         {
             var profile = CodeProfiles.Active;
-            SetText(_activeCodeText, profile != null ? $"Code: {profile.DisplayName} {profile.Edition}" : "");
+            SetText(_activeCodeText, profile != null ? $"Region: {RegionNames.Of(profile.Region)}" : "");
         }
 
         private void HideAllPanels()

@@ -30,8 +30,13 @@ BS 7671 and others) are copyrighted, and because the app should teach the skills
 
 - Entries in `terminology.json` are generic labels and everyday vocabulary written for this app
   ("grounding", "earthing", "breaker"), not wording from a code.
-- UI strings take the code's name, reference format and section names from the active profile
-  (`CodeProfiles.Terminology`). Do not hard-code "NEC", "Art." or "Chapter" in UI code.
+- UI strings take the reference format and section names from the active profile
+  (`CodeProfiles.Terminology`). Do not hard-code "Art." or "Chapter" in UI code.
+- **Students never see an installation code's name.** They choose a region, and the app applies the
+  code for it (`RegionChoices`, `profile.json` `region` and `units`). UI text, scenario and card content
+  and every code's reference entries must not name a code or its publisher (NEC, CEC, NFPA, CSA, BS 7671,
+  IET, BSI); the tests enforce it. `{code}` in text becomes "the code". Reference numbers stay, since
+  students cite them. Names appear only in logs, the editor and the out-of-app docs.
 
 ## 4. Credential alignment (outside the app)
 

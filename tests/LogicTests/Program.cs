@@ -19,7 +19,7 @@ namespace NECInspector.LogicTests
             ScenarioDataTests.Run(ctx);
             CodeProfileFilesTests.Run(ctx);
             DataCodeProfileTests.Run(ctx);
-            CodeProfileChoicesTests.Run(ctx);
+            RegionChoicesTests.Run(ctx);
             ComplianceRulesTests.Run(ctx);
             ProtectionScopeTests.Run(ctx);
             ContentFilesTests.Run(ctx);
