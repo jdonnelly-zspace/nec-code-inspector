@@ -108,6 +108,228 @@
       "severity": "Major",
       "minimumDifficulty": "Standard",
       "isSubtle": false
+    },
+    {
+      "violationId": "WM-NM-BEND-001",
+      "description": "Type NM cable is folded around a sharp corner with an inside bend radius of only 1 inch",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "334.24",
+          "text": "Bends in this cable must not damage it. The inside edge of any bend, during or after installation, needs a radius of at least five times the cable diameter (major diameter for flat cable).",
+          "limit": {
+            "quantity": "inside bend radius of NM cable (cable major diameter 0.5 in.)",
+            "kind": "min",
+            "value": 2.5,
+            "unit": "in"
+          }
+        }
+      ],
+      "componentObjectName": "NMCable_SharpBend",
+      "hintText": "Look at where the cable turns a corner. Does the curve look gentle or crimped?",
+      "componentType": "Conductor",
+      "inspectionNote": "The cable (about 0.5 in. across its wide side) makes a tight kink at a stud corner. Compare the inside radius of the curve with five times the cable width.",
+      "conceptId": "wiring-methods",
+      "severity": "Minor",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "inside bend radius of NM cable (cable major diameter 0.5 in.)",
+        "value": 1.0,
+        "unit": "in",
+        "note": "radius of the inner edge of the bend, measured with a gauge at the kink"
+      },
+      "compliantFact": {
+        "quantity": "inside bend radius of NM cable (cable major diameter 0.5 in.)",
+        "value": 3.0,
+        "unit": "in",
+        "note": "radius of the inner edge of the bend"
+      }
+    },
+    {
+      "violationId": "WM-FREE-CONDUCTOR-001",
+      "description": "Conductors at a small switch box stick out only 1 inch past the opening, too short to connect a device",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "300.14",
+          "text": "At each outlet, junction or switch point, leave at least 6 in. of free conductor for splices or device connections. If the opening is under 8 in. in any dimension, each conductor must reach at least 3 in. outside it.",
+          "limit": {
+            "quantity": "conductor length extending outside the box opening",
+            "kind": "min",
+            "value": 3.0,
+            "unit": "in"
+          }
+        }
+      ],
+      "componentObjectName": "Switch_Box_ShortLeads",
+      "hintText": "Check how much wire is left to work with at the open box.",
+      "componentType": "Conductor",
+      "inspectionNote": "At the rough-in switch box the cable ends are trimmed almost flush with the box mouth. Measure how far each conductor extends beyond the opening.",
+      "conceptId": "wiring-methods",
+      "severity": "Minor",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "conductor length extending outside the box opening",
+        "value": 1.0,
+        "unit": "in",
+        "note": "measured from the box front edge to the conductor tips, opening smaller than 8 in."
+      },
+      "compliantFact": {
+        "quantity": "conductor length extending outside the box opening",
+        "value": 4.0,
+        "unit": "in",
+        "note": "measured from the box front edge to the conductor tips"
+      }
+    },
+    {
+      "violationId": "WM-NM-FLOOR-001",
+      "description": "NM cable comes up through the floor with only a 2 inch sleeve above the floor and no protection above that",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "334.15(B)",
+          "text": "Where NM cable is subject to physical damage it must be protected by metal conduit, EMT, Schedule 80 PVC or another approved means. Where it passes through a floor, that enclosure must extend at least 6 in. above the floor.",
+          "limit": {
+            "quantity": "height of protective enclosure above floor",
+            "kind": "min",
+            "value": 6.0,
+            "unit": "in"
+          }
+        }
+      ],
+      "componentObjectName": "Floor_NMCable_Penetration",
+      "hintText": "Look at where a cable rises out of the floor. How high does its protection go?",
+      "componentType": "Conductor",
+      "inspectionNote": "A cable emerges from the floor at the wall base, shielded only by a short plastic stub. Measure the height of the protective sleeve above the floor.",
+      "conceptId": "wiring-methods",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "height of protective enclosure above floor",
+        "value": 2.0,
+        "unit": "in",
+        "note": "measured from finished floor to the top of the sleeve"
+      },
+      "compliantFact": {
+        "quantity": "height of protective enclosure above floor",
+        "value": 7.0,
+        "unit": "in",
+        "note": "measured from finished floor to the top of the sleeve"
+      }
+    },
+    {
+      "violationId": "WM-EMT-SUPPORT-001",
+      "description": "EMT run leaves a junction box with its first strap 6 feet away",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "358.30(A)",
+          "text": "Tubing must be fastened within 3 ft of each box, cabinet, conduit body or other termination, and supported at intervals of no more than 10 ft. Up to 5 ft is allowed only where framing prevents 3 ft.",
+          "limit": {
+            "quantity": "distance from box to first EMT fastening",
+            "kind": "max",
+            "value": 3.0,
+            "unit": "ft"
+          }
+        }
+      ],
+      "componentObjectName": "EMT_Run_Unsupported",
+      "hintText": "Check how far the conduit travels from the box before it is first strapped.",
+      "componentType": "Conduit",
+      "inspectionNote": "A length of EMT enters a junction box on an open wall with no strap near the box. Measure from the box to the nearest strap or support.",
+      "conceptId": "wiring-methods",
+      "severity": "Minor",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "distance from box to first EMT fastening",
+        "value": 6.0,
+        "unit": "ft",
+        "note": "measured along the tubing from the box connector to the nearest strap, open wall with studs available"
+      },
+      "compliantFact": {
+        "quantity": "distance from box to first EMT fastening",
+        "value": 2.5,
+        "unit": "ft",
+        "note": "measured along the tubing from the box connector to the nearest strap"
+      }
+    },
+    {
+      "violationId": "WM-PVC-EXPANSION-001",
+      "description": "A 100 ft straight run of PVC conduit between two fixed boxes has no expansion fitting",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "352.44(A)",
+          "text": "In a straight PVC run between securely mounted points such as boxes or elbows, an expansion fitting is needed when the expected length change from temperature is 1/4 in. or more, using the code table.",
+          "limit": {
+            "quantity": "expected thermal length change of straight PVC run with no expansion fitting",
+            "kind": "max",
+            "value": 0.25,
+            "unit": "in"
+          }
+        }
+      ],
+      "componentObjectName": "PVC_Run_NoExpansion",
+      "hintText": "Think about what heat does to plastic conduit that is fixed at both ends.",
+      "componentType": "Conduit",
+      "inspectionNote": "A long straight PVC conduit is rigidly strapped between two boxes on the outside wall with no sliding joint anywhere. With a 70 degree F swing, the table gives about 2.84 in. of movement per 100 ft.",
+      "conceptId": "wiring-methods",
+      "severity": "Minor",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "expected thermal length change of straight PVC run with no expansion fitting",
+        "value": 2.84,
+        "unit": "in",
+        "note": "100 ft run, 70 deg F temperature change, from the expansion table"
+      },
+      "compliantFact": {
+        "quantity": "expected thermal length change of straight PVC run with no expansion fitting",
+        "value": 0.14,
+        "unit": "in",
+        "note": "5 ft run, 70 deg F temperature change: 2.84 in. per 100 ft x 5/100, or any run fitted with an expansion joint"
+      }
+    },
+    {
+      "violationId": "WM-BOX-SETBACK-001",
+      "description": "Device box sits 1/2 inch behind the finished drywall surface",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "314.20",
+          "text": "In gypsum or other noncombustible finishes, the front edge of a flush box or ring must not sit more than 1/4 in. behind the surface. In wood or other combustible finishes it must be flush or project.",
+          "limit": {
+            "quantity": "box front edge set back behind finished drywall surface",
+            "kind": "max",
+            "value": 0.25,
+            "unit": "in"
+          }
+        }
+      ],
+      "componentObjectName": "Drywall_Box_Recessed",
+      "hintText": "Look at how a box sits relative to the wall surface once the board is up.",
+      "componentType": "Box",
+      "inspectionNote": "After drywall, the receptacle box front is recessed well into the wall cavity. Measure the gap between the box front edge and the wall face.",
+      "conceptId": "wiring-methods",
+      "severity": "Minor",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true,
+      "sceneFact": {
+        "quantity": "box front edge set back behind finished drywall surface",
+        "value": 0.5,
+        "unit": "in",
+        "note": "measured from the wall face to the front edge of the box, noncombustible drywall"
+      },
+      "compliantFact": {
+        "quantity": "box front edge set back behind finished drywall surface",
+        "value": 0.125,
+        "unit": "in",
+        "note": "measured from the wall face to the front edge of the box"
+      }
     }
   ]
 }

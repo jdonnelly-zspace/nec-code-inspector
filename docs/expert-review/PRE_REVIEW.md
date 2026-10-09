@@ -228,6 +228,30 @@ NEC text was opened**, so every item, and the 21 new entries, need the expert.
     (the scope checker only runs for violations of the protection's own skill).
   - The panel gap case needs a drywall wall (noncombustible); the nicked-wire and paint cases are subtle and must stay on the bus and terminals.
 
+## 17. Phase 1, third batch (content plan)
+
+24 more NEC violations (shock protection 8, branch circuits 6, wiring methods 6, overcurrent protection 4), from the same draft-then-verify
+process. Evidence and held-out reasons: `PHASE1_VERIFICATION_BATCH3.md`. **Still no official NEC text was opened**, so every item and the 16
+new entries need the expert.
+
+- **A numbering error in existing content, now fixed.** The app's GFCI list (`scope.json`, two entries, and the plan) used the 2020 numbering of
+  210.8(A), which has 11 items. The 2023 list has 12: food-preparation areas became item (7), so sinks, boathouses, tubs and showers, laundry
+  and indoor damp or wet locations are (8) to (12). Items (1) to (6) are unchanged. Sources: Mike Holt's 2023 commentary on 210.8 and a trade
+  magazine article, which agree; the 2020 list is confirmed by a manufacturer's 2020 code guide and a state's 2026 amendment packet that
+  reproduces the old text. Food-preparation areas are noted as not modelled (the checker has no such room). The 2026 list is reported to split
+  garages from accessory buildings (13 items); that comes from two secondary sources and is not applied.
+- **Held out (7):** the horizontal panel and the handle-tie cases (one source each), a staple-distance case that also broke the existing 12 in.
+  support rule (re-scene it at 10 in. before use), the second bathroom receptacle height case and the high-receptacle case (near-duplicates of
+  items that shipped), and the two panel-location cases, which were moved to working space and access rather than held.
+- **Moved:** panel over steps (240.24(F)) and panel exposed to vehicles (240.24(C)) were drafted as overcurrent items; they fit working space and
+  access, where the other 240.24 location cases already sit.
+- **Checker details:** all GFCI scenes use 125 V receptacles (the rules cover 125 to 250 V); the sump-pump appliance and a mudroom are not in the
+  checker's vocabulary, so the sump case relies on the basement alone and the shower case uses a plain room with the shower fixture within 6 ft.
+  Because the new GFCI violations also match the Canadian and UK scope files, the tests list them as candidates for a CEC or BS 7671 citation.
+- **Edition notes (secondary sources):** 210.63 is (A) since 2020 and the 2026 text drops the load-side wording and adds a 150 V limit; the
+  countertop height rule is 210.52(C)(3) in 2023 with a new (C)(4) in 2026; 300.14 may become 300.16 in 2026. The sump pump also has a rule in
+  210.8(D); the old dedicated-appliance basement exception is not in the 2023 text.
+
 ## Sources (all public)
 
 NEC: ecmweb.com (GFCI and AFCI requirements; key revisions to Chapter 2 of the 2026 NEC; NEC motors series; one-family dwelling load calculations), IAEI Magazine (210.8 GFCI requirements), electricianu.com (2023 NEC 210.11), Mike Holt forums (220.14(I), 408.54), St. Paul building department electrical checklist (210.52).

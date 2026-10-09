@@ -1339,6 +1339,166 @@
       "related": ["680.13"],
       "conceptId": "special-locations",
       "isNewInEdition": false
+    },
+    {
+      "reference": "210.8(A)(5)",
+      "title": "GFCI Protection - Basements",
+      "text": "Receptacles in dwelling-unit basements need ground-fault protection for personnel. Since the 2020 edition this covers the whole basement, finished or not.",
+      "section": 2,
+      "keywords": ["GFCI", "basement", "dwelling"],
+      "related": ["210.8(A)", "210.8(D)"],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.8(A)(4)",
+      "title": "GFCI Protection - Crawl Spaces",
+      "text": "Receptacles in dwelling-unit crawl spaces at or below grade need ground-fault protection for personnel.",
+      "section": 2,
+      "keywords": ["GFCI", "crawl space", "dwelling"],
+      "related": ["210.8(A)"],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.8(A)(8)",
+      "title": "GFCI Protection - Receptacles Near Sinks",
+      "text": "A receptacle within 6 ft of the top inside edge of a dwelling-unit sink bowl needs ground-fault protection for personnel, even outside the kitchen.",
+      "section": 2,
+      "keywords": ["GFCI", "sink", "6 ft", "wet bar"],
+      "related": ["210.8(A)", "210.8(A)(1)"],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.52(C)(3)",
+      "title": "Receptacle Outlets - Countertop Receptacle Location",
+      "text": "Receptacles that serve a kitchen countertop must sit on the counter or no more than 20 in above it, or be a listed assembly built into the countertop.",
+      "section": 2,
+      "keywords": ["countertop", "kitchen", "20 in", "receptacle height", "work surface"],
+      "related": ["210.52(C)", "210.52(C)(2)"],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.63(A)",
+      "title": "Heating, Air-Conditioning, and Refrigeration Equipment Outlet",
+      "text": "A 125 V, single-phase, 15 or 20 A receptacle must be installed at an accessible location for servicing heating, air-conditioning and refrigeration equipment. It must be on the same level as the equipment, within 25 ft of it, and not on the load side of the equipment disconnect.",
+      "section": 2,
+      "keywords": ["HVAC", "service receptacle", "attic", "rooftop", "crawl space"],
+      "related": [],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.52(A)(3)",
+      "title": "Receptacle Outlets - Floor Receptacles Counted as Wall Outlets",
+      "text": "A floor receptacle only counts as the required wall-space receptacle when it sits within 18 in of the wall.",
+      "section": 2,
+      "keywords": ["floor receptacle", "18 in", "wall space"],
+      "related": ["210.52(A)"],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.24(F)",
+      "title": "Overcurrent Devices Not Located Over Steps",
+      "text": "Overcurrent devices are not to be placed over the steps of a stairway, because someone servicing or resetting them would have to stand on uneven treads.",
+      "section": 2,
+      "keywords": ["stairs", "steps", "location", "panel", "breaker"],
+      "related": [],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "408.36",
+      "title": "Panelboard Overcurrent Protection",
+      "text": "A panelboard must be protected by an overcurrent device rated no higher than the panelboard's own rating. The device can be a main breaker in the panelboard or one on the supply side of it.",
+      "section": 4,
+      "keywords": ["panelboard", "main breaker", "rating", "label"],
+      "related": ["240.4"],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.24(C)",
+      "title": "Overcurrent Devices Not Exposed to Physical Damage",
+      "text": "Overcurrent devices go where they are not exposed to physical damage, so equipment where vehicles can strike it needs relocation or a guard.",
+      "section": 2,
+      "keywords": ["physical damage", "garage", "vehicle", "bollard", "panel"],
+      "related": [],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.52",
+      "title": "Edison-Base Fuseholders",
+      "text": "Edison-base fuseholders may be installed only where adapters make them accept Type S fuses, which resist swapping in a larger fuse. Once fitted, a Type S adapter is designed not to be removed (240.54).",
+      "section": 2,
+      "keywords": ["Edison-base", "Type S", "fuseholder", "adapter", "fuse"],
+      "related": [],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "334.24",
+      "title": "NM Cable - Bending Radius",
+      "text": "Bends in this cable must not damage it. The inside edge of any bend, during or after installation, needs a radius of at least five times the cable diameter (major diameter for flat cable).",
+      "section": 3,
+      "keywords": ["NM cable", "bend radius", "kink", "five times diameter"],
+      "related": ["334.30"],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "300.14",
+      "title": "Length of Free Conductors at Outlets, Junctions, and Switch Points",
+      "text": "At each outlet, junction or switch point, leave at least 6 in. of free conductor for splices or device connections. If the opening is under 8 in. in any dimension, each conductor must reach at least 3 in. outside it.",
+      "section": 3,
+      "keywords": ["free conductor", "pigtail", "switch box", "6 in.", "3 in."],
+      "related": ["314.16"],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "334.15(B)",
+      "title": "NM Cable - Protection from Physical Damage",
+      "text": "Where NM cable is subject to physical damage it must be protected by metal conduit, EMT, Schedule 80 PVC or another approved means. Where it passes through a floor, that enclosure must extend at least 6 in. above the floor.",
+      "section": 3,
+      "keywords": ["NM cable", "floor", "physical damage", "6 in.", "EMT sleeve"],
+      "related": ["334.30", "300.4(A)"],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "358.30(A)",
+      "title": "EMT - Securing and Supporting",
+      "text": "Tubing must be fastened within 3 ft of each box, cabinet, conduit body or other termination, and supported at intervals of no more than 10 ft. Up to 5 ft is allowed only where framing prevents 3 ft.",
+      "section": 3,
+      "keywords": ["EMT", "support", "strap", "3 ft", "10 ft"],
+      "related": ["334.30"],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "352.44(A)",
+      "title": "PVC Conduit - Expansion Fittings (A)",
+      "text": "In a straight PVC run between securely mounted points such as boxes or elbows, an expansion fitting is needed when the expected length change from temperature is 1/4 in. or more, using the code table.",
+      "section": 3,
+      "keywords": ["PVC", "expansion fitting", "thermal expansion", "conduit"],
+      "related": ["300.5"],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "314.20",
+      "title": "Flush-Mounted Installations",
+      "text": "In gypsum or other noncombustible finishes, the front edge of a flush box or ring must not sit more than 1/4 in. behind the surface. In wood or other combustible finishes it must be flush or project.",
+      "section": 3,
+      "keywords": ["box setback", "flush", "drywall", "extension ring"],
+      "related": ["314.16"],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
     }
   ]
 }
