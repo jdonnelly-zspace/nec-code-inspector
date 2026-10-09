@@ -138,5 +138,8 @@ Decided: region-specific art is one set per region group (`docs/SCENE_DESIGN.md`
 - [ ] Tutorial system
 - [ ] Expand the NEC entries in `Codes/nec/articles.json`, only for topics inside the app's skills (content policy)
 
+### Ideas (not started)
+- [ ] Wireframe of the UI panels: a first clickable HTML version exists (published as an artifact, not in the repo). Ideas for later: a Figma version if a designer takes over the screens, a Lucid screen-flow diagram (menu, picker, scenario, inspection, review, sandbox), and an inline widget for quick previews in chat. Any of these would need the Unity scenes built to show the real 3D layouts
+
 ### Future
 See docs/CONTENT_ROADMAP.md and docs/COMPLETED_STEPS.md
