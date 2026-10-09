@@ -1093,6 +1093,73 @@
         "unit": "in",
         "note": "measured from the wall to the receptacle"
       }
+    },
+    {
+      "violationId": "BC-REPLACE-RECEPT-001",
+      "description": "A worn bedroom {term:receptacle} was swapped for an ordinary one on a circuit that still has a plain {term:breaker}",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "406.4(D)(4)",
+          "text": "Where a receptacle outlet is in an area that needs arc-fault protection, a replacement receptacle there must be a listed outlet-type arc-fault receptacle, be protected by one upstream, or be on a listed combination-type arc-fault breaker. No exceptions found in the 2023 sources."
+        }
+      ],
+      "componentObjectName": "BedroomReplaced_PlainReceptacle",
+      "hintText": "A new device in an old room. Check what protects the circuit behind it.",
+      "componentType": "Receptacle",
+      "inspectionNote": "A bedroom receptacle is an ordinary device with no test or reset button, on a plain breaker with no test button. Nothing gives it arc-fault protection. Drop the 'fresh-install tag', which is not a real marking.",
+      "conceptId": "arc-fault-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true,
+      "sceneScope": {
+        "protection": "afci",
+        "receptacle": {
+          "id": "BedroomReplaced_PlainReceptacle",
+          "room": "bedroom",
+          "protectedBy": [],
+          "volts": 120,
+          "amps": 15
+        }
+      }
+    },
+    {
+      "violationId": "BC-ISLAND-SIDE-001",
+      "description": "The only {term:receptacle} for the kitchen island is mounted on the side face of the island cabinet, 10 in below the countertop surface",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.52(C)(3)",
+          "text": "A receptacle installed to serve an island or peninsula countertop must be on or above the counter (at most 20 in above) or in a listed countertop or work-surface assembly. The model 2023 text has no below-counter option, so a side-of-cabinet outlet does not qualify."
+        }
+      ],
+      "componentObjectName": "IslandCounter_Receptacle_SideFace",
+      "hintText": "Look at where the island's outlet is mounted compared with the countertop surface.",
+      "componentType": "Receptacle",
+      "inspectionNote": "A duplex {term:receptacle} is set into the vertical side of the island cabinet, about 10 in under the countertop edge, and nothing is mounted on or in the countertop. A cord plugged in here would hang over the edge.",
+      "conceptId": "branch-circuit-requirements",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "BC-GARAGE-BAY-001",
+      "description": "A two-car garage has one {term:receptacle} on the wall of the left bay and none in the right bay",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.52(G)",
+          "text": "An attached garage, or a detached one with power, needs at least one receptacle in each vehicle bay, no higher than 5.5 ft above the floor. One outlet cannot be shared between two bays."
+        }
+      ],
+      "componentObjectName": "Garage_SecondBay_NoReceptacle",
+      "hintText": "Count the parking bays, then count the wall outlets.",
+      "componentType": "Receptacle",
+      "inspectionNote": "Two cars can park side by side, but the only wall {term:receptacle} is beside the left bay at bench height. The right bay wall has no outlet at all.",
+      "conceptId": "branch-circuit-requirements",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false
     }
   ]
 }

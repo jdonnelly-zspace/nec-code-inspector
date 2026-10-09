@@ -330,6 +330,25 @@
         "unit": "in",
         "note": "measured from the wall face to the front edge of the box"
       }
+    },
+    {
+      "violationId": "WM-BOX-ACCESS-001",
+      "description": "A junction box holding cable splices is buried behind finished drywall with no access opening",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "314.29(A)",
+          "text": "Boxes and conduit bodies in buildings have to be installed so the wiring and devices inside are accessible. Accessible means reachable without damaging the building structure or finish and not permanently closed in by it."
+        }
+      ],
+      "componentObjectName": "Wall_JunctionBox_Concealed",
+      "hintText": "Splices have to be reachable later. Look for a box you could not open without damage to the wall.",
+      "componentType": "Junction Box",
+      "inspectionNote": "A cable splice box sits between studs and is covered by painted drywall, with no cover plate or access panel in view. Opening it would mean cutting the wall.",
+      "conceptId": "wiring-methods",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false
     }
   ]
 }

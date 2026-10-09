@@ -263,6 +263,43 @@
         "unit": "ft",
         "note": "horizontal distance from inside pool wall"
       }
+    },
+    {
+      "violationId": "SL-POOL-LIGHTDEPTH-001",
+      "description": "A wall-mounted underwater pool light has its lens only 6 inches below the normal water level",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "680.23(A)(5)",
+          "text": "The top of a wall-mounted underwater luminaire lens sits at least 18 in. below normal water level, unless the luminaire is listed for a shallower depth.",
+          "limit": {
+            "quantity": "depth of luminaire lens top below normal water level",
+            "kind": "min",
+            "value": 18,
+            "unit": "in"
+          }
+        }
+      ],
+      "componentObjectName": "Pool_WallLight_Shallow",
+      "hintText": "Look at how deep the pool wall light sits under the water line.",
+      "componentType": "Luminaire",
+      "inspectionNote": "The pool wall light has no marking for shallow installation, and the top of its lens is about 6 in. under the normal water level. Measure from the water line down to the top of the lens.",
+      "conceptId": "special-locations",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "depth of luminaire lens top below normal water level",
+        "value": 6,
+        "unit": "in",
+        "note": "measured from normal water level to top of lens"
+      },
+      "compliantFact": {
+        "quantity": "depth of luminaire lens top below normal water level",
+        "value": 20,
+        "unit": "in",
+        "note": "measured from normal water level to top of lens"
+      }
     }
   ]
 }
