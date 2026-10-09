@@ -36,20 +36,6 @@ VIOLATION_FLAGS = {
     ("GND-GEC-001", "nec"): "Doubt: confirm the sub-item of 250.24(A) for connecting the grounding electrode conductor",
     ("GND-SUPPLEMENT-001", "nec"): "Doubt: confirm the single-rod supplement rule and its exception in the 2026 edition",
 }
-# Doubts recorded when content is added in bulk (tools/expert_flags.json, written by the authoring work):
-# {"violations": {"<violationId>|<profileId>": "text"}, "articles": {"<profileId>|<reference>": "text"}}
-_FLAG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "expert_flags.json")
-if os.path.exists(_FLAG_FILE):
-    with open(_FLAG_FILE, encoding="utf-8") as _f:
-        _flags = json.load(_f)
-    for _key, _text in _flags.get("violations", {}).items():
-        _vid, _pid = _key.rsplit("|", 1)
-        VIOLATION_FLAGS[(_vid, _pid)] = _text
-    for _key, _text in _flags.get("articles", {}).items():
-        _pid, _ref = _key.split("|", 1)
-        if _pid == "nec":
-            ARTICLE_FLAGS[_ref] = _text
-
 CEC_NOTE = "Draft from public summaries: check rule number, sub-item and edition"
 UK_NOTE = "Draft from public summaries: check regulation number, amendment and edition (18th edition, amendments to 2026 unchecked)"
 # BS 7671 entries where public sources disagree or the amendment history is unclear
@@ -81,6 +67,20 @@ ARTICLE_FLAGS = {
 
 REVIEW_COLUMNS = ["Reference correct? (Y/N)", "Text accurate? (Y/N)", "Correct reference", "Edition notes", "Comments"]
 
+
+# Doubts recorded when content is added in bulk (tools/expert_flags.json, written by the authoring work):
+# {"violations": {"<violationId>|<profileId>": "text"}, "articles": {"<profileId>|<reference>": "text"}}
+_FLAG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "expert_flags.json")
+if os.path.exists(_FLAG_FILE):
+    with open(_FLAG_FILE, encoding="utf-8") as _f:
+        _flags = json.load(_f)
+    for _key, _text in _flags.get("violations", {}).items():
+        _vid, _pid = _key.rsplit("|", 1)
+        VIOLATION_FLAGS[(_vid, _pid)] = _text
+    for _key, _text in _flags.get("articles", {}).items():
+        _pid, _ref = _key.split("|", 1)
+        if _pid == "nec":
+            ARTICLE_FLAGS[_ref] = _text
 
 def load_json(path):
     with open(path, encoding="utf-8") as f:
