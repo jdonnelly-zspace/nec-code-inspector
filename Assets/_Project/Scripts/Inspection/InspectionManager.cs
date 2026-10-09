@@ -53,9 +53,11 @@ namespace NECInspector.Inspection
 
         /// <summary>
         /// Initialize the inspection with the current difficulty level.
-        /// Filters violations based on difficulty.
+        /// The pool is the scenario's violations that apply to the active code and are visible at this difficulty; the
+        /// scenario's session size then decides how many are drawn (all of them if it is not set). Violations the
+        /// student saw recently are drawn last. The seed makes a draw repeatable in tests; leave it out in play.
         /// </summary>
-        public void Initialize(DifficultyLevel difficulty)
+        public void Initialize(DifficultyLevel difficulty, int? seed = null)
         {
             if (_scenarioDefinition == null)
             {
@@ -67,8 +69,9 @@ namespace NECInspector.Inspection
             _flaggedViolations.Clear();
             _markedCompliant.Clear();
 
-            // Filter violations by code profile and difficulty
+            // The pool: violations for the active code that are visible at this difficulty
             string profileId = CodeProfiles.ActiveId;
+            var pool = new List<ViolationDefinitionSO>();
             foreach (var violation in _scenarioDefinition.violations)
             {
                 if (violation == null) continue;
@@ -76,15 +79,16 @@ namespace NECInspector.Inspection
                 // A violation without a citation for the active code does not apply to it
                 if (!violation.AppliesTo(profileId)) continue;
 
-                if ((int)violation.minimumDifficulty <= (int)difficulty)
-                {
-                    // Skip subtle violations unless Expert
-                    if (violation.isSubtle && difficulty != DifficultyLevel.Expert)
-                        continue;
-
-                    _activeViolations.Add(violation);
-                }
+                if (ViolationPools.IsActive(violation.minimumDifficulty, violation.isSubtle, difficulty))
+                    pool.Add(violation);
             }
+
+            // Draw this session's violations from the pool
+            var progress = GameManager.Instance?.Progress;
+            var recent = progress != null ? new HashSet<string>(progress.GetRecentViolationIds()) : null;
+            int size = _scenarioDefinition.sessionSize != null ? _scenarioDefinition.sessionSize.For(difficulty) : 0;
+            _activeViolations = ViolationDraw.Choose(pool, size, seed ?? Environment.TickCount, v => v.conceptId, v => v.violationId, recent);
+            progress?.RememberViolations(_activeViolations.Select(v => v.violationId));
 
             // Build component map from scene
             _componentMap.Clear();
@@ -94,7 +98,14 @@ namespace NECInspector.Inspection
                 _componentMap[comp.gameObject.name] = comp;
             }
 
-            Debug.Log($"[InspectionManager] Initialized: {_activeViolations.Count} violations, {_componentMap.Count} components, difficulty={difficulty}");
+            // Parts whose violation is not in this session look compliant
+            foreach (var violation in _scenarioDefinition.violations)
+            {
+                if (violation == null || !_componentMap.TryGetValue(violation.componentObjectName, out var part)) continue;
+                part.GetComponentInChildren<ViolationVariant>(true)?.Apply(_activeViolations.Contains(violation));
+            }
+
+            Debug.Log($"[InspectionManager] Initialized: {_activeViolations.Count} of {pool.Count} pooled violations, {_componentMap.Count} components, difficulty={difficulty}");
         }
 
         public void StartInspection()

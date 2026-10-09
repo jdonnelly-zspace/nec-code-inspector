@@ -144,6 +144,14 @@ Each phase ends when its exit test passes. Work that needs an expert or art is m
 | 4 | BS 7671: UK art set, violations for the seven empty skills, a decision on tables | UK expert; UK art | BS 7671 at 2 / 4 / 6 and scenarios offered |
 | 5 | Target B pools; decide on extra skills (motors and controls, transformers and separately derived systems, hazardous locations, test instruments and troubleshooting), each with a documented reason | owner decision | a recorded decision per candidate skill |
 
+**Phase 0 status.** Built: pools and draws (`docs/POOL_AND_DRAW.md`: `ViolationPools`, `ViolationDraw`, `sessionSize` in the
+scenario file, `InspectionManager` drawing and remembering recent violations, `ViolationVariant` for scene states); coverage tests
+against the Target A numbers (`tests/LogicTests/content-targets.json`; gaps are warnings until a code is marked `enforce`, and the
+NEC warning reports the 106 new violations needed); an authoring checklist and scaffold (`docs/AUTHORING_VIOLATIONS.md`,
+`tools/new_violation.py`, and a test that fails while any `TODO` is left in content). Not done: no scenario sets `sessionSize`
+yet and no scene uses `ViolationVariant`, since neither the scenes nor the extra violations exist. Mark a code `enforce` when it
+reaches its target.
+
 Phases 0 and 1 can start now. Phase 1 content can be written as data before the 3D scenes exist, but it cannot be
 played or checked against the scene rule until the matching scene state is built.
 

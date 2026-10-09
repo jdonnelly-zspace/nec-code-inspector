@@ -28,6 +28,9 @@
     <Compile Include="$(Scripts)Data/ViolationSeverity.cs" Link="Unity/Data/ViolationSeverity.cs" />
     <Compile Include="$(Scripts)Data/ScenarioFileData.cs" Link="Unity/Data/ScenarioFileData.cs" />
     <Compile Include="$(Scripts)Data/ViolationCitation.cs" Link="Unity/Data/ViolationCitation.cs" />
+    <Compile Include="$(Scripts)Data/SessionSize.cs" Link="Unity/Data/SessionSize.cs" />
+    <Compile Include="$(Scripts)Data/ViolationPools.cs" Link="Unity/Data/ViolationPools.cs" />
+    <Compile Include="$(Scripts)Data/ViolationDraw.cs" Link="Unity/Data/ViolationDraw.cs" />
     <Compile Include="$(Scripts)Data/SceneFacts.cs" Link="Unity/Data/SceneFacts.cs" />
     <Compile Include="$(Scripts)Data/ContentFileData.cs" Link="Unity/Data/ContentFileData.cs" />
     <Compile Include="$(Scripts)Data/CardCategory.cs" Link="Unity/Data/CardCategory.cs" />
