@@ -961,16 +961,6 @@
       "isNewInEdition": false
     },
     {
-      "reference": "680.12",
-      "title": "Maintenance Disconnecting Means",
-      "text": "Utilization equipment other than lighting needs a disconnect that opens all ungrounded conductors at the same time. Put each one where the equipment it serves is visible and easy to reach, and 5 ft (1.5 m) or more away from the inner walls of any pool, spa or hot tub.",
-      "section": 6,
-      "keywords": ["pool", "disconnect", "maintenance", "5 feet", "accessible"],
-      "related": ["680.22(B)", "680.26"],
-      "conceptId": "special-locations",
-      "isNewInEdition": false
-    },
-    {
       "reference": "680.22(B)",
       "title": "Pool Area Lighting - Luminaire Height",
       "text": "Keep luminaires, lighting outlets and ceiling fans out of the airspace above a pool and the 5 ft strip around it (measured horizontally from the inner walls) unless they sit 12 ft or more above the highest water level.",
@@ -1128,6 +1118,226 @@
       "keywords": ["generator", "inlet", "sign", "standby", "warning"],
       "related": ["705.10"],
       "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "230.90(A)",
+      "title": "Service Overcurrent Device - Maximum Rating",
+      "text": "The overcurrent device protecting service conductors must not be rated higher than the ampacity of those service conductors, apart from limited exceptions such as the next-size-up allowance. Separately, 230.42(A) requires the conductors to carry the calculated load.",
+      "section": 2,
+      "keywords": ["service conductors", "service entrance", "ampacity", "disconnect rating"],
+      "related": ["230.79", "310.16", "215.2"],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.4(D)(5)",
+      "title": "Small Conductors - Overcurrent Protection Limits (D)(5)",
+      "text": "Small aluminum conductors have lower overcurrent limits than copper: 12 AWG aluminum or copper-clad aluminum tops out at 15 A, and 10 AWG at 25 A, after any ambient and bundling corrections.",
+      "section": 2,
+      "keywords": ["small conductors", "overcurrent protection", "aluminum", "12 AWG", "10 AWG"],
+      "related": ["240.4(B)", "310.16"],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "310.15(C)(1)",
+      "title": "Ampacity Adjustment for More Than Three Conductors",
+      "text": "When more than three current-carrying conductors share a raceway or cable for more than 24 in., start from the 90 C column of Table 310.16 and apply the adjustment factor (80% for 4-6, 70% for 7-9, 50% for 10-20). The overcurrent limits in 240.4(D) are then applied to the adjusted ampacity.",
+      "section": 3,
+      "keywords": ["derating", "adjustment factor", "raceway fill", "current-carrying conductors"],
+      "related": ["310.16", "334.80", "240.4(D)"],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "310.10(G)(1)",
+      "title": "Conductors in Parallel - Minimum Size",
+      "text": "Phase and neutral conductors may be paralleled only when each is 1/0 AWG or larger. Smaller conductors cannot be joined at both ends to make up a larger circuit.",
+      "section": 3,
+      "keywords": ["parallel conductors", "1/0 AWG", "paralleling", "feeder"],
+      "related": ["215.2", "310.16"],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.14(C)(1)(a)",
+      "title": "Termination Temperature Limits - 100 A or Less",
+      "text": "For circuits of 100 A or less, ampacity cannot exceed the 60 C column unless the terminals are listed and marked for higher-rated conductors. Insulation rating alone does not override the terminal limit.",
+      "section": 1,
+      "keywords": ["terminal temperature", "60 C", "75 C", "termination", "ampacity"],
+      "related": ["310.16", "240.4(D)"],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "310.15(B)(2)",
+      "title": "Raceways and Cables Exposed to Sunlight on Rooftops",
+      "text": "Where raceways or cables sit in direct sunlight on or above a roof with the bottom less than 3/4 in. above the roof (7/8 in. in earlier editions), add 33 C (60 F) to the outdoor temperature before using the ambient correction table.",
+      "section": 3,
+      "keywords": ["rooftop", "sunlight", "temperature adder", "raceway height"],
+      "related": ["310.16"],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "440.14",
+      "title": "Air-Conditioning Equipment Disconnect - Location",
+      "text": "A way to disconnect the air-conditioning unit must be placed where it can be seen from the unit and reached easily, and may be mounted on or inside the unit.",
+      "section": 4,
+      "keywords": ["air conditioner", "condenser", "disconnect", "within sight", "readily accessible"],
+      "related": [],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "404.7",
+      "title": "Indicating Position of Switches and Circuit Breakers",
+      "text": "General-use and motor-circuit switches and circuit breakers in enclosures must clearly show open (off) or closed (on). Where the handle moves vertically, the up position is the closed (on) position.",
+      "section": 4,
+      "keywords": ["handle", "up is on", "indicating", "switch", "disconnect"],
+      "related": [],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "225.31",
+      "title": "Disconnecting Means for Buildings Supplied by a Feeder",
+      "text": "A building or structure supplied by a feeder or branch circuit needs a means to disconnect all ungrounded conductors that supply or pass through it. Under 225.36 a circuit breaker, molded case switch, general-use switch or snap switch all qualify.",
+      "section": 2,
+      "keywords": ["detached garage", "shed", "feeder", "disconnect", "outbuilding"],
+      "related": [],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "422.31(B)",
+      "title": "Disconnecting Means for Permanently Connected Appliances Over 300 VA",
+      "text": "For a fixed appliance over 300 VA, the branch-circuit breaker can be its disconnect only if it is in sight of the appliance or can be locked open with the lock provision staying in place.",
+      "section": 4,
+      "keywords": ["water heater", "appliance", "disconnect", "lockable", "within sight"],
+      "related": [],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "230.71(B)",
+      "title": "Maximum Number of Service Disconnects",
+      "text": "A service normally has one disconnect; up to six service disconnecting means (switches or sets of breakers) are permitted for each service, and more than six is not. The limit is per service, not per building.",
+      "section": 2,
+      "keywords": ["six disconnects", "service", "main", "service disconnect"],
+      "related": ["230.70(A)"],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.12(A)",
+      "title": "Mechanical Execution of Work - Unused Openings",
+      "text": "Unused cable or raceway openings in enclosures must be effectively closed so they protect about as well as the enclosure wall itself.",
+      "section": 1,
+      "keywords": ["knockout", "unused opening", "enclosure", "closure"],
+      "related": ["110.12"],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "408.7",
+      "title": "Unused Openings",
+      "text": "Unused openings meant for breakers or switches must be closed with identified closures or other approved means giving protection close to that of the enclosure wall.",
+      "section": 4,
+      "keywords": ["blank filler", "unused opening", "breaker space", "panelboard"],
+      "related": ["110.12(A)", "408.54"],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "312.5(C)",
+      "title": "Cabinets - Cables Secured at Entry",
+      "text": "Where cable is used, each cable entering a cabinet or panel enclosure must be secured to the enclosure. A narrow exception lets nonmetallic-sheathed cable enter the top of a surface-mounted enclosure through a long raceway.",
+      "section": 3,
+      "keywords": ["cable clamp", "connector", "knockout", "securing cable"],
+      "related": ["110.12(A)"],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "312.4",
+      "title": "Cabinets - Repairing Noncombustible Surfaces",
+      "text": "Where a flush-cover cabinet sits in a noncombustible wall surface, any broken or missing surface must be repaired so gaps at the cabinet edge are no more than 3 mm (1/8 in.).",
+      "section": 3,
+      "keywords": ["gap", "drywall", "flush", "cabinet", "noncombustible"],
+      "related": [],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.12(B)",
+      "title": "Integrity of Electrical Equipment and Connections",
+      "text": "Internal parts such as busbars, terminals and insulators must not be damaged or contaminated by foreign materials like paint, plaster, cleaners, abrasives or corrosive residue.",
+      "section": 1,
+      "keywords": ["paint", "contamination", "busbar", "damaged parts"],
+      "related": ["110.12", "110.12(A)"],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.9(A)",
+      "title": "Overhead Conductor Clearances - Pools",
+      "text": "Pools, spas and hot tubs may not be placed within the Table 680.9(A) clearances of overhead service or other overhead conductors not in a raceway; for 0-750 V insulated service-drop type cable the clearance is 22.5 ft, measured from the maximum water level.",
+      "section": 6,
+      "keywords": ["pool", "overhead", "service drop", "clearance", "water level"],
+      "related": [],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.22(A)(3)",
+      "title": "Pool Receptacles - Other Receptacles Distance",
+      "text": "Receptacles that are not for pool pump motors or other circulation-system loads must be at least 6 ft from the inside wall of a permanently installed pool, measured along the shortest path a cord would take.",
+      "section": 6,
+      "keywords": ["pool", "receptacle", "6 ft", "distance"],
+      "related": [],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.13",
+      "title": "Maintenance Disconnecting Means - Pools and Spas",
+      "text": "Pool, spa and hot tub equipment other than lighting needs a readily accessible maintenance disconnect within sight of the equipment and at least 5 ft horizontally from the water, measured from the water's edge along the shortest path, unless a permanent barrier gives a 5 ft reach path.",
+      "section": 6,
+      "keywords": ["spa", "hot tub", "disconnect", "5 ft", "maintenance"],
+      "related": [],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.21(C)",
+      "title": "Pool Pump Motors - Ground-Fault Protection",
+      "text": "Outlets supplying pool pump motors on single-phase 120 V through 240 V branch circuits need Class A ground-fault protection, whether the pump is on a receptacle or wired directly; in 2023 the protection type points to 680.5(B).",
+      "section": 6,
+      "keywords": ["pool pump", "GFCI", "motor", "ground-fault"],
+      "related": [],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "625.43",
+      "title": "Disconnecting Means for EV Charging Equipment",
+      "text": "Charging equipment rated over 60 A or over 150 V to ground needs a readily accessible disconnect that can be locked open, with a plaque if it is remote from the equipment.",
+      "section": 6,
+      "keywords": ["EV charger", "disconnect", "60 A", "150 V", "lockable"],
+      "related": [],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.22(C)",
+      "title": "Pool Area - Switching Device Distance",
+      "text": "Switches, timers and similar devices must be at least 5 ft horizontally from the pool's inside wall, unless a solid fence, wall or other permanent barrier separates them or the device is listed for closer use.",
+      "section": 6,
+      "keywords": ["pool", "switch", "5 ft", "timer", "barrier"],
+      "related": ["680.13"],
+      "conceptId": "special-locations",
       "isNewInEdition": false
     }
   ]

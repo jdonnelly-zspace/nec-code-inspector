@@ -248,6 +248,157 @@
       "severity": "Critical",
       "minimumDifficulty": "Expert",
       "isSubtle": true
+    },
+    {
+      "violationId": "COM-SERVICE-CONDUCTOR-001",
+      "description": "Service-entrance conductors are much smaller than the rating of the main service disconnect they feed",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "230.90(A)",
+          "text": "The overcurrent device protecting service conductors must not be rated higher than the ampacity of those service conductors, apart from limited exceptions such as the next-size-up allowance. Separately, 230.42(A) requires the conductors to carry the calculated load."
+        }
+      ],
+      "componentObjectName": "ServiceEntrance_Conductors_Undersized",
+      "hintText": "Compare the wire size on the service entrance with the ampere rating of the main overcurrent device.",
+      "componentType": "Conductor",
+      "inspectionNote": "The main {term:service-disconnect} has a 200 A overcurrent device, but the service conductors are 3 AWG copper, 100 A at the 75 C column. A device rated far above the conductor ampacity leaves the wire unprotected.",
+      "conceptId": "conductor-sizing",
+      "severity": "Critical",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-ALUM-OCPD-001",
+      "description": "12 AWG aluminum conductors protected by a 20 A breaker, more than the limit for that small aluminum size",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "240.4(D)(5)",
+          "text": "Small aluminum conductors have lower overcurrent limits than copper: 12 AWG aluminum or copper-clad aluminum tops out at 15 A, and 10 AWG at 25 A, after any ambient and bundling corrections."
+        }
+      ],
+      "componentObjectName": "Rooftop_AluminumFeed_20ABreaker",
+      "hintText": "Look at the metal marked on the cable jacket, then match the {term:breaker} rating to the conductor size.",
+      "componentType": "Breaker",
+      "inspectionNote": "The cable to a rooftop condenser receptacle is marked 12 AWG AL and lands on a 20 A {term:breaker}. Copper at that size would be fine on 20 A, aluminum is not.",
+      "conceptId": "conductor-sizing",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-RACEWAY-DERATE-001",
+      "description": "Ten current-carrying 12 AWG conductors share one conduit with no ampacity derating, yet sit on a 20 A breaker",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "310.15(C)(1)",
+          "text": "When more than three current-carrying conductors share a raceway or cable for more than 24 in., start from the 90 C column of Table 310.16 and apply the adjustment factor (80% for 4-6, 70% for 7-9, 50% for 10-20). The overcurrent limits in 240.4(D) are then applied to the adjusted ampacity."
+        }
+      ],
+      "componentObjectName": "MechRoom_ConduitBundle_12AWG",
+      "hintText": "Count the conductors that carry current inside the conduit before you trust the wire size.",
+      "componentType": "Conductor",
+      "inspectionNote": "A mechanical-room EMT run longer than 24 in. holds five 2-wire 120 V receptacle circuits, ten 12 AWG THHN current-carrying conductors, each on a 20 A {term:breaker}. At the 50% factor, 30 A (90 C column) becomes 15 A, so the conductors cannot support 20 A, and the round-up allowance in 240.4(B) is not available on receptacle circuits.",
+      "conceptId": "conductor-sizing",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-CONTINUOUS-WIRE-001",
+      "description": "A continuous 48 A EV charger is wired with 8 AWG copper, which is not large enough once the 125% factor is applied",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.19(A)",
+          "text": "For a branch circuit with continuous loads (running three hours or more), conductors need ampacity of at least 125% of that continuous load plus 100% of any non-continuous load."
+        }
+      ],
+      "componentObjectName": "EVCharger_BranchConductor_8AWG",
+      "hintText": "The nameplate says how long this load runs. Multiply it before comparing with the wire's ampacity.",
+      "componentType": "Conductor",
+      "inspectionNote": "A 48 A continuous EV charger (nameplate) sits on a 60 A {term:breaker} with 8 AWG copper THHN (50 A at 75 C). 48 x 1.25 = 60 A, so 6 AWG (65 A at 75 C) is needed; the 60 A {term:breaker} looks right, which hides the problem.",
+      "conceptId": "conductor-sizing",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-PARALLEL-SMALL-001",
+      "description": "A sub-panel feeder is made from two small 2 AWG conductors per phase connected in parallel",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "310.10(G)(1)",
+          "text": "Phase and neutral conductors may be paralleled only when each is 1/0 AWG or larger. Smaller conductors cannot be joined at both ends to make up a larger circuit."
+        }
+      ],
+      "componentObjectName": "Feeder_SubPanel_ParallelSmall",
+      "hintText": "Look at the feeder to the sub-panel: how many conductors land on each terminal, and how large is each?",
+      "componentType": "Conductor",
+      "inspectionNote": "Each phase lug of the sub-panel feeder holds two 2 AWG copper conductors tied together. Paralleled sets must start at 1/0 AWG, so the feeder should be a single larger conductor per phase.",
+      "conceptId": "conductor-sizing",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-TERMINAL-60C-001",
+      "description": "8 AWG conductors supply a 45 A load but land on equipment terminals marked for 60 C only",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.14(C)(1)(a)",
+          "text": "For circuits of 100 A or less, ampacity cannot exceed the 60 C column unless the terminals are listed and marked for higher-rated conductors. Insulation rating alone does not override the terminal limit."
+        }
+      ],
+      "componentObjectName": "Heater_Terminal_60C_Label",
+      "hintText": "Read the label next to the lugs on the equipment, not only the wire insulation printing.",
+      "componentType": "Label",
+      "inspectionNote": "8 AWG THHN (rated 90 C) feeds a 45 A heater, but the heater's terminal label says 60 C. The 60 C column gives 40 A for 8 AWG, less than the 45 A load.",
+      "conceptId": "conductor-sizing",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "COM-ROOFTOP-ADDER-001",
+      "description": "Rooftop conduit sits on the roof surface in direct sun, with conductors sized without the sunlight temperature adder",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "310.15(B)(2)",
+          "text": "Where raceways or cables sit in direct sunlight on or above a roof with the bottom less than 3/4 in. above the roof (7/8 in. in earlier editions), add 33 C (60 F) to the outdoor temperature before using the ambient correction table.",
+          "limit": {
+            "quantity": "raceway height above roof",
+            "kind": "min",
+            "value": 0.75,
+            "unit": "in"
+          }
+        }
+      ],
+      "componentObjectName": "Rooftop_Conduit_LowStandoff",
+      "hintText": "Measure how far the bottom of the conduit is from the roof, then think about what sun does to the air inside it.",
+      "componentType": "Conductor",
+      "inspectionNote": "A conduit with 8 AWG THHN to a 50 A rooftop unit rests about 0.5 in above the roof. With the 33 C adder, a 35 C summer day becomes 68 C, giving a 0.58 factor, and the conductors cannot support 50 A.",
+      "conceptId": "conductor-sizing",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "raceway height above roof",
+        "value": 0.5,
+        "unit": "in",
+        "note": "from roof surface to the bottom of the conduit"
+      },
+      "compliantFact": {
+        "quantity": "raceway height above roof",
+        "value": 1.0,
+        "unit": "in",
+        "note": "from roof surface to the bottom of the conduit"
+      }
     }
   ]
 }
