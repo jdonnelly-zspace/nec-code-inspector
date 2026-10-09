@@ -152,6 +152,12 @@ NEC warning reports the 106 new violations needed); an authoring checklist and s
 yet and no scene uses `ViolationVariant`, since neither the scenes nor the extra violations exist. Mark a code `enforce` when it
 reaches its target.
 
+**Phase 1 status (second batch).** 28 more violations are in (conductor sizing 7, disconnecting means 8, equipment installation 7, special
+locations 6), so 50 of the 106 are done and the NEC pool shortfall is 56. Same two-step process; the drafters now loaded web tools and listed the
+pages they fetched, and the verifiers still found corrections in about half the items. Evidence is in `docs/expert-review/PHASE1_VERIFICATION_BATCH2.md`.
+Still to author: load calculation (waits on the edition decision), shock protection, branch circuits, overcurrent protection, wiring methods,
+earthing and bonding, and more arc-fault, marking and working-space items.
+
 **Phase 1 status (first batch).** 22 violations in arc-fault protection (7), working space and access (6) and identification and
 marking (9) are in, each drafted and then checked in a second pass against public sources (`docs/expert-review/PHASE1_VERIFICATION.md`),
 with 12 new reference entries. The NEC pool shortfall fell from 106 to 84. Held out: items that rested on one source, a case with an

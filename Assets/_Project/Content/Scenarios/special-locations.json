@@ -77,6 +77,192 @@
       "severity": "Major",
       "minimumDifficulty": "Beginner",
       "isSubtle": false
+    },
+    {
+      "violationId": "SL-POOL-OVERHEAD-001",
+      "description": "Utility service drop runs only 15 feet above the water of the backyard pool",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "680.9(A)",
+          "text": "Pools, spas and hot tubs may not be placed within the Table 680.9(A) clearances of overhead service or other overhead conductors not in a raceway; for 0-750 V insulated service-drop type cable the clearance is 22.5 ft, measured from the maximum water level.",
+          "limit": {
+            "quantity": "overhead conductor clearance above maximum water level",
+            "kind": "min",
+            "value": 22.5,
+            "unit": "ft"
+          }
+        }
+      ],
+      "componentObjectName": "Pool_Overhead_Service_Drop",
+      "hintText": "Look up at the wires that cross the yard. How high are they compared with the water below?",
+      "componentType": "Conductor",
+      "inspectionNote": "The service drop from the pole crosses the pool and hangs about 15 ft above the water. Compare that height with the table limit for overhead conductors near a pool.",
+      "conceptId": "special-locations",
+      "severity": "Critical",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "overhead conductor clearance above maximum water level",
+        "value": 15,
+        "unit": "ft",
+        "note": "vertical, from maximum water level up to the lowest point of the service drop"
+      },
+      "compliantFact": {
+        "quantity": "overhead conductor clearance above maximum water level",
+        "value": 24,
+        "unit": "ft",
+        "note": "vertical, from maximum water level up to the lowest point of the service drop"
+      }
+    },
+    {
+      "violationId": "SL-POOL-RECEPT-001",
+      "description": "A general-purpose {term:receptacle} is mounted about 3 feet from the edge of the pool",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "680.22(A)(3)",
+          "text": "Receptacles that are not for pool pump motors or other circulation-system loads must be at least 6 ft from the inside wall of a permanently installed pool, measured along the shortest path a cord would take.",
+          "limit": {
+            "quantity": "receptacle distance from inside pool wall",
+            "kind": "min",
+            "value": 6,
+            "unit": "ft"
+          }
+        }
+      ],
+      "componentObjectName": "Pool_Deck_Receptacle_Close",
+      "hintText": "Pace out the distance from the water to the outlet on the pool deck.",
+      "componentType": "Receptacle",
+      "inspectionNote": "A {term:receptacle} on a post sits a few steps from the pool wall, about 3 ft away. Measure the cord path from the water to it and compare with the minimum distance for pool receptacles.",
+      "conceptId": "special-locations",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "receptacle distance from inside pool wall",
+        "value": 3,
+        "unit": "ft",
+        "note": "shortest path a cord would follow, from inside pool wall"
+      },
+      "compliantFact": {
+        "quantity": "receptacle distance from inside pool wall",
+        "value": 8,
+        "unit": "ft",
+        "note": "shortest path a cord would follow, from inside pool wall"
+      }
+    },
+    {
+      "violationId": "SL-SPA-DISC-001",
+      "description": "The maintenance disconnect for the hot tub equipment is mounted 2 feet from the spa wall",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "680.13",
+          "text": "Pool, spa and hot tub equipment other than lighting needs a readily accessible maintenance disconnect within sight of the equipment and at least 5 ft horizontally from the water, measured from the water's edge along the shortest path, unless a permanent barrier gives a 5 ft reach path.",
+          "limit": {
+            "quantity": "disconnect distance from inside spa wall",
+            "kind": "min",
+            "value": 5,
+            "unit": "ft"
+          }
+        }
+      ],
+      "componentObjectName": "Spa_Maintenance_Disconnect_Close",
+      "hintText": "Stand where someone would operate the disconnect. How close is the water?",
+      "componentType": "Disconnect",
+      "inspectionNote": "A fused disconnect for the spa heater and pump is on the fence post, about 2 ft from the spa wall with nothing between it and the water. Check the distance and whether any barrier separates it from the water.",
+      "conceptId": "special-locations",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "disconnect distance from inside spa wall",
+        "value": 2,
+        "unit": "ft",
+        "note": "horizontal, measured from water's edge along the shortest path to the disconnect"
+      },
+      "compliantFact": {
+        "quantity": "disconnect distance from inside spa wall",
+        "value": 6,
+        "unit": "ft",
+        "note": "horizontal, measured from water's edge along the shortest path to the disconnect"
+      }
+    },
+    {
+      "violationId": "SL-POOL-PUMPGFCI-001",
+      "description": "Pool pump is plugged into an outdoor {term:receptacle} with no {term:shock-protection-device}",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "680.21(C)",
+          "text": "Outlets supplying pool pump motors on single-phase 120 V through 240 V branch circuits need Class A ground-fault protection, whether the pump is on a receptacle or wired directly; in 2023 the protection type points to 680.5(B)."
+        }
+      ],
+      "componentObjectName": "Pool_Pump_Receptacle_NoGFCI",
+      "hintText": "Check what protects the outlet the pool pump uses.",
+      "componentType": "Receptacle",
+      "inspectionNote": "The pump cord goes to a plain 20 A {term:receptacle} on the equipment pad with no test/reset device on it, and no protective {term:breaker} is labelled. Decide whether the pump outlet has the protection that pool pump circuits need.",
+      "conceptId": "special-locations",
+      "severity": "Critical",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false
+    },
+    {
+      "violationId": "SL-EV-DISC-001",
+      "description": "A high-rated hardwired EV charger has no readily accessible, lockable disconnect",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "625.43",
+          "text": "Charging equipment rated over 60 A or over 150 V to ground needs a readily accessible disconnect that can be locked open, with a plaque if it is remote from the equipment."
+        }
+      ],
+      "componentObjectName": "Garage_EV_Charger_NoDisconnect",
+      "hintText": "Read the charger's nameplate, then look for where it can be switched off.",
+      "componentType": "Disconnect",
+      "inspectionNote": "The garage charger nameplate reads 80 A, 240 V and it is hardwired. There is no disconnect at the charger and no plaque saying where one is; the only way to switch it off is a {term:breaker} in a {term:panel} in another room with no provision for locking. Compare the rating with the disconnect rule.",
+      "conceptId": "special-locations",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "SL-POOL-SWITCH-001",
+      "description": "A pool equipment timer switch is mounted 2 feet from the pool wall without a barrier",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "680.22(C)",
+          "text": "Switches, timers and similar devices must be at least 5 ft horizontally from the pool's inside wall, unless a solid fence, wall or other permanent barrier separates them or the device is listed for closer use.",
+          "limit": {
+            "quantity": "switching device distance from inside pool wall",
+            "kind": "min",
+            "value": 5,
+            "unit": "ft"
+          }
+        }
+      ],
+      "componentObjectName": "Pool_Timer_Switch_Close",
+      "hintText": "Look at the controls for the pool equipment and how near they are to the water.",
+      "componentType": "Switch",
+      "inspectionNote": "A standard timer and light switch box is on a post about 2 ft from the pool wall with open deck between it and the water. Check the distance, and whether any barrier or special listing applies.",
+      "conceptId": "special-locations",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true,
+      "sceneFact": {
+        "quantity": "switching device distance from inside pool wall",
+        "value": 2,
+        "unit": "ft",
+        "note": "horizontal distance from inside pool wall"
+      },
+      "compliantFact": {
+        "quantity": "switching device distance from inside pool wall",
+        "value": 6,
+        "unit": "ft",
+        "note": "horizontal distance from inside pool wall"
+      }
     }
   ]
 }

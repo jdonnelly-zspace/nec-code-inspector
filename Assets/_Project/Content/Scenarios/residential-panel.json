@@ -583,6 +583,327 @@
       "severity": "Major",
       "minimumDifficulty": "Expert",
       "isSubtle": false
+    },
+    {
+      "violationId": "RP-DISC-AC-NONE-001",
+      "description": "The outdoor air-conditioning condenser has no disconnect at the unit; the only way to cut power is a {term:breaker} inside the house, out of sight of the condenser",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "440.14",
+          "text": "A way to disconnect the air-conditioning unit must be placed where it can be seen from the unit and reached easily, and may be mounted on or inside the unit."
+        }
+      ],
+      "componentObjectName": "ACCondenser_NoDisconnect",
+      "hintText": "Stand at the condenser and look around its walls and the nearby fence. Where would a technician switch it off before opening it?",
+      "componentType": "Disconnect",
+      "inspectionNote": "The condenser sits on a pad on the far side of the house with the supply cable running straight into the unit and no switch box nearby. The only control is a {term:breaker} in the {term:panel}, which cannot be seen from the condenser.",
+      "conceptId": "disconnecting-means",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-DISC-HANDLE-INVERTED-001",
+      "description": "A vertical-handle disconnect on the outdoor air-conditioner is mounted upside down, so the handle's down position is ON and up is OFF",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "404.7",
+          "text": "General-use and motor-circuit switches and circuit breakers in enclosures must clearly show open (off) or closed (on). Where the handle moves vertically, the up position is the closed (on) position."
+        }
+      ],
+      "componentObjectName": "ACDisconnect_Inverted",
+      "hintText": "Read the ON and OFF markings on the pump disconnect and compare them with where the handle sits.",
+      "componentType": "Disconnect",
+      "inspectionNote": "The condenser disconnect enclosure is turned over so the ON marking sits at the bottom of the handle's travel. A person reaching for the handle would assume up means on.",
+      "conceptId": "disconnecting-means",
+      "severity": "Minor",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-DISC-SHED-NONE-001",
+      "description": "The detached shed is fed by a feeder from the house, but where the cable enters the shed there is no switch or breaker to disconnect the supply",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "225.31",
+          "text": "A building or structure supplied by a feeder or branch circuit needs a means to disconnect all ungrounded conductors that supply or pass through it. Under 225.36 a circuit breaker, molded case switch, general-use switch or snap switch all qualify."
+        }
+      ],
+      "componentObjectName": "Shed_Feeder_NoDisconnect",
+      "hintText": "Follow the cable from the trench into the shed. What could you operate to turn the whole shed off from the inside doorway?",
+      "componentType": "Disconnect",
+      "inspectionNote": "The underground feeder rises at the shed wall and runs straight to a junction box that feeds the lights and receptacles. There is no switch, breaker or panel at the entry point.",
+      "conceptId": "disconnecting-means",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-DISC-WH-SIGHT-001",
+      "description": "The water heater is switched only by a {term:breaker} in the garage {term:panel}, which cannot be seen from the heater, and that {term:breaker} has no provision for a lock",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "422.31(B)",
+          "text": "For a fixed appliance over 300 VA, the branch-circuit breaker can be its disconnect only if it is in sight of the appliance or can be locked open with the lock provision staying in place."
+        }
+      ],
+      "componentObjectName": "WaterHeater_NoSightDisconnect",
+      "hintText": "Check how the water heater could be switched off safely while someone works on it. Is the control in view, or can it be locked off?",
+      "componentType": "Disconnect",
+      "inspectionNote": "The water heater is in a closet on the opposite side of the house from the {term:panel}, and a wall blocks the view between them. The {term:breaker} handle has no lock-off clip or hasp fitted.",
+      "conceptId": "disconnecting-means",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-DISC-SVC-SEVEN-001",
+      "description": "The garage service equipment has seven separate {term:service-disconnect} {term:breaker}s instead of at most six",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "230.71(B)",
+          "text": "A service normally has one disconnect; up to six service disconnecting means (switches or sets of breakers) are permitted for each service, and more than six is not. The limit is per service, not per building."
+        }
+      ],
+      "componentObjectName": "ServiceEquipment_SevenMains",
+      "hintText": "Count the handles that cut off the whole house at the service equipment.",
+      "componentType": "Disconnect",
+      "inspectionNote": "Seven separate main breakers sit side by side on the outdoor service equipment beside the meter, each serving a different load such as the house, the air conditioner and the water heater. All are fed from the same service.",
+      "conceptId": "disconnecting-means",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-DISC-SVC-RATING-001",
+      "description": "The one-family house's {term:service-disconnect} is rated 60 A, below the 100 A minimum",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "230.79",
+          "text": "For a one-family dwelling, the service disconnecting means must be rated at least 100 amperes, 3-wire, whatever the calculated load."
+        }
+      ],
+      "componentObjectName": "ServiceDisconnect_Rated60A",
+      "hintText": "Read the rating on the main device that switches off the whole house.",
+      "componentType": "Disconnect",
+      "inspectionNote": "The enclosure of the {term:service-disconnect} is marked 60 A on its label and handle. The home is a single-family house with a normal 120/240 V supply.",
+      "conceptId": "disconnecting-means",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-DISC-AC-PANEL-001",
+      "description": "The condenser disconnect is screwed to the unit's removable service access panel and covers part of the equipment nameplate",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "440.14",
+          "text": "The disconnect must not sit on a panel designed to give access to the equipment, nor hide the equipment nameplate."
+        }
+      ],
+      "componentObjectName": "ACCondenser_Disconnect_OnAccessPanel",
+      "hintText": "Look at where the disconnect is fastened to the unit. Could a technician open the unit without removing it?",
+      "componentType": "Disconnect",
+      "inspectionNote": "The disconnect enclosure is mounted over the compressor access cover and partly covers the nameplate. Removing the cover would mean removing the disconnect.",
+      "conceptId": "disconnecting-means",
+      "severity": "Minor",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "RP-DISC-AC-WORKSPACE-001",
+      "description": "A fence leaves only 20 in of clear depth in front of the condenser disconnect",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "440.14",
+          "text": "An air-conditioning disconnect must meet the working space rules of 110.26(A). At 120/240 V (0-150 V to ground) the clear depth in front is at least 36 in; the space is also at least 30 in wide and 6.5 ft high.",
+          "limit": {
+            "quantity": "clear working space depth in front of disconnect",
+            "kind": "min",
+            "value": 36,
+            "unit": "in"
+          }
+        }
+      ],
+      "componentObjectName": "ACDisconnect_Workspace_Fence",
+      "hintText": "Measure the clear floor space in front of the disconnect, from its face to the nearest obstruction.",
+      "componentType": "Working Space",
+      "inspectionNote": "The disconnect on the condenser wall has a wooden fence 20 in in front of it. A person servicing it would be pinned between the fence and the equipment.",
+      "conceptId": "disconnecting-means",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "clear working space depth in front of disconnect",
+        "value": 20,
+        "unit": "in",
+        "note": "measured from the front of the disconnect to the fence"
+      },
+      "compliantFact": {
+        "quantity": "clear working space depth in front of disconnect",
+        "value": 40,
+        "unit": "in",
+        "note": "measured from the front of the disconnect to the nearest obstruction"
+      }
+    },
+    {
+      "violationId": "RP-KNOCKOUT-001",
+      "description": "An unused knockout on the garage {term:panel} enclosure has been punched out and left open",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.12(A)",
+          "text": "Unused cable or raceway openings in enclosures must be effectively closed so they protect about as well as the enclosure wall itself."
+        }
+      ],
+      "componentObjectName": "Panel_OpenKnockout",
+      "hintText": "Look closely at the metal sides and top of the enclosure for holes that nothing passes through.",
+      "componentType": "Panel",
+      "inspectionNote": "A round opening in the enclosure wall has no cable, connector or plug in it, leaving a path to live parts. A listed knockout closure should be seated in it.",
+      "conceptId": "equipment-installation",
+      "severity": "Minor",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-BLANKFILLER-001",
+      "description": "An empty {term:breaker} space in the {term:panel} has no blank filler, leaving the opening exposed",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "408.7",
+          "text": "Unused openings meant for breakers or switches must be closed with identified closures or other approved means giving protection close to that of the enclosure wall."
+        }
+      ],
+      "componentObjectName": "Panel_OpenBreakerSpace",
+      "hintText": "Check the front of the panel where no breaker is installed.",
+      "componentType": "Panel",
+      "inspectionNote": "One {term:breaker} slot in the dead front is open with the bus stab area visible behind it. A filler plate should cover the space.",
+      "conceptId": "equipment-installation",
+      "severity": "Minor",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-CABLECLAMP-001",
+      "description": "A cable passes through the enclosure opening with no clamp or connector holding it to the enclosure",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "312.5(C)",
+          "text": "Where cable is used, each cable entering a cabinet or panel enclosure must be secured to the enclosure. A narrow exception lets nonmetallic-sheathed cable enter the top of a surface-mounted enclosure through a long raceway."
+        }
+      ],
+      "componentObjectName": "Panel_CableNoClamp",
+      "hintText": "Follow each cable to the point where it enters the metal enclosure and see what holds it there.",
+      "componentType": "Conductor",
+      "inspectionNote": "A cable runs straight through a bare knockout with no connector or clamp, so it can be pulled or abraded on the edge. The cable should be held by a listed fitting at the opening.",
+      "conceptId": "equipment-installation",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-WALLGAP-001",
+      "description": "The flush-mounted {term:panel} cover has a wide gap between the enclosure edge and the broken drywall around it",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "312.4",
+          "text": "Where a flush-cover cabinet sits in a noncombustible wall surface, any broken or missing surface must be repaired so gaps at the cabinet edge are no more than 3 mm (1/8 in.).",
+          "limit": {
+            "quantity": "gap between enclosure edge and wall surface",
+            "kind": "max",
+            "value": 3,
+            "unit": "mm"
+          }
+        }
+      ],
+      "componentObjectName": "Panel_WallGap",
+      "hintText": "Check the wall finish right at the edges of the enclosure.",
+      "componentType": "Panel",
+      "inspectionNote": "The drywall around the recessed enclosure is chipped back, leaving an open gap at the edge. Measure the gap against the 3 mm limit.",
+      "conceptId": "equipment-installation",
+      "severity": "Minor",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "gap between enclosure edge and wall surface",
+        "value": 8,
+        "unit": "mm",
+        "note": "measured at the widest point on the top edge"
+      },
+      "compliantFact": {
+        "quantity": "gap between enclosure edge and wall surface",
+        "value": 2,
+        "unit": "mm",
+        "note": "measured at the widest point on the top edge"
+      }
+    },
+    {
+      "violationId": "RP-PAINTBUS-001",
+      "description": "Wall paint overspray has coated the bus stabs and terminals inside the {term:panel}",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.12(B)",
+          "text": "Internal parts such as busbars, terminals and insulators must not be damaged or contaminated by foreign materials like paint, plaster, cleaners, abrasives or corrosive residue."
+        }
+      ],
+      "componentObjectName": "Panel_PaintedBusbar",
+      "hintText": "Look at the metal parts behind the breakers, not only at the cover.",
+      "componentType": "Panel",
+      "inspectionNote": "A thin layer of the same colour as the garage wall coats the bus and several terminal screws inside the enclosure. The paint can spoil breaker contact and hide heat damage.",
+      "conceptId": "equipment-installation",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "RP-NICKEDWIRE-001",
+      "description": "A conductor under a {term:breaker} lug has been nicked and some copper strands cut away where it was stripped",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.14(A)",
+          "text": "Connections to terminals must be mechanically secure and made so the conductor is not damaged in the process."
+        }
+      ],
+      "componentObjectName": "Breaker_NickedConductor",
+      "hintText": "Study the bare copper where one conductor enters its terminal.",
+      "componentType": "Conductor",
+      "inspectionNote": "The stripped end shows a ring cut into the copper and a few strands missing. This reduces the conductor's cross-section at the terminal and weakens the joint.",
+      "conceptId": "equipment-installation",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "RP-TERMTORQUE-001",
+      "description": "A {term:breaker} terminal screw is backed out and the conductor sits loose in the lug",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.14(A)",
+          "text": "Connections to terminals must be a mechanically secure electrical connection, made without damaging the conductors."
+        }
+      ],
+      "componentObjectName": "Breaker_LooseLugScrew",
+      "hintText": "Read the small markings on the terminals, then check how the screws sit.",
+      "componentType": "Breaker",
+      "inspectionNote": "One terminal screw head stands proud of the lug and the conductor moves by hand. A loose joint heats up under load.",
+      "conceptId": "equipment-installation",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false
     }
   ]
 }

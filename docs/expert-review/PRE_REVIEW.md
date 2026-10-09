@@ -201,6 +201,33 @@ reference entries, still need the expert.
   panel's footprint column; re-identified white conductors only apply inside a cable assembly or cord, so the scene should be NM cable
   or conduit.
 
+## 16. Phase 1, second batch (content plan)
+
+28 more NEC violations, from the same draft-then-verify process (the drafters loaded web tools this time and listed the pages they
+fetched; a separate verifier then checked each item). Evidence and held-out reasons: `PHASE1_VERIFICATION_BATCH2.md`. **Still no official
+NEC text was opened**, so every item, and the 21 new entries, need the expert.
+
+- **Shipped:** conductor sizing 7 of 9, disconnecting means 8 of 9, equipment installation 7 of 9, special locations 6 of 9.
+- **Held out:** items that rested on one source (equipment mounting, double-tapped breaker, EV connector height, generator inlet, small
+  16 AWG wire, a service-disconnect grouping case), the pool pump cord (its 2023 subsection is unconfirmed), and a near-duplicate pair
+  (the boiler-room ambient case against the rooftop sun adder; the rooftop one was kept because it has a measurable limit).
+- **Corrections the check made:** the 3 AWG service conductor on a 200 A main breaks 230.90(A), not 230.42(A); a 48 A continuous
+  load fits an EV charger, not a sign circuit (sign circuits are capped); the loose-terminal case was refiled from 110.14(D) (a
+  torque rule) to 110.14(A); 230.71's six-handle limit sits in (B); 12 AWG aluminium is limited to 15 A (240.4(D)(5)).
+- **Existing content fixed:** the pool maintenance disconnect was numbered 680.12, its 2014 number; it is 680.13 in the 2023
+  numbering, and the old entry was merged into the new one. The pool cord-and-plug entry (680.7) looks like 2014 numbering too (680.8
+  from 2017); its 2023 number is unconfirmed and it is flagged.
+- **Edition notes for the expert:** the 2026 NEC reportedly renumbers 312.4 to 312.7 (panel gap), deletes 230.85 into 230.70, revises
+  225.31, changes 625.54 by a tentative interim amendment, and the 2026 Article 230 requires the service disconnect outdoors.
+  All of these come from secondary sources. The edition decision (TODO, open decision 6) still stands.
+- **Scene notes for the builders:**
+  - The service-equipment violations (more than six handles, service rating) place the equipment in the garage. The 2023 NEC needed an
+    outdoor emergency disconnect for dwellings and the 2026 text wants the service disconnect outdoors, so put the equipment outside.
+  - A 60 A main only breaks the rule in a new one-family house. The shed case must show no switch or breaker at all, since a snap
+    switch or a few breakers satisfy the rule. The pool pump GFCI case is filed under special locations and carries no protection scope
+    (the scope checker only runs for violations of the protection's own skill).
+  - The panel gap case needs a drywall wall (noncombustible); the nicked-wire and paint cases are subtle and must stay on the bus and terminals.
+
 ## Sources (all public)
 
 NEC: ecmweb.com (GFCI and AFCI requirements; key revisions to Chapter 2 of the 2026 NEC; NEC motors series; one-family dwelling load calculations), IAEI Magazine (210.8 GFCI requirements), electricianu.com (2023 NEC 210.11), Mike Holt forums (220.14(I), 408.54), St. Paul building department electrical checklist (210.52).
