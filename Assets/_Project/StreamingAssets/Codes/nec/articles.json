@@ -1009,6 +1009,126 @@
       "related": ["430.6(A)(1)", "240.4(B)"],
       "conceptId": "conductor-sizing",
       "isNewInEdition": false
+    },
+    {
+      "reference": "240.24(D)",
+      "title": "Overcurrent Devices - Not Near Easily Ignitible Material",
+      "text": "Overcurrent devices must not be placed where easily ignited material is nearby, such as inside a clothes closet.",
+      "section": 2,
+      "keywords": ["clothes closet", "ignitible", "panel location", "overcurrent"],
+      "related": ["240.24(A)"],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.24(E)",
+      "title": "Overcurrent Devices - Not in Bathrooms",
+      "text": "In dwelling units (and hotel or motel guest rooms and suites), overcurrent devices other than supplementary overcurrent protection must not be located in bathrooms.",
+      "section": 2,
+      "keywords": ["bathroom", "panel location", "dwelling", "overcurrent"],
+      "related": ["240.24(A)", "240.24(D)"],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.26(E)(1)(a)",
+      "title": "Dedicated Electrical Space Above Equipment",
+      "text": "The space equal to the width and depth of the panel, from the floor up to 6 ft above the equipment or the structural ceiling (whichever is lower), is reserved for the electrical installation. Pipes, ducts, leak protection apparatus and other foreign equipment cannot be in it.",
+      "section": 1,
+      "keywords": ["dedicated space", "pipe", "duct", "foreign system", "panel"],
+      "related": ["110.26(A)(1)"],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.22(A)",
+      "title": "Identification of Disconnecting Means",
+      "text": "Each service, feeder and branch-circuit disconnecting means is legibly marked to show what it is for, unless its location and arrangement already make the purpose obvious.",
+      "section": 1,
+      "keywords": ["disconnect", "label", "marking", "identification", "purpose"],
+      "related": ["408.4"],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "200.6(A)",
+      "title": "Means of Identifying Grounded Conductors (A)",
+      "text": "An insulated grounded conductor of 6 AWG or smaller is identified by a continuous white or gray outer finish, or by three continuous white or gray stripes on other than green insulation.",
+      "section": 2,
+      "keywords": ["grounded", "conductor", "white", "gray", "neutral", "identification"],
+      "related": [],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.119(A)",
+      "title": "Identification of Equipment Grounding Conductors (A)",
+      "text": "Insulated equipment grounding conductors of the wire type have a continuous green or green-with-yellow-stripe finish, and conductors with that finish are not used as ungrounded or grounded circuit conductors.",
+      "section": 2,
+      "keywords": ["equipment grounding conductor", "green", "identification", "color"],
+      "related": ["250.118", "250.122", "200.6"],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "200.7",
+      "title": "Use of Insulation of a White or Gray Color or with Three Continuous White or Gray Stripes",
+      "text": "White, gray, or three-white-stripe insulation is for grounded conductors only. On circuits of 50 V or more it may serve as an ungrounded conductor only inside a cable assembly (for example a switch-loop supply) or a flexible cord, and in a cable it must be permanently re-marked a colour other than white, gray or green at its termination and wherever visible and accessible.",
+      "section": 2,
+      "keywords": ["white conductor", "ungrounded", "re-identified", "switch loop", "color"],
+      "related": ["200.6"],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "230.70(B)",
+      "title": "Marking of Service Disconnect",
+      "text": "Each service disconnect is permanently marked to show that it is a service disconnect, so people can tell the one device that cuts off the whole supply.",
+      "section": 2,
+      "keywords": ["service disconnect", "marking", "main", "identification"],
+      "related": ["110.22(A)"],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "200.6(B)",
+      "title": "Means of Identifying Grounded Conductors (B)",
+      "text": "A grounded conductor of 4 AWG or larger is identified by white or gray finish, three white stripes, or a distinctive white or gray marking put on at its terminations when installed.",
+      "section": 2,
+      "keywords": ["grounded", "conductor", "white", "gray", "neutral", "identification"],
+      "related": [],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "705.10",
+      "title": "Identification of Power Sources",
+      "text": "A permanent plaque, label or directory at each service equipment location (or an approved readily visible spot) shows where each power source disconnecting means is, lists emergency phone numbers of off-site entities servicing the sources, and carries the wording 'CAUTION: MULTIPLE SOURCES OF POWER'.",
+      "section": 7,
+      "keywords": ["plaque", "directory", "solar", "interconnected", "power source"],
+      "related": [],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.119(B)",
+      "title": "Identification of Equipment Grounding Conductors (B)",
+      "text": "An insulated equipment grounding conductor of 4 AWG or larger that is not green must be permanently identified as an EGC at each end and at every accessible point, by stripping the insulation, coloring it green at the termination, or green tape or labels at the termination; conductor bodies with no splices or unused hubs are exempt.",
+      "section": 2,
+      "keywords": ["equipment grounding conductor", "green", "identification", "color"],
+      "related": [],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "702.7(C)",
+      "title": "Signs for Optional Standby Systems (C)",
+      "text": "Where a power inlet is used for a temporary connection to a portable generator, a warning sign near the inlet states the type of system the inlet is wired for, based on the transfer equipment: bonded-neutral (separately derived) only, or floating-neutral (non-separately derived) only.",
+      "section": 7,
+      "keywords": ["generator", "inlet", "sign", "standby", "warning"],
+      "related": ["705.10"],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
     }
   ]
 }

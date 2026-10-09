@@ -152,6 +152,15 @@ NEC warning reports the 106 new violations needed); an authoring checklist and s
 yet and no scene uses `ViolationVariant`, since neither the scenes nor the extra violations exist. Mark a code `enforce` when it
 reaches its target.
 
+**Phase 1 status (first batch).** 22 violations in arc-fault protection (7), working space and access (6) and identification and
+marking (9) are in, each drafted and then checked in a second pass against public sources (`docs/expert-review/PHASE1_VERIFICATION.md`),
+with 12 new reference entries. The NEC pool shortfall fell from 106 to 84. Held out: items that rested on one source, a case with an
+unworkable scene, and the whole load-calculation batch, which waits on an edition decision (the sources disagree on 2023 and 2026
+numbering for Articles 200 and 220). Still to author: load calculation, conductor sizing, disconnecting means, equipment installation,
+branch circuits, overcurrent protection, shock protection, special locations, wiring methods and earthing, plus the rest of the three
+skills above. Lesson for the rest: the first drafts were written from memory and about a third needed their reference letter or number
+corrected, so every batch goes through the same two steps, and agents must load web tools before they research.
+
 Phases 0 and 1 can start now. Phase 1 content can be written as data before the 3D scenes exist, but it cannot be
 played or checked against the scene rule until the matching scene state is built.
 

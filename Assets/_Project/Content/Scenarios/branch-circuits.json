@@ -421,6 +421,203 @@
           "amps": 15
         }
       }
+    },
+    {
+      "violationId": "BC-HALLWAY-001",
+      "description": "Hallway receptacle circuit is fed by a plain breaker with no arc-fault protection",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.12(B)",
+          "text": "In a dwelling unit, 120 V 10 A, 15 A and 20 A branch circuits serving outlets or devices in hallways and the other listed areas need arc-fault protection by one of the means in 210.12(A), usually a combination-type {term:arc-fault-device}."
+        }
+      ],
+      "componentObjectName": "Hallway_Receptacle",
+      "hintText": "Look at the {term:breaker} feeding the hallway outlets and read what is printed on it.",
+      "componentType": "Receptacle",
+      "inspectionNote": "The hallway receptacle is fed from an ordinary breaker with no test button or arc-fault marking. The circuit should show an arc-fault device in the {term:panel}.",
+      "conceptId": "arc-fault-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneScope": {
+        "protection": "afci",
+        "receptacle": {
+          "id": "Hallway_Receptacle",
+          "room": "hallway",
+          "protectedBy": [],
+          "volts": 120,
+          "amps": 15
+        }
+      }
+    },
+    {
+      "violationId": "BC-DINING-001",
+      "description": "Dining room receptacle circuit is protected by a standard breaker, not an arc-fault device",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.12(B)",
+          "text": "Dining room outlets on 120 V 10 A, 15 A and 20 A dwelling-unit circuits need arc-fault protection by one of the means in 210.12(A)."
+        }
+      ],
+      "componentObjectName": "DiningRoom_Receptacle",
+      "hintText": "Check the {term:breaker} for the circuit that serves the dining room wall outlets.",
+      "componentType": "Receptacle",
+      "inspectionNote": "The breaker labelled for the dining room has no test button and no arc-fault marking. Compare it with a breaker that carries both.",
+      "conceptId": "arc-fault-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneScope": {
+        "protection": "afci",
+        "receptacle": {
+          "id": "DiningRoom_Receptacle",
+          "room": "dining-room",
+          "protectedBy": [],
+          "volts": 120,
+          "amps": 15
+        }
+      }
+    },
+    {
+      "violationId": "BC-FAMILYROOM-001",
+      "description": "Family room receptacle circuit has only a standard breaker",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.12(B)",
+          "text": "Family room outlets on 120 V 10 A, 15 A and 20 A dwelling-unit circuits need arc-fault protection by one of the means in 210.12(A), not just overcurrent protection."
+        }
+      ],
+      "componentObjectName": "FamilyRoom_Receptacle",
+      "hintText": "Follow the family room outlets back to the {term:panel} and inspect the protective device.",
+      "componentType": "Receptacle",
+      "inspectionNote": "The family room circuit lands on a plain single-pole breaker. There is no arc-fault test button or marking on its face.",
+      "conceptId": "arc-fault-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneScope": {
+        "protection": "afci",
+        "receptacle": {
+          "id": "FamilyRoom_Receptacle",
+          "room": "family-room",
+          "protectedBy": [],
+          "volts": 120,
+          "amps": 15
+        }
+      }
+    },
+    {
+      "violationId": "BC-CLOSET-001",
+      "description": "Walk-in closet receptacle is on a circuit with no arc-fault protection",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.12(B)",
+          "text": "Closets are among the dwelling-unit areas where 120 V 10 A, 15 A and 20 A circuits need arc-fault protection by one of the means in 210.12(A)."
+        }
+      ],
+      "componentObjectName": "Closet_Receptacle",
+      "hintText": "Closets are easy to forget. Check what protects the circuit for this outlet.",
+      "componentType": "Receptacle",
+      "inspectionNote": "A receptacle in the walk-in closet is supplied by a standard breaker. Nothing on the breaker or the receptacle shows arc-fault protection.",
+      "conceptId": "arc-fault-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false,
+      "sceneScope": {
+        "protection": "afci",
+        "receptacle": {
+          "id": "Closet_Receptacle",
+          "room": "closet",
+          "protectedBy": [],
+          "volts": 120,
+          "amps": 15
+        }
+      }
+    },
+    {
+      "violationId": "BC-KITCHEN-001",
+      "description": "Kitchen counter circuit has ground-fault protection only and no arc-fault protection",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.12(B)",
+          "text": "Kitchen outlets on dwelling-unit 120 V 10 A, 15 A and 20 A circuits need arc-fault protection by one of the means in 210.12(A), in addition to any ground-fault protection the counter location needs."
+        }
+      ],
+      "componentObjectName": "KitchenArc_Receptacle",
+      "hintText": "The counter outlet is protected against one hazard. Ask whether it is protected against another.",
+      "componentType": "Receptacle",
+      "inspectionNote": "The kitchen receptacle is a ground-fault type with test and reset buttons, fed by a plain breaker. The circuit has no arc-fault device at the {term:panel} or at the first outlet.",
+      "conceptId": "arc-fault-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false,
+      "sceneScope": {
+        "protection": "afci",
+        "receptacle": {
+          "id": "KitchenArc_Receptacle",
+          "room": "kitchen",
+          "protectedBy": [
+            "gfci"
+          ],
+          "volts": 120,
+          "amps": 15
+        }
+      }
+    },
+    {
+      "violationId": "BC-LAUNDRY-001",
+      "description": "Laundry area receptacle circuit has ground-fault protection only and no arc-fault protection",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.12(B)",
+          "text": "Laundry areas are on the dwelling-unit list needing arc-fault protection for 120 V 10 A, 15 A and 20 A circuits, by one of the means in 210.12(A)."
+        }
+      ],
+      "componentObjectName": "Laundry_Receptacle",
+      "hintText": "Ground-fault protection is not the same as arc-fault protection. Check what protects this circuit.",
+      "componentType": "Receptacle",
+      "inspectionNote": "The washer receptacle is supplied by a ground-fault device on a standard breaker with no arc-fault marking. Ground-fault protection alone does not meet the arc-fault requirement.",
+      "conceptId": "arc-fault-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false,
+      "sceneScope": {
+        "protection": "afci",
+        "receptacle": {
+          "id": "Laundry_Receptacle",
+          "room": "laundry",
+          "protectedBy": [
+            "gfci"
+          ],
+          "volts": 120,
+          "amps": 15
+        }
+      }
+    },
+    {
+      "violationId": "BC-EXTENSION-001",
+      "description": "New bedroom outlets were added to an existing circuit that still has a plain breaker",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "210.12(E)",
+          "text": "When branch-circuit wiring serving the dwelling areas in 210.12(B) is modified, replaced or extended, the circuit needs arc-fault protection by a 210.12(A) means or an outlet branch-circuit AFCI at the first receptacle outlet of the existing circuit. A short extension adding no outlets or devices is excepted."
+        }
+      ],
+      "componentObjectName": "BedroomAddition_Receptacle",
+      "hintText": "Look at a room added to the house later. What changed on the circuit that feeds it?",
+      "componentType": "Receptacle",
+      "inspectionNote": "A bedroom addition adds two new receptacles on a long cable run from an older circuit that still uses a plain breaker. The run is more than 6 ft and adds outlets, so the short-extension exception does not apply.",
+      "conceptId": "arc-fault-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false
     }
   ]
 }
