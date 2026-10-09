@@ -2,7 +2,7 @@
   "id": "scenario-commercial",
   "sceneName": "CommercialInspection",
   "displayName": "Commercial Installation Inspection",
-  "description": "Inspect a small commercial building's electrical installation including motor circuits, feeders, load calculations, and equipment disconnects. Verify proper conductor sizing, overcurrent protection, and NEC compliance for commercial occupancies.",
+  "description": "Inspect a small commercial building's electrical installation including motor circuits, feeders, load calculations, and equipment disconnects. Verify proper conductor sizing, overcurrent protection, and code compliance for commercial occupancies.",
   "environmentDescription": "A small commercial space with multiple motor installations (HVAC compressors, exhaust fans), a mechanical room with subpanel and feeders, a battery/UPS closet, and an office area with general receptacle and lighting circuits.",
   "expertTimeLimit": 1500,
   "availableDifficulties": [
@@ -66,13 +66,13 @@
           "reference": "28-604",
           "text": "Install a motor's disconnecting means in sight of the motor and its starter, and within 9 m of them.",
           "hintText": "The disconnect must be within sight of the motor and its starter, and within 9 m of them.",
-          "inspectionNote": "The motor disconnect is located around a corner, out of sight from the motor. The CEC requires the disconnect to be within sight of the motor and within 9 m of it."
+          "inspectionNote": "The motor disconnect is located around a corner, out of sight from the motor. The code requires the disconnect to be within sight of the motor and within 9 m of it."
         }
       ],
       "componentObjectName": "Motor1_Disconnect_Remote",
       "hintText": "The disconnect must be within sight from the motor and its controller. 'Within sight' means visible and not more than 50 feet away.",
       "componentType": "Motor Disconnect",
-      "inspectionNote": "The motor disconnect is located around a corner, out of sight from the motor. NEC requires the disconnect to be within sight of the motor it controls.",
+      "inspectionNote": "The motor disconnect is located around a corner, out of sight from the motor. The code requires the disconnect to be within sight of the motor it controls.",
       "conceptId": "disconnecting-means",
       "severity": "Major",
       "minimumDifficulty": "Beginner",
@@ -148,7 +148,7 @@
       "componentObjectName": "Office_ReceptacleLoadCalc",
       "hintText": "In commercial occupancies, each general-use receptacle outlet must be calculated at a minimum of 180 VA per strap.",
       "componentType": "Receptacle Load",
-      "inspectionNote": "The load calculation uses 90 VA per receptacle instead of the required minimum 180 VA per outlet per NEC 220.14.",
+      "inspectionNote": "The load calculation uses 90 VA per receptacle instead of the required minimum 180 VA per outlet under the load calculation rules.",
       "conceptId": "load-calculation",
       "severity": "Major",
       "minimumDifficulty": "Standard",

@@ -75,7 +75,7 @@ namespace NECInspector.LogicTests
             var withoutLicense = new CodeProfileManifest
             {
                 id = nec.manifest.id, displayName = nec.manifest.displayName, edition = nec.manifest.edition, region = nec.manifest.region,
-                artSet = nec.manifest.artSet, reviewStatus = nec.manifest.reviewStatus, license = null
+                units = nec.manifest.units, artSet = nec.manifest.artSet, reviewStatus = nec.manifest.reviewStatus, license = null
             };
             t.IsTrue(CodeProfileValidator.Validate(withoutLicense, nec.articles, nec.tables, nec.terminology).Any(e => e.Contains("license")),
                 "a profile without a license record is rejected");

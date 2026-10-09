@@ -133,7 +133,7 @@
     {
       "reference": "314.1",
       "title": "Dividing an installation into circuits",
-      "text": "The installation is divided into several circuits so that a fault affects as little as possible, safe maintenance is possible and nuisance tripping is limited. The UK has no fixed list of dedicated circuits like the NEC's.",
+      "text": "The installation is divided into several circuits so that a fault affects as little as possible, safe maintenance is possible and nuisance tripping is limited. The UK has no fixed list of dedicated circuits like the North American rule.",
       "section": 3,
       "keywords": ["final circuit", "circuit division", "ring final", "radial"],
       "related": [],
@@ -143,7 +143,7 @@
     {
       "reference": "311.1",
       "title": "Maximum demand",
-      "text": "The designer assesses the maximum demand, with diversity, to size the supply and the conductors. The standard diversity tables are in IET guidance, not in BS 7671 itself.",
+      "text": "The designer assesses the maximum demand, with diversity, to size the supply and the conductors. The standard diversity tables are in industry guidance, not in the regulations themselves.",
       "section": 3,
       "keywords": ["maximum demand", "diversity", "design current"],
       "related": [],
@@ -273,7 +273,7 @@
     {
       "reference": "132.12",
       "title": "Accessibility and maintenance",
-      "text": "Equipment is installed so that it can be reached for operating, inspecting, testing and maintaining. BS 7671 gives no fixed clearance dimensions; a duty to provide adequate working space comes from the Electricity at Work Regulations 1989.",
+      "text": "Equipment is installed so that it can be reached for operating, inspecting, testing and maintaining. The regulations give no fixed clearance dimensions; a duty to provide adequate working space comes from the Electricity at Work Regulations 1989.",
       "section": 1,
       "keywords": ["accessibility", "maintenance", "working space", "access"],
       "related": ["421.1.201"],

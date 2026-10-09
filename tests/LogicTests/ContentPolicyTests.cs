@@ -55,8 +55,42 @@ namespace NECInspector.LogicTests
             {
                 string text = File.ReadAllText(Path.Combine(root, rel));
                 foreach (string word in pathwayWords)
-                    t.IsTrue(!Regex.IsMatch(text, $@"{Regex.Escape(word)}", RegexOptions.IgnoreCase),
+                    t.IsTrue(!Regex.IsMatch(text, $@"\b{Regex.Escape(word)}\b", RegexOptions.IgnoreCase),
                         $"{rel} does not name a training pathway or credential body ('{word}')");
+            }
+
+            StudentTextNamesNoCode(t, root);
+        }
+
+        // The student picks a region; the code behind it is never named in student-facing text
+        // (UI strings, scenario and card content, and every code's reference entries).
+        private static void StudentTextNamesNoCode(TestContext t, string root)
+        {
+            t.Begin("content policy: no code names shown to students");
+
+            var codeName = new Regex(@"\b(NEC|CEC|NFPA|CSA|IET|BSI|BS ?7671|C22\.1)\b");
+
+            foreach (string file in Directory.GetFiles(Path.Combine(root, "Assets/_Project/Scripts/UI"), "*.cs"))
+            {
+                int line = 0;
+                foreach (string raw in File.ReadLines(file))
+                {
+                    line++;
+                    string trimmed = raw.TrimStart();
+                    if (trimmed.StartsWith("//") || trimmed.StartsWith("///") || raw.Contains("Debug.")) continue;
+                    foreach (Match literal in Regex.Matches(raw, @"""(?:[^""\\]|\\.)*"""))
+                        t.IsTrue(!codeName.IsMatch(literal.Value), $"{Path.GetFileName(file)}:{line} shows a code name to students: {literal.Value}");
+                }
+            }
+
+            var files = new List<string>();
+            foreach (string dir in new[] { "Scenarios", "Difficulty", "Certificates", "QuickReference", "Sandbox" })
+                files.AddRange(Directory.GetFiles(Path.Combine(root, "Assets/_Project/Content", dir), "*.json"));
+            files.AddRange(Directory.GetFiles(Path.Combine(root, "Assets/_Project/StreamingAssets/Codes"), "articles.json", SearchOption.AllDirectories));
+            foreach (string file in files)
+            {
+                var m = codeName.Match(File.ReadAllText(file));
+                t.IsTrue(!m.Success, $"{Path.GetFileName(file)} shows a code name to students ('{m.Value}')");
             }
         }
 

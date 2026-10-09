@@ -62,7 +62,7 @@ namespace NECInspector.LogicTests
         {
             t.Begin("profiles without skill tags");
 
-            var manifest = new CodeProfileManifest { id = "plain", displayName = "Plain", edition = "1", region = "US", artSet = "north-america", reviewStatus = "draft" };
+            var manifest = new CodeProfileManifest { id = "plain", displayName = "Plain", edition = "1", region = "US", units = "imperial", artSet = "north-america", reviewStatus = "draft" };
             var terminology = new CodeTerminology { codeName = "PL", terms = new TermEntry[0] };
             var articles = new[]
             {

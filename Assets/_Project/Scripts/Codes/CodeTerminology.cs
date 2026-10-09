@@ -42,9 +42,12 @@ namespace NECInspector.Codes
             return referencePrefix + reference;
         }
 
-        public string CitationsHeading => $"{codeName} Citations";
-        public string SectionsHeading => $"{codeName} {sectionLabel}s";
-        public string SelectReferencePrompt => $"Select {codeName} {referenceNoun}...";
+        // Student-facing wording never names the installation code; the student's region decides it.
+        public const string StudentCodeWord = "the code";
+
+        public string CitationsHeading => "Rule references";
+        public string SectionsHeading => $"{sectionLabel}s";
+        public string SelectReferencePrompt => "Select a rule reference...";
         public string SectionName(int section) => $"{sectionLabel} {section}";
 
         /// <summary>The active code's word for a neutral term key, or the fallback (the key if none) when it has none.</summary>
@@ -63,14 +66,14 @@ namespace NECInspector.Codes
         }
 
         /// <summary>
-        /// Replaces {code} with the code name, {term:key} with that code's word for the term, and
+        /// Replaces {code} with the neutral words "the code" (never the code name), {term:key} with that code's word for the term, and
         /// {Term:key} with the same word starting with a capital letter (for the start of a name or sentence).
         /// </summary>
         public string Format(string text)
         {
             if (string.IsNullOrEmpty(text)) return text;
 
-            string result = text.Replace("{code}", codeName);
+            string result = text.Replace("{code}", StudentCodeWord);
             return Regex.Replace(result, @"\{(term|Term):([A-Za-z0-9-]+)\}", match =>
             {
                 string word = Term(match.Groups[2].Value);

@@ -31,6 +31,13 @@ namespace NECInspector.Codes
             return All.FirstOrDefault(p => p.ProfileId == id);
         }
 
+        /// <summary>The loaded code that belongs to a region, or null.</summary>
+        public static DataCodeProfile ForRegion(string region)
+        {
+            var profile = RegionChoices.ProfileForRegion(All, region);
+            return profile == null ? null : Get(profile.ProfileId);
+        }
+
         /// <summary>Make a profile the active one. Returns false if it is not loaded.</summary>
         public static bool Activate(string id)
         {

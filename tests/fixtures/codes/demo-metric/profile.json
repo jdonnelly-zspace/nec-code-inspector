@@ -3,6 +3,7 @@
   "displayName": "Demo metric code (test fixture)",
   "edition": "0",
   "region": "GB",
+  "units": "metric",
   "artSet": "uk",
   "reviewStatus": "draft",
   "note": "Synthetic data for the logic tests. It is not any real code and must never ship in StreamingAssets/Codes. It proves a 230 V, millimetre-squared, non-North-American code runs through the engine with data only.",

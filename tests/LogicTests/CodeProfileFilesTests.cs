@@ -58,7 +58,7 @@ namespace NECInspector.LogicTests
                 var m = new CodeProfileManifest
                 {
                     id = nec.manifest.id, displayName = nec.manifest.displayName, edition = nec.manifest.edition,
-                    region = nec.manifest.region, reviewStatus = nec.manifest.reviewStatus, artSet = artSet
+                    region = nec.manifest.region, reviewStatus = nec.manifest.reviewStatus, units = nec.manifest.units, artSet = artSet
                 };
                 return CodeProfileValidator.Validate(m, nec.articles, nec.tables, nec.terminology).Any(e => e.Contains("artSet"));
             };

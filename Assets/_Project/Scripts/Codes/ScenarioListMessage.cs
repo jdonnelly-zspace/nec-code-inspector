@@ -10,14 +10,14 @@ namespace NECInspector.Codes
         public static string For(ICodeProfile profile, int listedScenarios)
         {
             if (profile == null)
-                return "No installation code is loaded, so no scenarios can be shown.";
+                return "No region is set up, so no scenarios can be shown.";
 
             if (!ArtSets.IsAvailable(profile.ArtSet))
-                return $"Scenarios are not available for {profile.DisplayName} yet: there is no scene art for its region. " +
-                       "You can still study its references.";
+                return "Scenarios are not available for your region yet: there is no scene art for it. " +
+                       "You can still study its rule references.";
 
             if (listedScenarios <= 0)
-                return $"No scenarios cover {profile.DisplayName} yet.";
+                return "No scenarios cover your region yet.";
 
             return "";
         }

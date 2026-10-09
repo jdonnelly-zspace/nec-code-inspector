@@ -39,9 +39,9 @@ namespace NECInspector.LogicTests
             t.Equal("", nec.ReferenceLabel(""), "empty reference");
             t.Equal("", nec.ReferenceLabel(null), "null reference");
 
-            t.Equal("NEC Citations", nec.CitationsHeading, "citations heading");
-            t.Equal("NEC Chapters", nec.SectionsHeading, "sections heading");
-            t.Equal("Select NEC Article...", nec.SelectReferencePrompt, "dropdown prompt");
+            t.Equal("Rule references", nec.CitationsHeading, "citations heading never names the code");
+            t.Equal("Chapters", nec.SectionsHeading, "sections heading uses the section name only");
+            t.Equal("Select a rule reference...", nec.SelectReferencePrompt, "dropdown prompt never names the code");
             t.Equal("Chapter 2", nec.SectionName(2), "section name");
         }
 
@@ -51,9 +51,9 @@ namespace NECInspector.LogicTests
             var uk = Uk();
 
             t.Equal("Reg. 411.3", uk.ReferenceLabel("411.3"), "reference label uses the code's prefix");
-            t.Equal("BS 7671 Citations", uk.CitationsHeading, "citations heading uses the code name");
-            t.Equal("BS 7671 Parts", uk.SectionsHeading, "sections heading uses the code's section name");
-            t.Equal("Select BS 7671 Regulation...", uk.SelectReferencePrompt, "dropdown prompt uses the code's noun");
+            t.Equal("Rule references", uk.CitationsHeading, "citations heading is the same under every code");
+            t.Equal("Parts", uk.SectionsHeading, "sections heading uses the code's section name");
+            t.Equal("Select a rule reference...", uk.SelectReferencePrompt, "dropdown prompt is the same under every code");
             t.Equal("Part 4", uk.SectionName(4), "section name");
         }
 
@@ -63,8 +63,8 @@ namespace NECInspector.LogicTests
             var nec = CodeTerminology.CreateNecDefaults();
             var uk = Uk();
 
-            t.Equal("NEC uses grounding", nec.Format("{code} uses {term:grounding}"), "NEC tokens");
-            t.Equal("BS 7671 uses earthing", uk.Format("{code} uses {term:grounding}"), "UK tokens");
+            t.Equal("the code uses grounding", nec.Format("{code} uses {term:grounding}"), "NEC tokens: {code} is neutral");
+            t.Equal("the code uses earthing", uk.Format("{code} uses {term:grounding}"), "UK tokens: {code} is neutral");
             t.Equal("ground-rod stays", uk.Format("{term:ground-rod} stays"), "unknown term falls back to its key");
             t.Equal("no tokens here", nec.Format("no tokens here"), "text without tokens is unchanged");
             t.Equal("", nec.Format(""), "empty text");
@@ -122,6 +122,7 @@ namespace NECInspector.LogicTests
             public string Edition => "test";
             public string Region => "UK";
             public string ArtSet => "north-america";
+            public string Units => "imperial";
             public string ReviewStatus => "draft";
             public bool IsLoaded => true;
             public int ArticleCount => 0;

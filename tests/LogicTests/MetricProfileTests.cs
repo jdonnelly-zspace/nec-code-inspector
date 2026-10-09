@@ -74,7 +74,7 @@ namespace NECInspector.LogicTests
             t.Equal("Reg. 411.3.3", terms.ReferenceLabel("411.3.3"), "the reference prefix comes from the profile");
             t.Equal("earthing and MCB", terms.Format("{term:grounding} and {term:breaker}"), "terms use the code's words");
             t.Equal("Consumer unit", terms.Format("{Term:panel}"), "a capitalised token starts with a capital");
-            t.Equal("DM", terms.Format("{code}"), "the code name token");
+            t.Equal("the code", terms.Format("{code}"), "the code token is neutral, never the code name");
             t.Equal("no-such-key stays", terms.Format("{term:no-such-key} stays"), "an unknown key falls back to the key");
         }
 
@@ -149,14 +149,14 @@ namespace NECInspector.LogicTests
             t.Begin("a metric code in the picker and scenario list");
 
             var nec = ProfileFiles.Load(TestContext.RepoRoot(), CodeProfileIds.Nec).Build();
-            var choices = CodeProfileChoices.Build(new ICodeProfile[] { nec, profile }, CodeProfileIds.Nec, id => id == CodeProfileIds.Nec ? 6 : 6, 6);
-            var metric = choices.Single(c => c.id == "demo-metric");
+            var choices = RegionChoices.Build(new ICodeProfile[] { nec, profile }, CodeProfileIds.Nec, id => id == CodeProfileIds.Nec ? 6 : 6, 6);
+            var metric = choices.Single(c => c.profileId == "demo-metric");
 
             t.Equal("United Kingdom", metric.regionName, "the region is shown by name");
             t.IsTrue(!metric.artAvailable, "its art set has no art yet");
             t.Equal(0, metric.availableScenarios, "no scenarios are offered without art");
             t.IsTrue(ScenarioListMessage.For(profile, 0).Contains("no scene art"), "the menu explains the empty list");
-            t.IsTrue(metric.StatusText.StartsWith("Draft"), "it is shown as a draft");
+            t.Equal("metric", metric.units, "it is shown as metric");
             t.IsTrue(metric.SandboxText == "", "its own tables make the sandbox available");
         }
     }

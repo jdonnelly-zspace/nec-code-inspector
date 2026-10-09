@@ -3,6 +3,7 @@
   "displayName": "BS 7671 (IET Wiring Regulations)",
   "edition": "18th edition",
   "region": "GB",
+  "units": "metric",
   "artSet": "uk",
   "reviewStatus": "draft",
   "note": "Partial draft, written from public sources (IET, NICEIC, NAPIT, trade press and manufacturer guidance) in our own words; nobody has read the regulations. The 18th edition has had amendments (2022, 2024 and, according to trade press, Amendment 4 in 2026); the clause-by-clause effect of the latest ones is unchecked, so a UK-qualified expert must confirm every entry and the edition. No tables: the current-carrying capacity tables (Appendix 4), the maximum earth fault loop impedances and the bonding and cpc size tables are copyrighted, so the panel sandbox does not count toward this code. There is no UK scene art yet, so no scenarios are offered under this code.",

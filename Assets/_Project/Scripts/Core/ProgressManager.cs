@@ -86,6 +86,24 @@ namespace NECInspector.Core
             return string.IsNullOrEmpty(Data.activeCodeProfileId) ? Codes.CodeProfileLibrary.DefaultProfileId : Data.activeCodeProfileId;
         }
 
+        /// <summary>The region the student chose (empty until they choose one).</summary>
+        public string GetRegion() => Data.region ?? "";
+
+        /// <summary>
+        /// Save the region the student chose and apply the installation code for it. The code is never shown
+        /// to the student. Returns false (and changes nothing) if no loaded code belongs to the region.
+        /// </summary>
+        public bool SetRegion(string region)
+        {
+            var profile = Codes.RegionChoices.ProfileForRegion(Codes.CodeProfileLibrary.All, region);
+            if (profile == null || !Codes.CodeProfileLibrary.Activate(profile.ProfileId)) return false;
+
+            Data.region = Codes.RegionChoices.Normalize(region);
+            Data.activeCodeProfileId = profile.ProfileId;
+            Save();
+            return true;
+        }
+
         public void SetActiveCodeProfile(string profileId)
         {
             if (!Codes.CodeProfileLibrary.Activate(profileId)) return;
@@ -97,6 +115,10 @@ namespace NECInspector.Core
         /// <summary>Activate the student's code profile (called at startup); falls back to the default.</summary>
         public void ApplyActiveCodeProfile()
         {
+            // The student's region decides the code; a saved code id from before regions existed still works
+            var byRegion = Codes.RegionChoices.ProfileForRegion(Codes.CodeProfileLibrary.All, Data.region);
+            if (byRegion != null && Codes.CodeProfileLibrary.Activate(byRegion.ProfileId)) return;
+
             string id = GetActiveCodeProfileId();
             if (!Codes.CodeProfileLibrary.Activate(id) && id != Codes.CodeProfileLibrary.DefaultProfileId)
                 Codes.CodeProfileLibrary.Activate(Codes.CodeProfileLibrary.DefaultProfileId);
@@ -151,6 +173,7 @@ namespace NECInspector.Core
         public List<ScenarioProgress> completedScenarios = new List<ScenarioProgress>();
         public List<SandboxProgress> completedSandboxes = new List<SandboxProgress>();
         public SkillProgress skills = new SkillProgress();
+        public string region = "";                  // the region the student chose (for example US); decides the installation code
         public string activeCodeProfileId = "";
         public List<EarnedCertificate> earnedCertificates = new List<EarnedCertificate>();
         public float totalTimeSpent = 0f;

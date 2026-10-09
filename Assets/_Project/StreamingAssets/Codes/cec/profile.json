@@ -3,6 +3,7 @@
   "displayName": "CEC (CSA C22.1)",
   "edition": "2024",
   "region": "CA",
+  "units": "metric",
   "artSet": "north-america",
   "reviewStatus": "draft",
   "note": "Partial draft: only the rules that the scenarios cite, explained in our own words from public sources (CSA's public C22.1:21 index, provincial safety authority bulletins and trade-press guides). Rule numbers follow C22.1:24, which the Red Seal exam provides as of June 2025 (per Skilled Trades BC); older editions number several rules differently (for example dwelling receptacles 26-712, arc-fault 26-724). A credential expert must check each entry. No tables yet: CSA's tables are copyrighted, so the panel sandbox does not count toward this code.",

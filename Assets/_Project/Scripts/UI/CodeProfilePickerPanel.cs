@@ -10,9 +10,11 @@ using NECInspector.Data;
 namespace NECInspector.UI
 {
     /// <summary>
-    /// World-space panel for choosing the installation code to study under (NEC, CEC, ...).
-    /// Lists every loaded code profile with its review status and how much of the scenario content
-    /// it covers, and applies the choice at once. The choice is saved with the student's progress.
+    /// World-space panel for choosing the student's region. The region decides the installation code
+    /// and the unit system; the code itself is never named or offered. Lists each region that has a
+    /// code loaded, with its units and how much scenario content it covers, and applies the choice at
+    /// once. The choice is saved with the student's progress. (The class keeps its old name so scenes
+    /// that already reference it keep working.)
     /// </summary>
     public class CodeProfilePickerPanel : MonoBehaviour
     {
@@ -21,20 +23,20 @@ namespace NECInspector.UI
         [SerializeField] private GameObject _listItemPrefab;
 
         [Header("Detail")]
-        [SerializeField] private TextMeshProUGUI _currentCodeText;
+        [SerializeField] private TextMeshProUGUI _currentCodeText;   // shows the current region
         [SerializeField] private TextMeshProUGUI _detailText;
 
         [Header("Scenario counts")]
-        [Tooltip("Used to show how many scenarios each code covers")]
+        [Tooltip("Used to show how many scenarios each region covers")]
         [SerializeField] private ScenarioCatalogSO _scenarioCatalog;
 
         [Header("Controls")]
         [SerializeField] private UnityEngine.UI.Button _closeButton;
 
-        /// <summary>Raised after the student picks a different code.</summary>
+        /// <summary>Raised after the student picks a different region.</summary>
         public event Action OnCodeChanged;
 
-        private string _focusedId;
+        private string _focusedRegion;
 
         private void Awake()
         {
@@ -54,7 +56,7 @@ namespace NECInspector.UI
         public void Show()
         {
             gameObject.SetActive(true);
-            _focusedId = CodeProfiles.ActiveId;
+            _focusedRegion = RegionChoices.Normalize(CodeProfiles.Active?.Region);
             Refresh();
         }
 
@@ -69,29 +71,29 @@ namespace NECInspector.UI
 
             var choices = BuildChoices();
 
-            SetText(_currentCodeText, CurrentCodeLine());
+            SetText(_currentCodeText, CurrentRegionLine());
             RebuildList(choices);
 
-            var focused = choices.FirstOrDefault(c => c.id == _focusedId);
+            var focused = choices.FirstOrDefault(c => c.regionCode == _focusedRegion);
             SetText(_detailText, choices.Count == 0
-                ? "No installation codes were found."
+                ? "No regions are set up."
                 : focused?.Details ?? "");
         }
 
-        private List<CodeProfileChoice> BuildChoices()
+        private List<RegionChoice> BuildChoices()
         {
             var scenarios = _scenarioCatalog != null && _scenarioCatalog.scenarios != null
                 ? _scenarioCatalog.scenarios.Where(s => s != null).ToList()
                 : new List<ScenarioDefinitionSO>();
 
-            return CodeProfileChoices.Build(
+            return RegionChoices.Build(
                 CodeProfileLibrary.All,
                 CodeProfiles.ActiveId,
                 id => scenarios.Count(s => s.AppliesTo(id)),
                 scenarios.Count);
         }
 
-        private void RebuildList(List<CodeProfileChoice> choices)
+        private void RebuildList(List<RegionChoice> choices)
         {
             if (_listContent == null) return;
 
@@ -108,24 +110,25 @@ namespace NECInspector.UI
                 if (text != null) text.text = choice.Label;
 
                 var button = item.GetComponent<UnityEngine.UI.Button>();
-                string id = choice.id;
-                button?.onClick.AddListener(() => Choose(id));
+                string region = choice.regionCode;
+                button?.onClick.AddListener(() => Choose(region));
             }
         }
 
-        private void Choose(string profileId)
+        private void Choose(string region)
         {
             AudioManager.Instance?.PlayButtonClick();
-            _focusedId = profileId;
+            _focusedRegion = region;
 
-            if (profileId != CodeProfiles.ActiveId)
+            var profile = RegionChoices.ProfileForRegion(CodeProfileLibrary.All, region);
+            if (profile != null && profile.ProfileId != CodeProfiles.ActiveId)
             {
                 var progress = GameManager.Instance?.Progress;
                 if (progress != null)
                 {
-                    progress.SetActiveCodeProfile(profileId);   // saves the choice and activates the code
+                    if (!progress.SetRegion(region)) return;   // saves the choice and activates the code for the region
                 }
-                else if (!CodeProfileLibrary.Activate(profileId))   // no game manager (a scene played on its own)
+                else if (!CodeProfileLibrary.Activate(profile.ProfileId))   // no game manager (a scene played on its own)
                 {
                     return;
                 }
@@ -136,12 +139,12 @@ namespace NECInspector.UI
             Refresh();
         }
 
-        private static string CurrentCodeLine()
+        private static string CurrentRegionLine()
         {
             var profile = CodeProfiles.Active;
             return profile != null
-                ? $"Studying under: {profile.DisplayName} {profile.Edition}"
-                : "Studying under: no code loaded";
+                ? $"Your region: {RegionNames.Of(profile.Region)}"
+                : "Your region: not set";
         }
 
         private void SetText(TextMeshProUGUI tmp, string text)

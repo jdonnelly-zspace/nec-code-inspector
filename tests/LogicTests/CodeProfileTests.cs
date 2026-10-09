@@ -68,6 +68,7 @@ namespace NECInspector.LogicTests
             public string Edition => "test";
             public string Region => "US";
             public string ArtSet => "north-america";
+            public string Units => "imperial";
             public string ReviewStatus => "draft";
             public bool IsLoaded => true;
             public int ArticleCount => 0;
