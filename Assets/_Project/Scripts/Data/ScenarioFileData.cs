@@ -20,6 +20,7 @@ namespace NECInspector.Data
         public string description;
         public string environmentDescription;
         public int expertTimeLimit;
+        public SessionSize sessionSize;    // optional: how many violations a session draws from the pool, per difficulty (0 = all)
         public string[] availableDifficulties;
         public string assetPrefix;         // violation asset names: VD_{assetPrefix}_{violationId}
         public string violationFolder;     // under ScriptableObjects/Violations
@@ -78,6 +79,9 @@ namespace NECInspector.Data
                     if (!IsEnumName<DifficultyLevel>(d))
                         errors.Add($"unknown difficulty '{d}' in availableDifficulties");
             }
+
+            if (data.sessionSize != null && (data.sessionSize.beginner < 0 || data.sessionSize.standard < 0 || data.sessionSize.expert < 0))
+                errors.Add("sessionSize values cannot be negative (use 0 for all violations)");
 
             if (data.violations == null || data.violations.Length == 0)
             {

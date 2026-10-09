@@ -86,6 +86,29 @@ namespace NECInspector.Core
             return string.IsNullOrEmpty(Data.activeCodeProfileId) ? Codes.CodeProfileLibrary.DefaultProfileId : Data.activeCodeProfileId;
         }
 
+        private const int MAX_RECENT_VIOLATIONS = 60;
+
+        /// <summary>Ids of the violations the student saw lately, oldest first. A session prefers violations not in this list.</summary>
+        public IReadOnlyList<string> GetRecentViolationIds() => Data.recentViolationIds;
+
+        /// <summary>Remember the violations a session showed, keeping the most recent ones.</summary>
+        public void RememberViolations(IEnumerable<string> violationIds)
+        {
+            if (violationIds == null) return;
+
+            foreach (string id in violationIds)
+            {
+                if (string.IsNullOrEmpty(id)) continue;
+                Data.recentViolationIds.Remove(id);
+                Data.recentViolationIds.Add(id);
+            }
+
+            while (Data.recentViolationIds.Count > MAX_RECENT_VIOLATIONS)
+                Data.recentViolationIds.RemoveAt(0);
+
+            Save();
+        }
+
         /// <summary>The region the student chose (empty until they choose one).</summary>
         public string GetRegion() => Data.region ?? "";
 
@@ -173,6 +196,7 @@ namespace NECInspector.Core
         public List<ScenarioProgress> completedScenarios = new List<ScenarioProgress>();
         public List<SandboxProgress> completedSandboxes = new List<SandboxProgress>();
         public SkillProgress skills = new SkillProgress();
+        public List<string> recentViolationIds = new List<string>();   // violations shown in recent sessions, oldest first
         public string region = "";                  // the region the student chose (for example US); decides the installation code
         public string activeCodeProfileId = "";
         public List<EarnedCertificate> earnedCertificates = new List<EarnedCertificate>();

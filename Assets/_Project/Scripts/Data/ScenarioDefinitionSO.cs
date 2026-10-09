@@ -27,6 +27,9 @@ namespace NECInspector.Data
         [Header("Content")]
         public ViolationDefinitionSO[] violations;
 
+        [Tooltip("How many violations a session draws from the pool, per difficulty. 0 = all of them.")]
+        public SessionSize sessionSize = new SessionSize();
+
         [Header("Time")]
         [Tooltip("Time limit in seconds for Expert mode. 0 = no limit.")]
         public int expertTimeLimit = 1200; // 20 minutes

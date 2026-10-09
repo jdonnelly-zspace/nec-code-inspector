@@ -1,0 +1,8 @@
+{
+  "note": "Target size of each skill's violation pool per tier and code, from docs/CONTENT_PLAN.md. A tier's pool is the violations that apply to the code and are visible at that difficulty (Beginner = Foundation, Standard = Practitioner, Expert = Authority). While enforce is false, gaps are warnings; set it true once a code reaches its target so a regression fails the tests.",
+  "targets": [
+    { "code": "nec", "beginner": 4, "standard": 8, "expert": 12, "enforce": false },
+    { "code": "cec", "beginner": 2, "standard": 4, "expert": 6, "enforce": false },
+    { "code": "bs7671", "beginner": 2, "standard": 4, "expert": 6, "enforce": false }
+  ]
+}

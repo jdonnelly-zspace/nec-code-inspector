@@ -89,8 +89,11 @@ namespace NECInspector.LogicTests
             files.AddRange(Directory.GetFiles(Path.Combine(root, "Assets/_Project/StreamingAssets/Codes"), "articles.json", SearchOption.AllDirectories));
             foreach (string file in files)
             {
-                var m = codeName.Match(File.ReadAllText(file));
+                string text = File.ReadAllText(file);
+                var m = codeName.Match(text);
                 t.IsTrue(!m.Success, $"{Path.GetFileName(file)} shows a code name to students ('{m.Value}')");
+                // tools/new_violation.py leaves TODO markers; unfinished content must not ship
+                t.IsTrue(!text.Contains("TODO"), $"{Path.GetFileName(file)} still has a TODO placeholder");
             }
         }
 
