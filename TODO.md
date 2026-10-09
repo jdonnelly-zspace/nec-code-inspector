@@ -143,7 +143,7 @@ Decided: region-specific art is one set per region group (`docs/SCENE_DESIGN.md`
 - [ ] Expand the NEC entries in `Codes/nec/articles.json`, only for topics inside the app's skills (content policy)
 
 ### Ideas (not started)
-- [ ] Wireframe of the UI panels: a clickable HTML version exists (published as an artifact, not in the repo) and follows the region design. Auto-detecting the region from the system locale is also an idea, not built. Ideas for later: a Figma version if a designer takes over the screens, a Lucid screen-flow diagram (menu, picker, scenario, inspection, review, sandbox), and an inline widget for quick previews in chat. Any of these would need the Unity scenes built to show the real 3D layouts
+- [~] UI mockup: a click-through prototype of all 15 screens exists as a private artifact (one screen at a time, region switch, three difficulty variants of the flag panel; not in the repo). The older grayscale wireframe artifact can be deleted. Still to do: check it at phone width and in light mode, share it, collect feedback from the credential experts and teachers, and replace its SVG scenes with real scene art once the Unity scenes exist. Ideas for later: a Figma version if a designer takes over the screens, a Lucid screen-flow diagram, and auto-detecting the region from the system locale
 
 ### Future
 See docs/CONTENT_ROADMAP.md and docs/COMPLETED_STEPS.md
