@@ -1,6 +1,6 @@
 {
   "status": "draft",
-  "note": "Dwelling-unit protection scope as described for the 2023 NEC (210.8(A), 210.8(D) and 210.12(A)) from public summaries; 2026 numbering and any widening of AFCI scope are unverified. A credential expert must check every rule.",
+  "note": "Dwelling-unit protection scope as described for the 2023 NEC (210.8(A), 210.8(D) and 210.12(B)) from public summaries; 2026 numbering and any widening of AFCI scope are unverified. A credential expert must check every rule.",
   "rules": [
     {
       "id": "gfci-bathrooms",
@@ -141,7 +141,7 @@
     {
       "id": "afci-habitable-rooms",
       "protection": "afci",
-      "reference": "210.12(A)",
+      "reference": "210.12(B)",
       "rooms": [
         "kitchen",
         "family-room",
@@ -166,6 +166,6 @@
   "exemptions": [],
   "notModeled": [
     "Non-dwelling occupancies (210.8(B)) and the 2026 changes to the outdoor threshold and to AFCI scope",
-    "AFCI for dormitory units and guest rooms (210.12(B), (C)) and for extensions or modifications"
+    "AFCI for dormitory units (210.12(C)), guest rooms (210.12(D)) and for extensions or modifications (210.12(E))"
   ]
 }

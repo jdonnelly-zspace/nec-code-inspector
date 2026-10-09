@@ -33,7 +33,7 @@
       "summary": "Arc-Fault Circuit Interrupter (AFCI) protection is required for 120 V, 15 A and 20 A branch circuits that serve the dwelling-unit rooms the code lists: bedrooms, living rooms, kitchens, dining rooms, hallways, closets, laundry areas and similar rooms.",
       "keyRule": "AFCI protection is required in the listed habitable rooms of dwelling units.",
       "codeReferences": [
-        "210.12(A)"
+        "210.12(B)"
       ],
       "keywords": [
         "AFCI",

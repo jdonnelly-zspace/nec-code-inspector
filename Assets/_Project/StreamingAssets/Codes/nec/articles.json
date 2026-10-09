@@ -141,7 +141,7 @@
       "isNewInEdition": false
     },
     {
-      "reference": "210.12(A)",
+      "reference": "210.12(B)",
       "title": "AFCI Protection - Dwelling Units",
       "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the methods in 210.12(A)(1) through (A)(6).",
       "section": 2,
@@ -471,12 +471,12 @@
       "isNewInEdition": false
     },
     {
-      "reference": "210.12(B)",
+      "reference": "210.12(E)",
       "title": "AFCI Protection - Branch Circuit Extensions or Modifications",
-      "text": "Wiring changes, replacements or extensions on a circuit in the 210.12(A) areas bring the circuit under the same arc-fault protection methods, 210.12(A)(1) through (A)(6).",
+      "text": "Wiring changes, replacements or extensions on a circuit in the 210.12(B) areas bring the circuit under the same arc-fault protection methods, 210.12(A)(1) through (A)(6).",
       "section": 2,
       "keywords": ["AFCI", "arc fault", "modification", "extension", "branch circuit"],
-      "related": ["210.12(A)"],
+      "related": ["210.12(B)"],
       "conceptId": "arc-fault-protection",
       "isNewInEdition": false
     },

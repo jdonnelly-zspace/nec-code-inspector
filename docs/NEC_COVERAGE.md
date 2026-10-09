@@ -22,8 +22,8 @@
 | Art. 210.8(A)(2) | GFCI - Garages | BC-GFCI-GARAGE-001 | Beginner | Major |
 | Art. 210.52(A) | Receptacle spacing - General | BC-SPACING-WALL-001 | Beginner | Major |
 | Art. 240.4(D) | Small conductors (14 AWG on 20A) | BC-WIRE-14AWG-001 | Beginner | Critical |
-| Art. 210.12(A) | AFCI - Bedrooms | BC-AFCI-BEDROOM-001 | Standard | Critical |
-| Art. 210.12(A) | AFCI - Living rooms | BC-AFCI-LIVING-001 | Standard | Critical |
+| Art. 210.12(B) | AFCI - Bedrooms | BC-AFCI-BEDROOM-001 | Standard | Critical |
+| Art. 210.12(B) | AFCI - Living rooms | BC-AFCI-LIVING-001 | Standard | Critical |
 | Art. 210.52(C) | Receptacle spacing - Countertops | BC-SPACING-COUNTER-001 | Standard | Major |
 | Art. 210.11(C)(1) | Dedicated bathroom circuit | BC-DEDICATED-BATH-001 | Standard | Major |
 | Art. 210.11(C)(3) | Two small-appliance circuits | BC-DEDICATED-KITCHEN-001 | Standard | Major |

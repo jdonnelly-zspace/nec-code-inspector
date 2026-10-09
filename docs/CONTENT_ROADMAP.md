@@ -103,8 +103,8 @@ The most heavily tested safety topic on licensing exams. zSpace advantage: walk 
 | Unfinished basements | Art. 210.8(A)(6) | Planned |
 | Boathouses | Art. 210.8(A)(8) | Planned |
 | **AFCI — Dwelling Unit** | | |
-| AFCI required rooms | Art. 210.12(A) (2026: updated list) | Built |
-| Branch circuit extensions | Art. 210.12(B) | Built |
+| AFCI required rooms | Art. 210.12(B) (2026: updated list) | Built |
+| Branch circuit extensions | Art. 210.12(E) | Built |
 | **GFCI — Non-Dwelling** | | |
 | Commercial kitchens | Art. 210.8(B)(1) | Planned |
 | Sinks (non-dwelling) | Art. 210.8(B)(5) | Planned |

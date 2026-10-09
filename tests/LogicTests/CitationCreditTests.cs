@@ -40,13 +40,13 @@ namespace NECInspector.LogicTests
             t.Near(1, CitationCredit.Outcome(nec, shock, "210.8(A)(1)", "210.8(A)(1)"), "the expected citation earns full credit");
             t.Near(0.75, CitationCredit.Outcome(nec, shock, "210.8(A)(6)", "210.8(A)(1)"), "another GFCI entry (kitchens for bathrooms) earns three quarters");
             t.Near(0.75, CitationCredit.Outcome(nec, shock, "210.8(A)(6)(a)", "210.8(A)(1)"), "a sub-item of a same-skill entry earns three quarters too");
-            t.Near(0.5, CitationCredit.Outcome(nec, shock, "210.12(A)", "210.8(A)(1)"), "an entry of another skill earns half");
+            t.Near(0.5, CitationCredit.Outcome(nec, shock, "210.12(B)", "210.8(A)(1)"), "an entry of another skill earns half");
             t.Near(0.5, CitationCredit.Outcome(nec, shock, "250.50", "210.8(A)(1)"), "a grounding entry for a GFCI violation earns half");
             t.Near(0.5, CitationCredit.Outcome(nec, shock, "999.9", "210.8(A)(1)"), "a reference that is not in the code earns half");
             t.Near(0.5, CitationCredit.Outcome(nec, shock, "", "210.8(A)(1)"), "no citation earns half");
             t.Near(0.5, CitationCredit.Outcome(nec, "", "210.8(A)(6)", "210.8(A)(1)"), "a violation with no skill gives no same-skill credit");
 
-            t.Equal(ConceptIds.ArcFaultProtection, CitationCredit.ConceptOf(nec, "210.12(A)"), "the skill of an entry");
+            t.Equal(ConceptIds.ArcFaultProtection, CitationCredit.ConceptOf(nec, "210.12(B)"), "the skill of an entry");
             t.Equal("", CitationCredit.ConceptOf(nec, "999.9"), "an unknown reference has no skill");
             t.Equal("", CitationCredit.ConceptOf(null, "210.12(A)"), "no profile, no skill");
             t.Near(1, CitationCredit.Outcome(null, shock, "210.8(A)(1)", "210.8(A)(1)"), "without a profile the default matcher still gives full credit");

@@ -136,7 +136,7 @@ All CEC rows are low to medium confidence; the 2026 NEC rows are low.
 ## 11. What the expert still needs to decide
 
 1. Confirm every change in sections 2, 3 and 6 against the 2026 NEC and C22.1:24 (the worksheets flag each row: "Corrected in pre-review").
-2. The 2026 NEC numbering for 210.8(A), 210.11(C), 210.52 and 210.12, where the extensions rule letter looks stale (we left `210.12(B)` unchanged; the letter is probably (D) or later).
+2. The 2026 NEC numbering for 210.8(A), 210.11(C), 210.52 and 210.12, where the AFCI letters were wrong and are now corrected: in the 2023 numbering the dwelling-unit room rule is 210.12(B) (the means of protection are (A)(1) to (A)(6)), dormitories are (C), guest rooms (D) and extensions or modifications (E). Sources: a city building department's AFCI sheet for the 2023 NEC and two electrical-licence reference pages for 2023 and 2026; the NFPA text itself could not be opened, so the expert still confirms the letters and the 2026 edition.
 3. Doubts left unchanged: the several-motors violation (title is about protection, 430.24 is about conductors), the 250.24(A) sub-item, the single-rod supplement rule, and which `isNewInEdition` flags are right for 2026.
 4. Wiring-methods skill: add or drop the four parked articles.
 5. Which edition the Red Seal exam is written against, and whether 14-104 sub-rule letters and the 3 m rod numbers are right.
