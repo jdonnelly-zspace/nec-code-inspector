@@ -399,6 +399,44 @@
         "unit": "in",
         "note": "from roof surface to the bottom of the conduit"
       }
+    },
+    {
+      "violationId": "COM-ALUM-COLUMN-001",
+      "description": "A sub-panel feeder of 4 AWG aluminum serves an 80 A load; it was sized from the copper column, not the aluminum one",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "310.16",
+          "text": "Ampacity comes from the table column for the conductor material and temperature rating. Aluminum carries less current than copper of the same size, so copper values cannot be used for aluminum conductors."
+        }
+      ],
+      "componentObjectName": "Feeder_Aluminum_4AWG_80A",
+      "hintText": "Check the feeder's material marking against the load it serves.",
+      "componentType": "Conductor",
+      "inspectionNote": "The feeder tag reads 4 AWG aluminum and the sub-panel schedule shows an 80 A load on an 80 A breaker. A 4 AWG copper conductor would carry about 85 A, but 4 AWG aluminum carries only about 65 A at the 75 C column.",
+      "conceptId": "conductor-sizing",
+      "severity": "Major",
+      "minimumDifficulty": "Beginner",
+      "isSubtle": false
+    },
+    {
+      "violationId": "COM-NEUTRAL-NONLINEAR-001",
+      "description": "A 4-wire feeder serving LED and computer loads has 1/0 AWG copper conductors sized without counting the neutral as current-carrying",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "310.15(E)(3)",
+          "text": "On a 4-wire three-phase wye circuit where most of the load is nonlinear, the neutral carries harmonic current and counts as a current-carrying conductor when applying the adjustment factors for bundled conductors."
+        }
+      ],
+      "componentObjectName": "Feeder_NeutralDerate_Conduit",
+      "hintText": "Count the conductors in the conduit, then think about what kind of loads the neutral carries.",
+      "componentType": "Conductor",
+      "inspectionNote": "A conduit holds three phase conductors and a neutral of 1/0 AWG THHN copper feeding a panel labelled for servers and LED drivers, with a 140 A load per phase. Counting the neutral gives four conductors and an 80 percent factor, about 136 A, which is below the load.",
+      "conceptId": "conductor-sizing",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
     }
   ]
 }

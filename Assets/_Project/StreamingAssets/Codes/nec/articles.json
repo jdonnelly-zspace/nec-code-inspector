@@ -1499,6 +1499,116 @@
       "related": ["314.16"],
       "conceptId": "wiring-methods",
       "isNewInEdition": false
+    },
+    {
+      "reference": "406.4(D)(4)",
+      "title": "Replacement Receptacles - Arc-Fault Protection",
+      "text": "Where a receptacle outlet is in an area that needs arc-fault protection, a replacement receptacle there must be a listed outlet-type arc-fault receptacle, be protected by one upstream, or be on a listed combination-type arc-fault breaker. No exceptions found in the 2023 sources.",
+      "section": 4,
+      "keywords": ["replacement receptacle", "AFCI", "406.4"],
+      "related": ["210.12(B)", "210.12(E)"],
+      "conceptId": "arc-fault-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.64(C)",
+      "title": "Grounding Electrode Conductor - Continuous",
+      "text": "The conductor to an electrode runs in one unbroken length. Where a splice is needed, only irreversible compression connectors or exothermic welds are allowed for wire-type conductors; wire nuts and split bolts are not.",
+      "section": 2,
+      "keywords": ["GEC", "splice", "continuous", "wire nut"],
+      "related": ["250.64(A)", "250.66"],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "314.29(A)",
+      "title": "Wiring to Be Accessible (A)",
+      "text": "Boxes and conduit bodies in buildings have to be installed so the wiring and devices inside are accessible. Accessible means reachable without damaging the building structure or finish and not permanently closed in by it.",
+      "section": 3,
+      "keywords": ["junction box", "accessible", "concealed"],
+      "related": ["314.16"],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.22",
+      "title": "Grounded Conductor, No Overcurrent Device",
+      "text": "No overcurrent device may be placed in series with an intentionally grounded conductor, unless the device opens every conductor of the circuit together and no pole can act alone, or motor overload rules call for it.",
+      "section": 2,
+      "keywords": ["neutral", "grounded conductor", "fuse", "overcurrent device"],
+      "related": [],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.22(C)",
+      "title": "Series Combination Ratings, Field Marking",
+      "text": "When breakers or fuses rely on a manufacturer's series combination rating, the equipment must carry a readable field marking saying so, with the rating and a caution that identified replacement parts are required.",
+      "section": 1,
+      "keywords": ["series rating", "interrupting rating", "label"],
+      "related": [],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "310.15(E)(3)",
+      "title": "Neutral Conductor - Nonlinear Loads",
+      "text": "On a 4-wire three-phase wye circuit where most of the load is nonlinear, the neutral carries harmonic current and counts as a current-carrying conductor when applying the adjustment factors for bundled conductors.",
+      "section": 3,
+      "keywords": ["neutral", "nonlinear loads", "derating", "harmonics"],
+      "related": ["310.15(C)(1)", "310.16"],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "230.72(A)",
+      "title": "Grouping of service disconnects",
+      "text": "The two to six service disconnects for a service must be grouped, and each marked with the load it serves. The one exception is a water-pump disconnect that also serves fire protection, which may be remote if a plaque at the group shows where it is.",
+      "section": 2,
+      "keywords": ["service disconnect", "grouping", "service equipment"],
+      "related": ["230.71(B)", "230.70(A)"],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "408.38",
+      "title": "Panelboards - Enclosure and Dead Front",
+      "text": "A panelboard goes in a cabinet or enclosure made for it and is dead front, meaning no live parts can be touched from the operating side.",
+      "section": 4,
+      "keywords": ["dead front", "cover", "panelboard", "enclosure"],
+      "related": ["408.7", "110.12"],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "408.41",
+      "title": "Panelboards - Grounded Conductor Terminations",
+      "text": "Each grounded (neutral) conductor ends in its own terminal inside the panelboard, one not also used for another conductor. Parallel conductors of one circuit may share a terminal marked for more than one conductor.",
+      "section": 4,
+      "keywords": ["neutral", "terminal", "neutral bar", "panelboard"],
+      "related": ["110.14(A)"],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "408.4(A)",
+      "title": "Circuit Directory - Clear and Specific Identification",
+      "text": "Each circuit is labelled with a clear, specific purpose. A description may not depend on transient conditions of occupancy, such as a family member's name.",
+      "section": 4,
+      "keywords": ["directory", "label", "occupancy", "circuit identification"],
+      "related": ["408.4"],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.23(A)(5)",
+      "title": "Underwater Luminaires - Wall-Mounted Depth",
+      "text": "The top of a wall-mounted underwater luminaire lens sits at least 18 in. below normal water level, unless the luminaire is listed for a shallower depth.",
+      "section": 6,
+      "keywords": ["pool light", "depth", "18 in", "lens"],
+      "related": ["680.22(B)"],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
     }
   ]
 }

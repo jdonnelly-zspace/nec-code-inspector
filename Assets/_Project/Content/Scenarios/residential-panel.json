@@ -980,6 +980,139 @@
       "severity": "Major",
       "minimumDifficulty": "Expert",
       "isSubtle": true
+    },
+    {
+      "violationId": "RP-NEUTRALFUSE-001",
+      "description": "A fuse is connected in series with the neutral conductor of the feeder to the garage sub-{term:panel}",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "240.22",
+          "text": "No overcurrent device may be placed in series with an intentionally grounded conductor, unless the device opens every conductor of the circuit together and no pole can act alone, or motor overload rules call for it."
+        }
+      ],
+      "componentObjectName": "Panel_NeutralFuse",
+      "hintText": "Follow the white conductor of the feeder and see what it passes through.",
+      "componentType": "Conductor",
+      "inspectionNote": "The feeder to the garage sub-{term:panel} runs through a fuse block with fuses on both hot conductors and a third fuse on the white neutral. Only the hot conductors should be fused.",
+      "conceptId": "overcurrent-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-SERIESLABEL-001",
+      "description": "The garage {term:panel} uses breakers with a series combination rating, but there is no field label saying so and requiring identified replacement parts",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "110.22(C)",
+          "text": "When breakers or fuses rely on a manufacturer's series combination rating, the equipment must carry a readable field marking saying so, with the rating and a caution that identified replacement parts are required."
+        }
+      ],
+      "componentObjectName": "Panel_SeriesRating_NoLabel",
+      "hintText": "Look for a caution label on the panel enclosure about how its breakers are rated together.",
+      "componentType": "Label",
+      "inspectionNote": "The inside label of the {term:panel} lists series combination ratings with the upstream main. The enclosure shows no field caution label naming a series combination rating, so the next person may swap in the wrong breaker.",
+      "conceptId": "overcurrent-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": true
+    },
+    {
+      "violationId": "RP-ATTIC-PANEL-001",
+      "description": "A {term:panel} is mounted in the attic and the only way up is a ceiling hatch that needs a loose stepladder",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "240.24(A)",
+          "text": "Overcurrent devices must be readily accessible, meaning reachable quickly without climbing over things, removing obstacles or using portable ladders. A breaker panel reached only through a scuttle hole and a loose ladder does not meet this."
+        }
+      ],
+      "componentObjectName": "AtticPanel_ScuttleAccess",
+      "hintText": "Think about how you would get to the {term:breaker}s in a hurry, and what you would need to carry.",
+      "componentType": "Panel",
+      "inspectionNote": "A sub{term:panel} is fixed to a rafter in the attic. A square hatch in the hall ceiling is the only way in, and a folding stepladder leans against the wall beneath it.",
+      "conceptId": "working-space-access",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-DISC-SVC-SEPARATED-001",
+      "description": "The house has two {term:service-disconnect}s for one service, one on the garage wall and the other on a wall inside the laundry room",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "230.72(A)",
+          "text": "The two to six service disconnects for a service must be grouped, and each marked with the load it serves. The one exception is a water-pump disconnect that also serves fire protection, which may be remote if a plaque at the group shows where it is."
+        }
+      ],
+      "componentObjectName": "ServiceDisconnect_Separated",
+      "hintText": "Find every main disconnect for this service and see whether they are together.",
+      "componentType": "Disconnect",
+      "inspectionNote": "One main {term:breaker} enclosure is in the garage and a second is on the far side of the house in the laundry room. A responder who finds one would not know the other exists.",
+      "conceptId": "disconnecting-means",
+      "severity": "Major",
+      "minimumDifficulty": "Expert",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-DEADFRONT-001",
+      "description": "The garage {term:panel} has no dead-front cover, so the {term:breaker} bodies, bus and wire ends are open to touch",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "408.38",
+          "text": "A panelboard goes in a cabinet or enclosure made for it and is dead front, meaning no live parts can be touched from the operating side."
+        }
+      ],
+      "componentObjectName": "Panel_MissingDeadFront",
+      "hintText": "Look at the front of the garage {term:panel} with the door open. What stands between you and the live parts?",
+      "componentType": "Panel",
+      "inspectionNote": "The panel door is open and the cover that should sit over the {term:breaker}s is missing. Bus bars and wire ends are visible and reachable.",
+      "conceptId": "equipment-installation",
+      "severity": "Critical",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-NEUTRALSHARE-001",
+      "description": "Two neutral conductors from different circuits are clamped under the same terminal screw on the {term:panel} neutral bar",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "408.41",
+          "text": "Each grounded (neutral) conductor ends in its own terminal inside the panelboard, one not also used for another conductor. Parallel conductors of one circuit may share a terminal marked for more than one conductor."
+        }
+      ],
+      "componentObjectName": "Panel_NeutralDoubleTerminal",
+      "hintText": "Follow the white wires to the neutral bar. Count how many sit under each screw.",
+      "componentType": "Conductor",
+      "inspectionNote": "Two white conductors from separate branch circuits go under one screw of the neutral bar while other screw positions on the bar are empty. The terminal is not marked for more than one conductor.",
+      "conceptId": "equipment-installation",
+      "severity": "Major",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-DIRECTORY-OCCUPANT-001",
+      "description": "The {term:panel} directory names circuits by who uses the room, such as a person's name, instead of what the circuit serves",
+      "citations": [
+        {
+          "profileId": "nec",
+          "reference": "408.4(A)",
+          "text": "Each circuit is labelled with a clear, specific purpose. A description may not depend on transient conditions of occupancy, such as a family member's name."
+        }
+      ],
+      "componentObjectName": "Panel_DirectoryOccupantNames",
+      "hintText": "Read the directory on the {term:panel} door. Would the entries still make sense after the people move out?",
+      "componentType": "Label",
+      "inspectionNote": "The directory lists entries like a named person's bedroom and office, where an occupant's name replaces the room or load. The wording would be wrong as soon as someone else lived there.",
+      "conceptId": "identification-marking",
+      "severity": "Minor",
+      "minimumDifficulty": "Standard",
+      "isSubtle": false
     }
   ]
 }

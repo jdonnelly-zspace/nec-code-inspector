@@ -252,6 +252,28 @@ new entries need the expert.
   countertop height rule is 210.52(C)(3) in 2023 with a new (C)(4) in 2026; 300.14 may become 300.16 in 2026. The sump pump also has a rule in
   210.8(D); the old dedicated-appliance basement exception is not in the 2023 text.
 
+## 18. Phase 1, fourth batch (content plan)
+
+15 more NEC violations (arc-fault 1, earthing 1, wiring methods 1, overcurrent 2, conductor sizing 2, branch circuits 2, working space 1,
+disconnecting means 1, equipment installation 2, marking 1, special locations 1), from the same draft-then-verify process; 11 new entries.
+Evidence and held-out reasons: `PHASE1_VERIFICATION_BATCH4.md`. **Still no official NEC text was opened.** Most remaining gaps were Expert level, so
+fewer survived: 15 of 20 drafted.
+
+- **Held out (5 of the 20, plus ideas not drafted):** the two AFCI first-outlet cases (the 2023 options for an outlet-type device paired with a
+  breaker are real, but sources conflict on whether a listed pair is sold, and the compliant picture was wrong), a handle-tie case that is the same scene as
+  one already held, a breaker-as-switch case and a pool light GFCI case (one source each), a pool receptacle case (a near-duplicate, and its subsection is the
+  pump receptacle rule), and a garage lighting case (the same scene as one held earlier; sources disagree on whether the rule reaches dwellings).
+- **Conflicts the expert should settle:**
+  - The island countertop case follows the model 2023 text, which allows no receptacle below an island counter; some cities amend the rule (one
+    restores the old 12 in. allowance), and 2026 reportedly bars receptacles within 24 in. below the counter with a drawer exception. The scene's
+    measured fact was dropped because the limit is zero.
+  - The grounding electrode conductor splice case: sources disagree on what 2026 changed in 250.64(C); a wire nut breaks it either way.
+  - The box-access case cites 314.29(A); the sub-item numbering looks like 2026 text.
+  - The neutral on nonlinear loads: the arithmetic uses the 90 C column (170 A x 0.8 = 136 A against a 140 A load), and the case only fails if the loads
+    are mostly nonlinear on a 4-wire wye.
+- **Scene notes:** the series-rating label case must show a series-rated combination in the panel; the attic case must show only a loose stepladder; the
+  separated-disconnect case must make clear it is one service; the dead-front, shared-neutral and directory cases each need a visible label or part.
+
 ## Sources (all public)
 
 NEC: ecmweb.com (GFCI and AFCI requirements; key revisions to Chapter 2 of the 2026 NEC; NEC motors series; one-family dwelling load calculations), IAEI Magazine (210.8 GFCI requirements), electricianu.com (2023 NEC 210.11), Mike Holt forums (220.14(I), 408.54), St. Paul building department electrical checklist (210.52).

@@ -152,6 +152,10 @@ NEC warning reports the 106 new violations needed); an authoring checklist and s
 yet and no scene uses `ViolationVariant`, since neither the scenes nor the extra violations exist. Mark a code `enforce` when it
 reaches its target.
 
+**Phase 1 status (fourth batch).** 15 more violations are in, so 89 of the 106 are done and the NEC pool shortfall is 17: 10 are load calculation (waiting on the
+edition decision) and 7 are Expert or Foundation items in arc-fault, overcurrent, working space and special locations. Fewer of this batch survived verification
+(15 of 20) because the easy ideas were already used. Evidence: `docs/expert-review/PHASE1_VERIFICATION_BATCH4.md`.
+
 **Phase 1 status (third batch).** 24 more violations are in (shock protection 8, branch circuits 6, wiring methods 6, overcurrent protection 4), so 74
 of the 106 are done and the NEC pool shortfall is 32. The check also found the app's 210.8(A) item numbers were the 2020 list; they are now the 2023 list.
 Still to author: load calculation (waits on the edition decision) and the remaining arc-fault, marking, working-space, overcurrent, disconnecting means

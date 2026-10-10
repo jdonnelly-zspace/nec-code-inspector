@@ -11,9 +11,9 @@ compare each row with the book yourself. Open them in Excel or any spreadsheet t
 
 | File | Rows | What it is |
 |---|---|---|
-| `1-violation-citations.csv` | 147 | Each violation in the six inspection scenarios and the rule it cites, per code (124 NEC, 14 CEC, 9 BS 7671). 74 of the NEC rows are phase 1 additions, flagged with their doubts; see `PHASE1_VERIFICATION.md`, `PHASE1_VERIFICATION_BATCH2.md` and `PHASE1_VERIFICATION_BATCH3.md`. Rows with a concern come first. |
+| `1-violation-citations.csv` | 162 | Each violation in the six inspection scenarios and the rule it cites, per code (139 NEC, 14 CEC, 9 BS 7671). 89 of the NEC rows are phase 1 additions, flagged with their doubts; see `PHASE1_VERIFICATION.md` and its `_BATCH2`, `_BATCH3` and `_BATCH4` companions. Rows with a concern come first. |
 | `2-articles-cec.csv` | 12 | Draft Canadian Electrical Code reference entries (C22.1:24 numbering). Written from public sources, not the book. |
-| `3-articles-nec.csv` | 150 | NEC reference entries. Rows with a concern first (including the entries restored for the two new skills and the 49 added in phase 1), then cited ones, then those not tied to any violation. |
+| `3-articles-nec.csv` | 161 | NEC reference entries. Rows with a concern first (including the entries restored for the two new skills and the 60 added in phase 1), then cited ones, then those not tied to any violation. |
 
 `5-articles-bs7671.csv` (29 rows) holds the draft BS 7671 entries, written from public sources. A UK-qualified reviewer is needed; every row is flagged and the doubtful ones say why.
 
