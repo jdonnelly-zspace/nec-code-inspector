@@ -53,7 +53,7 @@ terminal-temperature rule. The UK points above were inferred from sources that w
 
 | Item | Now | Target | Notes |
 |---|---|---|---|
-| Tutorial | none | one guided walk-through | Teaches the stylus (point, front button to inspect, flag, cite, mark compliant, open the reference), then one short inspection. Needs a data format for steps and a scene, so it waits on scenes. |
+| Tutorial | 8 steps as data (`StreamingAssets/Tutorial/tutorial.json`, `TutorialPanel`) | one guided walk-through | Teaches the stylus (point, front button to inspect, flag, cite, mark compliant with the middle button, open the reference with the back button), then finish. Built: the step format, validator, tests and panel. Still needs a small scene for the inspection part, and the inspection scene must call `TutorialPanel.Report` for each action; the button wording follows `docs/ALPHA_BUILD_PLAN.md` and should be checked on the device. |
 | Quick reference cards | 9 (NEC only) | one per skill, per region that has cards | The cards cite rules, so each new card needs the same two-step check as a violation. |
 | Sandbox designs | 1 | 6 (two per difficulty) | Each needs its required circuits, expected load and wire sizes checked by the load calculator tests. Only the NEC has the tables the sandbox needs. |
 | Wiring the lessons in | not wired | shown before a first scenario, from the skills screen and from the review screen | Unity Editor work: add the panel to the menu scene and call it. |

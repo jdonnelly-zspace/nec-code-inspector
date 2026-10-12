@@ -86,7 +86,7 @@ Status: **Built** (in the repository and tested), **Partial** (data or code exis
 | FR-6 | Procedure trainers: guided practice of a procedure's steps (lockout and test-before-touch, troubleshooting, a staged inspection), including a virtual meter and tester. | Partial | Step-ordering practice built for 28 of 44 procedures (`ProcedurePractice`, `ProcedurePracticePanel`); the virtual meter and scene-based trainers are planned. |
 | FR-7 | Panel design sandbox: design, wire and check a residential panel. | Partial | 1 design, US only (needs tables); scene not built. |
 | FR-8 | Skill lessons before practice, in the student's region's words. | Partial | 20 lessons and a panel; not wired into a scene. |
-| FR-9 | Tutorial that teaches the stylus and a first inspection. | Planned | `docs/TEACHING_CONTENT.md`. |
+| FR-9 | Tutorial that teaches the stylus and a first inspection. | Partial | 8 steps as data with a panel (`tutorial.json`, `TutorialPanel`); needs a scene and `Report` calls from the inspection scene. |
 | FR-10 | Reference lookup: search rule entries and quick reference cards. | Partial | NEC 161 entries, CEC 12, BS 7671 29; 9 NEC cards; UI built, not run in Unity. |
 | FR-11 | Region choice sets the code, units and wording; the code is never named. | Partial | Built and tested; picker not wired into a scene. |
 | FR-12 | Three generic difficulty levels. | Built | Text and tests. |

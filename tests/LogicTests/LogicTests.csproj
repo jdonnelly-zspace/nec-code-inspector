@@ -30,6 +30,7 @@
     <Compile Include="$(Scripts)Data/ViolationCitation.cs" Link="Unity/Data/ViolationCitation.cs" />
     <Compile Include="$(Scripts)Data/SessionSize.cs" Link="Unity/Data/SessionSize.cs" />
     <Compile Include="$(Scripts)Data/LessonFileData.cs" Link="Unity/Data/LessonFileData.cs" />
+    <Compile Include="$(Scripts)Data/TutorialFileData.cs" Link="Unity/Data/TutorialFileData.cs" />
     <Compile Include="$(Scripts)Data/OccupationFileData.cs" Link="Unity/Data/OccupationFileData.cs" />
     <Compile Include="$(Scripts)Data/ViolationPools.cs" Link="Unity/Data/ViolationPools.cs" />
     <Compile Include="$(Scripts)Data/ViolationDraw.cs" Link="Unity/Data/ViolationDraw.cs" />
