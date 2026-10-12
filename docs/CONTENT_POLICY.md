@@ -1,7 +1,7 @@
 # Content Policy
 
 Rules for everything students read in the app: scenarios, violations, citations, reference articles,
-quick-reference cards, certificates and terminology. They exist because the installation codes (NEC, CEC,
+quick-reference cards, skill lessons (`docs/TEACHING_CONTENT.md`), certificates and terminology. They exist because the installation codes (NEC, CEC,
 BS 7671 and others) are copyrighted, and because the app should teach the skills people need to earn a credential, without containing the credential.
 
 ## 1. Scope: the app's skills only, and no credentials in the app

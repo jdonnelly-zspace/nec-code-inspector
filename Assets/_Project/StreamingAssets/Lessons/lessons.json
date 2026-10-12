@@ -1,0 +1,314 @@
+{
+  "lessons": [
+    {
+      "skillId": "shock-protection",
+      "title": "Shock protection",
+      "summary": "{Term:shock-protection-device} protection cuts the power in a fraction of a second when current leaks to earth through a person or through water, which limits the harm. It does not help if someone touches both live wires.",
+      "whatToLookFor": [
+        "Outlets near water: sinks, tubs, showers, pools and outdoor taps",
+        "Outdoors, garages, basements, crawl spaces and laundry areas, where floors and walls are often damp",
+        "A TEST and RESET button on the {term:receptacle} or the {term:breaker}",
+        "Outlets further along the same circuit: are they covered by the protection too?"
+      ],
+      "whyItMatters": "Even a small current through the body can be deadly, and wet skin and damp floors let far more current flow than dry ones.",
+      "tiers": {
+        "foundation": "Recognise the places that need protection and spot an outlet that has none.",
+        "practitioner": "Work out which outlets need protection where you are (in some regions almost all of them) and how it is provided: a device at the outlet, or at the {term:breaker}.",
+        "authority": "Handle the edge cases: shared circuits, appliances, new and replaced outlets, and confirming that the protection actually works."
+      },
+      "commonMistakes": [
+        "Assuming a protected outlet nearby covers the whole room",
+        "Forgetting indoor damp places such as basements and utility areas",
+        "Treating arc-fault protection and ground-fault protection as the same thing",
+        "Believing it protects against touching two live wires at once"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "arc-fault-protection",
+      "title": "Arc-fault protection",
+      "summary": "{Term:arc-fault-device} protection detects the sparking of damaged or loose wiring, which an ordinary {term:breaker} cannot see, and cuts the power before it starts a fire.",
+      "whatToLookFor": [
+        "Which rooms and circuits need this protection where you are",
+        "A test button on the {term:breaker}, or an outlet-type device further along the circuit",
+        "Circuits that were extended or changed after they were first wired",
+        "Protection that only guards against ground faults, which does not count"
+      ],
+      "whyItMatters": "Arcing can heat wiring and the material around it enough to start a fire without ever overloading the circuit, so an ordinary breaker may never trip.",
+      "tiers": {
+        "foundation": "Recognise where arc-fault protection is required and spot a circuit with only a plain {term:breaker}.",
+        "practitioner": "Tell which circuits need it and which ways of providing it are acceptable.",
+        "authority": "Handle changes to existing circuits, replaced devices and the limits on how far an outlet-type device can sit from the {term:panel}."
+      },
+      "commonMistakes": [
+        "Counting a ground-fault device as arc-fault protection",
+        "Forgetting that a changed or extended circuit can bring the new rules with it",
+        "Overlooking closets, hallways and other rooms that look unimportant"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "overcurrent-protection",
+      "title": "Overcurrent protection",
+      "summary": "A {term:breaker} or fuse is the safety valve for the wire behind it: it must trip before the wire gets hot enough to be damaged.",
+      "whatToLookFor": [
+        "The rating of each {term:breaker} compared with the size of the wire it protects",
+        "Breakers that must switch off together but are not tied together",
+        "Fuses of the wrong kind or size, and bare fuse sockets that accept any size",
+        "Ratings and markings on the {term:panel}, and a main device that is too large for the panel"
+      ],
+      "whyItMatters": "If the protection is larger than the wire can carry, the wire can overheat and start a fire long before the {term:breaker} trips.",
+      "tiers": {
+        "foundation": "Recognise what a {term:breaker} protects and spot an obvious mismatch between its rating and the wire.",
+        "practitioner": "Apply the usual rules for small wire, tied handles, fuses and panel ratings.",
+        "authority": "Handle taps, series ratings, switching duty and the cases where the general rule has an exception."
+      },
+      "commonMistakes": [
+        "Raising a {term:breaker} size to stop it tripping instead of finding the cause",
+        "Sizing the protection to the appliance and forgetting the wire",
+        "Assuming two breakers side by side are tied together"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "conductor-sizing",
+      "title": "Conductor sizing",
+      "summary": "A wire must be thick enough for the current it carries, once heat, bundling and its surroundings are taken into account.",
+      "whatToLookFor": [
+        "The wire size on a circuit compared with the {term:breaker} and the load",
+        "Many wires bundled together in one conduit or cable, which cannot shed heat as well",
+        "Hot places such as attics, boiler rooms and sunny roofs",
+        "The temperature rating of the terminals, and whether the wire is copper or aluminium",
+        "Loads that run for hours, such as chargers and heaters"
+      ],
+      "whyItMatters": "A thin wire carrying too much current heats up, damages its insulation and can start a fire, and the damage is often hidden inside a wall.",
+      "tiers": {
+        "foundation": "Read a wire size and spot a wire that is obviously too small for its {term:breaker}.",
+        "practitioner": "Use the ampacity tables with the common corrections for bundling, heat and terminals.",
+        "authority": "Size feeders and services, handle parallel runs, nonlinear loads and aluminium, and explain where the table value cannot be used."
+      },
+      "commonMistakes": [
+        "Using the highest table value without checking what the terminals allow",
+        "Forgetting to reduce the rating for many wires in one conduit",
+        "Ignoring a hot location"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "earthing-bonding",
+      "title": "Grounding and bonding",
+      "summary": "{Term:grounding} and bonding give fault current an easy path back to the source so a {term:breaker} trips, and keep metal parts from staying live.",
+      "whatToLookFor": [
+        "The connection between the {term:panel} and the earth: an electrode or the supplier's earth terminal, and the wire that joins them",
+        "Metal water and gas pipes bonded to the system",
+        "The neutral and the ground joined at one place only, normally the service",
+        "Metal parts that could become live in a fault: enclosures, conduit, appliance frames",
+        "Clamps, splices and connections that could loosen or corrode"
+      ],
+      "whyItMatters": "Without a good path for fault current, a live metal part can stay dangerous for anyone who touches it and the {term:breaker} may never trip.",
+      "tiers": {
+        "foundation": "Tell the neutral from the ground and spot a missing connection to a pipe or electrode.",
+        "practitioner": "Check the {term:grounding} connections, bonding of pipes and the sizing of the main conductors.",
+        "authority": "Handle separately derived systems, extra electrodes, splices and special equipment."
+      },
+      "commonMistakes": [
+        "Confusing the neutral with the ground, or joining them at a subpanel",
+        "Assuming a {term:ground-rod} alone makes the system safe",
+        "Skipping the bonding of metal piping"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "branch-circuit-requirements",
+      "title": "Branch circuit requirements",
+      "summary": "Branch circuit rules decide how many circuits a building needs and where outlets must go, so cords do not stretch across rooms and no circuit is overloaded.",
+      "whatToLookFor": [
+        "How the circuits are divided so heavy loads have their own",
+        "Outlet spacing and counts along walls and countertops, where the rules set them",
+        "Outlets in hallways, outdoors and in garages, where the rules require them",
+        "Outlets mounted too high or too low to count toward a requirement",
+        "A {term:receptacle} near heating and cooling equipment, where required for servicing"
+      ],
+      "whyItMatters": "Too few outlets lead to extension cords and overloaded circuits, which are a common cause of home fires.",
+      "tiers": {
+        "foundation": "Spot a room or area with no outlet or an outlet in an unusable place.",
+        "practitioner": "Apply the spacing and count rules to a floor plan and check the circuits that serve each room.",
+        "authority": "Handle islands, peninsulas, special appliances, and local amendments to the model rules."
+      },
+      "commonMistakes": [
+        "Assuming a room with a single outlet is fine because it is small",
+        "Counting an outlet that is mounted too high or too low",
+        "Forgetting the garage, outdoors and the laundry area"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "load-calculation",
+      "title": "Load calculation",
+      "summary": "A load calculation works out how much power a building can draw so the service, feeders and breakers are big enough.",
+      "whatToLookFor": [
+        "The size of the service compared with the calculated load",
+        "Large loads such as ranges, dryers, heat pumps and chargers",
+        "Loads that run continuously, which count for more",
+        "Demand factors: not every load runs at once",
+        "Loads that were added after the original design"
+      ],
+      "whyItMatters": "A service that is too small trips, overheats or cannot take new equipment, and a calculation that is too generous wastes money.",
+      "tiers": {
+        "foundation": "List the loads in a building and tell which ones need special treatment.",
+        "practitioner": "Apply the standard steps for a house or a small building, including demand factors.",
+        "authority": "Handle additions, special loads and the rules that treat some loads differently."
+      },
+      "commonMistakes": [
+        "Adding every load at full value and ignoring demand factors",
+        "Forgetting a load that runs for hours",
+        "Not recalculating when a large load is added"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "disconnecting-means",
+      "title": "Disconnecting means",
+      "summary": "Disconnects let someone shut power off quickly and safely, so they must be where people can find and reach them.",
+      "whatToLookFor": [
+        "The main shut-off for the building: where it is and whether you can reach it",
+        "Equipment that needs its own disconnect within sight, such as an air conditioner or a motor",
+        "How many main disconnects there are, and whether they are grouped",
+        "Disconnects that are hidden, blocked, too high, or cannot be locked off",
+        "Labels that say what each disconnect controls"
+      ],
+      "whyItMatters": "In an emergency or while servicing equipment, seconds matter, and a disconnect that cannot be found or reached is useless.",
+      "tiers": {
+        "foundation": "Find the main disconnect and spot one that is blocked or missing.",
+        "practitioner": "Apply the rules on location, number, sight lines and marking.",
+        "authority": "Handle outbuildings, groups of disconnects, lockout provisions and equipment with special rules."
+      },
+      "commonMistakes": [
+        "Putting the shut-off where it can only be reached by moving stored items",
+        "Assuming a {term:breaker} in a distant {term:panel} is enough without checking where the rules allow it",
+        "Forgetting to label what each disconnect controls"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "working-space-access",
+      "title": "Working space and access",
+      "summary": "Panels and other equipment need clear, lit space around them so a person can work safely and get away quickly.",
+      "whatToLookFor": [
+        "Storage, shelves, or appliances in front of a {term:panel}",
+        "Enough width, depth and headroom in front of the equipment",
+        "Panels in places the rules restrict, such as bathrooms, near stored combustibles, or over stairs",
+        "The {term:panel} door: can it open fully?",
+        "Pipes, ducts and other systems above the {term:panel}"
+      ],
+      "whyItMatters": "A person working on live equipment needs room to move and a clear way out, because an arc flash or shock can make them fall or recoil.",
+      "tiers": {
+        "foundation": "Spot stored items or a blocked door at a {term:panel}.",
+        "practitioner": "Check the clear width, depth, headroom and a suitable location.",
+        "authority": "Handle the reserved space above equipment, lighting, access by ladder or stairs, and the special cases that change the rules."
+      },
+      "commonMistakes": [
+        "Treating a floor marking as enough when the space above is blocked",
+        "Putting a {term:panel} somewhere awkward because there was spare wall",
+        "Forgetting the space must stay clear for as long as the equipment is there"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "equipment-installation",
+      "title": "Equipment installation",
+      "summary": "Good workmanship keeps connections tight, enclosures closed and parts undamaged, so equipment stays safe for years.",
+      "whatToLookFor": [
+        "Open holes in an enclosure, and cables that enter without a clamp or connector",
+        "A loose or unsecured {term:panel} or box",
+        "Loose or overcrowded terminals, and more than one wire under a screw that is meant for one",
+        "Damaged parts: cracked covers, nicked wires and paint on terminals",
+        "Missing covers, dead fronts or filler pieces"
+      ],
+      "whyItMatters": "Poor connections are one of the most common causes of electrical fires and failures.",
+      "tiers": {
+        "foundation": "Spot open holes, loose covers and damaged parts.",
+        "practitioner": "Check how cables are secured, how terminals are loaded, and that enclosures are complete.",
+        "authority": "Judge subtle damage, workmanship that looks fine but breaks a rule, and how a repair should be made."
+      },
+      "commonMistakes": [
+        "Judging workmanship by how tidy it looks instead of how it is secured",
+        "Putting two wires under one terminal without checking it allows it",
+        "Leaving a dead front off to make servicing easier"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "identification-marking",
+      "title": "Identification and marking",
+      "summary": "Clear labels tell the next person what each circuit and disconnect controls and what the equipment is rated for.",
+      "whatToLookFor": [
+        "A circuit directory at the {term:panel} that names what each circuit serves",
+        "Disconnects and {term:service-disconnect} devices that say what they are",
+        "Labels that are faded, vague, or use a person's name instead of a place or load",
+        "Ratings and nameplates on equipment, and a label where a special rating is relied on",
+        "Markings that are permanent and easy to read"
+      ],
+      "whyItMatters": "In a fault or an emergency, a person may need to shut off one circuit fast, and a wrong or missing label sends them to the wrong place.",
+      "tiers": {
+        "foundation": "Notice a {term:panel} with no directory or an unlabelled disconnect.",
+        "practitioner": "Check that labels are specific, accurate and durable.",
+        "authority": "Handle special markings, series ratings and changes made after the first labelling."
+      },
+      "commonMistakes": [
+        "Writing room names that do not tell you which circuit is which",
+        "Letting a directory go out of date after changes",
+        "Labelling a device with a handwritten note that fades"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "wiring-methods",
+      "title": "Wiring methods",
+      "summary": "Cable and conduit must be chosen for the place and installed so they are supported, protected and joined in accessible boxes.",
+      "whatToLookFor": [
+        "Cable that is unsupported, stapled too tightly, or bent too sharply",
+        "Cable exposed where it can be damaged, or passing through framing with no protection",
+        "Splices outside a box, covers missing, or boxes buried behind a finished wall",
+        "Conduit that is not supported, or plastic conduit with no allowance for movement",
+        "Wiring in a wet, buried or outdoor location with the wrong type of cable"
+      ],
+      "whyItMatters": "Damaged, unsupported or hidden wiring causes faults and fires, and a buried splice cannot be inspected or repaired.",
+      "tiers": {
+        "foundation": "Spot unsupported cable, a missing cover and a splice outside a box.",
+        "practitioner": "Apply the support, protection, bending and box rules for the common wiring methods.",
+        "authority": "Choose a method for a difficult location and judge subtle faults such as box position and expansion."
+      },
+      "commonMistakes": [
+        "Using the same method indoors and outdoors without checking the location",
+        "Burying a junction box behind a finished surface",
+        "Forgetting that plastic conduit grows and shrinks with temperature"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "special-locations",
+      "title": "Special locations",
+      "summary": "Pools, spas, charging stations, generators and similar places have extra rules because water, vehicles or a second power source make the usual protection not enough.",
+      "whatToLookFor": [
+        "Pools and spas: outlet distances, bonding of metal parts, light heights and where the disconnect is",
+        "Overhead lines near a pool or a structure",
+        "Weatherproof covers and protection on outdoor outlets",
+        "Charging equipment: its disconnect, protection and mounting",
+        "A standby generator and how it is connected, so it cannot send power back to the grid"
+      ],
+      "whyItMatters": "These places combine electricity with water, people in bare feet or a power source the utility does not control, so mistakes are more dangerous.",
+      "tiers": {
+        "foundation": "Recognise a special location and spot a missing cover or an obviously wrong distance.",
+        "practitioner": "Apply the distance, bonding and protection rules for the common special locations.",
+        "authority": "Handle the interaction between a special location's rules and the general rules, and equipment that is new to the code."
+      },
+      "commonMistakes": [
+        "Treating a poolside outlet like any other outdoor outlet",
+        "Forgetting to bond metal parts near water",
+        "Connecting a generator in a way that can back-feed the building"
+      ],
+      "reviewStatus": "draft"
+    }
+  ]
+}

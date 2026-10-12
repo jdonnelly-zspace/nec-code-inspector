@@ -152,6 +152,9 @@ NEC warning reports the 106 new violations needed); an authoring checklist and s
 yet and no scene uses `ViolationVariant`, since neither the scenes nor the extra violations exist. Mark a code `enforce` when it
 reaches its target.
 
+**Phase 2 status (started).** The 13 skill lessons are written, checked and tested (`docs/TEACHING_CONTENT.md`): a lessons file, a loader, a lesson panel and tests that fail on a
+missing skill, a code or credential name, a number or an unfilled region word. Not wired into any scene. Still to build: the tutorial, 4 more quick reference cards, 5 more sandbox designs.
+
 **Phase 1 status (fourth batch).** 15 more violations are in, so 89 of the 106 are done and the NEC pool shortfall is 17: 10 are load calculation (waiting on the
 edition decision) and 7 are Expert or Foundation items in arc-fault, overcurrent, working space and special locations. Fewer of this batch survived verification
 (15 of 20) because the easy ideas were already used. Evidence: `docs/expert-review/PHASE1_VERIFICATION_BATCH4.md`.
