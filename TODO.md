@@ -19,14 +19,13 @@ Status key: `[x]` done and on `main`, `[~]` built and on `main` but still waitin
 
 ### Occupation-driven product (new direction)
 The product is now driven by occupations, not by the NEC alone: `docs/product/PRD.md` (requirements), `docs/occupations/` (six core occupation profiles with 44 procedures and SOPs, the adjacent 18, the traceability matrix, proposed skills). Of the 44 procedures the app teaches 2 well, 18 in part and 24 not at all.
-- [ ] **Owner review of the PRD** (`docs/product/PRD.md`): confirm the occupations and the waves (section 7), the principles (section 2), the open items in section 6 (accessibility, student data, localization, teacher accounts), and replace the old project brief
-- [ ] **Decide the proposed skills** (`docs/occupations/proposed-skills.json`): approve, change or reject each of the 10 (electrically safe work, testing and measurement, troubleshooting, plans and documentation, jobsite safety, code administration, solar PV and storage, low-voltage and fire alarm, utility interface, utility line work)
+- [x] **Owner decisions of 2026-10-12** (`docs/product/DECISIONS.md`): occupation-driven product, all 10 proposed skills approved, the three waves accepted, utility line work to be built (wave 3, blocked). Still to review in the PRD: the principles (section 2) and the open items in section 6 (accessibility, student data privacy, localization, teacher accounts)
 - [ ] **Occupational expert review** of the six profiles and their 44 SOPs (`docs/occupations/*.md`): the paywalled standards that matter most were not opened, and every profile lists its doubts
 - [ ] **Wave 1 skills** (electricians, helpers, inspectors): electrically safe work, testing and measurement, troubleshooting, plans and documentation, jobsite safety, code administration; each needs a place in `ConceptIds`, a lesson, content and tests
 - [ ] **Occupation data in the app**: an occupations and procedures file, a loader, an occupation picker, procedure steps shown to the student, per-procedure progress derived from skills (FR-1, FR-2, FR-13)
 - [ ] **Procedure trainers** (FR-6): lockout and test-before-touch with a virtual meter, troubleshooting, a staged new-home inspection; needs scenes
 - [ ] **Wave 2** (solar PV, security and fire alarm): a PV and storage skill; a low-voltage and fire alarm skill with a second code profile and its licence decision; both depend on open decision 6
-- [!] **Utility line work**: the NEC excludes most of it (the NESC and OSHA line-work rules govern it); decide whether to build a NESC profile and utility scenes or to leave power-line installers out of the core set
+- [!] **Utility line work** (decided: build it, wave 3): blocked on the NESC licence decision, a NESC code profile and new utility scenes (the NEC excludes most of this work; the NESC and OSHA line-work rules govern it)
 - [ ] **Correct the market view** before outside use: wrong or mislabelled occupation codes, "Bright Outlook" is false for five adjacent occupations, the worker total does not reconcile, 49-2098 is counted twice (`docs/occupations/ADJACENT.md`); also settle how "exam prep" positioning fits the no-credentials-in-the-app rule
 
 ### Phase A - Foundations (refactor steps 1-4)

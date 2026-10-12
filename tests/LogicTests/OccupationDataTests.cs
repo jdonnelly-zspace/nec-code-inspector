@@ -48,8 +48,10 @@ namespace NECInspector.LogicTests
                 t.IsTrue(Text(e, "title").Length >= 8, $"{kv.Key}: a title is written");
                 t.IsTrue(Text(e, "codeProfile").Length >= 4, $"{kv.Key}: says which code profile it needs, or none");
                 string status = Text(e, "status");
-                t.IsTrue(status == "proposed" || status == "blocked", $"{kv.Key}: status is proposed or blocked");
+                t.IsTrue(status == "proposed" || status == "approved" || status == "blocked", $"{kv.Key}: status is proposed, approved or blocked");
                 if (status == "blocked") t.IsTrue(Text(e, "blockedBy").Length > 20, $"{kv.Key}: a blocked skill says what blocks it");
+                t.IsTrue(e.TryGetProperty("wave", out var wave) && wave.GetInt32() >= 1 && wave.GetInt32() <= 3, $"{kv.Key}: sits in release wave 1, 2 or 3");
+                if (status == "approved" || status == "blocked") t.IsTrue(Text(e, "decision").StartsWith("approved"), $"{kv.Key}: records the owner's decision");
             }
         }
 

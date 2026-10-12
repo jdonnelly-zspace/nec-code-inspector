@@ -1,6 +1,6 @@
 # Product requirements
 
-Status: draft for the owner's review. Supersedes `docs/PROJECT_BRIEF.md`, which was written around the NEC alone and names audiences and credentials.
+Status: draft. The owner accepted the occupation-driven direction, the proposed skills, the three waves and the utility line work decision on 2026-10-12 (`docs/product/DECISIONS.md`); the rest is still a draft for review. Supersedes `docs/PROJECT_BRIEF.md`, which was written around the NEC alone and names audiences and credentials.
 Sources: the market view the owner supplied ("NEC Code Inspector, zSpace Inspire 2, Full Market View", September 2026), the occupation research in
 `docs/occupations/`, and the project's own rules (`.claude/CLAUDE.md`, `docs/CONTENT_POLICY.md`). Market figures are the owner's and have not been verified
 (see section 8).
@@ -57,7 +57,7 @@ coverage ratings (a judgement, not a test).
 | 47-4011 | Construction and building inspectors | about 106,000 | 7 | 71% | Best fit: the inspection scenarios are its work. Needs stages and code administration. |
 | 47-2231 | Solar photovoltaic installers | about 22,000 | 7 | 57% | Needs a PV and storage skill (new content in NEC Articles 690, 705, 706). |
 | 49-2098 | Security and fire alarm systems installers | about 85,000 | 7 | 43% | Needs low-voltage and fire alarm content and a second code (the fire alarm standard). |
-| 49-9051 | Electrical power-line installers and repairers | 131,900 (2025) | 8 | 12% | **Blocked.** Governed mainly by the NESC and OSHA line-work rules, not the NEC. |
+| 49-9051 | Electrical power-line installers and repairers | 131,900 (2025) | 8 | 12% | **Wave 3, blocked.** Governed mainly by the NESC and OSHA line-work rules, not the NEC. Decided: build it (a NESC profile and utility scenes), after the licence decision. |
 
 ### 4.2 Adjacent occupations
 
@@ -107,7 +107,7 @@ Status: **Built** (in the repository and tested), **Partial** (data or code exis
 - **Testing:** logic tests run in CI, a Unity compile check runs locally, and the zSpace hardware is tested weekly.
 - **Gaps in this draft:** accessibility needs, student data privacy and retention, localization (open decision), and teacher account and classroom management are not yet specified.
 
-## 7. Scope by occupation, in waves
+## 7. Scope by occupation, in waves (accepted 2026-10-12)
 
 The market view plans the six core occupations for a first-half-2027 launch. The research does not support that for all six:
 
@@ -115,7 +115,7 @@ The market view plans the six core occupations for a first-half-2027 launch. The
 |---|---|---|
 | 1 | Electricians, electrician helpers, inspectors | New skills: electrically safe work, testing and measurement, troubleshooting, plans and documentation, jobsite safety, code administration; the 3D scenes; a staged inspection; the remaining phase 1 content. |
 | 2 | Solar PV installers, security and fire alarm installers | A PV and storage skill, and a low-voltage and fire alarm skill with a second code profile and its licence decision; both depend on the NEC edition decision for the PV articles. |
-| 3 | Power-line installers; adjacent clusters | An owner decision on utility work (a NESC profile and new scenes, or leave it out); beginner-literacy packages for maintenance, HVAC and construction roles. |
+| 3 | Power-line installers; adjacent clusters | Utility line work, decided 2026-10-12: a NESC code profile and new utility scenes, after the NESC licence decision and the earlier waves; beginner-literacy packages for maintenance, HVAC and construction roles. |
 
 ## 8. Market, as stated and as checked
 
@@ -140,7 +140,7 @@ teacher-reported use. Business measures are those in the market view and are not
 1. **NEC edition.** Content follows 2023 numbering; the project targets 2026; checks keep finding 2020 numbering in older content. Blocks load calculation and PV content. (TODO, open decision 6)
 2. **Licensing.** The NEC, CEC and BS 7671 licence decisions are open, the fire alarm standard and the NESC would add more, and the market view says the NFPA cost is not modelled.
 3. **SOP accuracy.** The 44 procedures were drafted from public pages; the key standards (the electrical safe work standard, the fire alarm standard, the NESC) are paywalled and were not opened. An occupational expert must review each occupation.
-4. **Occupations the NEC does not cover.** Power-line work, and parts of fire alarm, elevator and utility work, need other codes; promising them in marketing without the content would mislead buyers.
+4. **Occupations the NEC does not cover.** Power-line work, and parts of fire alarm, elevator and utility work, need other codes. The owner decided to build utility line work (wave 3); until it exists, promising it in marketing would mislead buyers.
 5. **Scenes.** Nothing teaches in 3D until scenes exist; content outpaces art.
 6. **Scope growth.** Ten proposed skills is a large addition; sequence by wave and by how many procedures each unlocks (`docs/occupations/TRACEABILITY.md`).
 
