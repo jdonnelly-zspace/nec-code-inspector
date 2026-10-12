@@ -170,6 +170,31 @@ namespace NECInspector.Core
             return best;
         }
 
+        /// <summary>The occupation the student follows (empty until they choose one). A pathway only: skill progress is not tied to it.</summary>
+        public string GetOccupation() => Data.occupationId ?? "";
+
+        public void SetOccupation(string occupationId)
+        {
+            Data.occupationId = occupationId ?? "";
+            Save();
+        }
+
+        /// <summary>Record one practice of a procedure's steps (score 0 to 1) and the evidence it gives each skill the procedure uses.</summary>
+        public void RecordProcedurePractice(string procedureId, DifficultyLevel difficulty, float score,
+            IEnumerable<SkillEvidence> evidence = null)
+        {
+            string now = DateTime.UtcNow.ToString("o");
+            Data.procedurePractice.Add(new ProcedureProgress
+            {
+                procedureId = procedureId,
+                difficulty = difficulty.ToString(),
+                score = score,
+                completedAt = now
+            });
+            Data.skills.Record(evidence, now);
+            Save();
+        }
+
         public void RecordSandboxScore(string panelType, SandboxScore score,
             IEnumerable<SkillEvidence> evidence = null)
         {
@@ -199,6 +224,8 @@ namespace NECInspector.Core
         public List<string> recentViolationIds = new List<string>();   // violations shown in recent sessions, oldest first
         public string region = "";                  // the region the student chose (for example US); decides the installation code
         public string activeCodeProfileId = "";
+        public string occupationId = "";            // the occupation the student follows; a pathway, not a credential
+        public List<ProcedureProgress> procedurePractice = new List<ProcedureProgress>();
         public List<EarnedCertificate> earnedCertificates = new List<EarnedCertificate>();
         public float totalTimeSpent = 0f;
     }
@@ -214,6 +241,15 @@ namespace NECInspector.Core
         public int correctCitations;
         public int totalCitations;
         public float timeElapsed;
+        public string completedAt;
+    }
+
+    [Serializable]
+    public class ProcedureProgress
+    {
+        public string procedureId;
+        public string difficulty;
+        public float score;
         public string completedAt;
     }
 
