@@ -111,7 +111,7 @@ namespace NECInspector.LogicTests
 
                 var gaps = new List<string>();
                 int needed = 0;
-                foreach (string skill in ConceptIds.All)
+                foreach (string skill in ConceptIds.CodeSkills)
                 {
                     var have = Levels.Select(l => PoolSize(violations, target.code, skill, l)).ToArray();
                     var parts = new List<string>();
@@ -125,7 +125,7 @@ namespace NECInspector.LogicTests
 
                 if (gaps.Count == 0) continue;
 
-                string summary = $"{target.code}: {gaps.Count} of {ConceptIds.All.Length} skills are below the pool targets {goal[0]}/{goal[1]}/{goal[2]} ({needed} new violations needed): {string.Join("; ", gaps)}";
+                string summary = $"{target.code}: {gaps.Count} of {ConceptIds.CodeSkills.Length} skills are below the pool targets {goal[0]}/{goal[1]}/{goal[2]} ({needed} new violations needed): {string.Join("; ", gaps)}";
                 if (target.enforce) t.IsTrue(false, summary);
                 else t.Warn(summary);
             }

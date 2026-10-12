@@ -166,12 +166,11 @@
       ],
       "appSkills": [
         "shock-protection",
-        "disconnecting-means"
+        "disconnecting-means",
+        "electrically-safe-work"
       ],
       "appCoverage": "partial: the app teaches why disconnects and shock protection matter and where the means must be, but not the lockout, testing-before-touching or re-energizing steps.",
-      "plannedSkills": [
-        "electrically-safe-work"
-      ]
+      "plannedSkills": []
     },
     {
       "name": "Plan reading and device layout check",
@@ -218,11 +217,11 @@
         }
       ],
       "appSkills": [
-        "wiring-methods"
+        "wiring-methods",
+        "plans-and-documentation"
       ],
       "appCoverage": "none: the app has no plan-reading or layout tasks; wiring-methods covers only the wiring rules.",
       "plannedSkills": [
-        "plans-and-documentation",
         "low-voltage-and-fire-alarm-systems"
       ]
     },
@@ -457,10 +456,11 @@
           "says": "NFPA 72 Chapter 14 covers testing and maintenance, with owners responsible for upkeep after acceptance."
         }
       ],
-      "appSkills": [],
+      "appSkills": [
+        "testing-and-measurement"
+      ],
       "appCoverage": "none: the app has no testing, meter or acceptance-inspection tasks.",
       "plannedSkills": [
-        "testing-and-measurement",
         "low-voltage-and-fire-alarm-systems"
       ]
     },

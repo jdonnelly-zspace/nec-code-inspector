@@ -177,11 +177,12 @@
           "says": "Setbacks and pathways vary by adopted edition and local amendment; the AHJ decides."
         }
       ],
-      "appSkills": [],
-      "appCoverage": "none: no height-work content; this is OSHA safety, not an NEC skill.",
-      "plannedSkills": [
+      "appSkills": [
         "jobsite-safety"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: no height-work content; this is OSHA safety, not an NEC skill.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: no height-work content; this is OSHA safety, not an NEC skill."
     },
     {
       "name": "Array installation, DC wiring and connector handling",
@@ -418,11 +419,12 @@
           "says": "Recommends live-dead-live testing and rated PPE."
         }
       ],
-      "appSkills": [],
+      "appSkills": [
+        "testing-and-measurement",
+        "electrically-safe-work"
+      ],
       "appCoverage": "none: the app does not yet teach meter testing; no skill trains these steps.",
       "plannedSkills": [
-        "testing-and-measurement",
-        "electrically-safe-work",
         "pv-and-storage-systems"
       ]
     },

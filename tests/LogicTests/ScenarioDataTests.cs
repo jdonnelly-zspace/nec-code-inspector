@@ -271,7 +271,7 @@ namespace NECInspector.LogicTests
             }
 
             // Every defined concept should be exercised by at least one violation
-            foreach (string concept in ConceptIds.All)
+            foreach (string concept in ConceptIds.CodeSkills)
                 if (!conceptsUsed.Contains(concept))
                     t.Warn($"concept '{concept}' is not used by any scenario violation");
         }

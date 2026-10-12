@@ -145,11 +145,12 @@
           "says": "Briefing content, frequency, depth by complexity, lone-worker planning."
         }
       ],
-      "appSkills": [],
-      "appCoverage": "none: the app has no job-briefing or hazard-assessment content, and utility line work is outside NEC skills.",
-      "plannedSkills": [
+      "appSkills": [
         "jobsite-safety"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app has no job-briefing or hazard-assessment content, and utility line work is outside NEC skills.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app has no job-briefing or hazard-assessment content, and utility line work is outside NEC skills."
     },
     {
       "name": "De-energizing, testing, grounding and tagging lines",
@@ -206,10 +207,11 @@
           "says": "Grounding rules, test before grounding, ground-end-first attachment, ampacity minimum."
         }
       ],
-      "appSkills": [],
+      "appSkills": [
+        "electrically-safe-work"
+      ],
       "appCoverage": "none: the app has no lockout/tagout, voltage testing or line grounding, and this is NESC/OSHA line work, not NEC.",
       "plannedSkills": [
-        "electrically-safe-work",
         "utility-line-work"
       ]
     },
@@ -323,11 +325,12 @@
           "says": "Paragraph (g) fall protection threshold, systems and anchorage strength."
         }
       ],
-      "appSkills": [],
-      "appCoverage": "none: no height or fall-protection content in the app; not an NEC topic.",
-      "plannedSkills": [
+      "appSkills": [
         "jobsite-safety"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: no height or fall-protection content in the app; not an NEC topic.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: no height or fall-protection content in the app; not an NEC topic."
     },
     {
       "name": "Setting poles and stringing conductors",
@@ -433,10 +436,11 @@
           "says": "Paragraph (e) enclosed-space testing, ventilation and attendant."
         }
       ],
-      "appSkills": [],
+      "appSkills": [
+        "jobsite-safety"
+      ],
       "appCoverage": "none: no underground or enclosed-space content; utility vault work is NESC/OSHA, though building transformer vaults are NEC Article 450.",
       "plannedSkills": [
-        "jobsite-safety",
         "utility-line-work"
       ]
     },
@@ -544,12 +548,11 @@
         "equipment-installation",
         "disconnecting-means",
         "identification-marking",
-        "earthing-bonding"
+        "earthing-bonding",
+        "utility-interface"
       ],
       "appCoverage": "partial: skills such as earthing-bonding and disconnecting-means teach the customer-side rules checked here, but not the utility-side connection, meter set or voltage and phasing check.",
-      "plannedSkills": [
-        "utility-interface"
-      ]
+      "plannedSkills": []
     }
   ],
   "standardsAndCodes": [

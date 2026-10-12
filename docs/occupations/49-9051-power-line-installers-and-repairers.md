@@ -69,11 +69,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269 (Briefing content and once-per-shift allowance for repetitive work.)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.952 (Briefing content, frequency, depth by complexity, lone-worker planning.)
 
-**App coverage today (none):** none: the app has no job-briefing or hazard-assessment content, and utility line work is outside NEC skills.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app has no job-briefing or hazard-assessment content, and utility line work is outside NEC skills.)
 
-**Skills the app teaches that this procedure uses:** none
+**Skills the app teaches that this procedure uses:** jobsite-safety
 
-**Skills still to build for it:** jobsite-safety
+**Skills still to build for it:** none
 
 ### P2. De-energizing, testing, grounding and tagging lines
 
@@ -111,9 +111,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (none):** none: the app has no lockout/tagout, voltage testing or line grounding, and this is NESC/OSHA line work, not NEC.
 
-**Skills the app teaches that this procedure uses:** none
+**Skills the app teaches that this procedure uses:** electrically-safe-work
 
-**Skills still to build for it:** electrically-safe-work, utility-line-work
+**Skills still to build for it:** utility-line-work
 
 ### P3. Working near and on energized lines (approach distances)
 
@@ -187,11 +187,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.954 (Fall protection, positioning strap and hardware requirements for power-line work.)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269 (Paragraph (g) fall protection threshold, systems and anchorage strength.)
 
-**App coverage today (none):** none: no height or fall-protection content in the app; not an NEC topic.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: no height or fall-protection content in the app; not an NEC topic.)
 
-**Skills the app teaches that this procedure uses:** none
+**Skills the app teaches that this procedure uses:** jobsite-safety
 
-**Skills still to build for it:** jobsite-safety
+**Skills still to build for it:** none
 
 ### P5. Setting poles and stringing conductors
 
@@ -266,9 +266,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (none):** none: no underground or enclosed-space content; utility vault work is NESC/OSHA, though building transformer vaults are NEC Article 450.
 
-**Skills the app teaches that this procedure uses:** none
+**Skills the app teaches that this procedure uses:** jobsite-safety
 
-**Skills still to build for it:** jobsite-safety, utility-line-work
+**Skills still to build for it:** utility-line-work
 
 ### P7. Storm restoration and outage switching
 
@@ -341,9 +341,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (partial):** partial: skills such as earthing-bonding and disconnecting-means teach the customer-side rules checked here, but not the utility-side connection, meter set or voltage and phasing check.
 
-**Skills the app teaches that this procedure uses:** equipment-installation, disconnecting-means, identification-marking, earthing-bonding
+**Skills the app teaches that this procedure uses:** equipment-installation, disconnecting-means, identification-marking, earthing-bonding, utility-interface
 
-**Skills still to build for it:** utility-interface
+**Skills still to build for it:** none
 
 ## Standards and codes
 

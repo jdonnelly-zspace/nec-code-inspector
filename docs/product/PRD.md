@@ -78,19 +78,19 @@ Status: **Built** (in the repository and tested), **Partial** (data or code exis
 
 | ID | Requirement | Status | Where |
 |---|---|---|---|
-| FR-1 | The student chooses an occupation; the app shows the procedures of that occupation and which are taught. | Planned | `docs/occupations/`; needs an occupation data file and a picker. |
-| FR-2 | Each procedure is available as an SOP: purpose, steps, hazards, controls, standards. | Partial | Documented for six occupations (44 procedures); not yet data the app loads. |
-| FR-3 | Skills with tiers (Foundation, Practitioner, Authority); 13 code skills today and the proposed ones. | Partial | 13 built (`ConceptIds`); 10 proposed in `docs/occupations/proposed-skills.json`. |
+| FR-1 | The student chooses an occupation; the app shows the procedures of that occupation and which are taught. | Partial | `occupations.json`, `OccupationLibrary`, `OccupationPickerPanel`; the panel is not in a scene yet. |
+| FR-2 | Each procedure is available as an SOP: purpose, steps, hazards, controls, standards. | Partial | 44 procedures load from `occupations.json` (purpose, steps, hazards, controls; standards stay in the research documents because students never see them); draft, no expert review. |
+| FR-3 | Skills with tiers (Foundation, Practitioner, Authority); code skills and procedure skills. | Partial | 20 built (13 code, 7 procedure skills of wave 1; `ConceptIds`); 3 skills of waves 2 and 3 not built. |
 | FR-4 | Inspection scenarios: point at a part of a 3D building, flag a violation, cite the rule, get scored feedback. | Partial | 6 scenarios, 139 NEC violations, 14 CEC, 9 BS 7671 as data; no 3D scenes built. |
 | FR-5 | Sessions draw a different set of violations each time, spread across skills. | Built | `ViolationDraw`, `docs/POOL_AND_DRAW.md`. |
-| FR-6 | Procedure trainers: guided practice of a procedure's steps (lockout and test-before-touch, troubleshooting, a staged inspection), including a virtual meter and tester. | Planned | Needs new skills and scenes. |
+| FR-6 | Procedure trainers: guided practice of a procedure's steps (lockout and test-before-touch, troubleshooting, a staged inspection), including a virtual meter and tester. | Partial | Step-ordering practice built for 28 of 44 procedures (`ProcedurePractice`, `ProcedurePracticePanel`); the virtual meter and scene-based trainers are planned. |
 | FR-7 | Panel design sandbox: design, wire and check a residential panel. | Partial | 1 design, US only (needs tables); scene not built. |
-| FR-8 | Skill lessons before practice, in the student's region's words. | Partial | 13 lessons and a panel; not wired into a scene. |
+| FR-8 | Skill lessons before practice, in the student's region's words. | Partial | 20 lessons and a panel; not wired into a scene. |
 | FR-9 | Tutorial that teaches the stylus and a first inspection. | Planned | `docs/TEACHING_CONTENT.md`. |
 | FR-10 | Reference lookup: search rule entries and quick reference cards. | Partial | NEC 161 entries, CEC 12, BS 7671 29; 9 NEC cards; UI built, not run in Unity. |
 | FR-11 | Region choice sets the code, units and wording; the code is never named. | Partial | Built and tested; picker not wired into a scene. |
 | FR-12 | Three generic difficulty levels. | Built | Text and tests. |
-| FR-13 | Progress per skill and tier, saved with the student; derived progress per procedure. | Partial | Per skill built; per procedure planned. |
+| FR-13 | Progress per skill and tier, saved with the student; derived progress per procedure. | Partial | Per skill built; each procedure practice is saved with its score (`ProcedureProgress`); a derived per-procedure view is planned. |
 | FR-14 | A content pipeline: scaffold, tests, source verification, expert worksheets. | Built | `tools/`, `docs/AUTHORING_VIOLATIONS.md`, expert review packet. |
 | FR-15 | Teacher reporting: class progress by skill and procedure. | Planned | An offline alignment report exists (`tools/alignment-report`); nothing in the app. |
 | FR-16 | Code profiles for each region and for occupations that need another code (fire alarm standard). | Partial | NEC, CEC (draft), BS 7671 (draft); a fire alarm profile planned; the NESC blocked. |

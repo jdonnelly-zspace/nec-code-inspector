@@ -71,9 +71,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (partial):** partial: the sandbox practices panel design and load calculation, but the app does not teach reading drawings, one-line diagrams, fault-current review or plan examiner workflow.
 
-**Skills the app teaches that this procedure uses:** load-calculation, conductor-sizing, overcurrent-protection, earthing-bonding
+**Skills the app teaches that this procedure uses:** load-calculation, conductor-sizing, overcurrent-protection, earthing-bonding, plans-and-documentation, code-administration
 
-**Skills still to build for it:** plans-and-documentation, code-administration
+**Skills still to build for it:** none
 
 ### P2. New dwelling electrical inspection sequence
 
@@ -109,9 +109,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (partial):** partial: students find violations in finished 3D buildings, but the app does not stage inspections (slab, rough-in, final) or teach what is hidden at each stage.
 
-**Skills the app teaches that this procedure uses:** wiring-methods, equipment-installation, earthing-bonding, branch-circuit-requirements
+**Skills the app teaches that this procedure uses:** wiring-methods, equipment-installation, earthing-bonding, branch-circuit-requirements, code-administration
 
-**Skills still to build for it:** code-administration
+**Skills still to build for it:** none
 
 ### P3. Service and panel inspection, including grounding and bonding
 
@@ -186,9 +186,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (partial):** partial: the app teaches where GFCI and AFCI are required and spotting missing ones, but not testing with a tester or button, or finding miswired devices.
 
-**Skills the app teaches that this procedure uses:** shock-protection, arc-fault-protection, branch-circuit-requirements
+**Skills the app teaches that this procedure uses:** shock-protection, arc-fault-protection, branch-circuit-requirements, testing-and-measurement
 
-**Skills still to build for it:** testing-and-measurement
+**Skills still to build for it:** none
 
 ### P5. Writing a correction notice, re-inspection, and approving or rejecting work
 
@@ -225,9 +225,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (partial):** partial: students cite the rule for a violation, which is the core of a correction item, but there is no notice writing, re-inspection loop, approval decision or record keeping.
 
-**Skills the app teaches that this procedure uses:** identification-marking
+**Skills the app teaches that this procedure uses:** identification-marking, plans-and-documentation, code-administration
 
-**Skills still to build for it:** plans-and-documentation, code-administration
+**Skills still to build for it:** none
 
 ### P6. Inspector site safety and electrically safe work condition
 
@@ -264,11 +264,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333 (Requires lockout and tagging, testing for de-energized state by a qualified person, and limits energized work to qualified persons.)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1053 (Sets ladder angle, three-foot extension, three-point contact, and nonconductive rails near energized equipment.)
 
-**App coverage today (none):** none: the app teaches shock protection rules for installations, not lockout/tagout, testing before touching, PPE or safe work practice for the inspector.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches shock protection rules for installations, not lockout/tagout, testing before touching, PPE or safe work practice for the inspector.)
 
-**Skills the app teaches that this procedure uses:** shock-protection
+**Skills the app teaches that this procedure uses:** shock-protection, electrically-safe-work
 
-**Skills still to build for it:** electrically-safe-work
+**Skills still to build for it:** none
 
 ### P7. Checking code edition and local amendments
 
@@ -300,11 +300,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://electrical.nebraska.gov/node/187 (Example of a state announcing adoption of the 2023 NEC from a set date and changing exams to match.)
 - https://www.ecmweb.com/national-electrical-code/article/55403844/wisconsin-adopts-2023-national-electrical-code (Reports states adopting different editions, with Wisconsin adding extra requirements; some states already on the 2026 edition.)
 
-**App coverage today (none):** none: the app uses one code edition per code profile and does not teach how editions and local amendments differ or how an inspector finds them.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app uses one code edition per code profile and does not teach how editions and local amendments differ or how an inspector finds them.)
 
-**Skills the app teaches that this procedure uses:** none
+**Skills the app teaches that this procedure uses:** code-administration
 
-**Skills still to build for it:** code-administration
+**Skills still to build for it:** none
 
 ## Standards and codes
 

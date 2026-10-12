@@ -31,6 +31,7 @@ namespace NECInspector.Skills
     {
         public const string Inspection = "inspection";
         public const string Sandbox = "sandbox";
+        public const string Procedure = "procedure";
     }
 
     /// <summary>

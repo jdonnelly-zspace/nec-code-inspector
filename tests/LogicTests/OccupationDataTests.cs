@@ -41,17 +41,18 @@ namespace NECInspector.LogicTests
             foreach (var kv in proposed)
             {
                 var e = kv.Value;
-                t.IsTrue(!ConceptIds.IsKnown(kv.Key), $"{kv.Key}: not already one of the app's skills (a built skill is removed from the proposals)");
+                string builtState = Text(e, "status");
+                t.IsTrue(ConceptIds.IsKnown(kv.Key) == (builtState == "built"), $"{kv.Key}: is one of the app's skills exactly when its status is 'built'");
                 t.IsTrue(System.Text.RegularExpressions.Regex.IsMatch(kv.Key, "^[a-z]+(-[a-z]+)*$"), $"{kv.Key}: the id is lower-case words joined by '-'");
                 foreach (string field in new[] { "summary", "reason", "standards", "firstContent" })
                     t.IsTrue(Text(e, field).Length > 20, $"{kv.Key}: {field} is written");
                 t.IsTrue(Text(e, "title").Length >= 8, $"{kv.Key}: a title is written");
                 t.IsTrue(Text(e, "codeProfile").Length >= 4, $"{kv.Key}: says which code profile it needs, or none");
                 string status = Text(e, "status");
-                t.IsTrue(status == "proposed" || status == "approved" || status == "blocked", $"{kv.Key}: status is proposed, approved or blocked");
+                t.IsTrue(status == "proposed" || status == "approved" || status == "blocked" || status == "built", $"{kv.Key}: status is proposed, approved, blocked or built");
                 if (status == "blocked") t.IsTrue(Text(e, "blockedBy").Length > 20, $"{kv.Key}: a blocked skill says what blocks it");
                 t.IsTrue(e.TryGetProperty("wave", out var wave) && wave.GetInt32() >= 1 && wave.GetInt32() <= 3, $"{kv.Key}: sits in release wave 1, 2 or 3");
-                if (status == "approved" || status == "blocked") t.IsTrue(Text(e, "decision").StartsWith("approved"), $"{kv.Key}: records the owner's decision");
+                if (status == "approved" || status == "blocked" || status == "built") t.IsTrue(Text(e, "decision").StartsWith("approved"), $"{kv.Key}: records the owner's decision");
             }
         }
 
@@ -113,6 +114,7 @@ namespace NECInspector.LogicTests
                     }
 
                     if (word == "good") t.IsTrue(appSkills.Count > 0 && planned.Count == 0, $"{label}: a 'good' rating names skills and needs no new skill");
+                    t.IsTrue(planned.All(s => !ConceptIds.IsKnown(s)), $"{label}: a planned skill that has been built is listed among the app's skills instead");
                     if (word == "none") t.IsTrue(planned.Count > 0, $"{label}: a 'none' rating names the skill still to build");
                     t.IsTrue(!Text(p, "name").Contains("TODO") && !coverage.Contains("TODO"), $"{label}: no TODO left");
                 }
@@ -121,8 +123,8 @@ namespace NECInspector.LogicTests
                 t.IsTrue(d.GetProperty("doubts").GetArrayLength() >= 1, $"{soc}: the doubts are listed");
             }
 
-            foreach (string id in proposed.Keys)
-                t.IsTrue(usedProposed.Contains(id), $"proposed skill '{id}' is needed by at least one procedure");
+            foreach (var kv in proposed.Where(k => Text(k.Value, "status") != "built"))
+                t.IsTrue(usedProposed.Contains(kv.Key), $"proposed skill '{kv.Key}' is needed by at least one procedure");
         }
 
         private static void AdjacentFile(TestContext t, string folder)

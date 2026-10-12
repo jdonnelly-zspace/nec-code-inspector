@@ -12,7 +12,7 @@ namespace UnityEngine.UI
     }
     public class MaskableGraphic : Graphic { }
     public class Image : MaskableGraphic { public Sprite sprite; }
-    public class Selectable : MonoBehaviour { public Graphic targetGraphic; }
+    public class Selectable : MonoBehaviour { public Graphic targetGraphic; public bool interactable = true; }
     public class Button : Selectable
     {
         public class ButtonClickedEvent : UnityEvent { }
