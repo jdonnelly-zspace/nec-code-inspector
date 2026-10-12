@@ -2,7 +2,7 @@
   "designs": [
     {
       "assetName": "Residential200A",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "panelType": "Residential 200A",
       "displayName": "Residential Panel Design - 200A Service",
       "description": "Design a complete residential electrical panel for a 2,000 sq ft single-family dwelling. Select and place the correct breakers for all required circuits, route wiring with proper gauge conductors, and verify code compliance.",
@@ -178,7 +178,7 @@
     },
     {
       "assetName": "SmallHome150A",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "panelType": "Small Home 150A",
       "displayName": "Small Home 150A Design",
       "description": "Design the panel for a 1,200 sq ft starter home with a 150 A service. Place the breakers for the required circuits, use the right conductor for each, and check the design.",
@@ -313,7 +313,7 @@
     },
     {
       "assetName": "Starter200A",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "panelType": "Starter Home 200A",
       "displayName": "Starter Home 200A Design",
       "description": "Design the panel for a 1,600 sq ft home with a 200 A service. This home adds a garbage disposal, a garage and central air conditioning.",
@@ -488,7 +488,7 @@
     },
     {
       "assetName": "Cottage200A",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "panelType": "Cottage 200A",
       "displayName": "Cottage 200A Design",
       "description": "Design the panel for a 1,400 sq ft cottage with a 200 A service and a crawl space. Protect every receptacle that needs it, including the outdoor and crawl space circuits.",
@@ -675,7 +675,7 @@
     },
     {
       "assetName": "LargeHome200A",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "panelType": "Large Home 200A",
       "displayName": "Large Home 200A Design",
       "description": "Design the panel for a 3,000 sq ft home with a 200 A service, a finished basement and a second bathroom. The home has no central air conditioning, so check the main breaker against the breakers you place.",
@@ -876,7 +876,7 @@
     },
     {
       "assetName": "Estate200A",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "panelType": "Large Home with Workshop 200A",
       "displayName": "Large Home with Workshop 200A Design",
       "description": "Design the panel for a 4,200 sq ft home with a 200 A service, a detached workshop and a well. Every space and every amp counts, and the load must balance across the two sides of the panel.",

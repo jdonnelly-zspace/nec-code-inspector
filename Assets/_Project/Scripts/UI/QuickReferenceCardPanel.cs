@@ -142,7 +142,7 @@ namespace NECInspector.UI
             {
                 var refs = new List<string>();
                 foreach (var r in card.codeReferences)
-                    refs.Add(CodeProfiles.Terminology.ReferenceLabel(r));
+                    refs.Add(CodeProfiles.Active?.GetArticle(r)?.DisplayString ?? CodeProfiles.Terminology.ShownReference(r));
                 _cardNECRefs.text = string.Join("  |  ", refs);
             }
         }

@@ -1,7 +1,7 @@
 """Scaffold a new violation for a scenario, with the fields every violation needs and a reminder of the checklist.
 
     python tools/new_violation.py --scenario branch-circuits --skill shock-protection --difficulty Beginner \\
-        --id BC-GFCI-OUTDOOR-001 --codes nec,cec
+        --id BC-GFCI-OUTDOOR-001 --codes nec-2023,nec-2026,cec
 
 Prints the violation JSON and the reference-entry stubs to stdout. With --write the violation is appended to the
 scenario file. Every placeholder starts with TODO, and the logic tests fail while any TODO is left in the content, so
@@ -46,7 +46,7 @@ def main():
     ap.add_argument("--skill", required=True, help="skill id from ConceptIds.cs")
     ap.add_argument("--difficulty", required=True, choices=DIFFICULTIES, help="lowest difficulty the violation appears at")
     ap.add_argument("--id", required=True, dest="vid", help="violation id, e.g. BC-GFCI-OUTDOOR-001")
-    ap.add_argument("--codes", required=True, help="comma-separated code ids to cite, e.g. nec,cec")
+    ap.add_argument("--codes", required=True, help="comma-separated code ids to cite, e.g. nec-2023,nec-2026,cec")
     ap.add_argument("--severity", default="Major", choices=SEVERITIES)
     ap.add_argument("--subtle", action="store_true", help="only visible at Expert")
     ap.add_argument("--write", action="store_true", help="append to the scenario file instead of only printing")

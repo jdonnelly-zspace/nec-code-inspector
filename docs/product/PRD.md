@@ -93,7 +93,7 @@ Status: **Built** (in the repository and tested), **Partial** (data or code exis
 | FR-13 | Progress per skill and tier, saved with the student; derived progress per procedure. | Partial | Per skill built; each procedure practice is saved with its score (`ProcedureProgress`); a derived per-procedure view is planned. |
 | FR-14 | A content pipeline: scaffold, tests, source verification, expert worksheets. | Built | `tools/`, `docs/AUTHORING_VIOLATIONS.md`, expert review packet. |
 | FR-15 | Teacher reporting: class progress by skill and procedure. | Planned | An offline alignment report exists (`tools/alignment-report`); nothing in the app. |
-| FR-16 | Code profiles for each region and for occupations that need another code (fire alarm standard). | Partial | NEC, CEC (draft), BS 7671 (draft); a fire alarm profile planned; the NESC blocked. |
+| FR-16 | Code profiles for each region and for occupations that need another code (fire alarm standard). | Partial | NEC 2023 and NEC 2026 (draft) as separate profiles, CEC (draft), BS 7671 (draft); a fire alarm profile planned; the NESC blocked. |
 | FR-17 | Edition handling: the app knows which edition's numbering its content follows. | Blocked | Open decision 6 (TODO). |
 | FR-18 | Occupation fit is visible to the owner: a generated traceability matrix and gap list. | Built | `docs/occupations/TRACEABILITY.md`, `tools/occupations/build_docs.py`. |
 

@@ -57,7 +57,7 @@ namespace NECInspector.Inspection
             _articleGroup?.SetActive(true);
             gameObject.SetActive(true);
 
-            if (_articleRefText != null) _articleRefText.text = article.referenceLabel;
+            if (_articleRefText != null) _articleRefText.text = article.ShownLabel;
             if (_articleTitleText != null) _articleTitleText.text = article.title;
             if (_articleBodyText != null) _articleBodyText.text = article.text;
             if (_chapterText != null) _chapterText.text = CodeProfiles.Terminology.SectionName(article.chapter);

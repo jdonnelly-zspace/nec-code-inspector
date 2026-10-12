@@ -2,7 +2,7 @@
   "cards": [
     {
       "cardId": "QRC-GFCI-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "GFCI Protection Requirements",
       "category": "GFCIProtection",
       "summary": "Ground-Fault Circuit Interrupter (GFCI) protection is required for 125 V to 250 V receptacles in a dwelling's bathrooms, kitchens, garages, outdoors, basements, laundry areas, within 6 ft of sinks, and near bathtubs and showers, and for the outlets that supply dishwashers.",
@@ -27,7 +27,7 @@
     },
     {
       "cardId": "QRC-AFCI-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "AFCI Protection Requirements",
       "category": "AFCIProtection",
       "summary": "Arc-Fault Circuit Interrupter (AFCI) protection is required for 120 V, 15 A and 20 A branch circuits that serve the dwelling-unit rooms the code lists: bedrooms, living rooms, kitchens, dining rooms, hallways, closets, laundry areas and similar rooms.",
@@ -46,7 +46,7 @@
     },
     {
       "cardId": "QRC-WIRE-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Wire Gauge & Breaker Sizing",
       "category": "WireSizing",
       "summary": "Wire gauge must match the breaker amperage: 14 AWG max 15A, 12 AWG max 20A, 10 AWG max 30A, 8 AWG max 40A, 6 AWG max 55A. Never put a smaller wire on a larger breaker.",
@@ -68,7 +68,7 @@
     },
     {
       "cardId": "QRC-BRANCH-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Required Branch Circuits",
       "category": "BranchCircuits",
       "summary": "Dwelling units need 20 A circuits for the bathroom receptacles and the laundry receptacle, and at least two 20 A small-appliance circuits for the kitchen countertop and nearby eating areas.",
@@ -90,7 +90,7 @@
     },
     {
       "cardId": "QRC-SPACING-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Receptacle Spacing Rules",
       "category": "BranchCircuits",
       "summary": "Wall receptacles: no point more than 6 feet from an outlet (max 12 feet between outlets). Countertop receptacles: no point more than 24 inches from an outlet. Islands and peninsulas 24\"x12\" or larger need at least one outlet.",
@@ -112,7 +112,7 @@
     },
     {
       "cardId": "QRC-LOAD-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Residential Load Calculation",
       "category": "LoadCalculation",
       "summary": "Standard method: General lighting at 3 VA/sq ft + small-appliance circuits at 1,500 VA each + laundry at 1,500 VA. Apply Table 220.42 demand factors: first 3,000 VA at 100%, remainder at 35%. Add dryer (5,000 VA) and range (8,000 VA demand) at 100%.",
@@ -135,7 +135,7 @@
     },
     {
       "cardId": "QRC-GROUND-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Grounding Electrode System",
       "category": "Grounding",
       "summary": "All grounding electrodes present at a building must be bonded together. Common electrodes: metal underground water pipe (10ft+ contact), ground rods (8ft, 5/8\" diameter), concrete-encased electrode (Ufer ground). The grounding electrode conductor connects the system to earth.",
@@ -158,7 +158,7 @@
     },
     {
       "cardId": "QRC-PANEL-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Panel Design Basics",
       "category": "PanelDesign",
       "summary": "Panelboards must not exceed their bus rating. All circuits must be identified in a directory. Working space: 30\" wide, 36\" deep, 6.5' high minimum. Balance loads between bus sides. Main breaker must handle the calculated service load.",
@@ -181,7 +181,7 @@
     },
     {
       "cardId": "QRC-NM-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "NM Cable Installation",
       "category": "General",
       "summary": "NM (Romex) cable must be secured within 12 inches of every box and at intervals not exceeding 4.5 feet. When more than 2 NM cables pass through the same hole in framing that is sealed with insulation, caulk or foam, ampacity must be derated per Table 310.15(C)(1).",
@@ -203,7 +203,7 @@
     },
     {
       "cardId": "QRC-WORKSPACE-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Working Space and Access",
       "category": "WorkingSpace",
       "summary": "Keep clear, usable space around panels and other equipment that is worked on live. The space in front is as deep as the code's table gives, at least 30 inches wide (or as wide as the equipment if that is more), and clear from the floor up to 6-1/2 ft or the top of the equipment if that is taller. The space above the panel, equal to its width and depth, is reserved for the electrical installation and holds no pipes or ducts. Breakers and switches must be within reach: the grip of the handle at its top position is no higher than 6 ft 7 in.",
@@ -228,7 +228,7 @@
     },
     {
       "cardId": "QRC-DISCONNECT-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Disconnecting Means",
       "category": "DisconnectingMeans",
       "summary": "Every supply needs a way to cut it off. The service disconnect is readily accessible, outside the building or inside near where the service conductors enter, and its rating is at least the calculated load. A service normally has one disconnect; up to six are permitted for each service. A building supplied by a feeder or branch circuit needs a means to disconnect all its ungrounded conductors. A fixed appliance over 300 VA may use its branch-circuit breaker as its disconnect only if the breaker is in sight of the appliance or can be locked open.",
@@ -253,7 +253,7 @@
     },
     {
       "cardId": "QRC-MARKING-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Identification and Marking",
       "category": "Marking",
       "summary": "Marking tells the next person what they are touching. Every circuit, and every change to one, is labelled with its specific purpose in enough detail to tell it from the others; a label may not depend on who lives there. Each disconnecting means is marked with its purpose unless its place makes that obvious, and the service disconnect is marked as such. Grounded conductors of 6 AWG or smaller are white or gray (or striped), and equipment grounding conductors are green or green with a yellow stripe, which is never used for a circuit conductor. A switch or breaker shows clearly whether it is on or off.",
@@ -280,7 +280,7 @@
     },
     {
       "cardId": "QRC-WETDAMP-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Damp and Wet Locations",
       "category": "SpecialLocations",
       "summary": "Water changes what equipment is allowed. A receptacle outdoors under cover, or in another damp location, needs an enclosure that is weatherproof when its covers are closed. In a wet location the enclosure stays weatherproof with or without a plug in it, which in practice means an in-use cover. Luminaires in damp or wet locations are mounted so water cannot get into or collect in their wiring compartments or lampholders. Around a pool, other receptacles must be at least 6 ft from the inside wall, and the pool's conductive parts are bonded together with solid copper no smaller than 8 AWG.",
@@ -305,7 +305,7 @@
     },
     {
       "cardId": "QRC-OVERCURRENT-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Overcurrent Protection",
       "category": "Overcurrent",
       "summary": "A breaker or fuse protects the conductor, so its rating must match the conductor's ampacity. Breakers and fixed-trip fuses come in standard ratings, and where the ampacity falls between two, the next size up may be used, but not for a circuit with more than one receptacle for portable cord-and-plug loads. Small copper conductors have set limits: 14 AWG 15 A, 12 AWG 20 A, 10 AWG 30 A. No overcurrent device goes in series with an intentionally grounded conductor unless it opens every conductor of the circuit together. A panelboard is protected by a device rated no higher than the panelboard itself.",
@@ -331,7 +331,7 @@
     },
     {
       "cardId": "QRC-TERMINATION-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Terminations and Listed Equipment",
       "category": "General",
       "summary": "Equipment is installed and used the way its listing or labeling says, with good workmanship. Connectors and lugs must suit the conductor material. Conductors are terminated securely, without nicking or crushing them. Choose the conductor's temperature rating so it does not exceed the lowest rating among the connected terminations, conductors or devices. Internal parts such as busbars, terminals and insulators must not be damaged or contaminated by paint, plaster, cleaners or other foreign material.",
@@ -357,7 +357,7 @@
     },
     {
       "cardId": "QRC-BOXES-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Boxes and Cable Installation",
       "category": "General",
       "summary": "Boxes and conduit bodies must be big enough for every conductor inside, and installed so the wiring is accessible. In a noncombustible finish the front edge of a flush box must not sit more than 1/4 in. behind the surface; in a combustible finish it must be flush or project. At each outlet leave at least 6 in. of free conductor, and at least 3 in. outside an opening under 8 in. Cable through holes in framing stays at least 1-1/4 in. from the wood's edge, or is shielded. NM cable bends need a radius of at least five times the cable diameter, and the cable is protected where it can be damaged.",
@@ -384,7 +384,7 @@
     },
     {
       "cardId": "QRC-ENCLOSURE-001",
-      "profileId": "nec",
+      "profileId": "nec-2023",
       "title": "Panel Enclosures and Openings",
       "category": "General",
       "summary": "A panelboard goes in an enclosure made for it and is dead front, so no live parts can be touched from the operating side. Each cable entering is secured to the enclosure. Unused openings, including those meant for breakers, are closed so the protection is close to that of the enclosure wall. Each grounded conductor ends in its own terminal unless the terminal is marked for more than one, and a panelboard must prevent more overcurrent devices being installed than it is rated and listed for.",

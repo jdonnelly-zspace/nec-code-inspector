@@ -19,7 +19,12 @@
       "description": "Unsecured conductors in panel with poor workmanship",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.12",
+          "text": "Install electrical equipment tidily, with good workmanship."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.12",
           "text": "Install electrical equipment tidily, with good workmanship."
         },
@@ -46,7 +51,12 @@
       "description": "Aluminum service entrance conductor terminated on copper-only rated lug",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.14",
+          "text": "Terminations must make a solid connection without damaging the conductor, and connectors and terminals must be rated for the conductor's material."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.14",
           "text": "Terminations must make a solid connection without damaging the conductor, and connectors and terminals must be rated for the conductor's material."
         }
@@ -65,7 +75,18 @@
       "description": "Working space in front of panel is less than 36 inches deep",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.26(A)(1)",
+          "text": "Working space in front of live parts must be at least as deep as Table 110.26(A)(1) requires; for 0 to 150 V nominal that is 3 feet.",
+          "limit": {
+            "quantity": "panel-working-depth",
+            "kind": "min",
+            "value": 36,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.26(A)(1)",
           "text": "Working space in front of live parts must be at least as deep as Table 110.26(A)(1) requires; for 0 to 150 V nominal that is 3 feet.",
           "limit": {
@@ -115,7 +136,12 @@
       "description": "Service disconnect located in an area not readily accessible",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "230.70(A)",
+          "text": "Put the service disconnect where it is readily accessible, outside the building or inside near where the service conductors enter."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "230.70(A)",
           "text": "Put the service disconnect where it is readily accessible, outside the building or inside near where the service conductors enter."
         },
@@ -148,7 +174,12 @@
       "description": "12 AWG conductor protected by a 30-ampere overcurrent device",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "240.4",
+          "text": "Protect conductors (except flexible cords) from overcurrent according to their ampacity."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "240.4",
           "text": "Protect conductors (except flexible cords) from overcurrent according to their ampacity."
         },
@@ -172,7 +203,18 @@
       "description": "Breaker operating handle center is mounted above 6 feet 7 inches",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "240.24(A)",
+          "text": "Keep breakers and switches within easy reach: with the handle raised to its top position, the middle of its grip must be no higher than 6 ft 7 in. (2.0 m) off the floor or working platform.",
+          "limit": {
+            "quantity": "highest-breaker-handle-height",
+            "kind": "max",
+            "value": 79,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "240.24(A)",
           "text": "Keep breakers and switches within easy reach: with the handle raised to its top position, the middle of its grip must be no higher than 6 ft 7 in. (2.0 m) off the floor or working platform.",
           "limit": {
@@ -222,7 +264,12 @@
       "description": "Panel circuit directory is missing or has inaccurate circuit descriptions",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "408.4",
+          "text": "Label every circuit, and every change to a circuit, clearly with its specific purpose, in enough detail to tell it apart from all others."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "408.4",
           "text": "Label every circuit, and every change to a circuit, clearly with its specific purpose, in enough detail to tell it apart from all others."
         },
@@ -249,7 +296,12 @@
       "description": "More circuit breakers installed than the panel's rated number of spaces",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "408.54",
+          "text": "A panelboard must physically prevent installing more overcurrent devices than the number it was designed, rated and listed for."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "408.54",
           "text": "A panelboard must physically prevent installing more overcurrent devices than the number it was designed, rated and listed for."
         }
@@ -268,7 +320,12 @@
       "description": "The {term:panel} is mounted inside a clothes closet, with coats hanging against it",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "240.24(D)",
+          "text": "Overcurrent devices must not be placed where easily ignited material is nearby, such as inside a clothes closet."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "240.24(D)",
           "text": "Overcurrent devices must not be placed where easily ignited material is nearby, such as inside a clothes closet."
         }
@@ -287,7 +344,12 @@
       "description": "The {term:panel} is installed inside a bathroom next to the garage wall",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "240.24(E)",
+          "text": "In dwelling units (and hotel or motel guest rooms and suites), overcurrent devices other than supplementary overcurrent protection must not be located in bathrooms."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "240.24(E)",
           "text": "In dwelling units (and hotel or motel guest rooms and suites), overcurrent devices other than supplementary overcurrent protection must not be located in bathrooms."
         }
@@ -306,7 +368,12 @@
       "description": "A water supply pipe runs straight down past the top of the {term:panel}, through the space above it",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.26(E)(1)(a)",
+          "text": "The space equal to the width and depth of the panel, from the floor up to 6 ft above the equipment or the structural ceiling (whichever is lower), is reserved for the electrical installation. Pipes, ducts, leak protection apparatus and other foreign equipment cannot be in it."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.26(E)(1)(a)",
           "text": "The space equal to the width and depth of the panel, from the floor up to 6 ft above the equipment or the structural ceiling (whichever is lower), is reserved for the electrical installation. Pipes, ducts, leak protection apparatus and other foreign equipment cannot be in it."
         }
@@ -325,7 +392,18 @@
       "description": "The clear working space beside and in front of the {term:panel} is only about 20 inches wide because a water heater and a shelving unit crowd both sides",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.26(A)(2)",
+          "text": "The clear space in front of the equipment must be at least 30 in wide, or as wide as the equipment if that is greater, and may be centred or offset.",
+          "limit": {
+            "quantity": "clear working space width",
+            "kind": "min",
+            "value": 30,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.26(A)(2)",
           "text": "The clear space in front of the equipment must be at least 30 in wide, or as wide as the equipment if that is greater, and may be centred or offset.",
           "limit": {
@@ -362,7 +440,18 @@
       "description": "A low soffit and duct run in front of the {term:panel}, over the standing spot, leave only about 5.5 feet of headroom in the working space of this new-construction house",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.26(A)(3)",
+          "text": "The working space must be clear from the floor to at least 6.5 ft, or the equipment height if taller. Exception: service equipment or panelboards of 200 A or less in an existing dwelling unit may have less headroom.",
+          "limit": {
+            "quantity": "headroom over working space",
+            "kind": "min",
+            "value": 6.5,
+            "unit": "ft"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.26(A)(3)",
           "text": "The working space must be clear from the floor to at least 6.5 ft, or the equipment height if taller. Exception: service equipment or panelboards of 200 A or less in an existing dwelling unit may have less headroom.",
           "limit": {
@@ -399,7 +488,12 @@
       "description": "The {term:panel} door cannot swing open to a right angle because a bicycle rack and wall corner stop it partway",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.26(A)(2)",
+          "text": "The working space must allow equipment doors and hinged panels to open to at least 90 degrees."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.26(A)(2)",
           "text": "The working space must allow equipment doors and hinged panels to open to at least 90 degrees."
         }
@@ -418,7 +512,12 @@
       "description": "A disconnect switch in the garage has no label saying what it controls",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.22(A)",
+          "text": "Each service, feeder and branch-circuit disconnecting means is legibly marked to show what it is for, unless its location and arrangement already make the purpose obvious."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.22(A)",
           "text": "Each service, feeder and branch-circuit disconnecting means is legibly marked to show what it is for, unless its location and arrangement already make the purpose obvious."
         }
@@ -437,7 +536,12 @@
       "description": "A small branch-circuit neutral is red instead of white or gray",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "200.6(A)",
+          "text": "An insulated grounded conductor of 6 AWG or smaller is identified by a continuous white or gray outer finish, or by three continuous white or gray stripes on other than green insulation."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "200.6(A)",
           "text": "An insulated grounded conductor of 6 AWG or smaller is identified by a continuous white or gray outer finish, or by three continuous white or gray stripes on other than green insulation."
         }
@@ -456,7 +560,12 @@
       "description": "A green conductor is connected to a breaker and used as a live wire",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.119(A)",
+          "text": "Insulated equipment grounding conductors of the wire type have a continuous green or green-with-yellow-stripe finish, and conductors with that finish are not used as ungrounded or grounded circuit conductors."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.119(A)",
           "text": "Insulated equipment grounding conductors of the wire type have a continuous green or green-with-yellow-stripe finish, and conductors with that finish are not used as ungrounded or grounded circuit conductors."
         }
@@ -475,7 +584,12 @@
       "description": "A white conductor is used as an ungrounded (hot) conductor with no re-identification",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "200.7",
+          "text": "White, gray, or three-white-stripe insulation is for grounded conductors only. On circuits of 50 V or more it may serve as an ungrounded conductor only inside a cable assembly (for example a switch-loop supply) or a flexible cord, and in a cable it must be permanently re-marked a colour other than white, gray or green at its termination and wherever visible and accessible."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "200.7",
           "text": "White, gray, or three-white-stripe insulation is for grounded conductors only. On circuits of 50 V or more it may serve as an ungrounded conductor only inside a cable assembly (for example a switch-loop supply) or a flexible cord, and in a cable it must be permanently re-marked a colour other than white, gray or green at its termination and wherever visible and accessible."
         }
@@ -494,7 +608,12 @@
       "description": "The main disconnect at the service is not marked as the service disconnect",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "230.70(B)",
+          "text": "Each service disconnect is permanently marked to show that it is a service disconnect, so people can tell the one device that cuts off the whole supply."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "230.70(B)",
           "text": "Each service disconnect is permanently marked to show that it is a service disconnect, so people can tell the one device that cuts off the whole supply."
         }
@@ -513,7 +632,12 @@
       "description": "A large black feeder neutral has no white marking at its ends",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "200.6(B)",
+          "text": "A grounded conductor of 4 AWG or larger is identified by white or gray finish, three white stripes, or a distinctive white or gray marking put on at its terminations when installed."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "200.6(B)",
           "text": "A grounded conductor of 4 AWG or larger is identified by white or gray finish, three white stripes, or a distinctive white or gray marking put on at its terminations when installed."
         }
@@ -532,7 +656,12 @@
       "description": "Rooftop solar feeds the {term:panel} but no multiple-sources plaque at the service shows where the solar disconnect is",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "705.10",
+          "text": "A permanent plaque, label or directory at each service equipment location (or an approved readily visible spot) shows where each power source disconnecting means is, lists emergency phone numbers of off-site entities servicing the sources, and carries the wording 'CAUTION: MULTIPLE SOURCES OF POWER'."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "705.10",
           "text": "A permanent plaque, label or directory at each service equipment location (or an approved readily visible spot) shows where each power source disconnecting means is, lists emergency phone numbers of off-site entities servicing the sources, and carries the wording 'CAUTION: MULTIPLE SOURCES OF POWER'."
         }
@@ -551,7 +680,12 @@
       "description": "A large black equipment grounding conductor has no green marking at its ends",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.119(B)",
+          "text": "An insulated equipment grounding conductor of 4 AWG or larger that is not green must be permanently identified as an EGC at each end and at every accessible point, by stripping the insulation, coloring it green at the termination, or green tape or labels at the termination; conductor bodies with no splices or unused hubs are exempt."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.119(B)",
           "text": "An insulated equipment grounding conductor of 4 AWG or larger that is not green must be permanently identified as an EGC at each end and at every accessible point, by stripping the insulation, coloring it green at the termination, or green tape or labels at the termination; conductor bodies with no splices or unused hubs are exempt."
         }
@@ -570,7 +704,12 @@
       "description": "A generator inlet beside the garage has no warning sign about the type of system it supplies",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "702.7(C)",
+          "text": "Where a power inlet is used for a temporary connection to a portable generator, a warning sign near the inlet states the type of system the inlet is wired for, based on the transfer equipment: bonded-neutral (separately derived) only, or floating-neutral (non-separately derived) only."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "702.7(C)",
           "text": "Where a power inlet is used for a temporary connection to a portable generator, a warning sign near the inlet states the type of system the inlet is wired for, based on the transfer equipment: bonded-neutral (separately derived) only, or floating-neutral (non-separately derived) only."
         }
@@ -589,7 +728,12 @@
       "description": "The outdoor air-conditioning condenser has no disconnect at the unit; the only way to cut power is a {term:breaker} inside the house, out of sight of the condenser",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "440.14",
+          "text": "A way to disconnect the air-conditioning unit must be placed where it can be seen from the unit and reached easily, and may be mounted on or inside the unit."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "440.14",
           "text": "A way to disconnect the air-conditioning unit must be placed where it can be seen from the unit and reached easily, and may be mounted on or inside the unit."
         }
@@ -608,7 +752,12 @@
       "description": "A vertical-handle disconnect on the outdoor air-conditioner is mounted upside down, so the handle's down position is ON and up is OFF",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "404.7",
+          "text": "General-use and motor-circuit switches and circuit breakers in enclosures must clearly show open (off) or closed (on). Where the handle moves vertically, the up position is the closed (on) position."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "404.7",
           "text": "General-use and motor-circuit switches and circuit breakers in enclosures must clearly show open (off) or closed (on). Where the handle moves vertically, the up position is the closed (on) position."
         }
@@ -627,7 +776,12 @@
       "description": "The detached shed is fed by a feeder from the house, but where the cable enters the shed there is no switch or breaker to disconnect the supply",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "225.31",
+          "text": "A building or structure supplied by a feeder or branch circuit needs a means to disconnect all ungrounded conductors that supply or pass through it. Under 225.36 a circuit breaker, molded case switch, general-use switch or snap switch all qualify."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "225.31",
           "text": "A building or structure supplied by a feeder or branch circuit needs a means to disconnect all ungrounded conductors that supply or pass through it. Under 225.36 a circuit breaker, molded case switch, general-use switch or snap switch all qualify."
         }
@@ -646,7 +800,12 @@
       "description": "The water heater is switched only by a {term:breaker} in the garage {term:panel}, which cannot be seen from the heater, and that {term:breaker} has no provision for a lock",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "422.31(B)",
+          "text": "For a fixed appliance over 300 VA, the branch-circuit breaker can be its disconnect only if it is in sight of the appliance or can be locked open with the lock provision staying in place."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "422.31(B)",
           "text": "For a fixed appliance over 300 VA, the branch-circuit breaker can be its disconnect only if it is in sight of the appliance or can be locked open with the lock provision staying in place."
         }
@@ -665,7 +824,12 @@
       "description": "The garage service equipment has seven separate {term:service-disconnect} {term:breaker}s instead of at most six",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "230.71(B)",
+          "text": "A service normally has one disconnect; up to six service disconnecting means (switches or sets of breakers) are permitted for each service, and more than six is not. The limit is per service, not per building."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "230.71(B)",
           "text": "A service normally has one disconnect; up to six service disconnecting means (switches or sets of breakers) are permitted for each service, and more than six is not. The limit is per service, not per building."
         }
@@ -684,7 +848,12 @@
       "description": "The one-family house's {term:service-disconnect} is rated 60 A, below the 100 A minimum",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "230.79",
+          "text": "For a one-family dwelling, the service disconnecting means must be rated at least 100 amperes, 3-wire, whatever the calculated load."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "230.79",
           "text": "For a one-family dwelling, the service disconnecting means must be rated at least 100 amperes, 3-wire, whatever the calculated load."
         }
@@ -703,7 +872,12 @@
       "description": "The condenser disconnect is screwed to the unit's removable service access panel and covers part of the equipment nameplate",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "440.14",
+          "text": "The disconnect must not sit on a panel designed to give access to the equipment, nor hide the equipment nameplate."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "440.14",
           "text": "The disconnect must not sit on a panel designed to give access to the equipment, nor hide the equipment nameplate."
         }
@@ -722,7 +896,18 @@
       "description": "A fence leaves only 20 in of clear depth in front of the condenser disconnect",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "440.14",
+          "text": "An air-conditioning disconnect must meet the working space rules of 110.26(A). At 120/240 V (0-150 V to ground) the clear depth in front is at least 36 in; the space is also at least 30 in wide and 6.5 ft high.",
+          "limit": {
+            "quantity": "clear working space depth in front of disconnect",
+            "kind": "min",
+            "value": 36,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "440.14",
           "text": "An air-conditioning disconnect must meet the working space rules of 110.26(A). At 120/240 V (0-150 V to ground) the clear depth in front is at least 36 in; the space is also at least 30 in wide and 6.5 ft high.",
           "limit": {
@@ -759,7 +944,12 @@
       "description": "An unused knockout on the garage {term:panel} enclosure has been punched out and left open",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.12(A)",
+          "text": "Unused cable or raceway openings in enclosures must be effectively closed so they protect about as well as the enclosure wall itself."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.12(A)",
           "text": "Unused cable or raceway openings in enclosures must be effectively closed so they protect about as well as the enclosure wall itself."
         }
@@ -778,7 +968,12 @@
       "description": "An empty {term:breaker} space in the {term:panel} has no blank filler, leaving the opening exposed",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "408.7",
+          "text": "Unused openings meant for breakers or switches must be closed with identified closures or other approved means giving protection close to that of the enclosure wall."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "408.7",
           "text": "Unused openings meant for breakers or switches must be closed with identified closures or other approved means giving protection close to that of the enclosure wall."
         }
@@ -797,7 +992,12 @@
       "description": "A cable passes through the enclosure opening with no clamp or connector holding it to the enclosure",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "312.5(C)",
+          "text": "Where cable is used, each cable entering a cabinet or panel enclosure must be secured to the enclosure. A narrow exception lets nonmetallic-sheathed cable enter the top of a surface-mounted enclosure through a long raceway."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "312.5(C)",
           "text": "Where cable is used, each cable entering a cabinet or panel enclosure must be secured to the enclosure. A narrow exception lets nonmetallic-sheathed cable enter the top of a surface-mounted enclosure through a long raceway."
         }
@@ -816,7 +1016,18 @@
       "description": "The flush-mounted {term:panel} cover has a wide gap between the enclosure edge and the broken drywall around it",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "312.4",
+          "text": "Where a flush-cover cabinet sits in a noncombustible wall surface, any broken or missing surface must be repaired so gaps at the cabinet edge are no more than 3 mm (1/8 in.).",
+          "limit": {
+            "quantity": "gap between enclosure edge and wall surface",
+            "kind": "max",
+            "value": 3,
+            "unit": "mm"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "312.4",
           "text": "Where a flush-cover cabinet sits in a noncombustible wall surface, any broken or missing surface must be repaired so gaps at the cabinet edge are no more than 3 mm (1/8 in.).",
           "limit": {
@@ -853,7 +1064,12 @@
       "description": "Wall paint overspray has coated the bus stabs and terminals inside the {term:panel}",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.12(B)",
+          "text": "Internal parts such as busbars, terminals and insulators must not be damaged or contaminated by foreign materials like paint, plaster, cleaners, abrasives or corrosive residue."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.12(B)",
           "text": "Internal parts such as busbars, terminals and insulators must not be damaged or contaminated by foreign materials like paint, plaster, cleaners, abrasives or corrosive residue."
         }
@@ -872,7 +1088,12 @@
       "description": "A conductor under a {term:breaker} lug has been nicked and some copper strands cut away where it was stripped",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.14(A)",
+          "text": "Connections to terminals must be mechanically secure and made so the conductor is not damaged in the process."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.14(A)",
           "text": "Connections to terminals must be mechanically secure and made so the conductor is not damaged in the process."
         }
@@ -891,7 +1112,12 @@
       "description": "A {term:breaker} terminal screw is backed out and the conductor sits loose in the lug",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.14(A)",
+          "text": "Connections to terminals must be a mechanically secure electrical connection, made without damaging the conductors."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.14(A)",
           "text": "Connections to terminals must be a mechanically secure electrical connection, made without damaging the conductors."
         }
@@ -910,7 +1136,12 @@
       "description": "The {term:panel} is mounted directly over the steps of the stairway leading from the garage into the house",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "240.24(F)",
+          "text": "Overcurrent devices are not to be placed over the steps of a stairway, because someone servicing or resetting them would have to stand on uneven treads."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "240.24(F)",
           "text": "Overcurrent devices are not to be placed over the steps of a stairway, because someone servicing or resetting them would have to stand on uneven treads."
         }
@@ -929,7 +1160,12 @@
       "description": "The main {term:breaker} is rated higher than the maximum ampere rating on the {term:panel}'s own label",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "408.36",
+          "text": "A panelboard must be protected by an overcurrent device rated no higher than the panelboard's own rating. The device can be a main breaker in the panelboard or one on the supply side of it."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "408.36",
           "text": "A panelboard must be protected by an overcurrent device rated no higher than the panelboard's own rating. The device can be a main breaker in the panelboard or one on the supply side of it."
         }
@@ -948,7 +1184,12 @@
       "description": "The garage {term:panel} sits at vehicle bumper height beside the parking bay with no guard or protection",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "240.24(C)",
+          "text": "Overcurrent devices go where they are not exposed to physical damage, so equipment where vehicles can strike it needs relocation or a guard."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "240.24(C)",
           "text": "Overcurrent devices go where they are not exposed to physical damage, so equipment where vehicles can strike it needs relocation or a guard."
         }
@@ -967,7 +1208,12 @@
       "description": "A fuse block in the panel has plain Edison-base fuse sockets with no Type S adapters, so any size plug fuse fits",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "240.52",
+          "text": "Edison-base fuseholders may be installed only where adapters make them accept Type S fuses, which resist swapping in a larger fuse. Once fitted, a Type S adapter is designed not to be removed (240.54)."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "240.52",
           "text": "Edison-base fuseholders may be installed only where adapters make them accept Type S fuses, which resist swapping in a larger fuse. Once fitted, a Type S adapter is designed not to be removed (240.54)."
         }
@@ -986,7 +1232,12 @@
       "description": "A fuse is connected in series with the neutral conductor of the feeder to the garage sub-{term:panel}",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "240.22",
+          "text": "No overcurrent device may be placed in series with an intentionally grounded conductor, unless the device opens every conductor of the circuit together and no pole can act alone, or motor overload rules call for it."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "240.22",
           "text": "No overcurrent device may be placed in series with an intentionally grounded conductor, unless the device opens every conductor of the circuit together and no pole can act alone, or motor overload rules call for it."
         }
@@ -1005,7 +1256,12 @@
       "description": "The garage {term:panel} uses breakers with a series combination rating, but there is no field label saying so and requiring identified replacement parts",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.22(C)",
+          "text": "When breakers or fuses rely on a manufacturer's series combination rating, the equipment must carry a readable field marking saying so, with the rating and a caution that identified replacement parts are required."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.22(C)",
           "text": "When breakers or fuses rely on a manufacturer's series combination rating, the equipment must carry a readable field marking saying so, with the rating and a caution that identified replacement parts are required."
         }
@@ -1024,7 +1280,12 @@
       "description": "A {term:panel} is mounted in the attic and the only way up is a ceiling hatch that needs a loose stepladder",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "240.24(A)",
+          "text": "Overcurrent devices must be readily accessible, meaning reachable quickly without climbing over things, removing obstacles or using portable ladders. A breaker panel reached only through a scuttle hole and a loose ladder does not meet this."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "240.24(A)",
           "text": "Overcurrent devices must be readily accessible, meaning reachable quickly without climbing over things, removing obstacles or using portable ladders. A breaker panel reached only through a scuttle hole and a loose ladder does not meet this."
         }
@@ -1043,7 +1304,12 @@
       "description": "The house has two {term:service-disconnect}s for one service, one on the garage wall and the other on a wall inside the laundry room",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "230.72(A)",
+          "text": "The two to six service disconnects for a service must be grouped, and each marked with the load it serves. The one exception is a water-pump disconnect that also serves fire protection, which may be remote if a plaque at the group shows where it is."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "230.72(A)",
           "text": "The two to six service disconnects for a service must be grouped, and each marked with the load it serves. The one exception is a water-pump disconnect that also serves fire protection, which may be remote if a plaque at the group shows where it is."
         }
@@ -1062,7 +1328,12 @@
       "description": "The garage {term:panel} has no dead-front cover, so the {term:breaker} bodies, bus and wire ends are open to touch",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "408.38",
+          "text": "A panelboard goes in a cabinet or enclosure made for it and is dead front, meaning no live parts can be touched from the operating side."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "408.38",
           "text": "A panelboard goes in a cabinet or enclosure made for it and is dead front, meaning no live parts can be touched from the operating side."
         }
@@ -1081,7 +1352,12 @@
       "description": "Two neutral conductors from different circuits are clamped under the same terminal screw on the {term:panel} neutral bar",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "408.41",
+          "text": "Each grounded (neutral) conductor ends in its own terminal inside the panelboard, one not also used for another conductor. Parallel conductors of one circuit may share a terminal marked for more than one conductor."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "408.41",
           "text": "Each grounded (neutral) conductor ends in its own terminal inside the panelboard, one not also used for another conductor. Parallel conductors of one circuit may share a terminal marked for more than one conductor."
         }
@@ -1100,7 +1376,12 @@
       "description": "The {term:panel} directory names circuits by who uses the room, such as a person's name, instead of what the circuit serves",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "408.4(A)",
+          "text": "Each circuit is labelled with a clear, specific purpose. A description may not depend on transient conditions of occupancy, such as a family member's name."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "408.4(A)",
           "text": "Each circuit is labelled with a clear, specific purpose. A description may not depend on transient conditions of occupancy, such as a family member's name."
         }

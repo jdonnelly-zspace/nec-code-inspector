@@ -63,7 +63,7 @@ namespace NECInspector.LogicTests
             var profiles = new ICodeProfile[]
             {
                 Make("zed", "Zed Code", "GB", "draft", false),
-                Make("nec", "NEC (NFPA 70)", "US", "app-defined", true),
+                Make(CodeProfileIds.Nec, "NEC (NFPA 70)", "US", "app-defined", true),
                 Make("alpha", "Alpha Code", "CA", "reviewed", true)
             };
 

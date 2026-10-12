@@ -19,7 +19,12 @@
       "description": "Cable runs through a bored hole 3/4 inch from the edge of a stud with no protective plate",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "300.4(A)",
+          "text": "Cables and raceways through bored holes in wood framing need to sit at least 1-1/4 in from the nearest edge of the framing member; closer than that, a steel plate or sleeve at least 1/16 in thick must protect them."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "300.4(A)",
           "text": "Cables and raceways through bored holes in wood framing need to sit at least 1-1/4 in from the nearest edge of the framing member; closer than that, a steel plate or sleeve at least 1/16 in thick must protect them."
         }
@@ -38,7 +43,12 @@
       "description": "NM cable runs 6 feet along a joist with no staples or straps",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "334.30",
+          "text": "Secure NM cable within 12 in of each box and fitting, and at least every 4-1/2 ft between those points."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "334.30",
           "text": "Secure NM cable within 12 in of each box and fitting, and at least every 4-1/2 ft between those points."
         }
@@ -57,7 +67,12 @@
       "description": "Direct-buried UF cable to the detached garage is only 10 inches deep",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "300.5",
+          "text": "Direct-buried cable needs the cover depth in Table 300.5, normally 24 in. Shallower depths are allowed only in listed cases, such as 12 in for GFCI-protected residential circuits."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "300.5",
           "text": "Direct-buried cable needs the cover depth in Table 300.5, normally 24 in. Shallower depths are allowed only in listed cases, such as 12 in for GFCI-protected residential circuits."
         }
@@ -76,7 +91,12 @@
       "description": "Device box holds more conductors than its volume allows",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "314.16",
+          "text": "A box must be large enough for everything in it: count each conductor, two for each device yoke, one for all the clamps and one for all the equipment grounds together, and multiply by the volume allowance for the conductor size."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "314.16",
           "text": "A box must be large enough for everything in it: count each conductor, two for each device yoke, one for all the clamps and one for all the equipment grounds together, and multiply by the volume allowance for the conductor size."
         }
@@ -95,7 +115,12 @@
       "description": "Feeder to the garage crosses a residential driveway 9 feet above grade",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "225.18",
+          "text": "Overhead conductors of 300 V or less to ground need 12 ft of clearance over residential driveways; 10 ft is enough only where only pedestrians can reach them, and 18 ft is needed over public roads."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "225.18",
           "text": "Overhead conductors of 300 V or less to ground need 12 ft of clearance over residential driveways; 10 ft is enough only where only pedestrians can reach them, and 18 ft is needed over public roads."
         }
@@ -114,7 +139,18 @@
       "description": "Type NM cable is folded around a sharp corner with an inside bend radius of only 1 inch",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "334.24",
+          "text": "Bends in this cable must not damage it. The inside edge of any bend, during or after installation, needs a radius of at least five times the cable diameter (major diameter for flat cable).",
+          "limit": {
+            "quantity": "inside bend radius of NM cable (cable major diameter 0.5 in.)",
+            "kind": "min",
+            "value": 2.5,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "334.24",
           "text": "Bends in this cable must not damage it. The inside edge of any bend, during or after installation, needs a radius of at least five times the cable diameter (major diameter for flat cable).",
           "limit": {
@@ -151,7 +187,18 @@
       "description": "Conductors at a small switch box stick out only 1 inch past the opening, too short to connect a device",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "300.14",
+          "text": "At each outlet, junction or switch point, leave at least 6 in. of free conductor for splices or device connections. If the opening is under 8 in. in any dimension, each conductor must reach at least 3 in. outside it.",
+          "limit": {
+            "quantity": "conductor length extending outside the box opening",
+            "kind": "min",
+            "value": 3.0,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "300.14",
           "text": "At each outlet, junction or switch point, leave at least 6 in. of free conductor for splices or device connections. If the opening is under 8 in. in any dimension, each conductor must reach at least 3 in. outside it.",
           "limit": {
@@ -188,7 +235,18 @@
       "description": "NM cable comes up through the floor with only a 2 inch sleeve above the floor and no protection above that",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "334.15(B)",
+          "text": "Where NM cable is subject to physical damage it must be protected by metal conduit, EMT, Schedule 80 PVC or another approved means. Where it passes through a floor, that enclosure must extend at least 6 in. above the floor.",
+          "limit": {
+            "quantity": "height of protective enclosure above floor",
+            "kind": "min",
+            "value": 6.0,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "334.15(B)",
           "text": "Where NM cable is subject to physical damage it must be protected by metal conduit, EMT, Schedule 80 PVC or another approved means. Where it passes through a floor, that enclosure must extend at least 6 in. above the floor.",
           "limit": {
@@ -225,7 +283,18 @@
       "description": "EMT run leaves a junction box with its first strap 6 feet away",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "358.30(A)",
+          "text": "Tubing must be fastened within 3 ft of each box, cabinet, conduit body or other termination, and supported at intervals of no more than 10 ft. Up to 5 ft is allowed only where framing prevents 3 ft.",
+          "limit": {
+            "quantity": "distance from box to first EMT fastening",
+            "kind": "max",
+            "value": 3.0,
+            "unit": "ft"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "358.30(A)",
           "text": "Tubing must be fastened within 3 ft of each box, cabinet, conduit body or other termination, and supported at intervals of no more than 10 ft. Up to 5 ft is allowed only where framing prevents 3 ft.",
           "limit": {
@@ -262,7 +331,18 @@
       "description": "A 100 ft straight run of PVC conduit between two fixed boxes has no expansion fitting",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "352.44(A)",
+          "text": "In a straight PVC run between securely mounted points such as boxes or elbows, an expansion fitting is needed when the expected length change from temperature is 1/4 in. or more, using the code table.",
+          "limit": {
+            "quantity": "expected thermal length change of straight PVC run with no expansion fitting",
+            "kind": "max",
+            "value": 0.25,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "352.44(A)",
           "text": "In a straight PVC run between securely mounted points such as boxes or elbows, an expansion fitting is needed when the expected length change from temperature is 1/4 in. or more, using the code table.",
           "limit": {
@@ -299,7 +379,18 @@
       "description": "Device box sits 1/2 inch behind the finished drywall surface",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "314.20",
+          "text": "In gypsum or other noncombustible finishes, the front edge of a flush box or ring must not sit more than 1/4 in. behind the surface. In wood or other combustible finishes it must be flush or project.",
+          "limit": {
+            "quantity": "box front edge set back behind finished drywall surface",
+            "kind": "max",
+            "value": 0.25,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "314.20",
           "text": "In gypsum or other noncombustible finishes, the front edge of a flush box or ring must not sit more than 1/4 in. behind the surface. In wood or other combustible finishes it must be flush or project.",
           "limit": {
@@ -336,7 +427,12 @@
       "description": "A junction box holding cable splices is buried behind finished drywall with no access opening",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "314.29(A)",
+          "text": "Boxes and conduit bodies in buildings have to be installed so the wiring and devices inside are accessible. Accessible means reachable without damaging the building structure or finish and not permanently closed in by it."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "314.29(A)",
           "text": "Boxes and conduit bodies in buildings have to be installed so the wiring and devices inside are accessible. Accessible means reachable without damaging the building structure or finish and not permanently closed in by it."
         }

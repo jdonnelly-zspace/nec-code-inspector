@@ -105,9 +105,9 @@ namespace NECInspector.Inspection
             {
                 // Show the violation's own reference; the looked-up article can be a broader prefix match
                 bool sameReference = article != null && citation != null && article.reference == citation.reference;
-                _missedNECArticleText.text = sameReference
-                    ? article.referenceLabel
-                    : (citation != null ? CodeProfiles.Terminology.ReferenceLabel(citation.reference) : "");
+                // Students see the entry's title; the number only if the profile shows numbers
+                var cited = sameReference ? article : (citation != null ? CodeProfiles.Active?.GetArticle(citation.reference) : null);
+                _missedNECArticleText.text = cited != null ? cited.DisplayString : "";
             }
             if (_missedNECTextContent != null)
                 _missedNECTextContent.text = article?.text ?? citation?.text;

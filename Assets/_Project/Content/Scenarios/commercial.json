@@ -19,7 +19,12 @@
       "description": "Motor branch circuit overcurrent protection device exceeds Table 430.52 maximum",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "430.52",
+          "text": "A motor branch circuit's short-circuit and ground-fault device follows the percentages in Table 430.52 and stays at or below the maximum they give."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "430.52",
           "text": "A motor branch circuit's short-circuit and ground-fault device follows the percentages in Table 430.52 and stays at or below the maximum they give."
         }
@@ -38,7 +43,12 @@
       "description": "Motor branch circuit conductors undersized — not 125% of motor full-load current",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "430.22",
+          "text": "Conductors for one continuously running motor need ampacity of at least 125 percent of its full-load current (taken per 430.6(A)(1))."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "430.22",
           "text": "Conductors for one continuously running motor need ampacity of at least 125 percent of its full-load current (taken per 430.6(A)(1))."
         }
@@ -57,7 +67,12 @@
       "description": "Motor disconnect is not within sight of the motor controller",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "430.102(B)",
+          "text": "A motor disconnect must be in sight of the motor and of the machinery the motor drives."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "430.102(B)",
           "text": "A motor disconnect must be in sight of the motor and of the machinery the motor drives."
         },
@@ -83,7 +98,12 @@
       "description": "Motor overload protection exceeds 115% of nameplate full-load amperes",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "430.32",
+          "text": "A continuous-duty motor over 1 hp needs its own overload device set to trip at no more than 115 percent of nameplate full-load current, or 125 percent when the motor has a service factor of 1.15 or more or a marked temperature rise of 40 C or less."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "430.32",
           "text": "A continuous-duty motor over 1 hp needs its own overload device set to trip at no more than 115 percent of nameplate full-load current, or 125 percent when the motor has a service factor of 1.15 or more or a marked temperature rise of 40 C or less."
         }
@@ -102,8 +122,13 @@
       "description": "Calculated service load does not account for all connected loads",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
           "reference": "220.40",
+          "text": "A feeder or service load must equal at least the sum of the branch-circuit loads it supplies (Part II), after any demand factors allowed by Parts III, IV or V."
+        },
+        {
+          "profileId": "nec-2026",
+          "reference": "120.40",
           "text": "A feeder or service load must equal at least the sum of the branch-circuit loads it supplies (Part II), after any demand factors allowed by Parts III, IV or V."
         }
       ],
@@ -121,7 +146,12 @@
       "description": "Feeder conductor undersized for the calculated load it serves",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "215.2",
+          "text": "Size feeder conductors to carry the load worked out by the Article 220 calculation methods (its Parts III, IV and V)."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "215.2",
           "text": "Size feeder conductors to carry the load worked out by the Article 220 calculation methods (its Parts III, IV and V)."
         }
@@ -140,8 +170,13 @@
       "description": "Receptacle outlets not calculated at minimum 180 VA per outlet",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
           "reference": "220.14",
+          "text": "Outside dwelling units, count at least 180 VA for each single or multiple receptacle on one yoke when calculating the load."
+        },
+        {
+          "profileId": "nec-2026",
+          "reference": "120.14",
           "text": "Outside dwelling units, count at least 180 VA for each single or multiple receptacle on one yoke when calculating the load."
         }
       ],
@@ -159,7 +194,12 @@
       "description": "Equipment grounding conductor undersized for the motor branch circuit OCPD",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.122",
+          "text": "Pick the equipment grounding conductor size from Table 250.122, using the ampere rating or trip setting of the protective device ahead of the circuit."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.122",
           "text": "Pick the equipment grounding conductor size from Table 250.122, using the ampere rating or trip setting of the protective device ahead of the circuit."
         }
@@ -178,7 +218,12 @@
       "description": "Multiple motors on a single branch circuit without proper overcurrent protection sizing",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "430.24",
+          "text": "For several motors, or a motor plus other loads, conductor ampacity is 125 percent of the largest motor's full-load current plus the full-load currents of the other motors."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "430.24",
           "text": "For several motors, or a motor plus other loads, conductor ampacity is 125 percent of the largest motor's full-load current plus the full-load currents of the other motors."
         }
@@ -197,7 +242,12 @@
       "description": "Motor controller disconnect not rated for locked-rotor current",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "430.110",
+          "text": "A motor circuit's disconnect must be rated at 115 percent or more of the motor's full-load current, and a switch must also suit the motor's horsepower or locked-rotor current."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "430.110",
           "text": "A motor circuit's disconnect must be rated at 115 percent or more of the motor's full-load current, and a switch must also suit the motor's horsepower or locked-rotor current."
         }
@@ -216,7 +266,12 @@
       "description": "Motor nameplate data missing or illegible",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "430.7",
+          "text": "Motor nameplates carry the maker, voltage, frequency, phase count, full-load amps, temperature rise or insulation class, ambient temperature, time rating, horsepower and locked-rotor code letter."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "430.7",
           "text": "Motor nameplates carry the maker, voltage, frequency, phase count, full-load amps, temperature rise or insulation class, ambient temperature, time rating, horsepower and locked-rotor code letter."
         }
@@ -235,7 +290,12 @@
       "description": "Feeder tap conductor does not meet the 10-foot tap rule requirements",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "240.21(B)(1)",
+          "text": "A feeder tap needs no overcurrent device at the tap if it is no longer than 3.0 m (10 ft), has ampacity of at least the combined calculated loads it serves, and runs in a raceway."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "240.21(B)(1)",
           "text": "A feeder tap needs no overcurrent device at the tap if it is no longer than 3.0 m (10 ft), has ampacity of at least the combined calculated loads it serves, and runs in a raceway."
         }
@@ -254,7 +314,12 @@
       "description": "Service-entrance conductors are much smaller than the rating of the main service disconnect they feed",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "230.90(A)",
+          "text": "The overcurrent device protecting service conductors must not be rated higher than the ampacity of those service conductors, apart from limited exceptions such as the next-size-up allowance. Separately, 230.42(A) requires the conductors to carry the calculated load."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "230.90(A)",
           "text": "The overcurrent device protecting service conductors must not be rated higher than the ampacity of those service conductors, apart from limited exceptions such as the next-size-up allowance. Separately, 230.42(A) requires the conductors to carry the calculated load."
         }
@@ -273,7 +338,12 @@
       "description": "12 AWG aluminum conductors protected by a 20 A breaker, more than the limit for that small aluminum size",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "240.4(D)(5)",
+          "text": "Small aluminum conductors have lower overcurrent limits than copper: 12 AWG aluminum or copper-clad aluminum tops out at 15 A, and 10 AWG at 25 A, after any ambient and bundling corrections."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "240.4(D)(5)",
           "text": "Small aluminum conductors have lower overcurrent limits than copper: 12 AWG aluminum or copper-clad aluminum tops out at 15 A, and 10 AWG at 25 A, after any ambient and bundling corrections."
         }
@@ -292,7 +362,12 @@
       "description": "Ten current-carrying 12 AWG conductors share one conduit with no ampacity derating, yet sit on a 20 A breaker",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "310.15(C)(1)",
+          "text": "When more than three current-carrying conductors share a raceway or cable for more than 24 in., start from the 90 C column of Table 310.16 and apply the adjustment factor (80% for 4-6, 70% for 7-9, 50% for 10-20). The overcurrent limits in 240.4(D) are then applied to the adjusted ampacity."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "310.15(C)(1)",
           "text": "When more than three current-carrying conductors share a raceway or cable for more than 24 in., start from the 90 C column of Table 310.16 and apply the adjustment factor (80% for 4-6, 70% for 7-9, 50% for 10-20). The overcurrent limits in 240.4(D) are then applied to the adjusted ampacity."
         }
@@ -311,7 +386,12 @@
       "description": "A continuous 48 A EV charger is wired with 8 AWG copper, which is not large enough once the 125% factor is applied",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "210.19(A)",
+          "text": "For a branch circuit with continuous loads (running three hours or more), conductors need ampacity of at least 125% of that continuous load plus 100% of any non-continuous load."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "210.19(A)",
           "text": "For a branch circuit with continuous loads (running three hours or more), conductors need ampacity of at least 125% of that continuous load plus 100% of any non-continuous load."
         }
@@ -330,7 +410,12 @@
       "description": "A sub-panel feeder is made from two small 2 AWG conductors per phase connected in parallel",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "310.10(G)(1)",
+          "text": "Phase and neutral conductors may be paralleled only when each is 1/0 AWG or larger. Smaller conductors cannot be joined at both ends to make up a larger circuit."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "310.10(G)(1)",
           "text": "Phase and neutral conductors may be paralleled only when each is 1/0 AWG or larger. Smaller conductors cannot be joined at both ends to make up a larger circuit."
         }
@@ -349,7 +434,12 @@
       "description": "8 AWG conductors supply a 45 A load but land on equipment terminals marked for 60 C only",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "110.14(C)(1)(a)",
+          "text": "For circuits of 100 A or less, ampacity cannot exceed the 60 C column unless the terminals are listed and marked for higher-rated conductors. Insulation rating alone does not override the terminal limit."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "110.14(C)(1)(a)",
           "text": "For circuits of 100 A or less, ampacity cannot exceed the 60 C column unless the terminals are listed and marked for higher-rated conductors. Insulation rating alone does not override the terminal limit."
         }
@@ -368,7 +458,18 @@
       "description": "Rooftop conduit sits on the roof surface in direct sun, with conductors sized without the sunlight temperature adder",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "310.15(B)(2)",
+          "text": "Where raceways or cables sit in direct sunlight on or above a roof with the bottom less than 3/4 in. above the roof (7/8 in. in earlier editions), add 33 C (60 F) to the outdoor temperature before using the ambient correction table.",
+          "limit": {
+            "quantity": "raceway height above roof",
+            "kind": "min",
+            "value": 0.75,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "310.15(B)(2)",
           "text": "Where raceways or cables sit in direct sunlight on or above a roof with the bottom less than 3/4 in. above the roof (7/8 in. in earlier editions), add 33 C (60 F) to the outdoor temperature before using the ambient correction table.",
           "limit": {
@@ -405,7 +506,12 @@
       "description": "A sub-panel feeder of 4 AWG aluminum serves an 80 A load; it was sized from the copper column, not the aluminum one",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "310.16",
+          "text": "Ampacity comes from the table column for the conductor material and temperature rating. Aluminum carries less current than copper of the same size, so copper values cannot be used for aluminum conductors."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "310.16",
           "text": "Ampacity comes from the table column for the conductor material and temperature rating. Aluminum carries less current than copper of the same size, so copper values cannot be used for aluminum conductors."
         }
@@ -424,7 +530,12 @@
       "description": "A 4-wire feeder serving LED and computer loads has 1/0 AWG copper conductors sized without counting the neutral as current-carrying",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "310.15(E)(3)",
+          "text": "On a 4-wire three-phase wye circuit where most of the load is nonlinear, the neutral carries harmonic current and counts as a current-carrying conductor when applying the adjustment factors for bundled conductors."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "310.15(E)(3)",
           "text": "On a 4-wire three-phase wye circuit where most of the load is nonlinear, the neutral carries harmonic current and counts as a current-carrying conductor when applying the adjustment factors for bundled conductors."
         }

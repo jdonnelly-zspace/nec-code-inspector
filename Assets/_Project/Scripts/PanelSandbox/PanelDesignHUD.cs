@@ -142,7 +142,8 @@ namespace NECInspector.PanelSandbox
             foreach (var result in results)
             {
                 string icon = result.passed ? "[PASS]" : "[FAIL]";
-                lines.AppendLine($"{icon} {result.ruleName} ({CodeProfiles.Terminology.ReferenceLabel(result.codeReference)})");
+                string shown = CodeProfiles.Terminology.ShownReference(result.codeReference);
+                lines.AppendLine(shown.Length > 0 ? $"{icon} {result.ruleName} ({shown})" : $"{icon} {result.ruleName}");
                 lines.AppendLine($"    {result.message}");
                 lines.AppendLine();
 
