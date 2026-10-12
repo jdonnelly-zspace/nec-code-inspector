@@ -1,3 +1,5 @@
+> **Superseded.** This brief describes the first design (an NEC-only violation trainer for three audiences). The product is now occupation driven: see `docs/product/PRD.md` and `docs/occupations/`. It is kept for history; do not use it for requirements.
+
 # NEC Code Inspector — Project Brief
 
 ## Executive Summary

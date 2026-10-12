@@ -1,0 +1,586 @@
+{
+  "soc": "47-4011",
+  "title": "Construction and Building Inspectors (emphasis: electrical inspectors)",
+  "onetUrl": "https://www.onetonline.org/link/summary/47-4011.00",
+  "bls": {
+    "url": "https://www.bls.gov/ooh/construction-and-extraction/construction-and-building-inspectors.htm",
+    "workers": "153,900 jobs (2025)",
+    "growth": "0% (little or no change), 2025-35",
+    "openings": "about 14,800 per year, mostly replacement of workers who retire or change jobs",
+    "medianPay": "$74,690 per year ($35.91 per hour), 2025"
+  },
+  "summary": "Inspectors check that buildings and their systems meet the adopted codes, local ordinances and approved plans. They review plans, visit sites at set construction stages, test and measure, record what they find and approve or reject the work. Electrical inspectors are a specialty that covers wiring, services, grounding, lighting and similar installed systems; about a third of all inspectors work for local government.",
+  "typicalPath": "BLS: usually a high school diploma plus roughly five years of construction-trade experience, moderate-term on-the-job training, and most states require a license or certification, with continuing education in many places (bls.gov OOH page above). O*NET Job Zone 3; education mix 36% high school, 36% post-secondary certificate, 16% bachelor's (onetonline.org summary page). For electrical inspection the common route is a trade apprenticeship and journeyman or master electrician experience, then a certification: the ICC/IAEI joint program offers E1 Residential Electrical Inspector, E2 Commercial Electrical Inspector and E3 Electrical Plans Examiner (iccsafe.org joint certification page); IAEI also lists a Certified Electrical Inspector - Residential (CEI-R), which some jurisdictions accept in place of E1 (found in a search result snippet, iaei.org certification page not opened). Requirements differ by state and employer (ICC career-blueprint PDF).",
+  "tasks": [
+    {
+      "task": "Approve plans that meet the required specifications",
+      "importance": "89",
+      "electricalKnowledge": "Read one-line diagrams, panel schedules and load calculations against the adopted code",
+      "appSkills": [
+        "load-calculation",
+        "conductor-sizing",
+        "overcurrent-protection"
+      ]
+    },
+    {
+      "task": "Review and interpret plans, site layouts and specifications to confirm they comply with codes and regulations",
+      "importance": "87",
+      "electricalKnowledge": "Plan reading, service and feeder sizing, grounding method shown on riser",
+      "appSkills": [
+        "load-calculation",
+        "conductor-sizing",
+        "earthing-bonding"
+      ]
+    },
+    {
+      "task": "Issue permits for construction, relocation, demolition or occupancy",
+      "importance": "82",
+      "electricalKnowledge": "Know which electrical work needs a permit and which needs plan review",
+      "appSkills": []
+    },
+    {
+      "task": "Inspect structural elements and installed work during and after construction",
+      "importance": "82",
+      "electricalKnowledge": "Spot visible violations in wiring, boxes, services and equipment at each stage",
+      "appSkills": [
+        "wiring-methods",
+        "equipment-installation",
+        "branch-circuit-requirements"
+      ]
+    },
+    {
+      "task": "Monitor installation of wiring, plumbing and equipment to confirm it complies with regulations",
+      "importance": "81",
+      "electricalKnowledge": "Rough-in checks: cable support, box fill, protection, splices, service equipment",
+      "appSkills": [
+        "wiring-methods",
+        "equipment-installation",
+        "working-space-access"
+      ]
+    },
+    {
+      "task": "Make sure construction sites follow safety standards and building codes",
+      "importance": "78",
+      "electricalKnowledge": "Temporary power, GFCI protection, safe access for inspection",
+      "appSkills": [
+        "shock-protection"
+      ]
+    },
+    {
+      "task": "Talk with owners, contractors and officials about code requirements and violations",
+      "importance": "77",
+      "electricalKnowledge": "Explain a violation by citing the rule and what fixes it",
+      "appSkills": [
+        "identification-marking"
+      ]
+    },
+    {
+      "task": "Verify measurements, alignment and clearances of installed work",
+      "importance": "73",
+      "electricalKnowledge": "Working space, mounting height, burial depth, clearance from openings",
+      "appSkills": [
+        "working-space-access",
+        "disconnecting-means"
+      ]
+    },
+    {
+      "task": "Keep inspection records, logs and photographs",
+      "importance": "71",
+      "electricalKnowledge": "Record pass or fail by item with the rule cited, leave a tag at the service",
+      "appSkills": []
+    },
+    {
+      "task": "Run inspections using survey instruments, metering devices and test equipment",
+      "importance": "68",
+      "electricalKnowledge": "GFCI and AFCI testers, torque tools, continuity and polarity checks",
+      "appSkills": [
+        "shock-protection",
+        "arc-fault-protection"
+      ]
+    },
+    {
+      "task": "Verify grounding electrodes, bonding and service equipment installation",
+      "importance": "",
+      "electricalKnowledge": "Electrode, conductor, main bonding jumper, water and gas bonding, intersystem bonding",
+      "appSkills": [
+        "earthing-bonding",
+        "equipment-installation"
+      ]
+    },
+    {
+      "task": "Check required shock and fire protection devices (GFCI, AFCI, labeling, smoke and CO alarms) before final approval",
+      "importance": "",
+      "electricalKnowledge": "Locations that need protection, device type, and a working test of each",
+      "appSkills": [
+        "shock-protection",
+        "arc-fault-protection",
+        "identification-marking"
+      ]
+    },
+    {
+      "task": "Stay current on adopted code editions and local amendments",
+      "importance": "79 (maintaining current technical knowledge, work activity)",
+      "electricalKnowledge": "Find which edition and amendments the authority having jurisdiction enforces",
+      "appSkills": []
+    }
+  ],
+  "procedures": [
+    {
+      "name": "Electrical plan review for a permit",
+      "purpose": "Check on paper that a proposed electrical installation can be built to the adopted code before work starts.",
+      "whenUsed": "At permit application for work that the jurisdiction requires plans for, such as larger services, multifamily, PV, generators, hazardous locations.",
+      "role": "Electrical plans examiner (often an ICC/IAEI E3-type role), working with the permit technician and applicant.",
+      "steps": [
+        "Confirm the permit application describes the work and that this job needs plan review under local rules.",
+        "Check the submittal is complete: floor or site plan, one-line or riser diagram, panel schedules, load calculation, and fault-current data where required.",
+        "Start at a branch circuit and follow the load path back to the service point, checking each conductor and device.",
+        "Compare the load calculation categories and demand factors with the equipment and conductor sizes shown.",
+        "Check short-circuit ratings of equipment against available fault current, and the grounding method shown on the riser.",
+        "Note whether a registered engineer's stamp is required for the occupancy or size.",
+        "Mark corrections for the applicant, or approve the plans and stamp the set for the field inspector."
+      ],
+      "hazards": [
+        "Undersized service or feeders approved by mistake",
+        "Equipment rated below available fault current",
+        "Plans that differ from what is later built"
+      ],
+      "controls": [
+        "Written plan review checklist",
+        "Complete submittal list",
+        "Engineer stamp for complex or life-safety systems",
+        "Field inspector compares installation to approved plans"
+      ],
+      "standards": [
+        {
+          "name": "NEC load-calculation and service articles (Article 220, Article 230)",
+          "what": "Set how loads are totalled and how services are sized, which the reviewer checks against the submitted calculation."
+        },
+        {
+          "name": "Local plan review rules (example: Kirkland WA submittal guide)",
+          "what": "State which jobs need plans and what must be on them, including engineer stamps."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.kirklandwa.gov/files/sharedassets/public/v/6/development-services/pdfs/building-pdfs/electrical-plan-review-submittal-guide.pdf",
+          "says": "Lists required submittal items and says review follows the load from each branch circuit back to the service point."
+        },
+        {
+          "source": "https://www.onetonline.org/link/details/47-4011.00",
+          "says": "Rates approving plans and interpreting plans for compliance as the most important tasks (89 and 87)."
+        }
+      ],
+      "appSkills": [
+        "load-calculation",
+        "conductor-sizing",
+        "overcurrent-protection",
+        "earthing-bonding"
+      ],
+      "appCoverage": "partial: the sandbox practices panel design and load calculation, but the app does not teach reading drawings, one-line diagrams, fault-current review or plan examiner workflow.",
+      "plannedSkills": [
+        "plans-and-documentation",
+        "code-administration"
+      ]
+    },
+    {
+      "name": "New dwelling electrical inspection sequence",
+      "purpose": "Inspect each hidden or critical part of the electrical work at the stage where it can still be seen and fixed.",
+      "whenUsed": "Through construction of a new one- or two-family home, as the contractor requests each stage.",
+      "role": "Field electrical or combination inspector, scheduled by the contractor.",
+      "steps": [
+        "Temporary power pole: check it meets the code, including GFCI protection, before it is used.",
+        "Underground or slab: inspect conduit, in-slab wiring and the concrete-encased grounding electrode before concrete or backfill covers them.",
+        "Rough-in: after framing, fire blocking and bracing, check all wiring is run, secured and terminated in boxes, service cable and meter can are set, and splices made up.",
+        "Service and meter release: check the panel, disconnect and grounding electrode system, then release the meter or temporary power where the jurisdiction does this at rough-in.",
+        "Confirm earlier stages have passed before later ones (framing, insulation) are called.",
+        "Final: with fixtures, devices and panel cover in place, check protection devices, labels, smoke and CO alarms.",
+        "Record the result; the electrical approval feeds the certificate of occupancy."
+      ],
+      "hazards": [
+        "Work covered before inspection",
+        "Energizing before the service is approved",
+        "Uncovered boxes, open knockouts, unsupported cable at final"
+      ],
+      "controls": [
+        "Stage-by-stage hold points",
+        "Inspection requests tied to the permit",
+        "Readiness lists published by the jurisdiction",
+        "No power release until approval"
+      ],
+      "standards": [
+        {
+          "name": "Local inspection ordinances and adopted residential code",
+          "what": "Define the required stages and who may release power or occupancy."
+        },
+        {
+          "name": "NEC Article 250 and Article 300 (grounding, wiring methods)",
+          "what": "Set the physical rules checked at slab, rough-in and service stages."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://ga-hallcounty.civicplus.com/DocumentCenter/View/12937/SFR-INSPECTION-FLOW-CHART",
+          "says": "Describes temporary power, slab, electrical rough-in, final stages and when each is made; temporary power release asked at rough-in."
+        },
+        {
+          "source": "https://www.cityofgilroy.org/DocumentCenter/View/8386/Main-Service-Panel-Upgrade-Checklist-Handout",
+          "says": "Splits service work into rough electrical with meter release, and a final with devices, labels and alarms."
+        }
+      ],
+      "appSkills": [
+        "wiring-methods",
+        "equipment-installation",
+        "earthing-bonding",
+        "branch-circuit-requirements"
+      ],
+      "appCoverage": "partial: students find violations in finished 3D buildings, but the app does not stage inspections (slab, rough-in, final) or teach what is hidden at each stage.",
+      "plannedSkills": [
+        "code-administration"
+      ]
+    },
+    {
+      "name": "Service and panel inspection, including grounding and bonding",
+      "purpose": "Confirm the service equipment, panel and grounding and bonding system are installed correctly before power is released.",
+      "whenUsed": "At the service or meter-release inspection of a new service or upgrade, and again at final for items that need finished surfaces.",
+      "role": "Field electrical inspector, with the contractor present to open the panel and supply a torque tool.",
+      "steps": [
+        "Confirm the address and permit, and that the plans match the installed panel size.",
+        "Check working space in front of the panel and the mounting height of the highest device.",
+        "Check the enclosure is suitable for service equipment, breakers are listed for the panel, and conductor size matches the breaker.",
+        "Verify torque on lug and terminal connections with a calibrated tool.",
+        "Check grounded and ungrounded conductors are identified, and the neutral is bonded only where the code allows (service, not subpanels).",
+        "Check the grounding electrode system: electrode type, conductor size, accessible connections, all electrodes on site used, and bonding of water, gas and intersystem bonding termination.",
+        "Check cable clamps, no open knockouts, panel and conduit secured, and circuit labels.",
+        "Affix the compliance tag at the meter or panel and notify the utility, or fail the item and write the correction."
+      ],
+      "hazards": [
+        "Shock from energized panel interior",
+        "Arc flash if a cover is removed under load",
+        "Loose terminations causing heat",
+        "Missing bonding leaving metal parts energized under fault"
+      ],
+      "controls": [
+        "Panel opened by the contractor with service off",
+        "Inspector uses PPE when energized parts are within reach",
+        "Torque verification",
+        "Checklist handed out so the contractor is ready"
+      ],
+      "standards": [
+        {
+          "name": "NEC Article 110 (working space, terminals), Article 230 (services), Article 250 (grounding and bonding), Article 408 (panelboards)",
+          "what": "Cover clearance, torque, service equipment, electrodes, bonding and panel labeling checked here."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.cityofgilroy.org/DocumentCenter/View/8386/Main-Service-Panel-Upgrade-Checklist-Handout",
+          "says": "Lists torque check, workspace, grounding electrodes, bonding, intersystem bonding and labeling, with a compliance label before power restore."
+        },
+        {
+          "source": "https://storeycounty.org/DocumentCenter/View/22816/2024-Electric-Service-Inspection-Checklist",
+          "says": "Twenty-one item service checklist: workspace, conductor size, grounding system, bonding, labeling, service tag left at meter."
+        }
+      ],
+      "appSkills": [
+        "earthing-bonding",
+        "working-space-access",
+        "equipment-installation",
+        "disconnecting-means",
+        "identification-marking",
+        "conductor-sizing"
+      ],
+      "appCoverage": "good: panel design in the sandbox and 3D inspections exercise grounding, bonding, working space and labeling, though torque verification and meter release are not taught.",
+      "plannedSkills": []
+    },
+    {
+      "name": "GFCI and AFCI verification",
+      "purpose": "Confirm that required shock and arc-fault protection is installed in the right places and actually trips.",
+      "whenUsed": "At final inspection of new work, and when a panel or circuits are changed.",
+      "role": "Field electrical inspector, with the contractor supplying access to panels.",
+      "steps": [
+        "Identify which areas and circuits need protection under the adopted code edition.",
+        "Look at each device or breaker visually for damage, looseness or heat marks.",
+        "Press the built-in test button on each protective device and confirm it trips and resets.",
+        "Use a GFCI receptacle tester on outlets to confirm the trip and to catch reversed line and load wiring.",
+        "Check outlets fed downstream of a GFCI are really protected and that AFCI circuits do not share a neutral.",
+        "Confirm devices are readily accessible and circuits are labeled.",
+        "Record failures as correction items by location."
+      ],
+      "hazards": [
+        "Shock where protection is missing or miswired",
+        "Tripping a circuit and losing power to occupants' equipment",
+        "Testing a device while it is wired wrong gives false comfort"
+      ],
+      "controls": [
+        "Test with both the button and an outlet tester",
+        "Warn occupants before interrupting circuits",
+        "Protective device kept readily accessible"
+      ],
+      "standards": [
+        {
+          "name": "NEC 210.8 (GFCI) and 210.12 (AFCI)",
+          "what": "List the locations and circuits that must have GFCI or AFCI protection; sections vary by edition."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.404(b)(1)",
+          "what": "Requires GFCI or an assured grounding program for 15 and 20 ampere receptacles on construction sites."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://nachi.org/inspecting-gfci-afci-protection.htm",
+          "says": "Test GFCIs with a tester and AFCIs with the test button; lists typical protected locations."
+        },
+        {
+          "source": "https://inspectapedia.com/electric/GFCI_Inspection_Safety.php",
+          "says": "Notes reversed line and load wiring and shared neutrals can defeat protection that a button test misses."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.404",
+          "says": "Describes the site GFCI requirement and the alternative assured grounding conductor program."
+        }
+      ],
+      "appSkills": [
+        "shock-protection",
+        "arc-fault-protection",
+        "branch-circuit-requirements"
+      ],
+      "appCoverage": "partial: the app teaches where GFCI and AFCI are required and spotting missing ones, but not testing with a tester or button, or finding miswired devices.",
+      "plannedSkills": [
+        "testing-and-measurement"
+      ]
+    },
+    {
+      "name": "Writing a correction notice, re-inspection, and approving or rejecting work",
+      "purpose": "Record what failed, tell the contractor what must be fixed, and approve work only when it passes.",
+      "whenUsed": "At the end of every inspection visit.",
+      "role": "Field electrical inspector, then the permit office and utility.",
+      "steps": [
+        "Go through the checklist item by item and note pass, fail or not ready, with photos when helpful.",
+        "For each failure, write the location, what is wrong and the code rule involved in plain words.",
+        "Result the inspection in the permit system as approved, partial or rejected, and leave a tag or notice on site.",
+        "Contractor fixes the items and requests re-inspection; the inspector checks the listed items and anything affected.",
+        "Apply the jurisdiction's re-inspection rules (for example a fee when the same item fails twice or the site is not ready).",
+        "On approval, affix the compliance label or sticker, update the record and notify the utility or permit office.",
+        "Keep records so the electrical approval is on file before the certificate of occupancy."
+      ],
+      "hazards": [
+        "Unsafe work left in place if a failure is missed",
+        "Disputes from vague notes",
+        "Power released before corrections are done"
+      ],
+      "controls": [
+        "Written notice per failed item",
+        "Photos and log",
+        "Re-inspection hold on further work",
+        "Release to utility only after approval"
+      ],
+      "standards": [
+        {
+          "name": "Local administrative code (permit, inspection, correction and re-inspection rules)",
+          "what": "Define notice content, time to correct, fees for repeat failures and who may approve."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.sanramon.ca.gov/our_city/departments_and_divisions/community_development/building_and_safety_services/reinspection_fee",
+          "says": "Re-inspection fees follow repeated failure of the same item, no-shows, or the site not being ready."
+        },
+        {
+          "source": "https://www.cityofgilroy.org/DocumentCenter/View/8386/Main-Service-Panel-Upgrade-Checklist-Handout",
+          "says": "Inspector attaches a compliance label after verification and the utility needs it before restoring power."
+        },
+        {
+          "source": "https://storeycounty.org/DocumentCenter/View/22816/2024-Electric-Service-Inspection-Checklist",
+          "says": "Inspector writes a service tag left at the meter and results the inspection so the electrical department is notified."
+        },
+        {
+          "source": "https://www.onetonline.org/link/details/47-4011.00",
+          "says": "Lists keeping inspection records with photographs (71) as a main task."
+        }
+      ],
+      "appSkills": [
+        "identification-marking"
+      ],
+      "appCoverage": "partial: students cite the rule for a violation, which is the core of a correction item, but there is no notice writing, re-inspection loop, approval decision or record keeping.",
+      "plannedSkills": [
+        "plans-and-documentation",
+        "code-administration"
+      ]
+    },
+    {
+      "name": "Inspector site safety and electrically safe work condition",
+      "purpose": "Keep the inspector from shock, arc flash and fall injuries while looking at live or recently built electrical work.",
+      "whenUsed": "Before any panel cover is removed, and when climbing or entering a construction site.",
+      "role": "Inspector, with the contractor responsible for safe access and often for supplying PPE.",
+      "steps": [
+        "Plan the visit: ask what is energized and arrange for the contractor to de-energize before the inspector arrives.",
+        "Do not remove covers from energized equipment unless it has been disconnected and verified safe.",
+        "Have the circuit disconnect locked out in the open position and tagged; a qualified person confirms de-energized with a tester.",
+        "If de-energizing is not possible, do an arc flash and shock risk assessment and use the required PPE, only as a qualified person.",
+        "Use a nonconductive ladder near energized parts, set at the right angle, extended three feet above the landing, three-point contact.",
+        "Watch for temporary wiring, damaged cords, overhead lines and tripping hazards on the site.",
+        "Leave energized equipment closed and report unsafe conditions."
+      ],
+      "hazards": [
+        "Arc flash and shock when opening 120/240 V panels",
+        "Energized parts exposed in unfinished work",
+        "Falls from ladders",
+        "Frayed temporary cords"
+      ],
+      "controls": [
+        "Electrically safe work condition (lockout/tagout)",
+        "Verification by testing",
+        "Qualified person limits",
+        "Arc-rated PPE, insulating gloves, safety glasses",
+        "Nonconductive ladders"
+      ],
+      "standards": [
+        {
+          "name": "NFPA 70E (inspection is within its scope)",
+          "what": "Requires an electrically safe condition or a risk assessment and PPE for inspectors who may reach energized parts."
+        },
+        {
+          "name": "OSHA 29 CFR 1910.333 and 1910.147",
+          "what": "General industry rules for lockout, tagging and testing before work; 1910.147 excludes construction sites."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.416, 1926.417, 1926.1053",
+          "what": "Construction rules on guarding energized parts, tagging circuits, and ladder use near electrical equipment."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://iaeimagazine.org/2018/may2018/workplace-safety-and-the-electrical-inspector/",
+          "says": "Covers must stay on energized equipment; inspectors need PPE and qualified status; contractors typically provide safe access."
+        },
+        {
+          "source": "https://iaeimagazine.org/columns/nfpa-code-talk/keeping-electrical-inspectors-safe-on-the-job-with-planning-and-nfpa-70e/",
+          "says": "Describes planning an electrically safe work condition, risk assessment when not possible, and panel covers as an overlooked hazard."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333",
+          "says": "Requires lockout and tagging, testing for de-energized state by a qualified person, and limits energized work to qualified persons."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1053",
+          "says": "Sets ladder angle, three-foot extension, three-point contact, and nonconductive rails near energized equipment."
+        }
+      ],
+      "appSkills": [
+        "shock-protection"
+      ],
+      "appCoverage": "none: the app teaches shock protection rules for installations, not lockout/tagout, testing before touching, PPE or safe work practice for the inspector.",
+      "plannedSkills": [
+        "electrically-safe-work"
+      ]
+    },
+    {
+      "name": "Checking code edition and local amendments",
+      "purpose": "Make sure each inspection and plan review is judged against the code the jurisdiction actually enforces.",
+      "whenUsed": "Before reviewing a permit, and whenever the state or local code is updated.",
+      "role": "Inspector or plans examiner; the building official owns adoption.",
+      "steps": [
+        "Find the adopted edition of the NEC for the jurisdiction and its effective date.",
+        "Check the state and the local ordinance for amendments, deletions or added rules.",
+        "Note the permit application date, since projects may be reviewed under the edition in force then.",
+        "Use the matching code book and handbook when citing a rule.",
+        "Share changes with contractors and train on new requirements.",
+        "Cite the section from the enforced edition on every correction notice."
+      ],
+      "hazards": [
+        "Citing a rule from the wrong edition",
+        "Missing a local amendment",
+        "Inconsistent enforcement between inspectors"
+      ],
+      "controls": [
+        "Adoption tables kept current",
+        "Amendment list on file",
+        "Training on changes",
+        "Ask the authority having jurisdiction when unsure"
+      ],
+      "standards": [
+        {
+          "name": "NFPA 70 (NEC) as adopted by the state or locality",
+          "what": "Edition and amendments vary by jurisdiction; the authority having jurisdiction decides what is enforced."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://electrical.nebraska.gov/node/187",
+          "says": "Example of a state announcing adoption of the 2023 NEC from a set date and changing exams to match."
+        },
+        {
+          "source": "https://www.ecmweb.com/national-electrical-code/article/55403844/wisconsin-adopts-2023-national-electrical-code",
+          "says": "Reports states adopting different editions, with Wisconsin adding extra requirements; some states already on the 2026 edition."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: the app uses one code edition per code profile and does not teach how editions and local amendments differ or how an inspector finds them.",
+      "plannedSkills": [
+        "code-administration"
+      ]
+    }
+  ],
+  "standardsAndCodes": [
+    {
+      "name": "NFPA 70 National Electrical Code (adopted edition varies by state)",
+      "role": "Main rulebook inspectors cite for installation requirements.",
+      "nec": "Articles 90, 110, 210, 220, 230, 240, 250, 300, 310, 408"
+    },
+    {
+      "name": "NFPA 70E Standard for Electrical Safety in the Workplace",
+      "role": "Governs inspector safe work practices, including inspection, around energized equipment.",
+      "nec": ""
+    },
+    {
+      "name": "ICC International Residential Code and International Building Code",
+      "role": "Companion building codes; electrical chapters usually point to the NEC; combination inspectors use them for the rest of the dwelling.",
+      "nec": ""
+    },
+    {
+      "name": "OSHA 29 CFR 1926 Subpart K and 1926.1053; 29 CFR 1910.147 and 1910.333",
+      "role": "Site electrical safety, ladders, lockout and tagging for workers and inspectors.",
+      "nec": ""
+    },
+    {
+      "name": "Local and state administrative codes (permit, inspection, re-inspection, certificate of occupancy)",
+      "role": "Define stages, who may inspect, fees and approvals.",
+      "nec": ""
+    },
+    {
+      "name": "Utility service requirement documents",
+      "role": "Meter, service point and release rules that the inspector coordinates with.",
+      "nec": "Article 230 (services)"
+    }
+  ],
+  "outsideNec": [
+    "Building, fire and energy code review of non-electrical systems (framing, insulation, smoke and CO alarm rules from the residential building code)",
+    "Utility-side service points, meters and transformers, governed by the utility and the NESC",
+    "Permit administration, fees, certificate of occupancy and legal enforcement",
+    "Worker safety rules for the inspector (OSHA and NFPA 70E)",
+    "Structural, plumbing and mechanical inspections done by the same combination inspector"
+  ],
+  "gapsForTheApp": [
+    "Staged inspection scenarios: the app lacks slab, rough-in, service and final stages where students decide what must be checked before work is covered.",
+    "Plan review scenarios: reading one-line diagrams, panel schedules and load calculations to approve or send back a permit.",
+    "Testing tools: no use of a GFCI tester, torque tool, continuity or polarity tester.",
+    "Correction notice and re-inspection workflow: writing the finding, citing the rule, and deciding approve or reject.",
+    "Inspector safety: electrically safe work condition, lockout/tagout, testing before touching, PPE and arc flash awareness before opening a panel.",
+    "Code edition and amendment handling: showing how the same situation can differ between editions or jurisdictions.",
+    "Grounding electrode inspection before concrete (concrete-encased electrode, rods) as a distinct hidden-work stage.",
+    "Temporary power on construction sites, including GFCI and assured grounding conductor program.",
+    "Non-dwelling occupancies (commercial, service over 200 A, PV, generators) for E2 and E3 style work."
+  ],
+  "doubts": [
+    "Spartanburg County, Moses Lake and Osceola pages returned 403 or 404; they were not used as sources.",
+    "The ICC blueprint PDF explains the career path only; I could not open an ICC exam content outline, so the exam content areas are not confirmed.",
+    "IAEI certification page and IAEI code adoption page returned errors or were not opened; the CEI-R claim comes only from a search result snippet.",
+    "NEC article numbers beyond those printed in the Gilroy and Storey checklists (210.8, 210.12, 220, 230, 240, 310, 408) come from my own knowledge, were not checked against NFPA 70, and may be renumbered in the 2026 edition. Gilroy cites the California Electrical Code, not the NEC.",
+    "Kirkland, Gilroy, Storey, Hall County and San Ramon are single local examples; sequence names, hold points and fee rules differ by jurisdiction.",
+    "The code-edition procedure has two sources that only show examples of adoption, not an inspector SOP for checking amendments; no agency-written procedure for it was found.",
+    "The underground/slab step (concrete-encased electrode before pour) is supported by Hall County's slab note and a search snippet, not by an opened page about electrode inspection; the IAEI article on it did not cover the topic.",
+    "O*NET gives no importance numbers for the grounding, GFCI/AFCI and code-currency tasks I added; those tasks come from the procedures, not O*NET statements.",
+    "O*NET details page showed a hot-technology list with items (QuickBooks, SAP) that looks inconsistent between fetches; I did not rely on it."
+  ]
+}

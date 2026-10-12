@@ -6,6 +6,17 @@ change; nothing here has been reviewed by a credential expert. Rules come from `
 (skills only, own words, no credentials in the app) and `docs/SCENE_DESIGN.md` (a scene must break every code it is
 offered under, by a 10% margin).
 
+## 0. Re-plan: occupation driven
+
+The product requirements now start from occupations (`docs/product/PRD.md`), with the NEC as one reference among several. The 44 procedures of the six core occupations were documented
+(`docs/occupations/`), and 24 of them are not taught at all today. This plan's targets (violation pools, lessons, cards, sandbox designs) remain valid for the 13 code skills, but the order of
+work changes:
+
+1. Decide the occupations and waves (PRD section 7) and which proposed skills to approve (`docs/occupations/proposed-skills.json`).
+2. Build the skills that unlock the most procedures: electrically safe work, testing and measurement, jobsite safety, plans and documentation, troubleshooting, code administration (wave 1).
+3. Then the specialised skills for PV and for low-voltage and fire alarm (wave 2), which also need new code profiles and licence decisions.
+4. Keep finishing the NEC content of the 13 skills in parallel; it serves electricians and inspectors directly.
+
 ## 1. Where we are
 
 Violations that carry a citation for each code, by skill. The "Beginner / Standard / Expert" columns are the

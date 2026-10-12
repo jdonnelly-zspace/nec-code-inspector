@@ -1,0 +1,596 @@
+{
+  "soc": "49-2098",
+  "title": "Security and Fire Alarm Systems Installers",
+  "onetUrl": "https://www.onetonline.org/link/summary/49-2098.00",
+  "bls": {
+    "url": "https://www.bls.gov/oes/2023/May/oes492098.htm",
+    "workers": "83,540 (May 2023, OEWS)",
+    "growth": "O*NET summary page shows projected growth of about 7% or more through 2035; BLS Occupational Outlook Handbook has no profile page for this occupation (the OOH electrical installers page does not cover it)",
+    "openings": "not confirmed (no OOH profile)",
+    "medianPay": "$56,430 per year, $27.13 per hour (May 2023 OEWS); O*NET page shows a newer median of about $60,070 per year"
+  },
+  "summary": "These workers install, program, maintain and repair wiring and equipment for burglar, access-control, video and fire alarm systems. They run low-voltage cable, mount panels, detectors and sirens, connect them, set them up, test them and show customers how they work. Most are employed by security-service firms and building-equipment contractors, and fire alarm work is tied to separate fire-protection standards.",
+  "typicalPath": "O*NET Job Zone 3: about 49% hold a post-secondary certificate and 41% a high school diploma (onetonline.org summary page). Training is mostly on the job or through a contractor, plus manufacturer courses. About 38 states license fire alarm technicians, and roughly 29 require or accept NICET fire alarm certification (four levels, from about 6 months to 10 years of experience); where a state has no program, NFPA 72 still points to third-party certification such as NICET (securityinfowatch.com article via search results, not opened in full). Requirements vary by state and by security versus fire work.",
+  "tasks": [
+    {
+      "task": "Install, maintain and repair security systems, alarm devices and related equipment following electrical drawings and building plans.",
+      "importance": "86",
+      "electricalKnowledge": "Reading device layouts; basic circuit knowledge; NEC Articles 725, 760, 800 for the wiring.",
+      "appSkills": [
+        "wiring-methods",
+        "equipment-installation"
+      ]
+    },
+    {
+      "task": "Mount control panels, sensors and cameras and connect the wiring between system parts.",
+      "importance": "86",
+      "electricalKnowledge": "Equipment mounting, enclosure and termination practice; working space and access around panels.",
+      "appSkills": [
+        "equipment-installation",
+        "working-space-access"
+      ]
+    },
+    {
+      "task": "Demonstrate system operation to customers and explain causes of false alarms.",
+      "importance": "86",
+      "electricalKnowledge": "Understanding of how detectors and keypads behave; communication skills rather than code.",
+      "appSkills": []
+    },
+    {
+      "task": "Test circuits and detection devices and correct faults against the specifications.",
+      "importance": "85",
+      "electricalKnowledge": "Meter use, continuity, voltage and resistance checks, supervision of circuits.",
+      "appSkills": []
+    },
+    {
+      "task": "Pull cable through walls, attics and cavities to outlet points, then position and terminate it.",
+      "importance": "84",
+      "electricalKnowledge": "Cable routing and support, separation from power wiring, fire-stopping penetrations (NEC 760, 725, 800, 300.21).",
+      "appSkills": [
+        "wiring-methods"
+      ]
+    },
+    {
+      "task": "Diagnose systems to find problems such as disconnected components or damaged shielding.",
+      "importance": "84",
+      "electricalKnowledge": "Troubleshooting open, short and ground faults on signaling circuits.",
+      "appSkills": []
+    },
+    {
+      "task": "Check backup power, keypads, alarms and other features for correct operation or faults.",
+      "importance": "83",
+      "electricalKnowledge": "Standby battery capacity checks, trouble signals, loop supervision (NFPA 72 for fire).",
+      "appSkills": []
+    },
+    {
+      "task": "Drill holes in walls, floors and framing so wiring can pass through.",
+      "importance": "79",
+      "electricalKnowledge": "Protecting cables near framing, firestopping and not drilling into live wiring (NEC 300.4, 300.21 apply where referenced).",
+      "appSkills": [
+        "wiring-methods"
+      ]
+    },
+    {
+      "task": "Review work orders and blueprints to decide materials and installation methods.",
+      "importance": "78",
+      "electricalKnowledge": "Plan and device-layout reading; identifying circuit classes before routing.",
+      "appSkills": []
+    },
+    {
+      "task": "Discuss security concerns with customers and set system requirements.",
+      "importance": "76",
+      "electricalKnowledge": "Matching devices to risk; little direct code content.",
+      "appSkills": []
+    },
+    {
+      "task": "Install conduit and raceway and secure cables with fastening tools.",
+      "importance": "76",
+      "electricalKnowledge": "Raceway selection, fill and support; fire alarm cable fastening intervals (NEC 760, Chapter 3 where referenced).",
+      "appSkills": [
+        "wiring-methods"
+      ]
+    },
+    {
+      "task": "Adjust device sensitivity to room conditions using programming controls.",
+      "importance": "75",
+      "electricalKnowledge": "Panel programming, device addressing, sensitivity settings; NFPA 72 sets limits for fire detectors.",
+      "appSkills": []
+    },
+    {
+      "task": "Keep up with new products and technology, order parts, prepare warranty paperwork and cost estimates.",
+      "importance": "70",
+      "electricalKnowledge": "Product listing awareness (UL 864 and 681 listed equipment); estimating.",
+      "appSkills": []
+    }
+  ],
+  "procedures": [
+    {
+      "name": "Electrically safe work for line-voltage connections",
+      "purpose": "Make the supply to a panel, power supply or transformer dead and prove it before touching it.",
+      "whenUsed": "Whenever a fire or security panel, power supply or other equipment is wired to or served from a line-voltage circuit.",
+      "role": "Installer (qualified person) with the facility electrician or owner's authorized employee.",
+      "steps": [
+        "Find the circuit that feeds the equipment and tell affected people the work is planned.",
+        "Switch off the circuit and open the disconnecting means; for fire alarm panels note that this removes protection, so arrange impairment steps first.",
+        "Apply a lock and tag to the disconnect, or use the equivalent measure if a lock cannot be fitted.",
+        "Release or restrain any stored energy, including backup batteries on the panel.",
+        "Test with a meter that works, check the circuit at the work point, then recheck the meter.",
+        "Do the work, keeping to required approach distances and using insulated tools.",
+        "Before restoring power, remove tools, check people are clear, remove locks and tags, then re-energize and confirm normal status."
+      ],
+      "hazards": [
+        "Shock from line-voltage terminals",
+        "Backfeed or induced voltage",
+        "Panel battery energy",
+        "Unexpected re-energizing",
+        "Loss of fire protection while the panel is off"
+      ],
+      "controls": [
+        "Lock and tag",
+        "Meter verification before touching",
+        "Insulated tools and PPE chosen by hazard assessment",
+        "Qualified-person rule",
+        "Impairment notification when a fire system is off"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1910.333",
+          "what": "Deenergize live parts where possible, lock and tag the disconnect, verify dead with tests, check before re-energizing."
+        },
+        {
+          "name": "OSHA 29 CFR 1910.147",
+          "what": "General lockout/tagout program for servicing machinery: written procedures, training, annual inspection."
+        },
+        {
+          "name": "OSHA 29 CFR 1910.132",
+          "what": "Employer must assess hazards and supply and train workers on fitting PPE."
+        },
+        {
+          "name": "NFPA 70E (copyrighted)",
+          "what": "Electrical safe work condition and arc-flash practices; applicability to low-voltage alarm panels is limited but the supply side counts."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333",
+          "says": "Lock and tag disconnects, verify de-energized state including backfeed, and inspect before re-energizing."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147",
+          "says": "Isolate, lock or tag, release stored energy and verify before servicing; annual procedure inspection."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.132",
+          "says": "Hazard assessment and PPE training are employer duties."
+        }
+      ],
+      "appSkills": [
+        "shock-protection",
+        "disconnecting-means"
+      ],
+      "appCoverage": "partial: the app teaches why disconnects and shock protection matter and where the means must be, but not the lockout, testing-before-touching or re-energizing steps.",
+      "plannedSkills": [
+        "electrically-safe-work"
+      ]
+    },
+    {
+      "name": "Plan reading and device layout check",
+      "purpose": "Work out where devices, panels and cable runs go and which circuits they use before pulling cable.",
+      "whenUsed": "At job start, from the work order, drawings and building plans.",
+      "role": "Installer or lead installer, with the designer or project manager.",
+      "steps": [
+        "Read the work order and scope, and confirm the system type (fire, intrusion, access control, video).",
+        "Check the approved shop drawings and device layout against the building plans.",
+        "Mark panel, power supply, device and annunciator locations, checking mounting and access space.",
+        "Plan cable routes, noting fire-rated walls, ceilings and spaces where firestopping or plenum cable is needed.",
+        "Identify each circuit's class (power-limited fire alarm, Class 2/3, non-power-limited, communications) and plan separation from power wiring.",
+        "List materials and quantities, and raise conflicts with the designer before drilling."
+      ],
+      "hazards": [
+        "Drilling into live wiring or structure",
+        "Wrong cable type in a plenum or fire-rated assembly",
+        "Using unapproved layout"
+      ],
+      "controls": [
+        "Approved drawings on site",
+        "Scan walls before drilling",
+        "Cable type check against space",
+        "Layout reviewed with designer or inspector"
+      ],
+      "standards": [
+        {
+          "name": "NFPA 72 (copyrighted)",
+          "what": "Sets device placement and spacing for fire alarm design; drawings are the basis for acceptance."
+        },
+        {
+          "name": "NEC Article 760 / 725 / 800",
+          "what": "Circuit class and cable type determine the wiring method and separation."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/details/49-2098.00",
+          "says": "Installers review work orders and blueprints to decide materials and installation methods."
+        },
+        {
+          "source": "https://www.mangoapps.com/templates/inspections/fire-alarm-acceptance-test-nfpa-72",
+          "says": "Acceptance testing expects approved shop drawings and a device layout to be on hand."
+        }
+      ],
+      "appSkills": [
+        "wiring-methods"
+      ],
+      "appCoverage": "none: the app has no plan-reading or layout tasks; wiring-methods covers only the wiring rules.",
+      "plannedSkills": [
+        "plans-and-documentation",
+        "low-voltage-and-fire-alarm-systems"
+      ]
+    },
+    {
+      "name": "Running low-voltage and fire alarm cable and raceway",
+      "purpose": "Route, support, separate and identify signaling cable so it stays safe and trouble-free.",
+      "whenUsed": "During rough-in, for new work and additions.",
+      "role": "Systems installer or technician, working to the plans and the employer's written procedure.",
+      "steps": [
+        "Choose cable of the right listed type for the circuit and the space (riser, plenum, general).",
+        "Keep fire alarm and Class 2/3 conductors out of enclosures and raceways with power or Class 1 conductors unless separated by a barrier or the approved exception applies.",
+        "Route through or along framing with the specified clearance or a protective plate.",
+        "Support cable with secure fastening at the required intervals and keep the work neat.",
+        "Firestop penetrations through fire-rated assemblies.",
+        "Label circuits at junction points so other work does not trigger signals, and remove abandoned cable.",
+        "Check the run for damage before termination."
+      ],
+      "hazards": [
+        "Cable damage or short against power conductors",
+        "Shock hazard if a fault crosses to line voltage",
+        "Spread of fire through penetrations",
+        "Falls from ladders"
+      ],
+      "controls": [
+        "Listed cable types",
+        "Barrier or separation",
+        "Protective plates near framing",
+        "Firestopping",
+        "Circuit labels",
+        "Ladder safety"
+      ],
+      "standards": [
+        {
+          "name": "NEC Article 760",
+          "what": "Fire alarm circuits: power-limited and non-power-limited rules, separation, support and identification."
+        },
+        {
+          "name": "NEC Articles 725 and 800",
+          "what": "Class 2/3 and communications circuits: cable types and separation from power wiring."
+        },
+        {
+          "name": "NEC 300.21 and 300.22",
+          "what": "Fire-rated openings and ducts or plenum spaces where Article 760 refers to them."
+        },
+        {
+          "name": "NFPA 72 (copyrighted)",
+          "what": "Circuit survivability and pathway class (supervision, survivability) for fire alarm wiring."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://ecmweb.com/national-electrical-code/code-basics/article/55233196/nec-requirements-for-fire-alarm-systems",
+          "says": "PLFA cable cannot share enclosures with power conductors without barrier; support, framing protection and circuit identification rules."
+        },
+        {
+          "source": "https://www.onetonline.org/link/details/49-2098.00",
+          "says": "Installers thread cable through walls, attics and cavities and install conduit."
+        }
+      ],
+      "appSkills": [
+        "wiring-methods",
+        "equipment-installation"
+      ],
+      "appCoverage": "partial: wiring-methods trains routing and support in power wiring, but not signaling circuit classes, listed cable types or low-voltage separation.",
+      "plannedSkills": [
+        "low-voltage-and-fire-alarm-systems"
+      ]
+    },
+    {
+      "name": "Installing panels, devices and power supply connections",
+      "purpose": "Mount and connect panels, detectors, notification devices and security devices, and supply the panel correctly.",
+      "whenUsed": "Trim-out after rough-in.",
+      "role": "Installer; a licensed electrician may do the line-voltage feed depending on the state.",
+      "steps": [
+        "Mount the panel and power supply at the planned location with working space and access.",
+        "Confirm the feed comes from a dedicated branch circuit with a marked disconnect and no GFCI or AFCI protection where the NEC forbids it.",
+        "Connect devices and terminate conductors, keeping circuit polarity and supervision correct.",
+        "Ground metal enclosures and connect equipment grounding conductors.",
+        "Install batteries last, only when ready to test.",
+        "Mount detectors, horns, strobes, pull stations and sensors at the layout locations.",
+        "Label the panel, circuits and the feed disconnect."
+      ],
+      "hazards": [
+        "Shock at line-voltage terminals",
+        "Battery short circuits",
+        "Wrong device on wrong circuit",
+        "Overhead work and ladders"
+      ],
+      "controls": [
+        "Procedure 1 before work on the feed",
+        "Dedicated, marked fire alarm branch circuit",
+        "Equipment grounding",
+        "Insulated tools",
+        "Terminal checks"
+      ],
+      "standards": [
+        {
+          "name": "NEC Article 760",
+          "what": "Fire alarm branch circuit: dedicated, red-marked disconnect, restricted access, no GFCI or AFCI."
+        },
+        {
+          "name": "OSHA 29 CFR 1910.304",
+          "what": "Wiring design: disconnecting means, grounding and identification of conductors."
+        },
+        {
+          "name": "UL 864 and UL 681 (copyrighted)",
+          "what": "Product and installation listings for fire alarm control units and burglar alarm systems."
+        },
+        {
+          "name": "NFPA 70 Article 110",
+          "what": "Working space and workmanship rules where they apply to panels and enclosures."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://ecmweb.com/national-electrical-code/code-basics/article/55233196/nec-requirements-for-fire-alarm-systems",
+          "says": "PLFA supply: dedicated circuit, red disconnect marked FIRE ALARM CIRCUIT, restricted access, no GFCI or AFCI."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.304",
+          "says": "Disconnecting means, grounding and conductor identification apply to wiring design."
+        },
+        {
+          "source": "https://www.onetonline.org/link/details/49-2098.00",
+          "says": "Installers mount control panels, sensors and cameras and connect their wiring."
+        }
+      ],
+      "appSkills": [
+        "equipment-installation",
+        "working-space-access",
+        "disconnecting-means",
+        "earthing-bonding",
+        "identification-marking"
+      ],
+      "appCoverage": "partial: the app trains panel installation, working space, grounding and marking for power panels but not alarm panels, supervised circuits or battery handling.",
+      "plannedSkills": []
+    },
+    {
+      "name": "Programming, addressing and sensitivity adjustment",
+      "purpose": "Make devices known to the panel and set them so they report correctly without false alarms.",
+      "whenUsed": "After device installation and before testing, and after changes.",
+      "role": "Installer or programming technician.",
+      "steps": [
+        "Assign addresses or zones to each device per the point list and drawings.",
+        "Enter device types, labels and zone text in the panel from the approved sequence of operations.",
+        "Set outputs, notification and monitoring communication settings.",
+        "Adjust detector sensitivity to the room within the allowed range.",
+        "Back up the programming and record the version.",
+        "Check that each point shows the correct label before functional testing."
+      ],
+      "hazards": [
+        "False alarms and nuisance signals",
+        "Wrong zone leading to wrong location reported",
+        "Lost programming"
+      ],
+      "controls": [
+        "Point list checked against drawings",
+        "Backup of programming",
+        "Settings within listed range",
+        "Retest after any software change"
+      ],
+      "standards": [
+        {
+          "name": "NFPA 72 (copyrighted)",
+          "what": "Reacceptance testing is needed after software changes and when devices are added or deleted."
+        },
+        {
+          "name": "UL 864 (copyrighted)",
+          "what": "Listing covers control unit behavior and settings of listed panels."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/details/49-2098.00",
+          "says": "Installers adjust device sensitivity to room conditions using programming controls."
+        },
+        {
+          "source": "https://www.mangoapps.com/templates/inspections/fire-alarm-acceptance-test-nfpa-72",
+          "says": "Remote annunciators must show the correct point and condition matching approved plans."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: the app has no panel or device programming content.",
+      "plannedSkills": [
+        "low-voltage-and-fire-alarm-systems"
+      ]
+    },
+    {
+      "name": "Functional and acceptance testing with documentation",
+      "purpose": "Show every device and the standby power work, and record the result for the authority having jurisdiction and owner.",
+      "whenUsed": "After installation and programming, and again after any added, deleted or modified components.",
+      "role": "Installer or certified technician, with the owner and the authority having jurisdiction (AHJ) or inspector.",
+      "steps": [
+        "Confirm approved drawings, sequence of operations and the battery calculation are on hand.",
+        "Check wiring and insulation for faults and verify circuit supervision by creating open and ground conditions.",
+        "Test pull stations, smoke and heat detectors by approved methods, and supervisory inputs such as waterflow and tamper.",
+        "Verify audible and visible notification appliances operate across the coverage area.",
+        "Test standby battery condition and capacity and check the system survives the required standby period.",
+        "Confirm alarm, supervisory and trouble signals reach the panel, annunciators and monitoring service.",
+        "Record deficiencies and correct them, reset to normal, and obtain the inspector's sign-off.",
+        "Deliver records and train the owner."
+      ],
+      "hazards": [
+        "Loud notification appliances",
+        "False dispatch to the fire department",
+        "Shock from live equipment during testing",
+        "Ladders"
+      ],
+      "controls": [
+        "Notify monitoring company and building occupants before testing",
+        "Hearing protection where needed",
+        "Written test record",
+        "AHJ witness where required"
+      ],
+      "standards": [
+        {
+          "name": "NFPA 72 Chapter 14 (copyrighted)",
+          "what": "Acceptance, reacceptance and periodic inspection, testing and maintenance requirements, including tables of methods and intervals."
+        },
+        {
+          "name": "Fire code (IFC or NFPA 1) and AHJ rules",
+          "what": "Requires the system to be tested and maintained and sets who must witness or receive records."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.mangoapps.com/templates/inspections/fire-alarm-acceptance-test-nfpa-72",
+          "says": "Acceptance covers device tests, notification, battery and standby duration, signals, deficiency list and inspector sign-off."
+        },
+        {
+          "source": "https://www.securitysales.com/insights/5_nfpa_codes_consider_maintaining_fire_alarm_sytems/896/",
+          "says": "NFPA 72 Chapter 14 covers testing and maintenance, with owners responsible for upkeep after acceptance."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: the app has no testing, meter or acceptance-inspection tasks.",
+      "plannedSkills": [
+        "testing-and-measurement",
+        "low-voltage-and-fire-alarm-systems"
+      ]
+    },
+    {
+      "name": "Impairment handling and restoration",
+      "purpose": "Control the risk and tell the right people when a fire alarm system or part is out of service.",
+      "whenUsed": "When a system is turned off for service, a fault takes devices out, or work lasts beyond a short period.",
+      "role": "Impairment coordinator (owner or designated person) with the service technician.",
+      "steps": [
+        "Notify the coordinator before the system is taken out of service and agree scope and duration.",
+        "Inform the fire department, owner, insurer and monitoring company as the plan requires.",
+        "Use a fire watch or other interim measures for longer outages.",
+        "Tag the affected equipment as out of service.",
+        "Complete the repair and run the tests needed to prove the affected parts work.",
+        "Notify all parties that protection is restored and remove the tag."
+      ],
+      "hazards": [
+        "Building left unprotected",
+        "Fire watch not in place",
+        "Restoration not tested"
+      ],
+      "controls": [
+        "Impairment tag system",
+        "Fire watch",
+        "Notification to the fire department and others",
+        "Verification tests"
+      ],
+      "standards": [
+        {
+          "name": "NFPA 72 Chapter 14 / NFPA 25 (copyrighted)",
+          "what": "Impairment coordinator duties, notification and restoration steps (NFPA 25 for sprinklers, 72 for fire alarm)."
+        },
+        {
+          "name": "Local fire code and insurer requirements",
+          "what": "Set when the fire department must be told and when a fire watch is required."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.bates.edu/environmental-health-safety/impairments",
+          "says": "Coordinator verifies scope, notifies fire department and insurer, uses fire watch, tags equipment and confirms restoration."
+        },
+        {
+          "source": "https://www.securitysales.com/insights/5_nfpa_codes_consider_maintaining_fire_alarm_sytems/896/",
+          "says": "Fire codes place the maintenance obligation on owners, supported by an approved testing program."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: nothing in the app covers fire protection system outages or reporting.",
+      "plannedSkills": [
+        "low-voltage-and-fire-alarm-systems"
+      ]
+    }
+  ],
+  "standardsAndCodes": [
+    {
+      "name": "NFPA 70 (NEC) Article 760",
+      "role": "Wiring rules for fire alarm circuits, including power-limited and non-power-limited circuits, supply, separation and identification.",
+      "nec": "760 (also 300.21, 300.22, 110.11 where referenced)"
+    },
+    {
+      "name": "NFPA 70 (NEC) Article 725",
+      "role": "Class 1, 2 and 3 remote-control and signaling circuits, used for many security and access-control circuits.",
+      "nec": "725"
+    },
+    {
+      "name": "NFPA 70 (NEC) Article 800",
+      "role": "Communications and network wiring used by monitoring and video systems.",
+      "nec": "800"
+    },
+    {
+      "name": "NFPA 72 National Fire Alarm and Signaling Code",
+      "role": "Design, installation performance, acceptance testing, inspection, testing and maintenance, and impairments for fire alarm systems.",
+      "nec": "Cross-referenced to Article 760 but not part of the NEC"
+    },
+    {
+      "name": "UL 864",
+      "role": "Product listing for fire alarm control units and accessories.",
+      "nec": ""
+    },
+    {
+      "name": "UL 681",
+      "role": "Installation and classification of burglar and holdup alarm systems.",
+      "nec": ""
+    },
+    {
+      "name": "NFPA 1 / IFC fire code, NFPA 101",
+      "role": "Require fire alarm systems to be installed, tested and maintained and reference NFPA 70 and 72.",
+      "nec": ""
+    },
+    {
+      "name": "OSHA 29 CFR 1910.147, 1910.333, 1910.132, 1910.304",
+      "role": "Lockout, electrical safe work practices, PPE and wiring design for the line-voltage side.",
+      "nec": ""
+    },
+    {
+      "name": "NICET fire alarm certification and state licensing",
+      "role": "Qualification route for fire alarm technicians in many states.",
+      "nec": ""
+    }
+  ],
+  "outsideNec": [
+    "Fire alarm design, device spacing, notification performance and acceptance, inspection and maintenance: NFPA 72, not the NEC.",
+    "Product listing of panels and devices: UL 864 (fire) and UL 681 (burglar), plus central-station and monitoring standards such as UL 827.",
+    "Fire code duties for owners, impairments, fire watch and AHJ witnessing: NFPA 1, International Fire Code, local amendments.",
+    "Licensing, certification and permits: state and local rules, NICET.",
+    "Programming, addressing and manufacturer instructions: vendor documentation.",
+    "Security-specific work (cameras, access control, network setup) follows manufacturer instructions and often IT standards, with only the wiring under the NEC."
+  ],
+  "gapsForTheApp": [
+    "Low-voltage and fire alarm circuits: classes (Class 2/3, power-limited and non-power-limited fire alarm, communications), cable types and separation are not taught; a Chapter 7 and 8 skill is needed.",
+    "Fire alarm systems: panel, initiating and notification devices, supervision, battery and standby power are not in the app.",
+    "Testing with a meter and functional testing: no continuity, voltage or loop-check tasks.",
+    "Acceptance testing and documentation: no scenario type for walking a system through a witnessed test and filling the record.",
+    "Impairment procedures and AHJ notification: no content.",
+    "Lockout/tagout and testing before touching: absent, although the occupation connects panels to line voltage.",
+    "Plan and device-layout reading: no drawing-based tasks.",
+    "Programming and addressing: no panel interface simulation.",
+    "Firestopping and cable routing through fire-rated assemblies: not taught.",
+    "Cross-code content: the NEC content policy needs a way to link NFPA 72 and UL topics as outside-code items."
+  ],
+  "doubts": [
+    "No BLS Occupational Outlook Handbook page exists for this occupation; the OOH page was not available (HTTP 403 for the guessed URL, and the electrical installers page does not cover it), so growth and openings come from O*NET text and are not confirmed. Pay and employment use the OEWS May 2023 page.",
+    "O*NET summary page shows a median of $60,070 and 86,300 employees, which differs from OEWS May 2023; the year of the O*NET figures was not shown.",
+    "The O*NET task list was retrieved through a summarizing fetch; importance scores should be rechecked on the page before quoting them.",
+    "NFPA 72, NFPA 70E, UL 864 and UL 681 are paywalled; descriptions come from secondary pages and search snippets, not the standards. The UL pages (globalspec, ANSI) appeared in search results but were not opened.",
+    "NEC Article 725 and 800 separation rules come from a search summary (ecmweb, industrialmonitordirect, Mike Holt); only the ecmweb Article 760 page was opened. The Mike Holt PDF and the Minnesota health department PDF could not be read.",
+    "The licensing and NICET numbers come from a search summary of securityinfowatch.com and getlicensemap, not opened pages.",
+    "Procedures with only one fully relevant opened source beyond O*NET: programming and addressing (O*NET plus the acceptance checklist, which only touches annunciator points) and plan reading (O*NET plus the acceptance checklist). Impairment steps come from a college page and a trade article, not NFPA 72 itself.",
+    "The Bates page is a campus procedure that is mostly about sprinkler impairments (NFPA 25); applicability to alarm-only impairments follows NFPA 72 Chapter 14 per search results.",
+    "Which tasks require a licensed electrician versus an alarm installer for the line-voltage feed varies by state and was not confirmed."
+  ]
+}

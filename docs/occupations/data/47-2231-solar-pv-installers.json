@@ -1,0 +1,639 @@
+{
+  "soc": "47-2231",
+  "title": "Solar Photovoltaic Installers",
+  "onetUrl": "https://www.onetonline.org/link/details/47-2231.00",
+  "bls": {
+    "url": "https://www.bls.gov/ooh/construction-and-extraction/solar-photovoltaic-installers.htm",
+    "workers": "31,100 jobs (2025)",
+    "growth": "37 percent projected 2025-2035, much faster than average",
+    "openings": "about 4,200 per year",
+    "medianPay": "$53,140 per year, $25.55 per hour (May 2025)"
+  },
+  "summary": "PV installers build, wire and maintain solar electric systems, mostly on rooftops, and connect them to the building and the grid. The work mixes roofing and racking carpentry, DC and AC wiring, testing and labeling. Heights and sunlight-energized DC circuits are the two defining hazards.",
+  "typicalPath": "BLS: a high school diploma or equivalent, then roughly one month to a year of on-the-job training; technical school or community college courses are optional. Licensing is required in some states, and NABCEP certification is optional but required by some states for subsidized projects. In practice a licensed electrician often performs or supervises the electrical portion; this varies by state and was not confirmed in the pages opened. Source: BLS OOH page above.",
+  "tasks": [
+    {
+      "task": "Install PV systems following applicable codes and standards.",
+      "importance": "91",
+      "electricalKnowledge": "NEC 690, 705, 250, 110 and the adopted local amendments",
+      "appSkills": [
+        "equipment-installation",
+        "wiring-methods"
+      ]
+    },
+    {
+      "task": "Check wiring, polarity and grounding continuity of installed arrays.",
+      "importance": "89",
+      "electricalKnowledge": "Meter use, polarity and ground continuity testing, NEC 690.43 and 250",
+      "appSkills": [
+        "earthing-bonding"
+      ]
+    },
+    {
+      "task": "Identify electrical, environmental and other safety hazards before and during the job.",
+      "importance": "89",
+      "electricalKnowledge": "Shock and DC arc hazards, energized-by-light arrays, fall hazards",
+      "appSkills": [
+        "shock-protection",
+        "arc-fault-protection"
+      ]
+    },
+    {
+      "task": "Judge array location, orientation and structural suitability of the roof or site.",
+      "importance": "87",
+      "electricalKnowledge": "Site survey, shading, roof condition, fire-code setbacks",
+      "appSkills": [
+        "working-space-access"
+      ]
+    },
+    {
+      "task": "Assemble modules and support or racking structures.",
+      "importance": "86",
+      "electricalKnowledge": "Listed racking that also bonds modules (UL 2703), mechanical attachment",
+      "appSkills": [
+        "equipment-installation"
+      ]
+    },
+    {
+      "task": "Seal roof penetrations and arrays against weather.",
+      "importance": "86",
+      "electricalKnowledge": "Mostly roofing practice; not an NEC topic",
+      "appSkills": []
+    },
+    {
+      "task": "Run interconnecting wiring, with the means to disable it safely.",
+      "importance": "86",
+      "electricalKnowledge": "PV wire and connectors, conductor sizing, rapid shutdown (690.12), wiring methods",
+      "appSkills": [
+        "wiring-methods",
+        "conductor-sizing",
+        "disconnecting-means"
+      ]
+    },
+    {
+      "task": "Label system components with required identification and warnings.",
+      "importance": "84",
+      "electricalKnowledge": "NEC 690 and 705 marking, rapid shutdown labels, max DC voltage marking",
+      "appSkills": [
+        "identification-marking"
+      ]
+    },
+    {
+      "task": "Draw array layouts and site features for the installation.",
+      "importance": "84",
+      "electricalKnowledge": "Plan reading and single-line diagrams",
+      "appSkills": []
+    },
+    {
+      "task": "Plan materials and the sequence of installation steps.",
+      "importance": "84",
+      "electricalKnowledge": "Estimating, scheduling, equipment selection",
+      "appSkills": []
+    },
+    {
+      "task": "Connect inverters, combiners and disconnects to the building electrical system.",
+      "importance": "not shown on page summary",
+      "electricalKnowledge": "NEC 705 load-side and supply-side connections, overcurrent protection, disconnects",
+      "appSkills": [
+        "overcurrent-protection",
+        "disconnecting-means",
+        "equipment-installation"
+      ]
+    },
+    {
+      "task": "Commission systems, record readings and hand off to inspector and utility.",
+      "importance": "not shown on page summary",
+      "electricalKnowledge": "Voc, Isc, polarity, insulation resistance tests; interconnection paperwork",
+      "appSkills": []
+    },
+    {
+      "task": "Work at height on roofs and ladders using fall protection, in a team.",
+      "importance": "context: 69 percent regularly exposed to high places",
+      "electricalKnowledge": "OSHA 1926 Subpart M fall protection",
+      "appSkills": []
+    }
+  ],
+  "procedures": [
+    {
+      "name": "Site survey and roof fall protection",
+      "purpose": "Assess the roof and site, then keep workers from falling during array installation.",
+      "whenUsed": "Whenever work is at 6 feet or more above a lower level, which includes essentially all rooftop PV work.",
+      "role": "Every crew member; the employer provides systems and training.",
+      "steps": [
+        "Review plans and permit conditions and the adopted fire-code setbacks.",
+        "Walk the roof and check condition, slope, decking and attachment points.",
+        "Locate the service panel, meter, conduit routes and shading sources.",
+        "Identify overhead power lines, skylights, and roof edges and openings.",
+        "Inspect harness, lanyard or rope grab and connectors before use.",
+        "Install anchors into structural members, not sheathing alone.",
+        "Set ladder at a safe angle, secure it and extend it above the roof edge.",
+        "Connect to the anchor before stepping onto the roof.",
+        "Use guardrails or a safety monitor where the plan calls for them.",
+        "Keep tools and modules from sliding off the roof."
+      ],
+      "hazards": [
+        "Falls from roof edge",
+        "Falls from ladders",
+        "Slips on wet or dusty roofs",
+        "Dropped objects",
+        "Weak or wet roofing",
+        "Overhead power lines"
+      ],
+      "controls": [
+        "Personal fall arrest systems, guardrails or monitored warning lines per OSHA",
+        "Documented fall-protection training",
+        "Equipment inspection",
+        "Ladder securing and three points of contact"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1926.501(b)",
+          "what": "Roof workers at 6 feet or more need guardrails, nets, fall arrest or permitted alternatives."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.502",
+          "what": "Defines performance of guardrails, nets and arrest systems, such as 42-inch top rail and 6-foot free-fall limit."
+        },
+        {
+          "name": "International Fire Code section 1205 / IRC R324",
+          "what": "Sets rooftop access pathways and ridge setbacks; exact distances depend on adopted edition and amendments."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.501",
+          "says": "Fall protection is required at 6 feet on low-slope and steep roofs, with allowed system choices."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.502",
+          "says": "Gives system criteria: guardrail height and strength, net placement, arrest force and free-fall limits."
+        },
+        {
+          "source": "https://blog.heatspring.com/addressing-common-hazards-on-solar-installation-projects",
+          "says": "Solar crews typically use harness and retractable lanyard; ladder setup and securing are stressed."
+        },
+        {
+          "source": "https://expertce.com/learn-articles/fire-code-requirements-rooftop-solar/",
+          "says": "Setbacks and pathways vary by adopted edition and local amendment; the AHJ decides."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: no height-work content; this is OSHA safety, not an NEC skill.",
+      "plannedSkills": [
+        "jobsite-safety"
+      ]
+    },
+    {
+      "name": "Array installation, DC wiring and connector handling",
+      "purpose": "Mount modules and wire strings with listed, correctly mated connectors and protected conductors.",
+      "whenUsed": "During the main install phase after racking is set.",
+      "role": "PV installers, with an electrician where state rules require.",
+      "steps": [
+        "Set racking and attach modules per manufacturer instructions.",
+        "Cover or keep modules shaded when practical while wiring.",
+        "Mate connectors of the same listed type and check they are fully seated.",
+        "Route and secure PV wire and cable so it is protected from damage and abrasion.",
+        "Label and group strings as shown on the single-line diagram.",
+        "Run DC circuits in the approved wiring method to the combiner or inverter.",
+        "Seal roof penetrations and confirm conduit and box fittings.",
+        "Verify all work against the plan set before closing up."
+      ],
+      "hazards": [
+        "Energized DC circuits whenever lit",
+        "DC arc from damaged or loose connectors",
+        "Module handling injuries",
+        "Burns from hot surfaces"
+      ],
+      "controls": [
+        "Listed or field-evaluated equipment",
+        "Matched connectors and torque to manufacturer values",
+        "Insulated tools and no jewelry",
+        "Working in pairs",
+        "Module covering or shading while connecting"
+      ],
+      "standards": [
+        {
+          "name": "NEC Article 690 (Parts IV and others)",
+          "what": "Wiring methods, conductor and connector requirements and listed equipment for PV circuits; wording is edition-sensitive."
+        },
+        {
+          "name": "NEC Article 110",
+          "what": "General installation rules such as workmanship and equipment suitability."
+        },
+        {
+          "name": "NEC 705.11 connectors/splices (as summarized in source)",
+          "what": "Connectors and splices must suit the conductor and ampacity, installed per manufacturer."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.ecmweb.com/national-electrical-code/code-basics/article/55042240/nec-requirements-for-solar-part-1",
+          "says": "PV components must be listed or evaluated; metal parts connect to the equipment grounding conductor."
+        },
+        {
+          "source": "https://www.portlandiaelectric.supply/blogs/generators/safety-first-osha-and-nfpa-requirements-for-solar-installation-crews",
+          "says": "PV arrays cannot be de-energized in light; DC arcs sustain; gloves and testing practices apply."
+        },
+        {
+          "source": "https://www.solarpermitsolutions.com/blog/nec-2023-article-690-solar-pv-systems-requirements",
+          "says": "Summarizes 2023 NEC points on connectors, torque and listed components."
+        }
+      ],
+      "appSkills": [
+        "wiring-methods",
+        "conductor-sizing",
+        "equipment-installation"
+      ],
+      "appCoverage": "partial: the sandbox teaches AC panel wiring and conductor choices, but not DC strings, connectors or PV wire.",
+      "plannedSkills": [
+        "pv-and-storage-systems"
+      ]
+    },
+    {
+      "name": "Inverter, combiner, disconnect and rapid shutdown installation",
+      "purpose": "Place and connect conversion and shutdown equipment so the array can be isolated and firefighters are protected.",
+      "whenUsed": "After array wiring, before commissioning.",
+      "role": "Installer or electrician.",
+      "steps": [
+        "Mount inverter and combiner in a code-compliant, accessible location per listing.",
+        "Install the PV disconnecting means and any required AC disconnect.",
+        "Install rapid shutdown devices or listed system components per manufacturer.",
+        "Wire the initiating device where the system needs one and place it per plan.",
+        "Connect overcurrent protection sized from the design.",
+        "Apply required rapid shutdown and warning labels.",
+        "Test the shutdown function and record the result."
+      ],
+      "hazards": [
+        "Shock from DC and AC terminals",
+        "Arc flash at combiners",
+        "Firefighter exposure to energized conductors"
+      ],
+      "controls": [
+        "Rapid shutdown limiting controlled conductors to low voltage within a set time",
+        "Lockable disconnects",
+        "Listed shutdown equipment used per instructions",
+        "Clear labeling"
+      ],
+      "standards": [
+        {
+          "name": "NEC 690.12",
+          "what": "Requires rapid shutdown of PV conductors on buildings; limits and methods changed in 2017, 2020 and 2023 editions."
+        },
+        {
+          "name": "UL 3741",
+          "what": "Product safety standard for PV hazard control systems, referenced from NEC 2020 and 2023."
+        },
+        {
+          "name": "NEC 690.13-690.15",
+          "what": "Disconnecting means and isolation requirements for PV equipment (section numbers recalled; not opened)."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://iaeimagazine.org/electrical-fundamentals/nec-rapid-shutdown-requirements-and-ul-3741/",
+          "says": "Describes how rapid shutdown limits changed across 2017, 2020, 2023 NEC and the role of UL 3741 and initiation devices."
+        },
+        {
+          "source": "https://www.ecmweb.com/national-electrical-code/code-basics/article/55042240/nec-requirements-for-solar-part-1",
+          "says": "Lists equipment listing, disconnect and plaque duties and where PV equipment may not be installed."
+        }
+      ],
+      "appSkills": [
+        "disconnecting-means",
+        "overcurrent-protection",
+        "equipment-installation",
+        "identification-marking"
+      ],
+      "appCoverage": "partial: disconnecting means and overcurrent skills transfer to the AC side, but rapid shutdown and PV-specific equipment are not taught.",
+      "plannedSkills": [
+        "pv-and-storage-systems"
+      ]
+    },
+    {
+      "name": "Grounding and bonding of the array",
+      "purpose": "Bond all exposed metal and provide a fault path so ground faults are detected and cleared.",
+      "whenUsed": "During racking and wiring, and verified at commissioning.",
+      "role": "Installer or electrician.",
+      "steps": [
+        "Use racking and bonding hardware listed for module bonding.",
+        "Bond module frames and rails per the hardware instructions.",
+        "Run the equipment grounding conductor from array to inverter and panel.",
+        "Size the EGC from the overcurrent device rating and protect small sizes from damage.",
+        "Connect any optional grounding electrode to the premises electrode system.",
+        "Confirm ground-fault protection is present in the inverter.",
+        "Test ground continuity before energizing."
+      ],
+      "hazards": [
+        "Shock from energized frames",
+        "Fire from undetected ground faults",
+        "Corrosion from mismatched metals"
+      ],
+      "controls": [
+        "Listed bonding devices",
+        "Material-compatible connectors",
+        "Ground-fault detection and interruption",
+        "Continuity testing"
+      ],
+      "standards": [
+        {
+          "name": "NEC 690.43 and Article 250",
+          "what": "Exposed metal PV parts must connect to the equipment grounding conductor using listed bonding means."
+        },
+        {
+          "name": "UL 2703",
+          "what": "Listing for mounting systems that also bond modules."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://iaeimagazine.org/issue/2021-january-february/on-the-grounding-and-bonding-of-solar-photovoltaic-systems/",
+          "says": "Explains UL 2703 racking bonding, EGC routing, optional electrodes and DC ground-fault protection."
+        },
+        {
+          "source": "https://www.ecmweb.com/national-electrical-code/code-basics/article/55042240/nec-requirements-for-solar-part-1",
+          "says": "Metal frames connect to the EGC sized by Table 250.122; GFDI applies above stated thresholds."
+        }
+      ],
+      "appSkills": [
+        "earthing-bonding"
+      ],
+      "appCoverage": "partial: the earthing-bonding skill trains bonding and grounding concepts for buildings, not array bonding hardware or DC ground-fault protection.",
+      "plannedSkills": [
+        "pv-and-storage-systems"
+      ]
+    },
+    {
+      "name": "Commissioning tests and electrically safe testing",
+      "purpose": "Prove the installed system is correct and safe before energizing and handing over.",
+      "whenUsed": "After installation, before inverter start-up and utility permission.",
+      "role": "Installer or commissioning technician, often two people.",
+      "steps": [
+        "Visually inspect wiring, labels, grounding and mounting with the system off.",
+        "Check meter on a known source, test, then recheck the meter.",
+        "Test continuity of grounding conductors.",
+        "Check polarity of each string at the combiner.",
+        "Measure open-circuit voltage per string and compare with temperature-corrected expected values.",
+        "Measure short-circuit current per string where the procedure calls for it.",
+        "Test insulation resistance with the disconnects open.",
+        "Start the inverter per manufacturer steps and verify AC side and shutdown.",
+        "Record results in the commissioning report."
+      ],
+      "hazards": [
+        "Shock and arc during test",
+        "Reverse polarity damage",
+        "Hidden insulation faults"
+      ],
+      "controls": [
+        "Test sequence with polarity before connection",
+        "Rated meters and gloves",
+        "Live-dead-live voltage check",
+        "Open disconnects for insulation tests",
+        "Documented results"
+      ],
+      "standards": [
+        {
+          "name": "NABCEP PV Installation Professional JTA",
+          "what": "Lists commissioning tasks: Voc, polarity, insulation resistance, Isc, labeling, interconnection."
+        },
+        {
+          "name": "IEC 62446-1",
+          "what": "Outside the NEC; defines a PV test and documentation sequence commonly used as a reference."
+        },
+        {
+          "name": "NFPA 70E",
+          "what": "Electrical safe work practices and PPE for energized testing; edition-sensitive (not opened)."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.nabcep.org/wp-content/uploads/2017/12/NABCEP-PV-Installation-JTA-12-14-17.pdf",
+          "says": "Installation and commissioning domains include Voc, polarity, insulation resistance, Isc and labeling tasks."
+        },
+        {
+          "source": "https://www.surgepv.com/blog/solar-commissioning-checklist",
+          "says": "Describes DC tests, expected Voc correction, insulation test with disconnects open and handover documents."
+        },
+        {
+          "source": "https://www.portlandiaelectric.supply/blogs/generators/safety-first-osha-and-nfpa-requirements-for-solar-installation-crews",
+          "says": "Recommends live-dead-live testing and rated PPE."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: the app does not yet teach meter testing; no skill trains these steps.",
+      "plannedSkills": [
+        "testing-and-measurement",
+        "electrically-safe-work",
+        "pv-and-storage-systems"
+      ]
+    },
+    {
+      "name": "Interconnection and utility hand-off",
+      "purpose": "Connect the system to the building service and obtain utility permission to operate.",
+      "whenUsed": "Design and permitting for the application; after inspection for permission to operate.",
+      "role": "Installer company, electrician, inspector and the utility.",
+      "steps": [
+        "Submit the interconnection application with equipment data.",
+        "Choose load-side or supply-side connection per panel limits.",
+        "Install the connection and the required plaque or directory at the service.",
+        "Obtain permit sign-off and pass the AHJ inspection.",
+        "Provide documents to the utility.",
+        "Wait for utility permission to operate before exporting.",
+        "Leave labels, as-builts and manuals for the owner."
+      ],
+      "hazards": [
+        "Overloaded busbar",
+        "Backfeed to utility workers",
+        "Operating before approval"
+      ],
+      "controls": [
+        "Busbar and rating checks",
+        "Utility-interactive listed inverter (UL 1741, IEEE 1547)",
+        "Inspection before energizing",
+        "Permission to operate"
+      ],
+      "standards": [
+        {
+          "name": "NEC Article 705",
+          "what": "Rules for connecting power sources in parallel with the utility, including supply-side and load-side taps."
+        },
+        {
+          "name": "UL 1741 / IEEE 1547",
+          "what": "Inverter listing and grid interconnection performance including anti-islanding; outside the NEC."
+        },
+        {
+          "name": "Utility interconnection tariff",
+          "what": "Utility-specific application, study and permission rules; varies by utility and state."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.greenlancer.com/post/solar-interconnection",
+          "says": "Four steps: application, permits, inspection, permission to operate; 120 percent rule and IEEE 1547 and UL 1741."
+        },
+        {
+          "source": "https://iaeimagazine.org/columns/photovoltaic/2023-national-electrical-code-and-photovoltaic-power-systems",
+          "says": "2023 NEC rewrote Article 705 including supply-side connections and added island mode and microgrid parts."
+        }
+      ],
+      "appSkills": [
+        "overcurrent-protection",
+        "disconnecting-means",
+        "load-calculation"
+      ],
+      "appCoverage": "partial: load calculation and service concepts exist, but no source interconnection, 120 percent rule or utility process.",
+      "plannedSkills": [
+        "pv-and-storage-systems"
+      ]
+    },
+    {
+      "name": "Battery storage installation",
+      "purpose": "Install energy storage with correct disconnects, protection, location and shutdown.",
+      "whenUsed": "When a project includes batteries.",
+      "role": "Electrician or manufacturer-certified installer.",
+      "steps": [
+        "Confirm the unit is listed to UL 9540 and read its instructions.",
+        "Check allowed location and spacing with the fire code and AHJ.",
+        "Mount unit and install the lockable disconnect in sight or within the stated distance.",
+        "Size conductors and protection for continuous current.",
+        "Install the emergency shutdown device where required.",
+        "Label the system and apply any shock or arc warnings.",
+        "Commission and log maintenance records."
+      ],
+      "hazards": [
+        "Thermal runaway fire",
+        "High fault current",
+        "Stored energy shock"
+      ],
+      "controls": [
+        "Listed equipment",
+        "Spacing and capacity limits",
+        "Disconnect and shutdown",
+        "Commissioning"
+      ],
+      "standards": [
+        {
+          "name": "NEC Article 706 and 480",
+          "what": "Electrical installation, disconnects, protection and labels for storage and batteries."
+        },
+        {
+          "name": "NFPA 855 / IRC R328 / IFC",
+          "what": "Fire-code location, spacing and capacity limits for storage; outside the NEC and edition-sensitive."
+        },
+        {
+          "name": "UL 9540 / 9540A",
+          "what": "Listing and fire test method for storage systems."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://electricaltrader.com/blogs/news/battery-storage-codes-electricians-must-know",
+          "says": "Summarizes 706 disconnect and label duties and NFPA 855 spacing and capacity limits."
+        },
+        {
+          "source": "https://www.solarpermitsolutions.com/blog/nec-2023-article-690-solar-pv-systems-requirements",
+          "says": "2023 706.7 adds formal commissioning requirements for storage."
+        },
+        {
+          "source": "https://iaeimagazine.org/columns/photovoltaic/2023-national-electrical-code-and-photovoltaic-power-systems",
+          "says": "2023 NEC changed Articles 706 and 480 scope, commissioning and disconnects."
+        }
+      ],
+      "appSkills": [
+        "disconnecting-means",
+        "equipment-installation",
+        "special-locations"
+      ],
+      "appCoverage": "none: no batteries or storage content; skills touch only generic disconnect and location ideas.",
+      "plannedSkills": [
+        "pv-and-storage-systems"
+      ]
+    }
+  ],
+  "standardsAndCodes": [
+    {
+      "name": "NEC Article 690 Solar Photovoltaic Systems",
+      "role": "Core PV rules: circuits, wiring, disconnects, rapid shutdown, grounding, arc-fault, labeling.",
+      "nec": "690, with 110, 250"
+    },
+    {
+      "name": "NEC Article 705 Interconnected Power Production Sources",
+      "role": "Connecting the system to the service and parallel operation, plaques.",
+      "nec": "705"
+    },
+    {
+      "name": "NEC Article 706 Energy Storage Systems and 480 Stationary Batteries",
+      "role": "Battery disconnects, protection, labels, commissioning.",
+      "nec": "706, 480"
+    },
+    {
+      "name": "NEC Article 710 Stand-Alone Systems",
+      "role": "Off-grid systems with no utility connection.",
+      "nec": "710"
+    },
+    {
+      "name": "NEC Article 691 Large-Scale PV Electric Supply Stations",
+      "role": "Utility-scale plants; rarely touched by residential installers.",
+      "nec": "691 (not opened)"
+    },
+    {
+      "name": "NEC Article 250 and 110",
+      "role": "Grounding and bonding and general installation requirements.",
+      "nec": "250, 110"
+    },
+    {
+      "name": "OSHA 29 CFR 1926 Subparts M and K",
+      "role": "Fall protection and construction electrical safety including lockout and tagging (1926.417).",
+      "nec": "none"
+    },
+    {
+      "name": "UL 1741, UL 2703, UL 3741, UL 9540",
+      "role": "Product listings for inverters, racking and bonding, hazard control systems, storage.",
+      "nec": "NEC requires listed equipment"
+    },
+    {
+      "name": "IEEE 1547 and utility interconnection rules",
+      "role": "Grid performance and the permission-to-operate process.",
+      "nec": "705 references"
+    },
+    {
+      "name": "IFC 1205 / IRC R324 / NFPA 855",
+      "role": "Rooftop access, setbacks, storage siting.",
+      "nec": "none"
+    },
+    {
+      "name": "NFPA 70E",
+      "role": "Energized work and PPE practices.",
+      "nec": "none"
+    }
+  ],
+  "outsideNec": [
+    "Fire-code roof access pathways and ridge setbacks (IFC section 1205, IRC R324) set by the adopted edition and local amendments.",
+    "Battery location, spacing and capacity limits (NFPA 855, IRC R328, IFC).",
+    "OSHA fall protection, ladders and construction electrical safety.",
+    "Structural and roofing work: attachment loads, flashing and weatherproofing.",
+    "UL product listings (1741, 2703, 3741, 9540) and IEC 62446-1 test practice.",
+    "Utility interconnection agreements, IEEE 1547 settings and permission to operate.",
+    "Contractor licensing and permit rules by state and AHJ."
+  ],
+  "gapsForTheApp": [
+    "PV system skill family: array, string, combiner, inverter, rapid shutdown and DC conductors are not in the 13 skills.",
+    "Rapid shutdown: a skill and scenario teaching 690.12 and its edition differences.",
+    "Testing with a meter: Voc, polarity, insulation resistance and live-dead-live in a safe simulated array.",
+    "Roof and fall-protection scenario: site survey, anchors and setback layout in 3D.",
+    "Interconnection: 705 load-side and supply-side connections and the 120 percent rule using the panel sandbox.",
+    "Battery storage: 706 disconnects, emergency shutdown, labels and fire-code siting.",
+    "Edition awareness: content tagged by NEC and fire-code edition because 690, 705 and 706 changed in 2017, 2020 and 2023.",
+    "DC arc and lockout practice in construction: no lockout or energized-work content exists."
+  ],
+  "doubts": [
+    "O*NET page summary did not show importance numbers for interconnection or commissioning tasks; I did not see the full task list directly.",
+    "NEC edition-specific section numbers (690.13 to 690.15, 705.11, 706.15) were not verified against NFPA text, which is paywalled; third-party summaries were used.",
+    "Fire-code setback distances: only secondary sources, and they conflict by edition; the source I opened said distances vary by adoption and amendment.",
+    "NEC 2026 changes to 690, 705 and 706 were not researched; sources cover 2017 to 2023 editions.",
+    "Two sources I tried (NREL PDFs, yakimacounty fire PDF) did not load or were unreadable; IEC 62446-1 preview did not load, so test order came from a search result summary plus a blog.",
+    "NFPA 70E specifics and Article 691 content were not opened.",
+    "Whether PV installers need an electrical license varies by state and was not confirmed.",
+    "OSHA 1910.147 excludes construction; the construction lockout rule I opened is 1926.417 (tagging), which is thinner than 1910.147.",
+    "The Battery storage and Site survey procedures have only two to three sources, mostly trade blogs rather than primary standards."
+  ]
+}
