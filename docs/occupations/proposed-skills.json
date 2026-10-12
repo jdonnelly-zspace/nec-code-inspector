@@ -1,95 +1,113 @@
 {
-  "note": "Skills the occupations need that the app does not teach yet. Each has the documented reason docs/CONTENT_POLICY.md asks for before a skill is added to ConceptIds. Status: proposed (a decision for the owner), blocked (cannot be built as the app stands). Nothing here is in the app until it is added to ConceptIds with content and a lesson.",
+  "note": "Skills the occupations need that the app does not teach yet. Each has the documented reason docs/CONTENT_POLICY.md asks for before a skill is added to ConceptIds. Status: proposed (awaiting a decision), approved (the owner approved it on 2026-10-12, see docs/product/DECISIONS.md; it is not in the app until it is added to ConceptIds with content and a lesson), blocked (cannot be built as the app stands). 'wave' is the release wave in docs/product/PRD.md section 7.",
   "skills": [
     {
       "id": "electrically-safe-work",
       "title": "Electrically safe work",
-      "status": "proposed",
+      "status": "approved",
       "summary": "Making a circuit or piece of equipment safe to work on and proving it: identify every source, shut off, lock and tag, test before touching with a proved meter, and know what protective equipment to use.",
       "reason": "It is the first step of the main work procedures of every core occupation (electricians, helpers, inspectors, solar installers, alarm installers, and the customer-side work of line workers) and of most adjacent trades. The 13 code skills teach what an installation must look like; none teaches how to work safely on one. Without it the app cannot claim to cover any of these occupations' safety procedures.",
       "standards": "OSHA 29 CFR 1910 Subpart S and 1910.147 (public); NFPA 70E (paywalled, paraphrase only); employer programs.",
       "codeProfile": "none needed: procedure content, not a code",
-      "firstContent": "A lockout and test-before-touch trainer with a virtual meter, locks and tags, and a live-dead-live check; a hazard-spotting inspection before opening a panel."
+      "firstContent": "A lockout and test-before-touch trainer with a virtual meter, locks and tags, and a live-dead-live check; a hazard-spotting inspection before opening a panel.",
+      "wave": 1,
+      "decision": "approved 2026-10-12"
     },
     {
       "id": "testing-and-measurement",
       "title": "Testing and measurement",
-      "status": "proposed",
+      "status": "approved",
       "summary": "Choosing and using testers and meters (voltage, continuity, polarity, insulation resistance, receptacle and GFCI/AFCI testers) and reading what they show.",
       "reason": "Needed by electricians (testing a finished installation, troubleshooting), inspectors (GFCI and AFCI verification), solar installers (open-circuit voltage, polarity, insulation resistance) and alarm installers (functional and acceptance tests). The app has no meter or tester interaction at all, although the stylus and 3D scene suit it well.",
       "standards": "Manufacturer instructions, OSHA 1910.333, IEC 62446-1 for PV (paywalled), trade practice.",
       "codeProfile": "none needed",
-      "firstContent": "A virtual multimeter and receptacle tester used in the inspection scenes; a continuity and polarity check on a finished circuit."
+      "firstContent": "A virtual multimeter and receptacle tester used in the inspection scenes; a continuity and polarity check on a finished circuit.",
+      "wave": 1,
+      "decision": "approved 2026-10-12"
     },
     {
       "id": "troubleshooting",
       "title": "Troubleshooting",
-      "status": "proposed",
+      "status": "approved",
       "summary": "Finding the cause of a dead or tripping circuit by narrowing the fault step by step, using the safe-work and testing skills.",
       "reason": "The main day-to-day procedure of working electricians and maintenance workers and a task of helpers' supervisors. It combines several code skills with measurement and a method, and the app has nothing that teaches the method.",
       "standards": "Trade practice; OSHA 1910.333 for work on or near live parts.",
       "codeProfile": "none needed",
-      "firstContent": "Fault-finding scenarios on a residential circuit: a dead outlet, a tripping breaker, a tripped protection device that will not reset."
+      "firstContent": "Fault-finding scenarios on a residential circuit: a dead outlet, a tripping breaker, a tripped protection device that will not reset.",
+      "wave": 1,
+      "decision": "approved 2026-10-12"
     },
     {
       "id": "plans-and-documentation",
       "title": "Plans and documentation",
-      "status": "proposed",
+      "status": "approved",
       "summary": "Reading drawings, schedules and one-line diagrams; laying out work from them; and recording what was found or done (inspection notes, correction notices, test records).",
       "reason": "Electricians and helpers lay out work from drawings, inspectors review plans and write correction notices, alarm installers check device layouts and fill acceptance records. The app teaches citing a rule but not reading or writing the documents around the work.",
       "standards": "Drawing conventions; local permit and inspection forms; the fire alarm acceptance record for alarm work.",
       "codeProfile": "none needed",
-      "firstContent": "A panel schedule and one-line diagram reading exercise; writing a correction notice from flagged violations."
+      "firstContent": "A panel schedule and one-line diagram reading exercise; writing a correction notice from flagged violations.",
+      "wave": 1,
+      "decision": "approved 2026-10-12"
     },
     {
       "id": "jobsite-safety",
       "title": "Jobsite safety",
-      "status": "proposed",
+      "status": "approved",
       "summary": "General hazards of the job apart from electricity: ladders and falls, roofs and aerial lifts, tools and cords, material handling, enclosed spaces, housekeeping and a pre-job briefing.",
       "reason": "Appears in the procedures of helpers, solar installers, power-line workers and electricians. Falls are a leading cause of construction deaths and the app has no height or ladder content.",
       "standards": "OSHA 29 CFR 1926 (fall protection, ladders, tools, excavation and confined spaces); public domain.",
       "codeProfile": "none needed",
-      "firstContent": "A ladder setup and inspection scenario; a pre-job walk-through that finds the hazards and picks the protection."
+      "firstContent": "A ladder setup and inspection scenario; a pre-job walk-through that finds the hazards and picks the protection.",
+      "wave": 1,
+      "decision": "approved 2026-10-12"
     },
     {
       "id": "code-administration",
       "title": "Code administration",
-      "status": "proposed",
+      "status": "approved",
       "summary": "How the code is adopted and enforced: which edition and local amendments apply, the stages of a permit and inspection, and how work is approved, corrected or rejected.",
       "reason": "Inspectors do it daily and electricians meet it at every permit and inspection. The app already has the edition problem (open decision 6) without any way to teach it, and the inspection scenarios have no stages.",
       "standards": "State and local adoption and amendment; the inspection process of the authority having jurisdiction.",
       "codeProfile": "uses the region and code profiles already in the app; adds edition metadata",
-      "firstContent": "A staged new-home inspection (slab, rough-in, service, final) that asks what must be checked before work is covered; an edition-difference exercise."
+      "firstContent": "A staged new-home inspection (slab, rough-in, service, final) that asks what must be checked before work is covered; an edition-difference exercise.",
+      "wave": 1,
+      "decision": "approved 2026-10-12"
     },
     {
       "id": "pv-and-storage-systems",
       "title": "Solar PV and storage systems",
-      "status": "proposed",
+      "status": "approved",
       "summary": "Arrays, DC wiring, inverters, rapid shutdown, interconnection, and battery storage: how they are installed, protected, marked and connected.",
       "reason": "The solar installer is a core occupation in the market view (the fastest growing), and PV and storage also touch electricians, inspectors and several adjacent occupations. None of the 13 skills covers DC systems or rapid shutdown. Much of it sits in the NEC (Articles 690, 691, 705, 706, 480), so it fits the app's code approach, but those articles changed in 2017, 2020 and 2023, so it depends on the edition decision.",
       "standards": "NEC Articles 690, 691, 705, 706, 480, 710 and 250; fire-code access and setbacks; UL listings; utility interconnection rules.",
       "codeProfile": "new entries in each code profile; fire-code items as outside-code notes",
-      "firstContent": "A residential rooftop array inspection (rapid shutdown, labels, disconnects, bonding) and an interconnection exercise on the panel sandbox."
+      "firstContent": "A residential rooftop array inspection (rapid shutdown, labels, disconnects, bonding) and an interconnection exercise on the panel sandbox.",
+      "wave": 2,
+      "decision": "approved 2026-10-12"
     },
     {
       "id": "low-voltage-and-fire-alarm-systems",
       "title": "Low-voltage and fire alarm systems",
-      "status": "proposed",
+      "status": "approved",
       "summary": "Power-limited and fire alarm circuits, communications cabling, separation from power wiring, devices and panels, supervision, power supplies, and the testing and handling of impairments.",
       "reason": "Security and fire alarm installers are a core occupation and telecom installers an adjacent one. The NEC covers these circuits in Articles 725, 760 and 800, but the governing fire alarm standard (NFPA 72) is a separate code, so this skill needs a second code profile as well as new content.",
       "standards": "NEC Articles 725, 760, 800 and 830; NFPA 72 and UL 864 (paywalled, paraphrase only); local fire code.",
       "codeProfile": "new code profile for the fire alarm standard, with its own licence decision",
-      "firstContent": "A commercial building with a fire alarm panel and devices to inspect (wiring class, separation, supervision, labelling)."
+      "firstContent": "A commercial building with a fire alarm panel and devices to inspect (wiring class, separation, supervision, labelling).",
+      "wave": 2,
+      "decision": "approved 2026-10-12"
     },
     {
       "id": "utility-interface",
       "title": "Utility interface",
-      "status": "proposed",
+      "status": "approved",
       "summary": "Where the utility's equipment ends and the customer's begins: the service point, meter, service entrance and the connections made there.",
       "reason": "Electricians and line workers both make service connections, and the NEC begins at the service point. The app teaches the customer side only and never shows where its rules stop. This is also the only part of line work the NEC reaches.",
       "standards": "NEC Article 230 and the scope rules in Article 90; the utility's service requirements (not national).",
       "codeProfile": "uses the existing NEC entries plus a scope note",
-      "firstContent": "A service entrance scene that marks the service point and asks which side each item is on."
+      "firstContent": "A service entrance scene that marks the service point and asks which side each item is on.",
+      "wave": 1,
+      "decision": "approved 2026-10-12"
     },
     {
       "id": "utility-line-work",
@@ -97,10 +115,12 @@
       "status": "blocked",
       "summary": "Work on utility lines and equipment: approach distances, de-energizing and grounding lines, climbing, pole setting, underground vaults, outage switching.",
       "reason": "Power-line installers and repairers are a core occupation in the market view, but the NEC excludes installations under exclusive utility control and service drops up to the service point; the work is governed by the National Electrical Safety Code (NESC) and OSHA 1910.269 and 1926 Subpart V. Only about one task in thirteen touches the NEC.",
-      "blockedBy": "The NESC is a separate copyrighted code that the app has no profile for, and the work needs new 3D content (poles, vaults, bucket trucks) the project has not planned. Needs an owner decision: build a NESC profile and utility scenes, or drop the occupation from the core set.",
+      "blockedBy": "The NESC is a separate copyrighted code that the app has no profile for, and the work needs new 3D content (poles, vaults, bucket trucks) the project has not planned. Decided 2026-10-12: build it (wave 3). Still blocked until the NESC licence decision is made and the utility scenes are planned.",
       "standards": "NESC (IEEE C2, paywalled); OSHA 29 CFR 1910.269 and 1926 Subpart V (public).",
       "codeProfile": "would need a NESC code profile and its licence decision",
-      "firstContent": "None until the decision. The electrically safe work and jobsite safety skills would serve line workers' general safety procedures."
+      "firstContent": "None until the decision. The electrically safe work and jobsite safety skills would serve line workers' general safety procedures.",
+      "wave": 3,
+      "decision": "approved 2026-10-12"
     }
   ]
 }

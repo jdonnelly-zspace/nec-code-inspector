@@ -112,17 +112,17 @@ Every procedure of the six core occupations against what the app teaches today (
 
 ## Skills still to build: how many procedures need each
 
-| Skill | Status | Procedures | Occupations | Why |
-|---|---|---|---|---|
-| jobsite-safety | proposed | 9 | 47-2231, 47-3013, 49-9051 | General hazards of the job apart from electricity: ladders and falls, roofs and aerial lifts, tools and cords, material handling, enclosed spaces, housekeeping and a pre-job briefing. |
-| electrically-safe-work | proposed | 6 | 47-2111, 47-2231, 47-3013, 47-4011, 49-2098, 49-9051 | Making a circuit or piece of equipment safe to work on and proving it: identify every source, shut off, lock and tag, test before touching with a proved meter, and know what protective equipment to use. |
-| testing-and-measurement | proposed | 6 | 47-2111, 47-2231, 47-4011, 49-2098 | Choosing and using testers and meters (voltage, continuity, polarity, insulation resistance, receptacle and GFCI/AFCI testers) and reading what they show. |
-| pv-and-storage-systems | proposed | 6 | 47-2231 | Arrays, DC wiring, inverters, rapid shutdown, interconnection, and battery storage: how they are installed, protected, marked and connected. |
-| low-voltage-and-fire-alarm-systems | proposed | 5 | 49-2098 | Power-limited and fire alarm circuits, communications cabling, separation from power wiring, devices and panels, supervision, power supplies, and the testing and handling of impairments. |
-| utility-line-work | blocked | 5 | 49-9051 | Work on utility lines and equipment: approach distances, de-energizing and grounding lines, climbing, pole setting, underground vaults, outage switching. |
-| plans-and-documentation | proposed | 4 | 47-3013, 47-4011, 49-2098 | Reading drawings, schedules and one-line diagrams; laying out work from them; and recording what was found or done (inspection notes, correction notices, test records). |
-| code-administration | proposed | 4 | 47-4011 | How the code is adopted and enforced: which edition and local amendments apply, the stages of a permit and inspection, and how work is approved, corrected or rejected. |
-| troubleshooting | proposed | 1 | 47-2111 | Finding the cause of a dead or tripping circuit by narrowing the fault step by step, using the safe-work and testing skills. |
-| utility-interface | proposed | 1 | 49-9051 | Where the utility's equipment ends and the customer's begins: the service point, meter, service entrance and the connections made there. |
+| Skill | Wave | Status | Procedures | Occupations | Why |
+|---|---|---|---|---|---|
+| jobsite-safety | 1 | approved | 9 | 47-2231, 47-3013, 49-9051 | General hazards of the job apart from electricity: ladders and falls, roofs and aerial lifts, tools and cords, material handling, enclosed spaces, housekeeping and a pre-job briefing. |
+| electrically-safe-work | 1 | approved | 6 | 47-2111, 47-2231, 47-3013, 47-4011, 49-2098, 49-9051 | Making a circuit or piece of equipment safe to work on and proving it: identify every source, shut off, lock and tag, test before touching with a proved meter, and know what protective equipment to use. |
+| testing-and-measurement | 1 | approved | 6 | 47-2111, 47-2231, 47-4011, 49-2098 | Choosing and using testers and meters (voltage, continuity, polarity, insulation resistance, receptacle and GFCI/AFCI testers) and reading what they show. |
+| pv-and-storage-systems | 2 | approved | 6 | 47-2231 | Arrays, DC wiring, inverters, rapid shutdown, interconnection, and battery storage: how they are installed, protected, marked and connected. |
+| low-voltage-and-fire-alarm-systems | 2 | approved | 5 | 49-2098 | Power-limited and fire alarm circuits, communications cabling, separation from power wiring, devices and panels, supervision, power supplies, and the testing and handling of impairments. |
+| utility-line-work | 3 | blocked | 5 | 49-9051 | Work on utility lines and equipment: approach distances, de-energizing and grounding lines, climbing, pole setting, underground vaults, outage switching. |
+| plans-and-documentation | 1 | approved | 4 | 47-3013, 47-4011, 49-2098 | Reading drawings, schedules and one-line diagrams; laying out work from them; and recording what was found or done (inspection notes, correction notices, test records). |
+| code-administration | 1 | approved | 4 | 47-4011 | How the code is adopted and enforced: which edition and local amendments apply, the stages of a permit and inspection, and how work is approved, corrected or rejected. |
+| troubleshooting | 1 | approved | 1 | 47-2111 | Finding the cause of a dead or tripping circuit by narrowing the fault step by step, using the safe-work and testing skills. |
+| utility-interface | 1 | approved | 1 | 49-9051 | Where the utility's equipment ends and the customer's begins: the service point, meter, service entrance and the connections made there. |
 
 The reasons, standards and first content for each are in `docs/occupations/proposed-skills.json`.
