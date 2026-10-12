@@ -1,0 +1,60 @@
+{
+  "steps": [
+    {
+      "id": "welcome",
+      "title": "Welcome",
+      "instruction": "You will inspect a room the way an inspector does. This short walk-through shows you how to use the stylus, then you inspect one small room.",
+      "action": "continue",
+      "hint": "Tap Next when you are ready."
+    },
+    {
+      "id": "point",
+      "title": "Point at a part",
+      "instruction": "Hold the stylus and aim its beam at the {term:receptacle} on the wall. The part lights up when the beam is on it.",
+      "action": "point",
+      "hint": "Move the stylus slowly until the part lights up."
+    },
+    {
+      "id": "inspect",
+      "title": "Look closer",
+      "instruction": "With the beam on the part, press the front button to inspect it. You see what it is and how it is installed.",
+      "action": "inspect",
+      "hint": "The front button is the one nearest the tip."
+    },
+    {
+      "id": "flag",
+      "title": "Flag a problem",
+      "instruction": "This part is installed wrongly. Press the front button again to flag it as a violation.",
+      "action": "flag",
+      "hint": "Look at the notes you saw when you inspected the part."
+    },
+    {
+      "id": "cite",
+      "title": "Choose the rule",
+      "instruction": "Pick the rule that the part breaks. A wrong rule still counts for part of the credit if it is about the same skill.",
+      "action": "cite",
+      "hint": "Choose the entry whose title matches the problem."
+    },
+    {
+      "id": "compliant",
+      "title": "Mark a part that is fine",
+      "instruction": "Not everything is wrong. Aim at the {term:breaker} and press the middle button to mark it as correct.",
+      "action": "mark-compliant",
+      "hint": "The middle button is the one between the other two."
+    },
+    {
+      "id": "reference",
+      "title": "Look up a rule",
+      "instruction": "Press the back button to open the rule reference, search for a word, and read an entry. Close it when you are done.",
+      "action": "open-reference",
+      "hint": "The back button is the one furthest from the tip."
+    },
+    {
+      "id": "finish",
+      "title": "Finish the inspection",
+      "instruction": "When you have checked every part, finish the inspection to see what you found, what you missed and why it matters.",
+      "action": "finish",
+      "hint": "Use the Finish button on the panel."
+    }
+  ]
+}
