@@ -1,0 +1,614 @@
+{
+  "soc": "49-9051",
+  "title": "Electrical Power-Line Installers and Repairers",
+  "onetUrl": "https://www.onetonline.org/link/summary/49-9051.00",
+  "bls": {
+    "url": "https://www.bls.gov/ooh/installation-maintenance-and-repair/line-installers-and-repairers.htm",
+    "workers": "131,900 (2025)",
+    "growth": "10% projected 2025-2035 (much faster than average); 145,500 jobs in 2035",
+    "openings": "about 10,900 per year",
+    "medianPay": "$95,320 per year ($45.83 per hour), May 2025"
+  },
+  "summary": "Power-line workers build and maintain the overhead and underground cables, poles, transformers and switches that carry electricity from substations to customers. They climb poles or use bucket trucks, string conductors, splice cable, and restore service after outages and storms. Their work is governed mainly by utility standards (NESC) and OSHA power-line rules, not the NEC; the NEC touches only the end where the utility service meets the customer's premises wiring.",
+  "typicalPath": "A high school diploma is typical, with apprenticeships common and lasting up to about 3 years of paid on-the-job training plus classroom instruction; a commercial driver's license is usually needed for heavy trucks; no general state license, though certifications exist (BLS OOH, URL in bls field). O*NET places it in a low-to-moderate preparation zone, with most workers holding a diploma and some a post-secondary certificate (onetonline.org summary page).",
+  "tasks": [
+    {
+      "task": "Climb poles or use bucket trucks to reach and work on overhead lines and equipment.",
+      "importance": "",
+      "electricalKnowledge": "Fall protection, pole climbing, working at height near energized conductors (OSHA/NESC, not NEC)",
+      "appSkills": []
+    },
+    {
+      "task": "Inspect and test lines, transformers and other equipment to find damage, wear or faults.",
+      "importance": "",
+      "electricalKnowledge": "Electrical test instruments, fault location, voltage detection",
+      "appSkills": []
+    },
+    {
+      "task": "String and tension conductors between poles and towers, keeping them clear of energized lines.",
+      "importance": "",
+      "electricalKnowledge": "Conductor sag and clearance rules (NESC), induced voltage control",
+      "appSkills": []
+    },
+    {
+      "task": "Dig for, set, replace and move poles and structures with trucks, derricks and cranes.",
+      "importance": "",
+      "electricalKnowledge": "Pole loading and clearances (NESC), approach distances near live conductors",
+      "appSkills": []
+    },
+    {
+      "task": "Splice, terminate and install underground and overhead cable, including work in manholes and vaults.",
+      "importance": "",
+      "electricalKnowledge": "Cable splicing, enclosed-space entry, de-energizing cable",
+      "appSkills": []
+    },
+    {
+      "task": "De-energize, ground and tag lines and equipment before working on them, and restore them afterward.",
+      "importance": "",
+      "electricalKnowledge": "Switching orders, clearances, protective grounds, voltage testing (OSHA 1910.269 / 1926 Subpart V)",
+      "appSkills": []
+    },
+    {
+      "task": "Install and maintain transformers, capacitors, regulators, switches and protective devices on distribution lines.",
+      "importance": "",
+      "electricalKnowledge": "Distribution equipment, overcurrent protection at utility level (NESC)",
+      "appSkills": []
+    },
+    {
+      "task": "Work on energized lines with insulated tools, rubber gear or live-line tools at safe approach distances.",
+      "importance": "",
+      "electricalKnowledge": "Minimum approach distances, insulating protective equipment, arc-rated clothing",
+      "appSkills": []
+    },
+    {
+      "task": "Restore power after storms and outages, patrolling for damage and repairing or replacing downed lines.",
+      "importance": "",
+      "electricalKnowledge": "Assuming lines are live, backfeed hazards, switching and sectionalizing",
+      "appSkills": []
+    },
+    {
+      "task": "Install electric meters and make or disconnect service connections between utility service and customer premises.",
+      "importance": "",
+      "electricalKnowledge": "Service point, meter sockets, service conductors; the customer side is NEC territory",
+      "appSkills": [
+        "equipment-installation",
+        "disconnecting-means",
+        "identification-marking",
+        "earthing-bonding"
+      ]
+    },
+    {
+      "task": "Operate trucks, winches, trenchers and other heavy equipment safely around lines and traffic.",
+      "importance": "",
+      "electricalKnowledge": "Equipment operation near power lines, work zone control",
+      "appSkills": []
+    },
+    {
+      "task": "Brief the crew on hazards and plan the job before work, and keep records of work done.",
+      "importance": "",
+      "electricalKnowledge": "Job briefing and hazard assessment (OSHA 1910.269(c), 1926.952)",
+      "appSkills": []
+    },
+    {
+      "task": "Read maps, GIS and drawings to locate lines, structures and equipment.",
+      "importance": "",
+      "electricalKnowledge": "Utility one-line and GIS maps, CAD",
+      "appSkills": []
+    }
+  ],
+  "procedures": [
+    {
+      "name": "Job briefing and hazard assessment",
+      "purpose": "Make sure every crew member knows the hazards, plan, controls and protective equipment before work begins.",
+      "whenUsed": "Before each shift or job, and again whenever conditions change significantly.",
+      "role": "Crew leader (employee in charge) with the whole crew",
+      "steps": [
+        "Gather available information on the system: voltages, grounding, switching status, environment and nearby hazards.",
+        "Walk or patrol the site and note hazards such as traffic, weather, vegetation, induced voltage and other lines.",
+        "Hold the briefing: describe the work, hazards, procedures, special precautions, energy-source controls and protective equipment.",
+        "Assign roles, including who requests clearances and who is the first-aid and rescue person.",
+        "Confirm every member understands, and fit the depth of the briefing to how complex or unfamiliar the task is.",
+        "Re-brief when scope, crew or conditions change; a worker alone still plans as if a briefing were required."
+      ],
+      "hazards": [
+        "Unrecognized energized parts",
+        "Changing site or weather conditions",
+        "Miscommunication between crew and system operator"
+      ],
+      "controls": [
+        "Documented or verbal briefing each shift",
+        "Re-briefing on change",
+        "Qualified-person assignments",
+        "Two first-aid trained persons on field crews"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1910.269(c)",
+          "what": "Supervisor briefs crew on hazards, procedures, precautions, energy controls and protective equipment before work."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.952",
+          "what": "Construction version: employee in charge briefs crew each shift, with more depth for complicated or unfamiliar work."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.950",
+          "what": "Employers must gather system characteristics and share installation information between host and contract employers."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269",
+          "says": "Briefing content and once-per-shift allowance for repetitive work."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.952",
+          "says": "Briefing content, frequency, depth by complexity, lone-worker planning."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: the app has no job-briefing or hazard-assessment content, and utility line work is outside NEC skills.",
+      "plannedSkills": [
+        "jobsite-safety"
+      ]
+    },
+    {
+      "name": "De-energizing, testing, grounding and tagging lines",
+      "purpose": "Make a line or device safe to touch by isolating it, proving it dead and grounding it, with tags showing who is working.",
+      "whenUsed": "Before working hands-on with lines or equipment that can be taken out of service.",
+      "role": "Designated employee in charge with the system operator and crew",
+      "steps": [
+        "Designated employee requests that the system operator de-energize the specific line or equipment section and takes responsibility for the clearance.",
+        "Open and secure switches and disconnects; apply tags (and locks where possible) that forbid operation and show crews are working.",
+        "Tag automatic and remote-controlled switches at their control points too.",
+        "After the operator confirms clearance, test each conductor with a voltage detector to prove it is dead.",
+        "Install protective grounds, attaching the ground end first with live-line tools, to cover stray or induced voltage and backfeed.",
+        "Work under the clearance, keeping the hold tags in place.",
+        "To restore, clear crews, remove grounds in reverse order, release the clearance and remove tags, then the operator re-energizes."
+      ],
+      "hazards": [
+        "Accidental re-energization",
+        "Induced voltage from parallel lines",
+        "Backfeed from generators or tie switches",
+        "Wrong line identified"
+      ],
+      "controls": [
+        "Single designated person per clearance",
+        "Tags and locks at every point of isolation",
+        "Voltage test before grounding",
+        "Grounds sized to carry fault current, conductor ampacity at least that of No. 2 AWG copper",
+        "Documented release sequence"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1926.961",
+          "what": "Clearance through system operator, tagging of disconnects, test for voltage, ground, and reverse sequence at re-energizing."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.962",
+          "what": "Test for no voltage, install and remove protective grounds in a set order using live-line tools; grounds must carry fault current."
+        },
+        {
+          "name": "OSHA 29 CFR 1910.269(d), (m), (n)",
+          "what": "General-industry equivalents: hazardous energy control, de-energizing lines, and grounding for employee protection."
+        },
+        {
+          "name": "OSHA 29 CFR 1910.147",
+          "what": "General lockout/tagout rule; 1910.269(d) covers power-system equipment instead."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.961",
+          "says": "Designated person, tags, voltage test, grounds, and re-energizing order."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.962",
+          "says": "Grounding rules, test before grounding, ground-end-first attachment, ampacity minimum."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: the app has no lockout/tagout, voltage testing or line grounding, and this is NESC/OSHA line work, not NEC.",
+      "plannedSkills": [
+        "electrically-safe-work",
+        "utility-line-work"
+      ]
+    },
+    {
+      "name": "Working near and on energized lines (approach distances)",
+      "purpose": "Keep qualified workers from reaching live parts that cannot be de-energized, by distance or insulation.",
+      "whenUsed": "Live-line work, work from bucket trucks near conductors, and any operation near exposed energized parts.",
+      "role": "Qualified line workers in a team",
+      "steps": [
+        "Confirm only qualified employees do the work and that the voltage is known.",
+        "Determine the minimum approach distance for the voltage and altitude from the standard's tables.",
+        "Choose the method: stay out of the distance, insulate the worker, or insulate the live part from other objects.",
+        "Put on arc-rated clothing and insulating gloves with sleeves, donning and removing them only outside the approach distance.",
+        "Remove conductive jewelry; use insulated aerial devices or live-line tools as the method requires.",
+        "Keep at least two qualified people on most energized work above 600 volts, with exceptions such as routine switching and emergencies.",
+        "Connect de-energized parts to energized circuits at the de-energized end first when joining, and disconnect at the source end first."
+      ],
+      "hazards": [
+        "Electric shock and electrocution",
+        "Arc flash and burns",
+        "Falls from aerial lifts"
+      ],
+      "controls": [
+        "Approach distance tables",
+        "Insulating rubber gear and live-line tools",
+        "Arc-rated clothing, no melting synthetics",
+        "Two-person rule",
+        "Insulated aerial lifts"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1910.269(l)",
+          "what": "Employers set minimum approach distances from tables; no approach unless insulated or the part is insulated."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.960",
+          "what": "Only qualified employees on exposed energized parts; approach distances, two-person rule above 600 V, protective gear and clothing."
+        },
+        {
+          "name": "NESC (IEEE C2) Part 4",
+          "what": "Work rules for supply and communications utilities; copyrighted, not opened for this document."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.960",
+          "says": "Qualified-only, approach distances, insulation, flame-resistant clothing, two-person rule."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269",
+          "says": "Paragraph (l)(3) approach distances and the three ways to approach a live part."
+        }
+      ],
+      "appSkills": [
+        "shock-protection"
+      ],
+      "appCoverage": "none: shock-protection teaches NEC premises protection, not approach distances or live-line work.",
+      "plannedSkills": [
+        "utility-line-work"
+      ]
+    },
+    {
+      "name": "Climbing, fall protection and aerial-lift work",
+      "purpose": "Keep workers from falling while on poles, towers and in bucket trucks.",
+      "whenUsed": "Whenever working above about 1.2 m on poles or structures, and from aerial devices.",
+      "role": "Line worker, with ground person and crew leader",
+      "steps": [
+        "Check that the pole or structure can carry the added and unbalanced load; brace or support it first if not.",
+        "Inspect climbing gear, body harness, positioning strap and lanyard before use.",
+        "Select protection: fall arrest, work positioning or restraint, as feasible.",
+        "Attach to a suitable anchorage and keep the connection through the climb or lift.",
+        "In a bucket, wear the harness tied to the boom or basket and keep insulated devices clear of energized parts.",
+        "Keep people from standing under the work and secure tools and loads."
+      ],
+      "hazards": [
+        "Falls",
+        "Structure failure",
+        "Contact with energized parts while at height"
+      ],
+      "controls": [
+        "Structure strength check",
+        "Fall protection equipment inspection and rated anchorages",
+        "Qualified climbers",
+        "Barricading below"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1910.269(g)",
+          "what": "Fall arrest, work positioning or restraint for qualified climbers above 1.2 m unless shown infeasible; anchorages and drop tests set."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.954",
+          "what": "Construction PPE rules: fall protection, positioning straps, hardware and testing."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.964",
+          "what": "Employer must verify poles can sustain stresses before climbing and brace if not."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.964",
+          "says": "Structure capacity check before climbing; bracing required."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.954",
+          "says": "Fall protection, positioning strap and hardware requirements for power-line work."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269",
+          "says": "Paragraph (g) fall protection threshold, systems and anchorage strength."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: no height or fall-protection content in the app; not an NEC topic.",
+      "plannedSkills": [
+        "jobsite-safety"
+      ]
+    },
+    {
+      "name": "Setting poles and stringing conductors",
+      "purpose": "Place new or replacement poles and pull wire between structures without contacting energized lines.",
+      "whenUsed": "New construction, rebuilds and storm replacement of overhead lines.",
+      "role": "Line crew with equipment operator and ground crew",
+      "steps": [
+        "Locate the line and nearby energized conductors; plan equipment positions and clearances.",
+        "Guard or attend pole holes and keep the digger, derrick and load from touching energized parts.",
+        "Handle poles near live lines only with protective equipment or insulated devices; no bare-hand contact.",
+        "Use tension stringing or barriers so the new conductor cannot touch energized lines; disable automatic reclosing where crossing above energized conductors over 600 V.",
+        "Assess induced voltage from parallel lines and install temporary grounds so workers are not exposed to potential differences.",
+        "Control towers and loads with tag lines; keep people out from under loads.",
+        "Check sag, clearances and hardware against the design before energizing."
+      ],
+      "hazards": [
+        "Contact between pole or conductor and live lines",
+        "Induced voltage",
+        "Dropped loads",
+        "Equipment overturn"
+      ],
+      "controls": [
+        "Tension stringing",
+        "Temporary grounds",
+        "Reclosers off",
+        "Tag lines",
+        "Insulated handling devices"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1926.964",
+          "what": "Setting poles, installing and removing conductors, induced voltage, and tower work rules."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.955",
+          "what": "Portable ladders and platforms used in overhead line work, with limits near energized lines."
+        },
+        {
+          "name": "NESC (IEEE C2) Part 2",
+          "what": "Clearances, strength and loading for supply lines; copyrighted, not opened for this document."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.964",
+          "says": "Pole setting, stringing methods, induced voltage and tag-line rules."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.955",
+          "says": "Ladder and platform rules, including conductive ladder limits."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: utility construction sits outside the NEC and the app has no line-work scenes.",
+      "plannedSkills": [
+        "utility-line-work"
+      ]
+    },
+    {
+      "name": "Underground cable and vault work (enclosed spaces)",
+      "purpose": "Work on buried cable and in manholes or vaults without atmospheric, electrical or rescue hazards.",
+      "whenUsed": "Underground distribution cable splicing, transformer vault and manhole entry.",
+      "role": "Cable crew with an attendant outside the space",
+      "steps": [
+        "Locate and mark the cable and other utilities; identify the cable to be worked on.",
+        "Open the cover and evaluate pressure, temperature and other hazards before entry.",
+        "Test for oxygen deficiency first, then flammable gases and vapors, with direct-reading instruments.",
+        "Ventilate with forced air if a hazard is found; keep ventilation running.",
+        "Station a trained, first-aid qualified attendant outside with rescue equipment.",
+        "De-energize and ground the cable per the de-energizing procedure, or work it with proper cable-handling tools.",
+        "Splice or repair, restore covers and release the clearance."
+      ],
+      "hazards": [
+        "Oxygen deficiency and flammable gas",
+        "Cable faults and arc",
+        "Cave-in at excavations",
+        "Wrongly identified cable"
+      ],
+      "controls": [
+        "Atmosphere testing",
+        "Forced-air ventilation",
+        "Attendant and rescue gear",
+        "Cable identification and clearance",
+        "Training in entry and rescue"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1926.953",
+          "what": "Enclosed-space entry: assess, test oxygen then flammables, ventilate, attendant and rescue equipment, and training."
+        },
+        {
+          "name": "OSHA 29 CFR 1910.269(e) and (p)",
+          "what": "General-industry enclosed spaces and underground installations in power systems."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.953",
+          "says": "Pre-entry testing, ventilation, attendant, rescue, training for enclosed spaces."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269",
+          "says": "Paragraph (e) enclosed-space testing, ventilation and attendant."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: no underground or enclosed-space content; utility vault work is NESC/OSHA, though building transformer vaults are NEC Article 450.",
+      "plannedSkills": [
+        "jobsite-safety",
+        "utility-line-work"
+      ]
+    },
+    {
+      "name": "Storm restoration and outage switching",
+      "purpose": "Find damage, isolate faulted sections and return service safely after an outage.",
+      "whenUsed": "After storms, faults and equipment failures, often with long hours and mutual-aid crews.",
+      "role": "Line crews, system operator, damage assessors",
+      "steps": [
+        "Assess damage section by section, treating every downed or low line as energized until proven otherwise.",
+        "Keep the public away and mark and guard the work zone with signs, cones or barricades.",
+        "Isolate the faulted section through the system operator by opening switches and applying tags.",
+        "Test, ground and clear the section per the de-energizing procedure; watch for backfeed from generators and tie points.",
+        "Repair or replace poles, wire and equipment, sometimes from aerial lifts or in confined spaces.",
+        "Release clearances and tags, confirm everyone is clear, then have the operator re-energize in sequence."
+      ],
+      "hazards": [
+        "Backfeed and unexpected re-energization",
+        "Downed energized wires energizing fences or objects",
+        "Fatigue",
+        "Work zone traffic"
+      ],
+      "controls": [
+        "Assume energized",
+        "Clearance and tag procedure",
+        "Qualified workers per 1910.269",
+        "Barricaded work zones",
+        "Briefings when conditions change"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1910.269 and 1926 Subpart V",
+          "what": "Restoration workers must be qualified under 1910.269; the same de-energizing and grounding rules apply."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.961",
+          "what": "Clearance, tagging and restoration order apply to storm repairs."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/etools/hurricane/activity-sheets/infrastructure-repair/electrical",
+          "says": "Restoration needs qualified technicians under 1910.269; lines assumed energized; backfeed risk (from search summary only, page not directly opened)."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.961",
+          "says": "Clearance, tag, test, ground and reverse sequence for re-energizing."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: the app has no outage or restoration scenario; the NEC does not govern utility lines.",
+      "plannedSkills": [
+        "utility-line-work"
+      ]
+    },
+    {
+      "name": "Making and verifying a service connection and meter at the customer",
+      "purpose": "Connect the utility service drop or lateral to the customer's service equipment and confirm the connection and metering are correct and safe.",
+      "whenUsed": "New service, service upgrades, meter changes, and reconnects.",
+      "role": "Utility line worker or meter technician, with the customer's electrician",
+      "steps": [
+        "Confirm the service point and that the customer's installation has passed inspection or been released by the authority having jurisdiction and utility rules.",
+        "Check the meter socket, service entrance conductors, grounding and labeling on the customer side look complete.",
+        "Make the line-side connection to the service drop or lateral under the utility's de-energized or live-line procedure.",
+        "Install the meter or current-transformer metering and seal it.",
+        "Verify voltage and phasing with a meter before and after closing the service.",
+        "Leave deficiencies, such as missing grounding or bonding, for the customer's electrician and decline to energize if unsafe."
+      ],
+      "hazards": [
+        "Shock and arc at the meter socket",
+        "Energizing faulty premises wiring",
+        "Backfeed from customer generators"
+      ],
+      "controls": [
+        "Service point defined by utility rules",
+        "Pre-energization check of customer equipment",
+        "Voltage and phasing verification",
+        "Insulated gloves and arc-rated clothing"
+      ],
+      "standards": [
+        {
+          "name": "NEC 90.2(B)(5) and Article 100 definitions",
+          "what": "NEC excludes utility-controlled service drops and laterals and metering up to the service point; customer side is NEC."
+        },
+        {
+          "name": "NEC Article 230 and 250",
+          "what": "Customer-side service conductors, equipment, grounding and bonding, which the utility checks before energizing."
+        },
+        {
+          "name": "OSHA 29 CFR 1910.269 scope and 1910 Subpart S",
+          "what": "269 covers utility power-system work; Subpart S applies to premises wiring work."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://iaeimagazine.org/magazine/issue/march-april-2020/nesc-and-nec-scopes-demarcations-exceptions/",
+          "says": "NEC excludes exclusive-utility installations; the service point usually divides NESC from NEC, often the meter."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269",
+          "says": "Scope: power generation, transmission and distribution work, separate from Subpart S electrical work."
+        }
+      ],
+      "appSkills": [
+        "equipment-installation",
+        "disconnecting-means",
+        "identification-marking",
+        "earthing-bonding"
+      ],
+      "appCoverage": "partial: skills such as earthing-bonding and disconnecting-means teach the customer-side rules checked here, but not the utility-side connection, meter set or voltage and phasing check.",
+      "plannedSkills": [
+        "utility-interface"
+      ]
+    }
+  ],
+  "standardsAndCodes": [
+    {
+      "name": "National Electrical Safety Code (NESC, IEEE C2)",
+      "role": "Main design, construction and work-rule standard for overhead and underground supply lines, up to the service point.",
+      "nec": "None; NEC excludes these installations."
+    },
+    {
+      "name": "OSHA 29 CFR 1910.269",
+      "role": "Safety rule for power generation, transmission and distribution work in general industry (utilities).",
+      "nec": "None directly; the rule does not incorporate NEC."
+    },
+    {
+      "name": "OSHA 29 CFR 1926 Subpart V (1926.950-.968)",
+      "role": "Construction-side safety rules for power line work: briefing, de-energizing, grounding, overhead and underground work.",
+      "nec": "None."
+    },
+    {
+      "name": "OSHA 29 CFR 1910.147",
+      "role": "General lockout/tagout; power-system equipment is covered by 1910.269(d).",
+      "nec": "None."
+    },
+    {
+      "name": "NFPA 70E",
+      "role": "Arc-flash and shock safe work practices for premises equipment, used at the meter and service.",
+      "nec": "Related to NEC equipment at services."
+    },
+    {
+      "name": "NEC (NFPA 70)",
+      "role": "Customer-side service equipment, service entrance conductors, grounding and bonding, meter sockets.",
+      "nec": "Article 90.2 (scope and exclusion), Article 100 (service point), Articles 230, 250, 310, 408, 450."
+    }
+  ],
+  "outsideNec": [
+    "Overhead and underground supply lines, poles, transformers and substations under exclusive utility control, governed by the NESC (NEC 90.2(B)(5), per ncosfm/IAEI search summaries).",
+    "Service drops and service laterals up to the service point, usually the meter, where NESC ends and NEC begins (IAEI Magazine, March-April 2020).",
+    "Worker safety on power lines (approach distances, de-energizing, grounding, climbing, vault entry), under OSHA 1910.269 and 1926 Subpart V.",
+    "Storm and outage restoration, pole setting and conductor stringing.",
+    "Estimated NEC share: roughly 5 to 10 percent of the work, only the service point, metering and customer-side connection checks (own estimate, not from a source). Of 13 O*NET-style tasks listed here, 1 touches the NEC directly."
+  ],
+  "gapsForTheApp": [
+    "Line work as a new topic would need the NESC (copyrighted, separate code); the app is built around NEC skills, so this occupation is mostly out of scope without a new code folder.",
+    "Lockout/tagout and hold-card procedure: a generic LOTO and clearance scenario would serve this and several other trades.",
+    "Testing with a meter (voltage presence, phasing): needed for service connection verification and de-energizing, and useful across trades.",
+    "Service point and demarcation module: teach where the utility ends and the NEC begins, with meter socket, service entrance, grounding electrode connection and bonding checks.",
+    "Utility-side scenario types (poles, vaults, grounding sets) would require new 3D content and a non-NEC code profile; probably not worth building for NEC training.",
+    "Fall protection and enclosed-space entry are shared safety procedures that could be generic training modules.",
+    "Job briefing and hazard assessment checklists, usable across occupations."
+  ],
+  "doubts": [
+    "O*NET task-level importance ratings were not shown by the fetch; the summary page returned only a high-level task list, so tasks are written from the overview and OSHA/BLS sources and importance is blank. Verify against the Details page.",
+    "Could not open the eCFR full text; 1910.269 was read via osha.gov but paragraphs (m), (n), (p), (r) were not returned, so de-energizing, grounding and underground details come from the matching 1926 sections (1926.961, .962, .953) instead.",
+    "The OSHA storm restoration source is known only from search-result summaries; the activity page was not opened directly.",
+    "NEC 90.2(B)(5) wording came from search summaries and the IAEI article; the NEC text itself (copyrighted) was not opened. The ncosfm page fetched was unrelated (aluminum flashing).",
+    "The ecmag.com article on NESC and NEC boundaries returned 403 and was not opened; IAEI was used instead.",
+    "NESC (IEEE C2) rules are paywalled and were not opened; NESC references are by name only.",
+    "BLS growth figure (10%) differs from the O*NET summary text (7%+ through 2035); the BLS figure is used.",
+    "The 5 to 10 percent NEC share is an informed estimate with no published source.",
+    "Procedures 1 to 8 each have two opened sources, except storm restoration, where the first source was not opened directly."
+  ]
+}

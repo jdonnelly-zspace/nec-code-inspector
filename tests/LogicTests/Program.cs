@@ -17,6 +17,7 @@ namespace NECInspector.LogicTests
             ViolationDrawTests.Run(ctx);
             ContentTargetsTests.Run(ctx);
             LessonTests.Run(ctx);
+            OccupationDataTests.Run(ctx);
             TerminologyTests.Run(ctx);
             ContentPolicyTests.Run(ctx);
             ScenarioDataTests.Run(ctx);

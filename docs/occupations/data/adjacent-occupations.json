@@ -1,0 +1,903 @@
+{
+  "occupations": [
+    {
+      "soc": "49-9021",
+      "title": "Heating, Air Conditioning, and Refrigeration Mechanics and Installers",
+      "cluster": "MEP trades",
+      "workers": "440,900 (2025)",
+      "growth": "11% 2025-35 (BLS); O*NET: much faster than average",
+      "openings": "40,600 per year",
+      "brightOutlook": "Yes (rapid growth)",
+      "onetUrl": "https://www.onetonline.org/link/summary/49-9021.00",
+      "electricalKnowledge": [
+        "Reads wiring diagrams and connects control wiring between thermostat, controls and the equipment",
+        "Works at the unit disconnect and the branch circuit that feeds the unit",
+        "Tests circuits and components for continuity with a meter",
+        "Checks the circuit and protection against the equipment nameplate (minimum circuit ampacity, maximum overcurrent device)",
+        "Installs thermostats, timers and low-voltage control wiring"
+      ],
+      "standards": [
+        "NEC Article 440 (air-conditioning and refrigerating equipment), incl. disconnect within sight of the unit",
+        "NEC Article 430 (motors)",
+        "NEC Articles 422 (appliances) and 424 (heating)",
+        "NEC Article 725 (Class 1/2/3 control circuits)",
+        "NEC 110.26 working space",
+        "EPA Section 608 refrigerant certification (not electrical)",
+        "OSHA 29 CFR 1910.331-.335 (electrical safe work practices)",
+        "OSHA 29 CFR 1910.147 (lockout/tagout for machines)",
+        "NFPA 70E (electrical safety in the workplace)"
+      ],
+      "safetyProcedures": [
+        "De-energize and lock out at the unit disconnect before opening panels",
+        "Verify zero voltage with a meter, including capacitor discharge",
+        "Treat low-voltage and line-voltage sections separately",
+        "PPE for burns and shock; arc-flash awareness at the supply panel"
+      ],
+      "appSkillsThatFit": [
+        "disconnecting-means",
+        "working-space-access",
+        "equipment-installation",
+        "overcurrent-protection",
+        "conductor-sizing",
+        "identification-marking",
+        "shock-protection"
+      ],
+      "newSkillsNeeded": [
+        "motors-and-controls",
+        "testing-with-a-meter",
+        "lockout-tagout",
+        "low-voltage-controls",
+        "diagram reading"
+      ],
+      "verdict": "Beginner electrical literacy fits (best in this cluster; real HVAC skill also needs motors, controls, meter testing and LOTO)",
+      "docCodeCorrection": "Title in the document ('HVAC Mechanics and Installers') is a short label; the O*NET title is 'Heating, Air Conditioning, and Refrigeration Mechanics and Installers'. SOC code correct.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/49-9021.00",
+          "says": "Tasks include testing circuits for continuity, connecting control wiring per wiring diagrams, installing thermostats; Bright Outlook, 440,900 employed, 40,600 openings"
+        },
+        {
+          "source": "https://www.bls.gov/ooh/installation-maintenance-and-repair/heating-air-conditioning-and-refrigeration-mechanics-and-installers.htm",
+          "says": "11% growth 2025-35; duties include installing electrical components and wiring; high injury rate incl. burns from electrical parts"
+        },
+        {
+          "source": "https://www.ecmweb.com/national-electrical-code/code-basics/article/20888855/airconditioning-and-refrigeration-equipment",
+          "says": "Article 440 disconnect must be in sight and readily accessible from the equipment; a panel breaker generally does not serve"
+        }
+      ]
+    },
+    {
+      "soc": "47-2152",
+      "title": "Plumbers, Pipefitters, and Steamfitters",
+      "cluster": "MEP trades",
+      "workers": "510,600 (2025)",
+      "growth": "7% 2025-35 (BLS)",
+      "openings": "42,000 per year",
+      "brightOutlook": "Yes (rapid growth)",
+      "onetUrl": "https://www.onetonline.org/link/summary/47-2152.00",
+      "electricalKnowledge": [
+        "Installs automatic controls and gauges on piping systems",
+        "Coordinates with electricians on pumps, water heaters and boilers",
+        "Reads blueprints and codes (plumbing/mechanical, not NEC)"
+      ],
+      "standards": [
+        "Plumbing and mechanical codes (main codes)",
+        "NEC 250.104 bonding of metal piping (done by electrician)",
+        "NEC Article 422 appliance and water heater circuits (electrician)",
+        "OSHA 29 CFR 1910.331-.335 (electrical safe work practices)"
+      ],
+      "safetyProcedures": [
+        "Lockout of pumps, boilers and water heaters before servicing",
+        "Keep clear of live parts; call a qualified person for the electrical connection",
+        "GFCI use for portable tools (OSHA 1926 Subpart K)"
+      ],
+      "appSkillsThatFit": [
+        "shock-protection",
+        "earthing-bonding",
+        "special-locations"
+      ],
+      "newSkillsNeeded": [
+        "lockout-tagout"
+      ],
+      "verdict": "Not an NEC occupation (electrical awareness only; pipe codes govern)",
+      "docCodeCorrection": "None; code correct.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/47-2152.00",
+          "says": "Installing automatic controls, reading blueprints and building codes; not primarily an electrical trade; Bright Outlook, 510,600"
+        },
+        {
+          "source": "https://www.bls.gov/ooh/construction-and-extraction/plumbers-pipefitters-and-steamfitters.htm",
+          "says": "Plumbers typically do not do electrical installation or repair; 7% growth, 42,000 openings"
+        }
+      ]
+    },
+    {
+      "soc": "47-2211",
+      "title": "Sheet Metal Workers",
+      "cluster": "MEP trades",
+      "workers": "131,100 (2025)",
+      "growth": "3-4% (average) per O*NET",
+      "openings": "9,800 per year",
+      "brightOutlook": "No (not marked on O*NET page; absent from Bright list)",
+      "onetUrl": "https://www.onetonline.org/link/summary/47-2211.00",
+      "electricalKnowledge": [
+        "Little direct electrical work; ductwork carries fans, dampers and controls that others wire",
+        "Awareness of conductors when drilling, cutting and anchoring",
+        "Metal duct and enclosures are conductive and bonded by others"
+      ],
+      "standards": [
+        "NEC 250 bonding, awareness only",
+        "SMACNA duct standards (not electrical)",
+        "OSHA 29 CFR 1910.331-.335 (electrical safe work practices)"
+      ],
+      "safetyProcedures": [
+        "Do not contact live parts; ask for lockout before working on powered dampers or fans",
+        "GFCI for portable tools"
+      ],
+      "appSkillsThatFit": [
+        "shock-protection",
+        "earthing-bonding"
+      ],
+      "newSkillsNeeded": [],
+      "verdict": "Not an NEC occupation (and not Bright Outlook)",
+      "docCodeCorrection": "Document lists it among Bright Outlook adjacents, but O*NET does not mark it Bright Outlook (average 3-4% growth).",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/47-2211.00",
+          "says": "Not Bright Outlook; average growth; page emphasises fabrication, with HVAC verification and commissioning tasks only"
+        }
+      ]
+    },
+    {
+      "soc": "47-3015",
+      "title": "Helpers--Pipelayers, Plumbers, Pipefitters, and Steamfitters",
+      "cluster": "MEP trades",
+      "workers": "45,300 (2025)",
+      "growth": "1-2% (slower than average)",
+      "openings": "4,400 per year",
+      "brightOutlook": "No",
+      "onetUrl": "https://www.onetonline.org/link/summary/47-3015.00",
+      "electricalKnowledge": [
+        "Basic jobsite electrical awareness only: temporary power, extension cords, GFCI"
+      ],
+      "standards": [
+        "OSHA 1926 Subpart K electrical (construction)",
+        "Plumbing codes"
+      ],
+      "safetyProcedures": [
+        "Use GFCI-protected cords and tools; do not touch electrical parts"
+      ],
+      "appSkillsThatFit": [
+        "shock-protection"
+      ],
+      "newSkillsNeeded": [],
+      "verdict": "Not an NEC occupation (and not Bright Outlook)",
+      "docCodeCorrection": "Document lists it as Bright Outlook; O*NET shows slower than average growth and no Bright flag. BLS counts it inside 'Construction Laborers and Helpers' (45,300 of 1,674,400 jobs).",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/47-3015.00",
+          "says": "No electrical tasks; knowledge areas are building/construction and mechanical; not Bright Outlook"
+        },
+        {
+          "source": "https://www.bls.gov/ooh/construction-and-extraction/construction-laborers-and-helpers.htm",
+          "says": "Group includes 47-3015 with 45,300 jobs, about 2% growth"
+        }
+      ]
+    },
+    {
+      "soc": "49-9081",
+      "title": "Wind Turbine Service Technicians",
+      "cluster": "Clean energy and emerging technology",
+      "workers": "11,800 (2025)",
+      "growth": "30% 2025-35 (BLS)",
+      "openings": "1,500 per year",
+      "brightOutlook": "Yes (rapid growth)",
+      "onetUrl": "https://www.onetonline.org/link/summary/49-9081.00",
+      "electricalKnowledge": [
+        "Tests electrical components with voltage testers, multimeters, oscilloscopes and thermal cameras",
+        "Troubleshoots converters, pitch and speed control systems and generators",
+        "Uses PLC and SCADA software",
+        "Reads electrical schematics for nacelle and tower base panels"
+      ],
+      "standards": [
+        "NEC applies in part (interconnection, Article 705); most turbine work follows manufacturer instructions, OSHA and utility rules",
+        "NFPA 70E for panels and arc flash",
+        "OSHA 29 CFR 1910.331-.335 (electrical safe work practices)",
+        "OSHA 29 CFR 1910.147 (lockout/tagout for machines)",
+        "OSHA fall protection (29 CFR 1926 Subpart M / 1910.140) and rescue gear standards",
+        "Industry safety training standards (e.g. GWO)"
+      ],
+      "safetyProcedures": [
+        "Lockout/tagout of mechanical, hydraulic and electrical energy, plus stored energy",
+        "Test-before-touch at converter and transformer cabinets",
+        "Fall arrest and rescue plan for tower climbing",
+        "PPE and arc-flash boundaries at medium-voltage gear"
+      ],
+      "appSkillsThatFit": [
+        "shock-protection",
+        "arc-fault-protection",
+        "earthing-bonding"
+      ],
+      "newSkillsNeeded": [
+        "lockout-tagout",
+        "testing-with-a-meter",
+        "motors-and-controls",
+        "PLC/SCADA",
+        "medium-voltage",
+        "fall protection"
+      ],
+      "verdict": "Needs new skills (not an NEC occupation in the main)",
+      "docCodeCorrection": "None; code correct.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/49-9081.00",
+          "says": "Tasks include testing electrical components with multimeters and troubleshooting converter and variable pitch systems; PLC and SCADA software; Bright Outlook"
+        },
+        {
+          "source": "https://www.bls.gov/ooh/installation-maintenance-and-repair/wind-turbine-technicians.htm",
+          "says": "30% growth; tower climbing in a safety harness; training includes rescue and safety"
+        }
+      ]
+    },
+    {
+      "soc": "47-1011.03",
+      "title": "Solar Energy Installation Managers",
+      "cluster": "Clean energy and emerging technology",
+      "workers": "913,300 (2025) is the figure O*NET shows for the whole 47-1011 supervisors group, not for solar managers",
+      "growth": "5-6% (parent group)",
+      "openings": "67,000 per year (parent group)",
+      "brightOutlook": "Yes (rapid growth)",
+      "onetUrl": "https://www.onetonline.org/link/summary/47-1011.03",
+      "electricalKnowledge": [
+        "Plans and coordinates PV and solar thermal installs to meet code",
+        "Gives technical help to installers on electrical and mechanical systems",
+        "Reviews system design: string sizing, voltage limits, conductors, overcurrent protection, grounding, rapid shutdown, interconnection",
+        "Starts up and commissions systems"
+      ],
+      "standards": [
+        "NEC Article 690 (solar PV systems)",
+        "NEC Article 705 (interconnected power sources)",
+        "NEC Articles 706 and 710 (storage and stand-alone systems)",
+        "NEC 250 grounding and bonding",
+        "NEC 110.26 working space",
+        "NFPA 70E (electrical safety in the workplace)",
+        "UL 1741 / IEEE 1547 for inverters and interconnection",
+        "OSHA 29 CFR 1910.331-.335 (electrical safe work practices)",
+        "NABCEP certification (voluntary)"
+      ],
+      "safetyProcedures": [
+        "Verify disconnects, rapid shutdown and labeling before energizing",
+        "Treat PV arrays as live in daylight; DC arc hazards",
+        "Fall protection on roofs"
+      ],
+      "appSkillsThatFit": [
+        "overcurrent-protection",
+        "conductor-sizing",
+        "earthing-bonding",
+        "disconnecting-means",
+        "identification-marking",
+        "equipment-installation"
+      ],
+      "newSkillsNeeded": [
+        "PV-systems (Art. 690/705)",
+        "energy-storage",
+        "plan reading and design"
+      ],
+      "verdict": "Needs new skills (PV); the 13 skills are a base but PV is the actual job",
+      "docCodeCorrection": "Code correct, but employment/openings are the 47-1011 group figures, not solar-specific.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/47-1011.03",
+          "says": "Tasks: plan installs to conform to codes; assist with solar electric systems; start-up; employment 913,300 and 67,000 openings shown are for the parent group"
+        },
+        {
+          "source": "https://www.ecmweb.com/national-electrical-code/code-basics/article/20901215/article-690-solar-photovoltaic-systems-part-1",
+          "says": "Article 690 covers PV; rapid shutdown, arc-fault protection, voltage limits"
+        }
+      ]
+    },
+    {
+      "soc": "47-2152.04",
+      "title": "Solar Thermal Installers and Technicians",
+      "cluster": "Clean energy and emerging technology",
+      "workers": "Not separately counted; O*NET repeats the 47-2152 figure of 510,600",
+      "growth": "7% (parent 47-2152)",
+      "openings": "42,000 (parent 47-2152)",
+      "brightOutlook": "Yes (rapid growth)",
+      "onetUrl": "https://www.onetonline.org/link/summary/47-2152.04",
+      "electricalKnowledge": [
+        "Installs controllers, sensors, flow meters and pumps for solar thermal loops",
+        "Tests operation of mechanical, plumbing, electrical and control systems",
+        "Identifies plumbing, electrical and safety hazards on the roof and in the plant room",
+        "Connects to a disconnect and circuit prepared by an electrician (usually)"
+      ],
+      "standards": [
+        "NEC 430 for circulation pumps; NEC 422; NEC Article 690 only if PV-powered pump",
+        "Plumbing and mechanical codes (main)",
+        "NEC 250.104 piping bond",
+        "OSHA 29 CFR 1910.331-.335 (electrical safe work practices)"
+      ],
+      "safetyProcedures": [
+        "Lockout of pumps and heat sources",
+        "Roof fall protection",
+        "Scald and pressure hazards (non-electrical)"
+      ],
+      "appSkillsThatFit": [
+        "disconnecting-means",
+        "shock-protection",
+        "equipment-installation"
+      ],
+      "newSkillsNeeded": [
+        "motors-and-controls",
+        "low-voltage-controls",
+        "PV-systems (if PV-powered)"
+      ],
+      "verdict": "Beginner electrical literacy fits (primarily a plumbing trade)",
+      "docCodeCorrection": "O*NET employment for 47-2152.04 is the parent 47-2152 figure; BLS has no separate page.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/47-2152.04",
+          "says": "Tasks include installing controllers and sensors and testing electrical and control systems; identify electrical hazards; Bright Outlook"
+        }
+      ]
+    },
+    {
+      "soc": "49-2093",
+      "title": "Electrical and Electronics Installers and Repairers, Transportation Equipment",
+      "cluster": "Clean energy and emerging technology",
+      "workers": "6,600 (2025)",
+      "growth": "5-6%",
+      "openings": "500 per year",
+      "brightOutlook": "Yes (rapid growth)",
+      "onetUrl": "https://www.onetonline.org/link/summary/49-2093.00",
+      "electricalKnowledge": [
+        "Repairs wiring and relays in ignition, lighting and safety systems on vehicles, trains and vessels",
+        "Splices and solders wires, replaces fuses",
+        "Reads schematics and manufacturer specifications"
+      ],
+      "standards": [
+        "Not the NEC: marine, rail, aviation and vehicle standards govern; NEC scope excludes ships, rail rolling stock, aircraft and automotive (NEC 90.2(B), from knowledge, not opened)",
+        "OSHA 29 CFR 1910.331-.335 (electrical safe work practices)"
+      ],
+      "safetyProcedures": [
+        "Isolate the battery or shore power before working",
+        "Test-before-touch with a meter",
+        "Lockout of vehicle systems"
+      ],
+      "appSkillsThatFit": [
+        "shock-protection",
+        "overcurrent-protection"
+      ],
+      "newSkillsNeeded": [
+        "testing-with-a-meter",
+        "troubleshooting",
+        "DC/vehicle systems"
+      ],
+      "verdict": "Not an NEC occupation",
+      "docCodeCorrection": "None; code and title correct.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/49-2093.00",
+          "says": "Tasks: repair wiring and relays, splice and solder, replace fuses, read schematics on trains, watercraft and other transportation equipment; 6,600 employed; Bright Outlook"
+        }
+      ]
+    },
+    {
+      "soc": "49-2095",
+      "title": "Electrical and Electronics Repairers, Powerhouse, Substation, and Relay",
+      "cluster": "Clean energy and emerging technology",
+      "workers": "20,900 (2025)",
+      "growth": "7% or higher (much faster than average)",
+      "openings": "1,800 per year",
+      "brightOutlook": "Yes (rapid growth)",
+      "onetUrl": "https://www.onetonline.org/link/summary/49-2095.00",
+      "electricalKnowledge": [
+        "Tests relays, circuit breakers and control circuits in substations and powerhouses",
+        "Reads wiring diagrams and relay settings",
+        "Opens switches to isolate equipment, tests, then repairs"
+      ],
+      "standards": [
+        "NESC (IEEE C2) and utility standards; NEC excludes utility generation and substation installations (NEC 90.2(B), from knowledge, not opened)",
+        "OSHA 29 CFR 1910.269 (power generation, transmission and distribution)",
+        "NFPA 70E (electrical safety in the workplace)",
+        "IEEE relay and testing standards"
+      ],
+      "safetyProcedures": [
+        "Switching orders and clearance/hold-tag procedures",
+        "Grounding of de-energized equipment",
+        "Approach distances and rubber goods",
+        "Arc-flash PPE"
+      ],
+      "appSkillsThatFit": [
+        "shock-protection",
+        "earthing-bonding"
+      ],
+      "newSkillsNeeded": [
+        "lockout-tagout/clearance",
+        "testing-with-a-meter",
+        "relay protection",
+        "medium and high voltage"
+      ],
+      "verdict": "Not an NEC occupation",
+      "docCodeCorrection": "Document labels this 'Electrical Power-Line Installers related'; the real title is 'Electrical and Electronics Repairers, Powerhouse, Substation, and Relay'. Power-line installers are a different occupation (49-9051).",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/49-2095.00",
+          "says": "Tasks: construct, test and maintain substation relay and control systems; open switches to isolate defective relays; Bright Outlook"
+        }
+      ]
+    },
+    {
+      "soc": "17-2199.03",
+      "title": "Energy Engineers, Except Wind and Solar",
+      "cluster": "Clean energy and emerging technology",
+      "workers": "166,700 (2025, O*NET page)",
+      "growth": "3-4% (average)",
+      "openings": "8,800 per year",
+      "brightOutlook": "No (not marked on O*NET page; absent from Bright list)",
+      "onetUrl": "https://www.onetonline.org/link/summary/17-2199.03",
+      "electricalKnowledge": [
+        "Reviews electrical system design and energy models",
+        "Specifies building automation routines",
+        "Reads load, demand and lighting data and electrical one-lines"
+      ],
+      "standards": [
+        "NEC (design intent only), ASHRAE 90.1 and 62.1, IECC",
+        "PE licence is the professional route"
+      ],
+      "safetyProcedures": [
+        "Follow site electrical safety policy as a visitor; no energised work"
+      ],
+      "appSkillsThatFit": [
+        "load-calculation",
+        "conductor-sizing",
+        "overcurrent-protection"
+      ],
+      "newSkillsNeeded": [
+        "energy modelling",
+        "building automation"
+      ],
+      "verdict": "Not an NEC occupation (engineering degree route; app is too basic)",
+      "docCodeCorrection": "Document lists it as Bright Outlook; O*NET shows average 3-4% growth and no Bright flag. Title is 'Energy Engineers, Except Wind and Solar'.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/17-2199.03",
+          "says": "Not Bright Outlook; tasks are energy audits and analysis, no specific wiring or code duties"
+        }
+      ]
+    },
+    {
+      "soc": "49-9071",
+      "title": "Maintenance and Repair Workers, General",
+      "cluster": "Facilities, maintenance and construction",
+      "workers": "1,621,800 (2025)",
+      "growth": "4% 2025-35 (BLS)",
+      "openings": "148,700 per year",
+      "brightOutlook": "Yes (numerous job openings)",
+      "onetUrl": "https://www.onetonline.org/link/summary/49-9071.00",
+      "electricalKnowledge": [
+        "Replaces switches, receptacles, lighting and breakers",
+        "Repairs circuits and wiring within the scope of local rules, escalating bigger jobs to electricians",
+        "Resets breakers, finds the cause of tripped GFCI/AFCI",
+        "Reads panel directories and labels"
+      ],
+      "standards": [
+        "NEC Articles 210 (branch circuits), 240 (overcurrent), 404 (switches), 406 (receptacles), 410 (luminaires), 422 and 430 (equipment), 110.26 (working space)",
+        "OSHA 29 CFR 1910.331-.335 (electrical safe work practices)",
+        "OSHA 29 CFR 1910.147 (lockout/tagout for machines)",
+        "NFPA 70E (electrical safety in the workplace) (qualified person limits)"
+      ],
+      "safetyProcedures": [
+        "Shut off and lock out the circuit; verify dead with a tester",
+        "Stay outside the arc-flash boundary; do not work live",
+        "Know when a licensed electrician is required"
+      ],
+      "appSkillsThatFit": [
+        "branch-circuit-requirements",
+        "overcurrent-protection",
+        "disconnecting-means",
+        "identification-marking",
+        "wiring-methods",
+        "shock-protection",
+        "arc-fault-protection",
+        "working-space-access",
+        "special-locations",
+        "earthing-bonding"
+      ],
+      "newSkillsNeeded": [
+        "testing-with-a-meter",
+        "lockout-tagout",
+        "troubleshooting"
+      ],
+      "verdict": "Beginner electrical literacy fits (strongest fit in the document)",
+      "docCodeCorrection": "Document gives this code for security and fire alarm installers ('49-9071?'); that is General Maintenance and Repair Workers. Correct code for Security and Fire Alarm Systems Installers is 49-2098.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/49-9071.00",
+          "says": "Tasks include assembling, installing or repairing wiring and electrical components; repair electrical circuits; Bright Outlook (numerous openings); 1,621,800 employed"
+        },
+        {
+          "source": "https://www.bls.gov/ooh/installation-maintenance-and-repair/general-maintenance-and-repair-workers.htm",
+          "says": "Handles faulty switches, outlets and breakers; coordinates with electricians when the job is beyond skill"
+        }
+      ]
+    },
+    {
+      "soc": "47-2061",
+      "title": "Construction Laborers",
+      "cluster": "Facilities, maintenance and construction",
+      "workers": "1,489,300 (2025)",
+      "growth": "7% or higher (O*NET); BLS group with helpers 6%",
+      "openings": "120,000 per year (O*NET); about 137,000 for laborers plus helpers",
+      "brightOutlook": "Yes (rapid growth and numerous openings)",
+      "onetUrl": "https://www.onetonline.org/link/summary/47-2061.00",
+      "electricalKnowledge": [
+        "Awareness of temporary power, GFCI cords and tools",
+        "Spotting buried or overhead lines before digging or raising materials",
+        "Does not install or connect electrical equipment"
+      ],
+      "standards": [
+        "OSHA 29 CFR 1926 Subpart K (construction electrical safety)",
+        "NEC 590 (temporary installations)"
+      ],
+      "safetyProcedures": [
+        "Use GFCI on all temporary power",
+        "Keep equipment clear of overhead lines (distance depends on voltage)",
+        "Call 811 before digging"
+      ],
+      "appSkillsThatFit": [
+        "shock-protection",
+        "special-locations"
+      ],
+      "newSkillsNeeded": [
+        "underground utility awareness",
+        "lockout-tagout"
+      ],
+      "verdict": "Beginner electrical literacy fits (awareness only; no code work)",
+      "docCodeCorrection": "None; code correct.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/47-2061.00",
+          "says": "No electrical, wiring or code tasks; Bright Outlook for rapid growth and numerous openings; 1,489,300 employed"
+        },
+        {
+          "source": "https://www.bls.gov/ooh/construction-and-extraction/construction-laborers-and-helpers.htm",
+          "says": "1,674,400 jobs for laborers and helpers; 6% growth; about 137,000 openings"
+        }
+      ]
+    },
+    {
+      "soc": "11-9021",
+      "title": "Construction Managers",
+      "cluster": "Facilities, maintenance and construction",
+      "workers": "609,100 (2025)",
+      "growth": "9% 2025-35 (BLS)",
+      "openings": "49,700 per year",
+      "brightOutlook": "Yes (rapid growth)",
+      "onetUrl": "https://www.onetonline.org/link/summary/11-9021.00",
+      "electricalKnowledge": [
+        "Reads electrical drawings and specs and coordinates electrical subcontractors",
+        "Schedules electrical inspections and energisation",
+        "Checks projects for code compliance and resolves inspector notes",
+        "Estimates electrical scope"
+      ],
+      "standards": [
+        "NEC and local amendments (awareness)",
+        "IBC and IECC",
+        "OSHA 29 CFR 1926",
+        "NFPA 70E (employer duty for crews)"
+      ],
+      "safetyProcedures": [
+        "Hold electrical work to the safe work programme; verify subcontractor LOTO and permit procedures",
+        "Require electrical inspection before covering work"
+      ],
+      "appSkillsThatFit": [
+        "branch-circuit-requirements",
+        "working-space-access",
+        "identification-marking",
+        "equipment-installation"
+      ],
+      "newSkillsNeeded": [
+        "plan reading",
+        "estimating",
+        "inspection scheduling"
+      ],
+      "verdict": "Beginner electrical literacy fits (awareness for managers; not a hands-on user)",
+      "docCodeCorrection": "None; code correct.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/11-9021.00",
+          "says": "Tasks: monitor compliance with building and safety codes; coordinate subcontractors; Bright Outlook; 609,100 employed"
+        },
+        {
+          "source": "https://www.bls.gov/ooh/management/construction-managers.htm",
+          "says": "Plan, coordinate and supervise projects including ensuring code compliance; 9% growth; median pay $114,990"
+        }
+      ]
+    },
+    {
+      "soc": "47-4021",
+      "title": "Elevator and Escalator Installers and Repairers",
+      "cluster": "Facilities, maintenance and construction",
+      "workers": "24,700 (2025)",
+      "growth": "5-6% (O*NET)",
+      "openings": "1,900 per year",
+      "brightOutlook": "Yes (rapid growth)",
+      "onetUrl": "https://www.onetonline.org/link/summary/47-4021.00",
+      "electricalKnowledge": [
+        "Installs conduit and wire in the hoistway and connects to control panels and motors",
+        "Troubleshoots brakes, motors, switches and signal and control systems with test equipment",
+        "Checks building and safety code conformance and writes service reports"
+      ],
+      "standards": [
+        "ASME A17.1/CSA B44 (main safety code for elevators and escalators)",
+        "ASME A17.2 inspection guide",
+        "NEC Article 620 (electrical equipment and wiring for elevators); 620.51 machine room disconnect",
+        "NEC 430 motors",
+        "NFPA 72 (fire alarm recall interface)",
+        "OSHA 29 CFR 1910.147 (lockout/tagout for machines)",
+        "OSHA 29 CFR 1910.331-.335 (electrical safe work practices)"
+      ],
+      "safetyProcedures": [
+        "Lockout/tagout of mainline disconnect in the machine room and of stored energy",
+        "Hoistway fall protection and pit procedures",
+        "Test-before-touch on controllers with capacitors and drives",
+        "Controlled use of bypass and jumpers"
+      ],
+      "appSkillsThatFit": [
+        "disconnecting-means",
+        "wiring-methods",
+        "working-space-access",
+        "identification-marking",
+        "shock-protection"
+      ],
+      "newSkillsNeeded": [
+        "hoists-and-elevators (ASME A17.1)",
+        "motors-and-drives",
+        "lockout-tagout",
+        "low-voltage-control"
+      ],
+      "verdict": "Not an NEC occupation (NEC 620 covers the wiring only; ASME A17.1 governs the equipment)",
+      "docCodeCorrection": "None; code correct.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/47-4021.00",
+          "says": "Tasks: connect electrical wiring to control panels and motors, install conduit in shaft walls, check code conformance; Bright Outlook; 24,700 employed"
+        },
+        {
+          "source": "https://www.ecmweb.com/national-electrical-code/qa/article/21253831/stumped-by-the-code-nec-requirements-for-elevators-and-escalators",
+          "says": "NEC 620 gives the electrical installation rules; ASME A17.1 provides overall equipment construction and maintenance rules; 620.51 requires a disconnect lockable only open"
+        },
+        {
+          "source": "https://www.bls.gov/ooh/construction-and-extraction/elevator-and-escalator-installers-and-repairers.htm",
+          "says": "403 error; BLS page could not be opened"
+        }
+      ]
+    },
+    {
+      "soc": "47-4011.01",
+      "title": "Energy Auditors",
+      "cluster": "Facilities, maintenance and construction",
+      "workers": "153,900 (2025) is the 47-4011 Construction and Building Inspectors figure",
+      "growth": "0% (little or no change)",
+      "openings": "14,800 per year (parent group)",
+      "brightOutlook": "No",
+      "onetUrl": "https://www.onetonline.org/link/summary/47-4011.01",
+      "electricalKnowledge": [
+        "Measures electrical use with amp probes, watt meters and volt meters",
+        "Evaluates lighting, motors, HVAC and electrical systems for savings",
+        "Sizes retrofits (lighting, controls, VFDs, PV) and reviews electrical loads"
+      ],
+      "standards": [
+        "NEC (awareness)",
+        "ASHRAE audit standards; BPI and RESNET protocols",
+        "Utility incentive programme rules"
+      ],
+      "safetyProcedures": [
+        "Work with a qualified person at panels; use rated meter and clamp; no opening live equipment"
+      ],
+      "appSkillsThatFit": [
+        "load-calculation",
+        "conductor-sizing",
+        "branch-circuit-requirements"
+      ],
+      "newSkillsNeeded": [
+        "energy audit methods",
+        "testing-with-a-meter"
+      ],
+      "verdict": "Beginner electrical literacy fits",
+      "docCodeCorrection": "Document lists it as Bright Outlook; O*NET does not. Employment/openings on O*NET and BLS belong to parent 47-4011 (Construction and Building Inspectors).",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/47-4011.01",
+          "says": "Not Bright Outlook; tasks include measuring energy use with amp probes, watt meters and volt meters and inspecting electrical systems"
+        },
+        {
+          "source": "https://www.bls.gov/ooh/construction-and-extraction/construction-and-building-inspectors.htm",
+          "says": "153,900 jobs, 0% growth, 14,800 openings; lists energy auditors as related"
+        }
+      ]
+    },
+    {
+      "soc": "49-2022",
+      "title": "Telecommunications Equipment Installers and Repairers, Except Line Installers",
+      "cluster": "Technology and smart building",
+      "workers": "143,100 (2025)",
+      "growth": "Decline of 1% or more",
+      "openings": "11,300 per year",
+      "brightOutlook": "No (declining)",
+      "onetUrl": "https://www.onetonline.org/link/summary/49-2022.00",
+      "electricalKnowledge": [
+        "Tests circuits and power supplies in telecom equipment with meters and polarity probes",
+        "Runs and terminates low-voltage cabling in buildings and cross-connects",
+        "Checks that power supplies are adequate",
+        "Grounds and bonds equipment racks"
+      ],
+      "standards": [
+        "NEC Articles 800, 805, 820, 830 (communications), 770 (optical fiber), 725",
+        "ANSI/TIA-568 and TIA-607 (telecom cabling and bonding)",
+        "NEC 250 grounding and bonding as it ties in",
+        "OSHA 29 CFR 1910.331-.335 (electrical safe work practices)",
+        "OSHA 1910.268 (telecommunications)"
+      ],
+      "safetyProcedures": [
+        "Test-before-touch on DC power plants and -48 V rectifiers",
+        "Battery and arc hazards",
+        "Ladder and lift safety"
+      ],
+      "appSkillsThatFit": [
+        "earthing-bonding",
+        "wiring-methods",
+        "identification-marking"
+      ],
+      "newSkillsNeeded": [
+        "low-voltage systems",
+        "testing-with-a-meter",
+        "fibre optics"
+      ],
+      "verdict": "Needs new skills (low-voltage and communications)",
+      "docCodeCorrection": "Document lists it as Bright Outlook; O*NET shows a declining outlook and no Bright flag.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/49-2022.00",
+          "says": "Not Bright Outlook; decline of 1% or more; tasks include testing circuits and power supplies and running cables"
+        },
+        {
+          "source": "https://www.ecmweb.com/national-electrical-code/article/21150401/the-nec-and-optical-fiber-cables",
+          "says": "Articles 770 and Chapter 8 have their own grounding and bonding rules, with the IBT as the common bonding point"
+        }
+      ]
+    },
+    {
+      "soc": "47-1011",
+      "title": "First-Line Supervisors of Construction Trades and Extraction Workers",
+      "cluster": "Technology and smart building",
+      "workers": "913,300 (2025)",
+      "growth": "5-6%",
+      "openings": "67,000 per year",
+      "brightOutlook": "Yes (rapid growth)",
+      "onetUrl": "https://www.onetonline.org/link/summary/47-1011.00",
+      "electricalKnowledge": [
+        "Reads blueprints and specs",
+        "Inspects work for safety and spec conformity",
+        "Trains crews in safety procedures; may supervise electrical crews (Electrical Supervisor)"
+      ],
+      "standards": [
+        "NEC (reference for supervised crews)",
+        "OSHA 1926 Subpart K",
+        "NFPA 70E for qualified crews"
+      ],
+      "safetyProcedures": [
+        "Enforce crew LOTO, test-before-touch and permits; stop unsafe live work"
+      ],
+      "appSkillsThatFit": [
+        "branch-circuit-requirements",
+        "working-space-access",
+        "identification-marking",
+        "wiring-methods",
+        "shock-protection"
+      ],
+      "newSkillsNeeded": [
+        "lockout-tagout",
+        "plan reading"
+      ],
+      "verdict": "Beginner electrical literacy fits (strong if the supervisor comes from the electrical trade)",
+      "docCodeCorrection": "Document places this under 'technology and smart building'; it is a construction supervisor occupation and fits better with facilities and construction. Code correct.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/47-1011.00",
+          "says": "Includes electrical supervisor; tasks: read blueprints, inspect for safety and specifications, train in safety procedures; Bright Outlook; 913,300 employed"
+        }
+      ]
+    },
+    {
+      "soc": "49-2098",
+      "title": "Security and Fire Alarm Systems Installers",
+      "cluster": "Technology and smart building",
+      "workers": "86,300 (2025)",
+      "growth": "7% or higher",
+      "openings": "8,500 per year",
+      "brightOutlook": "Yes (rapid growth)",
+      "onetUrl": "https://www.onetonline.org/link/summary/49-2098.00",
+      "electricalKnowledge": [
+        "Mounts control panels, detectors and cameras and terminates low-voltage and 120 V wiring",
+        "Follows electrical layout blueprints, tests circuits and sensors",
+        "Complies with codes for work"
+      ],
+      "standards": [
+        "NEC Article 760 (fire alarm), 725 (Class 2/3), 800 (communications)",
+        "NFPA 72 (fire alarm and signaling code)",
+        "IBC and NFPA 101 (occupancy)",
+        "UL 864, UL 681 (listings)",
+        "OSHA 29 CFR 1910.331-.335 (electrical safe work practices)"
+      ],
+      "safetyProcedures": [
+        "De-energize panel (AC and battery) before wiring, then verify",
+        "Notify the building and monitoring company when the system is impaired",
+        "Ladder and lift safety"
+      ],
+      "appSkillsThatFit": [
+        "wiring-methods",
+        "identification-marking",
+        "equipment-installation",
+        "shock-protection"
+      ],
+      "newSkillsNeeded": [
+        "fire-alarm systems",
+        "low-voltage systems",
+        "testing-with-a-meter"
+      ],
+      "verdict": "Needs new skills (already a core occupation; fire alarm and low-voltage skills are the gap)",
+      "docCodeCorrection": "Duplicate: the document lists 49-2098 again as 'Security and Fire Alarm Systems Installers 49-9071?'. 49-9071 is General Maintenance and Repair Workers. Remove the duplicate; it is already a core occupation.",
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/summary/49-2098.00",
+          "says": "Tasks: follow electrical layout blueprints, mount control panels and wire components, test circuits, comply with codes; Bright Outlook; 86,300 employed"
+        },
+        {
+          "source": "https://ecmweb.com/national-electrical-code/code-basics/article/55233196/nec-requirements-for-fire-alarm-systems",
+          "says": "Article 760 covers fire alarm wiring; NFPA 72 covers selection, installation, testing and maintenance"
+        }
+      ]
+    }
+  ],
+  "headlineChecks": [
+    {
+      "claim": "~6.7M workers across the combined 24 occupations",
+      "result": "Not confirmed; the adjacent 18 alone sum to about 6.38M unique codes, or 7.80M if overlapping child codes are counted again",
+      "note": "Sum of 2025 O*NET/BLS figures for 16 distinct codes: 440,900 + 510,600 + 131,100 + 45,300 + 11,800 + 913,300 + 6,600 + 20,900 + 166,700 + 1,621,800 + 1,489,300 + 609,100 + 24,700 + 153,900 + 143,100 + 86,300 = 6,375,400. 47-1011.03 and 47-2152.04 are children of 47-1011 and 47-2152 and O*NET repeats the parent figure, so counting them again adds 913,300 + 510,600 (total 7,799,300). 49-2098 (86,300) is also a core occupation. Adding the six core occupations (not opened here) would likely exceed 6.7M, so the claim looks understated or uses another basis. Also most of these workers do no electrical work, so the total is not the market for an electrical app."
+    },
+    {
+      "claim": "~700K annual openings for the combined 24 occupations",
+      "result": "Plausible but not confirmed",
+      "note": "The 16 distinct adjacent codes sum to about 531,300 openings per year (40,600+42,000+9,800+4,400+1,500+67,000+500+1,800+8,800+148,700+120,000+49,700+1,900+14,800+11,300+8,500); 640,300 with the two overlapping child codes counted again. Six core occupations would bring it to roughly 630K-740K depending on basis, so 700K is in range but I did not open the core figures. Over 60% of the 531K is general maintenance, laborers, and construction managers/supervisors, which are not electrical jobs."
+    },
+    {
+      "claim": "All 18 adjacent occupations are Bright Outlook",
+      "result": "False for 5",
+      "note": "Not Bright on O*NET: 47-2211 Sheet Metal Workers, 47-3015 Helpers--Pipelayers/Plumbers, 17-2199.03 Energy Engineers, 47-4011.01 Energy Auditors, 49-2022 Telecom Equipment Installers (declining). The other 13 are Bright (11 for rapid growth, 49-9071 for numerous openings, 47-2061 for both). The Bright Outlook list was read through a summarising fetch tool, so recheck by opening each page."
+    },
+    {
+      "claim": "SOC codes and titles match O*NET",
+      "result": "Mostly; 4 need correction",
+      "note": "49-9021 title is Heating, Air Conditioning, and Refrigeration Mechanics and Installers; 49-2095 is Powerhouse, Substation, and Relay repairers, not a power-line installer occupation; the third item in the technology cluster duplicates 49-2098 and the '49-9071?' is wrong; 47-1011 belongs with construction, not technology; 47-2152.04 and 47-1011.03 show parent-group employment and openings, not their own."
+    },
+    {
+      "claim": "Elevator work fits an NEC app",
+      "result": "Partly",
+      "note": "NEC Article 620 covers the electrical wiring and equipment; ASME A17.1 governs the equipment and its safe maintenance. Flag as a poor fit for a pure NEC app."
+    }
+  ],
+  "doubts": [
+    "The fetch tool returns summaries from a small model; Bright Outlook, growth and openings values were not read verbatim from the pages. Re-verify any number before it goes in the final document.",
+    "BLS OOH pages for sheet metal workers, elevator installers, construction supervisors, telecom installers and security and fire alarm installers returned 403, so BLS figures for those come from O*NET (which uses BLS projections) only.",
+    "The Energy Engineers and Energy Auditors counts on O*NET (166,700 and 153,900) look like parent-group figures; Energy Auditors equals the BLS Construction and Building Inspectors figure exactly.",
+    "NEC 90.2(B) exclusions (ships, rail rolling stock, aircraft, automobiles, utility generation and substations) were stated from knowledge, not from a page I opened; confirm against the code text.",
+    "NFPA 70E page, ASME A17.1 page, OSHA wind and solar pages did not load; the standards for wind, solar and elevators lean on search-result articles and O*NET. OSHA 1910.147, .332 and .333 were opened.",
+    "1910.147 itself excludes electrical-utilization installations (covered by 1910.333), so 'LOTO' for electrical workers is really 1910.333 plus NFPA 70E.",
+    "The skill mapping to the app's 13 skills is my judgement; I did not inspect the app's skill definitions.",
+    "The document says 24 occupations but lists 18 adjacent entries; the other six (core) were not part of this check.",
+    "Standards listed without an opened source (UL, TIA, SMACNA, ASHRAE, IEEE, GWO, 1910.268, 1910.269, 1926 Subpart K, EPA 608) come from general knowledge."
+  ]
+}

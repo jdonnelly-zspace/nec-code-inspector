@@ -1,0 +1,659 @@
+{
+  "soc": "47-2111",
+  "title": "Electricians",
+  "onetUrl": "https://www.onetonline.org/link/summary/47-2111.00",
+  "bls": {
+    "url": "https://www.bls.gov/ooh/construction-and-extraction/electricians.htm",
+    "workers": "821,000 (2025)",
+    "growth": "9% projected 2025-35, much faster than average (about 75,900 new jobs)",
+    "openings": "about 72,700 per year",
+    "medianPay": "$63,190 per year ($30.38 per hour), May 2025"
+  },
+  "summary": "Electricians install, maintain and repair the wiring, lighting, power, control and communication systems of homes, businesses and factories. They work from drawings and the electrical code, run conduit and cable, connect devices and panels, then test and troubleshoot the result. The work is physical, often at height, and carries shock, arc, burn and fall hazards, so safety procedures are part of every job.",
+  "typicalPath": "A high school diploma or equivalent, then usually a 4 to 5 year apprenticeship (BLS describes about 2,000 paid on-the-job hours a year plus classroom work on theory, blueprints, code and safety). Most states then license by examination covering the NEC and local rules. After the journey-level credential, electricians can seek a master license or move into supervision and project management. Hours vary by state: Maryland, for example, accepts an approved apprenticeship with at least 8,000 work hours and 576 classroom hours (or 4 years of supervised work) for the journeyperson exam, and 7 years of experience for the master exam (some credit allowed for coursework). O*NET lists the occupation in Job Zone 3 with apprenticeship or vocational training. Sources: BLS OOH electricians page; Maryland Dept. of Labor https://labor.maryland.gov/license/elec/elecreq.shtml; O*NET summary page.",
+  "tasks": [
+    {
+      "task": "Read blueprints or make sketches to decide where wiring, boxes and equipment go.",
+      "importance": "91",
+      "electricalKnowledge": "Plan reading, symbols, code layout rules for outlets, panels and clearances",
+      "appSkills": [
+        "branch-circuit-requirements",
+        "working-space-access"
+      ]
+    },
+    {
+      "task": "Install conduit and pull insulated conductors through it to complete circuits.",
+      "importance": "91",
+      "electricalKnowledge": "Raceway types, bending, support spacing, fill limits, box connections",
+      "appSkills": [
+        "wiring-methods",
+        "conductor-sizing"
+      ]
+    },
+    {
+      "task": "Work from ladders, scaffolds and roofs to install, maintain or repair systems.",
+      "importance": "89",
+      "electricalKnowledge": "Ladder use, fall protection triggers, keeping clear of energized parts",
+      "appSkills": []
+    },
+    {
+      "task": "Use test and measuring equipment such as meters and oscilloscopes to check systems.",
+      "importance": "88",
+      "electricalKnowledge": "Voltage, continuity and current measurement, meter category ratings, safe test method",
+      "appSkills": []
+    },
+    {
+      "task": "Assemble, install and test wiring and equipment with hand and power tools.",
+      "importance": "86",
+      "electricalKnowledge": "Device and equipment installation rules, termination torque and listing",
+      "appSkills": [
+        "equipment-installation",
+        "wiring-methods"
+      ]
+    },
+    {
+      "task": "Connect wires to circuit breakers, transformers and other equipment.",
+      "importance": "83",
+      "electricalKnowledge": "Panel and breaker termination, conductor ampacity, grounding and bonding connections",
+      "appSkills": [
+        "overcurrent-protection",
+        "conductor-sizing",
+        "earthing-bonding"
+      ]
+    },
+    {
+      "task": "Keep the electrician license or identification current under local regulations.",
+      "importance": "83",
+      "electricalKnowledge": "State licensing rules, continuing education, current code edition",
+      "appSkills": []
+    },
+    {
+      "task": "Plan the layout of electrical systems from specifications and code requirements.",
+      "importance": "80",
+      "electricalKnowledge": "Load calculation, circuit counts, service sizing, code-required circuits",
+      "appSkills": [
+        "load-calculation",
+        "branch-circuit-requirements"
+      ]
+    },
+    {
+      "task": "Direct or train less experienced workers in installation and repair.",
+      "importance": "78",
+      "electricalKnowledge": "Safe work practices and supervision of apprentices",
+      "appSkills": []
+    },
+    {
+      "task": "Test circuits with voltmeters and similar devices to confirm they are safe to work on.",
+      "importance": "78",
+      "electricalKnowledge": "Verifying absence of voltage, live-dead-live test, lockout/tagout",
+      "appSkills": [
+        "shock-protection"
+      ]
+    },
+    {
+      "task": "Diagnose malfunctioning systems and find faults in wiring and equipment, then repair or replace parts.",
+      "importance": "",
+      "electricalKnowledge": "Troubleshooting method, reading schematics, reading meter results",
+      "appSkills": []
+    },
+    {
+      "task": "Inspect systems for hazards and defects, and advise management on unsafe equipment.",
+      "importance": "",
+      "electricalKnowledge": "Recognising code violations, GFCI and AFCI requirements, marking and clearances",
+      "appSkills": [
+        "shock-protection",
+        "arc-fault-protection",
+        "identification-marking"
+      ]
+    },
+    {
+      "task": "Fasten boxes for switches and outlets and install ground leads and power cables.",
+      "importance": "",
+      "electricalKnowledge": "Box fill and support, grounding electrode system, cable support and protection",
+      "appSkills": [
+        "wiring-methods",
+        "earthing-bonding"
+      ]
+    },
+    {
+      "task": "Provide sketches or cost estimates and handle business duties such as permits.",
+      "importance": "",
+      "electricalKnowledge": "Estimating, permit applications, working with inspectors",
+      "appSkills": []
+    }
+  ],
+  "procedures": [
+    {
+      "name": "Establishing an electrically safe work condition (lockout/tagout and test-before-touch)",
+      "purpose": "Remove and prove the absence of hazardous electrical energy before anyone touches conductors or parts.",
+      "whenUsed": "Before any repair, panel work, device change or troubleshooting that puts hands near conductors that could be energized.",
+      "role": "Qualified electrician (apprentice under supervision), with the employer providing the written procedure, locks and tags.",
+      "steps": [
+        "Identify every source of power to the equipment using drawings, labels and the panel schedule, including backfeed such as generators or second feeds.",
+        "Shut the load down with normal controls, then open the disconnecting means.",
+        "Visually confirm the disconnect is open, by handle position or visible blades.",
+        "Release or block stored energy (capacitors, batteries, springs, other non-electrical energy that could restart parts).",
+        "Apply your own lock and tag to each isolating device, per the employer's written procedure.",
+        "Test your meter on a known live source, then test the circuit conductors phase to phase and phase to ground, then re-test the meter on the known source (live-dead-live).",
+        "Apply temporary grounds where induced voltage or stored energy could remain a hazard.",
+        "Test before touching each conductor or part in the work area, work, then clear tools and people, remove your own lock, warn others and re-energize."
+      ],
+      "hazards": [
+        "Shock and electrocution from missed backfeed or a second source",
+        "Arc flash if a meter or tool bridges live parts",
+        "Unexpected restart by another worker",
+        "Stored energy in capacitors or mechanical parts",
+        "A failed meter giving a false 'dead' reading"
+      ],
+      "controls": [
+        "Personal lock and tag on every isolation point, removed only by the person who applied it",
+        "Voltage test with a rated meter, proved before and after on a known live source",
+        "Written procedure and trained, authorized workers",
+        "Temporary grounds where induced voltage is possible",
+        "Insulated tools and PPE chosen for the task"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1910.147",
+          "what": "Requires an energy control procedure covering shutdown, isolation, lock and tag application, stored energy release and verification of isolation."
+        },
+        {
+          "name": "OSHA 29 CFR 1910.333",
+          "what": "Requires lock and tag on disconnects, a qualified person to verify deenergized state with test equipment, and checks before reenergizing."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.417",
+          "what": "On construction sites, controls and circuits being worked on must be tagged at every point where they could be energized."
+        },
+        {
+          "name": "NFPA 70E (Article 120 and definition of electrically safe work condition)",
+          "what": "Defines the steps and the idea of a tested, locked, grounded-if-needed condition; copyrighted, so see the standard itself."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147",
+          "says": "Sets the sequence from preparation and shutdown through isolation, lock/tag, stored energy, verification and removal."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333",
+          "says": "Describes deenergized-work rules: lock and tag, testing with equipment, discharging stored energy, reenergizing checks."
+        },
+        {
+          "source": "https://www.ecmweb.com/safety/article/21239084/five-steps-for-creating-an-electrically-safe-work-condition",
+          "says": "Gives an eight-step process including source identification, visual check, lockout and live-dead-live voltage test."
+        },
+        {
+          "source": "https://iaeimagazine.org/issue/may-june-2020/electrically-safe-work-condition/",
+          "says": "Explains the steps, phase-to-phase and phase-to-ground testing and why only qualified persons do it."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.417",
+          "says": "Construction rule that circuits being worked on must be tagged at all energizing points."
+        }
+      ],
+      "appSkills": [
+        "shock-protection",
+        "disconnecting-means"
+      ],
+      "appCoverage": "none: the app teaches where disconnects are required and shock protection rules, but has no lockout/tagout or test-before-touch steps.",
+      "plannedSkills": [
+        "electrically-safe-work",
+        "testing-and-measurement"
+      ]
+    },
+    {
+      "name": "Rough-in and finish wiring of a residential branch circuit",
+      "purpose": "Install the boxes, cable, protection and devices of a new or extended branch circuit so it passes inspection and works safely.",
+      "whenUsed": "New construction, additions and remodels where circuits are added or extended.",
+      "role": "Journeyman or apprentice electrician under a licensed electrician or contractor.",
+      "steps": [
+        "Work from the plans and load needs to lay out box locations, circuit routes and the panel location.",
+        "Set and fasten each outlet, switch and fixture box at the right height, using rated boxes where a fan or heavy fixture hangs.",
+        "Drill studs near their centers, run the cable, and protect it with nail plates where it is close to the face of framing.",
+        "Staple or support cable near every box and along its run at the code spacing.",
+        "Strip and terminate conductors in boxes, make splices and pigtails, connect grounding and bonding, and leave devices off.",
+        "Walk the job against the plan, checking support, box fill, circuit sizing and required GFCI and AFCI protection.",
+        "Request the rough-in inspection and keep the wiring uncovered until it passes.",
+        "After walls are finished, install devices and covers, make panel terminations, test the circuit (see testing procedure) and schedule the final inspection."
+      ],
+      "hazards": [
+        "Nail or screw penetration of cable",
+        "Energized panel while terminating circuits",
+        "Falls from ladders",
+        "Overfilled boxes and loose terminations causing heat",
+        "Covering work before inspection"
+      ],
+      "controls": [
+        "Panel de-energized and locked out while terminating",
+        "Cable supported and protected per code",
+        "Rough-in inspection before cover",
+        "Proper box fill and device ratings",
+        "GFCI/AFCI protection where required"
+      ],
+      "standards": [
+        {
+          "name": "NEC Chapter 3 (Articles 300, 314, 334) and Article 210",
+          "what": "Cover cable and box installation, support, box fill and branch circuit requirements; read the current NEC for exact values."
+        },
+        {
+          "name": "NEC 210.8 and 210.12",
+          "what": "Require ground-fault and arc-fault protection for listed locations and circuits in dwellings."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.1053",
+          "what": "Sets ladder angle, extension above the landing, three-point contact and nonconductive rails near live parts."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://projul.com/blog/construction-electrical-rough-in-guide/",
+          "says": "Describes box placement, NM cable support near boxes, nail plates, grounding and the pre-inspection walkthrough."
+        },
+        {
+          "source": "https://www.cityofboise.org/departments/planning-and-development-services/building/building-permits/residential-construction-400/424-residential-electrical/",
+          "says": "US city page: rough-in inspection needs conductors stripped in boxes with no devices; final needs equipment installed and energized."
+        },
+        {
+          "source": "https://www.wral.com/understanding-electrical-inspection/14427578/",
+          "says": "Rough inspection is before walls are covered; final before occupancy; inspectors check AFCI, GFCI, grounding and wiring methods."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1053",
+          "says": "Ladder placement and use rules for work at height."
+        }
+      ],
+      "appSkills": [
+        "branch-circuit-requirements",
+        "wiring-methods",
+        "equipment-installation",
+        "arc-fault-protection",
+        "shock-protection"
+      ],
+      "appCoverage": "partial: the sandbox has students wire a residential panel and inspection scenes teach the rules, but boxes, cable support and the rough-in sequence are not practiced step by step.",
+      "plannedSkills": []
+    },
+    {
+      "name": "Installing or replacing a residential service panel",
+      "purpose": "Replace or upgrade the main panel so the home has correct capacity, grounding and protection, with the utility and inspector involved.",
+      "whenUsed": "Service upgrades, panel changeouts for age or capacity, and adding major loads such as EV chargers.",
+      "role": "Licensed electrician or electrical contractor, with the utility doing its own disconnect and reconnect.",
+      "steps": [
+        "Assess the existing service, decide the new panel size and circuit count, and check the load calculation.",
+        "Pull the permit from the local building department and schedule the utility disconnect and reconnect.",
+        "Gather materials and install ground rods or other grounding electrode parts ahead of time where possible.",
+        "On the scheduled day the utility cuts power; verify the service is dead, and lock out where possible, before opening anything.",
+        "Remove the old panel and mount the new one, install the service conductors and bond it to the grounding electrode system.",
+        "Land the branch circuits in the new panel, with correct breaker types and labelled directory.",
+        "Close up with covers and dead-front in place, and call for inspection.",
+        "After the inspector approves, the utility reconnects and you verify voltage and test the circuits."
+      ],
+      "hazards": [
+        "Service conductors that may still be live up to the utility disconnect",
+        "Arc flash and shock when working in a panel",
+        "Wrong breaker or conductor sizing",
+        "Poor grounding and bonding",
+        "Energizing before inspection"
+      ],
+      "controls": [
+        "Utility disconnect and verified dead conductors before work",
+        "Load calculation and correct ratings",
+        "Grounding electrode system and bonding done to code",
+        "Permit and inspection before energizing",
+        "Labelling and dead-front covers"
+      ],
+      "standards": [
+        {
+          "name": "NEC Article 230 (services) and Article 408 (panelboards)",
+          "what": "Cover service conductors, disconnects and panelboard construction and installation."
+        },
+        {
+          "name": "NEC Article 250",
+          "what": "Covers grounding electrode system and bonding of the service and panel."
+        },
+        {
+          "name": "NEC Article 110.26",
+          "what": "Requires working space and access around the panel."
+        },
+        {
+          "name": "OSHA 29 CFR 1910.333 / 1926.416",
+          "what": "Require deenergizing or guarding and verifying circuits before work near live parts."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://ask-the-electrician.com/the-process-of-an-electrical-service-upgrade/",
+          "says": "Sequence: permit, utility scheduling, grounding, old panel out, new panel bonded, inspection, utility reconnect."
+        },
+        {
+          "source": "https://www.cityofboise.org/departments/planning-and-development-services/building/building-permits/residential-construction-400/424-residential-electrical/",
+          "says": "Permanent service work has specific conductor and mast requirements and mandatory inspections."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.416",
+          "says": "Employees must be protected from circuits by deenergizing and grounding or guarding."
+        },
+        {
+          "source": "https://projul.com/blog/construction-electrical-rough-in-guide/",
+          "says": "Describes ground rods, bonding jumpers and the grounding electrode conductor to the panel."
+        }
+      ],
+      "appSkills": [
+        "overcurrent-protection",
+        "earthing-bonding",
+        "disconnecting-means",
+        "working-space-access",
+        "load-calculation",
+        "identification-marking"
+      ],
+      "appCoverage": "partial: the sandbox designs and wires a panel and teaches grounding, working space and labelling rules, but not the utility coordination, lockout, or the full replacement sequence.",
+      "plannedSkills": []
+    },
+    {
+      "name": "Troubleshooting a dead or tripping circuit",
+      "purpose": "Find the cause of a lost or tripping circuit with a systematic method and fix it without creating new hazards.",
+      "whenUsed": "Service calls for dead outlets, nuisance trips, repeated breaker trips or burning smells.",
+      "role": "Journeyman electrician, sometimes with an apprentice assisting.",
+      "steps": [
+        "Ask what happened and observe: which outlets or lights are out, what trips, any smell, sound or heat.",
+        "Gather information: panel directory, circuit layout, recent work, GFCI or AFCI devices on the circuit.",
+        "Check obvious causes first, such as tripped GFCIs or AFCIs and breaker position, resetting only after considering why it tripped.",
+        "List the likely sections of the circuit and use a half-split approach, testing the middle to rule out half at a time.",
+        "Prove the meter on a known live source, test the dead point, and prove the meter again.",
+        "Isolate and lock out, then inspect and test the suspect parts (loose terminations, damaged cable, shorted or overloaded loads).",
+        "Repair or replace the faulty part with a correctly rated one.",
+        "Re-energize, verify operation under load, and note what was found."
+      ],
+      "hazards": [
+        "Working live while looking for the fault",
+        "Arcing at a short or loose connection",
+        "Fire from a hot or damaged connection",
+        "Resetting a breaker into a fault"
+      ],
+      "controls": [
+        "Stop and escalate if there is a burning smell, a scorched device, instant re-trips or water",
+        "Live-dead-live meter check",
+        "Lockout before opening boxes",
+        "Half-split testing to limit live exposure",
+        "Verification after repair"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1910.333",
+          "what": "Limits live work to qualified persons and requires testing deenergized state before hands-on work."
+        },
+        {
+          "name": "NEC 210.8, 210.12, 240",
+          "what": "GFCI, AFCI and overcurrent rules that explain many trips and shape how they are repaired."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://open-exam-prep.com/study-guides/nccer-electrical/electrical-testing-troubleshooting-prints/troubleshooting-methodologies",
+          "says": "Six-step method and half-split technique for narrowing faults; study guide, not an official source."
+        },
+        {
+          "source": "https://www.getresq.com/nora/nora-blog/how-to-troubleshoot-electrical-problems",
+          "says": "Dead outlet and tripping breaker steps, live-dead-live check and warning signs to stop and call a pro."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333",
+          "says": "Controls on testing and working live parts during troubleshooting."
+        }
+      ],
+      "appSkills": [
+        "overcurrent-protection",
+        "arc-fault-protection",
+        "shock-protection"
+      ],
+      "appCoverage": "none: the app teaches the protection rules but has no fault-finding, meter use or troubleshooting scenarios.",
+      "plannedSkills": [
+        "troubleshooting",
+        "testing-and-measurement"
+      ]
+    },
+    {
+      "name": "Testing and verifying a finished installation (continuity, polarity, GFCI and AFCI)",
+      "purpose": "Show that a finished circuit is wired correctly and that its protective devices work before handing it over.",
+      "whenUsed": "After devices are installed and before final inspection or turnover, and after any repair.",
+      "role": "Electrician who did the work, or a second electrician checking it.",
+      "steps": [
+        "Before energizing, confirm the circuit is deenergized, then check continuity of conductors and the grounding path with a meter (meter proved first).",
+        "Confirm connections: hot, neutral and ground landed on the right terminals and no shorts between conductors.",
+        "Energize and check voltage at the devices with a proved meter.",
+        "Plug in a receptacle tester to read correct wiring and polarity, and note any open ground or reversal.",
+        "Press the GFCI test button (or tester button): power must drop, then reset restores it.",
+        "Check downstream receptacles to confirm which outlets the GFCI protects and that line and load are not reversed.",
+        "Operate the AFCI breaker test button and confirm it trips and resets.",
+        "Record results and fix anything that fails before inspection."
+      ],
+      "hazards": [
+        "Testing live circuits that were thought dead",
+        "Meter used outside its rating",
+        "False confidence from a plug-in tester",
+        "Reversed line and load on a GFCI"
+      ],
+      "controls": [
+        "Continuity only on deenergized circuits",
+        "Meter proven on a known source",
+        "Use the device's own test button for AFCI and GFCI",
+        "Document and correct failures before turnover"
+      ],
+      "standards": [
+        {
+          "name": "NEC 110.7",
+          "what": "Requires completed installations be free of shorts and unintended grounds; verify by testing."
+        },
+        {
+          "name": "NEC 210.8 and 210.12",
+          "what": "Require GFCI and AFCI protection; the devices' own test function proves them."
+        },
+        {
+          "name": "OSHA 29 CFR 1910.333",
+          "what": "Reenergizing checks: confirm tools and jumpers are removed and people are clear."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.fluke.com/en-ca/learn/blog/electrical/what-is-continuity",
+          "says": "Continuity testing needs the circuit deenergized and capacitors discharged."
+        },
+        {
+          "source": "https://inspectapedia.com/electric/GFCI-Test-Procedures.php",
+          "says": "Test and reset buttons, plug-in tester that draws a small fault current, line/load reversal shows as reset failing."
+        },
+        {
+          "source": "https://www.familyhandyman.com/project/how-to-test-gfci-outlets/",
+          "says": "Step-by-step GFCI test by button or tester; two of three tester lights for correct wiring."
+        },
+        {
+          "source": "https://www.getresq.com/nora/nora-blog/how-to-troubleshoot-electrical-problems",
+          "says": "Describes the live-dead-live voltage check."
+        }
+      ],
+      "appSkills": [
+        "shock-protection",
+        "arc-fault-protection",
+        "earthing-bonding"
+      ],
+      "appCoverage": "none: the app teaches which circuits need GFCI/AFCI, but students never test with a meter or tester.",
+      "plannedSkills": [
+        "testing-and-measurement"
+      ]
+    },
+    {
+      "name": "Conduit and cable installation",
+      "purpose": "Install raceway and cable so conductors are protected, supported and can be pulled without damage.",
+      "whenUsed": "Wherever the wiring method is conduit, in commercial, industrial and exposed residential work.",
+      "role": "Journeyman or apprentice electrician.",
+      "steps": [
+        "Pick the conduit type for the environment (metal for protected indoor runs, rigid for impact, PVC for wet or buried).",
+        "Mark box locations and support points from the drawings.",
+        "Cut conduit to length and ream the cut end so burrs do not damage insulation.",
+        "Bend with the correct bender, allowing for take-up, and keep total bends between pull points within the code limit.",
+        "Mount straps and supports at the required spacing and near every box.",
+        "Fit connectors and couplings, tighten metal fittings and add bushings where the conduit enters a box.",
+        "Fish and pull the conductors, using lubricant on long pulls, and keep conduit fill within the allowed percentage.",
+        "Check bonding continuity of metal raceways and leave the run ready for inspection."
+      ],
+      "hazards": [
+        "Falls from ladders and lifts",
+        "Cuts and strains from cutting and bending",
+        "Insulation damage from burrs or overfill",
+        "Working near live parts while mounting"
+      ],
+      "controls": [
+        "Reaming and bushings",
+        "Fill and bend limits followed",
+        "Supports at code spacing",
+        "Deenergize or guard live parts nearby",
+        "Ladder rules and fall protection"
+      ],
+      "standards": [
+        {
+          "name": "NEC Chapter 3 raceway articles (358 EMT, 344 RMC, 352 PVC) and Chapter 9 Table 1",
+          "what": "Set support spacing, bend limits and conduit fill; check the current edition for values."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.501 and 1926.1053",
+          "what": "Fall protection at 6 ft in construction and ladder use rules."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.portlandiaelectric.supply/blogs/news/how-to-install-electrical-conduit",
+          "says": "Workflow of selecting, bending, supporting and pulling, with support spacing, bend limit and fill percentages (supplier blog)."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.501",
+          "says": "Fall protection is needed at 6 feet in construction, including roofing and residential work."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1053",
+          "says": "Ladder angle, extension, grip and nonconductive rail rules."
+        }
+      ],
+      "appSkills": [
+        "wiring-methods",
+        "conductor-sizing"
+      ],
+      "appCoverage": "partial: the app teaches which wiring methods are allowed and conductor sizing rules, but not bending, support spacing practice, fill or pulling.",
+      "plannedSkills": []
+    },
+    {
+      "name": "Load calculation and service sizing for a dwelling",
+      "purpose": "Work out the demand on a home so the service, feeders and circuits are sized correctly.",
+      "whenUsed": "New homes, additions, service upgrades and when adding large loads like EV chargers or ranges.",
+      "role": "Electrician or contractor, sometimes checked by the plan reviewer.",
+      "steps": [
+        "Take the floor area from outside dimensions (excluding open porches, garages and unfinished spaces) and apply the general lighting and receptacle load per square foot.",
+        "Add the required small-appliance and laundry circuits at the fixed volt-ampere value per circuit.",
+        "Combine those loads and apply the demand factors for the first block and the remainder.",
+        "Add fixed appliances, range, dryer, heating and cooling with their own demand rules, including a reduction when four or more fastened appliances exist.",
+        "Total the demand loads and divide by the service voltage to get amps.",
+        "Choose the standard service rating and size the service conductors, using the table allowed for the service.",
+        "Compare with the existing service where adding loads and document the calculation for the permit."
+      ],
+      "hazards": [
+        "Undersized service overheating or tripping",
+        "Mistakes from skipped demand rules",
+        "Overloaded neutrals or conductors"
+      ],
+      "controls": [
+        "Follow the NEC worksheet method in order",
+        "Check results against the plan reviewer or utility requirements",
+        "Document the calculation with the permit"
+      ],
+      "standards": [
+        {
+          "name": "NEC Article 220 (Parts II and III)",
+          "what": "Provides the standard and optional methods for dwelling unit loads and demand factors."
+        },
+        {
+          "name": "NEC Article 310 and 230",
+          "what": "Set conductor ampacity and service requirements used to size the service."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.ecmweb.com/national-electrical-code/code-basics/article/20886603/dwelling-unit-calculati",
+          "says": "Explains the standard method: 3 VA per square foot, small appliance and laundry circuits, then amps from VA."
+        },
+        {
+          "source": "https://electricianu.com/dwelling-unit-service-load-calculations-standard-method/",
+          "says": "Walks through demand factors, appliances, the four-or-more appliance reduction and conductor table choice."
+        }
+      ],
+      "appSkills": [
+        "load-calculation",
+        "conductor-sizing",
+        "branch-circuit-requirements"
+      ],
+      "appCoverage": "good: the load-calculation skill and the panel sandbox train this calculation and its result in the design step; permit paperwork is not covered.",
+      "plannedSkills": []
+    }
+  ],
+  "standardsAndCodes": [
+    {
+      "name": "NFPA 70 (NEC), 2026 edition",
+      "role": "Primary installation rules for the electrician; adopted by jurisdiction, often an earlier edition.",
+      "nec": "Articles 110, 200-250, 300-314, 334, 358, 408; Chapters 2 and 3; Article 220"
+    },
+    {
+      "name": "NFPA 70E",
+      "role": "Employer safe work practices: electrically safe work condition, approach boundaries, arc flash PPE.",
+      "nec": ""
+    },
+    {
+      "name": "OSHA 29 CFR 1910 Subpart S and 1910.147, 1910.333, 1910.335",
+      "role": "General-industry electrical safety, lockout/tagout, safeguards and PPE.",
+      "nec": ""
+    },
+    {
+      "name": "OSHA 29 CFR 1926 Subpart K (1926.416, 1926.417, 1926.405) and 1926.501, 1926.1053",
+      "role": "Construction electrical safety, tagging, temporary wiring and fall and ladder protection.",
+      "nec": ""
+    },
+    {
+      "name": "State and local licensing and building codes",
+      "role": "Licensing exam, permit and inspection rules; adopt and amend the NEC.",
+      "nec": ""
+    },
+    {
+      "name": "Equipment listing standards (UL and similar)",
+      "role": "Determine which devices and equipment may be installed.",
+      "nec": "Article 110.3"
+    }
+  ],
+  "outsideNec": [
+    "Electric utility service wires, meters and the utility's own disconnect and reconnect (utility rules and NESC).",
+    "Employer safe-work rules such as lockout/tagout, PPE and arc flash practices (OSHA and NFPA 70E).",
+    "Licensing, permits and inspection process (state and local law).",
+    "Estimating, business management and apprenticeship training.",
+    "Fall protection and ladder use (OSHA 1926)."
+  ],
+  "gapsForTheApp": [
+    "Lockout/tagout and test-before-touch: a procedure trainer with a virtual meter, locks and tags, and live-dead-live check.",
+    "Troubleshooting scenarios: dead or tripping circuits where the learner narrows the fault with a meter, using half-split steps.",
+    "Meter and tester skills: continuity, voltage, receptacle tester, GFCI and AFCI test steps in the 3D scene.",
+    "Plan reading and layout: reading drawings to place boxes and circuits.",
+    "Conduit bending, support and fill: a hands-on task trainer.",
+    "Rough-in sequence and inspection hand-off: box setup, cable support, the rough-in then final inspection flow, and permit steps.",
+    "Service panel replacement with utility coordination, including grounding electrode installation.",
+    "Estimating and business basics, and fall protection and ladder safety, are not in the app.",
+    "Motors and controls, PV, fire alarm, low-voltage and line work are listed O*NET or industry areas the app does not cover."
+  ],
+  "doubts": [
+    "O*NET online pages gave 21 tasks; only the first 10 carried importance numbers in the page text I opened, so tasks 11 to 14 have blank importance.",
+    "Both O*NET page reads were summarized by a tool, so wording of tasks is paraphrased and not verified against the page line by line.",
+    "NFPA 70E is behind a paywall and the NFPA public pages were empty or blocked; the ESWC steps rest on OSHA, ECM and IAEI articles, and the 70E article numbers are from general knowledge, not an opened source.",
+    "NEC article numbers cited (210.8, 210.12, 110.7, 110.26, 220, 230, 240, 250, 310, 314, 334, 344, 352, 358, 408) were not checked against the NEC text; they come from background knowledge and the opened articles that mention a few of them.",
+    "Conduit procedure: the two portlandiaelectric pages I opened are the same supplier blog, so it is effectively one commercial source plus OSHA fall and ladder rules.",
+    "Troubleshooting evidence includes a study-guide site and a consumer blog; neither is an official or trade-body source.",
+    "Rough-in: an Ontario inspection page (esasafe.com) opened but not used as evidence because it is Canadian; evidence is US city and trade pages.",
+    "Permitting and inspection hand-off is folded into the rough-in and panel procedures, not a separate procedure, because of the 7-procedure cap.",
+    "Maryland is the only state license example read; hours and rules vary by state. Apprenticeship.gov, DOL and Electrical Training Alliance pages could not be opened (404 or empty).",
+    "The utility disconnect and panel steps rely on a contractor blog and a city page; no utility tariff or NEC section was read.",
+    "The load calculation figures (3 VA/sq ft, 1,500 VA circuits, 3,000 VA/35% demand split, 75% fastened-appliance factor, 83% Table 310.12 rule) come from trade articles, which disagreed on table numbers (220.42 vs 220.45); check the 2026 NEC."
+  ]
+}

@@ -1,0 +1,671 @@
+{
+  "soc": "47-3013",
+  "title": "Helpers--Electricians",
+  "onetUrl": "https://www.onetonline.org/link/details/47-3013.00",
+  "bls": {
+    "url": "https://www.bls.gov/ooh/construction-and-extraction/electricians.htm",
+    "workers": "No separate BLS figure for helpers found; the Electricians page (47-2111) reports about 821,000 jobs in 2025",
+    "growth": "Electricians 9 percent, 2025 to 2035 (helpers not given separately on the page opened)",
+    "openings": "About 75,900 per year for electricians",
+    "medianPay": "Electricians $63,190 per year ($30.38 per hour); helper pay not shown on the page opened"
+  },
+  "summary": "Helpers carry, stage and cut materials, drill and thread openings, pull and strip wire, and keep the work area clean while working beside electricians. They do the supporting physical work and some simple wiring and tracing under direction; they do not decide what to energize, work live, or sign off on work.",
+  "typicalPath": "O*NET puts this in Job Zone 1-2: most hold a high school diploma (71 percent) with days to about a year of on-the-job training. BLS says some electricians enter an apprenticeship after working as a helper; apprenticeships run 4 to 5 years with about 2,000 paid on-the-job hours a year plus classroom, and most states license electricians (sources: O*NET page above; BLS Electricians page). Licensing applies to the journeyman, not the helper.",
+  "tasks": [
+    {
+      "task": "Strip insulation from wire ends and attach the wires to terminals.",
+      "importance": "86",
+      "electricalKnowledge": "Termination basics, torque and terminal ratings, only on circuits confirmed de-energized by the electrician",
+      "appSkills": [
+        "wiring-methods"
+      ]
+    },
+    {
+      "task": "Trace circuits and help find faults using test equipment.",
+      "importance": "80",
+      "electricalKnowledge": "Circuit reading, meter use under supervision, testing before touching",
+      "appSkills": []
+    },
+    {
+      "task": "Measure, cut and prepare wire and conduit to length for installation.",
+      "importance": "80",
+      "electricalKnowledge": "Measuring, deburring, conduit and conductor types, fill awareness",
+      "appSkills": [
+        "wiring-methods",
+        "conductor-sizing"
+      ]
+    },
+    {
+      "task": "Inspect connections and components for looseness or damage and report findings.",
+      "importance": "79",
+      "electricalKnowledge": "Recognising damaged insulation, loose terminals, overheating signs",
+      "appSkills": [
+        "equipment-installation",
+        "arc-fault-protection"
+      ]
+    },
+    {
+      "task": "Keep tools, equipment and supplies maintained and organised.",
+      "importance": "78",
+      "electricalKnowledge": "Tool inspection, damaged cord and tool removal from service",
+      "appSkills": []
+    },
+    {
+      "task": "Drill holes and thread pathways through structure so wiring can be run.",
+      "importance": "78",
+      "electricalKnowledge": "Safe drilling, avoiding hidden live conductors, fire-stopping awareness",
+      "appSkills": [
+        "wiring-methods"
+      ]
+    },
+    {
+      "task": "Clean and clear the work area and dispose of waste.",
+      "importance": "77",
+      "electricalKnowledge": "Housekeeping, keeping working space clear around equipment",
+      "appSkills": [
+        "working-space-access"
+      ]
+    },
+    {
+      "task": "Move, stage and store materials and equipment at the site.",
+      "importance": "",
+      "electricalKnowledge": "Safe lifting, stacking, keeping gear away from openings and aisles",
+      "appSkills": []
+    },
+    {
+      "task": "Assist installing and repairing conduit, boxes, fixtures and wiring under direction.",
+      "importance": "",
+      "electricalKnowledge": "Box and raceway mounting, support, fixture installation",
+      "appSkills": [
+        "wiring-methods",
+        "equipment-installation"
+      ]
+    },
+    {
+      "task": "Pull wire and cable through raceways, one person pushing and one pulling.",
+      "importance": "",
+      "electricalKnowledge": "Fish tape use, lubricant, fill limits, bend count",
+      "appSkills": [
+        "wiring-methods",
+        "conductor-sizing"
+      ]
+    },
+    {
+      "task": "Use ladders, lifts and scaffolds safely to reach work.",
+      "importance": "",
+      "electricalKnowledge": "Ladder setup, nonconductive rails near live gear, fall protection",
+      "appSkills": []
+    },
+    {
+      "task": "Wear protective equipment all shift and follow supervisor safety instructions.",
+      "importance": "91 percent wear protective equipment daily (work context)",
+      "electricalKnowledge": "PPE selection and condition, hazard recognition",
+      "appSkills": [
+        "shock-protection"
+      ]
+    },
+    {
+      "task": "Communicate with the electrician or foreman and ask before touching anything electrical.",
+      "importance": "79 (communication activity)",
+      "electricalKnowledge": "Qualified versus unqualified person roles, approach limits",
+      "appSkills": [
+        "shock-protection"
+      ]
+    }
+  ],
+  "procedures": [
+    {
+      "name": "Job-site electrical safety for a helper",
+      "purpose": "Keep an unqualified worker away from energized parts and in the habit of asking first.",
+      "whenUsed": "Every shift, and whenever a helper is near panels, exposed wiring, temporary power or overhead lines.",
+      "role": "Helper (unqualified person) under an electrician or foreman",
+      "steps": [
+        "Attend the pre-task briefing and learn which circuits and equipment nearby are live.",
+        "Put on required PPE and check it is in good, fitting condition.",
+        "Treat every conductor and terminal as live until the electrician says it is verified dead.",
+        "Never open, touch or work on energized equipment; ask the electrician first.",
+        "Keep the required distance from overhead lines and exposed energized parts.",
+        "Inspect cords, tools and temporary power and tag damaged items out of use.",
+        "Use GFCI-protected outlets or the site's tested grounding program for plug-in tools.",
+        "Stop and report any shock, burn smell, damaged insulation or unexpected energized part."
+      ],
+      "hazards": [
+        "Shock and burns from live parts",
+        "Arc flash and arc blast",
+        "Electrical fires from faulty equipment",
+        "Falls after a shock",
+        "Contact with overhead or buried lines"
+      ],
+      "controls": [
+        "Qualified-person-only rule for energized work",
+        "De-energize first",
+        "Approach distance for unqualified people",
+        "GFCI or assured grounding program",
+        "Warning signs and barriers",
+        "Employer-supplied PPE"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1910.333",
+          "what": "Live parts must be de-energized before work unless infeasible; unqualified workers stay at least 10 feet from lines up to 50 kV."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.416",
+          "what": "Workers may not work near energized circuits unless de-energized and grounded or guarded; warning signs and barriers required."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.404",
+          "what": "GFCIs on 120 V 15/20 A site outlets, or a written, tested assured grounding conductor program."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.95",
+          "what": "Employer provides PPE free, of safe design, properly fitting and kept in reliable condition."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.20",
+          "what": "Employer must train workers to recognise and avoid hazards and inspect sites, materials and equipment regularly."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.cdc.gov/niosh/electrical-safety/about/index.html",
+          "says": "Only qualified persons work electrical; unqualified workers keep 10 feet away, never work live, circuits are de-energized, locked and tested."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333",
+          "says": "De-energize before work; unqualified approach limits for overhead lines."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.416",
+          "says": "Determine where live circuits are, post signs, barricade, protect near energized circuits."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.404",
+          "says": "GFCI or assured equipment grounding program for site power and cords."
+        }
+      ],
+      "appSkills": [
+        "shock-protection",
+        "arc-fault-protection",
+        "special-locations"
+      ],
+      "appCoverage": "partial: shock-protection teaches why protection exists and what rules apply, but not helper behaviour, PPE choice, approach limits or asking first.",
+      "plannedSkills": [
+        "jobsite-safety"
+      ]
+    },
+    {
+      "name": "Assisting with lockout/tagout (what a helper may and may not do)",
+      "purpose": "Ensure equipment is de-energized and cannot restart before anyone works on it, with the helper in the correct supporting role.",
+      "whenUsed": "Before any work on or near equipment or circuits that could be energized or release stored energy.",
+      "role": "Authorized employee (usually the electrician) applies and removes; the helper is an affected employee or, if trained, a group-lockout participant with a personal lock",
+      "steps": [
+        "Electrician identifies every energy source and the hazards, and shares the plan.",
+        "Equipment is shut down by the normal method and notified people are told.",
+        "Each source is isolated at its disconnecting device.",
+        "Lock and tag go on every isolating device; a helper who is working puts a personal lock on a group device if their employer's program lets them.",
+        "Stored energy is released or blocked.",
+        "A qualified person verifies zero energy and tests with a meter, checking for backfeed.",
+        "Helper never removes another person's lock or tag and never restarts equipment.",
+        "Locks are removed only by the person who placed them after the area is clear and people are told."
+      ],
+      "hazards": [
+        "Unexpected energization",
+        "Backfeed and induced voltage",
+        "Stored energy",
+        "Removed or ignored tags"
+      ],
+      "controls": [
+        "Individual locks and tags",
+        "Group lockout with each worker's own lock",
+        "Verification test before work",
+        "Training split between authorized and affected employees"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1910.147",
+          "what": "Written energy control procedure: shut down, isolate, lock or tag, relieve stored energy, verify; authorized versus affected employee training."
+        },
+        {
+          "name": "OSHA 29 CFR 1910.333",
+          "what": "Where de-energized, apply locks and tags; a qualified person verifies by testing before work begins."
+        },
+        {
+          "name": "NFPA 70E Article 120",
+          "what": "Describes the electrically safe work condition process; copyrighted, not reproduced here (not opened)."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.147",
+          "says": "Defines the energy control steps, authorized and affected employees, lock versus tag, and group lockout."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333",
+          "says": "Lock and tag on each disconnect; qualified person tests circuits to confirm de-energized."
+        },
+        {
+          "source": "https://www.uti.edu/blog/electrical/first-year-electrical-training",
+          "says": "Lockout/tagout is among the first things first-year trainees learn."
+        }
+      ],
+      "appSkills": [
+        "disconnecting-means"
+      ],
+      "appCoverage": "none: disconnecting-means covers where and how disconnects must be provided, but the app has no lockout/tagout steps, verification or lock handling.",
+      "plannedSkills": [
+        "electrically-safe-work"
+      ]
+    },
+    {
+      "name": "Material handling and staging",
+      "purpose": "Move and store conduit, cable, boxes and equipment without injury or creating site hazards.",
+      "whenUsed": "At delivery, when staging for each run or room, and at end of shift.",
+      "role": "Helper, with foreman direction",
+      "steps": [
+        "Read the work plan to know what material goes where and in what order.",
+        "Check the route for aisles, openings, wet floors and overhead hazards.",
+        "Lift with legs, or use a cart or second person for long or heavy items such as conduit and spools.",
+        "Stack and block materials so they cannot slide, roll or fall; keep cylindrical items blocked.",
+        "Keep stored material away from floor openings and exterior edges.",
+        "Keep aisles and exits clear and separate incompatible materials.",
+        "Label and group materials by area or circuit for the electrician.",
+        "Return unused material to storage at end of shift."
+      ],
+      "hazards": [
+        "Strains and back injuries",
+        "Falling or rolling material",
+        "Trips",
+        "Struck-by from overhead lifting"
+      ],
+      "controls": [
+        "Safe stacking and blocking",
+        "Clear aisles",
+        "Setback from openings and edges",
+        "Mechanical aids or team lifts"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1926.250",
+          "what": "Materials must be secured against sliding or collapse; stored well back from openings; aisles kept clear."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.20",
+          "what": "General duty for regular site and material inspection and a safe workplace."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.250",
+          "says": "Stacking, blocking, setback from openings, passageways and housekeeping rules for construction storage."
+        },
+        {
+          "source": "https://www.onetonline.org/link/details/47-3013.00",
+          "says": "Helpers move materials and keep supplies and equipment organised."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: the app does not simulate lifting, staging or material storage.",
+      "plannedSkills": [
+        "jobsite-safety"
+      ]
+    },
+    {
+      "name": "Pulling wire and cable and running conduit under supervision",
+      "purpose": "Get conductors through finished raceways without damaging them, with the electrician in charge of what is installed.",
+      "whenUsed": "After raceways, boxes and fittings are installed and before termination.",
+      "role": "Helper pulling and feeding, electrician directing and terminating",
+      "steps": [
+        "Confirm with the electrician the conductor sizes, count and fill for the raceway.",
+        "Check the conduit run is complete, supported, cut and deburred, and clear of debris.",
+        "Feed a fish tape or pull line through by hand without forcing it.",
+        "Strip and bundle conductor ends and attach them to the tape or a pulling grip, tape smooth.",
+        "Apply pulling lubricant as the conductors enter; one person feeds while the other pulls.",
+        "Communicate during the pull and stop if it binds; back out and fix rather than forcing it.",
+        "Leave extra length at each box and label the conductors for the electrician.",
+        "Leave ends capped and do not terminate on energized circuits."
+      ],
+      "hazards": [
+        "Strain and pinched hands",
+        "Damaged insulation",
+        "Overfilled raceway",
+        "Hidden live circuits when drilling or cutting"
+      ],
+      "controls": [
+        "Fill limits from NEC Chapter 9",
+        "Deburring before pulling",
+        "Lubricant and pulling grips",
+        "Two-person communication",
+        "Circuits verified de-energized before any connections"
+      ],
+      "standards": [
+        {
+          "name": "NEC Article 300 and Chapter 9 Table 1",
+          "what": "General wiring method rules and conduit fill limits; copyrighted, described only, not copied."
+        },
+        {
+          "name": "NEC Article 358 (EMT) and 344 (RMC)",
+          "what": "Installation and support rules for those raceway types; not opened for this document."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.302",
+          "what": "Electric power tools used for drilling must be grounded or double insulated."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.ecmweb.com/content/article/20894365/the-basics-of-pulling-wire",
+          "says": "Fish tape method, lubricant, secure attachment, finish and deburr raceway first, one pushes one pulls."
+        },
+        {
+          "source": "https://www.onetonline.org/link/details/47-3013.00",
+          "says": "Helpers drill, thread, measure, cut and strip wire as core tasks."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.302",
+          "says": "Electric power tools must be double insulated or grounded."
+        }
+      ],
+      "appSkills": [
+        "wiring-methods",
+        "conductor-sizing"
+      ],
+      "appCoverage": "partial: wiring-methods and conductor-sizing cover rules the pulled conductors must meet, but the physical pulling and conduit work are not taught.",
+      "plannedSkills": []
+    },
+    {
+      "name": "Layout, measuring and marking",
+      "purpose": "Transfer plan locations onto the structure so boxes, conduit and equipment go in the right place.",
+      "whenUsed": "Before drilling, boxing and running raceway.",
+      "role": "Helper working from the electrician's marks or drawings",
+      "steps": [
+        "Get the plan or marked locations from the electrician and confirm which version is current.",
+        "Check the area for existing wiring or pipes before marking or drilling.",
+        "Measure from fixed reference points and mark box and run locations clearly.",
+        "Mark conduit cut lengths and double-check before cutting.",
+        "Have the electrician verify the layout before drilling or boxing.",
+        "Record changes and tell the electrician of conflicts."
+      ],
+      "hazards": [
+        "Drilling into hidden live conductors",
+        "Mis-measured runs and wasted material",
+        "Working from outdated drawings"
+      ],
+      "controls": [
+        "Electrician review of layout",
+        "Checking for hidden circuits",
+        "Current drawings",
+        "Measure twice"
+      ],
+      "standards": [
+        {
+          "name": "NEC Article 314",
+          "what": "Box installation and mounting height/location rules a layout must respect; not opened for this document."
+        },
+        {
+          "name": "NEC 110.26",
+          "what": "Working space clearances in front of equipment that layout must preserve; not opened for this document."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.onetonline.org/link/details/47-3013.00",
+          "says": "Measuring and cutting materials rated 80 importance; CAD and spreadsheet use also listed."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.416",
+          "says": "Employer must determine where energized circuits are in the work area before work begins."
+        }
+      ],
+      "appSkills": [
+        "working-space-access",
+        "equipment-installation"
+      ],
+      "appCoverage": "partial: working-space-access and equipment-installation teach clearances and mounting rules, not measuring, marking or plan reading.",
+      "plannedSkills": [
+        "plans-and-documentation"
+      ]
+    },
+    {
+      "name": "Using hand and power tools safely",
+      "purpose": "Use drills, cutters and hand tools without shock, cuts or kickback and keep tools in safe condition.",
+      "whenUsed": "Daily, for drilling, cutting, stripping and fastening.",
+      "role": "Helper; powder-actuated tools only if trained",
+      "steps": [
+        "Inspect each tool and cord before use and tag out damaged ones.",
+        "Use only double-insulated or grounded tools, on GFCI or tested power.",
+        "Wear eye and hearing protection and other required PPE.",
+        "Keep guards in place and use the right tool and bit for the material.",
+        "Secure the work and keep hands clear of the cutting path.",
+        "Never carry or lift a tool by its cord.",
+        "Do not use a powder-actuated tool unless trained; never leave one loaded and unattended.",
+        "Clean tools and return them to storage."
+      ],
+      "hazards": [
+        "Shock from damaged cords",
+        "Cuts and kickback",
+        "Flying fragments",
+        "Noise",
+        "Tool misuse by untrained users"
+      ],
+      "controls": [
+        "Pre-use inspection",
+        "GFCI or assured grounding program",
+        "Guards and PPE",
+        "Training for specialised tools"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1926.302",
+          "what": "Electric tools double-insulated or grounded; pneumatic and powder-actuated tools need specific safeguards and trained users."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.404",
+          "what": "GFCI or tested assured grounding for cords and plug-connected tools."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.20",
+          "what": "Unsafe equipment must be tagged or locked out of use; only qualified operators."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.302",
+          "says": "Rules for electric, pneumatic and powder-actuated hand tools."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.404",
+          "says": "Daily visual check and periodic continuity testing of cords and tools."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.20",
+          "says": "Non-compliant tools must be tagged or removed from use."
+        }
+      ],
+      "appSkills": [
+        "shock-protection"
+      ],
+      "appCoverage": "none: the app teaches code rules, not tool handling or inspection.",
+      "plannedSkills": [
+        "jobsite-safety"
+      ]
+    },
+    {
+      "name": "Ladder and fall safety",
+      "purpose": "Reach work at height without falling and without contacting energized equipment.",
+      "whenUsed": "Whenever work is above floor level, including ceilings, panels and roofs.",
+      "role": "Helper and electrician, with a competent person inspecting",
+      "steps": [
+        "Inspect the ladder for defects and remove it from service if damaged.",
+        "Choose nonconductive rails where energized equipment could be touched.",
+        "Set a non-self-supporting ladder at about one-quarter its working length from the base.",
+        "Extend the top 3 feet above the landing or secure it at the top.",
+        "Face the ladder and keep a hand on it; never carry loads that unbalance you.",
+        "Do not stand on the top step of a stepladder.",
+        "Use guardrails, covers or personal fall arrest at 6 feet or more at edges and holes.",
+        "Use stairways with railings as required."
+      ],
+      "hazards": [
+        "Falls",
+        "Ladder contact with energized parts",
+        "Overloading",
+        "Dropped tools"
+      ],
+      "controls": [
+        "Ladder inspection",
+        "Nonconductive rails",
+        "Correct angle and extension",
+        "Fall protection above 6 feet",
+        "Covers on holes"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1926.1053",
+          "what": "Ladder angle, 3-foot extension, nonconductive rails near live gear, inspection, no top-step use."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.501",
+          "what": "Fall protection required at unprotected edges and holes at 6 feet or more."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.1052",
+          "what": "Stair angle, landings and rails for stairways on construction sites."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1053",
+          "says": "Setup angle, extension above landing, nonconductive rails, inspection and load limits."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.501",
+          "says": "Six-foot trigger and hole protection duties."
+        },
+        {
+          "source": "https://www.onetonline.org/link/details/47-3013.00",
+          "says": "42 percent of helpers climb daily."
+        }
+      ],
+      "appSkills": [],
+      "appCoverage": "none: no height, ladder or fall-protection content in the app.",
+      "plannedSkills": [
+        "jobsite-safety"
+      ]
+    },
+    {
+      "name": "Cleaning up and securing the site",
+      "purpose": "Leave the area safe, free of trip and fire hazards, with energized equipment closed up and covered.",
+      "whenUsed": "End of shift and end of each task.",
+      "role": "Helper, checked by electrician or foreman",
+      "steps": [
+        "Collect scrap, cut-offs and packaging and sort for disposal.",
+        "Clear aisles and working space around panels and equipment.",
+        "Return tools to storage and inspect them.",
+        "Cap or protect open conductor ends and boxes, per the electrician.",
+        "Close panels and covers; keep openings guarded or covered.",
+        "Barricade and sign any exposed energized equipment as directed.",
+        "Report damaged materials or hazards to the electrician."
+      ],
+      "hazards": [
+        "Trips",
+        "Fire from debris",
+        "Exposed live parts left open",
+        "Lost tools"
+      ],
+      "controls": [
+        "Housekeeping routine",
+        "Covers and barriers",
+        "Warning signs",
+        "End-of-shift walkthrough"
+      ],
+      "standards": [
+        {
+          "name": "OSHA 29 CFR 1926.250",
+          "what": "Storage areas kept free of trip, fire and pest hazards."
+        },
+        {
+          "name": "OSHA 29 CFR 1926.416",
+          "what": "Barriers keep electrical work areas from becoming passageways while parts are exposed."
+        }
+      ],
+      "evidence": [
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.250",
+          "says": "Housekeeping duties for storage and passageways."
+        },
+        {
+          "source": "https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.416",
+          "says": "Barriers and signs around exposed energized equipment."
+        },
+        {
+          "source": "https://www.onetonline.org/link/details/47-3013.00",
+          "says": "Cleaning the work area is a core helper task (77)."
+        }
+      ],
+      "appSkills": [
+        "working-space-access"
+      ],
+      "appCoverage": "none: working-space-access covers required clearances, but the app does not teach cleanup or securing a site.",
+      "plannedSkills": [
+        "jobsite-safety"
+      ]
+    }
+  ],
+  "standardsAndCodes": [
+    {
+      "name": "OSHA 29 CFR 1926 Subpart K (electrical, construction)",
+      "role": "Governs electrical safety on construction sites a helper works on.",
+      "nec": "Parallels NEC for temporary wiring (Article 590)"
+    },
+    {
+      "name": "OSHA 29 CFR 1910.147 and 1910.333",
+      "role": "Lockout/tagout and safe work practices; helper works under these as an unqualified or affected person.",
+      "nec": ""
+    },
+    {
+      "name": "OSHA 29 CFR 1926 Subparts D, E, L, M, N, X",
+      "role": "Housekeeping, PPE, scaffolds, fall protection, material handling, ladders.",
+      "nec": ""
+    },
+    {
+      "name": "NFPA 70E",
+      "role": "Electrical safe work practices; helpers are trained to know their limits (not opened).",
+      "nec": ""
+    },
+    {
+      "name": "NEC (NFPA 70)",
+      "role": "Installation rules the electrician applies; helper needs awareness of fill, support, box and working space.",
+      "nec": "Articles 110, 300, 314, 344, 358, Chapter 9"
+    },
+    {
+      "name": "State and local apprenticeship and licensing rules",
+      "role": "Set what a helper or unlicensed worker may do and under what supervision ratio.",
+      "nec": ""
+    }
+  ],
+  "outsideNec": [
+    "Site safety rules (ladders, fall protection, tools, material storage) are OSHA matters, not NEC.",
+    "Lockout/tagout and live-work limits are OSHA and NFPA 70E, not NEC.",
+    "Supervision ratios and what a helper may legally do are set by state or local licensing, not the NEC."
+  ],
+  "gapsForTheApp": [
+    "Lockout/tagout practice: a scenario type with verifying zero energy, locks, tags and group lock, including what a helper may not do.",
+    "PPE and hazard recognition: a pre-job walkthrough scenario where the learner spots live hazards and chooses PPE.",
+    "Meter use and testing before touching: voltage tester and multimeter simulation, not currently taught.",
+    "Ladder and fall safety: setup, angle, inspection and nonconductive rails, with a 3D height scenario.",
+    "Material handling and site housekeeping: a staging and cleanup scenario that checks hazards.",
+    "Wire pulling and conduit work: physical process (fish tape, lubricant, fill) as a hands-on task.",
+    "Layout and plan reading: measuring, marking and reading drawings.",
+    "Tool safety and cord inspection, including GFCI and assured grounding."
+  ],
+  "doubts": [
+    "BLS has no page opened for helpers specifically; pay, workers and growth shown are for electricians (47-2111).",
+    "O*NET importance values are given only for the tasks shown in the fetched summary; others left blank.",
+    "Layout, measuring and marking is supported by O*NET and OSHA 1926.416 only, with no dedicated layout source opened; the NEC 314 and 110.26 citations are from general knowledge, not opened pages.",
+    "NFPA 70E Article 120, NEC Articles 344, 358 and 314 were not opened; they are cited by name only.",
+    "Whether a helper may apply a personal lock in group lockout depends on the employer's written program; the OSHA page describes group lockout generally.",
+    "The Mass.gov apprenticeship page returned 403 and was not read; apprenticeship details rely on BLS.",
+    "First-year learning content rests on a single training-school page (UTI) plus search summaries, which are not opened sources.",
+    "Fetched pages were summarised by a tool; exact regulation wording was not independently verified."
+  ]
+}
