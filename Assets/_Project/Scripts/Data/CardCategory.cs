@@ -11,6 +11,9 @@ namespace NECInspector.Data
         AFCIProtection,
         LoadCalculation,
         PanelDesign,
-        SpecialLocations
+        SpecialLocations,
+        WorkingSpace,
+        DisconnectingMeans,
+        Marking
     }
 }

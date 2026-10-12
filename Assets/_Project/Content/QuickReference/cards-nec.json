@@ -200,6 +200,108 @@
         "derate"
       ],
       "minimumDifficulty": "Standard"
+    },
+    {
+      "cardId": "QRC-WORKSPACE-001",
+      "profileId": "nec",
+      "title": "Working Space and Access",
+      "category": "WorkingSpace",
+      "summary": "Keep clear, usable space around panels and other equipment that is worked on live. The space in front is as deep as the code's table gives, at least 30 inches wide (or as wide as the equipment if that is more), and clear from the floor up to 6-1/2 ft or the top of the equipment if that is taller. The space above the panel, equal to its width and depth, is reserved for the electrical installation and holds no pipes or ducts. Breakers and switches must be within reach: the grip of the handle at its top position is no higher than 6 ft 7 in.",
+      "keyRule": "Keep the space in front of and above a panel clear, wide enough and high enough to work in, and keep the handles within reach.",
+      "codeReferences": [
+        "110.26(A)(1)",
+        "110.26(A)(2)",
+        "110.26(A)(3)",
+        "110.26(E)(1)(a)",
+        "240.24(A)"
+      ],
+      "keywords": [
+        "working space",
+        "clearance",
+        "panel",
+        "access",
+        "clear",
+        "height",
+        "reach"
+      ],
+      "minimumDifficulty": "Beginner"
+    },
+    {
+      "cardId": "QRC-DISCONNECT-001",
+      "profileId": "nec",
+      "title": "Disconnecting Means",
+      "category": "DisconnectingMeans",
+      "summary": "Every supply needs a way to cut it off. The service disconnect is readily accessible, outside the building or inside near where the service conductors enter, and its rating is at least the calculated load. A service normally has one disconnect; up to six are permitted for each service. A building supplied by a feeder or branch circuit needs a means to disconnect all its ungrounded conductors. A fixed appliance over 300 VA may use its branch-circuit breaker as its disconnect only if the breaker is in sight of the appliance or can be locked open.",
+      "keyRule": "Know where each disconnect must be, how many are allowed, and what it must be rated for.",
+      "codeReferences": [
+        "230.70(A)",
+        "230.71(B)",
+        "230.79",
+        "225.31",
+        "422.31(B)"
+      ],
+      "keywords": [
+        "disconnect",
+        "service",
+        "switch",
+        "lock",
+        "in sight",
+        "rating",
+        "feeder"
+      ],
+      "minimumDifficulty": "Standard"
+    },
+    {
+      "cardId": "QRC-MARKING-001",
+      "profileId": "nec",
+      "title": "Identification and Marking",
+      "category": "Marking",
+      "summary": "Marking tells the next person what they are touching. Every circuit, and every change to one, is labelled with its specific purpose in enough detail to tell it from the others; a label may not depend on who lives there. Each disconnecting means is marked with its purpose unless its place makes that obvious, and the service disconnect is marked as such. Grounded conductors of 6 AWG or smaller are white or gray (or striped), and equipment grounding conductors are green or green with a yellow stripe, which is never used for a circuit conductor. A switch or breaker shows clearly whether it is on or off.",
+      "keyRule": "Label circuits and disconnects clearly, and use the right insulation colors for grounded and grounding conductors.",
+      "codeReferences": [
+        "408.4",
+        "408.4(A)",
+        "110.22(A)",
+        "230.70(B)",
+        "200.6",
+        "250.119(A)",
+        "404.7"
+      ],
+      "keywords": [
+        "label",
+        "directory",
+        "marking",
+        "white",
+        "green",
+        "identify",
+        "circuit"
+      ],
+      "minimumDifficulty": "Beginner"
+    },
+    {
+      "cardId": "QRC-WETDAMP-001",
+      "profileId": "nec",
+      "title": "Damp and Wet Locations",
+      "category": "SpecialLocations",
+      "summary": "Water changes what equipment is allowed. A receptacle outdoors under cover, or in another damp location, needs an enclosure that is weatherproof when its covers are closed. In a wet location the enclosure stays weatherproof with or without a plug in it, which in practice means an in-use cover. Luminaires in damp or wet locations are mounted so water cannot get into or collect in their wiring compartments or lampholders. Around a pool, other receptacles must be at least 6 ft from the inside wall, and the pool's conductive parts are bonded together with solid copper no smaller than 8 AWG.",
+      "keyRule": "Match the enclosure to how wet the place is, and keep receptacles and bonding right around pools.",
+      "codeReferences": [
+        "406.9(A)",
+        "406.9(B)",
+        "410.10(A)",
+        "680.22(A)(3)",
+        "680.26"
+      ],
+      "keywords": [
+        "wet",
+        "damp",
+        "weatherproof",
+        "in-use cover",
+        "pool",
+        "outdoor",
+        "bonding"
+      ],
+      "minimumDifficulty": "Standard"
     }
   ]
 }
