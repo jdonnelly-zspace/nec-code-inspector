@@ -302,6 +302,111 @@
         "bonding"
       ],
       "minimumDifficulty": "Standard"
+    },
+    {
+      "cardId": "QRC-OVERCURRENT-001",
+      "profileId": "nec",
+      "title": "Overcurrent Protection",
+      "category": "Overcurrent",
+      "summary": "A breaker or fuse protects the conductor, so its rating must match the conductor's ampacity. Breakers and fixed-trip fuses come in standard ratings, and where the ampacity falls between two, the next size up may be used, but not for a circuit with more than one receptacle for portable cord-and-plug loads. Small copper conductors have set limits: 14 AWG 15 A, 12 AWG 20 A, 10 AWG 30 A. No overcurrent device goes in series with an intentionally grounded conductor unless it opens every conductor of the circuit together. A panelboard is protected by a device rated no higher than the panelboard itself.",
+      "keyRule": "Size the breaker to the conductor, use standard ratings, and never put a device in the grounded conductor alone.",
+      "codeReferences": [
+        "240.4",
+        "240.4(B)",
+        "240.4(D)",
+        "240.6",
+        "240.22",
+        "408.36"
+      ],
+      "keywords": [
+        "breaker",
+        "fuse",
+        "ampacity",
+        "standard rating",
+        "small conductor",
+        "overcurrent",
+        "protection"
+      ],
+      "minimumDifficulty": "Beginner"
+    },
+    {
+      "cardId": "QRC-TERMINATION-001",
+      "profileId": "nec",
+      "title": "Terminations and Listed Equipment",
+      "category": "General",
+      "summary": "Equipment is installed and used the way its listing or labeling says, with good workmanship. Connectors and lugs must suit the conductor material. Conductors are terminated securely, without nicking or crushing them. Choose the conductor's temperature rating so it does not exceed the lowest rating among the connected terminations, conductors or devices. Internal parts such as busbars, terminals and insulators must not be damaged or contaminated by paint, plaster, cleaners or other foreign material.",
+      "keyRule": "Follow the listing, match the connector to the metal, terminate carefully, and keep to the lowest temperature rating.",
+      "codeReferences": [
+        "110.3(B)",
+        "110.12",
+        "110.12(B)",
+        "110.14",
+        "110.14(A)",
+        "110.14(B)"
+      ],
+      "keywords": [
+        "listed",
+        "termination",
+        "lug",
+        "connector",
+        "temperature rating",
+        "workmanship",
+        "terminal"
+      ],
+      "minimumDifficulty": "Standard"
+    },
+    {
+      "cardId": "QRC-BOXES-001",
+      "profileId": "nec",
+      "title": "Boxes and Cable Installation",
+      "category": "General",
+      "summary": "Boxes and conduit bodies must be big enough for every conductor inside, and installed so the wiring is accessible. In a noncombustible finish the front edge of a flush box must not sit more than 1/4 in. behind the surface; in a combustible finish it must be flush or project. At each outlet leave at least 6 in. of free conductor, and at least 3 in. outside an opening under 8 in. Cable through holes in framing stays at least 1-1/4 in. from the wood's edge, or is shielded. NM cable bends need a radius of at least five times the cable diameter, and the cable is protected where it can be damaged.",
+      "keyRule": "Size and place boxes for the conductors and the finish, leave working length, and protect cable at framing and bends.",
+      "codeReferences": [
+        "314.16",
+        "314.20",
+        "314.29(A)",
+        "300.14",
+        "300.4(A)",
+        "334.24",
+        "334.15(B)"
+      ],
+      "keywords": [
+        "box",
+        "fill",
+        "free conductor",
+        "bend radius",
+        "framing",
+        "protect",
+        "cable"
+      ],
+      "minimumDifficulty": "Standard"
+    },
+    {
+      "cardId": "QRC-ENCLOSURE-001",
+      "profileId": "nec",
+      "title": "Panel Enclosures and Openings",
+      "category": "General",
+      "summary": "A panelboard goes in an enclosure made for it and is dead front, so no live parts can be touched from the operating side. Each cable entering is secured to the enclosure. Unused openings, including those meant for breakers, are closed so the protection is close to that of the enclosure wall. Each grounded conductor ends in its own terminal unless the terminal is marked for more than one, and a panelboard must prevent more overcurrent devices being installed than it is rated and listed for.",
+      "keyRule": "Keep the enclosure closed and dead front, secure each cable, and keep terminations and the device count within the panelboard's listing.",
+      "codeReferences": [
+        "408.38",
+        "312.5(C)",
+        "110.12(A)",
+        "408.7",
+        "408.41",
+        "408.54"
+      ],
+      "keywords": [
+        "panel",
+        "enclosure",
+        "dead front",
+        "knockout",
+        "opening",
+        "terminal",
+        "closure"
+      ],
+      "minimumDifficulty": "Standard"
     }
   ]
 }
