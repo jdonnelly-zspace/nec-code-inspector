@@ -178,6 +178,19 @@ namespace NECInspector.LogicTests
                     }
                 }
 
+                // The design can be completed: the main breaker covers the breakers' load, and the load can be split between the two sides
+                float totalVA = 0f;
+                float left = 0f, right = 0f;
+                foreach (var c in design.requiredCircuits.Where(x => x.isRequired).OrderByDescending(x => x.ampsRequired * (x.poleCount == 2 ? tables.doublePoleVoltage : tables.singlePoleVoltage)))
+                {
+                    float va = c.ampsRequired * (c.poleCount == 2 ? tables.doublePoleVoltage : tables.singlePoleVoltage);
+                    totalVA += va;
+                    if (c.poleCount == 2) { left += va / 2; right += va / 2; }
+                    else if (left <= right) left += va; else right += va;
+                }
+                t.IsTrue(design.totalAmps >= totalVA / tables.serviceVoltage, $"{design.assetName}: the main breaker ({design.totalAmps} A) covers the required breakers ({totalVA / tables.serviceVoltage:N0} A)");
+                t.IsTrue(Math.Abs(left - right) / totalVA <= tables.loadBalanceMaxImbalance, $"{design.assetName}: the required breakers can be balanced between the two sides");
+
                 // The expected load is the dwelling service calculation for the design's area (NEC defaults here)
                 if (profile.Id == CodeProfileIds.Nec)
                 {
