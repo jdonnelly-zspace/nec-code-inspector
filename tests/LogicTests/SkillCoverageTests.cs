@@ -33,7 +33,7 @@ namespace NECInspector.LogicTests
                 var without = new List<string>();
                 var foundationOnly = new List<string>();
 
-                foreach (string skill in ConceptIds.All)
+                foreach (string skill in ConceptIds.CodeSkills)
                 {
                     if (!tiersBySkill.TryGetValue(skill, out var tiers)) without.Add(skill);
                     else if (tiers.All(x => x < (int)SkillTier.Practitioner)) foundationOnly.Add(skill);

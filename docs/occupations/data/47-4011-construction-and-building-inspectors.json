@@ -174,13 +174,12 @@
         "load-calculation",
         "conductor-sizing",
         "overcurrent-protection",
-        "earthing-bonding"
-      ],
-      "appCoverage": "partial: the sandbox practices panel design and load calculation, but the app does not teach reading drawings, one-line diagrams, fault-current review or plan examiner workflow.",
-      "plannedSkills": [
+        "earthing-bonding",
         "plans-and-documentation",
         "code-administration"
-      ]
+      ],
+      "appCoverage": "partial: the sandbox practices panel design and load calculation, but the app does not teach reading drawings, one-line diagrams, fault-current review or plan examiner workflow.",
+      "plannedSkills": []
     },
     {
       "name": "New dwelling electrical inspection sequence",
@@ -231,12 +230,11 @@
         "wiring-methods",
         "equipment-installation",
         "earthing-bonding",
-        "branch-circuit-requirements"
+        "branch-circuit-requirements",
+        "code-administration"
       ],
       "appCoverage": "partial: students find violations in finished 3D buildings, but the app does not stage inspections (slab, rough-in, final) or teach what is hidden at each stage.",
-      "plannedSkills": [
-        "code-administration"
-      ]
+      "plannedSkills": []
     },
     {
       "name": "Service and panel inspection, including grounding and bonding",
@@ -343,12 +341,11 @@
       "appSkills": [
         "shock-protection",
         "arc-fault-protection",
-        "branch-circuit-requirements"
+        "branch-circuit-requirements",
+        "testing-and-measurement"
       ],
       "appCoverage": "partial: the app teaches where GFCI and AFCI are required and spotting missing ones, but not testing with a tester or button, or finding miswired devices.",
-      "plannedSkills": [
-        "testing-and-measurement"
-      ]
+      "plannedSkills": []
     },
     {
       "name": "Writing a correction notice, re-inspection, and approving or rejecting work",
@@ -400,13 +397,12 @@
         }
       ],
       "appSkills": [
-        "identification-marking"
-      ],
-      "appCoverage": "partial: students cite the rule for a violation, which is the core of a correction item, but there is no notice writing, re-inspection loop, approval decision or record keeping.",
-      "plannedSkills": [
+        "identification-marking",
         "plans-and-documentation",
         "code-administration"
-      ]
+      ],
+      "appCoverage": "partial: students cite the rule for a violation, which is the core of a correction item, but there is no notice writing, re-inspection loop, approval decision or record keeping.",
+      "plannedSkills": []
     },
     {
       "name": "Inspector site safety and electrically safe work condition",
@@ -468,12 +464,12 @@
         }
       ],
       "appSkills": [
-        "shock-protection"
-      ],
-      "appCoverage": "none: the app teaches shock protection rules for installations, not lockout/tagout, testing before touching, PPE or safe work practice for the inspector.",
-      "plannedSkills": [
+        "shock-protection",
         "electrically-safe-work"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches shock protection rules for installations, not lockout/tagout, testing before touching, PPE or safe work practice for the inspector.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app teaches shock protection rules for installations, not lockout/tagout, testing before touching, PPE or safe work practice for the inspector."
     },
     {
       "name": "Checking code edition and local amendments",
@@ -515,11 +511,12 @@
           "says": "Reports states adopting different editions, with Wisconsin adding extra requirements; some states already on the 2026 edition."
         }
       ],
-      "appSkills": [],
-      "appCoverage": "none: the app uses one code edition per code profile and does not teach how editions and local amendments differ or how an inspector finds them.",
-      "plannedSkills": [
+      "appSkills": [
         "code-administration"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app uses one code edition per code profile and does not teach how editions and local amendments differ or how an inspector finds them.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app uses one code edition per code profile and does not teach how editions and local amendments differ or how an inspector finds them."
     }
   ],
   "standardsAndCodes": [

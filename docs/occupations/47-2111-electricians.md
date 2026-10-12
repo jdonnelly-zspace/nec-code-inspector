@@ -76,11 +76,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://iaeimagazine.org/issue/may-june-2020/electrically-safe-work-condition/ (Explains the steps, phase-to-phase and phase-to-ground testing and why only qualified persons do it.)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.417 (Construction rule that circuits being worked on must be tagged at all energizing points.)
 
-**App coverage today (none):** none: the app teaches where disconnects are required and shock protection rules, but has no lockout/tagout or test-before-touch steps.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches where disconnects are required and shock protection rules, but has no lockout/tagout or test-before-touch steps.)
 
-**Skills the app teaches that this procedure uses:** shock-protection, disconnecting-means
+**Skills the app teaches that this procedure uses:** shock-protection, disconnecting-means, electrically-safe-work, testing-and-measurement
 
-**Skills still to build for it:** electrically-safe-work, testing-and-measurement
+**Skills still to build for it:** none
 
 ### P2. Rough-in and finish wiring of a residential branch circuit
 
@@ -201,11 +201,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.getresq.com/nora/nora-blog/how-to-troubleshoot-electrical-problems (Dead outlet and tripping breaker steps, live-dead-live check and warning signs to stop and call a pro.)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333 (Controls on testing and working live parts during troubleshooting.)
 
-**App coverage today (none):** none: the app teaches the protection rules but has no fault-finding, meter use or troubleshooting scenarios.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches the protection rules but has no fault-finding, meter use or troubleshooting scenarios.)
 
-**Skills the app teaches that this procedure uses:** overcurrent-protection, arc-fault-protection, shock-protection
+**Skills the app teaches that this procedure uses:** overcurrent-protection, arc-fault-protection, shock-protection, troubleshooting, testing-and-measurement
 
-**Skills still to build for it:** troubleshooting, testing-and-measurement
+**Skills still to build for it:** none
 
 ### P5. Testing and verifying a finished installation (continuity, polarity, GFCI and AFCI)
 
@@ -243,11 +243,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.familyhandyman.com/project/how-to-test-gfci-outlets/ (Step-by-step GFCI test by button or tester; two of three tester lights for correct wiring.)
 - https://www.getresq.com/nora/nora-blog/how-to-troubleshoot-electrical-problems (Describes the live-dead-live voltage check.)
 
-**App coverage today (none):** none: the app teaches which circuits need GFCI/AFCI, but students never test with a meter or tester.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches which circuits need GFCI/AFCI, but students never test with a meter or tester.)
 
-**Skills the app teaches that this procedure uses:** shock-protection, arc-fault-protection, earthing-bonding
+**Skills the app teaches that this procedure uses:** shock-protection, arc-fault-protection, earthing-bonding, testing-and-measurement
 
-**Skills still to build for it:** testing-and-measurement
+**Skills still to build for it:** none
 
 ### P6. Conduit and cable installation
 

@@ -187,12 +187,11 @@
       "appSkills": [
         "shock-protection",
         "arc-fault-protection",
-        "special-locations"
+        "special-locations",
+        "jobsite-safety"
       ],
       "appCoverage": "partial: shock-protection teaches why protection exists and what rules apply, but not helper behaviour, PPE choice, approach limits or asking first.",
-      "plannedSkills": [
-        "jobsite-safety"
-      ]
+      "plannedSkills": []
     },
     {
       "name": "Assisting with lockout/tagout (what a helper may and may not do)",
@@ -250,12 +249,12 @@
         }
       ],
       "appSkills": [
-        "disconnecting-means"
-      ],
-      "appCoverage": "none: disconnecting-means covers where and how disconnects must be provided, but the app has no lockout/tagout steps, verification or lock handling.",
-      "plannedSkills": [
+        "disconnecting-means",
         "electrically-safe-work"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: disconnecting-means covers where and how disconnects must be provided, but the app has no lockout/tagout steps, verification or lock handling.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: disconnecting-means covers where and how disconnects must be provided, but the app has no lockout/tagout steps, verification or lock handling."
     },
     {
       "name": "Material handling and staging",
@@ -304,11 +303,12 @@
           "says": "Helpers move materials and keep supplies and equipment organised."
         }
       ],
-      "appSkills": [],
-      "appCoverage": "none: the app does not simulate lifting, staging or material storage.",
-      "plannedSkills": [
+      "appSkills": [
         "jobsite-safety"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app does not simulate lifting, staging or material storage.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app does not simulate lifting, staging or material storage."
     },
     {
       "name": "Pulling wire and cable and running conduit under supervision",
@@ -419,12 +419,11 @@
       ],
       "appSkills": [
         "working-space-access",
-        "equipment-installation"
+        "equipment-installation",
+        "plans-and-documentation"
       ],
       "appCoverage": "partial: working-space-access and equipment-installation teach clearances and mounting rules, not measuring, marking or plan reading.",
-      "plannedSkills": [
-        "plans-and-documentation"
-      ]
+      "plannedSkills": []
     },
     {
       "name": "Using hand and power tools safely",
@@ -483,12 +482,12 @@
         }
       ],
       "appSkills": [
-        "shock-protection"
-      ],
-      "appCoverage": "none: the app teaches code rules, not tool handling or inspection.",
-      "plannedSkills": [
+        "shock-protection",
         "jobsite-safety"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches code rules, not tool handling or inspection.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app teaches code rules, not tool handling or inspection."
     },
     {
       "name": "Ladder and fall safety",
@@ -546,11 +545,12 @@
           "says": "42 percent of helpers climb daily."
         }
       ],
-      "appSkills": [],
-      "appCoverage": "none: no height, ladder or fall-protection content in the app.",
-      "plannedSkills": [
+      "appSkills": [
         "jobsite-safety"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: no height, ladder or fall-protection content in the app.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: no height, ladder or fall-protection content in the app."
     },
     {
       "name": "Cleaning up and securing the site",
@@ -603,12 +603,12 @@
         }
       ],
       "appSkills": [
-        "working-space-access"
-      ],
-      "appCoverage": "none: working-space-access covers required clearances, but the app does not teach cleanup or securing a site.",
-      "plannedSkills": [
+        "working-space-access",
         "jobsite-safety"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: working-space-access covers required clearances, but the app does not teach cleanup or securing a site.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: working-space-access covers required clearances, but the app does not teach cleanup or securing a site."
     }
   ],
   "standardsAndCodes": [

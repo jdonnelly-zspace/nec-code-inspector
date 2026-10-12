@@ -309,6 +309,178 @@
         "Connecting a generator in a way that can back-feed the building"
       ],
       "reviewStatus": "draft"
+    },
+    {
+      "skillId": "electrically-safe-work",
+      "title": "Electrically safe work",
+      "summary": "Making a circuit or piece of equipment safe to work on, and proving it is dead, before anyone touches it.",
+      "whatToLookFor": [
+        "Every source of power to the equipment, including a second feed or a generator that could send power back",
+        "The disconnect or {term:breaker} that isolates it, and whether it can be locked and tagged",
+        "A personal lock and tag on each isolation point, removed only by the person who put it there",
+        "A meter that is proved on a known live source before and after it tests the circuit",
+        "Stored energy that can remain after the power is off, such as a capacitor or a spring"
+      ],
+      "whyItMatters": "A wrong belief that a circuit is dead is behind many serious electrical injuries, and proving it dead is the step that stops them.",
+      "tiers": {
+        "foundation": "Name the steps of making a circuit safe and spot work being done on live parts without them.",
+        "practitioner": "Carry out the sequence in order: identify the sources, isolate, lock and tag, test with a proved meter, then work.",
+        "authority": "Plan the procedure for complex equipment: several sources, group lockout, stored energy, and when work on live parts is justified and what protection it needs."
+      },
+      "commonMistakes": [
+        "Trusting a switch position or a label instead of testing",
+        "Testing with a meter that was not first proved on a known live source",
+        "Removing a lock that belongs to someone else",
+        "Forgetting that a second source can still feed the equipment"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "testing-and-measurement",
+      "title": "Testing and measurement",
+      "summary": "Choosing and using a meter or tester correctly and reading what it shows, so you know what is really happening in a circuit.",
+      "whatToLookFor": [
+        "Which tester suits the job: a voltage tester, a continuity tester, a {term:receptacle} tester, an insulation tester",
+        "The meter's rating, its leads and their condition",
+        "The test points: between which conductors you are measuring",
+        "A reading that does not match what you expect, and what that says about the circuit",
+        "The test button on a {term:shock-protection-device} or {term:arc-fault-device}, which proves that it trips"
+      ],
+      "whyItMatters": "A measurement is only as good as the instrument and the way it is used, and a wrong choice can give a false reading or put the person at risk.",
+      "tiers": {
+        "foundation": "Name the common testers and what each is for.",
+        "practitioner": "Choose the right tester, connect it correctly and read the result for a finished circuit.",
+        "authority": "Design a test plan for an installation, interpret unexpected readings, and know a tester's limits."
+      },
+      "commonMistakes": [
+        "Using a meter set to the wrong function for the job",
+        "Trusting a tester that was not itself checked",
+        "Measuring continuity on a circuit that is still live",
+        "Reading a result without asking whether it makes sense"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "troubleshooting",
+      "title": "Troubleshooting",
+      "summary": "Finding the cause of a dead or tripping circuit by narrowing it down step by step instead of guessing.",
+      "whatToLookFor": [
+        "What changed: new loads, recent work, damage or weather",
+        "Whether the problem is the supply, the protection device or the load",
+        "Splitting the circuit in half to see which half holds the fault",
+        "A device that trips again when it is reset, which means the fault is still there",
+        "Signs of heat or damage at connections"
+      ],
+      "whyItMatters": "Guessing wastes time and can leave a dangerous fault in place; a method finds the cause safely and fixes it.",
+      "tiers": {
+        "foundation": "Describe the symptoms and say which part of the circuit could be at fault.",
+        "practitioner": "Follow a method to isolate a fault in a branch circuit, using the safe-work and testing steps.",
+        "authority": "Handle intermittent and multiple faults, and decide when a problem is beyond the circuit and needs a different expert."
+      },
+      "commonMistakes": [
+        "Resetting a tripped device again and again",
+        "Replacing parts before finding the cause",
+        "Working on the circuit before making it safe",
+        "Stopping at the first fault found without checking for a second"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "plans-and-documentation",
+      "title": "Plans and documentation",
+      "summary": "Reading drawings, schedules and diagrams, laying out work from them, and recording what was found or done.",
+      "whatToLookFor": [
+        "The symbols and the legend on a drawing",
+        "A {term:panel} schedule that matches what is installed",
+        "Dimensions, and where equipment must go",
+        "Notes and revisions: is this the latest version?",
+        "Records: inspection notes, test results and correction notices"
+      ],
+      "whyItMatters": "Many mistakes in the field start with a drawing that was misread or a finding that was never written down.",
+      "tiers": {
+        "foundation": "Read the symbols and find a circuit or device on a simple drawing.",
+        "practitioner": "Lay out work from drawings and keep accurate records of what was installed, tested or found.",
+        "authority": "Review plans and schedules for completeness and conflicts, and write findings that others can act on."
+      },
+      "commonMistakes": [
+        "Working from an old version of a drawing",
+        "Assuming a schedule is right without checking the installation",
+        "Writing a finding without the place, the problem and what must change"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "jobsite-safety",
+      "title": "Jobsite safety",
+      "summary": "The general hazards of the job apart from electricity: ladders and falls, tools and cords, materials, enclosed spaces and a tidy site.",
+      "whatToLookFor": [
+        "A ladder set up on firm ground at a safe angle, with non-conductive rails near electrical work",
+        "Tools and cords in good condition, with ground-fault protection where it is needed",
+        "Heights: edges, roofs and lifts, and the fall protection in use",
+        "Enclosed spaces and trenches, and how people get out",
+        "Materials stored and handled so that no one trips or is struck",
+        "A pre-job briefing that names the hazards and who is responsible"
+      ],
+      "whyItMatters": "Falls and tool injuries are common on electrical jobs, and the person who has just made the circuit safe can still be hurt by the ladder.",
+      "tiers": {
+        "foundation": "Spot the common hazards on a jobsite and say what protection is needed.",
+        "practitioner": "Set up and inspect a ladder and tools, choose protection for heights and keep the site clear.",
+        "authority": "Plan a job's hazards and controls, brief the crew and stop work when conditions change."
+      },
+      "commonMistakes": [
+        "Using a metal ladder near live parts",
+        "Skipping the pre-job briefing because the job is small",
+        "Leaving cords and materials where people walk"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "code-administration",
+      "title": "Code administration",
+      "summary": "How the code is adopted and enforced: which edition applies, the stages of a permit and inspection, and what an inspector does with what they find.",
+      "whatToLookFor": [
+        "Which edition and which local changes apply where the work is",
+        "The permit and the inspection stages: work must be seen before it is covered",
+        "What an inspector checks at each stage",
+        "How a correction is recorded and how work is approved or rejected",
+        "Who has the authority to decide a doubtful case"
+      ],
+      "whyItMatters": "The same installation can be right in one place and wrong in another because the rules adopted differ, and knowing the process avoids rework and keeps hidden work inspectable.",
+      "tiers": {
+        "foundation": "Describe why work is permitted and inspected and name the usual stages.",
+        "practitioner": "Prepare work for each inspection stage and respond to a correction notice.",
+        "authority": "Check the adopted edition and local amendments, review plans, decide approval or rejection and record the reasons."
+      },
+      "commonMistakes": [
+        "Covering work before it is inspected",
+        "Assuming the newest edition applies everywhere",
+        "Treating a correction notice as a suggestion"
+      ],
+      "reviewStatus": "draft"
+    },
+    {
+      "skillId": "utility-interface",
+      "title": "Utility interface",
+      "summary": "Where the utility's equipment ends and the customer's begins: the service point, the meter, and the connections made there.",
+      "whatToLookFor": [
+        "The service point and who owns what on each side of it",
+        "The meter socket and the service entrance equipment",
+        "The {term:grounding} and bonding connections at the service",
+        "The {term:service-disconnect} near where the service enters",
+        "What only the utility may touch, such as the meter seal and the utility's conductors"
+      ],
+      "whyItMatters": "Work on the wrong side of the service point can be unsafe and unlawful, and the rules that apply change at that point.",
+      "tiers": {
+        "foundation": "Point out the service point and say which side belongs to the customer.",
+        "practitioner": "Check the customer-side service equipment and its connections, and coordinate a shut-off and reconnection with the utility.",
+        "authority": "Handle changes and upgrades at the service, including grounding, metering and the rules that differ between utilities."
+      },
+      "commonMistakes": [
+        "Working on a utility conductor or breaking a meter seal",
+        "Assuming the rules on the line side are the same as on the customer side",
+        "Forgetting to arrange the utility's shut-off before starting"
+      ],
+      "reviewStatus": "draft"
     }
   ]
 }

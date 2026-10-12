@@ -74,9 +74,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (partial):** partial: the app teaches why disconnects and shock protection matter and where the means must be, but not the lockout, testing-before-touching or re-energizing steps.
 
-**Skills the app teaches that this procedure uses:** shock-protection, disconnecting-means
+**Skills the app teaches that this procedure uses:** shock-protection, disconnecting-means, electrically-safe-work
 
-**Skills still to build for it:** electrically-safe-work
+**Skills still to build for it:** none
 
 ### P2. Plan reading and device layout check
 
@@ -111,9 +111,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (none):** none: the app has no plan-reading or layout tasks; wiring-methods covers only the wiring rules.
 
-**Skills the app teaches that this procedure uses:** wiring-methods
+**Skills the app teaches that this procedure uses:** wiring-methods, plans-and-documentation
 
-**Skills still to build for it:** plans-and-documentation, low-voltage-and-fire-alarm-systems
+**Skills still to build for it:** low-voltage-and-fire-alarm-systems
 
 ### P3. Running low-voltage and fire alarm cable and raceway
 
@@ -268,9 +268,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (none):** none: the app has no testing, meter or acceptance-inspection tasks.
 
-**Skills the app teaches that this procedure uses:** none
+**Skills the app teaches that this procedure uses:** testing-and-measurement
 
-**Skills still to build for it:** testing-and-measurement, low-voltage-and-fire-alarm-systems
+**Skills still to build for it:** low-voltage-and-fire-alarm-systems
 
 ### P7. Impairment handling and restoration
 

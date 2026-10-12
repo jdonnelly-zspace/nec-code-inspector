@@ -194,13 +194,13 @@
       ],
       "appSkills": [
         "shock-protection",
-        "disconnecting-means"
-      ],
-      "appCoverage": "none: the app teaches where disconnects are required and shock protection rules, but has no lockout/tagout or test-before-touch steps.",
-      "plannedSkills": [
+        "disconnecting-means",
         "electrically-safe-work",
         "testing-and-measurement"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches where disconnects are required and shock protection rules, but has no lockout/tagout or test-before-touch steps.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app teaches where disconnects are required and shock protection rules, but has no lockout/tagout or test-before-touch steps."
     },
     {
       "name": "Rough-in and finish wiring of a residential branch circuit",
@@ -404,13 +404,13 @@
       "appSkills": [
         "overcurrent-protection",
         "arc-fault-protection",
-        "shock-protection"
-      ],
-      "appCoverage": "none: the app teaches the protection rules but has no fault-finding, meter use or troubleshooting scenarios.",
-      "plannedSkills": [
+        "shock-protection",
         "troubleshooting",
         "testing-and-measurement"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches the protection rules but has no fault-finding, meter use or troubleshooting scenarios.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app teaches the protection rules but has no fault-finding, meter use or troubleshooting scenarios."
     },
     {
       "name": "Testing and verifying a finished installation (continuity, polarity, GFCI and AFCI)",
@@ -474,12 +474,12 @@
       "appSkills": [
         "shock-protection",
         "arc-fault-protection",
-        "earthing-bonding"
-      ],
-      "appCoverage": "none: the app teaches which circuits need GFCI/AFCI, but students never test with a meter or tester.",
-      "plannedSkills": [
+        "earthing-bonding",
         "testing-and-measurement"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches which circuits need GFCI/AFCI, but students never test with a meter or tester.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app teaches which circuits need GFCI/AFCI, but students never test with a meter or tester."
     },
     {
       "name": "Conduit and cable installation",
