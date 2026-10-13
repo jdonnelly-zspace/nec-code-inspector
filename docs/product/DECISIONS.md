@@ -31,6 +31,8 @@ A log of the owner's decisions that shape the product. Newest first. Each entry 
 |---|---|---|
 | D-12 | **Levels are named Apprentice, Journeyman and Master**, in the deck and in the app. This replaces the earlier decision for three generic levels (Beginner, Standard, Expert), which was made so the levels could connect to any credential. | The descriptions of each level stay as they are (guided, working knowledge, full fluency). Work: rename the labels first; rename the identifiers in code and content only if worth it. |
 
+**Done 2026-10-13.** The labels and the identifiers were renamed in the app code (`DifficultyLevel`, `SessionSize`, `masterTimeLimit`), the content files, the tests and tools, the docs that describe the levels, the wireframe and the mockup. Older documents (the original project brief, the alpha build plan, the completed-steps log, the credential research notes) keep the old names.
+
 **Left open.** The labels are licence classes in many places, so the wording must say they describe skill and award nothing. How helpers, inspectors, solar, alarm and power-line occupations, and regions with other ladders, use the same three names. Both are written up in `docs/product/STAKEHOLDER_DECK_OUTLINE.md` section 7 with recommendations.
 
 ## 2026-10-12: teacher reporting, analytics and progress outside the app

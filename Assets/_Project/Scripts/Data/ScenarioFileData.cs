@@ -19,7 +19,7 @@ namespace NECInspector.Data
         public string displayName;
         public string description;
         public string environmentDescription;
-        public int expertTimeLimit;
+        public int masterTimeLimit;
         public SessionSize sessionSize;    // optional: how many violations a session draws from the pool, per difficulty (0 = all)
         public string[] availableDifficulties;
         public string assetPrefix;         // violation asset names: VD_{assetPrefix}_{violationId}
@@ -36,7 +36,7 @@ namespace NECInspector.Data
         public string description;
         public ViolationCitation[] citations;   // one per code profile the violation applies to
         public string severity;            // Minor | Major | Critical
-        public string minimumDifficulty;   // Beginner | Standard | Expert
+        public string minimumDifficulty;   // Apprentice | Journeyman | Master
         public bool isSubtle;
         public string componentObjectName;
         public string hintText;
@@ -80,7 +80,7 @@ namespace NECInspector.Data
                         errors.Add($"unknown difficulty '{d}' in availableDifficulties");
             }
 
-            if (data.sessionSize != null && (data.sessionSize.beginner < 0 || data.sessionSize.standard < 0 || data.sessionSize.expert < 0))
+            if (data.sessionSize != null && (data.sessionSize.apprentice < 0 || data.sessionSize.journeyman < 0 || data.sessionSize.master < 0))
                 errors.Add("sessionSize values cannot be negative (use 0 for all violations)");
 
             if (data.violations == null || data.violations.Length == 0)

@@ -123,7 +123,7 @@ namespace NECInspector.Inspection
         }
 
         /// <summary>
-        /// Show a hint pulse for Beginner mode
+        /// Show a hint pulse for Apprentice mode
         /// </summary>
         public void ShowHintPulse()
         {

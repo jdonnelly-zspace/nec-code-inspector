@@ -51,7 +51,7 @@ namespace NECInspector.UI
 
             gameObject.SetActive(true);
             _difficulty = GameManager.Instance != null && GameManager.Instance.Difficulty != null
-                ? GameManager.Instance.Difficulty.CurrentLevel : DifficultyLevel.Standard;
+                ? GameManager.Instance.Difficulty.CurrentLevel : DifficultyLevel.Journeyman;
             _dealt = ProcedurePractice.Deal(_procedure, _difficulty, Environment.TickCount);
             _chosen.Clear();
             _checked = false;

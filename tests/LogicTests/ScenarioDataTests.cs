@@ -286,7 +286,7 @@ namespace NECInspector.LogicTests
                 assetPrefix = "T",
                 violationFolder = "Test",
                 scenarioAssetName = "Test",
-                availableDifficulties = new[] { "Beginner", "Standard", "Expert" },
+                availableDifficulties = new[] { "Apprentice", "Journeyman", "Master" },
                 violations = new[]
                 {
                     new ViolationFileData
@@ -296,7 +296,7 @@ namespace NECInspector.LogicTests
                         description = "d",
                         citations = new[] { new ViolationCitation { profileId = CodeProfileIds.Nec, reference = "210.8", text = "t" } },
                         severity = "Major",
-                        minimumDifficulty = "Beginner",
+                        minimumDifficulty = "Apprentice",
                         componentObjectName = "Obj"
                     }
                 }

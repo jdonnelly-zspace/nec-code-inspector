@@ -244,7 +244,7 @@ namespace NECInspector.Inspection
         }
 
         /// <summary>
-        /// Show hint highlights for Beginner mode (pulses on violation areas)
+        /// Show hint highlights for Apprentice mode (pulses on violation areas)
         /// </summary>
         public void ShowHints()
         {

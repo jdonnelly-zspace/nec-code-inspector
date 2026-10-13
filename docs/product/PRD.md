@@ -67,7 +67,7 @@ NEC occupations. General maintenance workers are the strongest fit among them.
 
 ### 4.3 Learner levels
 
-Learner levels are described by what the student can already do. They are being renamed from Beginner, Standard and Expert to the trade's own ladder, **Apprentice, Journeyman and Master** (owner's direction, 2026-10-13, D-12). They name stages of skill, not licence classes: the app awards no credential and none is implied. The wireframe, the mockup and the content files still use the old names until the rename is done (`TODO.md`).
+Learner levels follow the trade's own ladder, **Apprentice, Journeyman and Master** (owner's decision, 2026-10-13, D-12; renamed from Beginner, Standard and Expert in the app, the content, the tests, the wireframe and the mockup). They are described by what the student can already do and name stages of skill, not licence classes: the app awards no credential and none is implied.
 
 ### 4.4 Buyers
 
@@ -99,7 +99,7 @@ Status: **Built** (in the repository and tested), **Partial** (data or code exis
 | FR-18 | Occupation fit is visible to the owner: a generated traceability matrix and gap list. | Built | `docs/occupations/TRACEABILITY.md`, `tools/occupations/build_docs.py`. |
 | FR-19 | Analytics: usage and learning events are sent to the same analytics service the other zSpace Unity apps use, keyed by a generic id, with no personal data in any event. | Planned | Decided 2026-10-12 (D-9). Nothing is built; the service is to be confirmed. |
 | FR-20 | Progress can be followed outside the app, and the student can see plainly what is tracked: a generic account or id (no name or email needed), a screen saying what is collected, where it goes, who sees it and how to export or delete it. | Planned | Decided 2026-10-12 (D-9); wording needs counsel. |
-| FR-21 | Rule numbers, chapters and editions are never shown to students; the UI shows an entry's title. Numbers stay in the data for scoring, alignment and review. | Built | `CodeTerminology.showReferenceNumbers` (off); student text rewritten without numbers; `StudentReferenceTests`. The Expert level's rule-naming input is a proposal awaiting the owner. |
+| FR-21 | Rule numbers, chapters and editions are never shown to students; the UI shows an entry's title. Numbers stay in the data for scoring, alignment and review. | Built | `CodeTerminology.showReferenceNumbers` (off); student text rewritten without numbers; `StudentReferenceTests`. The Master level's rule-naming input is a proposal awaiting the owner. |
 | FR-22 | Accessibility floors: never colour alone, minimum text size and contrast, grade-8 reading level, timers that can be turned off, a stereo depth setting, seated stylus-only use. | Planned | Decided 2026-10-12 (D-10). Settings and checks not built; the mockup shows the controls. |
 | FR-23 | Localization: English first, other priority-one languages next, translating only reviewed content. | Planned | Decided 2026-10-12 (D-11). Student text is already data; no language switch is built. |
 

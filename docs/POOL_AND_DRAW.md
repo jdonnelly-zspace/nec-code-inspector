@@ -10,7 +10,7 @@ depends on the student's code and difficulty; how many are drawn is the scenario
 
 1. **Pool.** The scenario's violations that have a citation for the active code (`ViolationDefinitionSO.AppliesTo`) and
    are visible at the difficulty being played (`ViolationPools.IsActive`): a violation is visible at its
-   `minimumDifficulty` and above, and a subtle one only at Expert.
+   `minimumDifficulty` and above, and a subtle one only at Master.
 2. **Draw.** `ViolationDraw.Choose` picks `sessionSize` violations from the pool:
    - never more than the size, and the whole pool if the size is 0 or larger than the pool;
    - skills are spread as evenly as the pool allows (one from each skill in turn);

@@ -8,17 +8,17 @@ namespace NECInspector.Skills
     /// <summary>
     /// Step-ordering practice for an occupation's procedure: the student puts the steps of a standard procedure in the right order.
     /// Pure logic, so it is tested without the engine. Difficulty sets how many steps are shown (a run of consecutive steps from a seeded start):
-    /// Beginner 4, Standard 6, Expert all. The score is the share of neighbouring pairs the student ordered correctly, so a nearly right
+    /// Apprentice 4, Journeyman 6, Master all. The score is the share of neighbouring pairs the student ordered correctly, so a nearly right
     /// answer earns most of the credit. Evidence goes to every skill the procedure uses, at the tier of the difficulty.
     /// </summary>
     public static class ProcedurePractice
     {
-        public const int BeginnerSteps = 4;
-        public const int StandardSteps = 6;
+        public const int ApprenticeSteps = 4;
+        public const int JourneymanSteps = 6;
 
         public static int StepCount(DifficultyLevel difficulty, int available)
         {
-            int n = difficulty == DifficultyLevel.Beginner ? BeginnerSteps : difficulty == DifficultyLevel.Standard ? StandardSteps : available;
+            int n = difficulty == DifficultyLevel.Apprentice ? ApprenticeSteps : difficulty == DifficultyLevel.Journeyman ? JourneymanSteps : available;
             return Math.Max(0, Math.Min(n, available));
         }
 

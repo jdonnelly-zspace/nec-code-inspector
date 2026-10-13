@@ -125,7 +125,7 @@ namespace NECInspector.Editor
                     .ToArray();
                 scenario.violations = violationAssets;
                 scenario.sessionSize = data.sessionSize ?? new SessionSize();
-                scenario.expertTimeLimit = data.expertTimeLimit;
+                scenario.masterTimeLimit = data.masterTimeLimit;
                 scenario.environmentDescription = data.environmentDescription;
 
                 EditorUtility.SetDirty(scenario);

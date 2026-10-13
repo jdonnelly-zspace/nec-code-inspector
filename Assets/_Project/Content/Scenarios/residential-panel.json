@@ -4,11 +4,11 @@
   "displayName": "Residential Service Panel Inspection",
   "description": "Inspect a 200A residential service entrance panel for code violations including workmanship, terminations, working space clearances, overcurrent protection, and panel configuration.",
   "environmentDescription": "A residential garage with a 200A service entrance panel, exposed conductors, breakers, main disconnect, and surrounding working space.",
-  "expertTimeLimit": 1200,
+  "masterTimeLimit": 1200,
   "availableDifficulties": [
-    "Beginner",
-    "Standard",
-    "Expert"
+    "Apprentice",
+    "Journeyman",
+    "Master"
   ],
   "assetPrefix": "RP",
   "violationFolder": "ResidentialPanel",
@@ -43,7 +43,7 @@
       "inspectionNote": "Conductors inside the panel are loose and crossing over each other. The code requires neat and workmanlike installation.",
       "conceptId": "equipment-installation",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -67,7 +67,7 @@
       "inspectionNote": "Aluminum conductor is terminated on a lug rated for copper only. This can cause overheating due to dissimilar metal expansion rates.",
       "conceptId": "equipment-installation",
       "severity": "Critical",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -117,7 +117,7 @@
       "inspectionNote": "Storage boxes are stacked within 24 inches of the panel face. The code requires a minimum 36-inch clear working space.",
       "conceptId": "working-space-access",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "panel-working-depth",
@@ -166,7 +166,7 @@
       "inspectionNote": "Service disconnect is located behind stored equipment and requires moving obstacles to access. Must be readily accessible under the code.",
       "conceptId": "disconnecting-means",
       "severity": "Critical",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -195,7 +195,7 @@
       "inspectionNote": "A 12 AWG conductor (rated 20A) is connected to a 30A breaker. The conductor could overheat before the breaker trips.",
       "conceptId": "overcurrent-protection",
       "severity": "Critical",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -245,7 +245,7 @@
       "inspectionNote": "The top breaker's operating handle center is at approximately 7 ft 4 in. This exceeds the code maximum of 6 ft 7 in.",
       "conceptId": "working-space-access",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "highest-breaker-handle-height",
@@ -288,7 +288,7 @@
       "inspectionNote": "Several circuits are labeled generically as 'spare' or 'misc' while actively serving loads. The code requires specific, clear identification.",
       "conceptId": "identification-marking",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -312,7 +312,7 @@
       "inspectionNote": "Tandem breakers are installed in slots not designed for them, exceeding the panel's rated number of circuits. This overloads the bus bars.",
       "conceptId": "equipment-installation",
       "severity": "Critical",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -336,7 +336,7 @@
       "inspectionNote": "The {term:panel} sits inside a closet with clothing and boxes hanging directly beside and in front of it. A fault or hot connection could ignite this material.",
       "conceptId": "working-space-access",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -360,7 +360,7 @@
       "inspectionNote": "The {term:panel} is on a bathroom wall, a few feet from a shower and toilet. Moisture and the chance of a wet person touching it make this location unsuitable.",
       "conceptId": "working-space-access",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -384,7 +384,7 @@
       "inspectionNote": "A copper water pipe and a drain run vertically in the area directly above the {term:panel}. A leak or condensation would fall straight onto live parts.",
       "conceptId": "working-space-access",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -420,7 +420,7 @@
       "inspectionNote": "A water heater and a steel shelf leave roughly 20 in of open width in front of the {term:panel}. The cover is about 15 in wide, so the standard 30 in minimum is what applies.",
       "conceptId": "working-space-access",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "clear working space width",
@@ -468,7 +468,7 @@
       "inspectionNote": "A heating duct and soffit hang low in front of the {term:panel}, so a person must stoop to work there. Measure from the floor to the lowest object above the working space.",
       "conceptId": "working-space-access",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "headroom over working space",
@@ -504,7 +504,7 @@
       "inspectionNote": "The hinged door of the {term:panel} stops at about 60 degrees against a rack mounted nearby. There is open floor in front, so the problem is only found by opening the door.",
       "conceptId": "working-space-access",
       "severity": "Minor",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -528,7 +528,7 @@
       "inspectionNote": "A gray disconnect enclosure on the garage wall feeds equipment that is not beside it. The cover has no label or tag of any kind.",
       "conceptId": "identification-marking",
       "severity": "Minor",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -552,7 +552,7 @@
       "inspectionNote": "A 12 AWG conductor with solid red insulation runs to the {term:panel} neutral bar from a 120 V circuit. Nothing about it is marked white or gray.",
       "conceptId": "identification-marking",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -576,7 +576,7 @@
       "inspectionNote": "A conductor with solid green insulation is clamped under a {term:breaker} terminal and carries load current. The ground bar next to it holds only bare and green wires from other circuits.",
       "conceptId": "identification-marking",
       "severity": "Critical",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -600,7 +600,7 @@
       "inspectionNote": "A white 12 AWG conductor from NM cable (or a loose white THHN in conduit) is landed on a single-pole 20 A {term:breaker} in the garage {term:panel}. No tape or paint shows it was re-identified.",
       "conceptId": "identification-marking",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -624,7 +624,7 @@
       "inspectionNote": "A main {term:breaker} at the top of the garage {term:panel} is the only way to kill the whole supply, but it has no permanent marking calling it the {term:service-disconnect}. Only the individual circuit labels are present.",
       "conceptId": "identification-marking",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -648,7 +648,7 @@
       "inspectionNote": "A 2 AWG black conductor lands on the neutral bar of the garage {term:panel}. Its ends carry no white or gray tape, paint or sleeve.",
       "conceptId": "identification-marking",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -672,7 +672,7 @@
       "inspectionNote": "A solar inverter on the garage wall is tied to the {term:panel} through a backfed {term:breaker}. The service equipment has no plaque or directory naming the solar source or where it is.",
       "conceptId": "identification-marking",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -696,7 +696,7 @@
       "inspectionNote": "A 4 AWG black insulated conductor runs from the main {term:panel} to the garage {term:panel} ground bar. Its ends have no green tape, paint or exposed bare section.",
       "conceptId": "identification-marking",
       "severity": "Minor",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -720,7 +720,7 @@
       "inspectionNote": "A generator inlet box is mounted on the exterior garage wall next to a transfer switch. There is no sign naming the neutral arrangement the generator must have.",
       "conceptId": "identification-marking",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false
     },
     {
@@ -744,7 +744,7 @@
       "inspectionNote": "The condenser sits on a pad on the far side of the house with the supply cable running straight into the unit and no switch box nearby. The only control is a {term:breaker} in the {term:panel}, which cannot be seen from the condenser.",
       "conceptId": "disconnecting-means",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -768,7 +768,7 @@
       "inspectionNote": "The condenser disconnect enclosure is turned over so the ON marking sits at the bottom of the handle's travel. A person reaching for the handle would assume up means on.",
       "conceptId": "disconnecting-means",
       "severity": "Minor",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -792,7 +792,7 @@
       "inspectionNote": "The underground feeder rises at the shed wall and runs straight to a junction box that feeds the lights and receptacles. There is no switch, breaker or panel at the entry point.",
       "conceptId": "disconnecting-means",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -816,7 +816,7 @@
       "inspectionNote": "The water heater is in a closet on the opposite side of the house from the {term:panel}, and a wall blocks the view between them. The {term:breaker} handle has no lock-off clip or hasp fitted.",
       "conceptId": "disconnecting-means",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -840,7 +840,7 @@
       "inspectionNote": "Seven separate main breakers sit side by side on the outdoor service equipment beside the meter, each serving a different load such as the house, the air conditioner and the water heater. All are fed from the same service.",
       "conceptId": "disconnecting-means",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -864,7 +864,7 @@
       "inspectionNote": "The enclosure of the {term:service-disconnect} is marked 60 A on its label and handle. The home is a single-family house with a normal 120/240 V supply.",
       "conceptId": "disconnecting-means",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -888,7 +888,7 @@
       "inspectionNote": "The disconnect enclosure is mounted over the compressor access cover and partly covers the nameplate. Removing the cover would mean removing the disconnect.",
       "conceptId": "disconnecting-means",
       "severity": "Minor",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -924,7 +924,7 @@
       "inspectionNote": "The disconnect on the condenser wall has a wooden fence 20 in in front of it. A person servicing it would be pinned between the fence and the equipment.",
       "conceptId": "disconnecting-means",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "clear working space depth in front of disconnect",
@@ -960,7 +960,7 @@
       "inspectionNote": "A round opening in the enclosure wall has no cable, connector or plug in it, leaving a path to live parts. A listed knockout closure should be seated in it.",
       "conceptId": "equipment-installation",
       "severity": "Minor",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -984,7 +984,7 @@
       "inspectionNote": "One {term:breaker} slot in the dead front is open with the bus stab area visible behind it. A filler plate should cover the space.",
       "conceptId": "equipment-installation",
       "severity": "Minor",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -1008,7 +1008,7 @@
       "inspectionNote": "A cable runs straight through a bare knockout with no connector or clamp, so it can be pulled or abraded on the edge. The cable should be held by a listed fitting at the opening.",
       "conceptId": "equipment-installation",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -1044,7 +1044,7 @@
       "inspectionNote": "The drywall around the recessed enclosure is chipped back, leaving an open gap at the edge. Measure the gap against the 3 mm limit.",
       "conceptId": "equipment-installation",
       "severity": "Minor",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "gap between enclosure edge and wall surface",
@@ -1080,7 +1080,7 @@
       "inspectionNote": "A thin layer of the same colour as the garage wall coats the bus and several terminal screws inside the enclosure. The paint can spoil breaker contact and hide heat damage.",
       "conceptId": "equipment-installation",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -1104,7 +1104,7 @@
       "inspectionNote": "The stripped end shows a ring cut into the copper and a few strands missing. This reduces the conductor's cross-section at the terminal and weakens the joint.",
       "conceptId": "equipment-installation",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -1128,7 +1128,7 @@
       "inspectionNote": "One terminal screw head stands proud of the lug and the conductor moves by hand. A loose joint heats up under load.",
       "conceptId": "equipment-installation",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false
     },
     {
@@ -1152,7 +1152,7 @@
       "inspectionNote": "The {term:panel} is on the wall above the garage-to-house steps. A person resetting a {term:breaker} would have to stand on the stair treads.",
       "conceptId": "working-space-access",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -1176,7 +1176,7 @@
       "inspectionNote": "The main {term:breaker} handle reads 200 A. The {term:panel} nameplate inside the door shows a 125 A rating.",
       "conceptId": "overcurrent-protection",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -1200,7 +1200,7 @@
       "inspectionNote": "The {term:panel} is on the wall at the front of the car space. There is no bollard, guard or setback, and dents show on the cover.",
       "conceptId": "working-space-access",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -1224,7 +1224,7 @@
       "inspectionNote": "The fuse sockets are bare Edison-base screw bases with no Type S adapter ring in any of them, so any plug fuse within the base's rating would thread in.",
       "conceptId": "overcurrent-protection",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -1248,7 +1248,7 @@
       "inspectionNote": "The feeder to the garage sub-{term:panel} runs through a fuse block with fuses on both hot conductors and a third fuse on the white neutral. Only the hot conductors should be fused.",
       "conceptId": "overcurrent-protection",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -1272,7 +1272,7 @@
       "inspectionNote": "The inside label of the {term:panel} lists series combination ratings with the upstream main. The enclosure shows no field caution label naming a series combination rating, so the next person may swap in the wrong breaker.",
       "conceptId": "overcurrent-protection",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -1296,7 +1296,7 @@
       "inspectionNote": "A sub{term:panel} is fixed to a rafter in the attic. A square hatch in the hall ceiling is the only way in, and a folding stepladder leans against the wall beneath it.",
       "conceptId": "working-space-access",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false
     },
     {
@@ -1320,7 +1320,7 @@
       "inspectionNote": "One main {term:breaker} enclosure is in the garage and a second is on the far side of the house in the laundry room. A responder who finds one would not know the other exists.",
       "conceptId": "disconnecting-means",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false
     },
     {
@@ -1344,7 +1344,7 @@
       "inspectionNote": "The panel door is open and the cover that should sit over the {term:breaker}s is missing. Bus bars and wire ends are visible and reachable.",
       "conceptId": "equipment-installation",
       "severity": "Critical",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -1368,7 +1368,7 @@
       "inspectionNote": "Two white conductors from separate branch circuits go under one screw of the neutral bar while other screw positions on the bar are empty. The terminal is not marked for more than one conductor.",
       "conceptId": "equipment-installation",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -1392,7 +1392,7 @@
       "inspectionNote": "The directory lists entries like a named person's bedroom and office, where an occupant's name replaces the room or load. The wording would be wrong as soon as someone else lived there.",
       "conceptId": "identification-marking",
       "severity": "Minor",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     }
   ]

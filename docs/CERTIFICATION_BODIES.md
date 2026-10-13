@@ -1,5 +1,7 @@
 # Electrician Certification Bodies: US and Canada
 
+> Written before the levels were renamed (2026-10-13, D-12): Beginner is now Apprentice, Standard is Journeyman and Expert is Master. The mapping below is unchanged research.
+
 Research notes for mapping the app's three levels (Beginner/CTE, Standard/Apprentice, Expert/Licensed) to real credentials.
 Items marked *(unverified)* come from background knowledge, not a source checked during research. Verify before using in learner-facing content.
 

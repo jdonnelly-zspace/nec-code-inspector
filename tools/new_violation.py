@@ -1,6 +1,6 @@
 """Scaffold a new violation for a scenario, with the fields every violation needs and a reminder of the checklist.
 
-    python tools/new_violation.py --scenario branch-circuits --skill shock-protection --difficulty Beginner \\
+    python tools/new_violation.py --scenario branch-circuits --skill shock-protection --difficulty Apprentice \\
         --id BC-GFCI-OUTDOOR-001 --codes nec-2023,nec-2026,cec
 
 Prints the violation JSON and the reference-entry stubs to stdout. With --write the violation is appended to the
@@ -18,7 +18,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCENARIOS = os.path.join(ROOT, "Assets", "_Project", "Content", "Scenarios")
 CODES = os.path.join(ROOT, "Assets", "_Project", "StreamingAssets", "Codes")
 CONCEPTS = os.path.join(ROOT, "Assets", "_Project", "Scripts", "Data", "ConceptIds.cs")
-DIFFICULTIES = ["Beginner", "Standard", "Expert"]
+DIFFICULTIES = ["Apprentice", "Journeyman", "Master"]
 SEVERITIES = ["Minor", "Major", "Critical"]
 
 
@@ -48,7 +48,7 @@ def main():
     ap.add_argument("--id", required=True, dest="vid", help="violation id, e.g. BC-GFCI-OUTDOOR-001")
     ap.add_argument("--codes", required=True, help="comma-separated code ids to cite, e.g. nec-2023,nec-2026,cec")
     ap.add_argument("--severity", default="Major", choices=SEVERITIES)
-    ap.add_argument("--subtle", action="store_true", help="only visible at Expert")
+    ap.add_argument("--subtle", action="store_true", help="only visible at Master")
     ap.add_argument("--write", action="store_true", help="append to the scenario file instead of only printing")
     a = ap.parse_args()
 
@@ -91,7 +91,7 @@ def main():
         "minimumDifficulty": a.difficulty,
         "isSubtle": a.subtle,
         "componentObjectName": "TODO: scene object name",
-        "hintText": "TODO: a nudge for Beginner",
+        "hintText": "TODO: a nudge for Apprentice",
         "componentType": "TODO: Breaker, Receptacle, Conductor...",
         "inspectionNote": "TODO: what the student should observe"
     }

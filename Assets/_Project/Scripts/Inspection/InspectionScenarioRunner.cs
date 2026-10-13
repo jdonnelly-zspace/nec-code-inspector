@@ -32,7 +32,7 @@ namespace NECInspector.Inspection
 
             var difficulty = GameManager.Instance != null
                 ? GameManager.Instance.Difficulty.CurrentLevel
-                : DifficultyLevel.Standard;
+                : DifficultyLevel.Journeyman;
 
             _inspectionManager.Initialize(difficulty);
 

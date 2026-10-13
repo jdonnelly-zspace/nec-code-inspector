@@ -6,7 +6,7 @@ tests catch most mistakes; the expert catches the rest.
 ## 1. Scaffold it
 
 ```
-python tools/new_violation.py --scenario branch-circuits --skill shock-protection --difficulty Beginner \
+python tools/new_violation.py --scenario branch-circuits --skill shock-protection --difficulty Apprentice \
     --id BC-GFCI-OUTDOOR-001 --codes nec,cec --write
 ```
 
@@ -21,7 +21,7 @@ committing.
 - `minimumDifficulty` is the lowest level the violation shows at. It also joins every higher level's pool, so check the pool
   gaps for the skill in the test warnings (`dotnet run --project tests/LogicTests`, "violation pools") and fill the lowest
   short tier first.
-- `isSubtle` hides it below Expert. Use it for things a careful student would still miss, not for trick questions.
+- `isSubtle` hides it below Master. Use it for things a careful student would still miss, not for trick questions.
 
 ## 3. Write the content
 

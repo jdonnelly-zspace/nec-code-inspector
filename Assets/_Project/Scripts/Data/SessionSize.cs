@@ -11,20 +11,20 @@ namespace NECInspector.Data
     [Serializable]
     public class SessionSize
     {
-        public int beginner;
-        public int standard;
-        public int expert;
+        public int apprentice;
+        public int journeyman;
+        public int master;
 
         public int For(DifficultyLevel difficulty)
         {
             switch (difficulty)
             {
-                case DifficultyLevel.Beginner: return beginner;
-                case DifficultyLevel.Expert: return expert;
-                default: return standard;
+                case DifficultyLevel.Apprentice: return apprentice;
+                case DifficultyLevel.Master: return master;
+                default: return journeyman;
             }
         }
 
-        public bool IsSet => beginner > 0 || standard > 0 || expert > 0;
+        public bool IsSet => apprentice > 0 || journeyman > 0 || master > 0;
     }
 }

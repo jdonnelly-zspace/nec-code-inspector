@@ -4,11 +4,11 @@
   "displayName": "Wiring Methods Inspection",
   "description": "Inspect a residential rough-in and its exterior feeders for wiring method violations: cable protection, support, burial depth, box fill and overhead clearances.",
   "environmentDescription": "A partly framed house with cables and boxes visible in the studs and joists, a trench to a detached garage, and an overhead feeder crossing the driveway.",
-  "expertTimeLimit": 1200,
+  "masterTimeLimit": 1200,
   "availableDifficulties": [
-    "Beginner",
-    "Standard",
-    "Expert"
+    "Apprentice",
+    "Journeyman",
+    "Master"
   ],
   "assetPrefix": "WM",
   "violationFolder": "WiringMethods",
@@ -35,7 +35,7 @@
       "inspectionNote": "The cable passes through a hole 3/4 in from the stud edge with no steel plate, so a nail or screw could reach it.",
       "conceptId": "wiring-methods",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -59,7 +59,7 @@
       "inspectionNote": "The cable hangs free for about 6 ft between boxes. It needs support at least every 4-1/2 ft and within 12 in of each box.",
       "conceptId": "wiring-methods",
       "severity": "Minor",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -83,7 +83,7 @@
       "inspectionNote": "The UF cable is 10 in below grade with no conduit. Direct-buried cable needs 24 in of cover, or 12 in on a GFCI-protected residential circuit.",
       "conceptId": "wiring-methods",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -107,7 +107,7 @@
       "inspectionNote": "A 12.5 cubic inch box holds six 12 AWG conductors, a switch, clamps and the grounds: about 22.5 cubic inches of required volume.",
       "conceptId": "wiring-methods",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -131,7 +131,7 @@
       "inspectionNote": "The feeder is about 9 ft above the driveway. A residential driveway needs 12 ft of clearance.",
       "conceptId": "wiring-methods",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -167,7 +167,7 @@
       "inspectionNote": "The cable (about 0.5 in. across its wide side) makes a tight kink at a stud corner. Compare the inside radius of the curve with five times the cable width.",
       "conceptId": "wiring-methods",
       "severity": "Minor",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "inside bend radius of NM cable (cable major diameter 0.5 in.)",
@@ -215,7 +215,7 @@
       "inspectionNote": "At the rough-in switch box the cable ends are trimmed almost flush with the box mouth. Measure how far each conductor extends beyond the opening.",
       "conceptId": "wiring-methods",
       "severity": "Minor",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "conductor length extending outside the box opening",
@@ -263,7 +263,7 @@
       "inspectionNote": "A cable emerges from the floor at the wall base, shielded only by a short plastic stub. Measure the height of the protective sleeve above the floor.",
       "conceptId": "wiring-methods",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "height of protective enclosure above floor",
@@ -311,7 +311,7 @@
       "inspectionNote": "A length of EMT enters a junction box on an open wall with no strap near the box. Measure from the box to the nearest strap or support.",
       "conceptId": "wiring-methods",
       "severity": "Minor",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "distance from box to first EMT fastening",
@@ -359,7 +359,7 @@
       "inspectionNote": "A long straight PVC conduit is rigidly strapped between two boxes on the outside wall with no sliding joint anywhere. With a 70 degree F swing, the table gives about 2.84 in. of movement per 100 ft.",
       "conceptId": "wiring-methods",
       "severity": "Minor",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "expected thermal length change of straight PVC run with no expansion fitting",
@@ -407,7 +407,7 @@
       "inspectionNote": "After drywall, the receptacle box front is recessed well into the wall cavity. Measure the gap between the box front edge and the wall face.",
       "conceptId": "wiring-methods",
       "severity": "Minor",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true,
       "sceneFact": {
         "quantity": "box front edge set back behind finished drywall surface",
@@ -443,7 +443,7 @@
       "inspectionNote": "A cable splice box sits between studs and is covered by painted drywall, with no cover plate or access panel in view. Opening it would mean cutting the wall.",
       "conceptId": "wiring-methods",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false
     }
   ]

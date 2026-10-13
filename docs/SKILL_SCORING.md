@@ -6,7 +6,7 @@ set; the code is in `Scripts/Skills/` and the tests are `SkillProgressTests` and
 ## Evidence from an inspection
 
 Each active violation produces one piece of evidence for its own skill, at the tier of its difficulty
-(Beginner = Foundation, Standard = Practitioner, Expert = Authority):
+(Apprentice = Foundation, Journeyman = Practitioner, Master = Authority):
 
 | What the student did | Outcome |
 |---|---|

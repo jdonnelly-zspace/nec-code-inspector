@@ -85,7 +85,7 @@ namespace NECInspector.UI
         {
             ClearCardList();
 
-            var difficulty = GameManager.Instance?.Difficulty?.CurrentLevel ?? DifficultyLevel.Beginner;
+            var difficulty = GameManager.Instance?.Difficulty?.CurrentLevel ?? DifficultyLevel.Apprentice;
             string search = _searchInput != null ? _searchInput.text?.Trim().ToLower() : "";
 
             _filteredCards.Clear();

@@ -133,4 +133,4 @@ The owner's direction is one vocabulary, the trade's own ladder, **Apprentice, J
 1. **Stages of skill, not licence classes.** In most places these are licence or card classes. The app awards none, so the wording must say they describe what the student can do. Keep the rule: no credential is awarded or implied.
 2. **Other occupations.** Helpers sit before an apprentice; inspectors, solar and alarm installers and power-line workers have their own ladders. Recommendation: the same three labels for every occupation, each described by skill.
 3. **Other regions.** Canada and the UK use other ladders (for example trade certification and the UK's qualification levels). Recommendation: the same three labels in every region, with region wording only in the lesson text.
-4. **Does Master mean a hard bar?** Expert today means full fluency, subtle violations and free-text answers. Master should mean the same, so no content changes.
+4. **Does Master mean a hard bar?** Master means what Expert meant: full fluency, subtle violations, and naming the rule unaided. The rename changed no content.

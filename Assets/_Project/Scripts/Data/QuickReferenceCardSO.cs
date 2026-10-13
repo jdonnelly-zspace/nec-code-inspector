@@ -28,7 +28,7 @@ namespace NECInspector.Data
 
         [Header("Difficulty")]
         [Tooltip("Minimum difficulty to show this card")]
-        public Core.DifficultyLevel minimumDifficulty = Core.DifficultyLevel.Beginner;
+        public Core.DifficultyLevel minimumDifficulty = Core.DifficultyLevel.Apprentice;
 
         public string DisplayTitle => $"{title} ({category})";
     }

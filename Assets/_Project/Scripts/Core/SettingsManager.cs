@@ -83,7 +83,7 @@ namespace NECInspector.Core
         public float ambientVolume = 0.3f;
 
         // Difficulty
-        public DifficultyLevel difficulty = DifficultyLevel.Standard;
+        public DifficultyLevel difficulty = DifficultyLevel.Journeyman;
 
         // Display
         public bool showHints = true;

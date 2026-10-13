@@ -4,11 +4,11 @@
   "displayName": "Branch Circuit Wiring Inspection",
   "description": "Inspect a residential kitchen, bathroom, and living area electrical installation for branch circuit code violations including GFCI/AFCI protection, receptacle spacing, wire sizing, and dedicated circuit requirements.",
   "environmentDescription": "A residential dwelling with exposed kitchen, bathroom, garage, bedroom, and living room electrical installations showing branch circuit wiring, receptacles, breakers, and conductors.",
-  "expertTimeLimit": 1200,
+  "masterTimeLimit": 1200,
   "availableDifficulties": [
-    "Beginner",
-    "Standard",
-    "Expert"
+    "Apprentice",
+    "Journeyman",
+    "Master"
   ],
   "assetPrefix": "BC",
   "violationFolder": "BranchCircuits",
@@ -40,7 +40,7 @@
       "inspectionNote": "This bathroom {term:receptacle} lacks required {term:shock-protection-device} protection. Water proximity creates an electrocution hazard.",
       "conceptId": "shock-protection",
       "severity": "Critical",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneScope": {
         "protection": "gfci",
@@ -88,7 +88,7 @@
       "inspectionNote": "This kitchen countertop receptacle is missing required GFCI protection near water sources.",
       "conceptId": "shock-protection",
       "severity": "Critical",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneScope": {
         "protection": "gfci",
@@ -137,7 +137,7 @@
       "inspectionNote": "Garage receptacle at grade level is missing required GFCI protection.",
       "conceptId": "shock-protection",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneScope": {
         "protection": "gfci",
@@ -198,7 +198,7 @@
       "inspectionNote": "This wall section has a 14-foot gap between receptacles, exceeding the 12-foot maximum spacing rule.",
       "conceptId": "branch-circuit-requirements",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "max-distance-to-receptacle",
@@ -238,7 +238,7 @@
       "inspectionNote": "14 AWG wire is connected to a 20A breaker. This wire is rated for only 15A and could overheat under load.",
       "conceptId": "overcurrent-protection",
       "severity": "Critical",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -267,7 +267,7 @@
       "inspectionNote": "This bedroom circuit uses a standard breaker. AFCI protection is required to prevent electrical fires from arc faults.",
       "conceptId": "arc-fault-protection",
       "severity": "Critical",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneScope": {
         "protection": "afci",
@@ -307,7 +307,7 @@
       "inspectionNote": "Living room circuit lacks AFCI protection. The code requires AFCI for virtually all dwelling unit living spaces.",
       "conceptId": "arc-fault-protection",
       "severity": "Critical",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneScope": {
         "protection": "afci",
@@ -367,7 +367,7 @@
       "inspectionNote": "This countertop has an 84-inch stretch with no receptacle, so its middle is 42 inches from the nearest one, over the 24-inch maximum.",
       "conceptId": "branch-circuit-requirements",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "max-distance-to-receptacle",
@@ -402,7 +402,7 @@
       "inspectionNote": "This breaker serves both bathroom and hallway outlets. Bathroom receptacles require a dedicated 20A branch circuit.",
       "conceptId": "branch-circuit-requirements",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -426,7 +426,7 @@
       "inspectionNote": "Only one small-appliance circuit is provided for the kitchen. The code requires a minimum of two 20A circuits.",
       "conceptId": "branch-circuit-requirements",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -450,7 +450,7 @@
       "inspectionNote": "Four NM cables are bundled through a single stud hole. With this many cables, ampacity must be derated using the code's adjustment factors, potentially making the conductors undersized for their breakers.",
       "conceptId": "conductor-sizing",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -474,7 +474,7 @@
       "inspectionNote": "Dishwasher circuit lacks GFCI protection.",
       "conceptId": "shock-protection",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true,
       "sceneScope": {
         "protection": "gfci",
@@ -515,7 +515,7 @@
       "inspectionNote": "The hallway receptacle is fed from an ordinary breaker with no test button or arc-fault marking. The circuit should show an arc-fault device in the {term:panel}.",
       "conceptId": "arc-fault-protection",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneScope": {
         "protection": "afci",
@@ -549,7 +549,7 @@
       "inspectionNote": "The breaker labelled for the dining room has no test button and no arc-fault marking. Compare it with a breaker that carries both.",
       "conceptId": "arc-fault-protection",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneScope": {
         "protection": "afci",
@@ -583,7 +583,7 @@
       "inspectionNote": "The family room circuit lands on a plain single-pole breaker. There is no arc-fault test button or marking on its face.",
       "conceptId": "arc-fault-protection",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneScope": {
         "protection": "afci",
@@ -617,7 +617,7 @@
       "inspectionNote": "A receptacle in the walk-in closet is supplied by a standard breaker. Nothing on the breaker or the receptacle shows arc-fault protection.",
       "conceptId": "arc-fault-protection",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneScope": {
         "protection": "afci",
@@ -651,7 +651,7 @@
       "inspectionNote": "The kitchen receptacle is a ground-fault type with test and reset buttons, fed by a plain breaker. The circuit has no arc-fault device at the {term:panel} or at the first outlet.",
       "conceptId": "arc-fault-protection",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneScope": {
         "protection": "afci",
@@ -687,7 +687,7 @@
       "inspectionNote": "The washer receptacle is supplied by a ground-fault device on a standard breaker with no arc-fault marking. Ground-fault protection alone does not meet the arc-fault requirement.",
       "conceptId": "arc-fault-protection",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneScope": {
         "protection": "afci",
@@ -723,7 +723,7 @@
       "inspectionNote": "A bedroom addition adds two new receptacles on a long cable run from an older circuit that still uses a plain breaker. The run is more than 6 ft and adds outlets, so the short-extension exception does not apply.",
       "conceptId": "arc-fault-protection",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false
     },
     {
@@ -747,7 +747,7 @@
       "inspectionNote": "The weatherproof outlet on the exterior back wall is a plain duplex with no test or reset buttons, and the circuit feeding it has an ordinary breaker. Nothing upstream gives it ground-fault protection.",
       "conceptId": "shock-protection",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneScope": {
         "protection": "gfci",
@@ -781,7 +781,7 @@
       "inspectionNote": "The duplex outlet above the basement workbench is a standard device fed from an ordinary breaker, with no test button. The room is a finished-wall basement, so do not assume only bare unfinished areas count.",
       "conceptId": "shock-protection",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneScope": {
         "protection": "gfci",
@@ -816,7 +816,7 @@
       "inspectionNote": "The duplex outlet behind the washer has no test or reset buttons and is not downstream of any GFCI device. There is no sink in the room, so the sink distance rule is not what applies.",
       "conceptId": "shock-protection",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneScope": {
         "protection": "gfci",
@@ -850,7 +850,7 @@
       "inspectionNote": "A duplex outlet is mounted on a joist near the crawl space hatch. It is a standard device, and the feeding breaker has no test button.",
       "conceptId": "shock-protection",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneScope": {
         "protection": "gfci",
@@ -885,7 +885,7 @@
       "inspectionNote": "A utility-style sink with no beverage or food provisions sits in the family room. The wall outlet beside it is about 4 ft from the bowl by the shortest cord path, a standard device with no test button.",
       "conceptId": "shock-protection",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneScope": {
         "protection": "gfci",
@@ -925,7 +925,7 @@
       "inspectionNote": "A single receptacle in the basement, mounted near the sump pit, serves only the pump and its cord is plugged in. The receptacle is a standard device with no test button, and the breaker feeding it is ordinary.",
       "conceptId": "shock-protection",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true,
       "sceneScope": {
         "protection": "gfci",
@@ -960,7 +960,7 @@
       "inspectionNote": "The mudroom utility sink and the hallway outlet are on opposite sides of an open doorway. A cord could run straight through the opening, about 5 ft, and the hallway outlet is a standard device with no test button.",
       "conceptId": "shock-protection",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true,
       "sceneScope": {
         "protection": "gfci",
@@ -1000,7 +1000,7 @@
       "inspectionNote": "A shower stall is built into the mudroom, with no toilet or basin, so it is not a bathroom. The wall outlet beside it is about 4 ft from the stall edge and is a standard device with no test button.",
       "conceptId": "shock-protection",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false,
       "sceneScope": {
         "protection": "gfci",
@@ -1052,7 +1052,7 @@
       "inspectionNote": "The back wall {term:receptacle} is up under the eave, well above head height. Measure from the ground to the centre of the device.",
       "conceptId": "branch-circuit-requirements",
       "severity": "Minor",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "outdoor receptacle height above grade",
@@ -1100,7 +1100,7 @@
       "inspectionNote": "The single garage {term:receptacle} sits high on the wall near the ceiling. Measure from the garage floor to the centre of the device.",
       "conceptId": "branch-circuit-requirements",
       "severity": "Minor",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "garage receptacle height above floor",
@@ -1148,7 +1148,7 @@
       "inspectionNote": "The only bathroom {term:receptacle} is by the door, well away from the vanity. Measure from the outside edge of the basin to the device.",
       "conceptId": "branch-circuit-requirements",
       "severity": "Minor",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "distance from basin outside edge to receptacle",
@@ -1196,7 +1196,7 @@
       "inspectionNote": "The counter {term:receptacle} is up near the bottom of the wall cabinets. Measure straight up from the countertop surface to the centre of the device.",
       "conceptId": "branch-circuit-requirements",
       "severity": "Minor",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "receptacle height above countertop",
@@ -1244,7 +1244,7 @@
       "inspectionNote": "The only service {term:receptacle} is by the attic hatch, far along the floor joists from the furnace. Measure the straight-line distance from the equipment to the device.",
       "conceptId": "branch-circuit-requirements",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "distance from equipment to service receptacle",
@@ -1292,7 +1292,7 @@
       "inspectionNote": "A floor box in the middle of the bedroom stands in for a wall outlet on the long wall. Measure from the wall to the centre of the floor box.",
       "conceptId": "branch-circuit-requirements",
       "severity": "Minor",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "floor receptacle distance from wall",
@@ -1328,7 +1328,7 @@
       "inspectionNote": "A bedroom receptacle is an ordinary device with no test or reset button, on a plain breaker with no test button. Nothing gives it arc-fault protection. Drop the 'fresh-install tag', which is not a real marking.",
       "conceptId": "arc-fault-protection",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true,
       "sceneScope": {
         "protection": "afci",
@@ -1362,7 +1362,7 @@
       "inspectionNote": "A duplex {term:receptacle} is set into the vertical side of the island cabinet, about 10 in under the countertop edge, and nothing is mounted on or in the countertop. A cord plugged in here would hang over the edge.",
       "conceptId": "branch-circuit-requirements",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -1386,7 +1386,7 @@
       "inspectionNote": "Two cars can park side by side, but the only wall {term:receptacle} is beside the left bay at bench height. The right bay wall has no outlet at all.",
       "conceptId": "branch-circuit-requirements",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false
     }
   ]

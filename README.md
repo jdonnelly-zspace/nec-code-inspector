@@ -6,9 +6,9 @@ Interactive 3D educational application for learning the National Electrical Code
 
 Students use the zSpace Stylus to inspect virtual electrical installations for code violations and design electrical panels with automated NEC compliance checking. The app supports three audience levels:
 
-- **Beginner (CTE)**: High school Career & Technical Education students learning electrical fundamentals
-- **Standard (Apprentice)**: Trade school students and apprentices preparing for journeyman exams
-- **Expert (Licensed)**: Licensed electricians and inspectors studying NEC 2026 updates
+- **Apprentice**: building familiarity. Guided, with hints and a list of rules to pick from
+- **Journeyman**: working knowledge. Searches for the rule by name, no hints
+- **Master**: full fluency. Names the rule unaided, optional time limit, subtle violations. The three levels are stages of skill named after the trade's ladder; the app awards no credential
 
 ## Features
 

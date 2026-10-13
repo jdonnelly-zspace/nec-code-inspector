@@ -41,13 +41,13 @@ namespace NECInspector.LogicTests
         {
             t.Begin("which violations are in a pool");
 
-            t.IsTrue(ViolationPools.IsActive(DifficultyLevel.Beginner, false, DifficultyLevel.Beginner), "a Beginner violation shows at Beginner");
-            t.IsTrue(ViolationPools.IsActive(DifficultyLevel.Beginner, false, DifficultyLevel.Expert), "and at every higher level");
-            t.IsTrue(!ViolationPools.IsActive(DifficultyLevel.Standard, false, DifficultyLevel.Beginner), "a Standard violation is hidden at Beginner");
-            t.IsTrue(ViolationPools.IsActive(DifficultyLevel.Standard, false, DifficultyLevel.Standard), "and shows at Standard");
-            t.IsTrue(!ViolationPools.IsActive(DifficultyLevel.Beginner, true, DifficultyLevel.Standard), "a subtle violation is hidden below Expert, whatever its minimum");
-            t.IsTrue(ViolationPools.IsActive(DifficultyLevel.Beginner, true, DifficultyLevel.Expert), "and shows at Expert");
-            t.IsTrue(!ViolationPools.IsActive(DifficultyLevel.Expert, true, DifficultyLevel.Standard), "an Expert subtle violation is hidden at Standard");
+            t.IsTrue(ViolationPools.IsActive(DifficultyLevel.Apprentice, false, DifficultyLevel.Apprentice), "a Apprentice violation shows at Apprentice");
+            t.IsTrue(ViolationPools.IsActive(DifficultyLevel.Apprentice, false, DifficultyLevel.Master), "and at every higher level");
+            t.IsTrue(!ViolationPools.IsActive(DifficultyLevel.Journeyman, false, DifficultyLevel.Apprentice), "a Journeyman violation is hidden at Apprentice");
+            t.IsTrue(ViolationPools.IsActive(DifficultyLevel.Journeyman, false, DifficultyLevel.Journeyman), "and shows at Journeyman");
+            t.IsTrue(!ViolationPools.IsActive(DifficultyLevel.Apprentice, true, DifficultyLevel.Journeyman), "a subtle violation is hidden below Master, whatever its minimum");
+            t.IsTrue(ViolationPools.IsActive(DifficultyLevel.Apprentice, true, DifficultyLevel.Master), "and shows at Master");
+            t.IsTrue(!ViolationPools.IsActive(DifficultyLevel.Master, true, DifficultyLevel.Journeyman), "an Master subtle violation is hidden at Journeyman");
         }
 
         private static void DrawBasics(TestContext t)
@@ -123,27 +123,27 @@ namespace NECInspector.LogicTests
         {
             t.Begin("session size");
 
-            var size = new SessionSize { beginner = 4, standard = 6, expert = 8 };
-            t.Equal(4, size.For(DifficultyLevel.Beginner), "Beginner size");
-            t.Equal(6, size.For(DifficultyLevel.Standard), "Standard size");
-            t.Equal(8, size.For(DifficultyLevel.Expert), "Expert size");
+            var size = new SessionSize { apprentice = 4, journeyman = 6, master = 8 };
+            t.Equal(4, size.For(DifficultyLevel.Apprentice), "Apprentice size");
+            t.Equal(6, size.For(DifficultyLevel.Journeyman), "Journeyman size");
+            t.Equal(8, size.For(DifficultyLevel.Master), "Master size");
             t.IsTrue(size.IsSet && !new SessionSize().IsSet, "an empty size is not set (all violations)");
-            t.Equal(0, new SessionSize().For(DifficultyLevel.Standard), "an empty size draws everything");
+            t.Equal(0, new SessionSize().For(DifficultyLevel.Journeyman), "an empty size draws everything");
 
             var scenario = new ScenarioFileData
             {
                 id = "x", sceneName = "x", displayName = "x", assetPrefix = "X", violationFolder = "X", scenarioAssetName = "X",
-                availableDifficulties = new[] { "Beginner" },
+                availableDifficulties = new[] { "Apprentice" },
                 violations = new[] { new ViolationFileData
                 {
-                    violationId = "X-1", conceptId = ConceptIds.ShockProtection, description = "d", severity = "Major", minimumDifficulty = "Beginner",
+                    violationId = "X-1", conceptId = ConceptIds.ShockProtection, description = "d", severity = "Major", minimumDifficulty = "Apprentice",
                     componentObjectName = "c", citations = new[] { new NECInspector.Data.ViolationCitation { profileId = "nec", reference = "1.1" } }
                 } }
             };
             t.Equal(0, ScenarioFileValidator.Validate(scenario).Count, "a scenario with no session size is valid");
-            scenario.sessionSize = new SessionSize { standard = 3 };
+            scenario.sessionSize = new SessionSize { journeyman = 3 };
             t.Equal(0, ScenarioFileValidator.Validate(scenario).Count, "a scenario with a session size is valid");
-            scenario.sessionSize = new SessionSize { expert = -1 };
+            scenario.sessionSize = new SessionSize { master = -1 };
             t.IsTrue(ScenarioFileValidator.Validate(scenario).Any(e => e.Contains("sessionSize")), "a negative session size is rejected");
         }
     }

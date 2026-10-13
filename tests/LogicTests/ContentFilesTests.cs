@@ -85,10 +85,10 @@ namespace NECInspector.LogicTests
             var file = Read<DifficultySettingsFile>("Difficulty/difficulty-settings.json");
             foreach (string error in ContentFileValidator.Validate(file)) t.IsTrue(false, $"difficulty-settings.json: {error}");
 
-            var expert = file.settings.Single(x => x.level == "Expert");
-            var beginner = file.settings.Single(x => x.level == "Beginner");
-            t.IsTrue(expert.enableTimeLimit && expert.penalizeFalsePositives && expert.citationMode == "FreeText", "Expert has a time limit, penalties and free-text citations");
-            t.IsTrue(beginner.showScaffolding && beginner.showHighlightHints && !beginner.enableTimeLimit, "Beginner has hints and scaffolding and no time limit");
+            var expert = file.settings.Single(x => x.level == "Master");
+            var beginner = file.settings.Single(x => x.level == "Apprentice");
+            t.IsTrue(expert.enableTimeLimit && expert.penalizeFalsePositives && expert.citationMode == "FreeText", "Master has a time limit, penalties and free-text citations");
+            t.IsTrue(beginner.showScaffolding && beginner.showHighlightHints && !beginner.enableTimeLimit, "Apprentice has hints and scaffolding and no time limit");
         }
 
         private static void CertificateFiles(TestContext t)
