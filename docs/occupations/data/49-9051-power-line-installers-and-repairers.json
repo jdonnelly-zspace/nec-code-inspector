@@ -148,7 +148,7 @@
       "appSkills": [
         "jobsite-safety"
       ],
-      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app has no job-briefing or hazard-assessment content, and utility line work is outside NEC skills.)",
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: the app has no job-briefing or hazard-assessment content, and utility line work is outside NEC skills.)",
       "plannedSkills": [],
       "appCoverageBefore": "none: the app has no job-briefing or hazard-assessment content, and utility line work is outside NEC skills."
     },
@@ -328,7 +328,7 @@
       "appSkills": [
         "jobsite-safety"
       ],
-      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: no height or fall-protection content in the app; not an NEC topic.)",
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: no height or fall-protection content in the app; not an NEC topic.)",
       "plannedSkills": [],
       "appCoverageBefore": "none: no height or fall-protection content in the app; not an NEC topic."
     },

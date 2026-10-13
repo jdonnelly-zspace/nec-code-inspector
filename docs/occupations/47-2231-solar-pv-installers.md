@@ -75,7 +75,7 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://blog.heatspring.com/addressing-common-hazards-on-solar-installation-projects (Solar crews typically use harness and retractable lanyard; ladder setup and securing are stressed.)
 - https://expertce.com/learn-articles/fire-code-requirements-rooftop-solar/ (Setbacks and pathways vary by adopted edition and local amendment; the AHJ decides.)
 
-**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: no height-work content; this is OSHA safety, not an NEC skill.)
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: no height-work content; this is OSHA safety, not an NEC skill.)
 
 **Skills the app teaches that this procedure uses:** jobsite-safety
 

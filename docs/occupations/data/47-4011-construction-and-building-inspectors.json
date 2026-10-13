@@ -467,7 +467,7 @@
         "shock-protection",
         "electrically-safe-work"
       ],
-      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches shock protection rules for installations, not lockout/tagout, testing before touching, PPE or safe work practice for the inspector.)",
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: the app teaches shock protection rules for installations, not lockout/tagout, testing before touching, PPE or safe work practice for the inspector.)",
       "plannedSkills": [],
       "appCoverageBefore": "none: the app teaches shock protection rules for installations, not lockout/tagout, testing before touching, PPE or safe work practice for the inspector."
     },
@@ -514,7 +514,7 @@
       "appSkills": [
         "code-administration"
       ],
-      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app uses one code edition per code profile and does not teach how editions and local amendments differ or how an inspector finds them.)",
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: the app uses one code edition per code profile and does not teach how editions and local amendments differ or how an inspector finds them.)",
       "plannedSkills": [],
       "appCoverageBefore": "none: the app uses one code edition per code profile and does not teach how editions and local amendments differ or how an inspector finds them."
     }

@@ -15,7 +15,7 @@ The artifact files carry no page skeleton (no doctype, head or body): the Artifa
 
 1. **Expert difficulty.** With rule numbers hidden, the free-text citation becomes "name the rule in your own words". How that answer is matched to a rule is not designed (a proposal; the wireframe says so).
 2. **The menu leads with "Learn a procedure"**, then scenarios, sandbox, skills and cards. Tutorial and "Progress and data" are small buttons under the headline.
-3. **Occupation picker:** three occupations open (electrician, helper, inspector), three "Coming soon". Students are not shown wave numbers.
+3. **Occupation picker:** three occupations open (electrician, helper, inspector), three "Coming soon". Students are not shown phase numbers.
 4. **The "New in edition" badge was removed** from the rule lookup, because the student should not see an edition.
 5. **Progress and data screen:** the ID format (`ZS-4F2K-07`), the destination ("your program's progress dashboard"), the three buttons (export, reset, delete) and all wording are placeholders. They wait on which analytics service the other zSpace apps use, what the generic account is, and counsel's review.
 6. **Tutorial button mapping** (front inspects, middle marks compliant, back opens the reference) comes from `docs/ALPHA_BUILD_PLAN.md` and is unchecked on the device.

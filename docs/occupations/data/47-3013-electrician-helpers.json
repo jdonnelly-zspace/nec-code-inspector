@@ -252,7 +252,7 @@
         "disconnecting-means",
         "electrically-safe-work"
       ],
-      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: disconnecting-means covers where and how disconnects must be provided, but the app has no lockout/tagout steps, verification or lock handling.)",
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: disconnecting-means covers where and how disconnects must be provided, but the app has no lockout/tagout steps, verification or lock handling.)",
       "plannedSkills": [],
       "appCoverageBefore": "none: disconnecting-means covers where and how disconnects must be provided, but the app has no lockout/tagout steps, verification or lock handling."
     },
@@ -306,7 +306,7 @@
       "appSkills": [
         "jobsite-safety"
       ],
-      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app does not simulate lifting, staging or material storage.)",
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: the app does not simulate lifting, staging or material storage.)",
       "plannedSkills": [],
       "appCoverageBefore": "none: the app does not simulate lifting, staging or material storage."
     },
@@ -485,7 +485,7 @@
         "shock-protection",
         "jobsite-safety"
       ],
-      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches code rules, not tool handling or inspection.)",
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: the app teaches code rules, not tool handling or inspection.)",
       "plannedSkills": [],
       "appCoverageBefore": "none: the app teaches code rules, not tool handling or inspection."
     },
@@ -548,7 +548,7 @@
       "appSkills": [
         "jobsite-safety"
       ],
-      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: no height, ladder or fall-protection content in the app.)",
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: no height, ladder or fall-protection content in the app.)",
       "plannedSkills": [],
       "appCoverageBefore": "none: no height, ladder or fall-protection content in the app."
     },
@@ -606,7 +606,7 @@
         "working-space-access",
         "jobsite-safety"
       ],
-      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: working-space-access covers required clearances, but the app does not teach cleanup or securing a site.)",
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: working-space-access covers required clearances, but the app does not teach cleanup or securing a site.)",
       "plannedSkills": [],
       "appCoverageBefore": "none: working-space-access covers required clearances, but the app does not teach cleanup or securing a site."
     }

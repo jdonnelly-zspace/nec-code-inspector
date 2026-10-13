@@ -264,7 +264,7 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333 (Requires lockout and tagging, testing for de-energized state by a qualified person, and limits energized work to qualified persons.)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1053 (Sets ladder angle, three-foot extension, three-point contact, and nonconductive rails near energized equipment.)
 
-**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches shock protection rules for installations, not lockout/tagout, testing before touching, PPE or safe work practice for the inspector.)
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: the app teaches shock protection rules for installations, not lockout/tagout, testing before touching, PPE or safe work practice for the inspector.)
 
 **Skills the app teaches that this procedure uses:** shock-protection, electrically-safe-work
 
@@ -300,7 +300,7 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://electrical.nebraska.gov/node/187 (Example of a state announcing adoption of the 2023 NEC from a set date and changing exams to match.)
 - https://www.ecmweb.com/national-electrical-code/article/55403844/wisconsin-adopts-2023-national-electrical-code (Reports states adopting different editions, with Wisconsin adding extra requirements; some states already on the 2026 edition.)
 
-**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app uses one code edition per code profile and does not teach how editions and local amendments differ or how an inspector finds them.)
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: the app uses one code edition per code profile and does not teach how editions and local amendments differ or how an inspector finds them.)
 
 **Skills the app teaches that this procedure uses:** code-administration
 

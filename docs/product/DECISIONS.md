@@ -2,6 +2,16 @@
 
 A log of the owner's decisions that shape the product. Newest first. Each entry says what was decided, what it affects and what it leaves open.
 
+## 2026-10-13: phases, not waves, and utility line work before solar and alarm
+
+**Context.** The owner judged the old third wave (power-line installers) more important than the second (solar PV and alarm installers), and asked to call them phases.
+
+| # | Decision | Effect |
+|---|---|---|
+| D-13 | **Release phases replace waves, and the order of the last two swaps:** phase 1 electricians, helpers and inspectors; **phase 2 power-line installers and the adjacent clusters (utility line work)**; **phase 3 solar PV installers and security and fire alarm installers.** | PRD section 7, the deck outline, the TODO, `proposed-skills.json` (`phase`), `occupations.json` (`phase`), `OccupationData.phase` and the build scripts follow. Earlier entries below keep the old words: old wave 2 is now phase 3, old wave 3 is now phase 2. |
+
+**Consequences to plan for.** The NESC licence decision and the utility scenes (poles, vaults, bucket trucks; the largest new art in the plan) now gate the next phase, not the last. Verifying the 2026 numbering for the PV content matters later than before. D-4's gate ("the earlier waves are done") now means phase 1. A release phase is not a content phase: `docs/CONTENT_PLAN.md` keeps its own phases 0 to 5.
+
 ## 2026-10-13: one naming system for levels
 
 **Context.** The deck outline named occupations in the trade's words (electrician, helper, inspector) but the levels generically (Beginner, Standard, Expert). The owner asked for one vocabulary: the industry ladder, Apprentice, Journeyman, Master.

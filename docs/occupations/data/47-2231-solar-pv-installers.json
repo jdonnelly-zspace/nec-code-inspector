@@ -180,7 +180,7 @@
       "appSkills": [
         "jobsite-safety"
       ],
-      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: no height-work content; this is OSHA safety, not an NEC skill.)",
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: no height-work content; this is OSHA safety, not an NEC skill.)",
       "plannedSkills": [],
       "appCoverageBefore": "none: no height-work content; this is OSHA safety, not an NEC skill."
     },

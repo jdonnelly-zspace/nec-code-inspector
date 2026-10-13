@@ -69,7 +69,7 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269 (Briefing content and once-per-shift allowance for repetitive work.)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.952 (Briefing content, frequency, depth by complexity, lone-worker planning.)
 
-**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app has no job-briefing or hazard-assessment content, and utility line work is outside NEC skills.)
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: the app has no job-briefing or hazard-assessment content, and utility line work is outside NEC skills.)
 
 **Skills the app teaches that this procedure uses:** jobsite-safety
 
@@ -187,7 +187,7 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.954 (Fall protection, positioning strap and hardware requirements for power-line work.)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269 (Paragraph (g) fall protection threshold, systems and anchorage strength.)
 
-**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: no height or fall-protection content in the app; not an NEC topic.)
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: no height or fall-protection content in the app; not an NEC topic.)
 
 **Skills the app teaches that this procedure uses:** jobsite-safety
 

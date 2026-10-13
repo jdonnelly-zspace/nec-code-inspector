@@ -198,7 +198,7 @@
         "electrically-safe-work",
         "testing-and-measurement"
       ],
-      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches where disconnects are required and shock protection rules, but has no lockout/tagout or test-before-touch steps.)",
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: the app teaches where disconnects are required and shock protection rules, but has no lockout/tagout or test-before-touch steps.)",
       "plannedSkills": [],
       "appCoverageBefore": "none: the app teaches where disconnects are required and shock protection rules, but has no lockout/tagout or test-before-touch steps."
     },
@@ -408,7 +408,7 @@
         "troubleshooting",
         "testing-and-measurement"
       ],
-      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches the protection rules but has no fault-finding, meter use or troubleshooting scenarios.)",
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: the app teaches the protection rules but has no fault-finding, meter use or troubleshooting scenarios.)",
       "plannedSkills": [],
       "appCoverageBefore": "none: the app teaches the protection rules but has no fault-finding, meter use or troubleshooting scenarios."
     },
@@ -477,7 +477,7 @@
         "earthing-bonding",
         "testing-and-measurement"
       ],
-      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches which circuits need GFCI/AFCI, but students never test with a meter or tester.)",
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: the app teaches which circuits need GFCI/AFCI, but students never test with a meter or tester.)",
       "plannedSkills": [],
       "appCoverageBefore": "none: the app teaches which circuits need GFCI/AFCI, but students never test with a meter or tester."
     },
