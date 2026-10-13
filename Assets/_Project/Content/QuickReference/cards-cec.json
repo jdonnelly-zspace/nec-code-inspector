@@ -1,0 +1,145 @@
+{
+  "cards": [
+    {
+      "cardId": "QRC-GFCI-001-CA",
+      "profileId": "cec",
+      "title": "Receptacles near sinks and wet areas",
+      "category": "GFCIProtection",
+      "summary": "A standard 15 A or 20 A receptacle within 1.5 m of a sink, bathtub or shower stall, or outdoors within 2.5 m of the ground, needs Class A GFCI protection, which trips at a ground-fault current of 6 mA or more and never below 4 mA. The exception is a receptacle behind a fixed appliance, such as a clothes washer, that portable appliances cannot reach.",
+      "keyRule": "Standard receptacles within 1.5 m of water, or outdoors near the ground, need Class A GFCI protection.",
+      "codeReferences": [
+        "26-704"
+      ],
+      "keywords": [
+        "GFCI",
+        "sink",
+        "bathtub",
+        "shower",
+        "outdoor",
+        "wet",
+        "ground fault"
+      ],
+      "minimumDifficulty": "Apprentice"
+    },
+    {
+      "cardId": "QRC-AFCI-001-CA",
+      "profileId": "cec",
+      "title": "Arc-fault protection in dwellings",
+      "category": "AFCIProtection",
+      "summary": "Branch circuits that supply 125 V receptacles rated 20 A or less in a dwelling need combination-type AFCI protection. Some locations are exempt: refrigerator receptacles, kitchen counter, island and peninsula receptacles, and bathroom receptacles within 1 m of the wash basin.",
+      "keyRule": "Dwelling circuits for 125 V receptacles of 20 A or less need combination-type AFCI protection, with a short list of exemptions.",
+      "codeReferences": [
+        "26-658"
+      ],
+      "keywords": [
+        "AFCI",
+        "arc fault",
+        "dwelling",
+        "receptacle",
+        "exempt"
+      ],
+      "minimumDifficulty": "Apprentice"
+    },
+    {
+      "cardId": "QRC-GROUND-001-CA",
+      "profileId": "cec",
+      "title": "Grounding electrodes and bonding",
+      "category": "Grounding",
+      "summary": "The code names what can serve as a grounding electrode. A manufactured electrode is normally two rods, each 3 m long, driven in full length, spaced at least 3 m apart and bonded together. Whether a buried metal water pipe may serve as an electrode depends on the province. All the grounding electrodes at a building are connected together so that they act as one grounding system. Metal piping and other non-electrical equipment that could become energized, including the building's metal water piping, are bonded to the grounding system with a bonding conductor.",
+      "keyRule": "Connect every grounding electrode into one system, and bond metal water piping to it.",
+      "codeReferences": [
+        "10-102",
+        "10-104",
+        "10-700"
+      ],
+      "keywords": [
+        "ground rod",
+        "electrode",
+        "water pipe",
+        "bonding",
+        "grounding"
+      ],
+      "minimumDifficulty": "Journeyman"
+    },
+    {
+      "cardId": "QRC-OVERCURRENT-001-CA",
+      "profileId": "cec",
+      "title": "Rating of overcurrent devices",
+      "category": "Overcurrent",
+      "summary": "An overcurrent device generally cannot be rated above the ampacity of the conductors it protects. For copper conductors the maximum device rating is 15 A for 14 AWG, 20 A for 12 AWG and 30 A for 10 AWG. A few small cords and wires have their own exceptions.",
+      "keyRule": "The device rating cannot exceed the conductor's ampacity: 15 A on 14 AWG, 20 A on 12 AWG, 30 A on 10 AWG.",
+      "codeReferences": [
+        "14-104"
+      ],
+      "keywords": [
+        "breaker",
+        "ampacity",
+        "overcurrent",
+        "14 AWG",
+        "12 AWG",
+        "10 AWG"
+      ],
+      "minimumDifficulty": "Apprentice"
+    },
+    {
+      "cardId": "QRC-SPACING-001-CA",
+      "profileId": "cec",
+      "title": "Receptacle spacing in dwellings",
+      "category": "BranchCircuits",
+      "summary": "Place dwelling-unit receptacles in finished walls so that every spot along the floor line of usable wall space (an unbroken run of 900 mm or more) is within 1.8 m of one, which makes 3.6 m the practical maximum gap between two receptacles. Behind kitchen counter work surfaces, install split receptacles so that you are never farther than 900 mm along the wall line from one. Sinks, built-in equipment and isolated work surfaces shorter than 300 mm at the wall line do not count.",
+      "keyRule": "No point on usable wall is more than 1.8 m from a receptacle, and none on a kitchen counter more than 900 mm.",
+      "codeReferences": [
+        "26-722",
+        "26-722(d)(iii)"
+      ],
+      "keywords": [
+        "receptacle",
+        "spacing",
+        "wall",
+        "kitchen counter",
+        "split receptacle"
+      ],
+      "minimumDifficulty": "Apprentice"
+    },
+    {
+      "cardId": "QRC-WORKSPACE-001-CA",
+      "profileId": "cec",
+      "title": "Working space and breaker height",
+      "category": "WorkingSpace",
+      "summary": "Leave at least 1 m of clear working space about electrical equipment wherever it must be reached for operation or maintenance: the front and, where access is needed there, the sides or back, plus any extra room that draw-out devices such as breakers or starters need when fully withdrawn. In a dwelling unit, mount no branch-circuit breaker or switch with its handle more than 1.7 m above the finished floor. The main is excepted.",
+      "keyRule": "Keep at least 1 m clear around equipment, and keep dwelling breaker handles no higher than 1.7 m.",
+      "codeReferences": [
+        "2-308",
+        "26-600"
+      ],
+      "keywords": [
+        "working space",
+        "clearance",
+        "breaker height",
+        "access",
+        "panel"
+      ],
+      "minimumDifficulty": "Apprentice"
+    },
+    {
+      "cardId": "QRC-DISCONNECT-001-CA",
+      "profileId": "cec",
+      "title": "Disconnecting means",
+      "category": "DisconnectingMeans",
+      "summary": "Put the consumer's service equipment where it is readily accessible and close to where the service conductors enter the building. It does not belong in places such as clothes closets, bathrooms, stairways or spaces with low headroom. A motor's disconnecting means is installed in sight of the motor and its starter, and within 9 m of them.",
+      "keyRule": "Service equipment is readily accessible near where the supply enters; a motor's disconnect is in sight and within 9 m.",
+      "codeReferences": [
+        "6-206",
+        "28-604"
+      ],
+      "keywords": [
+        "disconnect",
+        "service equipment",
+        "motor",
+        "in sight",
+        "accessible"
+      ],
+      "minimumDifficulty": "Journeyman"
+    }
+  ]
+}
