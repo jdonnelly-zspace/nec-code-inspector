@@ -2,6 +2,17 @@
 
 A log of the owner's decisions that shape the product. Newest first. Each entry says what was decided, what it affects and what it leaves open.
 
+## 2026-10-13: delivery decisions for the deck (analytics, art, content, licences)
+
+**Context.** Reviewing the stakeholder deck outline, the owner set how the product will be delivered.
+
+| # | Decision | Effect |
+|---|---|---|
+| D-14 | **Analytics through RudderStack and Mixpanel**, specified by the owner in the format of zSpace's In-app Analytics Requirements (Confluence, PROD space). | Replaces "reuse the other apps' service" in D-9. The interface and the event list in the TODO wait on the owner's spec. |
+| D-15 | **Art:** 3DFrame by Vection Technologies for the 3D scenes and art; GameCoders Studio, zSpace's art studio, where higher fidelity is needed. | The scene and art work in the TODO is delivered this way. |
+| D-16 | **Content is verified from public information, with Claude checking it against the sources;** no expert sign-off is planned. | The deck must not claim expert review. The expert-review items in the TODO and the `reviewStatus` fields remain a record of what has and has not been reviewed. |
+| D-17 | **Owner's position: no licences are needed for the installation codes and standards,** because the app teaches skills and competencies in its own words and does not reproduce them. | The deck no longer lists licences as a decision. This is the owner's position, not counsel's: `docs/CONTENT_POLICY.md` still records the licence status as unreviewed, and the market view itself called the NFPA licence cost an open risk, so a short confirmation from counsel is recommended before release. |
+
 ## 2026-10-13: phases, not waves, and utility line work before solar and alarm
 
 **Context.** The owner judged the old third wave (power-line installers) more important than the second (solar PV and alarm installers), and asked to call them phases.
@@ -10,7 +21,7 @@ A log of the owner's decisions that shape the product. Newest first. Each entry 
 |---|---|---|
 | D-13 | **Release phases replace waves, and the order of the last two swaps:** phase 1 electricians, helpers and inspectors; **phase 2 power-line installers and the adjacent clusters (utility line work)**; **phase 3 solar PV installers and security and fire alarm installers.** | PRD section 7, the deck outline, the TODO, `proposed-skills.json` (`phase`), `occupations.json` (`phase`), `OccupationData.phase` and the build scripts follow. Earlier entries below keep the old words: old wave 2 is now phase 3, old wave 3 is now phase 2. |
 
-**Consequences to plan for.** The NESC licence decision and the utility scenes (poles, vaults, bucket trucks; the largest new art in the plan) now gate the next phase, not the last. Verifying the 2026 numbering for the PV content matters later than before. D-4's gate ("the earlier waves are done") now means phase 1. A release phase is not a content phase: `docs/CONTENT_PLAN.md` keeps its own phases 0 to 5.
+**Consequences to plan for.** The utility scenes (poles, vaults, bucket trucks; the largest new art in the plan) now gate the next phase, not the last, and the NESC licence question (see D-17) comes with them. Verifying the 2026 numbering for the PV content matters later than before. D-4's gate ("the earlier waves are done") now means phase 1. A release phase is not a content phase: `docs/CONTENT_PLAN.md` keeps its own phases 0 to 5.
 
 ## 2026-10-13: one naming system for levels
 
