@@ -18,6 +18,9 @@ namespace NECInspector.PanelSandbox
         public static PanelDesignManager Instance { get; private set; }
 
         [Header("Definition")]
+        [Tooltip("Optional: when set, the design is chosen from the catalog for the student code and level, preferring one not played lately")]
+        [SerializeField] private PanelDesignCatalogSO _catalog;
+        [Tooltip("Used when there is no catalog, or no design for the code")]
         [SerializeField] private PanelDesignDefinitionSO _definition;
 
         [Header("Panel")]
@@ -50,6 +53,7 @@ namespace NECInspector.PanelSandbox
 
         public void Initialize()
         {
+            ChooseDefinition();
             _startTime = Time.time;
             _placedBreakers.Clear();
             _lastComplianceResults = null;
@@ -62,6 +66,17 @@ namespace NECInspector.PanelSandbox
             }
 
             Debug.Log($"[PanelDesignManager] Initialized: {_definition.displayName}, {_slots.Length} slots");
+        }
+
+        private void ChooseDefinition()
+        {
+            if (_catalog == null) return;
+
+            var level = GameManager.Instance?.Difficulty?.CurrentLevel ?? DifficultyLevel.Journeyman;
+            var recent = GameManager.Instance?.Progress?.GetRecentSandboxDesigns() ?? new List<string>();
+            var chosen = _catalog.Choose(CodeProfiles.ActiveId, level, recent, Environment.TickCount);
+            if (chosen != null) _definition = chosen;
+            else Debug.LogWarning($"[PanelDesignManager] No panel design for '{CodeProfiles.ActiveId}'; using the scene's design");
         }
 
         /// <summary>

@@ -195,6 +195,19 @@ namespace NECInspector.Core
             Save();
         }
 
+        /// <summary>The panel types of the designs the student played last, oldest first, so the sandbox can offer one they have not seen lately.</summary>
+        public IReadOnlyList<string> GetRecentSandboxDesigns(int max = 6)
+        {
+            var recent = new List<string>();
+            foreach (var entry in Data.completedSandboxes)
+            {
+                if (string.IsNullOrEmpty(entry.panelType)) continue;
+                recent.Remove(entry.panelType);
+                recent.Add(entry.panelType);
+            }
+            return recent.Count <= max ? recent : recent.GetRange(recent.Count - max, max);
+        }
+
         public void RecordSandboxScore(string panelType, SandboxScore score,
             IEnumerable<SkillEvidence> evidence = null)
         {

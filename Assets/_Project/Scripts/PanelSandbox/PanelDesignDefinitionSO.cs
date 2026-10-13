@@ -9,6 +9,9 @@ namespace NECInspector.PanelSandbox
     {
         [HideInInspector] public string id;
 
+        [Tooltip("The installation code profile this design was written for (its references and conductors come from it)")]
+        public string profileId = "nec-2023";
+
         [Header("Panel")]
         public string panelType = "Residential 200A";
         public string displayName;
