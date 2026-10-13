@@ -25,6 +25,7 @@ namespace NECInspector.Editor
             ContentFileLoader.EnsureFolder("Assets/_Project", "ScriptableObjects");
             ContentFileLoader.EnsureFolder("Assets/_Project/ScriptableObjects", "Scenarios");
 
+            var designs = new System.Collections.Generic.List<PanelDesignDefinitionSO>();
             foreach (var entry in file.designs)
             {
                 string assetPath = $"{ASSET_DIR}/PanelDesign_{entry.assetName}.asset";
@@ -35,6 +36,7 @@ namespace NECInspector.Editor
                     AssetDatabase.CreateAsset(definition, assetPath);
                 }
 
+                definition.profileId = entry.profileId;
                 definition.panelType = entry.panelType;
                 definition.displayName = entry.displayName;
                 definition.description = entry.description;
@@ -49,8 +51,20 @@ namespace NECInspector.Editor
                 definition.requiredCircuits = entry.requiredCircuits;
 
                 EditorUtility.SetDirty(definition);
+                designs.Add(definition);
                 Debug.Log($"[NEC Inspector] Panel sandbox data generated: {definition.requiredCircuits.Length} required circuits for {definition.panelType}.");
             }
+
+            // The catalog the sandbox picks a design from
+            string catalogPath = $"{ASSET_DIR}/PanelDesignCatalog.asset";
+            var catalog = AssetDatabase.LoadAssetAtPath<PanelDesignCatalogSO>(catalogPath);
+            if (catalog == null)
+            {
+                catalog = ScriptableObject.CreateInstance<PanelDesignCatalogSO>();
+                AssetDatabase.CreateAsset(catalog, catalogPath);
+            }
+            catalog.designs = designs;
+            EditorUtility.SetDirty(catalog);
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
