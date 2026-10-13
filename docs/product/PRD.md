@@ -92,9 +92,11 @@ Status: **Built** (in the repository and tested), **Partial** (data or code exis
 | FR-12 | Three generic difficulty levels. | Built | Text and tests. |
 | FR-13 | Progress per skill and tier, saved with the student; derived progress per procedure. | Partial | Per skill built; each procedure practice is saved with its score (`ProcedureProgress`); a derived per-procedure view is planned. |
 | FR-14 | A content pipeline: scaffold, tests, source verification, expert worksheets. | Built | `tools/`, `docs/AUTHORING_VIOLATIONS.md`, expert review packet. |
-| FR-15 | Teacher reporting: class progress by skill and procedure. | Planned | An offline alignment report exists (`tools/alignment-report`); nothing in the app. |
+| FR-15 | Teacher reporting: class progress by skill and procedure, without teacher accounts in the first release. The app exports a per-student progress file (CSV, by skill and tier) a teacher collects by USB or shared folder; `tools/alignment-report` can read it. | Planned | Decided 2026-10-12 (D-8). The export is not built. |
 | FR-16 | Code profiles for each region and for occupations that need another code (fire alarm standard). | Partial | NEC 2023 and NEC 2026 (draft) as separate profiles, CEC (draft), BS 7671 (draft); a fire alarm profile planned; the NESC blocked. |
-| FR-17 | Edition handling: the app knows which edition's numbering its content follows. | Blocked | Open decision 6 (TODO). |
+| FR-17 | Edition handling: each NEC edition is its own profile; the student never sees an edition or a rule number. | Built | `nec-2023` and `nec-2026` (draft); decided 2026-10-12 (D-5 to D-7). |
+| FR-19 | Analytics: usage and learning events are sent to the same analytics service the other zSpace Unity apps use, keyed by a generic id, with no personal data in any event. | Planned | Decided 2026-10-12 (D-9). Nothing is built; the service is to be confirmed. |
+| FR-20 | Progress can be followed outside the app, and the student can see plainly what is tracked: a generic account or id (no name or email needed), a screen saying what is collected, where it goes, who sees it and how to export or delete it. | Planned | Decided 2026-10-12 (D-9); wording needs counsel. |
 | FR-18 | Occupation fit is visible to the owner: a generated traceability matrix and gap list. | Built | `docs/occupations/TRACEABILITY.md`, `tools/occupations/build_docs.py`. |
 
 ## 6. Non-functional requirements
@@ -105,7 +107,10 @@ Status: **Built** (in the repository and tested), **Partial** (data or code exis
 - **Content accuracy:** every citation, number and procedure step is checked by a second pass against public sources, then an expert, before it is called reviewed. Statuses are visible in the worksheets.
 - **Content licensing:** installation codes and standards are copyrighted; content is paraphrase plus reference numbers. The licence decision is the owner's (open).
 - **Testing:** logic tests run in CI, a Unity compile check runs locally, and the zSpace hardware is tested weekly.
-- **Gaps in this draft:** accessibility needs, student data privacy and retention, localization (open decision), and teacher account and classroom management are not yet specified.
+- **Analytics and identity (decided 2026-10-12, D-9):** the app sends analytics like the other zSpace Unity apps, behind an interface so no code depends on the vendor. A generic id (a class or student code, no personal data) ties events and the progress export to a student. Events carry ids, skill, tier, score and time, never free text, a name or an email. A plain-language screen shows what is collected, where it goes, who sees it, and how to export or delete it. Minors are students here: the notice wording, consent (a school consent route) and retention need counsel before release.
+- **Teacher reporting (decided 2026-10-12, D-8):** no teacher accounts in the first release; a per-student progress export (FR-15).
+- **Accessibility (decided 2026-10-12, D-10):** never rely on colour alone (wire colours always carry a label); a minimum text size and 4.5:1 contrast for all UI text; student text at about grade 8; every timer can be turned off as an accommodation; a stereo depth setting; seated, stylus-only use with no long holds; read-aloud later. Stereo comfort and low-vision use need testing on the device.
+- **Localization (decided 2026-10-12, D-11):** English first. The other priority-one languages follow, in an order and list the owner sets; student text is already data, so it can be extracted. French (Canada) is the likely first, once the CEC reaches parity (phase 3). Translate only reviewed content.
 
 ## 7. Scope by occupation, in waves (accepted 2026-10-12)
 
@@ -137,7 +142,8 @@ teacher-reported use. Business measures are those in the market view and are not
 
 ## 10. Risks and open decisions
 
-1. **NEC edition.** Content follows 2023 numbering; the project targets 2026; checks keep finding 2020 numbering in older content. Blocks load calculation and PV content. (TODO, open decision 6)
+1. **NEC edition.** Settled 2026-10-12: both editions are profiles (`nec-2023`, `nec-2026` draft). Still open: an expert verifies the 2026 numbers and values, and older content may still carry 2020 numbering. (D-5 to D-7)
+1a. **Student data.** Students include minors and analytics is required, so the privacy notice, consent route and retention rules need counsel before any release that sends data. (D-9)
 2. **Licensing.** The NEC, CEC and BS 7671 licence decisions are open, the fire alarm standard and the NESC would add more, and the market view says the NFPA cost is not modelled.
 3. **SOP accuracy.** The 44 procedures were drafted from public pages; the key standards (the electrical safe work standard, the fire alarm standard, the NESC) are paywalled and were not opened. An occupational expert must review each occupation.
 4. **Occupations the NEC does not cover.** Power-line work, and parts of fire alarm, elevator and utility work, need other codes. The owner decided to build utility line work (wave 3); until it exists, promising it in marketing would mislead buyers.

@@ -2,6 +2,19 @@
 
 A log of the owner's decisions that shape the product. Newest first. Each entry says what was decided, what it affects and what it leaves open.
 
+## 2026-10-12: teacher reporting, analytics and progress outside the app
+
+**Context.** Four items were open in the PRD (teacher accounts, student data privacy, accessibility, localization). The owner decided all four.
+
+| # | Decision | Effect |
+|---|---|---|
+| D-8 | **No teacher accounts in the first release.** Teachers get a per-student progress export (CSV, by skill and tier), collected by USB or shared folder. | FR-15. The export is to be built; `tools/alignment-report` already reads progress files. |
+| D-9 | **Analytics is required** (the other zSpace Unity apps have it), and **progress must be trackable outside the app, and clear to the student**. A generic account or id (no personal data) ties events and exports to a student; a plain-language screen says what is collected, where it goes, who sees it, and how to export or delete it. This replaces the recommendation to collect nothing off the device. | FR-19 and FR-20, PRD section 6. Events carry ids, skill, tier, score and time, never free text, a name or an email. The analytics service is reused from the other apps; the app talks to it through an interface. |
+| D-10 | **Accessibility floors are accepted:** never colour alone (wire colours always carry a label); a minimum text size and 4.5:1 contrast for UI text; student text at about grade 8; every timer can be turned off as an accommodation; a stereo depth setting; seated, stylus-only use with no long holds; read-aloud later. | PRD section 6. Needs tests on the device (stereo comfort, low vision); a text-size and contrast check can be automated for the UI. |
+| D-11 | **English first; the other priority-one languages come next.** | Student text stays in data so it can be extracted; translate only reviewed content. The language list and order are the owner's to set (French for Canada is the likely first). |
+
+**Left open.** Which analytics service and package the other apps use; what the generic account is (a class code, a student code, or a zSpace account); who hosts the place progress is viewed outside the app; the notice wording, consent route for minors and retention period (counsel); the list and order of the other priority-one languages.
+
 ## 2026-10-12: NEC editions are profiles, and rule numbers stay out of the student UI
 
 **Context.** The TODO asked which NEC edition's numbering the content should follow (open decision 6). The owner's answer: the edition is a backend matter, the app teaches
