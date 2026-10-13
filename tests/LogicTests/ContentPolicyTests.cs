@@ -49,8 +49,9 @@ namespace NECInspector.LogicTests
             t.IsTrue(!Directory.Exists(Path.Combine(root, "Assets/_Project/Scripts/Credentials")),
                 "no credential code ships in the app");
 
-            // The three difficulty levels are generic: they describe what the student can do, not a pathway or a body
-            string[] pathwayWords = { "CTE", "apprentice", "journeyman", "licensed", "trade school", "NCCER", "Red Seal", "high school" };
+            // The three levels are named after the trade's ladder (Apprentice, Journeyman, Master; D-12) and describe what the student can do. They name no school pathway,
+            // licence or body, so those words stay out of the level files.
+            string[] pathwayWords = { "CTE", "licensed", "licence", "license", "trade school", "NCCER", "Red Seal", "high school" };
             foreach (string rel in new[] { "Assets/_Project/Scripts/Core/DifficultyLevel.cs", "Assets/_Project/Scripts/UI/MainMenuPanel.cs" })
             {
                 string text = File.ReadAllText(Path.Combine(root, rel));

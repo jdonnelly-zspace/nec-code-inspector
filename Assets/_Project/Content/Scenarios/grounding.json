@@ -4,11 +4,11 @@
   "displayName": "Grounding & Bonding Inspection",
   "description": "Inspect a residential service entrance and grounding electrode system for code violations. Verify proper grounding electrode installation, bonding connections, conductor sizing, and system grounding integrity.",
   "environmentDescription": "A residential utility room and exterior service entrance showing the grounding electrode system, service panel, water pipe bonding, and ground rods.",
-  "expertTimeLimit": 1200,
+  "masterTimeLimit": 1200,
   "availableDifficulties": [
-    "Beginner",
-    "Standard",
-    "Expert"
+    "Apprentice",
+    "Journeyman",
+    "Master"
   ],
   "assetPrefix": "GND",
   "violationFolder": "Grounding",
@@ -61,7 +61,7 @@
       "inspectionNote": "This ground rod is only 6 feet long, failing to meet the 8-foot minimum required by code.",
       "conceptId": "earthing-bonding",
       "severity": "Critical",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "ground-rod-length",
@@ -104,7 +104,7 @@
       "inspectionNote": "Grounding electrode conductor is disconnected at the service panel. No path to earth exists.",
       "conceptId": "earthing-bonding",
       "severity": "Critical",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -141,7 +141,7 @@
       "inspectionNote": "Metal water pipe enters the building without a bonding connection to the electrical grounding system.",
       "conceptId": "earthing-bonding",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -173,7 +173,7 @@
       "inspectionNote": "Equipment grounding conductor is 14 AWG on a 30A circuit. The code's grounding-conductor table requires minimum 10 AWG for 30A.",
       "conceptId": "earthing-bonding",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -202,7 +202,7 @@
       "inspectionNote": "Ground rod and water pipe electrode are both present but not bonded together. They must form a single grounding electrode system.",
       "conceptId": "earthing-bonding",
       "severity": "Critical",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -226,7 +226,7 @@
       "inspectionNote": "Service grounding connection uses a corroded clamp with high resistance, failing to provide adequate surge protection.",
       "conceptId": "earthing-bonding",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -250,7 +250,7 @@
       "inspectionNote": "Bare aluminum grounding electrode conductor is run through earth to the ground rod. Aluminum corrodes in contact with soil.",
       "conceptId": "earthing-bonding",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -274,7 +274,7 @@
       "inspectionNote": "Metal water pipe transitions to plastic 4 feet after entering the building. Less than 10 feet of metal is in contact with earth, so it does not qualify as a grounding electrode on its own.",
       "conceptId": "earthing-bonding",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -298,7 +298,7 @@
       "inspectionNote": "No intersystem bonding termination is provided at the service equipment for communications system grounding connections.",
       "conceptId": "earthing-bonding",
       "severity": "Minor",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -322,7 +322,7 @@
       "inspectionNote": "Only one ground rod is installed with no supplemental electrode. Unless resistance is verified at 25 ohms or less, a second rod is required.",
       "conceptId": "earthing-bonding",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -346,7 +346,7 @@
       "inspectionNote": "Midway along the bare copper conductor to the {term:ground-rod}, two lengths are twisted together inside a yellow wire nut. No compression sleeve or weld mark is visible.",
       "conceptId": "earthing-bonding",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false
     }
   ]

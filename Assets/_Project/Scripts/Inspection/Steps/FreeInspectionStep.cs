@@ -56,15 +56,15 @@ namespace NECInspector.Inspection
                 _flaggingPanel.OnMarkedCompliant += OnMarkedCompliant;
             }
 
-            // Start time limit for Expert mode
+            // Start time limit for Master mode
             var settings = GameManager.Instance?.Difficulty.CurrentSettings;
             if (settings != null && settings.enableTimeLimit && settings.timeLimitSeconds > 0)
             {
                 _timeLimitCoroutine = StateMachine.StartCoroutine(TimeLimitCoroutine(settings.timeLimitSeconds));
             }
 
-            // Beginner scaffolding: show hints after timeout
-            if (_difficulty == DifficultyLevel.Beginner)
+            // Apprentice scaffolding: show hints after timeout
+            if (_difficulty == DifficultyLevel.Apprentice)
             {
                 ScaffoldingTimeoutSeconds = settings?.scaffoldingTimeoutSeconds ?? 60f;
                 ScaffoldingAction = () => _inspectionManager.ShowHints();
@@ -102,7 +102,7 @@ namespace NECInspector.Inspection
 
         private void OnHintRequested()
         {
-            if (_difficulty == DifficultyLevel.Beginner)
+            if (_difficulty == DifficultyLevel.Apprentice)
             {
                 _inspectionManager.ShowHints();
             }

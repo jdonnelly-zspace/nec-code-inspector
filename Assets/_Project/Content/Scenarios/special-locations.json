@@ -4,11 +4,11 @@
   "displayName": "Special Locations Inspection",
   "description": "Inspect a backyard with a swimming pool and an outdoor receptacle for special location violations: pool luminaire height, pool bonding and weatherproof receptacle covers.",
   "environmentDescription": "A residential backyard with an in-ground pool, a metal ladder and rail, a luminaire hung over the water, and a receptacle on the patio wall.",
-  "expertTimeLimit": 900,
+  "masterTimeLimit": 900,
   "availableDifficulties": [
-    "Beginner",
-    "Standard",
-    "Expert"
+    "Apprentice",
+    "Journeyman",
+    "Master"
   ],
   "assetPrefix": "SL",
   "violationFolder": "SpecialLocations",
@@ -35,7 +35,7 @@
       "inspectionNote": "The luminaire is about 9 ft above the water level. Over a pool it needs to be at least 12 ft above.",
       "conceptId": "special-locations",
       "severity": "Critical",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -66,7 +66,7 @@
       "inspectionNote": "The metal ladder and rail have no bonding conductor to the bonding grid, so they could carry a different voltage than the water.",
       "conceptId": "special-locations",
       "severity": "Critical",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -90,7 +90,7 @@
       "inspectionNote": "The patio receptacle has a flip cover that cannot close over a plug, so rain reaches the plug and the receptacle while it is in use.",
       "conceptId": "special-locations",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -126,7 +126,7 @@
       "inspectionNote": "The service drop from the pole crosses the pool and hangs about 15 ft above the water. Compare that height with the table limit for overhead conductors near a pool.",
       "conceptId": "special-locations",
       "severity": "Critical",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "overhead conductor clearance above maximum water level",
@@ -174,7 +174,7 @@
       "inspectionNote": "A {term:receptacle} on a post sits a few steps from the pool wall, about 3 ft away. Measure the cord path from the water to it and compare with the minimum distance for pool receptacles.",
       "conceptId": "special-locations",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "receptacle distance from inside pool wall",
@@ -222,7 +222,7 @@
       "inspectionNote": "A fused disconnect for the spa heater and pump is on the fence post, about 2 ft from the spa wall with nothing between it and the water. Check the distance and whether any barrier separates it from the water.",
       "conceptId": "special-locations",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "disconnect distance from inside spa wall",
@@ -258,7 +258,7 @@
       "inspectionNote": "The pump cord goes to a plain 20 A {term:receptacle} on the equipment pad with no test/reset device on it, and no protective {term:breaker} is labelled. Decide whether the pump outlet has the protection that pool pump circuits need.",
       "conceptId": "special-locations",
       "severity": "Critical",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false
     },
     {
@@ -282,7 +282,7 @@
       "inspectionNote": "The garage charger nameplate reads 80 A, 240 V and it is hardwired. There is no disconnect at the charger and no plaque saying where one is; the only way to switch it off is a {term:breaker} in a {term:panel} in another room with no provision for locking. Compare the rating with the disconnect rule.",
       "conceptId": "special-locations",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -318,7 +318,7 @@
       "inspectionNote": "A standard timer and light switch box is on a post about 2 ft from the pool wall with open deck between it and the water. Check the distance, and whether any barrier or special listing applies.",
       "conceptId": "special-locations",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true,
       "sceneFact": {
         "quantity": "switching device distance from inside pool wall",
@@ -366,7 +366,7 @@
       "inspectionNote": "The pool wall light has no marking for shallow installation, and the top of its lens is about 6 in. under the normal water level. Measure from the water line down to the top of the lens.",
       "conceptId": "special-locations",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "depth of luminaire lens top below normal water level",

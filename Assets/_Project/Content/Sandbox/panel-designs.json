@@ -11,11 +11,11 @@
       "dwellingArea": 2000,
       "targetLoadVA": 18625,
       "loadCalcTolerancePercent": 10,
-      "expertTimeLimit": 1800,
+      "masterTimeLimit": 1800,
       "availableDifficulties": [
-        "Beginner",
-        "Standard",
-        "Expert"
+        "Apprentice",
+        "Journeyman",
+        "Master"
       ],
       "requiredCircuits": [
         {
@@ -187,9 +187,9 @@
       "dwellingArea": 1200,
       "targetLoadVA": 17785.0,
       "loadCalcTolerancePercent": 10,
-      "expertTimeLimit": 1200,
+      "masterTimeLimit": 1200,
       "availableDifficulties": [
-        "Beginner"
+        "Apprentice"
       ],
       "requiredCircuits": [
         {
@@ -322,10 +322,10 @@
       "dwellingArea": 1600,
       "targetLoadVA": 18205.0,
       "loadCalcTolerancePercent": 10,
-      "expertTimeLimit": 1500,
+      "masterTimeLimit": 1500,
       "availableDifficulties": [
-        "Beginner",
-        "Standard"
+        "Apprentice",
+        "Journeyman"
       ],
       "requiredCircuits": [
         {
@@ -497,9 +497,9 @@
       "dwellingArea": 1400,
       "targetLoadVA": 17995.0,
       "loadCalcTolerancePercent": 10,
-      "expertTimeLimit": 1500,
+      "masterTimeLimit": 1500,
       "availableDifficulties": [
-        "Standard"
+        "Journeyman"
       ],
       "requiredCircuits": [
         {
@@ -684,10 +684,10 @@
       "dwellingArea": 3000,
       "targetLoadVA": 19675.0,
       "loadCalcTolerancePercent": 10,
-      "expertTimeLimit": 1800,
+      "masterTimeLimit": 1800,
       "availableDifficulties": [
-        "Standard",
-        "Expert"
+        "Journeyman",
+        "Master"
       ],
       "requiredCircuits": [
         {
@@ -885,9 +885,9 @@
       "dwellingArea": 4200,
       "targetLoadVA": 20935.0,
       "loadCalcTolerancePercent": 10,
-      "expertTimeLimit": 1800,
+      "masterTimeLimit": 1800,
       "availableDifficulties": [
-        "Expert"
+        "Master"
       ],
       "requiredCircuits": [
         {

@@ -25,7 +25,7 @@ MIN_ATTEMPTS = 3
 MASTERY_THRESHOLD = 0.8
 
 TIERS = ["Foundation", "Practitioner", "Authority"]
-DIFFICULTY_TIER = {"Beginner": 0, "Standard": 1, "Expert": 2}
+DIFFICULTY_TIER = {"Apprentice": 0, "Journeyman": 1, "Master": 2}
 
 
 def load_json(path):

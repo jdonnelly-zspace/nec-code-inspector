@@ -17,37 +17,37 @@
 ### Scenario 2: Branch Circuit Wiring (MVP) - 12 Violations
 | NEC Article | Topic | Violation ID | Difficulty | Severity |
 |-------------|-------|-------------|:----------:|:--------:|
-| Art. 210.8(A)(1) | GFCI - Bathrooms | BC-GFCI-BATH-001 | Beginner | Critical |
-| Art. 210.8(A)(5) | GFCI - Kitchens | BC-GFCI-KITCHEN-001 | Beginner | Critical |
-| Art. 210.8(A)(2) | GFCI - Garages | BC-GFCI-GARAGE-001 | Beginner | Major |
-| Art. 210.52(A) | Receptacle spacing - General | BC-SPACING-WALL-001 | Beginner | Major |
-| Art. 240.4(D) | Small conductors (14 AWG on 20A) | BC-WIRE-14AWG-001 | Beginner | Critical |
-| Art. 210.12(B) | AFCI - Bedrooms | BC-AFCI-BEDROOM-001 | Standard | Critical |
-| Art. 210.12(B) | AFCI - Living rooms | BC-AFCI-LIVING-001 | Standard | Critical |
-| Art. 210.52(C) | Receptacle spacing - Countertops | BC-SPACING-COUNTER-001 | Standard | Major |
-| Art. 210.11(C)(1) | Dedicated bathroom circuit | BC-DEDICATED-BATH-001 | Standard | Major |
-| Art. 210.11(C)(3) | Two small-appliance circuits | BC-DEDICATED-KITCHEN-001 | Standard | Major |
-| Art. 334.80 | NM cable bundling derate | BC-WIRE-KITCHEN-001 | Expert | Major |
-| Art. 210.8(D) | GFCI - Dishwashers (2026) | BC-GFCI-DISHWASHER-001 | Expert | Major |
+| Art. 210.8(A)(1) | GFCI - Bathrooms | BC-GFCI-BATH-001 | Apprentice | Critical |
+| Art. 210.8(A)(5) | GFCI - Kitchens | BC-GFCI-KITCHEN-001 | Apprentice | Critical |
+| Art. 210.8(A)(2) | GFCI - Garages | BC-GFCI-GARAGE-001 | Apprentice | Major |
+| Art. 210.52(A) | Receptacle spacing - General | BC-SPACING-WALL-001 | Apprentice | Major |
+| Art. 240.4(D) | Small conductors (14 AWG on 20A) | BC-WIRE-14AWG-001 | Apprentice | Critical |
+| Art. 210.12(B) | AFCI - Bedrooms | BC-AFCI-BEDROOM-001 | Journeyman | Critical |
+| Art. 210.12(B) | AFCI - Living rooms | BC-AFCI-LIVING-001 | Journeyman | Critical |
+| Art. 210.52(C) | Receptacle spacing - Countertops | BC-SPACING-COUNTER-001 | Journeyman | Major |
+| Art. 210.11(C)(1) | Dedicated bathroom circuit | BC-DEDICATED-BATH-001 | Journeyman | Major |
+| Art. 210.11(C)(3) | Two small-appliance circuits | BC-DEDICATED-KITCHEN-001 | Journeyman | Major |
+| Art. 334.80 | NM cable bundling derate | BC-WIRE-KITCHEN-001 | Master | Major |
+| Art. 210.8(D) | GFCI - Dishwashers (2026) | BC-GFCI-DISHWASHER-001 | Master | Major |
 
-**Difficulty distribution:** Beginner sees 5, Standard sees 10, Expert sees all 12.
+**Difficulty distribution:** Apprentice sees 5, Journeyman sees 10, Master sees all 12.
 **Scenario data:** `Assets/_Project/Content/Scenarios/branch-circuits.json` (imported by `ScenarioDataImporter`)
 
 ### Scenario 3: Grounding & Bonding (Alpha) - 10 Violations
 | NEC Article | Topic | Violation ID | Difficulty | Severity |
 |-------------|-------|-------------|:----------:|:--------:|
-| Art. 250.52(A)(5) | Ground rod length requirement | GND-ELECTRODE-001 | Beginner | Critical |
-| Art. 250.24(A)(1) | GEC disconnected at panel | GND-GEC-001 | Beginner | Critical |
-| Art. 250.104(A) | Water pipe not bonded | GND-BOND-WATER-001 | Beginner | Major |
-| Art. 250.122 | EGC undersized for circuit | GND-EGC-SIZE-001 | Beginner | Major |
-| Art. 250.50 | Electrodes not bonded together | GND-ELECTRODE-SYS-001 | Standard | Critical |
-| Art. 250.4(A)(1) | Corroded system ground connection | GND-SYSTEM-001 | Standard | Major |
-| Art. 250.64(A) | Aluminum GEC in contact with earth | GND-GEC-ALUM-001 | Standard | Major |
-| Art. 250.52(A)(1) | Water pipe insufficient earth contact | GND-WATERPIPE-001 | Standard | Major |
-| Art. 250.94 | Missing intersystem bonding termination | GND-INTERSYSTEM-001 | Expert | Minor |
-| Art. 250.53(A)(2) | Single rod without supplemental electrode | GND-SUPPLEMENT-001 | Expert | Major |
+| Art. 250.52(A)(5) | Ground rod length requirement | GND-ELECTRODE-001 | Apprentice | Critical |
+| Art. 250.24(A)(1) | GEC disconnected at panel | GND-GEC-001 | Apprentice | Critical |
+| Art. 250.104(A) | Water pipe not bonded | GND-BOND-WATER-001 | Apprentice | Major |
+| Art. 250.122 | EGC undersized for circuit | GND-EGC-SIZE-001 | Apprentice | Major |
+| Art. 250.50 | Electrodes not bonded together | GND-ELECTRODE-SYS-001 | Journeyman | Critical |
+| Art. 250.4(A)(1) | Corroded system ground connection | GND-SYSTEM-001 | Journeyman | Major |
+| Art. 250.64(A) | Aluminum GEC in contact with earth | GND-GEC-ALUM-001 | Journeyman | Major |
+| Art. 250.52(A)(1) | Water pipe insufficient earth contact | GND-WATERPIPE-001 | Journeyman | Major |
+| Art. 250.94 | Missing intersystem bonding termination | GND-INTERSYSTEM-001 | Master | Minor |
+| Art. 250.53(A)(2) | Single rod without supplemental electrode | GND-SUPPLEMENT-001 | Master | Major |
 
-**Difficulty distribution:** Beginner sees 4, Standard sees 8, Expert sees all 10.
+**Difficulty distribution:** Apprentice sees 4, Journeyman sees 8, Master sees all 10.
 **Scenario data:** `Assets/_Project/Content/Scenarios/grounding.json` (imported by `ScenarioDataImporter`)
 
 ### Scenario 4: Commercial Installation (Alpha)

@@ -1,8 +1,8 @@
 {
   "settings": [
     {
-      "level": "Beginner",
-      "displayName": "Beginner",
+      "level": "Apprentice",
+      "displayName": "Apprentice",
       "showHighlightHints": true,
       "showScaffolding": true,
       "scaffoldingTimeoutSeconds": 60,
@@ -17,8 +17,8 @@
       "includeSubtleViolations": false
     },
     {
-      "level": "Standard",
-      "displayName": "Standard",
+      "level": "Journeyman",
+      "displayName": "Journeyman",
       "showHighlightHints": false,
       "showScaffolding": false,
       "scaffoldingTimeoutSeconds": -1,
@@ -33,8 +33,8 @@
       "includeSubtleViolations": false
     },
     {
-      "level": "Expert",
-      "displayName": "Expert",
+      "level": "Master",
+      "displayName": "Master",
       "showHighlightHints": false,
       "showScaffolding": false,
       "scaffoldingTimeoutSeconds": -1,

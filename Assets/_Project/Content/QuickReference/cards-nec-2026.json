@@ -23,7 +23,7 @@
         "outdoor",
         "wet"
       ],
-      "minimumDifficulty": "Beginner"
+      "minimumDifficulty": "Apprentice"
     },
     {
       "cardId": "QRC-AFCI-001-2026",
@@ -42,7 +42,7 @@
         "living room",
         "fire prevention"
       ],
-      "minimumDifficulty": "Beginner"
+      "minimumDifficulty": "Apprentice"
     },
     {
       "cardId": "QRC-WIRE-001-2026",
@@ -64,7 +64,7 @@
         "conductor",
         "overcurrent"
       ],
-      "minimumDifficulty": "Beginner"
+      "minimumDifficulty": "Apprentice"
     },
     {
       "cardId": "QRC-BRANCH-001-2026",
@@ -86,7 +86,7 @@
         "kitchen",
         "small appliance"
       ],
-      "minimumDifficulty": "Beginner"
+      "minimumDifficulty": "Apprentice"
     },
     {
       "cardId": "QRC-SPACING-001-2026",
@@ -108,7 +108,7 @@
         "countertop",
         "wall"
       ],
-      "minimumDifficulty": "Beginner"
+      "minimumDifficulty": "Apprentice"
     },
     {
       "cardId": "QRC-LOAD-001-2026",
@@ -131,7 +131,7 @@
         "service size",
         "dwelling"
       ],
-      "minimumDifficulty": "Standard"
+      "minimumDifficulty": "Journeyman"
     },
     {
       "cardId": "QRC-GROUND-001-2026",
@@ -154,7 +154,7 @@
         "water pipe",
         "earth"
       ],
-      "minimumDifficulty": "Standard"
+      "minimumDifficulty": "Journeyman"
     },
     {
       "cardId": "QRC-PANEL-001-2026",
@@ -177,7 +177,7 @@
         "clearance",
         "breaker"
       ],
-      "minimumDifficulty": "Standard"
+      "minimumDifficulty": "Journeyman"
     },
     {
       "cardId": "QRC-NM-001-2026",
@@ -199,7 +199,7 @@
         "bundling",
         "derate"
       ],
-      "minimumDifficulty": "Standard"
+      "minimumDifficulty": "Journeyman"
     },
     {
       "cardId": "QRC-WORKSPACE-001-2026",
@@ -224,7 +224,7 @@
         "height",
         "reach"
       ],
-      "minimumDifficulty": "Beginner"
+      "minimumDifficulty": "Apprentice"
     },
     {
       "cardId": "QRC-DISCONNECT-001-2026",
@@ -249,7 +249,7 @@
         "rating",
         "feeder"
       ],
-      "minimumDifficulty": "Standard"
+      "minimumDifficulty": "Journeyman"
     },
     {
       "cardId": "QRC-MARKING-001-2026",
@@ -276,7 +276,7 @@
         "identify",
         "circuit"
       ],
-      "minimumDifficulty": "Beginner"
+      "minimumDifficulty": "Apprentice"
     },
     {
       "cardId": "QRC-WETDAMP-001-2026",
@@ -301,7 +301,7 @@
         "outdoor",
         "bonding"
       ],
-      "minimumDifficulty": "Standard"
+      "minimumDifficulty": "Journeyman"
     },
     {
       "cardId": "QRC-OVERCURRENT-001-2026",
@@ -327,7 +327,7 @@
         "overcurrent",
         "protection"
       ],
-      "minimumDifficulty": "Beginner"
+      "minimumDifficulty": "Apprentice"
     },
     {
       "cardId": "QRC-TERMINATION-001-2026",
@@ -353,7 +353,7 @@
         "workmanship",
         "terminal"
       ],
-      "minimumDifficulty": "Standard"
+      "minimumDifficulty": "Journeyman"
     },
     {
       "cardId": "QRC-BOXES-001-2026",
@@ -380,7 +380,7 @@
         "protect",
         "cable"
       ],
-      "minimumDifficulty": "Standard"
+      "minimumDifficulty": "Journeyman"
     },
     {
       "cardId": "QRC-ENCLOSURE-001-2026",
@@ -406,7 +406,7 @@
         "terminal",
         "closure"
       ],
-      "minimumDifficulty": "Standard"
+      "minimumDifficulty": "Journeyman"
     }
   ]
 }

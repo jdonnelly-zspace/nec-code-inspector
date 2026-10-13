@@ -49,7 +49,7 @@ This document maps each team to the documentation and artifacts most relevant to
 - **Test matrix:** 3 difficulty levels x 5 scenarios x inspection flow (5 steps each) + panel sandbox (5 steps) + reference/dashboard
 - **NEC accuracy:** 66 articles must match NEC 2026 text. Violation NEC references must map to correct articles. Citation matching: exact + partial ("210" matches "210.8(A)(1)")
 - **Scoring validation:** Letter grades (A=90%+, B=80%+, C=70%+, D=60%+, F=<60%). Combined accuracy = (detection + citation) / 2. Sandbox: compliance rate + load accuracy.
-- **Difficulty filtering:** Beginner sees only Beginner violations (no subtle). Standard adds Standard. Expert adds Expert + subtle. Verify violation counts per difficulty.
+- **Difficulty filtering:** Apprentice sees only Apprentice violations (no subtle). Journeyman adds Journeyman. Master adds Master + subtle. Verify violation counts per difficulty.
 - **Panel sandbox rules:** 10 compliance rules in ComplianceChecker.cs. Verify each rule catches its target condition.
 - **LoadCalculator:** 3 VA/sqft, 1500 VA per SA circuit, Table 220.42 demand factors. Verify against manual NEC calculation for 2000 sqft dwelling.
 - **Hardware testing:** Weekly on zSpace Inspire 2 — stylus interactions, stereo rendering, 90fps target, World Space UI readability
@@ -61,7 +61,7 @@ This document maps each team to the documentation and artifacts most relevant to
 
 **Key docs:** `PROJECT_BRIEF.md`
 
-- **User types:** CTE students (Beginner), trade school apprentices (Standard), licensed electricians (Expert)
+- **User types:** CTE students (Apprentice), trade school apprentices (Journeyman), licensed electricians (Master)
 - **Common workflows:** Select difficulty → Pick scenario → Inspect → Flag violations with NEC citation → Review missed → See score → View certificates
 - **Data locations:** Progress saves to `%APPDATA%/../LocalLow/[CompanyName]/NECCodeInspector/nec_progress.json`. Settings in `nec_settings.json` same directory.
 - **Known limitations:** Requires zSpace Inspire 2 hardware. Mouse fallback works in editor only. 3D scenes require Unity-assembled environments (not yet built).
@@ -73,7 +73,7 @@ This document maps each team to the documentation and artifacts most relevant to
 
 **Key docs:** `PROJECT_BRIEF.md`, `NEC_COVERAGE.md`
 
-- **Onboarding path:** Start at Beginner difficulty → Complete Scenario 1 (Service Panel) → Progress to Scenario 2 (Branch Circuits) → Try Panel Sandbox → Advance to Standard/Expert
+- **Onboarding path:** Start at Apprentice difficulty → Complete Scenario 1 (Service Panel) → Progress to Scenario 2 (Branch Circuits) → Try Panel Sandbox → Advance to Journeyman/Master
 - **Success metrics:** Scenario completion rate, accuracy improvement over attempts, certificate earning rate, time-to-mastery per chapter
 - **Progress tracking:** ProgressDashboardPanel shows scores, attempts, mastered chapters, earned certificates. JSON-based — can be exported for LMS integration.
 - **Content depth:** 66 NEC articles covering the most-tested topics on journeyman/master electrician licensing exams
@@ -104,7 +104,7 @@ This document maps each team to the documentation and artifacts most relevant to
   3. Three difficulty levels serve classrooms from CTE students to licensed electricians
   4. Built on NEC 2026 (latest edition) — always current
   5. AI-generated photorealistic environments (World Labs) for authentic training scenarios
-- **Demo talking points:** Show a Beginner student finding a missing GFCI in a bathroom → flag it → select NEC 210.8(A)(1) from dropdown → see scored feedback. Then show Expert mode with free-text citation and time pressure.
+- **Demo talking points:** Show a Apprentice student finding a missing GFCI in a bathroom → flag it → select NEC 210.8(A)(1) from dropdown → see scored feedback. Then show Master mode with free-text citation and time pressure.
 - **Content marketing angles:**
   - "Why NEC 2026 changes matter for training programs"
   - "From textbook to 3D: how AR/VR improves code retention"

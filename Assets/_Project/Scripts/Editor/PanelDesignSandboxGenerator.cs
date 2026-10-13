@@ -43,7 +43,7 @@ namespace NECInspector.Editor
                 definition.dwellingArea = entry.dwellingArea;
                 definition.targetLoadVA = entry.targetLoadVA;
                 definition.loadCalcTolerancePercent = entry.loadCalcTolerancePercent;
-                definition.expertTimeLimit = entry.expertTimeLimit;
+                definition.masterTimeLimit = entry.masterTimeLimit;
                 definition.availableDifficulties = entry.availableDifficulties
                     .Select(ContentFileLoader.ParseEnum<DifficultyLevel>).ToArray();
                 definition.requiredCircuits = entry.requiredCircuits;

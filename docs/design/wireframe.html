@@ -133,7 +133,7 @@ nav button:focus-visible, .btn:focus-visible, .opt:focus-visible { outline: 2px 
   ];
   var OCCS = [["Electrician", true, 7], ["Electrician's helper", true, 8], ["Electrical inspector", true, 7], ["Power-line installer", false, 8], ["Solar installer", false, 7], ["Fire and security alarm installer", false, 7]];
   var PRACTICE = { name: "Establishing an electrically safe work condition", steps: ["Identify every source of power to the equipment using drawings, labels and the panel schedule, including backfeed such as generators or second feeds.", "Shut the load down with normal controls, then open the disconnecting means.", "Visually confirm the disconnect is open, by handle position or visible blades.", "Release or block stored energy (capacitors, batteries, springs, other non-electrical energy that could restart parts)."], skills: ["Shock protection", "Disconnecting means", "Electrically safe work", "Testing and measurement"] };
-  var S = { units: "us", level: "Beginner", scenario: 0, flagged: 2, occ: 0 };
+  var S = { units: "us", level: "Apprentice", scenario: 0, flagged: 2, occ: 0 };
   var cur = "menu";
 
   function u() { return UNITS[S.units]; }
@@ -187,7 +187,7 @@ nav button:focus-visible, .btn:focus-visible, .opt:focus-visible { outline: 2px 
         return '<div class="col"><div class="box">' + head(PRACTICE.name, "Tap the steps in the order you would do them.") + "</div><div class=\"row\"><div class=\"col grow\"><div class=\"box\"><h3>Steps (mixed up)</h3><div class=\"list\">" +
           shuffled.map(function (k) { return '<div class="field mute">' + PRACTICE.steps[k] + "</div>"; }).join("") + '</div></div></div><div class="col grow"><div class="box"><h3>Your order</h3><div class="list"><div class="field">1. ' + PRACTICE.steps[0] + '</div><div class="field mute">2. &hellip;</div></div></div>' +
           '<div class="row">' + btn("Check my order", "practice", "primary") + btn("Undo", "practice") + btn("Close", "menu", "ghost") + "</div></div></div>" +
-          '<div class="box"><h3>Result after checking</h3><p class="sub" style="margin:0">Share of steps in the right order, the right order, the hazards and how each is controlled. Counts toward: ' + PRACTICE.skills.join(", ") + ". Beginner shows 4 steps, Standard 6, Expert all.</p></div></div>";
+          '<div class="box"><h3>Result after checking</h3><p class="sub" style="margin:0">Share of steps in the right order, the right order, the hazards and how each is controlled. Counts toward: ' + PRACTICE.skills.join(", ") + ". Apprentice shows 4 steps, Journeyman 6, Master all.</p></div></div>";
       } },
     { id: "lesson", group: "Learn", label: "Skill lesson", tags: [["SkillLessonPanel", "code"], ["built; not wired into scene", "warn"]], src: "UI/SkillLessonPanel.cs, StreamingAssets/Lessons/lessons.json",
       html: function () {
@@ -209,7 +209,7 @@ nav button:focus-visible, .btn:focus-visible, .opt:focus-visible { outline: 2px 
       } },
     { id: "difficulty", group: "Inspection", label: "Difficulty", tags: [["MainMenuPanel", "code"]], src: "UI/MainMenuPanel.cs",
       html: function () {
-        var D = { Beginner: "Building familiarity: guided inspection with dropdown rule references, highlight hints, and scaffolding.", Standard: "Working knowledge: searchable rule references, no hints. All standard violations active.", Expert: "Full fluency: free-text rule references, time limits, subtle violations, false-positive penalties." };
+        var D = { Apprentice: "Building familiarity: guided inspection with dropdown rule references, highlight hints, and scaffolding.", Journeyman: "Working knowledge: searchable rule references, no hints. All standard violations active.", Master: "Full fluency: free-text rule references, time limits, subtle violations, false-positive penalties." };
         var opts = Object.keys(D).map(function (k) { return '<button class="opt" aria-pressed="' + (k === S.level) + '" data-level="' + k + '"><b>' + k + "</b><small>" + D[k] + "</small></button>"; }).join("");
         return '<div class="col" style="max-width:600px;margin:0 auto">' + head("Difficulty", SCENARIOS[S.scenario][0]) + '<div class="list">' + opts + '</div><div class="row">' + btn("Start inspection", "intro", "primary") + btn("Back", "scenarios") + "</div></div>";
       } },
@@ -221,8 +221,8 @@ nav button:focus-visible, .btn:focus-visible, .opt:focus-visible { outline: 2px 
       } },
     { id: "inspect", group: "Inspection", label: "Inspecting", tags: [["InspectionHUD", "code"], ["3D scene not built", "warn"]], src: "UI/InspectionHUD.cs, Inspection/InspectionPointerController.cs",
       html: function () {
-        var t = S.level === "Expert" ? '<span class="pill">Time 12:40</span>' : "";
-        return '<div class="col"><div class="hud box" style="padding:8px 12px"><span class="pill acc">Flagged: ' + S.flagged + "</span>" + t + '<span class="row" style="gap:6px">' + (S.level === "Beginner" ? btn("Hint", "inspect", "") : "") + btn("Quick reference", "cards", "") + btn("Finish", "review", "primary") + "</span></div>" +
+        var t = S.level === "Master" ? '<span class="pill">Time 12:40</span>' : "";
+        return '<div class="col"><div class="hud box" style="padding:8px 12px"><span class="pill acc">Flagged: ' + S.flagged + "</span>" + t + '<span class="row" style="gap:6px">' + (S.level === "Apprentice" ? btn("Hint", "inspect", "") : "") + btn("Quick reference", "cards", "") + btn("Finish", "review", "primary") + "</span></div>" +
           '<div class="ph" style="min-height:260px">3D SCENE (not built)<br>The panel, outlets and wiring the student points at. Distances show as ' + u().dist + ".<br>Each part is a Clickable: the stylus ray highlights it.</div>" +
           '<div class="row"><button class="opt grow" style="text-align:center" data-go="flag">Point at the kitchen outlet &rarr; open flag panel</button></div></div>';
       } },
@@ -230,9 +230,9 @@ nav button:focus-visible, .btn:focus-visible, .opt:focus-visible { outline: 2px 
       html: function () {
         var refs = [["Shock protection", "Outlets near water need protection"], ["Branch circuits", "Wall outlet spacing"], ["Identification and marking", "Circuits are identified"]];
         var cit;
-        if (S.level === "Beginner") cit = '<div class="field">Pick the rule that applies &#9662;</div><div class="list">' + refs.map(function (x) { return '<div class="field mute"><b>' + x[0] + "</b> &middot; " + x[1] + "</div>"; }).join("") + "</div>";
-        else if (S.level === "Standard") cit = '<div class="field">Search rules by name &hellip; <span class="mono" style="color:var(--muted)">outlet water</span></div><div class="field mute"><b>Shock protection</b> &middot; Outlets near water need protection</div>';
-        else cit = '<div class="field">Name the rule in your own words &hellip;</div><p class="sub" style="margin:4px 0 0">No rule numbers anywhere. How Expert answers are matched to a rule is a proposal for the owner to confirm.</p>';
+        if (S.level === "Apprentice") cit = '<div class="field">Pick the rule that applies &#9662;</div><div class="list">' + refs.map(function (x) { return '<div class="field mute"><b>' + x[0] + "</b> &middot; " + x[1] + "</div>"; }).join("") + "</div>";
+        else if (S.level === "Journeyman") cit = '<div class="field">Search rules by name &hellip; <span class="mono" style="color:var(--muted)">outlet water</span></div><div class="field mute"><b>Shock protection</b> &middot; Outlets near water need protection</div>';
+        else cit = '<div class="field">Name the rule in your own words &hellip;</div><p class="sub" style="margin:4px 0 0">No rule numbers anywhere. How Master answers are matched to a rule is a proposal for the owner to confirm.</p>';
         return '<div class="row"><div class="col grow"><div class="box"><h3>Component</h3><b>Kitchen counter outlet</b><p class="sub" style="margin:4px 0 0">Type: outlet. Rated 20 A.</p></div>' +
           '<div class="row">' + btn("Flag violation", "flag", "primary") + btn("Mark compliant", "inspect") + btn("Cancel", "inspect", "ghost") + "</div></div>" +
           '<div class="col grow"><div class="box"><h3>Violation entry (' + S.level + ')</h3><div class="field">Describe the problem &hellip;</div><div style="height:8px"></div>' + cit + "</div>" +

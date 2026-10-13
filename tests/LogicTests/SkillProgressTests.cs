@@ -17,9 +17,9 @@ namespace NECInspector.LogicTests
         {
             t.Begin("skill tiers");
 
-            t.Equal(SkillTier.Foundation, SkillTiers.FromDifficulty(DifficultyLevel.Beginner), "Beginner -> Foundation");
-            t.Equal(SkillTier.Practitioner, SkillTiers.FromDifficulty(DifficultyLevel.Standard), "Standard -> Practitioner");
-            t.Equal(SkillTier.Authority, SkillTiers.FromDifficulty(DifficultyLevel.Expert), "Expert -> Authority");
+            t.Equal(SkillTier.Foundation, SkillTiers.FromDifficulty(DifficultyLevel.Apprentice), "Apprentice -> Foundation");
+            t.Equal(SkillTier.Practitioner, SkillTiers.FromDifficulty(DifficultyLevel.Journeyman), "Journeyman -> Practitioner");
+            t.Equal(SkillTier.Authority, SkillTiers.FromDifficulty(DifficultyLevel.Master), "Master -> Authority");
 
             t.IsTrue(SkillTiers.TryParse("Authority", out var tier) && tier == SkillTier.Authority, "parses Authority");
             t.IsTrue(!SkillTiers.TryParse("authority", out _), "names are case-sensitive");

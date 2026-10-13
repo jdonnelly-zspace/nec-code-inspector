@@ -24,9 +24,9 @@ ALIGNMENT = {
     ],
 }
 SCENARIOS = [{"violations": [
-    violation("a", "Standard", ["nec", "cec"]),
-    violation("b", "Beginner", ["cec"]),       # Foundation only: cannot teach a Practitioner requirement
-    violation("b", "Expert", ["nec"]),         # not cited for the credential's code
+    violation("a", "Journeyman", ["nec", "cec"]),
+    violation("b", "Apprentice", ["cec"]),       # Foundation only: cannot teach a Practitioner requirement
+    violation("b", "Master", ["nec"]),         # not cited for the credential's code
 ]}]
 
 
@@ -55,8 +55,8 @@ class AttainmentTests(unittest.TestCase):
 class ContentTests(unittest.TestCase):
     def test_content_counts_only_the_credentials_code_and_the_required_tier(self):
         rows = report.build_report({}, ALIGNMENT, SCENARIOS)["rows"]
-        self.assertEqual(rows[0]["content"], 1)   # a: one Standard violation citing cec
-        self.assertEqual(rows[1]["content"], 0)   # b: the cec one is Foundation, the Expert one cites only nec
+        self.assertEqual(rows[0]["content"], 1)   # a: one Journeyman violation citing cec
+        self.assertEqual(rows[1]["content"], 0)   # b: the cec one is Foundation, the Master one cites only nec
         self.assertEqual(rows[2]["content"], 0)   # c: none
 
     def test_shares_are_weighted(self):

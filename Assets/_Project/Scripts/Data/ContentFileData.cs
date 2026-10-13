@@ -98,7 +98,7 @@ namespace NECInspector.Data
         public float dwellingArea;              // in the code's area unit
         public float targetLoadVA;              // the expected calculated load, for scoring
         public float loadCalcTolerancePercent;
-        public int expertTimeLimit;
+        public int masterTimeLimit;
         public string[] availableDifficulties;
         public RequiredCircuit[] requiredCircuits;
     }

@@ -131,9 +131,9 @@ namespace NECInspector.Editor
             var difficulty = Panel("DifficultyPanel", root, 0.25f, 0.1f, 0.75f, 0.7f);
             difficulty.SetAsLastSibling();
             var diffText = Label("DifficultyDescription", difficulty, "", 26, TextAlignmentOptions.TopLeft, 0.5f, 0.95f);
-            Place(difficulty, "Beginner", menu.SetDifficultyBeginner, 0.03f, 0.3f, 0.33f, 0.45f);
-            Place(difficulty, "Standard", menu.SetDifficultyStandard, 0.35f, 0.3f, 0.65f, 0.45f);
-            Place(difficulty, "Expert", menu.SetDifficultyExpert, 0.67f, 0.3f, 0.97f, 0.45f);
+            Place(difficulty, "Apprentice", menu.SetDifficultyApprentice, 0.03f, 0.3f, 0.33f, 0.45f);
+            Place(difficulty, "Journeyman", menu.SetDifficultyJourneyman, 0.35f, 0.3f, 0.65f, 0.45f);
+            Place(difficulty, "Master", menu.SetDifficultyMaster, 0.67f, 0.3f, 0.97f, 0.45f);
             Place(difficulty, "Done", menu.ShowScenarioSelection, 0.35f, 0.05f, 0.65f, 0.2f);
 
             // --- Settings ---

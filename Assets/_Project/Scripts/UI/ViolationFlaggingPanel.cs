@@ -27,8 +27,8 @@ namespace NECInspector.Inspection
         [Header("Violation Entry")]
         [SerializeField] private GameObject _violationEntryGroup;
         [SerializeField] private TMP_InputField _descriptionInput;
-        [SerializeField] private TMP_Dropdown _necDropdown;           // Beginner mode
-        [SerializeField] private TMP_InputField _necSearchInput;      // Standard/Expert mode
+        [SerializeField] private TMP_Dropdown _necDropdown;           // Apprentice mode
+        [SerializeField] private TMP_InputField _necSearchInput;      // Journeyman/Master mode
         [SerializeField] private GameObject _searchResultsPanel;
         [SerializeField] private Transform _searchResultsContent;
         [SerializeField] private UnityEngine.UI.Button _submitButton;
@@ -182,7 +182,7 @@ namespace NECInspector.Inspection
 
             string description = _descriptionInput != null ? _descriptionInput.text : "";
 
-            // For FreeText mode (Expert), use whatever they typed
+            // For FreeText mode (Master), use whatever they typed
             if (_citationMode == CitationMode.FreeText && string.IsNullOrEmpty(_selectedReference))
             {
                 _selectedReference = _necSearchInput != null ? _necSearchInput.text : "";

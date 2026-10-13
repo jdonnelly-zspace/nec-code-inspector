@@ -23,8 +23,8 @@ namespace NECInspector.Data
         [Header("Classification")]
         public ViolationSeverity severity = ViolationSeverity.Major;
         [Tooltip("Minimum difficulty level at which this violation appears")]
-        public DifficultyLevel minimumDifficulty = DifficultyLevel.Beginner;
-        [Tooltip("Mark true for subtle violations only visible at Expert level")]
+        public DifficultyLevel minimumDifficulty = DifficultyLevel.Apprentice;
+        [Tooltip("Mark true for subtle violations only visible at Master level")]
         public bool isSubtle = false;
 
         [Header("Scene Binding")]
@@ -34,7 +34,7 @@ namespace NECInspector.Data
 
         [Header("Hints")]
         [TextArea(1, 3)]
-        public string hintText;          // For Beginner mode scaffolding
+        public string hintText;          // For Apprentice mode scaffolding
 
         [Header("Display")]
         public string componentType;     // e.g., "Breaker", "Conductor", "Receptacle"

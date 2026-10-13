@@ -19,10 +19,10 @@ work changes:
 
 ## 1. Where we are
 
-Violations that carry a citation for each code, by skill. The "Beginner / Standard / Expert" columns are the
+Violations that carry a citation for each code, by skill. The "Apprentice / Journeyman / Master" columns are the
 lowest difficulty each violation appears at, for the NEC.
 
-| Skill | NEC | of which Beginner / Standard / Expert | CEC | BS 7671 |
+| Skill | NEC | of which Apprentice / Journeyman / Master | CEC | BS 7671 |
 |---|---|---|---|---|
 | Earthing and bonding | 11 | 4 / 5 / 2 | 3 | 3 |
 | Overcurrent protection | 6 | 3 / 1 / 2 | 2 | 0 |
@@ -47,8 +47,8 @@ panel design; 6 scenarios; no tutorial or per-skill teaching content.
 - **Attainment needs repetition on a thin pool.** A skill tier is attained after 3 or more attempts at 80% mastery
   (`docs/SKILL_SCORING.md`), and evidence at a tier only comes from violations that appear at that difficulty. With 2 to
   4 violations per skill, a student replays the same ones and memorises them.
-- **Tiers cannot be reached for some skills.** Identification and marking has only Expert violations; arc-fault
-  protection and load calculation start at Standard. A Beginner-level student gets no Foundation evidence for them.
+- **Tiers cannot be reached for some skills.** Identification and marking has only Master violations; arc-fault
+  protection and load calculation start at Journeyman. A Apprentice-level student gets no Foundation evidence for them.
 - **Only the NEC is usable.** The CEC lacks six skills outright and has no tables (no sandbox). BS 7671 has no art.
 - **There is no teaching.** The app tests; it does not yet introduce a skill.
 
@@ -56,8 +56,8 @@ panel design; 6 scenarios; no tutorial or per-skill teaching content.
 
 ### 2.1 Violation pools (NEC first)
 
-A tier's pool is every violation that appears at that difficulty or lower: Foundation uses the Beginner-level
-violations, Practitioner adds the Standard ones, and Authority adds the Expert ones.
+A tier's pool is every violation that appears at that difficulty or lower: Foundation uses the Apprentice-level
+violations, Practitioner adds the Journeyman ones, and Authority adds the Master ones.
 
 | Phase | Foundation pool | Practitioner pool | Authority pool | NEC total |
 |---|---|---|---|---|
@@ -67,7 +67,7 @@ violations, Practitioner adds the Standard ones, and Authority adds the Expert o
 
 New NEC violations needed to reach Target A, by skill and by the lowest difficulty they appear at:
 
-| Skill | Add Beginner | Add Standard | Add Expert | Add total |
+| Skill | Add Apprentice | Add Journeyman | Add Master | Add total |
 |---|---|---|---|---|
 | Arc-fault protection | 4 | 2 | 4 | 10 |
 | Load calculation | 4 | 2 | 4 | 10 |
@@ -111,7 +111,7 @@ These are seed ideas by skill, from general electrical practice. They are not ru
 paraphrased and verified per code by an expert before it is written, and its scene fact checked against the 10% margin.
 Topics marked "all" probably exist in every code; "US" topics are likely NEC only.
 
-| Skill | Beginner (Foundation) | Standard (Practitioner) | Expert (Authority) |
+| Skill | Apprentice (Foundation) | Journeyman (Practitioner) | Master (Authority) |
 |---|---|---|---|
 | Shock protection | outdoor, garage and bathroom outlets without protection (all) | kitchen island, dishwasher, disposal circuits; EV charger | protection-device feed-through wired with line and load swapped; test button fails |
 | Arc-fault protection | bedroom and living room circuits (US, CEC) | extending an existing circuit; wrong device type | shared neutral on a multiwire circuit; protection placed downstream of an outlet |
@@ -167,7 +167,7 @@ reaches its target.
 missing skill, a code or credential name, a number or an unfilled region word. Not wired into any scene. Still to build: the tutorial, 4 more quick reference cards, 5 more sandbox designs.
 
 **Phase 1 status (fourth batch).** 15 more violations are in, so 89 of the 106 are done and the NEC pool shortfall is 17: 10 are load calculation (waiting on the
-edition decision) and 7 are Expert or Foundation items in arc-fault, overcurrent, working space and special locations. Fewer of this batch survived verification
+edition decision) and 7 are Master or Foundation items in arc-fault, overcurrent, working space and special locations. Fewer of this batch survived verification
 (15 of 20) because the easy ideas were already used. Evidence: `docs/expert-review/PHASE1_VERIFICATION_BATCH4.md`.
 
 **Phase 1 status (third batch).** 24 more violations are in (shock protection 8, branch circuits 6, wiring methods 6, overcurrent protection 4), so 74

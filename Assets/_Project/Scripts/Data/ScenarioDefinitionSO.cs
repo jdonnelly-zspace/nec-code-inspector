@@ -19,9 +19,9 @@ namespace NECInspector.Data
 
         [Header("Difficulty")]
         public DifficultyLevel[] availableDifficulties = {
-            DifficultyLevel.Beginner,
-            DifficultyLevel.Standard,
-            DifficultyLevel.Expert
+            DifficultyLevel.Apprentice,
+            DifficultyLevel.Journeyman,
+            DifficultyLevel.Master
         };
 
         [Header("Content")]
@@ -31,8 +31,8 @@ namespace NECInspector.Data
         public SessionSize sessionSize = new SessionSize();
 
         [Header("Time")]
-        [Tooltip("Time limit in seconds for Expert mode. 0 = no limit.")]
-        public int expertTimeLimit = 1200; // 20 minutes
+        [Tooltip("Time limit in seconds for Master mode. 0 = no limit.")]
+        public int masterTimeLimit = 1200; // 20 minutes
 
         [Header("Environment")]
         public string environmentDescription;

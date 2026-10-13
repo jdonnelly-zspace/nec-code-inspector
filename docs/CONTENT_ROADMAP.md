@@ -110,12 +110,12 @@ The most heavily tested safety topic on licensing exams. zSpace advantage: walk 
 | Sinks (non-dwelling) | Art. 210.8(B)(5) | Planned |
 | GFCI replacement receptacles | Art. 406.4(D) | Built |
 | **Violations (Scenario 2)** | | |
-| Missing GFCI — bathroom | BC-GFCI-BATH-001 (Beginner) | Built |
-| Missing GFCI — kitchen | BC-GFCI-KITCHEN-001 (Beginner) | Built |
-| Missing GFCI — garage | BC-GFCI-GARAGE-001 (Beginner) | Built |
-| Missing GFCI — dishwasher (2026) | BC-GFCI-DISHWASHER-001 (Expert) | Built |
-| Missing AFCI — bedroom | BC-AFCI-BEDROOM-001 (Standard) | Built |
-| Missing AFCI — living room | BC-AFCI-LIVING-001 (Standard) | Built |
+| Missing GFCI — bathroom | BC-GFCI-BATH-001 (Apprentice) | Built |
+| Missing GFCI — kitchen | BC-GFCI-KITCHEN-001 (Apprentice) | Built |
+| Missing GFCI — garage | BC-GFCI-GARAGE-001 (Apprentice) | Built |
+| Missing GFCI — dishwasher (2026) | BC-GFCI-DISHWASHER-001 (Master) | Built |
+| Missing AFCI — bedroom | BC-AFCI-BEDROOM-001 (Journeyman) | Built |
+| Missing AFCI — living room | BC-AFCI-LIVING-001 (Journeyman) | Built |
 
 **zSpace moment:** Walk through each room of a house. In the bathroom, lean down to inspect the receptacle at the sink — no TEST/RESET buttons. Flag it, cite Art. 210.8(A)(1). Move to the kitchen, check the countertop outlet behind the coffee maker.
 
@@ -144,16 +144,16 @@ Grounding is the hardest NEC topic to visualize — conductors disappear undergr
 | Main bonding jumper | Art. 250.28 | Planned |
 | Grounding electrode conductor protection | Art. 250.64(B) | Planned |
 | **Violations (Scenario 3)** | | |
-| Ground rod too short | GND-ELECTRODE-001 (Beginner) | Built |
-| GEC disconnected at panel | GND-GEC-001 (Beginner) | Built |
-| Water pipe not bonded | GND-BOND-WATER-001 (Beginner) | Built |
-| EGC undersized | GND-EGC-SIZE-001 (Beginner) | Built |
-| Electrodes not bonded together | GND-ELECTRODE-SYS-001 (Standard) | Built |
-| Corroded system ground | GND-SYSTEM-001 (Standard) | Built |
-| Aluminum GEC in earth | GND-GEC-ALUM-001 (Standard) | Built |
-| Water pipe insufficient earth contact | GND-WATERPIPE-001 (Standard) | Built |
-| Missing intersystem bonding | GND-INTERSYSTEM-001 (Expert) | Built |
-| Single rod without supplement | GND-SUPPLEMENT-001 (Expert) | Built |
+| Ground rod too short | GND-ELECTRODE-001 (Apprentice) | Built |
+| GEC disconnected at panel | GND-GEC-001 (Apprentice) | Built |
+| Water pipe not bonded | GND-BOND-WATER-001 (Apprentice) | Built |
+| EGC undersized | GND-EGC-SIZE-001 (Apprentice) | Built |
+| Electrodes not bonded together | GND-ELECTRODE-SYS-001 (Journeyman) | Built |
+| Corroded system ground | GND-SYSTEM-001 (Journeyman) | Built |
+| Aluminum GEC in earth | GND-GEC-ALUM-001 (Journeyman) | Built |
+| Water pipe insufficient earth contact | GND-WATERPIPE-001 (Journeyman) | Built |
+| Missing intersystem bonding | GND-INTERSYSTEM-001 (Master) | Built |
+| Single rod without supplement | GND-SUPPLEMENT-001 (Master) | Built |
 
 **zSpace moment:** X-ray view through the foundation wall shows the GEC path underground. Student follows the conductor from panel → through wall → to ground rod. Transparent earth reveals the 8-foot rod depth. A second view shows the water pipe electrode transitioning to plastic — student must determine if it qualifies.
 
@@ -177,8 +177,8 @@ The single most tested topic on licensing exams. While tables are the core skill
 | Standard fuse/breaker ratings | Art. 240.6 | Planned |
 | Tap rules (10 ft / 25 ft) | Art. 240.21(B) | Planned |
 | **Violations** | | |
-| 14 AWG on 20A breaker | BC-WIRE-14AWG-001 (Beginner) | Built |
-| NM cables bundled without derate | BC-WIRE-KITCHEN-001 (Expert) | Built |
+| 14 AWG on 20A breaker | BC-WIRE-14AWG-001 (Apprentice) | Built |
+| NM cables bundled without derate | BC-WIRE-KITCHEN-001 (Master) | Built |
 
 **zSpace moment:** Student uses virtual multimeter on a wire, reads 14 AWG. Traces it to the panel — connected to a 20A breaker. The physical act of measuring, tracing, and comparing builds muscle memory for real inspections.
 
@@ -208,10 +208,10 @@ Walking through rooms and measuring receptacle spacing in 3D is inherently more 
 | Hallway receptacles | Art. 210.52(H) | Planned |
 | Dwelling unit HVAC outlet | Art. 210.63 | Planned |
 | **Violations (Scenario 2)** | | |
-| Wall receptacles 14ft apart | BC-SPACING-WALL-001 (Beginner) | Built |
-| Countertop gap exceeds 24" | BC-SPACING-COUNTER-001 (Standard) | Built |
-| Shared bathroom circuit | BC-DEDICATED-BATH-001 (Standard) | Built |
-| Only one small-appliance circuit | BC-DEDICATED-KITCHEN-001 (Standard) | Built |
+| Wall receptacles 14ft apart | BC-SPACING-WALL-001 (Apprentice) | Built |
+| Countertop gap exceeds 24" | BC-SPACING-COUNTER-001 (Journeyman) | Built |
+| Shared bathroom circuit | BC-DEDICATED-BATH-001 (Journeyman) | Built |
+| Only one small-appliance circuit | BC-DEDICATED-KITCHEN-001 (Journeyman) | Built |
 
 ---
 

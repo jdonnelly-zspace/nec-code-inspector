@@ -70,7 +70,7 @@ namespace NECInspector.LogicTests
             t.IsTrue(procs.Count > 0, "there are procedures to practise");
             foreach (var p in procs)
             {
-                foreach (var d in new[] { DifficultyLevel.Beginner, DifficultyLevel.Standard, DifficultyLevel.Expert })
+                foreach (var d in new[] { DifficultyLevel.Apprentice, DifficultyLevel.Journeyman, DifficultyLevel.Master })
                 {
                     int[] a = ProcedurePractice.Deal(p, d, 7);
                     int[] b = ProcedurePractice.Deal(p, d, 7);
@@ -91,7 +91,7 @@ namespace NECInspector.LogicTests
             t.Near(0.0, ProcedurePractice.Score(null), "no answer scores 0");
 
             var p = file.occupations.SelectMany(o => o.procedures).First(x => x.practice);
-            var ev = ProcedurePractice.Evidence(p, DifficultyLevel.Expert, 0.75f);
+            var ev = ProcedurePractice.Evidence(p, DifficultyLevel.Master, 0.75f);
             t.Equal(p.skills.Length, ev.Count, "evidence for each skill the procedure uses");
             t.IsTrue(ev.All(e => e.tier == SkillTier.Authority && e.source == SkillEvidenceSources.Procedure && e.outcome == 0.75f), "evidence carries tier, source and outcome");
         }

@@ -4,11 +4,11 @@
   "displayName": "Commercial Installation Inspection",
   "description": "Inspect a small commercial building's electrical installation including motor circuits, feeders, load calculations, and equipment disconnects. Verify proper conductor sizing, overcurrent protection, and code compliance for commercial occupancies.",
   "environmentDescription": "A small commercial space with multiple motor installations (HVAC compressors, exhaust fans), a mechanical room with subpanel and feeders, a battery/UPS closet, and an office area with general receptacle and lighting circuits.",
-  "expertTimeLimit": 1500,
+  "masterTimeLimit": 1500,
   "availableDifficulties": [
-    "Beginner",
-    "Standard",
-    "Expert"
+    "Apprentice",
+    "Journeyman",
+    "Master"
   ],
   "assetPrefix": "COM",
   "violationFolder": "Commercial",
@@ -35,7 +35,7 @@
       "inspectionNote": "The 50A breaker on this 10HP motor exceeds the maximum allowed by the code's motor table for an inverse-time breaker (typically 250% of FLC).",
       "conceptId": "overcurrent-protection",
       "severity": "Critical",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -59,7 +59,7 @@
       "inspectionNote": "10 AWG conductors supply a 7.5HP motor with 22A FLC. Required ampacity is 27.5A (125% of 22A), but 10 AWG is only rated 30A at 60C — marginal with temperature derating applied.",
       "conceptId": "conductor-sizing",
       "severity": "Critical",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -90,7 +90,7 @@
       "inspectionNote": "The motor disconnect is located around a corner, out of sight from the motor. The code requires the disconnect to be within sight of the motor it controls.",
       "conceptId": "disconnecting-means",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -114,7 +114,7 @@
       "inspectionNote": "The overload relay is set to 30A for a motor with 22A nameplate FLA (136% of FLA). Maximum should be 25.3A (115% of 22A) for a motor with a service factor of 1.0.",
       "conceptId": "overcurrent-protection",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -138,7 +138,7 @@
       "inspectionNote": "The load schedule omits the rooftop HVAC unit (15 kVA) from the total service calculation, resulting in an undersized service.",
       "conceptId": "load-calculation",
       "severity": "Critical",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -162,7 +162,7 @@
       "inspectionNote": "The feeder to the mechanical room subpanel uses 4 AWG copper (85A at 75C) but serves a calculated load of 95A including continuous lighting.",
       "conceptId": "conductor-sizing",
       "severity": "Critical",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -186,7 +186,7 @@
       "inspectionNote": "The load calculation uses 90 VA per receptacle instead of the required minimum 180 VA per outlet under the load calculation rules.",
       "conceptId": "load-calculation",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -210,7 +210,7 @@
       "inspectionNote": "A 14 AWG EGC is used on a motor circuit protected by a 40A breaker. The code's grounding-conductor table requires a minimum 10 AWG copper EGC for a 40A OCPD.",
       "conceptId": "earthing-bonding",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -234,7 +234,7 @@
       "inspectionNote": "The mechanical room feeder supplies three motors but is sized at only 100% of the largest motor plus the sum of the others, missing the required 125% factor on the largest motor.",
       "conceptId": "overcurrent-protection",
       "severity": "Critical",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -258,7 +258,7 @@
       "inspectionNote": "The disconnect switch at the VFD is rated for 30A but the motor has a locked-rotor current of 145A. The disconnect must be horsepower-rated or capable of interrupting locked-rotor current.",
       "conceptId": "disconnecting-means",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -282,7 +282,7 @@
       "inspectionNote": "The nameplate on this exhaust fan motor is painted over and illegible. Without readable nameplate data, proper conductor sizing and overcurrent protection cannot be verified.",
       "conceptId": "identification-marking",
       "severity": "Minor",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -306,7 +306,7 @@
       "inspectionNote": "A 12-foot feeder tap is run without overcurrent protection at the tap point and without being enclosed in a raceway. The 10-foot tap rule requires the tap to be no longer than 10 feet and enclosed in a raceway.",
       "conceptId": "overcurrent-protection",
       "severity": "Critical",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -330,7 +330,7 @@
       "inspectionNote": "The main {term:service-disconnect} has a 200 A overcurrent device, but the service conductors are 3 AWG copper, 100 A at the 75 C column. A device rated far above the conductor ampacity leaves the wire unprotected.",
       "conceptId": "conductor-sizing",
       "severity": "Critical",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -354,7 +354,7 @@
       "inspectionNote": "The cable to a rooftop condenser receptacle is marked 12 AWG AL and lands on a 20 A {term:breaker}. Copper at that size would be fine on 20 A, aluminum is not.",
       "conceptId": "conductor-sizing",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -378,7 +378,7 @@
       "inspectionNote": "A mechanical-room EMT run longer than 24 in. holds five 2-wire 120 V receptacle circuits, ten 12 AWG THHN current-carrying conductors, each on a 20 A {term:breaker}. At the 50% factor, 30 A (90 C column) becomes 15 A, so the conductors cannot support 20 A, and the round-up allowance is not available on receptacle circuits.",
       "conceptId": "conductor-sizing",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -402,7 +402,7 @@
       "inspectionNote": "A 48 A continuous EV charger (nameplate) sits on a 60 A {term:breaker} with 8 AWG copper THHN (50 A at 75 C). 48 x 1.25 = 60 A, so 6 AWG (65 A at 75 C) is needed; the 60 A {term:breaker} looks right, which hides the problem.",
       "conceptId": "conductor-sizing",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -426,7 +426,7 @@
       "inspectionNote": "Each phase lug of the sub-panel feeder holds two 2 AWG copper conductors tied together. Paralleled sets must start at 1/0 AWG, so the feeder should be a single larger conductor per phase.",
       "conceptId": "conductor-sizing",
       "severity": "Major",
-      "minimumDifficulty": "Standard",
+      "minimumDifficulty": "Journeyman",
       "isSubtle": false
     },
     {
@@ -450,7 +450,7 @@
       "inspectionNote": "8 AWG THHN (rated 90 C) feeds a 45 A heater, but the heater's terminal label says 60 C. The 60 C column gives 40 A for 8 AWG, less than the 45 A load.",
       "conceptId": "conductor-sizing",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     },
     {
@@ -486,7 +486,7 @@
       "inspectionNote": "A conduit with 8 AWG THHN to a 50 A rooftop unit rests about 0.5 in above the roof. With the 33 C adder, a 35 C summer day becomes 68 C, giving a 0.58 factor, and the conductors cannot support 50 A.",
       "conceptId": "conductor-sizing",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": false,
       "sceneFact": {
         "quantity": "raceway height above roof",
@@ -522,7 +522,7 @@
       "inspectionNote": "The feeder tag reads 4 AWG aluminum and the sub-panel schedule shows an 80 A load on an 80 A breaker. A 4 AWG copper conductor would carry about 85 A, but 4 AWG aluminum carries only about 65 A at the 75 C column.",
       "conceptId": "conductor-sizing",
       "severity": "Major",
-      "minimumDifficulty": "Beginner",
+      "minimumDifficulty": "Apprentice",
       "isSubtle": false
     },
     {
@@ -546,7 +546,7 @@
       "inspectionNote": "A conduit holds three phase conductors and a neutral of 1/0 AWG THHN copper feeding a panel labelled for servers and LED drivers, with a 140 A load per phase. Counting the neutral gives four conductors and an 80 percent factor, about 136 A, which is below the load.",
       "conceptId": "conductor-sizing",
       "severity": "Major",
-      "minimumDifficulty": "Expert",
+      "minimumDifficulty": "Master",
       "isSubtle": true
     }
   ]

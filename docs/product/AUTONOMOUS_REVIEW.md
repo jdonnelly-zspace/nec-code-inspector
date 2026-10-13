@@ -20,7 +20,7 @@ Checks: 8035 logic checks, 0 failed (23 warnings, all existing content-target an
 
 **F-1. Procedure practice is "put the steps in order".** *Why:* the research gave every procedure an ordered list of steps, so this needs no new content and works with a stylus tap. *Alternatives:* multiple-choice "what comes next", or scenes with a virtual meter (the real trainer, FR-6, still needs scenes). *Reverse if:* you want tests of reasoning, not recall of sequence.
 
-**F-2. Difficulty sets how many steps are dealt:** Beginner 4, Standard 6, Expert all, as a run of consecutive steps from a seeded start. Score is the share of neighbouring pairs in the right order, so one swap keeps most credit. Evidence goes to every skill the procedure uses, at the tier of the difficulty. *Alternative:* all-or-nothing scoring.
+**F-2. Difficulty sets how many steps are dealt:** Apprentice 4, Journeyman 6, Master all, as a run of consecutive steps from a seeded start. Score is the share of neighbouring pairs in the right order, so one swap keeps most credit. Evidence goes to every skill the procedure uses, at the tier of the difficulty. *Alternative:* all-or-nothing scoring.
 
 **F-3. Practice is offered for 28 of 44 procedures,** those whose every skill is built. The other 16 are listed (with steps, hazards and controls) but cannot be practised because each needs a phase 3 or 3 skill that does not exist yet (11 of them have no coverage at all). *Alternative:* offer practice for all and let the phase-3 skills be missing.
 
@@ -45,4 +45,4 @@ Checks: 8035 logic checks, 0 failed (23 warnings, all existing content-target an
 - Put the two panels in the menu scene and wire their buttons, texts and prefabs.
 - Hands-on trainers, violation content and scenes for the phase-1 skills.
 - Phase 3 and 3 skills; the licence decisions (NEC, CEC, BS 7671, fire alarm standard, NESC); NEC edition decision.
-- Expert review of the 20 lessons, 6 profiles and 44 procedures.
+- Master review of the 20 lessons, 6 profiles and 44 procedures.

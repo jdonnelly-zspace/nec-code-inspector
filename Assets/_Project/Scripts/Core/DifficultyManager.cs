@@ -8,7 +8,7 @@ namespace NECInspector.Core
     /// </summary>
     public class DifficultyManager
     {
-        public DifficultyLevel CurrentLevel { get; private set; } = DifficultyLevel.Standard;
+        public DifficultyLevel CurrentLevel { get; private set; } = DifficultyLevel.Journeyman;
         public DifficultySettingsSO CurrentSettings { get; private set; }
 
         private DifficultySettingsSO[] _allSettings;

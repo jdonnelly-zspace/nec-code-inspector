@@ -57,7 +57,7 @@ namespace NECInspector.Core
                         studentName = studentName,
                         earnedDate = DateTime.UtcNow.ToString("o"),
                         accuracy = accuracy,
-                        difficulty = GameManager.Instance?.Difficulty?.CurrentLevel.ToString() ?? "Standard"
+                        difficulty = GameManager.Instance?.Difficulty?.CurrentLevel.ToString() ?? "Journeyman"
                     };
 
                     earned.Add(cert);

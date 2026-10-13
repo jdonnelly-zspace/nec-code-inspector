@@ -21,8 +21,8 @@ namespace NECInspector.Skills
         {
             switch (difficulty)
             {
-                case DifficultyLevel.Beginner: return SkillTier.Foundation;
-                case DifficultyLevel.Expert: return SkillTier.Authority;
+                case DifficultyLevel.Apprentice: return SkillTier.Foundation;
+                case DifficultyLevel.Master: return SkillTier.Authority;
                 default: return SkillTier.Practitioner;
             }
         }

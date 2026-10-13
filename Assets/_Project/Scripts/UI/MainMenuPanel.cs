@@ -216,9 +216,9 @@ namespace NECInspector.UI
             UpdateDifficultyDisplay();
         }
 
-        public void SetDifficultyBeginner() => SetDifficulty(DifficultyLevel.Beginner);
-        public void SetDifficultyStandard() => SetDifficulty(DifficultyLevel.Standard);
-        public void SetDifficultyExpert() => SetDifficulty(DifficultyLevel.Expert);
+        public void SetDifficultyApprentice() => SetDifficulty(DifficultyLevel.Apprentice);
+        public void SetDifficultyJourneyman() => SetDifficulty(DifficultyLevel.Journeyman);
+        public void SetDifficultyMaster() => SetDifficulty(DifficultyLevel.Master);
 
         private void SetDifficulty(DifficultyLevel level)
         {
@@ -229,12 +229,12 @@ namespace NECInspector.UI
 
         private void UpdateDifficultyDisplay()
         {
-            var level = GameManager.Instance?.Difficulty?.CurrentLevel ?? DifficultyLevel.Standard;
+            var level = GameManager.Instance?.Difficulty?.CurrentLevel ?? DifficultyLevel.Journeyman;
             string desc = level switch
             {
-                DifficultyLevel.Beginner => "Building familiarity: Guided inspection with dropdown rule references, highlight hints, and scaffolding. Fewer violations to find.",
-                DifficultyLevel.Standard => "Working knowledge: Searchable rule references, no hints. All standard violations active.",
-                DifficultyLevel.Expert => "Full fluency: Free-text rule references, time limits, subtle violations, false positive penalties.",
+                DifficultyLevel.Apprentice => "Building familiarity: guided inspection with a list of rules to pick from, highlight hints and scaffolding. Fewer violations to find.",
+                DifficultyLevel.Journeyman => "Working knowledge: search for the rule by name, no hints. All standard violations are active.",
+                DifficultyLevel.Master => "Full fluency: name the rule yourself, an optional time limit, subtle violations and false-positive penalties.",
                 _ => ""
             };
             SetText(_difficultyDescription, $"Current: {level}\n\n{CodeProfiles.Terminology.Format(desc)}");
