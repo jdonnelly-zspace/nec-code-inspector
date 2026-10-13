@@ -6,7 +6,7 @@ This file deliberately contains no code wording: compare each text in the app wi
 ## What was rewritten
 
 - All 42 violation citation texts (`Assets/_Project/Content/Scenarios/*.json`, `citations[].text`).
-- All 98 reference article texts (`Assets/_Project/StreamingAssets/Codes/nec/articles.json`, `text`); 101 remain after the pre-review and the restore of the dropped topics (section 12 of the pre-review).
+- All 98 reference article texts (`Assets/_Project/StreamingAssets/Codes/nec-2023/articles.json`, `text`); 101 remain after the pre-review and the restore of the dropped topics (section 12 of the pre-review).
 
 Each new text keeps the facts of the text it replaced (numbers, limits, conditions, which parts of the code
 it points to) in new words, is shorter than the original, and has no run of six or more identical

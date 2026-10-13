@@ -122,7 +122,7 @@ namespace NECInspector.Codes
 
         /// <summary>
         /// NEC values (copper conductors, NEC Table 310.16 ampacities, Art. 220 dwelling standard method).
-        /// Used when the profile has no tables file. Keep in sync with StreamingAssets/Codes/nec/tables.json.
+        /// Used when the profile has no tables file. Keep in sync with StreamingAssets/Codes/nec-2023/tables.json.
         /// </summary>
         public static ElectricalTables CreateNecDefaults()
         {
