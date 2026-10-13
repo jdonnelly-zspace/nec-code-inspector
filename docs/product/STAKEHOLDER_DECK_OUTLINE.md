@@ -16,7 +16,7 @@ Every number below comes from a file in the repository (named in each slide) exc
 |---|---|
 | Plain and confident. Short sentences. Say what the product does for a student and a teacher. | Hype ("revolutionary", "AI-powered", "disrupt"). |
 | Honest about status: say "built", "built, not yet in a scene" and "planned" and mean them. | Imply the app teaches in 3D today. It does not: the 3D scenes are not built. |
-| Skills and occupations first, codes second. | Name a credential, an exam or an installation code to students, or promise "exam prep". The product rule is skills, not credentials. |
+| Skills and occupations first, codes second. Use the trade's own level names (Apprentice, Journeyman, Master) as stages of skill. | Name an installation code or an exam to students, promise "exam prep", or imply the app awards a licence class. The product rule is skills, not credentials. |
 | Show the plan as order and gates (what has to be true), not dates we cannot defend. | Promise all six occupations for the first launch. The research does not support it. |
 
 Voice in one line: *a capable colleague showing a plan they believe in and are straight about.*
@@ -43,7 +43,7 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 - **Points**
   - The student chooses an **occupation** (electrician, helper, inspector first). The app teaches its **procedures**, the **skills** behind them and the rules that apply in the student's **region**, without naming a code.
   - Four ways to learn: a short lesson, step-by-step practice of a real procedure, inspection of a 3D building, and designing a panel. A quick reference is always at hand.
-  - Three generic levels (Beginner, Standard, Expert) described by what the student can already do.
+  - Three levels that follow the trade's own ladder, **Apprentice, Journeyman and Master**, each described by what the student can already do (the app's current labels, Beginner, Standard and Expert, are being replaced; see section 7).
   - For teachers: a clear progress file by skill, no accounts to manage in the first release; for students: a plain screen saying what is tracked and how to export or delete it.
 - **Why it is different (say these, with proof):** it is built around an occupation's procedures; it measures skills across the 3D practice; it is stylus-first.
 - **Visual idea:** the mockup's occupation screen next to a practice screen (`docs/design/mockup.html`).
@@ -123,3 +123,12 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 4. Who presents, and is this a read-ahead or a live talk? (A read-ahead needs more words per slide; a live talk needs fewer.)
 5. Should the deck be one artifact you share by link, or a downloadable file? (Decks made from the Slides type can be exported to .pptx or PDF.)
 6. Any audience missing (for example, a school district buyer, an industry association or a funder)?
+
+## 7. One naming system for levels (open)
+
+Today the deck's occupations (electrician, helper, inspector) and the app's levels (Beginner, Standard, Expert) use two vocabularies. The owner's direction: use one, the trade's own ladder, **Apprentice, Journeyman, Master**, in the deck and in the app (`TODO.md`, "One naming system for levels"). The deck says so from now on. Points to settle before it is built into the app:
+
+1. **Stages of skill, not licence classes.** In most places these are licence or card classes. The app awards none, so the wording must say they describe what the student can do. Keep the rule: no credential is awarded or implied.
+2. **Other occupations.** Helpers sit before an apprentice; inspectors, solar and alarm installers and power-line workers have their own ladders. Recommendation: the same three labels for every occupation, each described by skill.
+3. **Other regions.** Canada and the UK use other ladders (for example trade certification and the UK's qualification levels). Recommendation: the same three labels in every region, with region wording only in the lesson text.
+4. **Does Master mean a hard bar?** Expert today means full fluency, subtle violations and free-text answers. Master should mean the same, so no content changes.

@@ -67,7 +67,7 @@ NEC occupations. General maintenance workers are the strongest fit among them.
 
 ### 4.3 Learner levels
 
-Beginner, Standard and Expert are generic levels described by what the student can already do. They do not name a school pathway or credential.
+Learner levels are described by what the student can already do. They are being renamed from Beginner, Standard and Expert to the trade's own ladder, **Apprentice, Journeyman and Master** (owner's direction, 2026-10-13, D-12). They name stages of skill, not licence classes: the app awards no credential and none is implied. The wireframe, the mockup and the content files still use the old names until the rename is done (`TODO.md`).
 
 ### 4.4 Buyers
 
