@@ -54,7 +54,7 @@ ARTICLE_FLAGS = {
     "480.4": RESTORED + " (Article 480 numbering is medium-low confidence; text is generic)",
     "480.7": RESTORED + " (Article 480 numbering is medium-low confidence; the 60 V threshold is unconfirmed)",
     "480.10": RESTORED + " (Article 480 numbering is medium-low confidence)",
-    "680.7": RESTORED + " (cord-and-plug equipment; medium-high)",
+    "680.8": RESTORED + " (cord-and-plug equipment; renumbered from 680.7; medium-high)",
     "680.12": RESTORED,
     "680.22(B)": RESTORED + " (was 680.22(A)(1); medium-high)",
     "680.26": RESTORED,

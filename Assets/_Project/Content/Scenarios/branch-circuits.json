@@ -1388,6 +1388,54 @@
       "severity": "Major",
       "minimumDifficulty": "Master",
       "isSubtle": false
+    },
+    {
+      "violationId": "BC-AFCI-HOMERUN-001",
+      "description": "A bedroom circuit has a plain {term:breaker} and an {term:arc-fault-device} {term:receptacle} at its first outlet, but the cable from the {term:panel} is plastic-sheathed, not metal",
+      "citations": [
+        {
+          "profileId": "nec-2023",
+          "reference": "210.12(A)(5)",
+          "text": "A plain {term:breaker} can be paired with an {term:arc-fault-device} at the first outlet only in set ways. One is a run from the {term:panel} to that outlet in metal conduit, metal-clad cable or steel-armored cable with metal boxes; the other is a short, continuous run listed as a system with the device."
+        },
+        {
+          "profileId": "nec-2026",
+          "reference": "210.12(A)",
+          "text": "A plain {term:breaker} can be paired with an {term:arc-fault-device} at the first outlet only in set ways. One is a run from the {term:panel} to that outlet in metal conduit, metal-clad cable or steel-armored cable with metal boxes; the other is a short, continuous run listed as a system with the device."
+        }
+      ],
+      "componentObjectName": "Bedroom_FirstOutlet_ArcFault_PlasticHomeRun",
+      "hintText": "Follow the cable from the {term:breaker} to the first outlet. Look at what the {term:breaker} is, and what the cable and boxes are made of.",
+      "componentType": "Cable",
+      "inspectionNote": "The bedroom circuit has an ordinary {term:breaker} with no test button. Its first {term:receptacle} has test and reset buttons, but the cable from the {term:panel} to it is white plastic-sheathed cable in plastic boxes, and nothing says the pair is listed as a system. The first stretch of wire is not protected.",
+      "conceptId": "arc-fault-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Master",
+      "isSubtle": true
+    },
+    {
+      "violationId": "BC-AFCI-LIGHTING-001",
+      "description": "A bedroom circuit that feeds only the ceiling light and fan, with no {term:receptacle}s, is protected by a plain {term:breaker}",
+      "citations": [
+        {
+          "profileId": "nec-2023",
+          "reference": "210.12(B)",
+          "text": "The arc-fault rule covers outlets and devices, not only receptacles, so a bedroom circuit that serves only ceiling lights and a fan still needs arc-fault protection."
+        },
+        {
+          "profileId": "nec-2026",
+          "reference": "210.12(B)",
+          "text": "The arc-fault rule covers outlets and devices, not only receptacles, so a bedroom circuit that serves only ceiling lights and a fan still needs arc-fault protection."
+        }
+      ],
+      "componentObjectName": "Bedroom_LightingCircuit_PlainBreaker",
+      "hintText": "This circuit has no outlets for plugs. Ask whether the arc-fault rule still reaches a circuit that only feeds lights.",
+      "componentType": "Breaker",
+      "inspectionNote": "The {term:breaker} labelled for the bedroom lights has no test button and no arc-fault marking. It feeds a ceiling light and a ceiling fan only; there are no {term:receptacle}s on the circuit. Lighting outlets count, so the circuit still needs arc-fault protection.",
+      "conceptId": "arc-fault-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Master",
+      "isSubtle": true
     }
   ]
 }

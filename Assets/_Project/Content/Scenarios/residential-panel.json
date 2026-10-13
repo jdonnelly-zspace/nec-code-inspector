@@ -1394,6 +1394,78 @@
       "severity": "Minor",
       "minimumDifficulty": "Journeyman",
       "isSubtle": false
+    },
+    {
+      "violationId": "RP-WIRE-10AWG-40A-001",
+      "description": "A 10 AWG copper conductor for the dryer circuit is protected by a 40-ampere {term:breaker}",
+      "citations": [
+        {
+          "profileId": "nec-2023",
+          "reference": "240.4(D)",
+          "text": "Small copper conductors have breaker limits: 15 A for 14 AWG, 20 A for 12 AWG and 30 A for 10 AWG. A bigger breaker lets the wire carry more than it is rated for."
+        },
+        {
+          "profileId": "nec-2026",
+          "reference": "240.4(D)",
+          "text": "Small copper conductors have breaker limits: 15 A for 14 AWG, 20 A for 12 AWG and 30 A for 10 AWG. A bigger breaker lets the wire carry more than it is rated for."
+        }
+      ],
+      "componentObjectName": "Panel_Breaker40A_10AWG",
+      "hintText": "Read the wire size printed on the cable jacket, then read the number on the {term:breaker} handle. Does the wire allow a breaker that big?",
+      "componentType": "Breaker",
+      "inspectionNote": "The dryer cable is marked 10 AWG copper and lands on a two-pole 40 A {term:breaker}. Ten gauge copper is limited to 30 A, so the wire could overheat before the {term:breaker} trips.",
+      "conceptId": "overcurrent-protection",
+      "severity": "Critical",
+      "minimumDifficulty": "Apprentice",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-WIRE-10AWG-AL-30A-001",
+      "description": "A 10 AWG aluminum conductor for the water heater circuit is protected by a 30-ampere {term:breaker}",
+      "citations": [
+        {
+          "profileId": "nec-2023",
+          "reference": "240.4(D)",
+          "text": "Small aluminum or copper-clad aluminum conductors have lower breaker limits than copper: 15 A for 12 AWG and 25 A for 10 AWG. A 10 AWG aluminum wire cannot go on a 30 A breaker even though copper of that size can."
+        },
+        {
+          "profileId": "nec-2026",
+          "reference": "240.4(D)",
+          "text": "Small aluminum or copper-clad aluminum conductors have lower breaker limits than copper: 15 A for 12 AWG and 25 A for 10 AWG. A 10 AWG aluminum wire cannot go on a 30 A breaker even though copper of that size can."
+        }
+      ],
+      "componentObjectName": "Panel_Breaker30A_10AWG_Aluminum",
+      "hintText": "Check which metal the cable jacket says the conductor is, then compare its size with the {term:breaker} rating. The limit for aluminum is lower than for copper.",
+      "componentType": "Breaker",
+      "inspectionNote": "The water heater cable is marked 10 AWG AL and lands on a 30 A {term:breaker}. The same size in copper would be fine on 30 A, but aluminum is limited to 25 A, so the wire is under-protected.",
+      "conceptId": "overcurrent-protection",
+      "severity": "Major",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    },
+    {
+      "violationId": "RP-WORKLIGHT-001",
+      "description": "The only light over the {term:panel} working space is a motion-sensor luminaire with no wall switch or manual override",
+      "citations": [
+        {
+          "profileId": "nec-2023",
+          "reference": "110.26(D)",
+          "text": "Indoor working space in front of a {term:panel} needs light, and that light cannot depend on an automatic control alone, such as a motion sensor with no wall switch or override."
+        },
+        {
+          "profileId": "nec-2026",
+          "reference": "110.26(D)",
+          "text": "Indoor working space in front of a {term:panel} needs light, and that light cannot depend on an automatic control alone, such as a motion sensor with no wall switch or override."
+        }
+      ],
+      "componentObjectName": "Panel_WorkLight_SensorOnly",
+      "hintText": "Look up at what lights the space in front of the {term:panel}, and look for how it is switched.",
+      "componentType": "Luminaire",
+      "inspectionNote": "One ceiling luminaire lights the {term:panel} area and an occupancy sensor is its only control. There is no wall switch or override beside it, and no window or other light nearby, so the light can switch off while someone is working at the open {term:panel}.",
+      "conceptId": "working-space-access",
+      "severity": "Minor",
+      "minimumDifficulty": "Master",
+      "isSubtle": true
     }
   ]
 }

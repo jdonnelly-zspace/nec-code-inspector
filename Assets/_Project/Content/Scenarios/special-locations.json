@@ -380,6 +380,101 @@
         "unit": "in",
         "note": "measured from normal water level to top of lens"
       }
+    },
+    {
+      "violationId": "SL-POOL-PUMPCORD-001",
+      "description": "The pump for a permanent in-ground pool is connected with a power cord about 8 feet long",
+      "citations": [
+        {
+          "profileId": "nec-2023",
+          "reference": "680.8(A)",
+          "text": "A fixed pool pump may be connected with a cord and plug so it can be unplugged for servicing, but for a permanent pool that cord can be no longer than 3 ft.",
+          "limit": {
+            "quantity": "pool-pump-cord-length",
+            "kind": "max",
+            "value": 3,
+            "unit": "ft"
+          }
+        },
+        {
+          "profileId": "nec-2026",
+          "reference": "680.8(A)",
+          "text": "A fixed pool pump may be connected with a cord and plug so it can be unplugged for servicing, but for a permanent pool that cord can be no longer than 3 ft.",
+          "limit": {
+            "quantity": "pool-pump-cord-length",
+            "kind": "max",
+            "value": 3,
+            "unit": "ft"
+          }
+        }
+      ],
+      "componentObjectName": "Pool_Pump_Cord_Long",
+      "hintText": "Look at the pump's power cord and judge how long it is before it reaches the plug.",
+      "componentType": "Cord",
+      "inspectionNote": "The pump cord runs about 8 ft across the equipment pad to a {term:receptacle}, coiled on the ground. Measure from the pump to the plug and compare with the limit for a pool that is built to stay.",
+      "conceptId": "special-locations",
+      "severity": "Major",
+      "minimumDifficulty": "Apprentice",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "pool-pump-cord-length",
+        "value": 8,
+        "unit": "ft",
+        "note": "length of the flexible cord from the pump to the attachment plug"
+      },
+      "compliantFact": {
+        "quantity": "pool-pump-cord-length",
+        "value": 2.5,
+        "unit": "ft"
+      }
+    },
+    {
+      "violationId": "SL-POOL-JBOX-001",
+      "description": "The junction box for the 120 V pool light sits flat on the pool deck, only about 1 inch above it",
+      "citations": [
+        {
+          "profileId": "nec-2023",
+          "reference": "680.24(A)(2)",
+          "text": "The junction box that feeds a standard-voltage pool light (one above the low-voltage limit) must sit at least 4 in above the deck, or 8 in above the highest water level if that is higher.",
+          "limit": {
+            "quantity": "pool-light-junction-box-height",
+            "kind": "min",
+            "value": 4,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "nec-2026",
+          "reference": "680.24(A)(2)",
+          "text": "The junction box that feeds a standard-voltage pool light (one above the low-voltage limit) must sit at least 4 in above the deck, or 8 in above the highest water level if that is higher.",
+          "limit": {
+            "quantity": "pool-light-junction-box-height",
+            "kind": "min",
+            "value": 4,
+            "unit": "in"
+          }
+        }
+      ],
+      "componentObjectName": "Pool_Light_JunctionBox_Low",
+      "hintText": "Find where the pool light's cable ends on the deck and measure how high the box stands above the deck surface.",
+      "componentType": "Junction Box",
+      "inspectionNote": "A standard 120 V pool light feeds from a box that sits almost flush with the deck, about 1 in above it, where water can pool around it. Measure from the deck surface to the bottom of the box, and compare with the minimum for such a box.",
+      "conceptId": "special-locations",
+      "severity": "Major",
+      "minimumDifficulty": "Master",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "pool-light-junction-box-height",
+        "value": 1,
+        "unit": "in",
+        "note": "measured from the deck surface to the bottom of the box; the box feeds a standard-voltage wet-niche light, not a low-voltage potted one"
+      },
+      "compliantFact": {
+        "quantity": "pool-light-junction-box-height",
+        "value": 6,
+        "unit": "in",
+        "note": "measured from the deck surface to the bottom of the box; also at least 8 in above the highest water level"
+      }
     }
   ]
 }
