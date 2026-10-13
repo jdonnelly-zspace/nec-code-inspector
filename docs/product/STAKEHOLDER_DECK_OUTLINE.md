@@ -25,7 +25,9 @@ Voice in one line: *a capable colleague showing a plan they believe in and are s
 
 Electrical work is learned by doing it safely, and schools cannot give every student a live panel to inspect. The Code Inspector puts a student at a 3D panel, with a stylus, to learn how electricians, helpers, inspectors, power-line installers, solar installers and alarm installers actually work: the 44 standard procedures of those six occupations, the skills behind them and the rules that apply where they live. The student chooses an occupation and a region; the app handles the rest. Progress is measured by skill and can be followed outside the app.
 
-## 4. The six slides
+## 4. The slides
+
+Seven slides: the six-slide limit was lifted by one at the owner's request, to show the six core occupations and the adjacent ones.
 
 ### Slide 1. The opportunity: skilled trades, taught safely, in 3D
 
@@ -36,7 +38,15 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
   - The Inspire 2 stylus display puts a 3D panel in front of the student, which is what this needs.
 - **Visual idea:** one image of a 3D panel with the stylus ray on a part, and two numbers: about 821,000 electricians and about 1.3 million workers in the six core occupations.
 
-### Slide 2. The product and its value
+### Slide 2. Who it serves: six core occupations and the trades around them
+
+- **Headline:** Six core occupations and the trades around them.
+- **Points**
+  - Core six, taught through their procedures, with US workers in 2025: electricians 821,000; electrical inspectors 153,900; power-line installers 131,900; fire and security alarm installers 86,300; electrician's helpers 65,000; solar installers 31,100 (`docs/product/MARKET_FACTS.md`).
+  - Adjacent occupations that need foundational electrical knowledge, in four clusters: MEP trades; clean energy and emerging technology; facilities, maintenance and construction; technology and smart building. Seventeen distinct occupations (the market document listed alarm installers in both groups; they are counted once, as core).
+- **Visual idea:** a dark card with the core six and their worker figures beside four cluster cards.
+
+### Slide 3. The product and its value
 
 - **Headline:** Learn the work of an occupation, not a code book.
 - **Points**
@@ -47,7 +57,7 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 - **Why it is different (say these):** it is built around an occupation's procedures, not a code book; it measures skills across every kind of practice; it is stylus-first.
 - **Visual idea:** the mockup's occupation screen next to a practice screen (`docs/design/mockup.html`).
 
-### Slide 3. How it works and why it can be trusted
+### Slide 4. How it works and why it can be trusted
 
 - **Headline:** Procedures, skills and rules, built from public sources and checked.
 - **Points**
@@ -55,10 +65,10 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
   - Content is written in our own words from public sources and goes through a documented source check, with Claude verifying each step against the sources, before it is used. It teaches skills and competencies; it does not reproduce standards.
   - The 3D scenes are built with 3DFrame by Vection Technologies, an enterprise XR training platform with a no-code editor for building and simulating procedures, so each procedure becomes an interactive 3D scene. GameCoders Studio adds higher-fidelity art where a scene needs it.
   - Regions set the rules, units and wiring conventions behind the scenes. English first; the other priority languages follow.
-  - Progress is recorded by skill and tier, with analytics through RudderStack and Mixpanel (slide 6), under a generic ID with no personal data in any event.
+  - Progress is recorded by skill and tier, with analytics through RudderStack and Mixpanel (slide 7), under a generic ID with no personal data in any event.
 - **Visual idea:** the chain as four boxes, with one real procedure as the example (establishing an electrically safe work condition).
 
-### Slide 4. Roadmap: three phases, in order
+### Slide 5. Roadmap: three phases, in order
 
 - **Headline:** Three phases, each building on the one before.
 - **Phase 1 (the MVP): electricians, electrician's helpers, electrical inspectors**
@@ -73,7 +83,7 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 - **Runs across all phases:** more regions (Canada, UK), more languages (English first, the others next), accessibility settings.
 - **Visual idea:** a three-lane strip, each lane with its occupations and what it adds.
 
-### Slide 5. Marketing: who we say what to
+### Slide 6. Marketing: who we say what to
 
 - **Headline:** One promise, told to three audiences.
 - **Promise:** Students learn the real work of an electrician, safely, in 3D. (Say "will" until the scenes ship.)
@@ -85,14 +95,14 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 - **Things we do not say:** "exam prep", a credential or code name to students.
 - **Visual idea:** three audience cards with one line each and one proof point.
 
-### Slide 6. How we will deliver it
+### Slide 7. How we will deliver it
 
 - **Headline:** The delivery plan is set.
 - **Analytics:** RudderStack and Mixpanel, specified in the same format as zSpace's in-app analytics requirements (spec to be written by the owner). Events carry a generic ID and no personal data.
 - **Art and scenes:** 3DFrame by Vection Technologies, an enterprise XR training platform whose no-code editor lets us build and simulate each procedure as an interactive 3D scene, for the 3D scenes and art; GameCoders Studio, our art studio, where higher-fidelity art is needed. To confirm with the owner before the deck is built: how a 3DFrame scene reaches the Unity and zSpace app (the vendor's page does not state a Unity or zSpace integration).
 - **Content:** built from public information and verified with Claude against the sources.
 - **Skills, not standards:** the app teaches skills and competencies in its own words.
-- **Ask:** agree the phase order (slide 4).
+- **Ask:** agree the phase order (slide 5).
 - **Risks, stated once:** delivery depends on the art pipeline and on the analytics spec.
 - **Visual idea:** four short cards (analytics, art and scenes, content, scope) and one line for the ask.
 
@@ -114,7 +124,7 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 2. Is "order, no dates" right for the roadmap, or do stakeholders expect quarters? (Recommendation: order, with a "target" column left blank for you to fill.)
 3. Who presents, and is this a read-ahead or a live talk? (A read-ahead needs more words per slide; a live talk needs fewer.)
 4. Should the deck be one artifact you share by link, or a downloadable file? (Decks made from the Slides type can be exported to .pptx or PDF.)
-5. Should the MVP include all six core occupations, or only phase 1 (electricians, helpers, inspectors)? The outline keeps the phases as decided (D-13); if all 44 procedures are in the MVP, slide 4 collapses to the MVP plus what comes after.
+5. Should the MVP include all six core occupations, or only phase 1 (electricians, helpers, inspectors)? The outline keeps the phases as decided (D-13); if all 44 procedures are in the MVP, slide 5 collapses to the MVP plus what comes after.
 
 ## 7. One naming system for levels (decided as D-12; the points below are open)
 
