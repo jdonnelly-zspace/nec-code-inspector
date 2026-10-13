@@ -95,7 +95,7 @@ namespace NECInspector.Codes
 
         /// <summary>
         /// NEC labels. Used when the profile has no terminology file.
-        /// Keep in sync with StreamingAssets/Codes/nec/terminology.json.
+        /// Keep in sync with StreamingAssets/Codes/nec-2023/terminology.json.
         /// </summary>
         public static CodeTerminology CreateNecDefaults()
         {
