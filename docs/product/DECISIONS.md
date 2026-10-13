@@ -2,6 +2,12 @@
 
 A log of the owner's decisions that shape the product. Newest first. Each entry says what was decided, what it affects and what it leaves open.
 
+## 2026-10-13: how a Master answer names a rule
+
+| # | Decision | Effect |
+|---|---|---|
+| D-18 | **At Master the student names the rule in their own words.** The words are matched to each rule's title and keywords: naming the expected rule earns full credit, general words about its skill earn the same-skill credit (0.75), and anything else the wrong-citation credit (0.5). A reference number still works. | `RuleNameMatcher`, `DataCodeProfile.CitationMatches`, `CitationCredit`; `docs/SKILL_SCORING.md`. Built without a new decision from the owner; the thresholds are policy choices in `RuleNameMatcher`. |
+
 ## 2026-10-13: delivery decisions for the deck (analytics, art, content, licences)
 
 **Context.** Reviewing the stakeholder deck outline, the owner set how the product will be delivered.

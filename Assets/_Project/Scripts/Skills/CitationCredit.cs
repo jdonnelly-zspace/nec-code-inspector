@@ -44,6 +44,9 @@ namespace NECInspector.Skills
                 if (best != null) article = profile.GetArticle(best);
             }
 
+            if (article == null && RuleNameMatcher.LooksLikeWords(cited))
+                return RuleNameMatcher.ConceptOf(RuleNameMatcher.ArticlesOf(profile), cited);
+
             return article?.conceptId ?? "";
         }
     }

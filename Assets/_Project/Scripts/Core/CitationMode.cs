@@ -5,6 +5,6 @@ namespace NECInspector.Core
     {
         Dropdown,           // Apprentice: pick from list
         SearchableDropdown, // Journeyman: type to search
-        FreeText            // Master: type the exact reference
+        FreeText            // Master: name the rule in your own words (RuleNameMatcher); a reference still works
     }
 }
