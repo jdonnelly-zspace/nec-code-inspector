@@ -2,6 +2,16 @@
 
 A log of the owner's decisions that shape the product. Newest first. Each entry says what was decided, what it affects and what it leaves open.
 
+## 2026-10-13: one naming system for levels
+
+**Context.** The deck outline named occupations in the trade's words (electrician, helper, inspector) but the levels generically (Beginner, Standard, Expert). The owner asked for one vocabulary: the industry ladder, Apprentice, Journeyman, Master.
+
+| # | Decision | Effect |
+|---|---|---|
+| D-12 | **Levels are named Apprentice, Journeyman and Master**, in the deck and in the app. This replaces the earlier decision for three generic levels (Beginner, Standard, Expert), which was made so the levels could connect to any credential. | The descriptions of each level stay as they are (guided, working knowledge, full fluency). Work: rename the labels first; rename the identifiers in code and content only if worth it. |
+
+**Left open.** The labels are licence classes in many places, so the wording must say they describe skill and award nothing. How helpers, inspectors, solar, alarm and power-line occupations, and regions with other ladders, use the same three names. Both are written up in `docs/product/STAKEHOLDER_DECK_OUTLINE.md` section 7 with recommendations.
+
 ## 2026-10-12: teacher reporting, analytics and progress outside the app
 
 **Context.** Four items were open in the PRD (teacher accounts, student data privacy, accessibility, localization). The owner decided all four.
