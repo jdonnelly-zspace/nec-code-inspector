@@ -13,7 +13,7 @@ The artifact files carry no page skeleton (no doctype, head or body): the Artifa
 
 ## Choices made without the owner (2026-10-12), to review
 
-1. **Master difficulty.** With rule numbers hidden, the free-text citation becomes "name the rule in your own words". How that answer is matched to a rule is not designed (a proposal; the wireframe says so).
+1. **Master difficulty.** With rule numbers hidden, the free-text citation becomes "name the rule in your own words". Built 2026-10-13: the words are matched to the rule's title and keywords (`docs/SKILL_SCORING.md`, "Naming the rule in words").
 2. **The menu leads with "Learn a procedure"**, then scenarios, sandbox, skills and cards. Tutorial and "Progress and data" are small buttons under the headline.
 3. **Occupation picker:** three occupations open (electrician, helper, inspector), three "Coming soon". Students are not shown phase numbers.
 4. **The "New in edition" badge was removed** from the rule lookup, because the student should not see an edition.

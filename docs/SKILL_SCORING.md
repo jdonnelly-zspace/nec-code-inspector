@@ -23,6 +23,22 @@ entries, while citing `250.50` (grounding) earns 0.5.
 The 0.75 is a policy choice (`SkillOutcomes.FoundSameSkillCitation`): the student knew where the rule lives but
 picked a neighbouring one. Change it there; the tests state the value and will need the same edit.
 
+### Naming the rule in words (Master level)
+
+At the Master level the student types the rule in their own words; no list and no number is shown. `RuleNameMatcher` (`Scripts/Codes/`, tested in
+`RuleNameTests`) compares the words with each entry's title and keywords (stop words dropped, plurals folded, a few everyday synonyms such as
+"ground fault" for GFCI). A typed answer is treated like a citation:
+
+- It **names the expected rule** (full credit) if at least two meaningful words match that entry (one is enough for a one-word title), the entry
+  scores at least 0.55 and is within 0.1 of the best entry of the code.
+- Otherwise, if the words clearly point to a skill that is the violation's own, it earns the **same-skill credit** (0.75): "gfci" alone is about shock
+  protection but is too general to name one rule.
+- Otherwise it earns the wrong-citation credit (0.5).
+- A reference number still works, as before. The student never sees a number or a title list to copy from.
+
+The thresholds are policy choices in `RuleNameMatcher` (`NameThreshold`, `TieMargin`, `ConceptThreshold`, `MinMatchedWords`); the tests state them
+against the real NEC, CEC and BS 7671 entries.
+
 The inspection score shown to the student still counts only exact citations; same-skill credit affects skill
 evidence only.
 

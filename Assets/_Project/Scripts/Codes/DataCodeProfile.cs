@@ -158,7 +158,9 @@ namespace NECInspector.Codes
 
         public bool CitationMatches(string cited, string expected)
         {
-            return CitationMatcher.Default(cited, expected);
+            // A reference number, or (at the Master level, where numbers are not shown) the rule named in the student's own words
+            return CitationMatcher.Default(cited, expected)
+                || (RuleNameMatcher.LooksLikeWords(cited) && RuleNameMatcher.Names(_articles, cited, expected));
         }
     }
 }

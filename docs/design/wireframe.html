@@ -232,7 +232,7 @@ nav button:focus-visible, .btn:focus-visible, .opt:focus-visible { outline: 2px 
         var cit;
         if (S.level === "Apprentice") cit = '<div class="field">Pick the rule that applies &#9662;</div><div class="list">' + refs.map(function (x) { return '<div class="field mute"><b>' + x[0] + "</b> &middot; " + x[1] + "</div>"; }).join("") + "</div>";
         else if (S.level === "Journeyman") cit = '<div class="field">Search rules by name &hellip; <span class="mono" style="color:var(--muted)">outlet water</span></div><div class="field mute"><b>Shock protection</b> &middot; Outlets near water need protection</div>';
-        else cit = '<div class="field">Name the rule in your own words &hellip;</div><p class="sub" style="margin:4px 0 0">No rule numbers anywhere. How Master answers are matched to a rule is a proposal for the owner to confirm.</p>';
+        else cit = '<div class="field">Name the rule in your own words &hellip;</div><p class="sub" style="margin:4px 0 0">No rule numbers anywhere. Master answers are matched to the title and keywords of the rule: the rule named earns full credit, general words about its skill earn partial credit.</p>';
         return '<div class="row"><div class="col grow"><div class="box"><h3>Component</h3><b>Kitchen counter outlet</b><p class="sub" style="margin:4px 0 0">Type: outlet. Rated 20 A.</p></div>' +
           '<div class="row">' + btn("Flag violation", "flag", "primary") + btn("Mark compliant", "inspect") + btn("Cancel", "inspect", "ghost") + "</div></div>" +
           '<div class="col grow"><div class="box"><h3>Violation entry (' + S.level + ')</h3><div class="field">Describe the problem &hellip;</div><div style="height:8px"></div>' + cit + "</div>" +
