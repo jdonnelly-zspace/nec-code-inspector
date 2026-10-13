@@ -48,6 +48,10 @@ namespace NECInspector.LogicTests
             t.Equal("Chapters", nec.SectionsHeading, "sections heading uses the section name only");
             t.Equal("Select a rule reference...", nec.SelectReferencePrompt, "dropdown prompt never names the code");
             t.Equal("Chapter 2", nec.SectionName(2), "section name");
+            t.Equal("", nec.ShownSectionName(2), "students do not see chapter names by default");
+            nec.showReferenceNumbers = true;
+            t.Equal("Chapter 2", nec.ShownSectionName(2), "chapter names appear only when the profile shows rule numbers");
+            nec.showReferenceNumbers = false;
         }
 
         private static void OtherCodesLabelThemselves(TestContext t)
