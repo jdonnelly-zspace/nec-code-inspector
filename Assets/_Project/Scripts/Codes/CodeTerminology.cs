@@ -60,6 +60,9 @@ namespace NECInspector.Codes
         public string SelectReferencePrompt => "Select a rule reference...";
         public string SectionName(int section) => $"{sectionLabel} {section}";
 
+        /// <summary>A section as a student sees it: empty when rule numbers are hidden, since chapters and parts are the code's own structure.</summary>
+        public string ShownSectionName(int section) => showReferenceNumbers ? SectionName(section) : "";
+
         /// <summary>The active code's word for a neutral term key, or the fallback (the key if none) when it has none.</summary>
         public string Term(string key, string fallback = null)
         {

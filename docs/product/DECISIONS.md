@@ -13,7 +13,7 @@ skills, competencies, procedures and violations, and credentials (and the code's
 | D-6 | **`nec-2026` is a draft copied from 2023.** The only change applied is the renumbering known from secondary sources (Article 220 becomes 120). Everything else is unverified. | It is `draft`, so the US region keeps `nec-2023` until an expert reviews 2026. Sandbox designs exist for 2023 only (the 2026 dwelling load values are unverified). |
 | D-7 | **Rule numbers are hidden from students.** `CodeTerminology.showReferenceNumbers` is false for every code; entries show their title, never "Art. 210.8". Numbers stay in the data for scoring, alignment and review. | The review, reference, card, flagging and sandbox panels show titles. The 78 texts that quoted rule or table numbers were rewritten without them (145 edits across both profiles, the violations and the cards); the test `StudentReferenceTests` warns if a new one appears. |
 
-**Left open.** The 2026 numbers and values need a credential expert and the 2026 text; the Article 200 renumbering reported by one source is unconfirmed; chapter names ("Chapter 2") still show in the reference panel.
+**Left open.** The 2026 numbers and values need a credential expert and the 2026 text; the Article 200 renumbering reported by one source is unconfirmed; chapter names ("Chapter 2") are hidden the same way (`ShownSectionName`), in the reference panel and the inspection intro.
 
 ## 2026-10-12: occupation-driven product, proposed skills, waves and utility line work
 

@@ -53,8 +53,12 @@ namespace NECInspector.Inspection
             if (_introTitleText != null) _introTitleText.text = title;
             if (_introDescriptionText != null) _introDescriptionText.text = description;
             if (_introObjectivesText != null) _introObjectivesText.text = objectives;
-            if (_introChaptersText != null && sections != null)
-                _introChaptersText.text = CodeProfiles.Terminology.SectionsHeading + ": " + string.Join(", ", sections);
+            if (_introChaptersText != null)
+            {
+                // Chapters are the code's own structure: shown only when the profile shows rule numbers
+                bool show = sections != null && sections.Length > 0 && CodeProfiles.Terminology.showReferenceNumbers;
+                _introChaptersText.text = show ? CodeProfiles.Terminology.SectionsHeading + ": " + string.Join(", ", sections) : "";
+            }
         }
 
         public void HideIntroPanel()
