@@ -1,6 +1,6 @@
 # Product requirements
 
-Status: draft. The owner accepted the occupation-driven direction, the proposed skills, the three waves and the utility line work decision on 2026-10-12 (`docs/product/DECISIONS.md`); the rest is still a draft for review. Supersedes `docs/PROJECT_BRIEF.md`, which was written around the NEC alone and names audiences and credentials.
+Status: draft, brought up to date on 2026-10-12 (last audit against the repository, the wireframe and the mockup). The owner has decided the occupation-driven direction, the skills, the three waves, utility line work, both NEC editions as profiles, hidden rule numbers, teacher reporting, analytics, accessibility and localization (`docs/product/DECISIONS.md`, D-1 to D-11); the rest is still a draft for review. The wireframe and mockup (`docs/design/`) match this document. Supersedes `docs/PROJECT_BRIEF.md`, which was written around the NEC alone and names audiences and credentials.
 Sources: the market view the owner supplied ("NEC Code Inspector, zSpace Inspire 2, Full Market View", September 2026), the occupation research in
 `docs/occupations/`, and the project's own rules (`.claude/CLAUDE.md`, `docs/CONTENT_POLICY.md`). Market figures are the owner's and have not been verified
 (see section 8).
@@ -31,33 +31,34 @@ This is a change from the first design, which was an NEC code-violation trainer;
 Occupation  ->  Procedure (SOP)  ->  Skill  ->  Content
  pathway        what the trade does    what the student    lessons, scenarios, trainers,
  the student    and how it is made     can do              sandbox designs, reference entries
- chooses        safe (steps, hazards,   (13 today,          (data, tested)
-                standards)              10 more proposed)
+ chooses        safe (steps, hazards,   (20 today,          (data, tested)
+                standards)              3 more planned)
                          \                    /
                     Code profile (region): NEC, CEC, BS 7671, and later others
 ```
 
 - A **procedure** has an ordered set of steps, hazards, controls and the standards that govern it. Procedures are documented in `docs/occupations/` and are the unit the
   app is checked against.
-- A **skill** is a unit of ability the app can teach and measure (`ConceptIds`). Procedures use one or more skills; skills are shared across occupations.
+- A **skill** is a unit of ability the app can teach and measure (`ConceptIds`): 13 code skills and 7 procedure skills today, with 3 more planned for waves 2 and 3. Procedures use one or more skills; skills are shared across occupations.
 - **Content** teaches a skill: lessons, inspection scenarios, procedure trainers, sandbox designs, quick reference cards.
-- Progress is recorded per skill and tier (existing). Progress per procedure is derived from the skills it uses (planned).
+- Progress is recorded per skill and tier, and each procedure practice is recorded with its score; a derived per-procedure view is planned.
+- **Editions are backend.** Each edition of a code is its own profile (`nec-2023`, `nec-2026`); the student never sees an edition, a rule number or a chapter, only the skill, the violation and the rule's title.
 
 ## 4. Users
 
 ### 4.1 Core occupations
 
 The six occupations in the market view. "Fit today" is the share of the occupation's documented procedures that the app teaches at least in part, from the researchers'
-coverage ratings (a judgement, not a test).
+coverage ratings (a judgement, not a test). After wave 1 "in part" mostly means a lesson and step-by-step practice of the procedure; hands-on trainers and the 3D scenes are still to build.
 
 | O*NET code | Occupation | Workers (BLS or O*NET) | Procedures documented | Fit today | Verdict |
 |---|---|---|---|---|---|
-| 47-2111 | Electricians | 821,000 (2025) | 7 | 57% | Core. Needs safe work, testing, troubleshooting and plan skills. |
-| 47-3013 | Helpers, electricians | about 85,000 | 8 | 38% | Core, mostly safety and basic skills the app lacks. |
-| 47-4011 | Construction and building inspectors | about 106,000 | 7 | 71% | Best fit: the inspection scenarios are its work. Needs stages and code administration. |
-| 47-2231 | Solar photovoltaic installers | about 22,000 | 7 | 57% | Needs a PV and storage skill (new content in NEC Articles 690, 705, 706). |
-| 49-2098 | Security and fire alarm systems installers | about 85,000 | 7 | 43% | Needs low-voltage and fire alarm content and a second code (the fire alarm standard). |
-| 49-9051 | Electrical power-line installers and repairers | 131,900 (2025) | 8 | 12% | **Wave 3, blocked.** Governed mainly by the NESC and OSHA line-work rules, not the NEC. Decided: build it (a NESC profile and utility scenes), after the licence decision. |
+| 47-2111 | Electricians | 821,000 (2025) | 7 | 100% (was 57%) | Core, wave 1. Every procedure has a lesson and step practice; the 3D scenes and hands-on trainers (a virtual meter) remain. |
+| 47-3013 | Helpers, electricians | about 85,000 | 8 | 100% (was 38%) | Core, wave 1. The safety and basic skills it lacked are now lessons with practice. |
+| 47-4011 | Construction and building inspectors | about 106,000 | 7 | 100% (was 71%) | Best fit: the inspection scenarios are its work. Stages and code administration are now lessons; a staged inspection scene remains. |
+| 47-2231 | Solar photovoltaic installers | about 22,000 | 7 | 71% (was 57%) | Wave 2. Needs a PV and storage skill (new content in NEC Articles 690, 705, 706), which depends on the 2026 numbering being verified. |
+| 49-2098 | Security and fire alarm systems installers | about 85,000 | 7 | 43% | Wave 2. Needs low-voltage and fire alarm content and a second code (the fire alarm standard). |
+| 49-9051 | Electrical power-line installers and repairers | 131,900 (2025) | 8 | 38% (was 12%) | **Wave 3, blocked.** Governed mainly by the NESC and OSHA line-work rules, not the NEC. Decided: build it (a NESC profile and utility scenes), after the licence decision. |
 
 ### 4.2 Adjacent occupations
 
@@ -81,23 +82,26 @@ Status: **Built** (in the repository and tested), **Partial** (data or code exis
 | FR-1 | The student chooses an occupation; the app shows the procedures of that occupation and which are taught. | Partial | `occupations.json`, `OccupationLibrary`, `OccupationPickerPanel`; the panel is not in a scene yet. |
 | FR-2 | Each procedure is available as an SOP: purpose, steps, hazards, controls, standards. | Partial | 44 procedures load from `occupations.json` (purpose, steps, hazards, controls; standards stay in the research documents because students never see them); draft, no expert review. |
 | FR-3 | Skills with tiers (Foundation, Practitioner, Authority); code skills and procedure skills. | Partial | 20 built (13 code, 7 procedure skills of wave 1; `ConceptIds`); 3 skills of waves 2 and 3 not built. |
-| FR-4 | Inspection scenarios: point at a part of a 3D building, flag a violation, cite the rule, get scored feedback. | Partial | 6 scenarios, 139 NEC violations, 14 CEC, 9 BS 7671 as data; no 3D scenes built. |
+| FR-4 | Inspection scenarios: point at a part of a 3D building, flag a violation, name the rule, get scored feedback. | Partial | 6 scenarios, 139 NEC violations (under both NEC editions), 14 CEC, 9 BS 7671 as data; no 3D scenes built. |
 | FR-5 | Sessions draw a different set of violations each time, spread across skills. | Built | `ViolationDraw`, `docs/POOL_AND_DRAW.md`. |
 | FR-6 | Procedure trainers: guided practice of a procedure's steps (lockout and test-before-touch, troubleshooting, a staged inspection), including a virtual meter and tester. | Partial | Step-ordering practice built for 28 of 44 procedures (`ProcedurePractice`, `ProcedurePracticePanel`); the virtual meter and scene-based trainers are planned. |
 | FR-7 | Panel design sandbox: design, wire and check a residential panel. | Partial | 6 designs, US only (needs tables); each is tested to be completable (required circuits fit the panel, the main breaker covers them, the load can be balanced); scene not built. |
 | FR-8 | Skill lessons before practice, in the student's region's words. | Partial | 20 lessons and a panel; not wired into a scene. |
-| FR-9 | Tutorial that teaches the stylus and a first inspection. | Partial | 8 steps as data with a panel (`tutorial.json`, `TutorialPanel`); needs a scene and `Report` calls from the inspection scene. |
-| FR-10 | Reference lookup: search rule entries and quick reference cards. | Partial | NEC 161 entries, CEC 12, BS 7671 29; 17 NEC cards (every skill has one); UI built, not run in Unity. |
-| FR-11 | Region choice sets the code, units and wording; the code is never named. | Partial | Built and tested; picker not wired into a scene. |
+| FR-9 | Tutorial that teaches the stylus and a first inspection. | Partial | 8 steps as data with a panel (`tutorial.json`, `TutorialPanel`); needs a scene and `Report` calls from the inspection scene; the stylus button mapping needs checking on the device. |
+| FR-10 | Rule lookup: search rule entries by name and open quick reference cards. | Partial | NEC 161 entries (in each edition's profile), CEC 12, BS 7671 29; 17 NEC cards, one for every skill; entries show a title, never a number, chapter or edition; UI built, not run in Unity. |
+| FR-11 | Region choice sets the code, units and wording; the code and its edition are never named or shown. | Partial | Built and tested; the picker is not wired into a scene. |
 | FR-12 | Three generic difficulty levels. | Built | Text and tests. |
 | FR-13 | Progress per skill and tier, saved with the student; derived progress per procedure. | Partial | Per skill built; each procedure practice is saved with its score (`ProcedureProgress`); a derived per-procedure view is planned. |
 | FR-14 | A content pipeline: scaffold, tests, source verification, expert worksheets. | Built | `tools/`, `docs/AUTHORING_VIOLATIONS.md`, expert review packet. |
 | FR-15 | Teacher reporting: class progress by skill and procedure, without teacher accounts in the first release. The app exports a per-student progress file (CSV, by skill and tier) a teacher collects by USB or shared folder; `tools/alignment-report` can read it. | Planned | Decided 2026-10-12 (D-8). The export is not built. |
-| FR-16 | Code profiles for each region and for occupations that need another code (fire alarm standard). | Partial | NEC 2023 and NEC 2026 (draft) as separate profiles, CEC (draft), BS 7671 (draft); a fire alarm profile planned; the NESC blocked. |
+| FR-16 | Code profiles for each region and edition, and for occupations that need another code (fire alarm standard). | Partial | `nec-2023` (default), `nec-2026` (draft), CEC (draft), BS 7671 (draft); a fire alarm profile planned; the NESC blocked. |
 | FR-17 | Edition handling: each NEC edition is its own profile; the student never sees an edition or a rule number. | Built | `nec-2023` and `nec-2026` (draft); decided 2026-10-12 (D-5 to D-7). |
+| FR-18 | Occupation fit is visible to the owner: a generated traceability matrix and gap list. | Built | `docs/occupations/TRACEABILITY.md`, `tools/occupations/build_docs.py`. |
 | FR-19 | Analytics: usage and learning events are sent to the same analytics service the other zSpace Unity apps use, keyed by a generic id, with no personal data in any event. | Planned | Decided 2026-10-12 (D-9). Nothing is built; the service is to be confirmed. |
 | FR-20 | Progress can be followed outside the app, and the student can see plainly what is tracked: a generic account or id (no name or email needed), a screen saying what is collected, where it goes, who sees it and how to export or delete it. | Planned | Decided 2026-10-12 (D-9); wording needs counsel. |
-| FR-18 | Occupation fit is visible to the owner: a generated traceability matrix and gap list. | Built | `docs/occupations/TRACEABILITY.md`, `tools/occupations/build_docs.py`. |
+| FR-21 | Rule numbers, chapters and editions are never shown to students; the UI shows an entry's title. Numbers stay in the data for scoring, alignment and review. | Built | `CodeTerminology.showReferenceNumbers` (off); student text rewritten without numbers; `StudentReferenceTests`. The Expert level's rule-naming input is a proposal awaiting the owner. |
+| FR-22 | Accessibility floors: never colour alone, minimum text size and contrast, grade-8 reading level, timers that can be turned off, a stereo depth setting, seated stylus-only use. | Planned | Decided 2026-10-12 (D-10). Settings and checks not built; the mockup shows the controls. |
+| FR-23 | Localization: English first, other priority-one languages next, translating only reviewed content. | Planned | Decided 2026-10-12 (D-11). Student text is already data; no language switch is built. |
 
 ## 6. Non-functional requirements
 
@@ -118,8 +122,8 @@ The market view plans the six core occupations for a first-half-2027 launch. The
 
 | Wave | Occupations | What has to exist first |
 |---|---|---|
-| 1 | Electricians, electrician helpers, inspectors | New skills: electrically safe work, testing and measurement, troubleshooting, plans and documentation, jobsite safety, code administration; the 3D scenes; a staged inspection; the remaining phase 1 content. |
-| 2 | Solar PV installers, security and fire alarm installers | A PV and storage skill, and a low-voltage and fire alarm skill with a second code profile and its licence decision; both depend on the NEC edition decision for the PV articles. |
+| 1 | Electricians, electrician helpers, inspectors | The seven new skills are built as lessons and step practice (electrically safe work, testing and measurement, troubleshooting, plans and documentation, jobsite safety, code administration, utility interface). Still needed: the 3D scenes, a staged inspection, hands-on trainers, the remaining phase 1 content and expert review. |
+| 2 | Solar PV installers, security and fire alarm installers | A PV and storage skill, and a low-voltage and fire alarm skill with a second code profile and its licence decision; the PV content needs the 2026 numbering verified (the edition decision itself is settled: both editions are profiles). |
 | 3 | Power-line installers; adjacent clusters | Utility line work, decided 2026-10-12: a NESC code profile and new utility scenes, after the NESC licence decision and the earlier waves; beginner-literacy packages for maintenance, HVAC and construction roles. |
 
 ## 8. Market, as stated and as checked
@@ -138,7 +142,7 @@ Details: `docs/occupations/ADJACENT.md`. The market view should be corrected bef
 ## 9. Success measures
 
 Product measures (to be set by the owner): share of procedures of a supported occupation that are taught; skill attainment (the existing rule: three attempts at 80 percent mastery per tier); completion of the tutorial and a first scenario unaided;
-teacher-reported use. Business measures are those in the market view and are not set here.
+teacher-reported use. Analytics (D-9) is how these are measured: events keyed by a generic id, with no personal data. Business measures are those in the market view and are not set here.
 
 ## 10. Risks and open decisions
 
@@ -148,10 +152,11 @@ teacher-reported use. Business measures are those in the market view and are not
 3. **SOP accuracy.** The 44 procedures were drafted from public pages; the key standards (the electrical safe work standard, the fire alarm standard, the NESC) are paywalled and were not opened. An occupational expert must review each occupation.
 4. **Occupations the NEC does not cover.** Power-line work, and parts of fire alarm, elevator and utility work, need other codes. The owner decided to build utility line work (wave 3); until it exists, promising it in marketing would mislead buyers.
 5. **Scenes.** Nothing teaches in 3D until scenes exist; content outpaces art.
-6. **Scope growth.** Ten proposed skills is a large addition; sequence by wave and by how many procedures each unlocks (`docs/occupations/TRACEABILITY.md`).
+6. **Scope growth.** Ten skills were approved: seven are built as lessons and step practice, three remain for waves 2 and 3. Sequence the rest by wave and by how many procedures each unlocks (`docs/occupations/TRACEABILITY.md`).
 
 ## 11. Where the detail lives
 
 - Occupations, procedures and SOPs: `docs/occupations/` (profiles, `TRACEABILITY.md`, `ADJACENT.md`, `proposed-skills.json`, and the research data).
 - Content rules: `docs/CONTENT_POLICY.md`, `docs/CONTENT_PLAN.md`, `docs/TEACHING_CONTENT.md`, `docs/POOL_AND_DRAW.md`, `docs/SCENE_DESIGN.md`, `docs/SKILL_SCORING.md`.
+- Screens: the wireframe and the click-through mockup (`docs/design/wireframe.html`, `docs/design/mockup.html`, also published as private artifacts); they are updated with this document.
 - Work remaining: `TODO.md`.

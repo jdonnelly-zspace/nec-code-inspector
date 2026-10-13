@@ -1,0 +1,633 @@
+<meta charset="utf-8">
+<meta charset="utf-8">
+<title>Code Inspector Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a presentation page (light or dark with the viewer) holding one zSpace display frame per screen,
+   each with a label and note beneath it, driven by a sticky region/difficulty bar and a stepper.
+   The app UI inside the frames is its own dark, high-contrast skin: graphite surfaces, safety-yellow for the
+   things the stylus can act on, stylus-blue for the ray, and green/red for pass/fail. */
+:root {
+  --bg: #f1efea; --surface: #fbfaf7; --ink: #1c1f23; --muted: #5f6670; --line: #d3d0c8; --accent: #b87a00; --accent-ink: #fff;
+  --chip: #e6e3db; --shadow: 0 1px 0 rgba(0,0,0,.04), 0 12px 32px -18px rgba(20,16,0,.35);
+  --sans: "Barlow", system-ui, sans-serif; --cond: "Barlow Condensed", "Barlow", sans-serif; --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #101214; --surface: #181b1e; --ink: #e9ecef; --muted: #98a1ab; --line: #2b3036; --accent: #ffb400; --accent-ink: #1a1300;
+  --chip: #23272c; --shadow: 0 1px 0 rgba(255,255,255,.03), 0 12px 32px -18px rgba(0,0,0,.8); color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #101214; --surface: #181b1e; --ink: #e9ecef; --muted: #98a1ab; --line: #2b3036; --accent: #ffb400; --accent-ink: #1a1300;
+  --chip: #23272c; --shadow: 0 1px 0 rgba(255,255,255,.03), 0 12px 32px -18px rgba(0,0,0,.8); color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--sans); padding-inline: 16px; padding-block: 0 56px; }
+.wrap { max-width: 980px; margin: 0 auto; }
+.intro { padding-block: 32px 8px; }
+.eyebrow { font: 500 12px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+h1 { font: 700 40px/1.05 var(--cond); letter-spacing: .01em; margin: 6px 0 10px; text-transform: uppercase; text-wrap: balance; }
+.intro p { color: var(--muted); max-width: 68ch; margin: 0 0 8px; }
+.intro p b { color: var(--ink); font-weight: 500; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; font-size: 13px; color: var(--muted); }
+.legend i { display: inline-block; width: 11px; height: 11px; margin-right: 6px; vertical-align: -1px; border-radius: 2px; }
+
+/* controls above and below the one frame */
+.top { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin: 22px 0 14px; }
+.seg { display: inline-flex; align-items: center; gap: 8px; }
+.seg > span { font: 500 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.seg .opts { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg button { all: unset; cursor: pointer; padding: 8px 16px; font: 500 15px var(--sans); color: var(--muted); }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.seg button:focus-visible, .nav button:focus-visible, .jump select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.hintline { margin-left: auto; color: var(--muted); font-size: 14px; }
+.hintline b { color: var(--accent); font-weight: 600; }
+.nav { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 14px 0 6px; }
+.nav button { all: unset; cursor: pointer; padding: 10px 20px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); font: 600 15px var(--sans); color: var(--ink); }
+.nav button:hover:not([disabled]) { border-color: var(--ink); }
+.nav button.next { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.nav button[disabled] { opacity: .35; cursor: default; }
+.nav .where { flex: 1; min-width: 160px; text-align: center; }
+.where b { display: block; font: 700 22px/1.1 var(--cond); letter-spacing: .03em; text-transform: uppercase; }
+.where span { font: 500 12px var(--mono); letter-spacing: .08em; color: var(--muted); text-transform: uppercase; }
+.jump { display: flex; align-items: center; gap: 8px; margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.jump select { font: 500 15px var(--sans); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); max-width: 100%; }
+.s-note { color: var(--muted); font-size: 15px; margin: 12px 2px 0; max-width: 78ch; }
+.legend i { display: inline-block; width: 11px; height: 11px; margin-right: 6px; vertical-align: -1px; border-radius: 2px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; font-size: 13px; color: var(--muted); }
+
+/* the zSpace display */
+.dev { background: linear-gradient(180deg, #2a2e33, #14171a); border-radius: 18px; padding: 12px; margin-top: 0; box-shadow: var(--shadow); max-width: 100%; }
+.dev-scroll { overflow-x: auto; border-radius: 8px; }
+.stage { position: relative; width: 100%; min-width: 600px; aspect-ratio: 960 / 600; overflow: hidden; border-radius: 6px; background: #0b0d0f; }
+.app { position: absolute; left: 0; top: 0; width: 960px; height: 600px; transform-origin: 0 0; transform: scale(var(--k, 1)); }
+.dev-foot { display: flex; justify-content: space-between; gap: 12px; padding: 8px 6px 0; font: 500 10px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: #6c747d; }
+
+/* app skin */
+.app { --bg0: #0c0f11; --bg1: #12161a; --bg2: #1a2025; --bg3: #232a31; --ln: #2f3841; --tx: #e8edf1; --mu: #8e9aa6; --am: #ffb400; --am-ink: #1c1400; --am-bg: rgba(255,180,0,.12);
+  --blu: #5bb4ff; --ok: #38d27a; --ok-bg: rgba(56,210,122,.13); --bad: #ff5f55; --bad-bg: rgba(255,95,85,.13);
+  font: 15px/1.4 var(--sans); color: var(--tx); background: var(--bg0); }
+.app [data-go], .app [data-act] { cursor: pointer; }
+.app [data-go]:hover, .app [data-act]:hover { outline: 2px solid var(--am); outline-offset: 2px; }
+.app [data-go]:focus-visible { outline: 3px solid var(--am); outline-offset: 2px; }
+.hot { position: absolute; border-radius: 8px; z-index: 5; }
+.app svg.i { width: 1em; height: 1em; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+.dim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,10,12,.92) 0%, rgba(8,10,12,.72) 45%, rgba(8,10,12,.35) 100%); }
+.dim2 { position: absolute; inset: 0; background: rgba(8,10,12,.8); }
+.abs { position: absolute; }
+.cond { font-family: var(--cond); text-transform: uppercase; letter-spacing: .04em; }
+.mono { font-family: var(--mono); }
+.glass { background: rgba(18,22,26,.9); border: 1px solid var(--ln); border-radius: 10px; box-shadow: 0 18px 40px -16px rgba(0,0,0,.8); }
+.lbl { font: 600 12px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--mu); }
+.h1 { font: 700 38px/1 var(--cond); text-transform: uppercase; letter-spacing: .03em; }
+.h2 { font: 700 26px/1.05 var(--cond); text-transform: uppercase; letter-spacing: .03em; }
+.h3 { font: 600 19px/1.15 var(--cond); text-transform: uppercase; letter-spacing: .04em; }
+.mu { color: var(--mu); }
+.topbar { position: absolute; left: 0; right: 0; top: 0; height: 56px; display: flex; align-items: center; gap: 14px; padding: 0 24px; background: linear-gradient(180deg, rgba(8,10,12,.95), rgba(8,10,12,0)); }
+.brand { display: flex; align-items: center; gap: 10px; font: 700 20px var(--cond); letter-spacing: .08em; text-transform: uppercase; }
+.brand i { width: 26px; height: 26px; background: var(--am); color: var(--am-ink); border-radius: 6px; display: grid; place-items: center; font-size: 17px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; border: 1px solid var(--ln); background: var(--bg2); font: 500 13px var(--sans); color: var(--tx); white-space: nowrap; }
+.chip.am { color: var(--am); border-color: rgba(255,180,0,.45); background: var(--am-bg); }
+.chip.ok { color: var(--ok); border-color: rgba(56,210,122,.4); background: var(--ok-bg); }
+.chip.bad { color: var(--bad); border-color: rgba(255,95,85,.4); background: var(--bad-bg); }
+.chip.sm { font-size: 12px; padding: 2px 9px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 46px; padding: 0 22px; border-radius: 8px; border: 1.5px solid var(--ln); background: var(--bg3); color: var(--tx); font: 600 16px var(--sans); cursor: default; white-space: nowrap; }
+.btn.pri { background: var(--am); border-color: var(--am); color: var(--am-ink); }
+.btn.ghost { background: transparent; }
+.btn.sm { height: 36px; padding: 0 14px; font-size: 14px; }
+.btn.big { height: 62px; justify-content: flex-start; font-size: 19px; padding: 0 20px; width: 100%; }
+.btn[disabled], .btn.off { opacity: .42; }
+.card { background: var(--bg2); border: 1.5px solid var(--ln); border-radius: 10px; padding: 14px 16px; }
+.card.sel { border-color: var(--am); background: linear-gradient(0deg, var(--am-bg), var(--am-bg)), var(--bg2); }
+.pick { cursor: pointer; }
+.pick:hover { border-color: #6b5320; }
+.row { display: flex; gap: 12px; align-items: center; }
+.col { display: flex; flex-direction: column; gap: 10px; }
+.grow { flex: 1; min-width: 0; }
+.rule { height: 1px; background: var(--ln); border: 0; margin: 12px 0; }
+.kv { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--ln); font-size: 15px; }
+.kv:last-child { border: 0; }
+.kv b { font-weight: 600; }
+.tier { display: flex; gap: 4px; }
+.tier i { flex: 1; height: 8px; border-radius: 2px; background: var(--bg3); }
+.tier i.on { background: var(--am); }
+.bar2 { height: 8px; border-radius: 4px; background: var(--bg3); overflow: hidden; }
+.bar2 > i { display: block; height: 100%; background: var(--am); }
+.field { border: 1.5px solid var(--ln); background: var(--bg1); border-radius: 8px; padding: 10px 14px; min-height: 44px; display: flex; align-items: center; gap: 8px; }
+.field.on { border-color: var(--blu); box-shadow: 0 0 0 3px rgba(91,180,255,.18); }
+.opt { display: flex; gap: 12px; align-items: center; padding: 10px 14px; border-radius: 8px; border: 1.5px solid var(--ln); background: var(--bg1); }
+.opt.sel { border-color: var(--am); background: var(--am-bg); }
+.ref { font: 600 15px var(--mono); color: var(--am); white-space: nowrap; }
+.ring { position: relative; width: 130px; height: 130px; }
+.ring svg { transform: rotate(-90deg); }
+.ring div { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
+.stylus-hint { display: flex; gap: 8px; align-items: center; color: var(--mu); font-size: 14px; }
+.kbd { display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 6px; border: 1px solid var(--ln); border-bottom-width: 2px; border-radius: 5px; font: 500 12px var(--mono); color: var(--tx); }
+.hud { position: absolute; left: 0; right: 0; top: 0; height: 64px; display: flex; align-items: center; gap: 12px; padding: 0 22px; background: linear-gradient(180deg, rgba(8,10,12,.96), rgba(8,10,12,0)); }
+.tip { position: absolute; padding: 8px 12px; border-radius: 8px; background: rgba(12,15,17,.94); border: 1px solid var(--am); font-size: 14px; }
+.tip::after { content: ""; position: absolute; left: 22px; bottom: -6px; width: 10px; height: 10px; background: rgba(12,15,17,1); border-right: 1px solid var(--am); border-bottom: 1px solid var(--am); transform: rotate(45deg); }
+.empty { background: var(--bg1); border: 1.5px dashed var(--ln); border-radius: 10px; padding: 22px; color: var(--mu); text-align: center; }
+.slotg { display: grid; gap: 6px; }
+.sw { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+.num { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--am); color: var(--am-ink); font: 700 13px var(--mono); flex: none; }
+.ell { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.toast { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); padding: 10px 18px; border-radius: 8px; background: var(--ok-bg); border: 1px solid rgba(56,210,122,.5); color: var(--ok); font-size: 14px; z-index: 6; }
+.scroll { overflow: hidden; }
+@media (prefers-reduced-motion: no-preference) { .pulse { animation: pl 1.8s ease-in-out infinite; } @keyframes pl { 50% { opacity: .45; } } }
+</style>
+
+<div class="wrap">
+  <div class="intro">
+    <div class="eyebrow">Mockup · zSpace Inspire 2</div>
+    <h1>Code Inspector</h1>
+    <p>A skill-based electrical code trainer for the zSpace stylus display. Students practise <b>20 skills</b> by learning the procedures of an electrical <b>occupation</b>, inspecting 3D buildings, designing panels and looking up rules. They choose a <b>region</b>, which sets the rules, units, wire sizes and voltages. No rule book, rule number or credential is shown. Updated for the occupation, tutorial, progress and accessibility decisions of 2026-10-12.</p>
+  </div>
+
+  <div class="top">
+    <div class="seg"><span>Region</span><div class="opts" id="seg-region"></div></div>
+    <div class="hintline">Click the <b>yellow</b> buttons inside the screen to move through the app.</div>
+  </div>
+
+  <div class="dev"><div class="dev-scroll"><div class="stage" id="stage"><div class="app" id="app"></div></div></div><div class="dev-foot"><span>zSpace Inspire 2 · stylus</span><span id="foot"></span></div></div>
+
+  <div class="nav">
+    <button type="button" id="prev">&larr; Back</button>
+    <div class="where"><span id="count"></span><b id="title"></b></div>
+    <button type="button" class="next" id="next">Next &rarr;</button>
+  </div>
+  <p class="s-note" id="note"></p>
+  <div class="jump"><label for="jump">Jump to</label><select id="jump"></select></div>
+  <div class="legend">
+    <span><i style="background:#ffb400"></i>things the stylus can act on</span><span><i style="background:#5bb4ff"></i>stylus ray</span>
+    <span><i style="background:#38d27a"></i>pass</span><span><i style="background:#ff5f55"></i>fail</span><span>3D scenes are illustrations; scores are example data</span>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+
+  /* ---------- data ---------- */
+  var REG = {
+    us: { name: "United States", units: "Imperial", unitLine: "Feet, inches, AWG", volts: "120/240 V", area: "1,800 sq ft", dist: "6 ft", clear: "36 in",
+          wires: ["14 AWG", "12 AWG", "10 AWG", "8 AWG"], good: "12 AWG", scen: 6, sandbox: true, cards: true, pre: "",
+          t: { gfci: "GFCI", panel: "panel", breaker: "breaker", recept: "receptacle", ground: "grounding", disc: "service disconnect" },
+          refs: { disc: "Service disconnect location", bond: "Bonding the metal water pipe", third: "Wall outlet spacing", thirdSkill: "Branch circuits", thirdText: "Wall outlet spacing" } },
+    ca: { name: "Canada", units: "Metric", unitLine: "Metres, millimetres, mm²", volts: "120/240 V", area: "167 m²", dist: "1.8 m", clear: "1 m",
+          wires: ["1.5 mm²", "2.5 mm²", "4 mm²", "6 mm²"], good: "2.5 mm²", scen: 4, sandbox: false, cards: false, pre: "",
+          t: { gfci: "GFCI", panel: "panel", breaker: "breaker", recept: "receptacle", ground: "grounding", disc: "service disconnect" },
+          refs: { disc: "Service disconnect location", bond: "Bonding the metal water pipe", third: "Wall outlet spacing", thirdSkill: "Branch circuits", thirdText: "Wall outlet spacing" } },
+    gb: { name: "United Kingdom", units: "Metric", unitLine: "Metres, millimetres, mm²", volts: "230 V", area: "167 m²", dist: "1.8 m", clear: "1 m",
+          wires: ["1.5 mm²", "2.5 mm²", "4 mm²", "6 mm²"], good: "2.5 mm²", scen: 0, sandbox: false, cards: false, pre: "",
+          t: { gfci: "RCD", panel: "consumer unit", breaker: "MCB", recept: "socket-outlet", ground: "earthing", disc: "main switch" },
+          refs: { disc: "Main switch location", bond: "Protective bonding of metal pipes", third: "Circuit chart at the board", thirdSkill: "Identification and marking", thirdText: "Circuit chart at the board" } }
+  };
+  var LEVELS = {
+    Beginner: { tag: "Building familiarity", d: "Guided inspection with a list of rules to pick from, highlight hints and scaffolding.", feats: ["Hints", "Pick from a list", "No timer"], bolts: 1 },
+    Standard: { tag: "Working knowledge", d: "Search for the rule by name and no hints. All standard violations are active.", feats: ["Search", "No hints", "Full violation set"], bolts: 2 },
+    Expert: { tag: "Full fluency", d: "You name the rule yourself, with an optional time limit, subtle violations and false-positive penalties.", feats: ["Name the rule", "Optional timer", "Subtle violations"], bolts: 3 }
+  };
+  var SCEN = [
+    ["Residential Service Panel Inspection", 49, ["Equipment installation", "Working space", "Disconnecting means", "Marking"]],
+    ["Branch Circuit Wiring Inspection", 36, ["Shock protection", "Arc-fault protection", "Branch circuits", "Overcurrent"]],
+    ["Grounding & Bonding Inspection", 11, ["Earthing and bonding"]],
+    ["Commercial Installation Inspection", 21, ["Overcurrent", "Conductor sizing", "Load calculation", "Disconnecting means"]],
+    ["Wiring Methods Inspection", 12, ["Wiring methods"]],
+    ["Special Locations Inspection", 10, ["Special locations"]]
+  ];
+  var SKILLS = [
+    ["Shock protection", 3, 92], ["Arc-fault protection", 2, 64], ["Overcurrent protection", 2, 58], ["Conductor sizing", 1, 40], ["Earthing and bonding", 3, 88], ["Branch circuit requirements", 2, 61],
+    ["Load calculation", 1, 35], ["Disconnecting means", 2, 70], ["Working space and access", 1, 44], ["Equipment installation", 2, 66], ["Identification and marking", 1, 38], ["Wiring methods", 0, 12], ["Special locations", 0, 8],
+    ["Electrically safe work", 2, 74], ["Testing and measurement", 1, 48], ["Troubleshooting", 1, 30], ["Plans and documentation", 0, 18], ["Jobsite safety", 1, 52], ["Code administration", 0, 10], ["Utility interface", 0, 6]
+  ];
+  var OCC = [{"id": "electricians", "title": "Electrician", "available": true, "summary": "Installs, maintains and repairs the wiring, lighting, power and control systems of homes and buildings, working from drawings and the code, and tests the result.", "n": 7, "practice": 7, "procs": [{"name": "Establishing an electrically safe work condition", "purpose": "Remove and prove the absence of hazardous electrical energy before anyone touches conductors or parts.", "skills": ["Shock protection", "Disconnecting means", "Electrically safe work", "Testing and measurement"], "practice": true, "steps": ["Identify every source of power to the equipment using drawings, labels and the panel schedule, including backfeed such as generators or second feeds.", "Shut the load down with normal controls, then open the disconnecting means.", "Visually confirm the disconnect is open, by handle position or visible blades.", "Release or block stored energy (capacitors, batteries, springs, other non-electrical energy that could restart parts)."], "hazards": ["Shock and electrocution from missed backfeed or a second source", "Arc flash if a meter or tool bridges live parts", "Unexpected restart by another worker"], "controls": ["Personal lock and tag on every isolation point, removed only by the person who applied it", "Voltage test with a rated meter, proved before and after on a known live source", "Written procedure and trained, authorized workers"]}, {"name": "Rough-in and finish wiring of a residential branch circuit", "purpose": "Install the boxes, cable, protection and devices of a new or extended branch circuit so it passes inspection and works safely.", "skills": ["Branch circuit requirements", "Wiring methods", "Equipment installation", "Arc-fault protection", "Shock protection"], "practice": true, "steps": ["Work from the plans and load needs to lay out box locations, circuit routes and the panel location.", "Set and fasten each outlet, switch and fixture box at the right height, using rated boxes where a fan or heavy fixture hangs.", "Drill studs near their centers, run the cable, and protect it with nail plates where it is close to the face of framing.", "Staple or support cable near every box and along its run at the code spacing."], "hazards": ["Nail or screw penetration of cable", "Energized panel while terminating circuits", "Falls from ladders"], "controls": ["Panel de-energized and locked out while terminating", "Cable supported and protected per code", "Rough-in inspection before cover"]}, {"name": "Installing or replacing a residential service panel", "purpose": "Replace or upgrade the main panel so the home has correct capacity, grounding and protection, with the utility and inspector involved.", "skills": ["Overcurrent protection", "Earthing and bonding", "Disconnecting means", "Working space and access", "Load calculation", "Identification and marking"], "practice": true, "steps": ["Assess the existing service, decide the new panel size and circuit count, and check the load calculation.", "Pull the permit from the local building department and schedule the utility disconnect and reconnect.", "Gather materials and install ground rods or other grounding electrode parts ahead of time where possible.", "On the scheduled day the utility cuts power; verify the service is dead, and lock out where possible, before opening anything."], "hazards": ["Service conductors that may still be live up to the utility disconnect", "Arc flash and shock when working in a panel", "Wrong breaker or conductor sizing"], "controls": ["Utility disconnect and verified dead conductors before work", "Load calculation and correct ratings", "Grounding electrode system and bonding done to code"]}, {"name": "Troubleshooting a dead or tripping circuit", "purpose": "Find the cause of a lost or tripping circuit with a systematic method and fix it without creating new hazards.", "skills": ["Overcurrent protection", "Arc-fault protection", "Shock protection", "Troubleshooting", "Testing and measurement"], "practice": true, "steps": ["Ask what happened and observe: which outlets or lights are out, what trips, any smell, sound or heat.", "Gather information: panel directory, circuit layout, recent work, GFCI or AFCI devices on the circuit.", "Check obvious causes first, such as tripped GFCIs or AFCIs and breaker position, resetting only after considering why it tripped.", "List the likely sections of the circuit and use a half-split approach, testing the middle to rule out half at a time."], "hazards": ["Working live while looking for the fault", "Arcing at a short or loose connection", "Fire from a hot or damaged connection"], "controls": ["Stop and escalate if there is a burning smell, a scorched device, instant re-trips or water", "Live-dead-live meter check", "Lockout before opening boxes"]}, {"name": "Testing and verifying a finished installation", "purpose": "Show that a finished circuit is wired correctly and that its protective devices work before handing it over.", "skills": ["Shock protection", "Arc-fault protection", "Earthing and bonding", "Testing and measurement"], "practice": true, "steps": ["Before energizing, confirm the circuit is deenergized, then check continuity of conductors and the grounding path with a meter (meter proved first).", "Confirm connections: hot, neutral and ground landed on the right terminals and no shorts between conductors.", "Energize and check voltage at the devices with a proved meter.", "Plug in a receptacle tester to read correct wiring and polarity, and note any open ground or reversal."], "hazards": ["Testing live circuits that were thought dead", "Meter used outside its rating", "False confidence from a plug-in tester"], "controls": ["Continuity only on deenergized circuits", "Meter proven on a known source", "Use the device's own test button for AFCI and GFCI"]}, {"name": "Conduit and cable installation", "purpose": "Install raceway and cable so conductors are protected, supported and can be pulled without damage.", "skills": ["Wiring methods", "Conductor sizing"], "practice": true, "steps": ["Pick the conduit type for the environment (metal for protected indoor runs, rigid for impact, PVC for wet or buried).", "Mark box locations and support points from the drawings.", "Cut conduit to length and ream the cut end so burrs do not damage insulation.", "Bend with the correct bender, allowing for take-up, and keep total bends between pull points within the code limit."], "hazards": ["Falls from ladders and lifts", "Cuts and strains from cutting and bending", "Insulation damage from burrs or overfill"], "controls": ["Reaming and bushings", "Fill and bend limits followed", "Supports at code spacing"]}, {"name": "Load calculation and service sizing for a dwelling", "purpose": "Work out the demand on a home so the service, feeders and circuits are sized correctly.", "skills": ["Load calculation", "Conductor sizing", "Branch circuit requirements"], "practice": true, "steps": ["Take the floor area from outside dimensions (excluding open porches, garages and unfinished spaces) and apply the general lighting and receptacle load per square foot.", "Add the required small-appliance and laundry circuits at the fixed volt-ampere value per circuit.", "Combine those loads and apply the demand factors for the first block and the remainder.", "Add fixed appliances, range, dryer, heating and cooling with their own demand rules, including a reduction when four or more fastened appliances exist."], "hazards": ["Undersized service overheating or tripping", "Mistakes from skipped demand rules", "Overloaded neutrals or conductors"], "controls": ["Follow the code's worksheet method in order", "Check results against the plan reviewer or utility requirements", "Document the calculation with the permit"]}]}, {"id": "electrician-helpers", "title": "Electrician's helper", "available": true, "summary": "Helps electricians by preparing materials, running wire and conduit and keeping the site safe, under supervision, while learning the trade.", "n": 8, "practice": 8, "procs": [{"name": "Job-site electrical safety for a helper", "purpose": "Keep an unqualified worker away from energized parts and in the habit of asking first.", "skills": ["Shock protection", "Arc-fault protection", "Special locations", "Jobsite safety"], "practice": true, "steps": ["Attend the pre-task briefing and learn which circuits and equipment nearby are live.", "Put on required PPE and check it is in good, fitting condition.", "Treat every conductor and terminal as live until the electrician says it is verified dead.", "Never open, touch or work on energized equipment; ask the electrician first."], "hazards": ["Shock and burns from live parts", "Arc flash and arc blast", "Electrical fires from faulty equipment"], "controls": ["Qualified-person-only rule for energized work", "De-energize first", "Approach distance for unqualified people"]}, {"name": "Assisting with lockout/tagout", "purpose": "Ensure equipment is de-energized and cannot restart before anyone works on it, with the helper in the correct supporting role.", "skills": ["Disconnecting means", "Electrically safe work"], "practice": true, "steps": ["Electrician identifies every energy source and the hazards, and shares the plan.", "Equipment is shut down by the normal method and notified people are told.", "Each source is isolated at its disconnecting device.", "Lock and tag go on every isolating device; a helper who is working puts a personal lock on a group device if their employer's program lets them."], "hazards": ["Unexpected energization", "Backfeed and induced voltage", "Stored energy"], "controls": ["Individual locks and tags", "Group lockout with each worker's own lock", "Verification test before work"]}, {"name": "Material handling and staging", "purpose": "Move and store conduit, cable, boxes and equipment without injury or creating site hazards.", "skills": ["Jobsite safety"], "practice": true, "steps": ["Read the work plan to know what material goes where and in what order.", "Check the route for aisles, openings, wet floors and overhead hazards.", "Lift with legs, or use a cart or second person for long or heavy items such as conduit and spools.", "Stack and block materials so they cannot slide, roll or fall; keep cylindrical items blocked."], "hazards": ["Strains and back injuries", "Falling or rolling material", "Trips"], "controls": ["Safe stacking and blocking", "Clear aisles", "Setback from openings and edges"]}, {"name": "Pulling wire and cable and running conduit under supervision", "purpose": "Get conductors through finished raceways without damaging them, with the electrician in charge of what is installed.", "skills": ["Wiring methods", "Conductor sizing"], "practice": true, "steps": ["Confirm with the electrician the conductor sizes, count and fill for the raceway.", "Check the conduit run is complete, supported, cut and deburred, and clear of debris.", "Feed a fish tape or pull line through by hand without forcing it.", "Strip and bundle conductor ends and attach them to the tape or a pulling grip, tape smooth."], "hazards": ["Strain and pinched hands", "Damaged insulation", "Overfilled raceway"], "controls": ["Fill limits from the code's conduit fill tables", "Deburring before pulling", "Lubricant and pulling grips"]}, {"name": "Layout, measuring and marking", "purpose": "Transfer plan locations onto the structure so boxes, conduit and equipment go in the right place.", "skills": ["Working space and access", "Equipment installation", "Plans and documentation"], "practice": true, "steps": ["Get the plan or marked locations from the electrician and confirm which version is current.", "Check the area for existing wiring or pipes before marking or drilling.", "Measure from fixed reference points and mark box and run locations clearly.", "Mark conduit cut lengths and double-check before cutting."], "hazards": ["Drilling into hidden live conductors", "Mis-measured runs and wasted material", "Working from outdated drawings"], "controls": ["Electrician review of layout", "Checking for hidden circuits", "Current drawings"]}, {"name": "Using hand and power tools safely", "purpose": "Use drills, cutters and hand tools without shock, cuts or kickback and keep tools in safe condition.", "skills": ["Shock protection", "Jobsite safety"], "practice": true, "steps": ["Inspect each tool and cord before use and tag out damaged ones.", "Use only double-insulated or grounded tools, on GFCI or tested power.", "Wear eye and hearing protection and other required PPE.", "Keep guards in place and use the right tool and bit for the material."], "hazards": ["Shock from damaged cords", "Cuts and kickback", "Flying fragments"], "controls": ["Pre-use inspection", "GFCI or assured grounding program", "Guards and PPE"]}, {"name": "Ladder and fall safety", "purpose": "Reach work at height without falling and without contacting energized equipment.", "skills": ["Jobsite safety"], "practice": true, "steps": ["Inspect the ladder for defects and remove it from service if damaged.", "Choose nonconductive rails where energized equipment could be touched.", "Set a non-self-supporting ladder at about one-quarter its working length from the base.", "Extend the top 3 feet above the landing or secure it at the top."], "hazards": ["Falls", "Ladder contact with energized parts", "Overloading"], "controls": ["Ladder inspection", "Nonconductive rails", "Correct angle and extension"]}, {"name": "Cleaning up and securing the site", "purpose": "Leave the area safe, free of trip and fire hazards, with energized equipment closed up and covered.", "skills": ["Working space and access", "Jobsite safety"], "practice": true, "steps": ["Collect scrap, cut-offs and packaging and sort for disposal.", "Clear aisles and working space around panels and equipment.", "Return tools to storage and inspect them.", "Cap or protect open conductor ends and boxes, per the electrician."], "hazards": ["Trips", "Fire from debris", "Exposed live parts left open"], "controls": ["Housekeeping routine", "Covers and barriers", "Warning signs"]}]}, {"id": "inspectors", "title": "Electrical inspector", "available": true, "summary": "Inspects electrical work against the code and the plans, records what is wrong, and decides whether work can be approved.", "n": 7, "practice": 7, "procs": [{"name": "Electrical plan review for a permit", "purpose": "Check on paper that a proposed electrical installation can be built to the adopted code before work starts.", "skills": ["Load calculation", "Conductor sizing", "Overcurrent protection", "Earthing and bonding", "Plans and documentation", "Code administration"], "practice": true, "steps": ["Confirm the permit application describes the work and that this job needs plan review under local rules.", "Check the submittal is complete: floor or site plan, one-line or riser diagram, panel schedules, load calculation, and fault-current data where required.", "Start at a branch circuit and follow the load path back to the service point, checking each conductor and device.", "Compare the load calculation categories and demand factors with the equipment and conductor sizes shown."], "hazards": ["Undersized service or feeders approved by mistake", "Equipment rated below available fault current", "Plans that differ from what is later built"], "controls": ["Written plan review checklist", "Complete submittal list", "Engineer stamp for complex or life-safety systems"]}, {"name": "New dwelling electrical inspection sequence", "purpose": "Inspect each hidden or critical part of the electrical work at the stage where it can still be seen and fixed.", "skills": ["Wiring methods", "Equipment installation", "Earthing and bonding", "Branch circuit requirements", "Code administration"], "practice": true, "steps": ["Temporary power pole: check it meets the code, including GFCI protection, before it is used.", "Underground or slab: inspect conduit, in-slab wiring and the concrete-encased grounding electrode before concrete or backfill covers them.", "Rough-in: after framing, fire blocking and bracing, check all wiring is run, secured and terminated in boxes, service cable and meter can are set, and splices made up.", "Service and meter release: check the panel, disconnect and grounding electrode system, then release the meter or temporary power where the jurisdiction does this at rough-in."], "hazards": ["Work covered before inspection", "Energizing before the service is approved", "Uncovered boxes, open knockouts, unsupported cable at final"], "controls": ["Stage-by-stage hold points", "Inspection requests tied to the permit", "Readiness lists published by the jurisdiction"]}, {"name": "Service and panel inspection, including grounding and bonding", "purpose": "Confirm the service equipment, panel and grounding and bonding system are installed correctly before power is released.", "skills": ["Earthing and bonding", "Working space and access", "Equipment installation", "Disconnecting means", "Identification and marking", "Conductor sizing"], "practice": true, "steps": ["Confirm the address and permit, and that the plans match the installed panel size.", "Check working space in front of the panel and the mounting height of the highest device.", "Check the enclosure is suitable for service equipment, breakers are listed for the panel, and conductor size matches the breaker.", "Verify torque on lug and terminal connections with a calibrated tool."], "hazards": ["Shock from energized panel interior", "Arc flash if a cover is removed under load", "Loose terminations causing heat"], "controls": ["Panel opened by the contractor with service off", "Inspector uses PPE when energized parts are within reach", "Torque verification"]}, {"name": "GFCI and AFCI verification", "purpose": "Confirm that required shock and arc-fault protection is installed in the right places and actually trips.", "skills": ["Shock protection", "Arc-fault protection", "Branch circuit requirements", "Testing and measurement"], "practice": true, "steps": ["Identify which areas and circuits need protection under the adopted code edition.", "Look at each device or breaker visually for damage, looseness or heat marks.", "Press the built-in test button on each protective device and confirm it trips and resets.", "Use a GFCI receptacle tester on outlets to confirm the trip and to catch reversed line and load wiring."], "hazards": ["Shock where protection is missing or miswired", "Tripping a circuit and losing power to occupants' equipment", "Testing a device while it is wired wrong gives false comfort"], "controls": ["Test with both the button and an outlet tester", "Warn occupants before interrupting circuits", "Protective device kept readily accessible"]}, {"name": "Writing a correction notice, re-inspection, and approving or rejecting work", "purpose": "Record what failed, tell the contractor what must be fixed, and approve work only when it passes.", "skills": ["Identification and marking", "Plans and documentation", "Code administration"], "practice": true, "steps": ["Go through the checklist item by item and note pass, fail or not ready, with photos when helpful.", "For each failure, write the location, what is wrong and the code rule involved in plain words.", "Result the inspection in the permit system as approved, partial or rejected, and leave a tag or notice on site.", "Contractor fixes the items and requests re-inspection; the inspector checks the listed items and anything affected."], "hazards": ["Unsafe work left in place if a failure is missed", "Disputes from vague notes", "Power released before corrections are done"], "controls": ["Written notice per failed item", "Photos and log", "Re-inspection hold on further work"]}, {"name": "Inspector site safety and electrically safe work condition", "purpose": "Keep the inspector from shock, arc flash and fall injuries while looking at live or recently built electrical work.", "skills": ["Shock protection", "Electrically safe work"], "practice": true, "steps": ["Plan the visit: ask what is energized and arrange for the contractor to de-energize before the inspector arrives.", "Do not remove covers from energized equipment unless it has been disconnected and verified safe.", "Have the circuit disconnect locked out in the open position and tagged; a qualified person confirms de-energized with a tester.", "If de-energizing is not possible, do an arc flash and shock risk assessment and use the required PPE, only as a qualified person."], "hazards": ["Arc flash and shock when opening 120/240 V panels", "Energized parts exposed in unfinished work", "Falls from ladders"], "controls": ["Electrically safe work condition (lockout/tagout)", "Verification by testing", "Qualified person limits"]}, {"name": "Checking code edition and local amendments", "purpose": "Make sure each inspection and plan review is judged against the code the jurisdiction actually enforces.", "skills": ["Code administration"], "practice": true, "steps": ["Find the adopted edition of the code for the jurisdiction and its effective date.", "Check the state and the local ordinance for amendments, deletions or added rules.", "Note the permit application date, since projects may be reviewed under the edition in force then.", "Use the matching code book and handbook when citing a rule."], "hazards": ["Citing a rule from the wrong edition", "Missing a local amendment", "Inconsistent enforcement between inspectors"], "controls": ["Adoption tables kept current", "Amendment list on file", "Training on changes"]}]}, {"id": "solar-installers", "title": "Solar installer", "available": false, "summary": "Installs solar panels, wiring, inverters and disconnects on roofs and buildings, and tests and connects the system.", "n": 7, "practice": 1}, {"id": "alarm-installers", "title": "Fire and security alarm installer", "available": false, "summary": "Installs and tests fire alarm and security systems: devices, panels, low-voltage wiring and their power supplies.", "n": 7, "practice": 2}, {"id": "line-installers", "title": "Power-line installer", "available": false, "summary": "Builds and maintains the lines, poles, transformers and cables that carry power from the utility to customers.", "n": 8, "practice": 3}];
+  var LES = {"title": "Electrically safe work", "summary": "Making a circuit or piece of equipment safe to work on, and proving it is dead, before anyone touches it.", "look": ["Every source of power to the equipment, including a second feed or a generator that could send power back", "The disconnect or breaker that isolates it, and whether it can be locked and tagged", "A personal lock and tag on each isolation point, removed only by the person who put it there", "A meter that is proved on a known live source before and after it tests the circuit", "Stored energy that can remain after the power is off, such as a capacitor or a spring"], "why": "A wrong belief that a circuit is dead is behind many serious electrical injuries, and proving it dead is the step that stops them.", "tiers": {"foundation": "Name the steps of making a circuit safe and spot work being done on live parts without them.", "practitioner": "Carry out the sequence in order: identify the sources, isolate, lock and tag, test with a proved meter, then work.", "authority": "Plan the procedure for complex equipment: several sources, group lockout, stored energy, and when work on live parts is justified and what protection it needs."}, "mistakes": ["Trusting a switch position or a label instead of testing", "Testing with a meter that was not first proved on a known live source", "Removing a lock that belongs to someone else", "Forgetting that a second source can still feed the equipment"]};
+  var DEAL = [2, 0, 3, 1];
+  var S = { region: "us", level: "Beginner", scen: 0, wire: 1, card: 0, pick: 0, flagged: 2, occ: 0, proc: 0, order: [2, 0], checked: false, timers: true, toast: "" };
+  function O() { return OCC[S.occ]; }
+  function P() { var o = O(); return o.procs ? o.procs[Math.min(S.proc, o.procs.length - 1)] : null; }
+
+  function R() { return REG[S.region]; }
+  function T(k) { return R().t[k]; }
+  function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  /* ---------- icons ---------- */
+  var IC = {
+    inspect: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/>',
+    sandbox: '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h3M13 8h3M8 12h3M13 12h3M8 16h3M13 16h3"/>',
+    skills: '<path d="M5 20V10M12 20V4M19 20v-7"/>', cards: '<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 10h8M8 14h5"/>',
+    gear: '<circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>',
+    bolt: '<path d="M13 3 5 13h6l-1 8 8-10h-6z"/>', check: '<path d="m5 12 5 5 9-10"/>', flag: '<path d="M6 21V4M6 5h11l-2 4 2 4H6"/>',
+    x: '<path d="m6 6 12 12M18 6 6 18"/>', chev: '<path d="m9 6 6 6-6 6"/>', book: '<path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h10"/>',
+    hint: '<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>',
+    clock: '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>', globe: '<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c3 3 3 14 0 17M12 3.5c-3 3-3 14 0 17"/>',
+    search: '<circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/>', back: '<path d="m15 6-6 6 6 6"/>', lock: '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+    steps: '<path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/>', user: '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>',
+    shield: '<path d="M12 3 5 6v6c0 4.5 3 7.7 7 9 4-1.3 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/>', download: '<path d="M12 4v11M7 11l5 5 5-5M5 20h14"/>', trash: '<path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"/>',
+    graduate: '<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/>'
+  };
+  function ic(n, extra) { return '<svg class="i" viewBox="0 0 24 24"' + (extra ? ' style="' + extra + '"' : "") + ">" + IC[n] + "</svg>"; }
+
+  /* ---------- 3D scene illustrations ---------- */
+  function ray(x, y) {
+    return '<defs><linearGradient id="rg" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#5bb4ff" stop-opacity="0"/><stop offset="1" stop-color="#5bb4ff" stop-opacity=".95"/></linearGradient></defs>' +
+      '<line x1="930" y1="640" x2="' + x + '" y2="' + y + '" stroke="url(#rg)" stroke-width="3"/><circle cx="' + x + '" cy="' + y + '" r="6" fill="#5bb4ff"/><circle cx="' + x + '" cy="' + y + '" r="14" fill="none" stroke="#5bb4ff" stroke-opacity=".55" stroke-width="2"/>';
+  }
+  function hl(x, y, w, h) {
+    return '<rect class="pulse" x="' + (x - 6) + '" y="' + (y - 6) + '" width="' + (w + 12) + '" height="' + (h + 12) + '" rx="6" fill="rgba(255,180,0,.14)" stroke="#ffb400" stroke-width="3"/>';
+  }
+  function scenePanel(o) {
+    o = o || {};
+    var s = '<svg class="scene" viewBox="0 0 960 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' +
+      '<defs><linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f3a42"/><stop offset="1" stop-color="#1c2329"/></linearGradient>' +
+      '<linearGradient id="cab" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b9c2ca"/><stop offset="1" stop-color="#8f99a2"/></linearGradient>' +
+      '<linearGradient id="flr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2f33"/><stop offset="1" stop-color="#15181b"/></linearGradient></defs>' +
+      '<rect width="960" height="600" fill="url(#wall)"/><rect y="520" width="960" height="80" fill="url(#flr)"/><rect y="516" width="960" height="5" fill="#0d1013"/>';
+    for (var x = 0; x < 960; x += 64) s += '<line x1="' + x + '" y1="0" x2="' + x + '" y2="516" stroke="#ffffff" stroke-opacity=".035"/>';
+    // door swung open on the left
+    s += '<polygon points="232,76 316,92 316,508 232,528" fill="#98a2ab" stroke="#6d7780"/><polygon points="244,100 302,110 302,490 244,504" fill="#a8b1b9"/>' +
+      '<rect x="252" y="170" width="38" height="210" fill="#e8e4d6" opacity=".85" transform="skewY(4)"/>';
+    // cabinet
+    s += '<rect x="316" y="64" width="328" height="448" rx="6" fill="url(#cab)" stroke="#6d7780" stroke-width="2"/><rect x="332" y="82" width="296" height="412" rx="3" fill="#0e1215"/>';
+    s += '<rect x="470" y="90" width="20" height="396" fill="#9a7a2e"/><rect x="474" y="90" width="4" height="396" fill="#c9a23a"/>';
+    // main
+    s += '<rect x="384" y="98" width="192" height="40" rx="3" fill="#1f262c" stroke="#05080a"/><rect x="396" y="108" width="40" height="20" rx="2" fill="#e8edf1"/><text x="500" y="124" fill="#cfd8df" font-family="JetBrains Mono, monospace" font-size="13" text-anchor="middle">MAIN 200</text>';
+    var amps = ["20", "20", "15", "20", "30", "20", "15", "20", "50", "20"];
+    for (var i = 0; i < 10; i++) {
+      var y = 152 + i * 32;
+      [ [340, 122, 0], [500, 122, 1] ].forEach(function (c) {
+        var a = amps[(i + c[2] * 3) % 10], empty = (i === 9 && c[2] === 1) || (i === 8 && c[2] === 0);
+        if (empty) s += '<rect x="' + c[0] + '" y="' + y + '" width="' + c[1] + '" height="26" rx="2" fill="none" stroke="#3a444c" stroke-dasharray="4 3"/>';
+        else s += '<rect x="' + c[0] + '" y="' + y + '" width="' + c[1] + '" height="26" rx="2" fill="#232b32" stroke="#06090b"/><rect x="' + (c[2] ? c[0] + 82 : c[0] + 8) + '" y="' + (y + 5) + '" width="32" height="16" rx="2" fill="#e8edf1"/><text x="' + (c[2] ? c[0] + 16 : c[0] + 82) + '" y="' + (y + 18) + '" fill="#9fb0bd" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">' + a + '</text>';
+      });
+    }
+    // wires up and out
+    var cols = ["#1a1a1a", "#f0f0ea", "#d9a437", "#1a1a1a", "#f0f0ea"];
+    for (var w = 0; w < 5; w++) s += '<path d="M' + (352 + w * 14) + ' 152 V' + (112 - w * 6) + ' H' + (120 + w * 20) + '" fill="none" stroke="' + cols[w] + '" stroke-width="4" stroke-linecap="round" opacity=".9"/>';
+    if (o.boxes) s += '<g><rect x="610" y="380" width="190" height="130" rx="4" fill="#9a7b4e" stroke="#5b4528"/><rect x="640" y="330" width="150" height="56" rx="4" fill="#ad8d5e" stroke="#5b4528"/><path d="M610 410h190M680 380v130" stroke="#5b4528" stroke-opacity=".6"/></g>';
+    if (o.hl) s += hl(o.hl[0], o.hl[1], o.hl[2], o.hl[3]);
+    if (o.ray) s += ray(o.ray[0], o.ray[1]);
+    return s + "</svg>";
+  }
+  function sceneKitchen(o) {
+    o = o || {};
+    var s = '<svg class="scene" viewBox="0 0 960 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' +
+      '<defs><linearGradient id="kw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9d4c8"/><stop offset="1" stop-color="#bfb9aa"/></linearGradient>' +
+      '<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ec8e6"/><stop offset="1" stop-color="#d8ecf5"/></linearGradient>' +
+      '<pattern id="tile" width="30" height="30" patternUnits="userSpaceOnUse"><rect width="30" height="30" fill="#e9e5da"/><path d="M0 0H30V30" fill="none" stroke="#c9c3b4"/></pattern></defs>' +
+      '<rect width="960" height="600" fill="url(#kw)"/><rect x="0" y="300" width="960" height="110" fill="url(#tile)"/><rect y="520" width="960" height="80" fill="#6b5a46"/><rect y="516" width="960" height="5" fill="#3d3326"/>';
+    s += '<rect x="380" y="70" width="200" height="170" fill="#8a7658"/><rect x="392" y="82" width="176" height="146" fill="url(#sky)"/><path d="M480 82V228M392 155H568" stroke="#8a7658" stroke-width="6"/>';
+    s += '<rect x="0" y="404" width="960" height="26" fill="#cfc8b8"/><rect x="0" y="430" width="960" height="90" fill="#5d4b36"/><path d="M160 430V520M320 430V520M640 430V520M800 430V520" stroke="#3a2e20" stroke-width="3"/>';
+    s += '<rect x="400" y="392" width="160" height="14" rx="4" fill="#9aa4ac"/><path d="M480 392V350q0-16 18-16h14" stroke="#9aa4ac" stroke-width="9" fill="none" stroke-linecap="round"/>';
+    s += '<rect x="640" y="318" width="40" height="64" rx="4" fill="#f4f1e8" stroke="#9a9484"/><rect x="650" y="328" width="20" height="14" rx="3" fill="#2b2b2b"/><rect x="650" y="350" width="20" height="14" rx="3" fill="#2b2b2b"/>';
+    s += '<rect x="140" y="318" width="40" height="64" rx="4" fill="#f4f1e8" stroke="#9a9484"/><rect x="150" y="328" width="20" height="14" rx="3" fill="#2b2b2b"/><rect x="150" y="350" width="20" height="14" rx="3" fill="#2b2b2b"/>';
+    if (o.hl) s += hl(o.hl[0], o.hl[1], o.hl[2], o.hl[3]);
+    if (o.ray) s += ray(o.ray[0], o.ray[1]);
+    return s + "</svg>";
+  }
+
+  /* ---------- panel diagram for the sandbox ---------- */
+  function panelDiagram(filled, wires) {
+    var s = '<svg viewBox="0 0 300 330" style="width:100%;height:100%" aria-hidden="true"><rect x="6" y="6" width="288" height="318" rx="8" fill="#9aa4ad" stroke="#5f6a73" stroke-width="2"/><rect x="18" y="18" width="264" height="294" rx="4" fill="#0e1215"/><rect x="141" y="22" width="18" height="286" fill="#9a7a2e"/>';
+    s += '<rect x="70" y="26" width="160" height="28" rx="3" fill="#232b32" stroke="#05080a"/><text x="150" y="45" fill="#cfd8df" font-family="JetBrains Mono, monospace" font-size="12" text-anchor="middle">MAIN</text>';
+    for (var r = 0; r < 10; r++) for (var c = 0; c < 2; c++) {
+      var idx = r * 2 + c, x = c ? 168 : 26, y = 66 + r * 24, on = idx < filled;
+      s += on ? '<rect x="' + x + '" y="' + y + '" width="106" height="20" rx="2" fill="#232b32" stroke="#06090b"/><rect x="' + (c ? x + 70 : x + 6) + '" y="' + (y + 4) + '" width="28" height="12" rx="2" fill="#e8edf1"/>' +
+        (wires && idx < wires ? '<circle cx="' + (c ? x + 100 : x + 100) + '" cy="' + (y + 10) + '" r="4" fill="' + (idx % 5 === 3 ? "#ff5f55" : "#38d27a") + '"/>' : "")
+        : '<rect x="' + x + '" y="' + y + '" width="106" height="20" rx="2" fill="none" stroke="#3a444c" stroke-dasharray="4 3"/>';
+    }
+    return s + "</svg>";
+  }
+
+  /* ---------- screens ---------- */
+  function chrome(right) {
+    return '<div class="topbar"><div class="brand" data-go="menu" tabindex="0"><i>' + ic("bolt") + '</i>Code Inspector</div><div class="row" style="margin-left:auto">' + (right || "") + "</div></div>";
+  }
+  function regionChips() { return '<span class="chip" data-go="occupation" tabindex="0">' + ic("user") + O().title + '</span><span class="chip" data-go="region" tabindex="0">' + ic("globe") + R().name + '</span><span class="chip">' + R().units + "</span>"; }
+
+  function back(txt) { return '<span class="chip" data-go="back" tabindex="0" style="height:40px;padding:0 16px;font-size:15px">' + ic("back") + (txt || "Back") + "</span>"; }
+
+  function sMenu() {
+    var items = [["steps", "Learn a procedure", "Practise the steps of real jobs", true, "procedures"], ["inspect", "Inspection scenarios", "Find violations in 3D buildings", true, "scenarios"], ["sandbox", "Panel sandbox", R().sandbox ? "Design and wire a service panel" : "Not available for this region yet", R().sandbox, "sbDesign"],
+      ["skills", "My skills", "20 skills, three tiers each", true, "skills"], ["cards", "Quick reference cards", "Short rules at a glance", true, "cards"]];
+    return scenePanel({ ray: [250, 392] }) + '<div class="dim"></div>' + chrome(regionChips() + '<span class="chip" data-go="settings" tabindex="0" style="height:40px;padding:0 14px">' + ic("gear") + "</span>") +
+      '<div class="abs col" style="left:48px;top:104px;width:430px;gap:14px"><div><div class="lbl" style="margin-bottom:8px">Learn the work of an electrician</div><div class="h1" style="font-size:54px">Learn.<br>Inspect.<br><span style="color:var(--am)">Work safely.</span></div></div>' +
+      '<div class="mu" style="font-size:16px;max-width:380px">Point the stylus at a button and press the front button. Procedures, units and wire sizes follow your occupation and region.</div><div class="row" style="gap:8px"><span class="btn sm" data-go="tutorial" tabindex="0">' + ic("hint") + 'Tutorial</span><span class="btn sm ghost" data-go="tracking" tabindex="0">' + ic("shield") + 'Progress and data</span></div></div>' +
+      '<div class="abs col" style="right:48px;top:80px;width:340px;gap:8px">' + items.map(function (it, i) {
+        return '<div class="btn big ' + (i === 0 ? "pri" : "") + (it[3] ? "" : " off") + '"' + (it[3] ? ' data-go="' + it[4] + '" tabindex="0"' : "") + ' style="height:58px">' + ic(it[0], "font-size:24px") + '<span style="text-align:left"><span style="display:block;line-height:1.1">' + it[1] + '</span><span style="display:block;font:500 12px var(--sans);opacity:.75">' + it[2] + "</span></span></div>";
+      }).join("") + '</div><div class="abs stylus-hint" style="left:48px;bottom:26px"><span class="kbd">front</span> select <span class="kbd">back</span> go back <span class="kbd">side</span> tools</div>';
+  }
+
+  function sRegion() {
+    var cards = ["us", "ca", "gb"].map(function (k) {
+      var r = REG[k], cov = r.scen === 0 ? "Scenarios are not available for this region yet" : (r.scen === 6 ? "All 6 scenarios available" : r.scen + " of 6 scenarios available");
+      return '<div class="card pick ' + (k === S.region ? "sel" : "") + '" data-act="region:' + k + '" style="flex:1"><div class="row" style="justify-content:space-between"><span class="h2" style="font-size:24px">' + r.name + "</span>" +
+        (k === S.region ? '<span class="chip am sm">' + ic("check") + "Current</span>" : "") + '</div><div class="mu" style="margin:6px 0 12px">' + r.units + ": " + r.unitLine + " · " + r.volts + '</div><div class="col" style="gap:6px"><span class="chip sm ' + (r.scen ? "ok" : "") + '" style="align-self:flex-start">' + cov +
+        '</span><span class="chip sm ' + (r.sandbox ? "ok" : "") + '" style="align-self:flex-start">' + (r.sandbox ? "Panel sandbox available" : "Panel sandbox: not available yet") + "</span></div></div>";
+    }).join("");
+    return scenePanel() + '<div class="dim2"></div>' + chrome(regionChips()) +
+      '<div class="abs glass col" style="left:70px;right:70px;top:84px;bottom:50px;padding:28px 32px;gap:18px"><div><div class="lbl">Setup</div><div class="h1" style="margin-top:6px">Your region</div><div class="mu" style="margin-top:6px">Sets the rules, measurements, wire sizes and voltages you practise with. You can change it later in Settings.</div></div>' +
+      '<div class="row" style="align-items:stretch;gap:14px">' + cards + '</div><div class="row" style="margin-top:auto;justify-content:space-between"><span class="mu">Your choice is saved with your progress.</span><span class="btn pri" data-go="menu" tabindex="0">Done</span></div></div>';
+  }
+
+  function sScenarios() {
+    var list = SCEN.slice(0, R().scen);
+    var left;
+    if (list.length === 0) left = '<div class="empty" style="margin-top:8px"><div class="h3" style="color:var(--tx)">No scenarios yet</div><p style="margin:8px 0 0">Scenarios are not available for your region yet: there is no scene art for it. You can still study its rule references.</p></div>';
+    else left = list.map(function (s, i) {
+      return '<div class="card pick ' + (i === S.scen ? "sel" : "") + '" data-act="scen:' + i + '" style="padding:8px 14px"><div class="row" style="justify-content:space-between"><b style="font-size:16px">' + s[0] + '</b><span class="mu mono" style="font-size:12px">' + s[1] + ' in the pool</span></div><div class="row" style="flex-wrap:wrap;gap:5px;margin-top:6px">' +
+        s[2].map(function (k) { return '<span class="chip sm">' + k + "</span>"; }).join("") + "</div></div>";
+    }).join("");
+    var cur = SCEN[Math.min(S.scen, Math.max(list.length - 1, 0))];
+    var right = list.length === 0 ? "" : '<div class="grow col" style="max-width:320px"><div class="card" style="padding:0;overflow:hidden"><div style="position:relative;height:150px">' + (S.scen % 2 ? sceneKitchen() : scenePanel()) + '</div><div style="padding:14px 16px"><div class="h3">' + cur[0] + '</div><div class="kv" style="margin-top:8px"><span class="mu">Violation pool</span><b>' + cur[1] + '</b></div><div class="kv"><span class="mu">Best</span><b>Not attempted</b></div></div></div><div class="btn pri" data-go="level" tabindex="0">Choose difficulty ' + ic("chev") + "</div></div>";
+    return scenePanel() + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs col" style="left:40px;right:40px;top:76px;bottom:24px;gap:14px"><div class="row">' + back("Menu") + '<div class="h2">Scenarios</div></div><div class="row" style="align-items:flex-start;gap:20px;flex:1;min-height:0"><div class="grow col" style="gap:8px;overflow:hidden">' + left + "</div>" + right + "</div></div>";
+  }
+
+  function sLevel() {
+    var cards = Object.keys(LEVELS).map(function (k) {
+      var L = LEVELS[k], b = "";
+      for (var i = 0; i < 3; i++) b += '<span style="color:' + (i < L.bolts ? "var(--am)" : "var(--bg3)") + ';font-size:26px">' + ic("bolt") + "</span>";
+      return '<div class="card pick ' + (k === S.level ? "sel" : "") + '" data-act="level:' + k + '" style="flex:1;padding:18px"><div class="row">' + b + '</div><div class="h2" style="margin-top:10px">' + k + '</div><div style="color:var(--am);font:600 13px var(--mono);letter-spacing:.06em;text-transform:uppercase;margin:2px 0 8px">' + L.tag + '</div><div class="mu">' + L.d + '</div><div class="col" style="gap:6px;margin-top:14px">' +
+        L.feats.map(function (f) { return '<span class="chip sm" style="align-self:flex-start">' + ic("check") + f + "</span>"; }).join("") + "</div></div>";
+    }).join("");
+    return sceneKitchen() + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs col" style="left:60px;right:60px;top:80px;bottom:36px;gap:18px"><div class="row">' + back() + '<div><div class="lbl">' + SCEN[S.scen][0] + '</div><div class="h2">Choose difficulty</div></div></div><div class="row" style="align-items:stretch;gap:16px;flex:1">' + cards + '</div><div class="row" style="justify-content:flex-end"><span class="btn pri" data-go="intro" tabindex="0">Start inspection ' + ic("chev") + "</span></div></div>";
+  }
+
+  function sIntro() {
+    return sceneKitchen() + '<div class="dim"></div>' + chrome(regionChips()) + '<div class="abs glass col" style="left:48px;top:76px;width:520px;padding:22px 30px;gap:12px"><div class="lbl">Briefing</div><div class="h1" style="font-size:34px">' + SCEN[S.scen][0] + '</div><div class="mu">A family home is being finished. Walk the rooms, point at anything that looks wrong and say which rule it breaks.</div>' +
+      '<div class="lbl" style="margin-top:4px">Objectives</div><div class="col" style="gap:7px"><div class="opt">' + ic("check", "color:var(--ok);font-size:18px") + "Find every violation you can</div><div class=\"opt\">" + ic("check", "color:var(--ok);font-size:18px") + "Give the rule that applies to each one</div></div>" +
+      '<div class="lbl" style="margin-top:4px">Skills practised</div><div class="row" style="flex-wrap:wrap;gap:6px">' + SCEN[S.scen][2].map(function (k) { return '<span class="chip">' + k + "</span>"; }).join("") + '</div><div class="row" style="margin-top:6px"><span class="btn pri" data-go="inspect" tabindex="0">Begin inspection ' + ic("chev") + '</span><span class="chip">' + LEVELS[S.level].tag + "</span></div></div>";
+  }
+
+  function sInspect() {
+    var timer = S.level === "Expert" ? (S.timers ? '<span class="chip bad">' + ic("clock") + "11:42</span>" : '<span class="chip">' + ic("clock") + "Timer off</span>") : "";
+    var hint = S.level === "Beginner" ? '<span class="btn sm">' + ic("hint") + "Hint</span>" : "";
+    return scenePanel({ boxes: true, hl: [598, 322, 214, 196], ray: [704, 420] }) + '<div class="hud"><div class="brand" style="font-size:17px">' + SCEN[0][0].replace(" Inspection", "") + '</div><span class="chip am" style="margin-left:14px">' + ic("flag") + "Flagged " + S.flagged + "</span>" + timer + '<div class="row" style="margin-left:auto;gap:8px">' + hint +
+      '<span class="btn sm" data-go="rule" tabindex="0">' + ic("book") + 'Reference</span><span class="btn sm pri" data-go="review" tabindex="0">Finish</span></div></div>' +
+      '<div class="hot" data-go="flag" tabindex="0" role="button" aria-label="Inspect the service disconnect" style="left:592px;top:316px;width:226px;height:208px"></div>' +
+      '<div class="tip" style="left:560px;top:262px"><b>' + cap(T("disc")) + '</b> <span class="mu">· click to inspect</span></div>' +
+      '<div class="abs stylus-hint" style="left:28px;bottom:22px"><span class="kbd">front</span> inspect the highlighted part</div>' +
+      (S.level === "Beginner" ? '<div class="abs chip am" style="right:24px;bottom:22px">' + ic("hint") + "Hint: look at what is in front of the " + T("panel") + "</div>" : "");
+  }
+
+  function refOptions() {
+    var r = R();
+    return [
+      { title: r.refs.disc, skill: "Disconnecting means", text: cap(T("disc")) + " must be easy to reach" },
+      { title: r.refs.bond, skill: "Earthing and bonding", text: "Metal water pipe is bonded" },
+      { title: r.refs.third, skill: r.refs.thirdSkill, text: r.refs.thirdText }
+    ];
+  }
+  function sFlag() {
+    var opts = refOptions(), cit;
+    if (S.level === "Beginner") cit = '<div class="field on" style="justify-content:space-between">Pick the rule that applies<span class="mu">' + ic("chev", "transform:rotate(90deg)") + '</span></div><div class="col" style="gap:6px;margin-top:-4px">' +
+      opts.map(function (o, i) { return '<div class="opt pick ' + (i === S.pick ? "sel" : "") + '" data-act="pick:' + i + '"><span class="grow"><b style="font-size:15px">' + o.title + '</b><span class="mu" style="display:block;font-size:13px">' + o.text + '</span></span><span class="chip sm">' + o.skill + "</span></div>"; }).join("") + "</div>";
+    else if (S.level === "Standard") cit = '<div class="field on">' + ic("search") + '<span class="mono">' + T("disc").split(" ")[0] + ' access</span></div><div class="col" style="gap:6px;margin-top:-4px">' +
+      opts.slice(0, 2).map(function (o, i) { return '<div class="opt pick ' + (i === S.pick % 2 ? "sel" : "") + '" data-act="pick:' + i + '"><span class="grow"><b style="font-size:15px">' + o.title + '</b></span><span class="chip sm">' + o.skill + "</span></div>"; }).join("") + "</div>";
+    else cit = '<div class="field on mono"><span style="color:var(--am)">' + T("disc") + ' easy to reach</span><span class="pulse" style="width:2px;height:20px;background:var(--blu);display:inline-block"></span></div><div class="mu" style="font-size:13px">Name the rule in your own words. No suggestions are shown.</div>';
+    return scenePanel({ boxes: true, hl: [598, 322, 214, 196] }) + '<div class="dim2"></div>' + '<div class="abs glass col" style="right:36px;top:34px;bottom:34px;width:470px;padding:20px 22px;gap:12px"><div class="row" style="justify-content:space-between"><div class="h2" style="font-size:23px">Flag a violation</div><span class="chip">' + LEVELS[S.level].tag + "</span></div>" +
+      '<div class="card" style="padding:10px 14px"><div class="lbl">Component</div><b style="font-size:17px">' + cap(T("disc")) + '</b> <span class="mu">· ' + R().volts + '</span></div><div class="field" style="min-height:58px;align-items:flex-start"><span class="mu">Describe the problem</span></div><div class="lbl">Which rule does it break?</div>' + cit +
+      '<div class="row" style="margin-top:auto"><span class="btn pri grow" data-act="flagged:1" data-go="inspect" tabindex="0">' + ic("flag") + 'Flag violation</span><span class="btn" data-go="inspect" tabindex="0">Mark compliant</span><span class="btn ghost" data-go="inspect" tabindex="0">Cancel</span></div></div>';
+  }
+
+  function sReview() {
+    var r = R();
+    return scenePanel({ boxes: true }) + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs row" style="left:36px;right:36px;top:76px;bottom:28px;gap:18px;align-items:stretch">' +
+      '<div class="glass col" style="width:360px;padding:22px;gap:14px"><div class="lbl">Inspection review</div><div class="row" style="gap:18px"><div class="ring"><svg viewBox="0 0 130 130" width="130" height="130"><circle cx="65" cy="65" r="56" fill="none" stroke="#232a31" stroke-width="12"/><circle cx="65" cy="65" r="56" fill="none" stroke="#ffb400" stroke-width="12" stroke-linecap="round" stroke-dasharray="352" stroke-dashoffset="88"/></svg><div><b class="cond" style="font-size:40px;line-height:1">6/8</b><span class="mu" style="font-size:12px">found</span></div></div>' +
+      '<div><div class="lbl">Grade</div><div class="h1" style="font-size:64px;color:var(--am)">B</div></div></div><div><div class="kv"><span class="mu">Missed</span><b>2</b></div><div class="kv"><span class="mu">False positives</span><b>1</b></div><div class="kv"><span class="mu">Rule accuracy</span><b>75%</b></div><div class="kv"><span class="mu">Time</span><b class="mono">14:22</b></div></div></div>' +
+      '<div class="glass col grow" style="padding:22px;gap:12px"><div class="row" style="justify-content:space-between"><div class="lbl">Missed violation 1 of 2</div><span class="chip bad sm">Not found</span></div><div class="h2" style="font-size:24px">Metal water pipe is not bonded</div>' +
+      '<div class="mu">The service pipe enters the building with no bonding conductor to the earthing system. The scene shows a clean pipe with no clamp.</div><div class="opt"><span class="chip sm">Rule</span><span class="grow"><b>' + r.refs.bond + '</b><span class="mu" style="display:block;font-size:13px">Bond the metal water pipe to the ' + T("ground") + ' system</span></span></div><div class="row"><span class="chip">Earthing and bonding</span><span class="chip">Practitioner</span></div>' +
+      '<div class="row" style="margin-top:auto"><span class="btn pri" data-go="cards" tabindex="0">Study the rules ' + ic("chev") + '</span><span class="btn" data-go="intro" tabindex="0">Retry</span><span class="btn ghost" data-go="menu" tabindex="0">Menu</span></div></div></div>';
+  }
+
+  var CARDS = [["GFCI protection requirements", "Shock protection"], ["AFCI protection requirements", "Arc-fault protection"], ["Overcurrent protection", "Overcurrent protection"], ["Wire gauge and breaker sizing", "Conductor sizing"], ["Required branch circuits", "Branch circuits"], ["Residential load calculation", "Load calculation"]];
+  function sCards() {
+    var left, right;
+    if (!R().cards) {
+      left = '<div class="empty">No cards have been written for your region yet.</div>'; right = '<div class="empty" style="flex:1">Cards carry the rules they were written for, so each region has its own set. You can still look up rule references.</div>';
+    } else {
+      left = CARDS.map(function (c, i) { return '<div class="card pick ' + (i === S.card ? "sel" : "") + '" data-act="card:' + i + '" style="padding:10px 14px"><b>' + c[0] + '</b><div class="mu" style="font-size:13px">' + c[1] + "</div></div>"; }).join("");
+      right = '<div class="card col grow" style="gap:12px;padding:22px"><div class="lbl">' + CARDS[S.card][1] + '</div><div class="h2">' + CARDS[S.card][0] + '</div><div class="mu" style="font-size:16px">A plain-language summary written for this app. Which outlets need protection depends on where they are, so check the room before you answer.</div><div class="card" style="background:var(--am-bg);border-color:rgba(255,180,0,.4)"><div class="lbl" style="color:var(--am)">Key rule</div><div style="margin-top:4px">Outlets near water, outdoors and in garages need ' + T("gfci") + ' protection.</div></div><div class="row" style="margin-top:auto"><span class="btn pri" data-go="rule" tabindex="0">Look up the rule ' + ic("chev") + "</span></div></div>";
+    }
+    return sceneKitchen() + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs col" style="left:40px;right:40px;top:76px;bottom:28px;gap:14px"><div class="row">' + back() + '<div class="h2">Quick reference cards</div><span class="chip sm">17 cards, one for every skill</span></div><div class="row" style="align-items:stretch;gap:18px;flex:1;min-height:0"><div class="col" style="width:330px;gap:8px"><div class="field">' + ic("search") + '<span class="mu">Search cards</span></div>' + left + "</div>" + right + "</div></div>";
+  }
+
+  function sRule() {
+    var r = R();
+    return scenePanel() + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs col" style="left:40px;right:40px;top:76px;bottom:28px;gap:14px"><div class="row">' + back() + '<div class="h2">Rule lookup</div></div><div class="row" style="align-items:stretch;gap:18px;flex:1;min-height:0"><div class="col" style="width:330px;gap:8px"><div class="field on">' + ic("search") + '<span class="mono">disconnect</span></div>' +
+      [[r.refs.disc, "Disconnecting means"], [r.refs.bond, "Earthing and bonding"], [r.refs.third, r.refs.thirdSkill]].map(function (x, i) { return '<div class="card ' + (i === 0 ? "sel" : "") + '" style="padding:10px 14px"><b>' + x[0] + '</b><div class="mu" style="font-size:13px">' + x[1] + "</div></div>"; }).join("") +
+      '</div><div class="card col grow" style="gap:12px;padding:22px"><div class="h2" style="font-size:26px">' + r.refs.disc + '</div><div class="mu" style="font-size:16px">The shut-off for the whole building has to be easy to reach: no moving boxes, no ladders, no tools. This is the app\'s own explanation. The code\'s wording and its numbers are never shown.</div>' +
+      '<div class="lbl" style="margin-top:6px">Skill</div><div class="row"><span class="chip">Disconnecting means</span></div><div class="lbl" style="margin-top:6px">Related</div><div class="row" style="flex-wrap:wrap;gap:6px"><span class="chip">' + r.refs.bond + '</span><span class="chip">' + cap(T("panel")) + " working space</span></div></div></div></div>";
+  }
+
+  function topLoad(a, b) { return '<span class="chip am">Circuits 5 / 7</span><span class="chip">Load <b class="mono">' + a + "</b> / " + b + " VA</span>"; }
+  function sbOff(title) {
+    return scenePanel() + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs glass col" style="left:150px;right:150px;top:120px;padding:30px;gap:12px;align-items:flex-start"><span class="chip">' + ic("lock") + 'Not available yet</span><div class="h1" style="font-size:32px">Panel sandbox</div><div class="mu" style="font-size:16px">The sandbox needs the sizing tables for your region, and they are not in the app yet. Inspection scenarios and rule references still work.</div><span class="btn pri" data-go="menu" tabindex="0">Back to menu</span></div>';
+  }
+  function sSbDesign() {
+    if (!R().sandbox) return sbOff();
+    var tray = ["15 A", "20 A", "20 A GFCI", "30 A", "40 A 2-pole", "50 A 2-pole"].map(function (b) { return '<div class="opt" style="padding:8px 12px"><span class="mono" style="color:var(--am)">' + b.split(" ")[0] + " " + b.split(" ")[1] + '</span><span class="grow mu" style="font-size:13px">' + b.split(" ").slice(2).join(" ") + "</span></div>"; }).join("");
+    return scenePanel() + '<div class="dim2"></div>' + chrome(topLoad("14,200", "18,625")) + '<div class="abs row" style="left:32px;right:32px;top:72px;bottom:26px;gap:16px;align-items:stretch">' +
+      '<div class="glass col" style="width:230px;padding:16px;gap:8px"><div class="lbl">' + cap(T("breaker")) + ' tray</div>' + tray + '<div class="mu" style="font-size:13px;margin-top:auto">Drag a ' + T("breaker") + " into a slot.</div></div>" +
+      '<div class="glass grow" style="padding:14px;position:relative">' + panelDiagram(10, 0) + '<div class="tip" style="left:200px;top:156px;font-size:13px">20 A · Kitchen small-appliance</div></div>' +
+      '<div class="glass col" style="width:250px;padding:16px;gap:8px"><div class="lbl">Required circuits</div>' + [["Kitchen ×2", true], ["Bathroom", true], ["Range 40 A", true], ["Dryer 30 A", false], ["Laundry", false]].map(function (c) { return '<div class="opt" style="padding:8px 12px">' + ic(c[1] ? "check" : "x", "color:" + (c[1] ? "var(--ok)" : "var(--mu)")) + '<span class="grow">' + c[0] + "</span></div>"; }).join("") + '<span class="btn pri" data-go="sbWire" tabindex="0" style="margin-top:auto">Next: wiring</span></div></div>';
+  }
+  function sSbWire() {
+    if (!R().sandbox) return sbOff();
+    var w = R().wires;
+    return scenePanel() + '<div class="dim2"></div>' + chrome('<span class="chip">Wire sizes: ' + R().units + "</span>") + '<div class="abs row" style="left:32px;right:32px;top:72px;bottom:26px;gap:16px;align-items:stretch">' +
+      '<div class="glass col" style="width:300px;padding:16px;gap:10px"><div class="lbl">Wire size</div><div class="row" style="flex-wrap:wrap;gap:8px">' + w.map(function (x, i) { return '<span class="btn sm pick ' + (i === S.wire ? "pri" : "") + '" data-act="wire:' + i + '">' + x + "</span>"; }).join("") + '</div><div class="mu" style="font-size:14px">Connect a conductor from each ' + T("breaker") + ' to its load. The size must carry the ' + T("breaker") + " rating.</div><div class=\"kv\"><span class=\"mu\">Supply</span><b>" + R().volts + '</b></div><div class="kv"><span class="mu">Dwelling</span><b>' + R().area + '</b></div></div>' +
+      '<div class="glass grow" style="padding:14px">' + panelDiagram(10, 10) + '</div><div class="glass col" style="width:290px;padding:16px;gap:8px"><div class="lbl">Compliance check</div><div class="h3">8 passed, 2 failed</div>' +
+      [["Breaker matches wire", 1], ["Required circuits present", 1], [cap(T("gfci")) + " where required", 0], ["Load balanced", 0], ["Main covers the load", 1]].map(function (c) { return '<div class="opt" style="padding:7px 12px"><span class="grow" style="font-size:14px">' + c[0] + '</span><span class="chip sm ' + (c[1] ? "ok" : "bad") + '">' + (c[1] ? "pass" : "fail") + "</span></div>"; }).join("") + '<span class="btn pri" data-go="sbScore" tabindex="0" style="margin-top:auto">See score</span></div></div>';
+  }
+  function sSbScore() {
+    if (!R().sandbox) return sbOff();
+    return scenePanel() + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs glass col" style="left:230px;right:230px;top:90px;padding:28px;gap:14px;align-items:center;text-align:center"><div class="lbl">Sandbox score</div><div class="h1" style="font-size:96px;color:var(--am);line-height:.9">B</div><div class="row" style="gap:12px;width:100%"><div class="card grow"><div class="lbl">Compliance</div><b class="cond" style="font-size:30px">80%</b></div><div class="card grow"><div class="lbl">Load accuracy</div><b class="cond" style="font-size:30px">96%</b></div><div class="card grow"><div class="lbl">Time</div><b class="cond mono" style="font-size:30px">11:05</b></div></div>' +
+      '<div class="mu">Counted toward</div><div class="row" style="flex-wrap:wrap;justify-content:center;gap:6px"><span class="chip">Overcurrent protection</span><span class="chip">Conductor sizing</span><span class="chip">Load calculation</span></div><div class="row"><span class="btn pri" data-go="sbDesign" tabindex="0">Try again</span><span class="btn" data-go="menu" tabindex="0">Menu</span></div></div>';
+  }
+
+  function sSkills() {
+    var tn = ["Foundation", "Practitioner", "Authority"];
+    function cell(k) { return '<div class="card" style="padding:7px 10px"><div class="row" style="justify-content:space-between;gap:6px"><b class="ell" style="font-size:13px">' + k[0] + '</b><span class="mono mu" style="font-size:11px">' + k[2] + '%</span></div><div class="tier" style="margin-top:6px">' + [0, 1, 2].map(function (i) { return '<i class="' + (i < k[1] ? "on" : "") + '"></i>'; }).join("") + "</div></div>"; }
+    return scenePanel() + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs row" style="left:32px;right:32px;top:72px;bottom:24px;gap:16px;align-items:stretch"><div class="glass col" style="width:220px;padding:18px;gap:10px"><div class="lbl">Student</div><div class="h2" style="font-size:24px">Alex</div><div class="kv"><span class="mu">Attempts</span><b>9</b></div><div class="kv"><span class="mu">Accuracy</span><b>82%</b></div><div class="kv"><span class="mu">Skills attained</span><b>4 of 20</b></div><div class="kv"><span class="mu">Following</span><b>' + O().title + '</b></div>' +
+      '<div class="mu" style="font-size:13px;margin-top:6px">A skill is attained after 3 or more attempts at 80% mastery. A higher tier covers the lower ones.</div><span class="btn sm" data-go="tracking" tabindex="0" style="margin-top:auto">' + ic("shield") + 'Progress and data</span><span class="btn" data-go="menu" tabindex="0">Close</span></div>' +
+      '<div class="glass grow col" style="padding:16px;overflow:hidden;gap:8px"><div class="row" style="justify-content:space-between"><div class="lbl">Code skills (13)</div><div class="row" style="gap:12px;font:500 11px var(--mono);color:var(--mu)">' + tn.map(function (t, i) { return "<span>" + (i + 1) + " " + t + "</span>"; }).join("") + '</div></div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">' +
+      SKILLS.slice(0, 13).map(cell).join("") + '</div><div class="lbl" style="margin-top:6px">Procedure skills (7)</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">' + SKILLS.slice(13).map(cell).join("") + "</div></div></div>";
+  }
+  function sSettings() {
+    function sl(n, v) { return '<div><div class="kv" style="border:0;padding:0 0 6px"><span>' + n + '</span><b class="mono">' + v + '%</b></div><div class="bar2"><i style="width:' + v + '%"></i></div></div>'; }
+    return scenePanel() + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs row" style="left:44px;right:44px;top:76px;bottom:32px;gap:16px;align-items:stretch"><div class="glass col grow" style="padding:22px;gap:14px"><div class="h2">Settings</div><div class="lbl">Audio</div>' + sl("Master", 80) + sl("Effects", 70) + sl("Ambient", 40) +
+      '<div class="lbl" style="margin-top:6px">Comfort and access</div>' + sl("Stereo depth", 60) +
+      '<div class="opt pick" data-act="timers:1"><span class="grow">Time limits</span><span class="chip sm ' + (S.timers ? "am" : "ok") + '">' + (S.timers ? "On" : "Off") + '</span></div><div class="opt"><span class="grow">Text size</span><span class="chip sm">Large</span></div></div>' +
+      '<div class="glass col grow" style="padding:22px;gap:12px"><div class="lbl">Language</div><div class="opt sel">' + ic("globe") + '<span class="grow">English</span><span class="chip sm ok">' + ic("check") + 'Current</span></div><div class="mu" style="font-size:13px">More languages are planned.</div><div class="lbl" style="margin-top:4px">Region</div>' +
+      ["us", "ca", "gb"].map(function (k) { return '<div class="opt pick ' + (k === S.region ? "sel" : "") + '" data-act="region:' + k + '">' + ic("globe") + '<span class="grow">' + REG[k].name + '</span><span class="mu" style="font-size:13px">' + REG[k].units + "</span></div>"; }).join("") +
+      '<div class="lbl" style="margin-top:4px">Name (optional, stays on this device)</div><div class="field">Alex</div><span class="btn sm" data-go="tracking" tabindex="0">' + ic("shield") + 'Progress and data</span><span class="btn pri" data-go="menu" tabindex="0" style="margin-top:auto">Back</span></div></div>';
+  }
+
+  function sOccupation() {
+    var o = O();
+    var cards = OCC.map(function (x, i) {
+      return '<div class="card ' + (x.available ? "pick " : "") + (i === S.occ ? "sel" : "") + '" ' + (x.available ? 'data-act="occ:' + i + '" tabindex="0"' : "") + ' style="padding:10px 14px;' + (x.available ? "" : "opacity:.55") + '"><div class="row" style="justify-content:space-between"><b style="font-size:16px">' + x.title + "</b>" +
+        (x.available ? '<span class="mu mono" style="font-size:12px">' + x.n + " procedures</span>" : '<span class="chip sm">Coming soon</span>') + "</div></div>";
+    }).join("");
+    var list = (o.procs || []).slice(0, 7).map(function (p) { return '<div class="ell" style="font-size:14px;padding:3px 0;border-bottom:1px solid var(--ln)">' + p.name + "</div>"; }).join("");
+    return scenePanel() + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs col" style="left:40px;right:40px;top:76px;bottom:24px;gap:14px"><div class="row">' + back("Menu") + '<div><div class="lbl">Setup</div><div class="h2">Your occupation</div></div></div><div class="row" style="align-items:stretch;gap:20px;flex:1;min-height:0"><div class="col" style="width:340px;gap:8px">' + cards +
+      '<div class="mu" style="font-size:13px">An occupation is a pathway, not a credential. It decides which procedures come first.</div></div><div class="card col grow" style="padding:22px;gap:10px"><div class="lbl">' + (o.available ? "Selected" : "Coming soon") + '</div><div class="h2">' + o.title + '</div><div class="mu" style="font-size:15px">' + o.summary + '</div><div class="lbl" style="margin-top:4px">Procedures you will learn</div><div class="col scroll" style="gap:0">' + list + '</div><div class="row" style="margin-top:auto"><span class="btn pri" data-go="procedures" tabindex="0">See the procedures ' + ic("chev") + "</span></div></div></div></div>";
+  }
+  function sProcedures() {
+    var o = O(), p = P();
+    var rows = (o.procs || []).map(function (x, i) {
+      return '<div class="card pick ' + (i === S.proc ? "sel" : "") + '" data-act="proc:' + i + '" tabindex="0" style="padding:9px 14px"><div class="row" style="justify-content:space-between;gap:10px"><b class="ell" style="font-size:14px">' + x.name + '</b>' + (x.practice ? '<span class="chip sm ok">Practice</span>' : '<span class="chip sm">Read only</span>') + "</div></div>";
+    }).join("");
+    return scenePanel() + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs col" style="left:36px;right:36px;top:76px;bottom:24px;gap:12px"><div class="row">' + back("Menu") + '<div><div class="lbl">' + o.title + '</div><div class="h2">Learn a procedure</div></div></div><div class="row" style="align-items:stretch;gap:18px;flex:1;min-height:0"><div class="col scroll" style="width:360px;gap:6px">' + rows +
+      '</div><div class="card col grow" style="padding:20px;gap:9px"><div class="h3" style="font-size:20px">' + p.name + '</div><div class="mu" style="font-size:14px">' + p.purpose + '</div><div class="lbl">Skills it uses</div><div class="row" style="flex-wrap:wrap;gap:5px">' + p.skills.map(function (k) { return '<span class="chip sm">' + k + "</span>"; }).join("") + '</div><div class="lbl">Main hazards</div><div class="col" style="gap:3px;font-size:13px">' +
+      p.hazards.map(function (h) { return '<div class="ell">' + ic("x", "color:var(--bad);margin-right:6px") + h + "</div>"; }).join("") + '</div><div class="row" style="margin-top:auto;gap:8px"><span class="btn" data-go="lesson" tabindex="0">' + ic("book") + 'Read the lesson</span>' +
+      (p.practice ? '<span class="btn pri" data-go="practice" tabindex="0">' + ic("steps") + "Practise the steps</span>" : '<span class="btn off">Practice not available yet</span>') + "</div></div></div></div>";
+  }
+  function sLesson() {
+    function bl(a) { return a.map(function (x) { return '<div style="display:flex;gap:8px;font-size:13.5px;line-height:1.35"><span style="color:var(--am)">&bull;</span><span>' + x + "</span></div>"; }).join(""); }
+    return scenePanel() + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs col" style="left:36px;right:36px;top:76px;bottom:20px;gap:10px"><div class="row">' + back() + '<div><div class="lbl">Skill lesson</div><div class="h2">' + LES.title + '</div></div></div><div class="mu" style="font-size:15px">' + LES.summary + '</div>' +
+      '<div class="row" style="align-items:stretch;gap:14px;flex:1;min-height:0"><div class="card col grow" style="gap:7px;padding:14px 16px"><div class="lbl">What to look for</div>' + bl(LES.look) + '</div><div class="col grow" style="gap:12px"><div class="card col" style="gap:5px;padding:14px 16px"><div class="lbl">Why it matters</div><div style="font-size:13.5px">' + LES.why + '</div></div>' +
+      '<div class="card col" style="gap:5px;padding:14px 16px"><div class="lbl">Common mistakes</div>' + bl(LES.mistakes) + '</div></div><div class="card col grow" style="gap:8px;padding:14px 16px"><div class="lbl">What you will be able to do</div>' +
+      [["Foundation", LES.tiers.foundation], ["Practitioner", LES.tiers.practitioner], ["Authority", LES.tiers.authority]].map(function (t) { return '<div><b style="font-size:13px;color:var(--am)">' + t[0] + '</b><div style="font-size:13px;line-height:1.35">' + t[1] + "</div></div>"; }).join("") + '</div></div></div>';
+  }
+  function sPractice() {
+    var p = P(), steps = p.steps, n = steps.length;
+    if (!p.practice) return sProcedures();
+    var dealt = DEAL.slice(0, n);
+    var score = (function () { var r = 0; for (var i = 0; i < S.order.length - 1; i++) if (S.order[i] < S.order[i + 1]) r++; return Math.round(100 * r / Math.max(1, n - 1)); })();
+    var left = dealt.map(function (k) {
+      var used = S.order.indexOf(k) >= 0;
+      return '<div class="opt ' + (used ? "" : "pick") + '" ' + (used || S.checked ? "" : 'data-act="pstep:' + k + '" tabindex="0"') + ' style="padding:9px 12px;font-size:13.5px;line-height:1.3;' + (used ? "opacity:.35" : "") + '">' + steps[k] + "</div>";
+    }).join("");
+    var mine = S.order.map(function (k, i) { return '<div class="opt" style="padding:8px 12px;font-size:13.5px;line-height:1.3"><span class="num">' + (i + 1) + '</span><span class="grow">' + steps[k] + "</span></div>"; }).join("") || '<div class="empty">Tap the steps in the order you would do them.</div>';
+    var res = "";
+    if (S.checked) res = '<div class="card" style="background:var(--ok-bg);border-color:rgba(56,210,122,.45);padding:10px 14px"><b>' + score + ' percent of the steps are in the right order.</b><div class="mu" style="font-size:13px;margin-top:4px">Right order: ' + steps.map(function (x, i) { return (i + 1) + ". " + x.split(",")[0].slice(0, 46); }).join(" · ") + '</div><div style="font-size:13px;margin-top:4px"><span class="mu">Hazards:</span> ' + p.hazards.slice(0, 2).join("; ") + '. <span class="mu">Controls:</span> ' + p.controls.slice(0, 2).join("; ") + ".</div></div>";
+    return scenePanel() + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs col" style="left:36px;right:36px;top:72px;bottom:20px;gap:10px"><div class="row">' + back() + '<div><div class="lbl">Practise the steps · ' + LEVELS[S.level].tag + '</div><div class="h2" style="font-size:22px">' + p.name + '</div></div></div>' +
+      '<div class="row" style="align-items:stretch;gap:16px;flex:1;min-height:0"><div class="col scroll" style="width:46%;gap:7px"><div class="lbl">Steps (mixed up)</div>' + left + '</div><div class="col grow scroll" style="gap:7px"><div class="lbl">Your order</div>' + mine + '</div></div>' + res +
+      '<div class="row" style="gap:8px"><span class="btn pri" ' + (S.order.length === n && !S.checked ? 'data-act="pcheck:1" tabindex="0"' : 'style="opacity:.42"') + '>Check my order</span><span class="btn" data-act="pundo:1" tabindex="0">Undo</span><span class="btn ghost" data-act="preset:1" tabindex="0">Start again</span><span class="mu" style="margin-left:auto;font-size:13px">Counts toward ' + p.skills.slice(0, 3).join(", ") + '</span></div></div>';
+  }
+  function sTutorial() {
+    function btn3(name, what, on) { return '<div class="col" style="align-items:center;gap:4px;width:92px"><span class="chip ' + (on ? "am" : "") + '" style="justify-content:center;width:100%">' + name + '</span><span class="mu" style="font-size:12px;text-align:center">' + what + "</span></div>"; }
+    return scenePanel({ boxes: true, hl: [598, 322, 214, 196], ray: [704, 420] }) + '<div class="hud"><div class="brand" style="font-size:17px">Tutorial</div><span class="chip am" style="margin-left:14px">Step 3 of 8</span><div class="row" style="margin-left:auto"><span class="btn sm ghost" data-go="menu" tabindex="0">Skip tutorial</span></div></div>' +
+      '<div class="abs glass col" style="left:36px;bottom:30px;width:500px;padding:20px 22px;gap:10px"><div class="lbl">Look closer</div><div class="h2" style="font-size:24px">Press the front button to inspect</div><div class="mu" style="font-size:15px">With the beam on the part, press the front button. You see what it is and how it is installed.</div>' +
+      '<div class="row" style="gap:12px;margin-top:4px">' + btn3("front", "inspect or flag", true) + btn3("middle", "mark as correct", false) + btn3("back", "open the reference", false) + '</div><div class="row" style="justify-content:space-between;margin-top:4px"><span class="mu" style="font-size:13px">The front button is the one nearest the tip.</span><span class="btn sm pri" data-go="procedures" tabindex="0">Next ' + ic("chev") + '</span></div></div>' +
+      '<div class="tip" style="left:560px;top:262px"><b>' + cap(T("recept")) + '</b> <span class="mu">· lit by the beam</span></div>';
+  }
+  function sTracking() {
+    function li(t, ok) { return '<div class="row" style="gap:8px;align-items:flex-start;font-size:14px">' + ic(ok ? "check" : "x", "margin-top:3px;color:" + (ok ? "var(--ok)" : "var(--bad)")) + "<span>" + t + "</span></div>"; }
+    return scenePanel() + '<div class="dim2"></div>' + chrome(regionChips()) + '<div class="abs col" style="left:44px;right:44px;top:76px;bottom:24px;gap:12px"><div class="row">' + back() + '<div><div class="lbl">Your data</div><div class="h2">Progress and data</div></div></div><div class="row" style="align-items:stretch;gap:16px;flex:1;min-height:0">' +
+      '<div class="col" style="width:300px;gap:12px"><div class="card col" style="gap:6px;padding:16px"><div class="lbl">Your ID</div><div class="h1" style="font-size:34px;color:var(--am)">ZS-4F2K-07</div><div class="mu" style="font-size:13px">A code, not your name or email. Your teacher gave it to you. Anyone with it can see your progress.</div></div>' +
+      '<div class="card col" style="gap:6px;padding:16px"><div class="lbl">Where it goes</div><div style="font-size:14px">Your progress is sent with your ID to your program\'s progress dashboard. Your teacher or program can see it.</div></div></div>' +
+      '<div class="card col grow" style="gap:9px;padding:16px"><div class="lbl">What is collected</div>' + li("Which skills you practise, your scores and your tier", true) + li("Which lessons, procedures, scenarios and the sandbox you open, and for how long", true) + li("The region and occupation you chose", true) +
+      '<div class="lbl" style="margin-top:6px">What is not collected</div>' + li("Your name or email", false) + li("Anything you type in the app", false) + '</div>' +
+      '<div class="col" style="width:240px;gap:8px"><div class="lbl">Yours to keep or remove</div><span class="btn big" style="height:54px;font-size:16px" data-act="toast:export" tabindex="0">' + ic("download", "font-size:22px") + 'Export my progress</span><span class="btn big" style="height:54px;font-size:16px" data-act="toast:reset" tabindex="0">' + ic("steps", "font-size:22px") + 'Reset progress</span><span class="btn big" style="height:54px;font-size:16px" data-act="toast:delete" tabindex="0">' + ic("trash", "font-size:22px") + 'Delete my data</span>' +
+      '<div class="mu" style="font-size:12px">Export saves a CSV by skill and tier that a teacher can read.</div></div></div></div>' +
+      (S.toast ? '<div class="toast">' + ({ export: "Saved progress-ZS-4F2K-07.csv (example)", reset: "Progress reset (example)", delete: "Data deleted and the ID released (example)" }[S.toast] || "") + "</div>" : "");
+  }
+
+  /* ---------- page structure ---------- */
+  var ORDER = [["menu", "Main menu", sMenu, "Start"], ["region", "Choose your region", sRegion, "Start"], ["occupation", "Choose your occupation", sOccupation, "Start"], ["tutorial", "Tutorial", sTutorial, "Start"],
+    ["procedures", "Learn a procedure", sProcedures, "Learn"], ["lesson", "Skill lesson", sLesson, "Learn"], ["practice", "Practise the steps", sPractice, "Learn"],
+    ["scenarios", "Scenario list", sScenarios, "Inspect"], ["level", "Difficulty", sLevel, "Inspect"],
+    ["intro", "Briefing", sIntro, "Inspect"], ["inspect", "Inspecting", sInspect, "Inspect"], ["flag", "Flag a violation", sFlag, "Inspect"], ["review", "Review and score", sReview, "Inspect"],
+    ["cards", "Quick reference cards", sCards, "Reference"], ["rule", "Rule lookup", sRule, "Reference"], ["sbDesign", "Design a panel", sSbDesign, "Sandbox"], ["sbWire", "Wire and check", sSbWire, "Sandbox"],
+    ["sbScore", "Sandbox score", sSbScore, "Sandbox"], ["skills", "My skills", sSkills, "Skills"], ["tracking", "Progress and data", sTracking, "Skills"], ["settings", "Settings", sSettings, "Skills"]];
+  var NOTES = {
+    menu: "The first screen. The 3D workshop panel sits behind a menu that floats in front of it as a world-space canvas. Learning a procedure comes first; the sandbox button dims when the region has no sandbox.",
+    region: "The only setting that changes the rules. The student picks a region and the app applies its installation code behind the scenes without naming it. Units, voltages and wire sizes follow. The edition of the code is never shown either.",
+    occupation: "New. The student chooses the occupation they are working toward. Three are open now (electrician, electrician's helper, electrical inspector); the rest show as coming soon. An occupation is a pathway, not a credential, and the choice only decides which procedures come first. Procedure names and counts are the real ones.",
+    tutorial: "New. A short walk-through of the stylus, one step at a time (this is step 3 of 8): point, inspect, flag, choose the rule, mark a good part as correct, open the reference, finish. The button mapping comes from the build plan and must be checked on the device.",
+    procedures: "New. The procedures of the chosen occupation, as real jobs: purpose, skills used and main hazards. Procedures with a skill the app teaches can be practised; the rest can be read. Drafted from public sources, not yet reviewed by an occupational expert.",
+    lesson: "New. A short lesson before practice: what to look for, why it matters, the three tiers and common mistakes. Seven new procedure skills have one, alongside the thirteen code skills. Text is the real lesson.",
+    practice: "New. Put the steps of a procedure in the right order, tapping with the stylus. Beginner shows four steps, Standard six, Expert all of them. A nearly right answer keeps most of the credit; the result shows the hazards and how they are controlled. Try it: tap the steps, then check.",
+    scenarios: "Each scenario lists the skills it practises and how many violations are in its pool; each session draws a different set. Scenarios only appear for a region once there is scene art for it, so the United Kingdom shows an explanation instead of a list.",
+    level: "Three generic levels described by what the student can already do. Pick one to change the rest of the walk-through.",
+    intro: "A short brief, the objectives and the skills the scenario exercises.",
+    inspect: "The student points the stylus at a part and presses the front button. Click the highlighted part here. Hints and the timer follow the difficulty; the timer can be turned off in Settings (try Expert, then switch it off). The scene is an illustration, not final art.",
+    flag: "The student names the rule that applies. No rule numbers are shown anywhere: a list of rule titles for Beginner, a search for Standard, and the rule in their own words for Expert. The Expert wording is a proposal that needs the owner's confirmation.",
+    review: "A score summary, then each missed violation with the rule that applies, shown by its title, and the skill it counts toward.",
+    cards: "Short cards in the app's own words, one for every skill (17 in all, seven shown). Cards are written per region, so a region without cards says so.",
+    rule: "Search the region's rule entries by name. Each entry carries its skill and related entries, shows no number or chapter, and never shows the code's own wording.",
+    sbDesign: "Drag breakers into slots against a list of required circuits. Six designs from a small home to a large home with a workshop. Only regions with their own sizing tables can use the sandbox.",
+    sbWire: "Choose a wire size per circuit, then run the compliance check. Wire sizes follow the region's units.",
+    sbScore: "The score credits the skills the design exercised.",
+    skills: "Progress is tracked per skill across three tiers: thirteen code skills and seven procedure skills. No credential, exam or readiness score appears anywhere in the app.",
+    tracking: "New. Progress can be followed outside the app, and this screen says plainly how: a generic ID with no name or email, what is collected and what is not, where it goes, who sees it, and how to export, reset or delete it. Try the three buttons. The wording and the retention period need review by counsel, and the analytics service is still to be chosen.",
+    settings: "Audio, comfort and access (stereo depth, time limits that can be turned off, text size), language (English first), region and an optional name that stays on the device."
+  };
+  var hist = [], at = 0;
+  function idx(id) { for (var i = 0; i < ORDER.length; i++) if (ORDER[i][0] === id) return i; return 0; }
+  function scale() { $("#stage").style.setProperty("--k", $("#stage").clientWidth / 960); }
+  function seg() {
+    $("#seg-region").innerHTML = [["us", "United States"], ["ca", "Canada"], ["gb", "United Kingdom"]].map(function (it) {
+      return '<button type="button" data-k="' + it[0] + '" aria-pressed="' + (S.region === it[0]) + '">' + it[1] + "</button>";
+    }).join("");
+  }
+  function render() {
+    var o = ORDER[at];
+    $("#app").innerHTML = o[2]();
+    $("#title").textContent = o[1];
+    $("#count").textContent = "Screen " + (at + 1) + " of " + ORDER.length + " · " + o[3];
+    $("#note").textContent = NOTES[o[0]];
+    $("#foot").textContent = R().name + " · " + R().units;
+    $("#jump").value = o[0];
+    $("#prev").disabled = at === 0 && hist.length === 0;
+    $("#next").disabled = at === ORDER.length - 1;
+    seg(); scale();
+  }
+  function show(id, noPush) {
+    if (!noPush && ORDER[at][0] !== id) hist.push(at);
+    at = idx(id);
+    render();
+  }
+  function goBack() {
+    if (hist.length) { at = hist.pop(); render(); }
+    else if (at > 0) { at -= 1; render(); }
+  }
+  function stepNext() { if (at < ORDER.length - 1) { hist.push(at); at += 1; render(); } }
+
+  $("#jump").innerHTML = ORDER.map(function (o, i) { return '<option value="' + o[0] + '">' + (i + 1) + ". " + o[1] + "</option>"; }).join("");
+  $("#jump").addEventListener("change", function (e) { show(e.target.value); });
+  $("#prev").addEventListener("click", goBack);
+  $("#next").addEventListener("click", stepNext);
+
+  document.addEventListener("click", function (e) {
+    var seg = e.target.closest("#seg-region button");
+    if (seg) { S.region = seg.dataset.k; if (S.scen >= Math.max(R().scen, 1)) S.scen = 0; render(); return; }
+    var t = e.target.closest("#app [data-act], #app [data-go]");
+    if (!t) return;
+    if (t.dataset.act) {
+      var p = t.dataset.act.split(":"), key = p[0], val = p[1];
+      if (key === "scen" || key === "pick" || key === "wire" || key === "card" || key === "occ" || key === "proc") val = +val;
+      if (key === "pstep") { val = +val; if (S.order.indexOf(val) < 0 && !S.checked) S.order.push(val); }
+      else if (key === "pundo") { if (!S.checked) S.order.pop(); }
+      else if (key === "pcheck") { S.checked = true; }
+      else if (key === "preset") { S.order = []; S.checked = false; }
+      else if (key === "timers") { S.timers = !S.timers; }
+      else if (key === "toast") { S.toast = val; }
+      else if (key === "flagged") { S.flagged += 1; } else {
+        if (key === "occ" || key === "proc") { S.order = []; S.checked = false; if (key === "occ") S.proc = 0; }
+        S[key] = val;
+        if (key === "region" && S.scen >= Math.max(R().scen, 1)) S.scen = 0;
+      }
+    }
+    if (t.dataset.go) { if (t.dataset.go !== "tracking") S.toast = ""; if (t.dataset.go === "back") goBack(); else show(t.dataset.go); } else render();
+  });
+  document.addEventListener("keydown", function (e) {
+    var t = e.target;
+    if ((e.key === "Enter" || e.key === " ") && t.matches && t.matches("#app [data-go], #app [data-act]")) { e.preventDefault(); t.click(); return; }
+    if (t.closest && t.closest("input,textarea,select")) return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === "ArrowRight") { e.preventDefault(); stepNext(); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); goBack(); }
+  });
+  window.addEventListener("resize", scale);
+  if (window.ResizeObserver) new ResizeObserver(scale).observe($("#stage"));
+  var h = (location.hash || "").slice(1);
+  if (h && ORDER.some(function (o) { return o[0] === h; })) at = idx(h);
+  render();
+})();
+</script>
