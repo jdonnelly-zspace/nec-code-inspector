@@ -19,10 +19,14 @@ namespace NECInspector.Codes
         public string[] relatedReferences;
         public string conceptId;            // the skill (concept ID) this entry belongs to; empty if untagged
         public bool isNewInEdition;         // new or changed in the profile's current edition
+        public bool numbersShown;           // whether students see the reference number (the profile's terminology decides)
 
         /// <summary>
         /// Display string for UI (e.g., "Art. 250.24(A)(1) - Grounding Electrode Conductor Connection")
         /// </summary>
-        public string DisplayString => $"{referenceLabel} - {title}";
+        public string DisplayString => numbersShown ? $"{referenceLabel} - {title}" : title;
+
+        /// <summary>The reference as a student sees it: empty when rule numbers are hidden.</summary>
+        public string ShownLabel => numbersShown ? referenceLabel : "";
     }
 }

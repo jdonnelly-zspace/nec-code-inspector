@@ -19,7 +19,18 @@
       "description": "Ground rod not meeting minimum 8-foot length requirement",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.52(A)(5)",
+          "text": "A ground rod needs a length of at least 8 feet and a diameter of at least 5/8 inch (1/2 inch is allowed for listed stainless or nonferrous rods).",
+          "limit": {
+            "quantity": "ground-rod-length",
+            "kind": "min",
+            "value": 8,
+            "unit": "ft"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.52(A)(5)",
           "text": "A ground rod needs a length of at least 8 feet and a diameter of at least 5/8 inch (1/2 inch is allowed for listed stainless or nonferrous rods).",
           "limit": {
@@ -69,7 +80,12 @@
       "description": "Grounding electrode conductor not connected to service equipment",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.24(A)(1)",
+          "text": "The grounding electrode conductor is the link between the grounding electrode(s) and the service's equipment grounding conductors and enclosures and, if the system is grounded, its grounded conductor."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.24(A)(1)",
           "text": "The grounding electrode conductor is the link between the grounding electrode(s) and the service's equipment grounding conductors and enclosures and, if the system is grounded, its grounded conductor."
         },
@@ -96,7 +112,12 @@
       "description": "Metal water piping not bonded to grounding system",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.104(A)",
+          "text": "Bond the metal water pipe system to any one of these: the service enclosure, the service's grounded conductor, a grounding electrode conductor of adequate size, or the electrodes in use."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.104(A)",
           "text": "Bond the metal water pipe system to any one of these: the service enclosure, the service's grounded conductor, a grounding electrode conductor of adequate size, or the electrodes in use."
         },
@@ -128,7 +149,12 @@
       "description": "Equipment grounding conductor undersized for circuit",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.122",
+          "text": "Wire-type equipment grounding conductors are at least the size Table 250.122 specifies."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.122",
           "text": "Wire-type equipment grounding conductors are at least the size Table 250.122 specifies."
         },
@@ -155,7 +181,12 @@
       "description": "Multiple grounding electrodes present but not bonded together",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.50",
+          "text": "Bond together every electrode of the types listed in 250.52(A)(1) through (A)(7) at a building so they act as one system."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.50",
           "text": "Bond together every electrode of the types listed in 250.52(A)(1) through (A)(7) at a building so they act as one system."
         },
@@ -179,7 +210,12 @@
       "description": "Electrical system grounding does not limit voltage from lightning or surges",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.4(A)(1)",
+          "text": "Grounding a system ties it to earth to hold down surge voltages (from lightning, line surges, or an accidental touch of higher-voltage lines) and to keep voltage to earth stable during normal use."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.4(A)(1)",
           "text": "Grounding a system ties it to earth to hold down surge voltages (from lightning, line surges, or an accidental touch of higher-voltage lines) and to keep voltage to earth stable during normal use."
         }
@@ -198,7 +234,12 @@
       "description": "Bare aluminum grounding electrode conductor in contact with earth",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.64(A)",
+          "text": "Aluminum grounding electrode conductors, whether bare or copper-clad, are off limits where they would touch masonry or soil directly or sit in a corrosive environment."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.64(A)",
           "text": "Aluminum grounding electrode conductors, whether bare or copper-clad, are off limits where they would touch masonry or soil directly or sit in a corrosive environment."
         }
@@ -217,7 +258,12 @@
       "description": "Water pipe electrode not meeting 10-foot earth contact requirement",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.52(A)(1)",
+          "text": "A metal underground water pipe counts as an electrode only when 10 feet or more of it touches the earth, including bonded metal well casing in contact with earth."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.52(A)(1)",
           "text": "A metal underground water pipe counts as an electrode only when 10 feet or more of it touches the earth, including bonded metal well casing in contact with earth."
         }
@@ -236,7 +282,12 @@
       "description": "Missing intersystem bonding termination for communications grounding",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.94",
+          "text": "Provide an intersystem bonding termination outside enclosures at the service or meter enclosure, and at the disconnect of any additional building or structure."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.94",
           "text": "Provide an intersystem bonding termination outside enclosures at the service or meter enclosure, and at the disconnect of any additional building or structure."
         }
@@ -255,7 +306,12 @@
       "description": "Single ground rod used as sole electrode without supplemental electrode",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.53(A)(2)",
+          "text": "When the only electrode is one rod, pipe or plate, add a second electrode and bond it to the first, to the grounding electrode conductor, to the incoming grounded conductor at the service, or to the service enclosure."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.53(A)(2)",
           "text": "When the only electrode is one rod, pipe or plate, add a second electrode and bond it to the first, to the grounding electrode conductor, to the incoming grounded conductor at the service, or to the service enclosure."
         }
@@ -274,7 +330,12 @@
       "description": "The {term:grounding} electrode conductor to the {term:ground-rod} is joined midway with a wire nut",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "250.64(C)",
+          "text": "The conductor to an electrode runs in one unbroken length. Where a splice is needed, only irreversible compression connectors or exothermic welds are allowed for wire-type conductors; wire nuts and split bolts are not."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "250.64(C)",
           "text": "The conductor to an electrode runs in one unbroken length. Where a splice is needed, only irreversible compression connectors or exothermic welds are allowed for wire-type conductors; wire nuts and split bolts are not."
         }

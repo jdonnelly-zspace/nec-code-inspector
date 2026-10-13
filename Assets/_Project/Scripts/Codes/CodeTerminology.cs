@@ -30,6 +30,9 @@ namespace NECInspector.Codes
         public string referenceNoun = "Article";            // what one numbered reference is called
         public string sectionLabel = "Chapter";             // what the top-level divisions are called
         public string generalPracticeLabel = "General practice";
+        /// <summary>Whether students see rule numbers. Off by default: the app teaches skills and violations, not the installation code's article numbers.
+        /// Numbers stay in the data for scoring, alignment and expert review.</summary>
+        public bool showReferenceNumbers = false;
         public TermEntry[] terms;
 
         /// <summary>A reference as shown to students, e.g. "Art. 250.24(A)(1)".</summary>
@@ -40,6 +43,13 @@ namespace NECInspector.Codes
                 return generalPracticeLabel;
 
             return referencePrefix + reference;
+        }
+
+        /// <summary>A reference as a student sees it: the labelled number if numbers are shown, otherwise nothing (general practice keeps its label).</summary>
+        public string ShownReference(string reference)
+        {
+            if (string.Equals(reference, GeneralPractice, StringComparison.OrdinalIgnoreCase)) return generalPracticeLabel;
+            return showReferenceNumbers ? ReferenceLabel(reference) : "";
         }
 
         // Student-facing wording never names the installation code; the student's region decides it.

@@ -1,12 +1,12 @@
 {
-  "id": "nec",
-  "displayName": "NEC (NFPA 70)",
+  "id": "nec-2026",
+  "displayName": "NEC 2026 (NFPA 70)",
   "edition": "2026",
   "region": "US",
   "units": "imperial",
   "artSet": "north-america",
-  "reviewStatus": "app-defined",
-  "note": "Reference entries are paraphrased explanations, not code text. Pending review by a credential expert (see docs/CONTENT_REVIEW.md).",
+  "reviewStatus": "draft",
+  "note": "Draft. Copied from the 2023 profile; the only changes applied are the renumbering known from secondary sources (Article 220 becomes Article 120). Every other reference is assumed unchanged and every 2026 number and value is unverified against the 2026 text: needs a credential expert. Not the default for the US region until it is reviewed (the region picker prefers reviewed and app-defined profiles).",
   "license": {
     "status": "unreviewed",
     "holder": "National Fire Protection Association (NFPA)",

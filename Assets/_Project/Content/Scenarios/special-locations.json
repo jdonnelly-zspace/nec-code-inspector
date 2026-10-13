@@ -19,7 +19,12 @@
       "description": "Luminaire hangs 9 feet above the water over a backyard pool",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "680.22(B)",
+          "text": "Keep luminaires, lighting outlets and ceiling fans out of the airspace above a pool and the 5 ft strip around it unless they sit 12 ft or more above the highest water level."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "680.22(B)",
           "text": "Keep luminaires, lighting outlets and ceiling fans out of the airspace above a pool and the 5 ft strip around it unless they sit 12 ft or more above the highest water level."
         }
@@ -38,7 +43,12 @@
       "description": "Metal pool ladder and handrail are not bonded to the pool's bonding grid",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "680.26",
+          "text": "Bond the pool's conductive parts together with solid copper no smaller than 8 AWG so they form an equipotential grid, including metal ladders and rails."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "680.26",
           "text": "Bond the pool's conductive parts together with solid copper no smaller than 8 AWG so they form an equipotential grid, including metal ladders and rails."
         },
@@ -64,7 +74,12 @@
       "description": "Outdoor patio receptacle has a cover that is only weatherproof when closed",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "406.9(B)",
+          "text": "In wet locations the receptacle's enclosure must stay weatherproof with or without a plug inserted, which means an in-use (bubble) cover."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "406.9(B)",
           "text": "In wet locations the receptacle's enclosure must stay weatherproof with or without a plug inserted, which means an in-use (bubble) cover."
         }
@@ -83,7 +98,18 @@
       "description": "Utility service drop runs only 15 feet above the water of the backyard pool",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "680.9(A)",
+          "text": "Pools, spas and hot tubs may not be placed within the Table 680.9(A) clearances of overhead service or other overhead conductors not in a raceway; for 0-750 V insulated service-drop type cable the clearance is 22.5 ft, measured from the maximum water level.",
+          "limit": {
+            "quantity": "overhead conductor clearance above maximum water level",
+            "kind": "min",
+            "value": 22.5,
+            "unit": "ft"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "680.9(A)",
           "text": "Pools, spas and hot tubs may not be placed within the Table 680.9(A) clearances of overhead service or other overhead conductors not in a raceway; for 0-750 V insulated service-drop type cable the clearance is 22.5 ft, measured from the maximum water level.",
           "limit": {
@@ -120,7 +146,18 @@
       "description": "A general-purpose {term:receptacle} is mounted about 3 feet from the edge of the pool",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "680.22(A)(3)",
+          "text": "Receptacles that are not for pool pump motors or other circulation-system loads must be at least 6 ft from the inside wall of a permanently installed pool, measured along the shortest path a cord would take.",
+          "limit": {
+            "quantity": "receptacle distance from inside pool wall",
+            "kind": "min",
+            "value": 6,
+            "unit": "ft"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "680.22(A)(3)",
           "text": "Receptacles that are not for pool pump motors or other circulation-system loads must be at least 6 ft from the inside wall of a permanently installed pool, measured along the shortest path a cord would take.",
           "limit": {
@@ -157,7 +194,18 @@
       "description": "The maintenance disconnect for the hot tub equipment is mounted 2 feet from the spa wall",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "680.13",
+          "text": "Pool, spa and hot tub equipment other than lighting needs a readily accessible maintenance disconnect within sight of the equipment and at least 5 ft horizontally from the water, measured from the water's edge along the shortest path, unless a permanent barrier gives a 5 ft reach path.",
+          "limit": {
+            "quantity": "disconnect distance from inside spa wall",
+            "kind": "min",
+            "value": 5,
+            "unit": "ft"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "680.13",
           "text": "Pool, spa and hot tub equipment other than lighting needs a readily accessible maintenance disconnect within sight of the equipment and at least 5 ft horizontally from the water, measured from the water's edge along the shortest path, unless a permanent barrier gives a 5 ft reach path.",
           "limit": {
@@ -194,7 +242,12 @@
       "description": "Pool pump is plugged into an outdoor {term:receptacle} with no {term:shock-protection-device}",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "680.21(C)",
+          "text": "Outlets supplying pool pump motors on single-phase 120 V through 240 V branch circuits need Class A ground-fault protection, whether the pump is on a receptacle or wired directly; in 2023 the protection type points to 680.5(B)."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "680.21(C)",
           "text": "Outlets supplying pool pump motors on single-phase 120 V through 240 V branch circuits need Class A ground-fault protection, whether the pump is on a receptacle or wired directly; in 2023 the protection type points to 680.5(B)."
         }
@@ -213,7 +266,12 @@
       "description": "A high-rated hardwired EV charger has no readily accessible, lockable disconnect",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "625.43",
+          "text": "Charging equipment rated over 60 A or over 150 V to ground needs a readily accessible disconnect that can be locked open, with a plaque if it is remote from the equipment."
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "625.43",
           "text": "Charging equipment rated over 60 A or over 150 V to ground needs a readily accessible disconnect that can be locked open, with a plaque if it is remote from the equipment."
         }
@@ -232,7 +290,18 @@
       "description": "A pool equipment timer switch is mounted 2 feet from the pool wall without a barrier",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "680.22(C)",
+          "text": "Switches, timers and similar devices must be at least 5 ft horizontally from the pool's inside wall, unless a solid fence, wall or other permanent barrier separates them or the device is listed for closer use.",
+          "limit": {
+            "quantity": "switching device distance from inside pool wall",
+            "kind": "min",
+            "value": 5,
+            "unit": "ft"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "680.22(C)",
           "text": "Switches, timers and similar devices must be at least 5 ft horizontally from the pool's inside wall, unless a solid fence, wall or other permanent barrier separates them or the device is listed for closer use.",
           "limit": {
@@ -269,7 +338,18 @@
       "description": "A wall-mounted underwater pool light has its lens only 6 inches below the normal water level",
       "citations": [
         {
-          "profileId": "nec",
+          "profileId": "nec-2023",
+          "reference": "680.23(A)(5)",
+          "text": "The top of a wall-mounted underwater luminaire lens sits at least 18 in. below normal water level, unless the luminaire is listed for a shallower depth.",
+          "limit": {
+            "quantity": "depth of luminaire lens top below normal water level",
+            "kind": "min",
+            "value": 18,
+            "unit": "in"
+          }
+        },
+        {
+          "profileId": "nec-2026",
           "reference": "680.23(A)(5)",
           "text": "The top of a wall-mounted underwater luminaire lens sits at least 18 in. below normal water level, unless the luminaire is listed for a shallower depth.",
           "limit": {

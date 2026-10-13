@@ -20,8 +20,9 @@ BS 7671 and others) are copyrighted, and because the app should teach the skills
 
 - Write explanations in your own words. Do not copy or closely reword sentences from a code book, a standard,
   an exam blueprint or a commercial study guide.
-- A citation identifies where a rule lives (the reference number, for example `250.24(A)(1)`). Its `text` field
-  is a short explanation of the idea, written for students, not the code's wording.
+- A citation identifies where a rule lives (the reference number, for example `250.24(A)(1)`), for scoring, alignment and expert review. Students never see rule numbers
+  (`CodeTerminology.showReferenceNumbers` is off): the UI shows the entry's title. Its `text` field is a short explanation of the idea, written for students, not the code's
+  wording, and should not quote rule numbers or table numbers either (a test warns where it does).
 - Keep explanations shorter than the source passage and do not rebuild a whole section from pieces.
 - No quotation marks around code text. Facts (a number, a limit, a reference) can be stated plainly.
 - Statutory phrasing such as "shall" is a sign that text was copied. The test suite counts it and warns.

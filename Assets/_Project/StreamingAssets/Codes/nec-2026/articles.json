@@ -1,0 +1,2904 @@
+{
+  "articles": [
+    {
+      "reference": "110.12",
+      "title": "Mechanical Execution of Work",
+      "text": "Install electrical equipment tidily, with good workmanship.",
+      "section": 1,
+      "keywords": [
+        "workmanship",
+        "installation",
+        "neat",
+        "professional"
+      ],
+      "related": [
+        "110.14"
+      ],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.14",
+      "title": "Electrical Connections",
+      "text": "Connectors and lugs must suit the conductor material, since different metals behave differently, and be installed and used correctly.",
+      "section": 1,
+      "keywords": [
+        "connections",
+        "terminals",
+        "splicing",
+        "conductors",
+        "aluminum",
+        "copper"
+      ],
+      "related": [
+        "110.12"
+      ],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.14(A)",
+      "title": "Terminals",
+      "text": "Terminate conductors securely, without nicking or crushing them, by means of pressure connectors, soldered lugs, or splices onto flexible leads.",
+      "section": 1,
+      "keywords": [
+        "terminals",
+        "conductors",
+        "pressure connectors",
+        "solder"
+      ],
+      "related": [
+        "110.14"
+      ],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.26(A)(1)",
+      "title": "Working Space - Minimum Clear Distances",
+      "text": "Working space in front of live parts must be at least as deep as Table 110.26(A)(1) gives, unless exception (a) or (b) applies.",
+      "section": 1,
+      "keywords": [
+        "working space",
+        "clearance",
+        "access",
+        "depth",
+        "distance"
+      ],
+      "related": [
+        "110.26(A)(2)",
+        "110.26(A)(3)"
+      ],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.26(A)(2)",
+      "title": "Working Space - Width",
+      "text": "The clear area in front of equipment must be 30 inches wide at minimum, or as wide as the equipment itself if that is more.",
+      "section": 1,
+      "keywords": [
+        "working space",
+        "width",
+        "30 inches",
+        "clearance"
+      ],
+      "related": [
+        "110.26(A)(1)"
+      ],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.26(A)(3)",
+      "title": "Working Space - Height",
+      "text": "Working space stays clear from floor, grade or platform level upward, to 6-1/2 ft or to the top of the equipment if that is taller.",
+      "section": 1,
+      "keywords": [
+        "working space",
+        "height",
+        "6.5 feet",
+        "clearance"
+      ],
+      "related": [
+        "110.26(A)(1)"
+      ],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.8(A)",
+      "title": "GFCI Protection - Dwelling Units",
+      "text": "Receptacles rated 125 V to 250 V in any dwelling location named in 210.8(A)(1) through (A)(11) require GFCI protection to keep people safe.",
+      "section": 2,
+      "keywords": [
+        "GFCI",
+        "ground fault",
+        "dwelling",
+        "receptacle",
+        "protection",
+        "personnel"
+      ],
+      "related": [
+        "210.8(D)"
+      ],
+      "conceptId": "shock-protection",
+      "isNewInEdition": true
+    },
+    {
+      "reference": "210.8(A)(1)",
+      "title": "GFCI Protection - Bathrooms",
+      "text": "In a home's bathrooms, every 125 V to 250 V receptacle needs GFCI protection.",
+      "section": 2,
+      "keywords": [
+        "GFCI",
+        "bathroom",
+        "dwelling",
+        "receptacle"
+      ],
+      "related": [
+        "210.8(A)"
+      ],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.8(A)(2)",
+      "title": "GFCI Protection - Garages and Accessory Buildings",
+      "text": "Garages and outbuildings need GFCI protection on 125 V to 250 V receptacles when the floor is at or below grade.",
+      "section": 2,
+      "keywords": [
+        "GFCI",
+        "garage",
+        "accessory building",
+        "grade level"
+      ],
+      "related": [
+        "210.8(A)"
+      ],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.8(A)(6)",
+      "title": "GFCI Protection - Kitchens",
+      "text": "In a home's kitchens, receptacles of 125 V to 250 V need GFCI protection, not only the ones that serve the countertop.",
+      "section": 2,
+      "keywords": [
+        "GFCI",
+        "kitchen",
+        "countertop",
+        "dwelling"
+      ],
+      "related": [
+        "210.8(A)"
+      ],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.8(A)(11)",
+      "title": "GFCI Protection - Laundry Areas",
+      "text": "Laundry-area receptacles (125 V to 250 V) in a home need GFCI protection.",
+      "section": 2,
+      "keywords": [
+        "GFCI",
+        "laundry",
+        "dwelling"
+      ],
+      "related": [
+        "210.8(A)"
+      ],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.11(C)(1)",
+      "title": "Branch Circuits Required - Kitchen Small Appliance",
+      "text": "Besides the circuits required elsewhere in this section, add two or more 20 A small-appliance circuits for the kitchen receptacles.",
+      "section": 2,
+      "keywords": [
+        "branch circuit",
+        "kitchen",
+        "small appliance",
+        "20 ampere",
+        "two circuits"
+      ],
+      "related": [
+        "210.52(B)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.11(C)(2)",
+      "title": "Branch Circuits Required - Laundry",
+      "text": "Besides the circuits required elsewhere in this section, add at least one 120 V, 20 A circuit for the laundry receptacle.",
+      "section": 2,
+      "keywords": [
+        "branch circuit",
+        "laundry",
+        "20 ampere",
+        "required"
+      ],
+      "related": [
+        "210.11(C)(1)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.11(C)(3)",
+      "title": "Branch Circuits Required - Bathroom",
+      "text": "Besides the circuits required elsewhere in this section, add at least one 120 V, 20 A circuit for the bathroom receptacles.",
+      "section": 2,
+      "keywords": [
+        "branch circuit",
+        "bathroom",
+        "20 ampere",
+        "required"
+      ],
+      "related": [
+        "210.11(C)(2)",
+        "210.11(C)(1)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.12(B)",
+      "title": "AFCI Protection - Dwelling Units",
+      "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the methods in 210.12(A)(1) through (A)(6).",
+      "section": 2,
+      "keywords": [
+        "AFCI",
+        "arc fault",
+        "dwelling",
+        "bedroom",
+        "living room",
+        "protection"
+      ],
+      "related": [
+        "210.8"
+      ],
+      "conceptId": "arc-fault-protection",
+      "isNewInEdition": true
+    },
+    {
+      "reference": "210.52(A)",
+      "title": "Receptacle Outlets Required - General",
+      "text": "In kitchens, family and dining rooms, living rooms, parlors, libraries, dens, sunrooms, bedrooms, recreation rooms and similar spaces of a home, place receptacles so every point along a wall's floor line is within 6 feet of one.",
+      "section": 2,
+      "keywords": [
+        "receptacle",
+        "outlet",
+        "spacing",
+        "6 feet",
+        "wall",
+        "dwelling"
+      ],
+      "related": [
+        "210.52(B)",
+        "210.52(C)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.52(B)",
+      "title": "Receptacle Outlets Required - Small Appliance",
+      "text": "Kitchen, pantry, breakfast-room and dining-room areas need their wall, floor and countertop receptacles (those covered by 210.52(A) and 210.52(C)), plus receptacles for refrigeration equipment, supplied by the two or more 20 A small-appliance circuits from 210.11(C)(1).",
+      "section": 2,
+      "keywords": [
+        "small appliance",
+        "kitchen",
+        "countertop",
+        "20 ampere"
+      ],
+      "related": [
+        "210.11(C)(1)",
+        "210.52(C)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.52(C)",
+      "title": "Receptacle Outlets Required - Countertops",
+      "text": "Countertop receptacles in kitchens, pantries, breakfast and dining areas must be spaced so you are never farther than 24 inches from one, counted horizontally along the wall line.",
+      "section": 2,
+      "keywords": [
+        "countertop",
+        "kitchen",
+        "24 inches",
+        "receptacle",
+        "spacing"
+      ],
+      "related": [
+        "210.52(A)",
+        "210.52(B)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "120.12",
+      "title": "Lighting Loads for Specified Occupancies",
+      "text": "Lighting load is at least the unit load in Table 220.12 for the occupancy.",
+      "section": 2,
+      "keywords": [
+        "lighting",
+        "load",
+        "calculation",
+        "VA",
+        "occupancy"
+      ],
+      "related": [
+        "120.40",
+        "120.42"
+      ],
+      "conceptId": "load-calculation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "120.40",
+      "title": "General Calculations - Services and Feeders",
+      "text": "A feeder or service load must equal at least the sum of the branch-circuit loads it supplies (Part II), after any demand factors allowed by Part III or IV.",
+      "section": 2,
+      "keywords": [
+        "load calculation",
+        "service",
+        "feeder",
+        "demand factor"
+      ],
+      "related": [
+        "120.12",
+        "120.42",
+        "120.82"
+      ],
+      "conceptId": "load-calculation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "120.82",
+      "title": "Optional Calculation - Dwelling Unit",
+      "text": "A one-family dwelling, or one unit of a two-family or multifamily dwelling, may use the optional calculation in 220.82: the first 10 kVA of general loads at 100% and the rest at 40%, with heating and air-conditioning loads added by their own percentages.",
+      "section": 2,
+      "keywords": [
+        "optional calculation",
+        "dwelling",
+        "load",
+        "service"
+      ],
+      "related": [
+        "120.40",
+        "120.83"
+      ],
+      "conceptId": "load-calculation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "230.70(A)",
+      "title": "Service Disconnect - Location",
+      "text": "Put the service disconnect where it is readily accessible, outside the building or inside near where the service conductors enter.",
+      "section": 2,
+      "keywords": [
+        "service disconnect",
+        "location",
+        "accessible",
+        "entrance"
+      ],
+      "related": [],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "230.79",
+      "title": "Rating of Service Disconnecting Means",
+      "text": "The service disconnect's rating must be at least the calculated load it serves.",
+      "section": 2,
+      "keywords": [
+        "service disconnect",
+        "rating",
+        "ampere",
+        "load"
+      ],
+      "related": [
+        "230.70"
+      ],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.4",
+      "title": "Protection of Conductors",
+      "text": "Overcurrent protection must match each conductor's ampacity (this does not cover flexible cords and cables or fixture wires).",
+      "section": 2,
+      "keywords": [
+        "overcurrent",
+        "protection",
+        "conductor",
+        "ampacity",
+        "breaker"
+      ],
+      "related": [
+        "240.4(B)",
+        "240.4(D)",
+        "310.14"
+      ],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.4(D)",
+      "title": "Small Conductors",
+      "text": "Breaker limits for small conductors, unless 240.4(E) or 240.4(G) allow more. Copper: 14 AWG 15 A, 12 AWG 20 A, 10 AWG 30 A. Aluminum or copper-clad aluminum: 12 AWG 15 A, 10 AWG 25 A.",
+      "section": 2,
+      "keywords": [
+        "small conductor",
+        "14 AWG",
+        "12 AWG",
+        "10 AWG",
+        "overcurrent",
+        "ampere"
+      ],
+      "related": [
+        "240.4"
+      ],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.24(A)",
+      "title": "Overcurrent Device Location - Accessibility",
+      "text": "Keep breakers and switches within easy reach: with the handle raised to its top position, the middle of its grip must be no higher than 6 ft 7 in. (2.0 m) off the floor or working platform.",
+      "section": 2,
+      "keywords": [
+        "overcurrent",
+        "accessible",
+        "height",
+        "6 feet 7 inches",
+        "breaker"
+      ],
+      "related": [],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.4(A)(1)",
+      "title": "General Requirements - Grounding of Electrical Systems",
+      "text": "Grounding a system ties it to earth to hold down surge voltages (from lightning, line surges, or an accidental touch of higher-voltage lines) and to keep voltage to earth stable during normal use.",
+      "section": 2,
+      "keywords": [
+        "grounding",
+        "earth",
+        "lightning",
+        "voltage",
+        "system"
+      ],
+      "related": [
+        "250.24",
+        "250.50"
+      ],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.24(A)(1)",
+      "title": "Grounding Electrode Conductor Connection",
+      "text": "The grounding electrode conductor is the link between the grounding electrode(s) and the service's equipment grounding conductors and enclosures and, if the system is grounded, its grounded conductor.",
+      "section": 2,
+      "keywords": [
+        "grounding electrode",
+        "conductor",
+        "service",
+        "equipment",
+        "connection"
+      ],
+      "related": [
+        "250.4",
+        "250.50",
+        "250.64"
+      ],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.50",
+      "title": "Grounding Electrode System",
+      "text": "Bond together every electrode of the types listed in 250.52(A)(1) through (A)(7) at a building so they act as one system.",
+      "section": 2,
+      "keywords": [
+        "grounding electrode",
+        "system",
+        "bonding",
+        "building"
+      ],
+      "related": [
+        "250.52",
+        "250.24"
+      ],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.52(A)(1)",
+      "title": "Grounding Electrodes - Metal Underground Water Pipe",
+      "text": "A metal underground water pipe counts as an electrode when 10 feet or more of it touches the earth, including bonded metal well casing in contact with earth.",
+      "section": 2,
+      "keywords": [
+        "grounding electrode",
+        "water pipe",
+        "underground",
+        "10 feet"
+      ],
+      "related": [
+        "250.50"
+      ],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.52(A)(5)",
+      "title": "Grounding Electrodes - Ground Rod",
+      "text": "A ground rod needs a length of at least 8 feet and a diameter of at least 5/8 inch (1/2 inch is allowed for listed stainless or nonferrous rods).",
+      "section": 2,
+      "keywords": [
+        "ground rod",
+        "8 feet",
+        "5/8 inch",
+        "electrode",
+        "copper",
+        "steel"
+      ],
+      "related": [
+        "250.50",
+        "250.53"
+      ],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.64(A)",
+      "title": "Grounding Electrode Conductor Installation - Aluminum",
+      "text": "Aluminum grounding electrode conductors, whether bare or copper-clad, are off limits where they would touch masonry or soil directly or sit in a corrosive environment.",
+      "section": 2,
+      "keywords": [
+        "grounding electrode conductor",
+        "aluminum",
+        "masonry",
+        "earth",
+        "corrosion"
+      ],
+      "related": [],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.104(A)",
+      "title": "Bonding of Piping Systems - Metal Water Piping",
+      "text": "Bond the metal water pipe system to any one of these: the service enclosure, the service's grounded conductor, a grounding electrode conductor of adequate size, or the electrodes in use.",
+      "section": 2,
+      "keywords": [
+        "bonding",
+        "water pipe",
+        "metal",
+        "service equipment"
+      ],
+      "related": [
+        "250.50",
+        "250.52"
+      ],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.122",
+      "title": "Size of Equipment Grounding Conductors",
+      "text": "Wire-type equipment grounding conductors are at least the size Table 250.122 specifies.",
+      "section": 2,
+      "keywords": [
+        "equipment grounding",
+        "conductor size",
+        "table",
+        "wire"
+      ],
+      "related": [
+        "250.4"
+      ],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "310.14",
+      "title": "Conductor Ampacities",
+      "text": "Conductor ampacities come from Tables 310.16 through 310.21 and their notes.",
+      "section": 3,
+      "keywords": [
+        "ampacity",
+        "conductor",
+        "table",
+        "wire size",
+        "current"
+      ],
+      "related": [
+        "240.4",
+        "310.16"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "310.16",
+      "title": "Ampacities of Insulated Conductors",
+      "text": "Insulated conductors rated 2000 V or below have their allowable ampacities listed in Table 310.16, which assumes a 30 degrees C ambient.",
+      "section": 3,
+      "keywords": [
+        "ampacity",
+        "table",
+        "insulated",
+        "conductor",
+        "temperature",
+        "AWG"
+      ],
+      "related": [
+        "310.14",
+        "240.4"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "334.10",
+      "title": "NM Cable - Uses Permitted",
+      "text": "Houses and duplexes, their garages and storage buildings (attached or detached), and multifamily dwellings can all use NM, NMC and NMS cable.",
+      "section": 3,
+      "keywords": [
+        "NM cable",
+        "Romex",
+        "dwelling",
+        "permitted",
+        "residential"
+      ],
+      "related": [
+        "334.30"
+      ],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "334.30",
+      "title": "NM Cable - Securing and Supporting",
+      "text": "Fasten NM cable with staples, ties, straps, hangers or the like every 4-1/2 ft or less, and within 12 inches of each cabinet, box or fitting.",
+      "section": 3,
+      "keywords": [
+        "NM cable",
+        "securing",
+        "staple",
+        "support",
+        "4.5 feet",
+        "12 inches"
+      ],
+      "related": [
+        "334.10"
+      ],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "406.4(D)",
+      "title": "Receptacle Replacements - GFCI",
+      "text": "If the receptacle box lacks a grounding means, either a GFCI-type receptacle or a GFCI breaker is an allowed solution.",
+      "section": 4,
+      "keywords": [
+        "receptacle",
+        "replacement",
+        "GFCI",
+        "grounding",
+        "no ground"
+      ],
+      "related": [
+        "210.8"
+      ],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "408.4",
+      "title": "Circuit Directory or Circuit Identification",
+      "text": "Label every circuit, and every change to a circuit, clearly with its specific purpose, in enough detail to tell it apart from all others.",
+      "section": 4,
+      "keywords": [
+        "circuit directory",
+        "panel schedule",
+        "labeling",
+        "identification"
+      ],
+      "related": [
+        "408.54"
+      ],
+      "conceptId": "identification-marking",
+      "isNewInEdition": true
+    },
+    {
+      "reference": "408.54",
+      "title": "Maximum Number of Overcurrent Devices",
+      "text": "In addition to 408.30, a panelboard must physically prevent installing more overcurrent devices than the number it was designed, rated and listed for.",
+      "section": 4,
+      "keywords": [
+        "panelboard",
+        "overcurrent",
+        "protection",
+        "bus rating",
+        "spaces"
+      ],
+      "related": [
+        "408.4"
+      ],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "422.16",
+      "title": "Appliances - Flexible Cords",
+      "text": "Flexible cord may connect appliances that are swapped often or that need noise or vibration isolation.",
+      "section": 4,
+      "keywords": [
+        "appliance",
+        "flexible cord",
+        "connection",
+        "interchange"
+      ],
+      "related": [],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "430.6(A)(1)",
+      "title": "Motor Ampere Ratings - Table Values",
+      "text": "Take motor current ratings from Table 430.247, 430.248, 430.249 or 430.250 whenever the rating determines conductor ampacity, switch size, protection of the branch circuit against short circuits and ground faults, or overload protection.",
+      "section": 4,
+      "keywords": [
+        "motor",
+        "ampere",
+        "table",
+        "conductor",
+        "protection"
+      ],
+      "related": [
+        "430.22",
+        "430.52"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "430.52",
+      "title": "Motor Branch-Circuit Short-Circuit and Ground-Fault Protection",
+      "text": "Short-circuit and ground-fault protection for a motor branch circuit has to satisfy 430.52(B) and one of 430.52(C) or (D); the device rating or setting cannot go above the Table 430.52 values.",
+      "section": 4,
+      "keywords": [
+        "motor",
+        "branch circuit",
+        "short circuit",
+        "ground fault",
+        "protection"
+      ],
+      "related": [
+        "430.6"
+      ],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.8(A)(3)",
+      "title": "GFCI Protection - Outdoors",
+      "text": "Outdoor 125 V to 250 V receptacles at a home need GFCI protection, for example on porches, patios and decks.",
+      "section": 2,
+      "keywords": [
+        "GFCI",
+        "outdoor",
+        "dwelling",
+        "receptacle",
+        "porch",
+        "patio",
+        "deck"
+      ],
+      "related": [
+        "210.8(A)",
+        "210.8(A)(2)"
+      ],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.8(A)(10)",
+      "title": "GFCI Protection - Bathtubs and Shower Stalls",
+      "text": "Receptacles of 125 V to 250 V within 6 ft of a tub's or shower's outer edge need GFCI protection.",
+      "section": 2,
+      "keywords": [
+        "GFCI",
+        "bathtub",
+        "shower",
+        "6 feet",
+        "receptacle",
+        "dwelling"
+      ],
+      "related": [
+        "210.8(A)",
+        "210.8(A)(1)"
+      ],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.8(D)",
+      "title": "GFCI Protection - Specific Appliances",
+      "text": "The outlets that supply dishwashers in homes need GFCI protection, whether the dishwasher is plugged in or hard-wired.",
+      "section": 2,
+      "keywords": [
+        "GFCI",
+        "dishwasher",
+        "appliance",
+        "dwelling",
+        "branch circuit"
+      ],
+      "related": [
+        "210.8(A)",
+        "422.16"
+      ],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.12(E)",
+      "title": "AFCI Protection - Branch Circuit Extensions or Modifications",
+      "text": "Wiring changes, replacements or extensions on a circuit in the 210.12(B) areas bring the circuit under the same arc-fault protection methods, 210.12(A)(1) through (A)(6).",
+      "section": 2,
+      "keywords": [
+        "AFCI",
+        "arc fault",
+        "modification",
+        "extension",
+        "branch circuit"
+      ],
+      "related": [
+        "210.12(B)"
+      ],
+      "conceptId": "arc-fault-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.52(C)(2)",
+      "title": "Receptacle Outlets - Island and Peninsular Countertop Spaces",
+      "text": "Install at least one receptacle on every island or peninsula countertop that measures 24 inches or more on its long side and 12 inches or more on its short side (islands are covered by (C)(2), peninsulas by (C)(3)).",
+      "section": 2,
+      "keywords": [
+        "island",
+        "peninsular",
+        "countertop",
+        "receptacle",
+        "kitchen",
+        "24 inches"
+      ],
+      "related": [
+        "210.52(C)",
+        "210.52(B)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.52(D)",
+      "title": "Receptacle Outlets - Bathrooms",
+      "text": "A bathroom needs a receptacle no more than 36 inches from the outer edge of each basin, mounted on an adjoining wall or partition, or on the basin cabinet's side or front no lower than 12 inches under the countertop.",
+      "section": 2,
+      "keywords": [
+        "bathroom",
+        "receptacle",
+        "basin",
+        "36 inches",
+        "countertop"
+      ],
+      "related": [
+        "210.8(A)(1)",
+        "210.11(C)(1)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.52(E)(1)",
+      "title": "Receptacle Outlets - Outdoor Outlets for Dwelling Units",
+      "text": "At a one-family house, and at every grade-level dwelling unit of a duplex, install at least two outdoor receptacles, front and back, within reach from the ground and no more than 6-1/2 ft above it.",
+      "section": 2,
+      "keywords": [
+        "outdoor",
+        "receptacle",
+        "dwelling",
+        "grade",
+        "front",
+        "back"
+      ],
+      "related": [
+        "210.8(A)(3)",
+        "210.52(A)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.52(G)",
+      "title": "Receptacle Outlets - Basements, Garages, and Accessory Buildings",
+      "text": "A one-family home needs at least one receptacle in each garage, attached or detached, and in each powered accessory building, and another in an unfinished basement area beyond any laundry receptacles.",
+      "section": 2,
+      "keywords": [
+        "basement",
+        "garage",
+        "accessory building",
+        "receptacle",
+        "dwelling"
+      ],
+      "related": [
+        "210.8(A)(2)",
+        "210.52(A)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.4(B)",
+      "title": "Next Higher Standard Overcurrent Device",
+      "text": "When a conductor's ampacity does not land on a standard device rating from 240.6(A), the next size up may be used, but not for a circuit with more than one receptacle for portable cord-and-plug loads.",
+      "section": 2,
+      "keywords": [
+        "overcurrent",
+        "next size up",
+        "standard rating",
+        "conductor",
+        "protection"
+      ],
+      "related": [
+        "240.4",
+        "240.4(D)",
+        "240.6"
+      ],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "334.80",
+      "title": "NM Cable - Ampacity",
+      "text": "Where more than two NM cables (each with at least two current-carrying conductors) pass without spacing through the same hole in wood framing that is sealed with insulation, caulk or foam, derate each conductor's ampacity per Table 310.15(C)(1); the adjustment counts only current-carrying conductors.",
+      "section": 3,
+      "keywords": [
+        "NM cable",
+        "ampacity",
+        "bundling",
+        "derate",
+        "current-carrying",
+        "adjustment"
+      ],
+      "related": [
+        "310.14",
+        "310.16",
+        "334.10"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "120.42",
+      "title": "General Lighting Demand Factors",
+      "text": "Table 220.42 demand factors apply to the general-illumination part of the branch-circuit load but not to heavy-duty lampholders. In dwellings: 100% for the first 3,000 VA, 35% for VA from 3,001 up to 120,000, and 25% above 120,000 VA.",
+      "section": 2,
+      "keywords": [
+        "demand factor",
+        "lighting",
+        "load calculation",
+        "dwelling",
+        "VA",
+        "3000"
+      ],
+      "related": [
+        "120.12",
+        "120.40"
+      ],
+      "conceptId": "load-calculation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "120.52",
+      "title": "Small-Appliance and Laundry Loads - Dwelling Unit",
+      "text": "Each 2-wire small-appliance circuit (210.11(C)(1)) and each laundry circuit (210.11(C)(2)) in a dwelling counts as 1,500 VA; add these to the general lighting load if you like and apply the Table 220.42 demand factors to the sum.",
+      "section": 2,
+      "keywords": [
+        "small appliance",
+        "laundry",
+        "1500 VA",
+        "load calculation",
+        "dwelling",
+        "demand"
+      ],
+      "related": [
+        "210.11(C)(1)",
+        "210.11(C)(3)",
+        "120.42"
+      ],
+      "conceptId": "load-calculation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "120.54",
+      "title": "Electric Dryer Load - Dwelling Unit",
+      "text": "A household electric dryer counts as 5,000 W or its nameplate rating, whichever is larger, and Table 220.54 demand factors may be used for multiple dryers.",
+      "section": 2,
+      "keywords": [
+        "dryer",
+        "5000 watts",
+        "load calculation",
+        "dwelling",
+        "demand factor"
+      ],
+      "related": [
+        "120.40",
+        "120.82"
+      ],
+      "conceptId": "load-calculation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "120.55",
+      "title": "Electric Cooking Equipment - Dwelling Unit",
+      "text": "Demand for household electric ranges, built-in wall ovens, countertop cooking units and similar appliances individually rated above 1-3/4 kW may come from Table 220.55. A single circuit feeding a cooking appliance of 12 kW or less is limited to 8 kW of demand.",
+      "section": 2,
+      "keywords": [
+        "range",
+        "oven",
+        "cooking",
+        "8 kW",
+        "12 kW",
+        "demand",
+        "load calculation"
+      ],
+      "related": [
+        "210.19",
+        "120.40"
+      ],
+      "conceptId": "load-calculation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "120.83",
+      "title": "Optional Calculation - Existing Dwelling Unit",
+      "text": "An existing dwelling may use an optional method: total the lighting and receptacle load, the load from small-appliance and laundry circuits, and any other nameplate loads, then count the first 8 kVA at 100% and the rest at 40% (when no heating or air-conditioning is being added; added loads change the method).",
+      "section": 2,
+      "keywords": [
+        "optional calculation",
+        "existing dwelling",
+        "10 kVA",
+        "40 percent",
+        "demand"
+      ],
+      "related": [
+        "120.82",
+        "120.40"
+      ],
+      "conceptId": "load-calculation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.53(A)(2)",
+      "title": "Supplemental Electrode Required",
+      "text": "One rod, pipe or plate on its own must be backed by another electrode of a type in 250.52(A)(2) through (A)(8). The extra electrode may be bonded to the first, to the grounding electrode conductor, to the incoming grounded conductor at the service, or to the service enclosure. Exception: a lone electrode that measures 25 ohms or less to earth needs no supplement.",
+      "section": 2,
+      "keywords": [
+        "supplemental electrode",
+        "ground rod",
+        "25 ohms",
+        "resistance",
+        "additional"
+      ],
+      "related": [
+        "250.50",
+        "250.52(A)(5)"
+      ],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.94",
+      "title": "Intersystem Bonding Termination",
+      "text": "Provide an intersystem bonding termination outside enclosures at the service or metering enclosure and at the disconnect of any additional building or structure; it needs terminals for at least three intersystem bonding conductors.",
+      "section": 2,
+      "keywords": [
+        "intersystem",
+        "bonding",
+        "communications",
+        "termination",
+        "cable",
+        "telephone"
+      ],
+      "related": [
+        "250.50",
+        "250.24"
+      ],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.3(B)",
+      "title": "Installation and Use - Listed or Labeled Equipment",
+      "text": "Install and use listed or labeled equipment the way its listing or labeling instructions say.",
+      "section": 1,
+      "keywords": [
+        "listed",
+        "labeled",
+        "installation",
+        "instructions",
+        "equipment"
+      ],
+      "related": [
+        "110.12"
+      ],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.14(B)",
+      "title": "Temperature Limitations",
+      "text": "Choose conductor ampacity temperature ratings so they do not exceed the lowest rating among the connected terminations, conductors or devices.",
+      "section": 1,
+      "keywords": [
+        "temperature",
+        "rating",
+        "termination",
+        "conductor",
+        "ampacity",
+        "60C",
+        "75C"
+      ],
+      "related": [
+        "110.14",
+        "310.16"
+      ],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "200.6",
+      "title": "Means of Identifying Grounded Conductors",
+      "text": "Insulated grounded conductors of 6 AWG or smaller are marked along their whole length with a solid white or gray finish, or with stripes (three, continuous, white or gray) on insulation that is not green.",
+      "section": 2,
+      "keywords": [
+        "grounded",
+        "conductor",
+        "white",
+        "gray",
+        "neutral",
+        "identification"
+      ],
+      "related": [
+        "250.24"
+      ],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.3",
+      "title": "Rating",
+      "text": "A branch circuit's rating equals the maximum ampere rating or setting allowed for its overcurrent device; circuits that are not individual circuits use 15, 20, 30, 40 or 50 A.",
+      "section": 2,
+      "keywords": [
+        "branch circuit",
+        "rating",
+        "ampere",
+        "overcurrent",
+        "15",
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "related": [
+        "210.11",
+        "240.4"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.19(A)",
+      "title": "Branch-Circuit Conductors - Minimum Ampacity",
+      "text": "Branch-circuit conductors must carry at least the largest load they serve; size them to the greater of the results from 210.19(A)(1) and (A)(2).",
+      "section": 2,
+      "keywords": [
+        "branch circuit",
+        "conductor",
+        "ampacity",
+        "minimum",
+        "sizing"
+      ],
+      "related": [
+        "210.3",
+        "310.16",
+        "240.4"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.52(H)",
+      "title": "Dwelling Unit Receptacle Outlets - Hallways",
+      "text": "Hallways in homes that run 10 ft (3.0 m) or longer need at least one receptacle.",
+      "section": 2,
+      "keywords": [
+        "hallway",
+        "receptacle",
+        "dwelling",
+        "10 feet"
+      ],
+      "related": [
+        "210.52(A)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "215.2",
+      "title": "Minimum Rating and Size of Feeders",
+      "text": "Feeder conductors must carry the load found by the Article 220 calculation parts III, IV and V. Before any adjustment or correction factors, the smallest allowable conductor must be rated to carry the noncontinuous load together with 125 percent of what runs continuously.",
+      "section": 2,
+      "keywords": [
+        "feeder",
+        "conductor",
+        "ampacity",
+        "minimum",
+        "sizing",
+        "continuous",
+        "load"
+      ],
+      "related": [
+        "120.40",
+        "310.16"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "120.14",
+      "title": "Other Loads - All Occupancies",
+      "text": "Outside dwelling units, count at least 180 VA for each single or multiple receptacle on one yoke, and for other outlets that are not part of general lighting. A dwelling does not count its receptacles one by one, because they are covered by the general lighting load.",
+      "section": 2,
+      "keywords": [
+        "receptacle",
+        "load",
+        "180 VA",
+        "outlet",
+        "commercial",
+        "occupancy"
+      ],
+      "related": [
+        "120.12",
+        "120.44"
+      ],
+      "conceptId": "load-calculation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "120.44",
+      "title": "Receptacle Loads - Other Than Dwelling Units",
+      "text": "Receptacle loads from 220.14 may use the Table 220.44 demand factors or be calculated as 220.44(A) allows.",
+      "section": 2,
+      "keywords": [
+        "receptacle",
+        "load",
+        "commercial",
+        "demand factor",
+        "non-dwelling"
+      ],
+      "related": [
+        "120.14",
+        "120.40"
+      ],
+      "conceptId": "load-calculation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.21(B)(1)",
+      "title": "Feeder Taps Not Over 10 ft",
+      "text": "A tap off a feeder needs no overcurrent device where it connects if all of these hold: it is 3.0 m (10 ft) long or less; its ampacity covers the calculated loads it feeds and is at least the rating of the equipment or device it ends at; it does not extend past that equipment; it is enclosed in a raceway; and a tap that leaves the enclosure has an ampacity of at least 10 percent of the feeder device rating.",
+      "section": 2,
+      "keywords": [
+        "feeder",
+        "tap",
+        "10 foot",
+        "overcurrent",
+        "raceway",
+        "conductor"
+      ],
+      "related": [
+        "240.4",
+        "215.2"
+      ],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.4(A)(5)",
+      "title": "Effective Ground-Fault Current Path",
+      "text": "Equipment, wiring and other conductive material that could become energized must be installed to form a low-impedance path that helps the overcurrent device operate.",
+      "section": 2,
+      "keywords": [
+        "ground-fault",
+        "current path",
+        "impedance",
+        "overcurrent",
+        "bonding"
+      ],
+      "related": [
+        "250.4(A)(1)",
+        "250.122"
+      ],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.66",
+      "title": "Size of AC Grounding Electrode Conductor",
+      "text": "Table 250.66 gives the smallest allowed grounding electrode conductor for a service, for buildings fed from a feeder or a branch circuit, and for a separately derived system.",
+      "section": 2,
+      "keywords": [
+        "grounding electrode conductor",
+        "GEC",
+        "sizing",
+        "table",
+        "service"
+      ],
+      "related": [
+        "250.24",
+        "250.52"
+      ],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.118",
+      "title": "Types of Equipment Grounding Conductors",
+      "text": "The equipment grounding conductor that accompanies or surrounds the circuit conductors can be aluminum, copper, or copper-clad aluminum wire, or a raceway type: rigid or intermediate metal conduit, EMT or listed flexible metal conduit (other listed types also qualify).",
+      "section": 2,
+      "keywords": [
+        "equipment grounding conductor",
+        "EGC",
+        "types",
+        "conduit",
+        "raceway"
+      ],
+      "related": [
+        "250.122",
+        "250.4(A)(5)"
+      ],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "300.4(A)",
+      "title": "Protection Against Physical Damage - Cables Through Framing Members",
+      "text": "When cable or a raceway runs through holes drilled in joists, rafters or other wood framing (exposed or concealed), keep at least 1-1/4 in. (32 mm) between the hole and the wood's nearest edge. If you cannot, shield the cable or raceway against screws and nails with a steel plate or bushing.",
+      "section": 3,
+      "keywords": [
+        "protection",
+        "physical damage",
+        "cable",
+        "framing",
+        "nail plate",
+        "boring"
+      ],
+      "related": [
+        "334.30",
+        "300.5"
+      ],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "300.5",
+      "title": "Underground Installations",
+      "text": "Direct-buried cables and raceways must meet the minimum cover in Table 300.5. Underground cables beneath a building go in a raceway. Protect underground conductors from damage as 300.5(D) describes.",
+      "section": 3,
+      "keywords": [
+        "underground",
+        "burial",
+        "depth",
+        "cover",
+        "direct-buried",
+        "raceway"
+      ],
+      "related": [
+        "300.4"
+      ],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "314.16",
+      "title": "Number of Conductors in Outlet, Device, and Junction Boxes",
+      "text": "Choose a box or conduit body big enough to leave free space for every conductor inside; the box volume must at least match the fill calculation in 314.16(A) and (B). Count a conductor once if it begins outside and ends or is spliced inside, and once if it simply passes through without splice or termination.",
+      "section": 3,
+      "keywords": [
+        "box fill",
+        "conductor",
+        "volume",
+        "junction box",
+        "outlet box",
+        "device box"
+      ],
+      "related": [],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "430.7",
+      "title": "Marking on Motors and Multimotor Equipment",
+      "text": "A motor nameplate must show the manufacturer, voltage, frequency, number of phases, full-load amps, temperature rise or insulation class, ambient temperature, duty rating, horsepower, and locked-rotor code letter, plus any other specified information.",
+      "section": 4,
+      "keywords": [
+        "motor",
+        "nameplate",
+        "marking",
+        "horsepower",
+        "full-load current",
+        "code letter"
+      ],
+      "related": [
+        "430.6",
+        "430.52"
+      ],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "430.22",
+      "title": "Single Motor - Branch-Circuit Conductor Size",
+      "text": "Conductors for one continuously running motor need ampacity of at least 125 percent of its full-load current (taken per 430.6(A)(1)).",
+      "section": 4,
+      "keywords": [
+        "motor",
+        "conductor",
+        "branch circuit",
+        "125 percent",
+        "sizing",
+        "full-load current"
+      ],
+      "related": [
+        "430.6",
+        "310.16"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "430.24",
+      "title": "Several Motors or a Motor(s) and Other Load(s)",
+      "text": "For several motors, or a motor plus other loads, conductor ampacity is 125 percent of the largest motor's full-load current plus the full-load currents of the other motors plus the ampacity needed for the other loads.",
+      "section": 4,
+      "keywords": [
+        "multiple motors",
+        "conductor sizing",
+        "125 percent",
+        "group",
+        "feeder"
+      ],
+      "related": [
+        "430.22",
+        "430.52"
+      ],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "430.32",
+      "title": "Continuous-Duty Motors - Overload Protection",
+      "text": "A continuous-duty motor over 1 hp needs its own overload device that responds to motor current. Set it to trip at no more than 125 percent of nameplate full-load current when the motor has a service factor of 1.15 or more, or a marked temperature rise of 40 C or less, and no more than 115 percent for other motors. If that setting cannot start the motor or carry its load, 430.32(C) allows a higher setting, up to 140 percent and 130 percent.",
+      "section": 4,
+      "keywords": [
+        "motor",
+        "overload",
+        "protection",
+        "115 percent",
+        "service factor",
+        "nameplate"
+      ],
+      "related": [
+        "430.6",
+        "430.52"
+      ],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "430.102(B)",
+      "title": "Motor Controller Disconnecting Means",
+      "text": "A motor disconnect must be in sight of the motor and of the machinery the motor drives.",
+      "section": 4,
+      "keywords": [
+        "motor",
+        "disconnect",
+        "controller",
+        "in sight",
+        "locked-rotor"
+      ],
+      "related": [
+        "430.110",
+        "430.52"
+      ],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "430.110",
+      "title": "Ampere Rating and Interrupting Capacity of Motor Disconnecting Means",
+      "text": "The disconnect for a motor circuit of 600 V or less must be rated at 115 percent or more of the motor's full-load current. For a Design E motor, mark the disconnect as suitable for a Design E motor.",
+      "section": 4,
+      "keywords": [
+        "motor",
+        "disconnect",
+        "ampere rating",
+        "115 percent",
+        "in sight"
+      ],
+      "related": [
+        "430.102",
+        "430.6"
+      ],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.6",
+      "title": "Standard Ampere Ratings",
+      "text": "Fuses and fixed-trip circuit breakers come in standard ratings: 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100, 110, 125, 150, 175, 200, 225, 250, 300, 350, 400, 450, 500, 600, 700, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000 and 6000 amperes; fuses also come in 1, 3, 6, 10 and 601 amperes.",
+      "section": 2,
+      "keywords": [
+        "standard ratings",
+        "breaker sizes",
+        "overcurrent device",
+        "ampere rating"
+      ],
+      "related": [
+        "240.4(B)"
+      ],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.23",
+      "title": "Permissible Loads, Individual Branch Circuits",
+      "text": "A single-load branch circuit can feed any load within its rating; one that feeds several outlets or receptacles is restricted to the loads allowed for its size.",
+      "section": 2,
+      "keywords": [
+        "branch circuit",
+        "loads",
+        "individual",
+        "rating",
+        "permissible"
+      ],
+      "related": [
+        "210.3",
+        "210.19(A)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "120.18",
+      "title": "Maximum Loads",
+      "text": "The total load cannot go beyond the branch circuit's rating or past the limits in 220.18(A) through (C) when their conditions apply.",
+      "section": 2,
+      "keywords": [
+        "maximum",
+        "load",
+        "branch circuit",
+        "rating"
+      ],
+      "related": [
+        "210.23"
+      ],
+      "conceptId": "load-calculation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "225.18",
+      "title": "Clearance for Overhead Conductors and Cables",
+      "text": "Overhead conductors of 1000 V or less need clearance above grade: 10 ft where only pedestrians can reach them and the supply is 150 V or less to ground; 12 ft over residential property, driveways and commercial areas without truck traffic at 300 V or less to ground; 15 ft over those areas at higher voltages; and 18 ft over public streets, alleys, roads and parking areas with truck traffic.",
+      "section": 2,
+      "keywords": [
+        "overhead",
+        "clearance",
+        "conductors",
+        "outside",
+        "grade",
+        "driveway"
+      ],
+      "related": [],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "404.2(C)",
+      "title": "Switches - Grounded Conductor at the Switch",
+      "text": "A switch that controls lighting loads needs a grounded (neutral) conductor at the switch location, with exceptions such as where the cable is run in a way that lets a conductor be added later.",
+      "section": 4,
+      "keywords": [
+        "switch",
+        "neutral",
+        "grounded conductor",
+        "smart switch",
+        "dimmer"
+      ],
+      "related": [
+        "200.6"
+      ],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "406.9(A)",
+      "title": "Receptacles in Damp Locations",
+      "text": "A receptacle outdoors under cover from weather, or in another damp location, needs an enclosure that is weatherproof when the covers are closed.",
+      "section": 4,
+      "keywords": [
+        "receptacle",
+        "outdoor",
+        "damp",
+        "weatherproof",
+        "cover"
+      ],
+      "related": [
+        "406.9(B)"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "406.9(B)",
+      "title": "Receptacles in Wet Locations",
+      "text": "In wet locations, the receptacle's enclosure must stay weatherproof with or without a plug inserted, which in practice means an in-use (bubble) cover.",
+      "section": 4,
+      "keywords": [
+        "receptacle",
+        "wet location",
+        "weatherproof",
+        "in-use cover"
+      ],
+      "related": [
+        "406.9(A)"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "410.10(A)",
+      "title": "Luminaires in Specific Locations - Wet or Damp",
+      "text": "Mount luminaires in damp or wet locations so water can neither get into nor pool inside their wiring compartments, lampholders and other components.",
+      "section": 4,
+      "keywords": [
+        "luminaire",
+        "light",
+        "wet",
+        "damp",
+        "location",
+        "weatherproof"
+      ],
+      "related": [
+        "406.9(B)"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "480.3",
+      "title": "Storage Batteries - Equipment",
+      "text": "Battery system equipment and wiring follow the rest of the Code plus Article 480's own rules.",
+      "section": 4,
+      "keywords": [
+        "battery",
+        "storage",
+        "equipment",
+        "UPS"
+      ],
+      "related": [
+        "480.7"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "480.4",
+      "title": "Battery and Cell Terminations",
+      "text": "Where corrosion is a concern at battery and cell terminals, use an antioxidant or other protective material on the connections, and make intercell and intertier connections with conductors and connectors suited to the system.",
+      "section": 4,
+      "keywords": [
+        "battery",
+        "terminals",
+        "corrosion",
+        "connections"
+      ],
+      "related": [
+        "480.7"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "480.7",
+      "title": "Battery DC Disconnect Methods",
+      "text": "A stationary battery system above 60 V DC nominal needs a disconnect for all of its ungrounded conductors, located where it can be reached and operated safely.",
+      "section": 4,
+      "keywords": [
+        "battery",
+        "disconnect",
+        "stationary",
+        "DC",
+        "60 volts"
+      ],
+      "related": [
+        "480.3",
+        "480.10"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "480.10",
+      "title": "Battery Locations - Ventilation",
+      "text": "Provide enough diffusion and ventilation to stop battery gases building up an explosive mixture. Dedicated battery rooms need ventilation that holds hydrogen to no more than 1 percent of the room volume.",
+      "section": 4,
+      "keywords": [
+        "battery",
+        "ventilation",
+        "hydrogen",
+        "explosive",
+        "battery room"
+      ],
+      "related": [
+        "480.7"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.7",
+      "title": "Pool Equipment - Cord-and-Plug Connections",
+      "text": "Fixed or stationary pool equipment, other than underwater luminaires, may be connected with a flexible cord and plug so it can be removed for servicing, with a cord of 3 ft or less, a copper equipment grounding conductor of at least 12 AWG and a grounding-type plug.",
+      "section": 6,
+      "keywords": [
+        "pool",
+        "cord and plug",
+        "equipment",
+        "grounding",
+        "cord length"
+      ],
+      "related": [
+        "680.26"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.22(B)",
+      "title": "Pool Area Lighting - Luminaire Height",
+      "text": "Keep luminaires, lighting outlets and ceiling fans out of the airspace above a pool and the 5 ft strip around it (measured horizontally from the inner walls) unless they sit 12 ft or more above the highest water level.",
+      "section": 6,
+      "keywords": [
+        "pool",
+        "luminaire",
+        "height",
+        "12 feet",
+        "5 feet",
+        "water level"
+      ],
+      "related": [
+        "680.26"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.26",
+      "title": "Equipotential Bonding",
+      "text": "Bond the pool's conductive parts together with solid copper no smaller than 8 AWG so they form an equipotential grid. The parts include the shell, the perimeter surface, metal ladders and rails, pumps and other metal equipment, and fixtures.",
+      "section": 6,
+      "keywords": [
+        "pool",
+        "bonding",
+        "equipotential",
+        "grid",
+        "ladder",
+        "8 AWG"
+      ],
+      "related": [
+        "680.22(B)",
+        "250.4(A)(5)"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.44",
+      "title": "Protection for Spas and Hot Tubs",
+      "text": "The outlets and circuits that supply spas and hot tubs need GFCI protection, with the details depending on the type of unit.",
+      "section": 6,
+      "keywords": [
+        "spa",
+        "hot tub",
+        "GFCI",
+        "ground-fault",
+        "protection"
+      ],
+      "related": [
+        "210.8(A)(1)"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "440.4",
+      "title": "Marking on Air-Conditioning and Refrigeration Equipment",
+      "text": "Air-conditioning and refrigeration equipment carries a nameplate that gives its minimum circuit ampacity and its maximum overcurrent device rating. Size the circuit conductors and the breaker from that nameplate.",
+      "section": 4,
+      "keywords": [
+        "air conditioning",
+        "nameplate",
+        "minimum circuit ampacity",
+        "maximum overcurrent",
+        "condensing unit"
+      ],
+      "related": [
+        "430.6(A)(1)",
+        "240.4(B)"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.24(D)",
+      "title": "Overcurrent Devices - Not Near Easily Ignitible Material",
+      "text": "Overcurrent devices must not be placed where easily ignited material is nearby, such as inside a clothes closet.",
+      "section": 2,
+      "keywords": [
+        "clothes closet",
+        "ignitible",
+        "panel location",
+        "overcurrent"
+      ],
+      "related": [
+        "240.24(A)"
+      ],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.24(E)",
+      "title": "Overcurrent Devices - Not in Bathrooms",
+      "text": "In dwelling units (and hotel or motel guest rooms and suites), overcurrent devices other than supplementary overcurrent protection must not be located in bathrooms.",
+      "section": 2,
+      "keywords": [
+        "bathroom",
+        "panel location",
+        "dwelling",
+        "overcurrent"
+      ],
+      "related": [
+        "240.24(A)",
+        "240.24(D)"
+      ],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.26(E)(1)(a)",
+      "title": "Dedicated Electrical Space Above Equipment",
+      "text": "The space equal to the width and depth of the panel, from the floor up to 6 ft above the equipment or the structural ceiling (whichever is lower), is reserved for the electrical installation. Pipes, ducts, leak protection apparatus and other foreign equipment cannot be in it.",
+      "section": 1,
+      "keywords": [
+        "dedicated space",
+        "pipe",
+        "duct",
+        "foreign system",
+        "panel"
+      ],
+      "related": [
+        "110.26(A)(1)"
+      ],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.22(A)",
+      "title": "Identification of Disconnecting Means",
+      "text": "Each service, feeder and branch-circuit disconnecting means is legibly marked to show what it is for, unless its location and arrangement already make the purpose obvious.",
+      "section": 1,
+      "keywords": [
+        "disconnect",
+        "label",
+        "marking",
+        "identification",
+        "purpose"
+      ],
+      "related": [
+        "408.4"
+      ],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "200.6(A)",
+      "title": "Means of Identifying Grounded Conductors (A)",
+      "text": "An insulated grounded conductor of 6 AWG or smaller is identified by a continuous white or gray outer finish, or by three continuous white or gray stripes on other than green insulation.",
+      "section": 2,
+      "keywords": [
+        "grounded",
+        "conductor",
+        "white",
+        "gray",
+        "neutral",
+        "identification"
+      ],
+      "related": [],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.119(A)",
+      "title": "Identification of Equipment Grounding Conductors (A)",
+      "text": "Insulated equipment grounding conductors of the wire type have a continuous green or green-with-yellow-stripe finish, and conductors with that finish are not used as ungrounded or grounded circuit conductors.",
+      "section": 2,
+      "keywords": [
+        "equipment grounding conductor",
+        "green",
+        "identification",
+        "color"
+      ],
+      "related": [
+        "250.118",
+        "250.122",
+        "200.6"
+      ],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "200.7",
+      "title": "Use of Insulation of a White or Gray Color or with Three Continuous White or Gray Stripes",
+      "text": "White, gray, or three-white-stripe insulation is for grounded conductors only. On circuits of 50 V or more it may serve as an ungrounded conductor only inside a cable assembly (for example a switch-loop supply) or a flexible cord, and in a cable it must be permanently re-marked a colour other than white, gray or green at its termination and wherever visible and accessible.",
+      "section": 2,
+      "keywords": [
+        "white conductor",
+        "ungrounded",
+        "re-identified",
+        "switch loop",
+        "color"
+      ],
+      "related": [
+        "200.6"
+      ],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "230.70(B)",
+      "title": "Marking of Service Disconnect",
+      "text": "Each service disconnect is permanently marked to show that it is a service disconnect, so people can tell the one device that cuts off the whole supply.",
+      "section": 2,
+      "keywords": [
+        "service disconnect",
+        "marking",
+        "main",
+        "identification"
+      ],
+      "related": [
+        "110.22(A)"
+      ],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "200.6(B)",
+      "title": "Means of Identifying Grounded Conductors (B)",
+      "text": "A grounded conductor of 4 AWG or larger is identified by white or gray finish, three white stripes, or a distinctive white or gray marking put on at its terminations when installed.",
+      "section": 2,
+      "keywords": [
+        "grounded",
+        "conductor",
+        "white",
+        "gray",
+        "neutral",
+        "identification"
+      ],
+      "related": [],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "705.10",
+      "title": "Identification of Power Sources",
+      "text": "A permanent plaque, label or directory at each service equipment location (or an approved readily visible spot) shows where each power source disconnecting means is, lists emergency phone numbers of off-site entities servicing the sources, and carries the wording 'CAUTION: MULTIPLE SOURCES OF POWER'.",
+      "section": 7,
+      "keywords": [
+        "plaque",
+        "directory",
+        "solar",
+        "interconnected",
+        "power source"
+      ],
+      "related": [],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.119(B)",
+      "title": "Identification of Equipment Grounding Conductors (B)",
+      "text": "An insulated equipment grounding conductor of 4 AWG or larger that is not green must be permanently identified as an EGC at each end and at every accessible point, by stripping the insulation, coloring it green at the termination, or green tape or labels at the termination; conductor bodies with no splices or unused hubs are exempt.",
+      "section": 2,
+      "keywords": [
+        "equipment grounding conductor",
+        "green",
+        "identification",
+        "color"
+      ],
+      "related": [],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "702.7(C)",
+      "title": "Signs for Optional Standby Systems (C)",
+      "text": "Where a power inlet is used for a temporary connection to a portable generator, a warning sign near the inlet states the type of system the inlet is wired for, based on the transfer equipment: bonded-neutral (separately derived) only, or floating-neutral (non-separately derived) only.",
+      "section": 7,
+      "keywords": [
+        "generator",
+        "inlet",
+        "sign",
+        "standby",
+        "warning"
+      ],
+      "related": [
+        "705.10"
+      ],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "230.90(A)",
+      "title": "Service Overcurrent Device - Maximum Rating",
+      "text": "The overcurrent device protecting service conductors must not be rated higher than the ampacity of those service conductors, apart from limited exceptions such as the next-size-up allowance. Separately, 230.42(A) requires the conductors to carry the calculated load.",
+      "section": 2,
+      "keywords": [
+        "service conductors",
+        "service entrance",
+        "ampacity",
+        "disconnect rating"
+      ],
+      "related": [
+        "230.79",
+        "310.16",
+        "215.2"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.4(D)(5)",
+      "title": "Small Conductors - Overcurrent Protection Limits (D)(5)",
+      "text": "Small aluminum conductors have lower overcurrent limits than copper: 12 AWG aluminum or copper-clad aluminum tops out at 15 A, and 10 AWG at 25 A, after any ambient and bundling corrections.",
+      "section": 2,
+      "keywords": [
+        "small conductors",
+        "overcurrent protection",
+        "aluminum",
+        "12 AWG",
+        "10 AWG"
+      ],
+      "related": [
+        "240.4(B)",
+        "310.16"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "310.15(C)(1)",
+      "title": "Ampacity Adjustment for More Than Three Conductors",
+      "text": "When more than three current-carrying conductors share a raceway or cable for more than 24 in., start from the 90 C column of Table 310.16 and apply the adjustment factor (80% for 4-6, 70% for 7-9, 50% for 10-20). The overcurrent limits in 240.4(D) are then applied to the adjusted ampacity.",
+      "section": 3,
+      "keywords": [
+        "derating",
+        "adjustment factor",
+        "raceway fill",
+        "current-carrying conductors"
+      ],
+      "related": [
+        "310.16",
+        "334.80",
+        "240.4(D)"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "310.10(G)(1)",
+      "title": "Conductors in Parallel - Minimum Size",
+      "text": "Phase and neutral conductors may be paralleled only when each is 1/0 AWG or larger. Smaller conductors cannot be joined at both ends to make up a larger circuit.",
+      "section": 3,
+      "keywords": [
+        "parallel conductors",
+        "1/0 AWG",
+        "paralleling",
+        "feeder"
+      ],
+      "related": [
+        "215.2",
+        "310.16"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.14(C)(1)(a)",
+      "title": "Termination Temperature Limits - 100 A or Less",
+      "text": "For circuits of 100 A or less, ampacity cannot exceed the 60 C column unless the terminals are listed and marked for higher-rated conductors. Insulation rating alone does not override the terminal limit.",
+      "section": 1,
+      "keywords": [
+        "terminal temperature",
+        "60 C",
+        "75 C",
+        "termination",
+        "ampacity"
+      ],
+      "related": [
+        "310.16",
+        "240.4(D)"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "310.15(B)(2)",
+      "title": "Raceways and Cables Exposed to Sunlight on Rooftops",
+      "text": "Where raceways or cables sit in direct sunlight on or above a roof with the bottom less than 3/4 in. above the roof (7/8 in. in earlier editions), add 33 C (60 F) to the outdoor temperature before using the ambient correction table.",
+      "section": 3,
+      "keywords": [
+        "rooftop",
+        "sunlight",
+        "temperature adder",
+        "raceway height"
+      ],
+      "related": [
+        "310.16"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "440.14",
+      "title": "Air-Conditioning Equipment Disconnect - Location",
+      "text": "A way to disconnect the air-conditioning unit must be placed where it can be seen from the unit and reached easily, and may be mounted on or inside the unit.",
+      "section": 4,
+      "keywords": [
+        "air conditioner",
+        "condenser",
+        "disconnect",
+        "within sight",
+        "readily accessible"
+      ],
+      "related": [],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "404.7",
+      "title": "Indicating Position of Switches and Circuit Breakers",
+      "text": "General-use and motor-circuit switches and circuit breakers in enclosures must clearly show open (off) or closed (on). Where the handle moves vertically, the up position is the closed (on) position.",
+      "section": 4,
+      "keywords": [
+        "handle",
+        "up is on",
+        "indicating",
+        "switch",
+        "disconnect"
+      ],
+      "related": [],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "225.31",
+      "title": "Disconnecting Means for Buildings Supplied by a Feeder",
+      "text": "A building or structure supplied by a feeder or branch circuit needs a means to disconnect all ungrounded conductors that supply or pass through it. Under 225.36 a circuit breaker, molded case switch, general-use switch or snap switch all qualify.",
+      "section": 2,
+      "keywords": [
+        "detached garage",
+        "shed",
+        "feeder",
+        "disconnect",
+        "outbuilding"
+      ],
+      "related": [],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "422.31(B)",
+      "title": "Disconnecting Means for Permanently Connected Appliances Over 300 VA",
+      "text": "For a fixed appliance over 300 VA, the branch-circuit breaker can be its disconnect only if it is in sight of the appliance or can be locked open with the lock provision staying in place.",
+      "section": 4,
+      "keywords": [
+        "water heater",
+        "appliance",
+        "disconnect",
+        "lockable",
+        "within sight"
+      ],
+      "related": [],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "230.71(B)",
+      "title": "Maximum Number of Service Disconnects",
+      "text": "A service normally has one disconnect; up to six service disconnecting means (switches or sets of breakers) are permitted for each service, and more than six is not. The limit is per service, not per building.",
+      "section": 2,
+      "keywords": [
+        "six disconnects",
+        "service",
+        "main",
+        "service disconnect"
+      ],
+      "related": [
+        "230.70(A)"
+      ],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.12(A)",
+      "title": "Mechanical Execution of Work - Unused Openings",
+      "text": "Unused cable or raceway openings in enclosures must be effectively closed so they protect about as well as the enclosure wall itself.",
+      "section": 1,
+      "keywords": [
+        "knockout",
+        "unused opening",
+        "enclosure",
+        "closure"
+      ],
+      "related": [
+        "110.12"
+      ],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "408.7",
+      "title": "Unused Openings",
+      "text": "Unused openings meant for breakers or switches must be closed with identified closures or other approved means giving protection close to that of the enclosure wall.",
+      "section": 4,
+      "keywords": [
+        "blank filler",
+        "unused opening",
+        "breaker space",
+        "panelboard"
+      ],
+      "related": [
+        "110.12(A)",
+        "408.54"
+      ],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "312.5(C)",
+      "title": "Cabinets - Cables Secured at Entry",
+      "text": "Where cable is used, each cable entering a cabinet or panel enclosure must be secured to the enclosure. A narrow exception lets nonmetallic-sheathed cable enter the top of a surface-mounted enclosure through a long raceway.",
+      "section": 3,
+      "keywords": [
+        "cable clamp",
+        "connector",
+        "knockout",
+        "securing cable"
+      ],
+      "related": [
+        "110.12(A)"
+      ],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "312.4",
+      "title": "Cabinets - Repairing Noncombustible Surfaces",
+      "text": "Where a flush-cover cabinet sits in a noncombustible wall surface, any broken or missing surface must be repaired so gaps at the cabinet edge are no more than 3 mm (1/8 in.).",
+      "section": 3,
+      "keywords": [
+        "gap",
+        "drywall",
+        "flush",
+        "cabinet",
+        "noncombustible"
+      ],
+      "related": [],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.12(B)",
+      "title": "Integrity of Electrical Equipment and Connections",
+      "text": "Internal parts such as busbars, terminals and insulators must not be damaged or contaminated by foreign materials like paint, plaster, cleaners, abrasives or corrosive residue.",
+      "section": 1,
+      "keywords": [
+        "paint",
+        "contamination",
+        "busbar",
+        "damaged parts"
+      ],
+      "related": [
+        "110.12",
+        "110.12(A)"
+      ],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.9(A)",
+      "title": "Overhead Conductor Clearances - Pools",
+      "text": "Pools, spas and hot tubs may not be placed within the Table 680.9(A) clearances of overhead service or other overhead conductors not in a raceway; for 0-750 V insulated service-drop type cable the clearance is 22.5 ft, measured from the maximum water level.",
+      "section": 6,
+      "keywords": [
+        "pool",
+        "overhead",
+        "service drop",
+        "clearance",
+        "water level"
+      ],
+      "related": [],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.22(A)(3)",
+      "title": "Pool Receptacles - Other Receptacles Distance",
+      "text": "Receptacles that are not for pool pump motors or other circulation-system loads must be at least 6 ft from the inside wall of a permanently installed pool, measured along the shortest path a cord would take.",
+      "section": 6,
+      "keywords": [
+        "pool",
+        "receptacle",
+        "6 ft",
+        "distance"
+      ],
+      "related": [],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.13",
+      "title": "Maintenance Disconnecting Means - Pools and Spas",
+      "text": "Pool, spa and hot tub equipment other than lighting needs a readily accessible maintenance disconnect within sight of the equipment and at least 5 ft horizontally from the water, measured from the water's edge along the shortest path, unless a permanent barrier gives a 5 ft reach path.",
+      "section": 6,
+      "keywords": [
+        "spa",
+        "hot tub",
+        "disconnect",
+        "5 ft",
+        "maintenance"
+      ],
+      "related": [],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.21(C)",
+      "title": "Pool Pump Motors - Ground-Fault Protection",
+      "text": "Outlets supplying pool pump motors on single-phase 120 V through 240 V branch circuits need Class A ground-fault protection, whether the pump is on a receptacle or wired directly; in 2023 the protection type points to 680.5(B).",
+      "section": 6,
+      "keywords": [
+        "pool pump",
+        "GFCI",
+        "motor",
+        "ground-fault"
+      ],
+      "related": [],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "625.43",
+      "title": "Disconnecting Means for EV Charging Equipment",
+      "text": "Charging equipment rated over 60 A or over 150 V to ground needs a readily accessible disconnect that can be locked open, with a plaque if it is remote from the equipment.",
+      "section": 6,
+      "keywords": [
+        "EV charger",
+        "disconnect",
+        "60 A",
+        "150 V",
+        "lockable"
+      ],
+      "related": [],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.22(C)",
+      "title": "Pool Area - Switching Device Distance",
+      "text": "Switches, timers and similar devices must be at least 5 ft horizontally from the pool's inside wall, unless a solid fence, wall or other permanent barrier separates them or the device is listed for closer use.",
+      "section": 6,
+      "keywords": [
+        "pool",
+        "switch",
+        "5 ft",
+        "timer",
+        "barrier"
+      ],
+      "related": [
+        "680.13"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.8(A)(5)",
+      "title": "GFCI Protection - Basements",
+      "text": "Receptacles in dwelling-unit basements need ground-fault protection for personnel. Since the 2020 edition this covers the whole basement, finished or not.",
+      "section": 2,
+      "keywords": [
+        "GFCI",
+        "basement",
+        "dwelling"
+      ],
+      "related": [
+        "210.8(A)",
+        "210.8(D)"
+      ],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.8(A)(4)",
+      "title": "GFCI Protection - Crawl Spaces",
+      "text": "Receptacles in dwelling-unit crawl spaces at or below grade need ground-fault protection for personnel.",
+      "section": 2,
+      "keywords": [
+        "GFCI",
+        "crawl space",
+        "dwelling"
+      ],
+      "related": [
+        "210.8(A)"
+      ],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.8(A)(8)",
+      "title": "GFCI Protection - Receptacles Near Sinks",
+      "text": "A receptacle within 6 ft of the top inside edge of a dwelling-unit sink bowl needs ground-fault protection for personnel, even outside the kitchen.",
+      "section": 2,
+      "keywords": [
+        "GFCI",
+        "sink",
+        "6 ft",
+        "wet bar"
+      ],
+      "related": [
+        "210.8(A)",
+        "210.8(A)(1)"
+      ],
+      "conceptId": "shock-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.52(C)(3)",
+      "title": "Receptacle Outlets - Countertop Receptacle Location",
+      "text": "Receptacles that serve a kitchen countertop must sit on the counter or no more than 20 in above it, or be a listed assembly built into the countertop.",
+      "section": 2,
+      "keywords": [
+        "countertop",
+        "kitchen",
+        "20 in",
+        "receptacle height",
+        "work surface"
+      ],
+      "related": [
+        "210.52(C)",
+        "210.52(C)(2)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.63(A)",
+      "title": "Heating, Air-Conditioning, and Refrigeration Equipment Outlet",
+      "text": "A 125 V, single-phase, 15 or 20 A receptacle must be installed at an accessible location for servicing heating, air-conditioning and refrigeration equipment. It must be on the same level as the equipment, within 25 ft of it, and not on the load side of the equipment disconnect.",
+      "section": 2,
+      "keywords": [
+        "HVAC",
+        "service receptacle",
+        "attic",
+        "rooftop",
+        "crawl space"
+      ],
+      "related": [],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.52(A)(3)",
+      "title": "Receptacle Outlets - Floor Receptacles Counted as Wall Outlets",
+      "text": "A floor receptacle only counts as the required wall-space receptacle when it sits within 18 in of the wall.",
+      "section": 2,
+      "keywords": [
+        "floor receptacle",
+        "18 in",
+        "wall space"
+      ],
+      "related": [
+        "210.52(A)"
+      ],
+      "conceptId": "branch-circuit-requirements",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.24(F)",
+      "title": "Overcurrent Devices Not Located Over Steps",
+      "text": "Overcurrent devices are not to be placed over the steps of a stairway, because someone servicing or resetting them would have to stand on uneven treads.",
+      "section": 2,
+      "keywords": [
+        "stairs",
+        "steps",
+        "location",
+        "panel",
+        "breaker"
+      ],
+      "related": [],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "408.36",
+      "title": "Panelboard Overcurrent Protection",
+      "text": "A panelboard must be protected by an overcurrent device rated no higher than the panelboard's own rating. The device can be a main breaker in the panelboard or one on the supply side of it.",
+      "section": 4,
+      "keywords": [
+        "panelboard",
+        "main breaker",
+        "rating",
+        "label"
+      ],
+      "related": [
+        "240.4"
+      ],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.24(C)",
+      "title": "Overcurrent Devices Not Exposed to Physical Damage",
+      "text": "Overcurrent devices go where they are not exposed to physical damage, so equipment where vehicles can strike it needs relocation or a guard.",
+      "section": 2,
+      "keywords": [
+        "physical damage",
+        "garage",
+        "vehicle",
+        "bollard",
+        "panel"
+      ],
+      "related": [],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.52",
+      "title": "Edison-Base Fuseholders",
+      "text": "Edison-base fuseholders may be installed only where adapters make them accept Type S fuses, which resist swapping in a larger fuse. Once fitted, a Type S adapter is designed not to be removed (240.54).",
+      "section": 2,
+      "keywords": [
+        "Edison-base",
+        "Type S",
+        "fuseholder",
+        "adapter",
+        "fuse"
+      ],
+      "related": [],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "334.24",
+      "title": "NM Cable - Bending Radius",
+      "text": "Bends in this cable must not damage it. The inside edge of any bend, during or after installation, needs a radius of at least five times the cable diameter (major diameter for flat cable).",
+      "section": 3,
+      "keywords": [
+        "NM cable",
+        "bend radius",
+        "kink",
+        "five times diameter"
+      ],
+      "related": [
+        "334.30"
+      ],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "300.14",
+      "title": "Length of Free Conductors at Outlets, Junctions, and Switch Points",
+      "text": "At each outlet, junction or switch point, leave at least 6 in. of free conductor for splices or device connections. If the opening is under 8 in. in any dimension, each conductor must reach at least 3 in. outside it.",
+      "section": 3,
+      "keywords": [
+        "free conductor",
+        "pigtail",
+        "switch box",
+        "6 in.",
+        "3 in."
+      ],
+      "related": [
+        "314.16"
+      ],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "334.15(B)",
+      "title": "NM Cable - Protection from Physical Damage",
+      "text": "Where NM cable is subject to physical damage it must be protected by metal conduit, EMT, Schedule 80 PVC or another approved means. Where it passes through a floor, that enclosure must extend at least 6 in. above the floor.",
+      "section": 3,
+      "keywords": [
+        "NM cable",
+        "floor",
+        "physical damage",
+        "6 in.",
+        "EMT sleeve"
+      ],
+      "related": [
+        "334.30",
+        "300.4(A)"
+      ],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "358.30(A)",
+      "title": "EMT - Securing and Supporting",
+      "text": "Tubing must be fastened within 3 ft of each box, cabinet, conduit body or other termination, and supported at intervals of no more than 10 ft. Up to 5 ft is allowed only where framing prevents 3 ft.",
+      "section": 3,
+      "keywords": [
+        "EMT",
+        "support",
+        "strap",
+        "3 ft",
+        "10 ft"
+      ],
+      "related": [
+        "334.30"
+      ],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "352.44(A)",
+      "title": "PVC Conduit - Expansion Fittings (A)",
+      "text": "In a straight PVC run between securely mounted points such as boxes or elbows, an expansion fitting is needed when the expected length change from temperature is 1/4 in. or more, using the code table.",
+      "section": 3,
+      "keywords": [
+        "PVC",
+        "expansion fitting",
+        "thermal expansion",
+        "conduit"
+      ],
+      "related": [
+        "300.5"
+      ],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "314.20",
+      "title": "Flush-Mounted Installations",
+      "text": "In gypsum or other noncombustible finishes, the front edge of a flush box or ring must not sit more than 1/4 in. behind the surface. In wood or other combustible finishes it must be flush or project.",
+      "section": 3,
+      "keywords": [
+        "box setback",
+        "flush",
+        "drywall",
+        "extension ring"
+      ],
+      "related": [
+        "314.16"
+      ],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "406.4(D)(4)",
+      "title": "Replacement Receptacles - Arc-Fault Protection",
+      "text": "Where a receptacle outlet is in an area that needs arc-fault protection, a replacement receptacle there must be a listed outlet-type arc-fault receptacle, be protected by one upstream, or be on a listed combination-type arc-fault breaker. No exceptions found in the 2023 sources.",
+      "section": 4,
+      "keywords": [
+        "replacement receptacle",
+        "AFCI",
+        "406.4"
+      ],
+      "related": [
+        "210.12(B)",
+        "210.12(E)"
+      ],
+      "conceptId": "arc-fault-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "250.64(C)",
+      "title": "Grounding Electrode Conductor - Continuous",
+      "text": "The conductor to an electrode runs in one unbroken length. Where a splice is needed, only irreversible compression connectors or exothermic welds are allowed for wire-type conductors; wire nuts and split bolts are not.",
+      "section": 2,
+      "keywords": [
+        "GEC",
+        "splice",
+        "continuous",
+        "wire nut"
+      ],
+      "related": [
+        "250.64(A)",
+        "250.66"
+      ],
+      "conceptId": "earthing-bonding",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "314.29(A)",
+      "title": "Wiring to Be Accessible (A)",
+      "text": "Boxes and conduit bodies in buildings have to be installed so the wiring and devices inside are accessible. Accessible means reachable without damaging the building structure or finish and not permanently closed in by it.",
+      "section": 3,
+      "keywords": [
+        "junction box",
+        "accessible",
+        "concealed"
+      ],
+      "related": [
+        "314.16"
+      ],
+      "conceptId": "wiring-methods",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "240.22",
+      "title": "Grounded Conductor, No Overcurrent Device",
+      "text": "No overcurrent device may be placed in series with an intentionally grounded conductor, unless the device opens every conductor of the circuit together and no pole can act alone, or motor overload rules call for it.",
+      "section": 2,
+      "keywords": [
+        "neutral",
+        "grounded conductor",
+        "fuse",
+        "overcurrent device"
+      ],
+      "related": [],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.22(C)",
+      "title": "Series Combination Ratings, Field Marking",
+      "text": "When breakers or fuses rely on a manufacturer's series combination rating, the equipment must carry a readable field marking saying so, with the rating and a caution that identified replacement parts are required.",
+      "section": 1,
+      "keywords": [
+        "series rating",
+        "interrupting rating",
+        "label"
+      ],
+      "related": [],
+      "conceptId": "overcurrent-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "310.15(E)(3)",
+      "title": "Neutral Conductor - Nonlinear Loads",
+      "text": "On a 4-wire three-phase wye circuit where most of the load is nonlinear, the neutral carries harmonic current and counts as a current-carrying conductor when applying the adjustment factors for bundled conductors.",
+      "section": 3,
+      "keywords": [
+        "neutral",
+        "nonlinear loads",
+        "derating",
+        "harmonics"
+      ],
+      "related": [
+        "310.15(C)(1)",
+        "310.16"
+      ],
+      "conceptId": "conductor-sizing",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "230.72(A)",
+      "title": "Grouping of service disconnects",
+      "text": "The two to six service disconnects for a service must be grouped, and each marked with the load it serves. The one exception is a water-pump disconnect that also serves fire protection, which may be remote if a plaque at the group shows where it is.",
+      "section": 2,
+      "keywords": [
+        "service disconnect",
+        "grouping",
+        "service equipment"
+      ],
+      "related": [
+        "230.71(B)",
+        "230.70(A)"
+      ],
+      "conceptId": "disconnecting-means",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "408.38",
+      "title": "Panelboards - Enclosure and Dead Front",
+      "text": "A panelboard goes in a cabinet or enclosure made for it and is dead front, meaning no live parts can be touched from the operating side.",
+      "section": 4,
+      "keywords": [
+        "dead front",
+        "cover",
+        "panelboard",
+        "enclosure"
+      ],
+      "related": [
+        "408.7",
+        "110.12"
+      ],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "408.41",
+      "title": "Panelboards - Grounded Conductor Terminations",
+      "text": "Each grounded (neutral) conductor ends in its own terminal inside the panelboard, one not also used for another conductor. Parallel conductors of one circuit may share a terminal marked for more than one conductor.",
+      "section": 4,
+      "keywords": [
+        "neutral",
+        "terminal",
+        "neutral bar",
+        "panelboard"
+      ],
+      "related": [
+        "110.14(A)"
+      ],
+      "conceptId": "equipment-installation",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "408.4(A)",
+      "title": "Circuit Directory - Clear and Specific Identification",
+      "text": "Each circuit is labelled with a clear, specific purpose. A description may not depend on transient conditions of occupancy, such as a family member's name.",
+      "section": 4,
+      "keywords": [
+        "directory",
+        "label",
+        "occupancy",
+        "circuit identification"
+      ],
+      "related": [
+        "408.4"
+      ],
+      "conceptId": "identification-marking",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.23(A)(5)",
+      "title": "Underwater Luminaires - Wall-Mounted Depth",
+      "text": "The top of a wall-mounted underwater luminaire lens sits at least 18 in. below normal water level, unless the luminaire is listed for a shallower depth.",
+      "section": 6,
+      "keywords": [
+        "pool light",
+        "depth",
+        "18 in",
+        "lens"
+      ],
+      "related": [
+        "680.22(B)"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    }
+  ]
+}

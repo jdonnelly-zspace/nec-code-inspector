@@ -62,6 +62,7 @@ namespace NECInspector.Codes
             {
                 reference = source.reference,
                 referenceLabel = Terminology.ReferenceLabel(source.reference),
+                numbersShown = Terminology.showReferenceNumbers,
                 title = source.title,
                 text = source.text,
                 chapter = source.section,

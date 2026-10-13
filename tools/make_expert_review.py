@@ -19,22 +19,22 @@ CONTENT = os.path.join(ROOT, "Assets", "_Project", "Content")
 # Known concerns from docs/CONTENT_REVIEW.md, keyed by (violationId, profileId)
 VIOLATION_FLAGS = {
     # Corrected in the pre-review (docs/expert-review/PRE_REVIEW.md); the expert confirms against the 2026 book
-    ("BC-DEDICATED-BATH-001", "nec"): "Corrected in pre-review: was 210.11(C)(1); confirm 2026 numbering",
-    ("BC-DEDICATED-KITCHEN-001", "nec"): "Corrected in pre-review: was 210.11(C)(3); confirm 2026 numbering",
-    ("COM-DISC-SIGHT-001", "nec"): "Corrected in pre-review: was 430.110; confirm (A) or (B) of 430.102",
-    ("COM-MOTOR-CTRL-001", "nec"): "Corrected in pre-review: was 430.102(B); confirm whether 430.109 should also be cited",
-    ("COM-RECPT-LOAD-001", "nec"): "Corrected in pre-review: was 220.44; the rule is 220.14(I), cited at article level",
-    ("BC-GFCI-KITCHEN-001", "nec"): "Corrected in pre-review: was 210.8(A)(5); text widened to all kitchen receptacles (2023 wording); confirm 2026",
-    ("COM-MOTOR-OL-001", "nec"): "Corrected in pre-review: 125% applies to service factor 1.15 or more; scene now uses a service factor 1.0 motor",
-    ("RP-BUS-EXCEED-001", "nec"): "Corrected in pre-review: was 408.36; the number-of-devices rule is 408.54",
-    ("BC-GFCI-DISHWASHER-001", "nec"): "Corrected in pre-review: dishwasher GFCI is not new in 2026 (it dates to 2014); confirm",
-    ("GND-ELECTRODE-001", "nec"): "Text now notes 1/2 in is allowed for listed stainless or nonferrous rods; confirm",
-    ("BC-WIRE-KITCHEN-001", "nec"): "Text now includes the sealed-opening condition (medium confidence); confirm",
-    ("COM-FEEDER-TAP-001", "nec"): "Text now lists all four tap conditions (medium confidence); confirm",
+    ("BC-DEDICATED-BATH-001", "nec-2023"): "Corrected in pre-review: was 210.11(C)(1); confirm 2026 numbering",
+    ("BC-DEDICATED-KITCHEN-001", "nec-2023"): "Corrected in pre-review: was 210.11(C)(3); confirm 2026 numbering",
+    ("COM-DISC-SIGHT-001", "nec-2023"): "Corrected in pre-review: was 430.110; confirm (A) or (B) of 430.102",
+    ("COM-MOTOR-CTRL-001", "nec-2023"): "Corrected in pre-review: was 430.102(B); confirm whether 430.109 should also be cited",
+    ("COM-RECPT-LOAD-001", "nec-2023"): "Corrected in pre-review: was 220.44; the rule is 220.14(I), cited at article level",
+    ("BC-GFCI-KITCHEN-001", "nec-2023"): "Corrected in pre-review: was 210.8(A)(5); text widened to all kitchen receptacles (2023 wording); confirm 2026",
+    ("COM-MOTOR-OL-001", "nec-2023"): "Corrected in pre-review: 125% applies to service factor 1.15 or more; scene now uses a service factor 1.0 motor",
+    ("RP-BUS-EXCEED-001", "nec-2023"): "Corrected in pre-review: was 408.36; the number-of-devices rule is 408.54",
+    ("BC-GFCI-DISHWASHER-001", "nec-2023"): "Corrected in pre-review: dishwasher GFCI is not new in 2026 (it dates to 2014); confirm",
+    ("GND-ELECTRODE-001", "nec-2023"): "Text now notes 1/2 in is allowed for listed stainless or nonferrous rods; confirm",
+    ("BC-WIRE-KITCHEN-001", "nec-2023"): "Text now includes the sealed-opening condition (medium confidence); confirm",
+    ("COM-FEEDER-TAP-001", "nec-2023"): "Text now lists all four tap conditions (medium confidence); confirm",
     # Doubts left for the expert
-    ("COM-MULTI-MOTOR-001", "nec"): "Doubt: title is about overcurrent protection but 430.24 covers conductors; protection may be 430.53 or 430.62",
-    ("GND-GEC-001", "nec"): "Doubt: confirm the sub-item of 250.24(A) for connecting the grounding electrode conductor",
-    ("GND-SUPPLEMENT-001", "nec"): "Doubt: confirm the single-rod supplement rule and its exception in the 2026 edition",
+    ("COM-MULTI-MOTOR-001", "nec-2023"): "Doubt: title is about overcurrent protection but 430.24 covers conductors; protection may be 430.53 or 430.62",
+    ("GND-GEC-001", "nec-2023"): "Doubt: confirm the sub-item of 250.24(A) for connecting the grounding electrode conductor",
+    ("GND-SUPPLEMENT-001", "nec-2023"): "Doubt: confirm the single-rod supplement rule and its exception in the 2026 edition",
 }
 CEC_NOTE = "Draft from public summaries: check rule number, sub-item and edition"
 UK_NOTE = "Draft from public summaries: check regulation number, amendment and edition (18th edition, amendments to 2026 unchecked)"
@@ -65,6 +65,7 @@ ARTICLE_FLAGS = {
     "406.9(A)": RESTORED, "406.9(B)": RESTORED, "410.10(A)": RESTORED, "210.23": RESTORED, "220.18": RESTORED,
 }
 
+NEC2026_NOTE = "2026 edition, draft: copied from the 2023 entry; only Article 220 to 120 is a known renumbering. Confirm the 2026 number and wording."
 REVIEW_COLUMNS = ["Reference correct? (Y/N)", "Text accurate? (Y/N)", "Correct reference", "Edition notes", "Comments"]
 
 
@@ -178,7 +179,7 @@ def main():
     n_extra = write_csv("4-cards-and-sandbox.csv", ["Concern", "Kind", "Code", "Id", "Title or circuit", "References", "What it says"], card_and_sandbox_rows())
     # Numbers 2 and 3 stay with the CEC and NEC and 4 with the cards worksheet, so existing references keep working; later codes follow
     folders = sorted(d for d in os.listdir(CODES) if os.path.isdir(os.path.join(CODES, d)))
-    numbered = [(2, 'cec'), (3, 'nec')] + [(5 + i, d) for i, d in enumerate(d for d in folders if d not in ('cec', 'nec'))]
+    numbered = [(2, 'cec'), (3, 'nec-2023')] + [(5 + i, d) for i, d in enumerate(d for d in folders if d not in ('cec', 'nec-2023'))]
     for i, pid in [(n, d) for n, d in numbered if d in folders]:
         counts[pid] = write_csv(f"{i}-articles-{pid}.csv",
                                 ["Concern", "Reference", "Title", "Our paraphrase", "New in edition", "Use in app", "Skill tag"],

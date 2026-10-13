@@ -20,7 +20,7 @@ namespace NECInspector.LogicTests
             var manifest = new CodeProfileManifest { id = "demo", displayName = "Demo Code", edition = "2030", reviewStatus = "draft" };
             var terminology = new CodeTerminology
             {
-                codeName = "DEMO", referencePrefix = "Rule ", referenceNoun = "Rule", sectionLabel = "Section",
+                codeName = "DEMO", referencePrefix = "Rule ", referenceNoun = "Rule", sectionLabel = "Section", showReferenceNumbers = true,
                 terms = new TermEntry[0]
             };
             var articles = new[]
@@ -47,6 +47,7 @@ namespace NECInspector.LogicTests
 
             t.Equal("Rule 26-700", profile.GetArticle("26-700").referenceLabel, "label uses the profile's prefix");
             t.Equal("Rule 26-700 - Sinks and GFCI", profile.GetArticle("26-700").DisplayString, "display string");
+            t.Equal("Rule 26-700", profile.GetArticle("26-700").ShownLabel, "numbers shown when the profile shows them");
 
             t.IsTrue(profile.GetArticle("26-712(D)(III)") != null, "lookup ignores letter case");
             t.Equal("26-712", profile.GetArticle("26-712").reference, "exact reference wins over a longer one");
@@ -81,7 +82,9 @@ namespace NECInspector.LogicTests
             var profile = nec.Build();
 
             t.IsTrue(profile.HasOwnTables, "NEC has its own tables");
-            t.Equal("Art. 250.24(A)(1)", profile.GetArticle("250.24(A)(1)").referenceLabel, "NEC reference label");
+            t.Equal("Art. 250.24(A)(1)", profile.GetArticle("250.24(A)(1)").referenceLabel, "NEC reference label (kept in the data)");
+            t.Equal("", profile.GetArticle("250.24(A)(1)").ShownLabel, "students do not see the NEC rule number");
+            t.Equal(profile.GetArticle("250.24(A)(1)").title, profile.GetArticle("250.24(A)(1)").DisplayString, "students see the entry title only");
             t.IsTrue(profile.GetArticle("250.24") != null, "parent lookup finds the first child");
             t.Equal("250.52(A)(5)", profile.GetArticle("250.52(A)(5)").reference, "exact lookup");
             t.IsTrue(profile.GetArticle("250.5") == null, "250.5 is not a parent of 250.50");

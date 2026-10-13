@@ -38,6 +38,11 @@ namespace NECInspector.LogicTests
             t.Equal("General practice", nec.ReferenceLabel("general practice"), "general practice match ignores case");
             t.Equal("", nec.ReferenceLabel(""), "empty reference");
             t.Equal("", nec.ReferenceLabel(null), "null reference");
+            t.Equal("", nec.ShownReference("250.24(A)(1)"), "students do not see the rule number by default");
+            t.Equal("General practice", nec.ShownReference("General Practice"), "general practice is still labelled");
+            nec.showReferenceNumbers = true;
+            t.Equal("Art. 250.24(A)(1)", nec.ShownReference("250.24(A)(1)"), "numbers appear only when the profile turns them on");
+            nec.showReferenceNumbers = false;
 
             t.Equal("Rule references", nec.CitationsHeading, "citations heading never names the code");
             t.Equal("Chapters", nec.SectionsHeading, "sections heading uses the section name only");

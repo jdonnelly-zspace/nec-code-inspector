@@ -65,7 +65,7 @@ namespace NECInspector.LogicTests
             c = Clone(certs); c.templates[1].certificateId = c.templates[0].certificateId;
             t.IsTrue(ContentFileValidator.Validate(c).Any(e => e.Contains("duplicate")), "a duplicate certificate id is rejected");
 
-            var cards = Read<QuickReferenceFile>("QuickReference/cards-nec.json");
+            var cards = Read<QuickReferenceFile>("QuickReference/cards-nec-2023.json");
             var q = Clone(cards); q.cards[0].category = "Plumbing";
             t.IsTrue(ContentFileValidator.Validate(q).Any(e => e.Contains("category")), "an unknown card category is rejected");
             q = Clone(cards); q.cards[0].codeReferences = new string[0];

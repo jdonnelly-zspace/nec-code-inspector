@@ -2,6 +2,19 @@
 
 A log of the owner's decisions that shape the product. Newest first. Each entry says what was decided, what it affects and what it leaves open.
 
+## 2026-10-12: NEC editions are profiles, and rule numbers stay out of the student UI
+
+**Context.** The TODO asked which NEC edition's numbering the content should follow (open decision 6). The owner's answer: the edition is a backend matter, the app teaches
+skills, competencies, procedures and violations, and credentials (and the code's article numbers) only inform them.
+
+| # | Decision | Effect |
+|---|---|---|
+| D-5 | **Both NEC editions are profiles:** `nec-2023` (the default; the verified content) and `nec-2026` (draft). Every NEC violation and quick reference card carries a citation for each. | `StreamingAssets/Codes/nec-2023`, `nec-2026`; `CodeProfileIds.Nec2023`, `Nec2026` (`Nec` stays an alias for 2023). The held load-calculation batch no longer waits on an edition choice: it is written for both. |
+| D-6 | **`nec-2026` is a draft copied from 2023.** The only change applied is the renumbering known from secondary sources (Article 220 becomes 120). Everything else is unverified. | It is `draft`, so the US region keeps `nec-2023` until an expert reviews 2026. Sandbox designs exist for 2023 only (the 2026 dwelling load values are unverified). |
+| D-7 | **Rule numbers are hidden from students.** `CodeTerminology.showReferenceNumbers` is false for every code; entries show their title, never "Art. 210.8". Numbers stay in the data for scoring, alignment and review. | The review, reference, card, flagging and sandbox panels show titles. The text students read still quotes numbers in about 70 places (a test warns); they need rewriting. |
+
+**Left open.** The 2026 numbers and values need a credential expert and the 2026 text; the Article 200 renumbering reported by one source is unconfirmed; the student-facing text quoting numbers; chapter names ("Chapter 2") still show in the reference panel.
+
 ## 2026-10-12: occupation-driven product, proposed skills, waves and utility line work
 
 **Context.** The market view and the occupation research (`docs/product/PRD.md`, `docs/occupations/`) showed that the NEC was the starting point, not the definition of the
