@@ -1,0 +1,285 @@
+{
+  "cards": [
+    {
+      "cardId": "QRC-GFCI-001-UK",
+      "profileId": "bs7671",
+      "title": "RCD protection for sockets and lighting",
+      "category": "GFCIProtection",
+      "summary": "Socket-outlets rated up to 32 A on AC final circuits need additional protection from an RCD with a rated trip current of 30 mA or less. For one group of other locations the protection can be left out, but only after a documented risk assessment. In homes, AC final circuits that supply luminaires also need an RCD of 30 mA or less.",
+      "keyRule": "Socket-outlets up to 32 A, and household lighting circuits, need an RCD of 30 mA or less.",
+      "codeReferences": [
+        "411.3.3",
+        "411.3.4"
+      ],
+      "keywords": [
+        "RCD",
+        "socket-outlet",
+        "30 mA",
+        "lighting",
+        "additional protection"
+      ],
+      "minimumDifficulty": "Apprentice"
+    },
+    {
+      "cardId": "QRC-AFCI-001-UK",
+      "profileId": "bs7671",
+      "title": "Arc fault detection devices",
+      "category": "AFCIProtection",
+      "summary": "An arc fault detection device (AFDD) detects dangerous arcing in a final circuit. It is recommended on single-phase AC circuits that feed socket-outlets up to 32 A, and is described as required in higher-risk residential buildings, houses in multiple occupation, student accommodation and care homes. The exact wording is still being checked.",
+      "keyRule": "An AFDD detects dangerous arcing; it is recommended on single-phase socket-outlet circuits up to 32 A.",
+      "codeReferences": [
+        "421.1.7"
+      ],
+      "keywords": [
+        "AFDD",
+        "arc fault",
+        "arcing",
+        "socket-outlet",
+        "care home"
+      ],
+      "minimumDifficulty": "Journeyman"
+    },
+    {
+      "cardId": "QRC-EARTHING-001-UK",
+      "profileId": "bs7671",
+      "title": "Earthing arrangements",
+      "category": "Grounding",
+      "summary": "The supply's earthing arrangement decides how a fault is cleared. TN-S: the supplier provides a separate earth. TN-C-S (also called PME): the supplier combines neutral and earth, so the installation's earth comes from the neutral. TT: the installation uses its own earth electrode, so RCD protection is needed to clear faults, and the electrode resistance multiplied by the RCD trip current must stay at or below 50 V. The earthing conductor runs from the main earthing terminal to the electrode or the supplier's earth terminal, and is sized and protected against corrosion and mechanical damage.",
+      "keyRule": "Know TN-S, TN-C-S and TT: the arrangement decides how a fault clears and what protection is needed.",
+      "codeReferences": [
+        "312.2",
+        "542.2",
+        "542.3"
+      ],
+      "keywords": [
+        "TN-S",
+        "TN-C-S",
+        "PME",
+        "TT",
+        "earth electrode",
+        "earthing conductor"
+      ],
+      "minimumDifficulty": "Journeyman"
+    },
+    {
+      "cardId": "QRC-BONDING-001-UK",
+      "profileId": "bs7671",
+      "title": "Protective bonding",
+      "category": "Grounding",
+      "summary": "Extraneous metal that enters the building, such as gas and water service pipes and structural steel, is bonded to the main earthing terminal so that touch voltages stay low if a fault occurs. The size of the main bonding conductor follows from the supply neutral or earthing conductor: usually at least 6 mm² of copper and at most 25 mm², with 10 mm² common on PME supplies. In a room with a bath or shower, extra bonding can be left out only if all circuits there have RCD protection and automatic disconnection, and all incoming metal is already main-bonded. The circuit protective conductor is sized by the adiabatic equation or from a simplified table.",
+      "keyRule": "Bond incoming metal pipes and steel to the main earthing terminal, and size the bonding conductor from the supply conductor.",
+      "codeReferences": [
+        "411.3.1.2",
+        "544.1",
+        "701.415.2",
+        "543.1"
+      ],
+      "keywords": [
+        "bonding",
+        "main bonding",
+        "extraneous metal",
+        "cpc",
+        "bathroom"
+      ],
+      "minimumDifficulty": "Journeyman"
+    },
+    {
+      "cardId": "QRC-OVERCURRENT-001-UK",
+      "profileId": "bs7671",
+      "title": "Overload and short-circuit protection",
+      "category": "Overcurrent",
+      "summary": "The protective device rating must sit between the circuit's design current and the cable's current-carrying capacity (Ib ≤ In ≤ Iz), and the device's guaranteed tripping current must not exceed 1.45 times the cable capacity. The device must also clear a short circuit before the cable overheats: the cable's heat-withstand limit must be higher than the let-through energy of the device.",
+      "keyRule": "Design current, then device rating, then cable capacity, in that order; and clear a short circuit before the cable overheats.",
+      "codeReferences": [
+        "433.1",
+        "434.5"
+      ],
+      "keywords": [
+        "overload",
+        "short circuit",
+        "Ib In Iz",
+        "protective device",
+        "cable"
+      ],
+      "minimumDifficulty": "Journeyman"
+    },
+    {
+      "cardId": "QRC-CABLESIZE-001-UK",
+      "profileId": "bs7671",
+      "title": "Cable capacity and voltage drop",
+      "category": "WireSizing",
+      "summary": "A cable's current-carrying capacity depends on how it is installed, the ambient temperature, grouping with other circuits and thermal insulation. Voltage drop from the origin of the installation to the load must stay within limits, commonly 3 percent for lighting and 5 percent for other circuits on a 230 V public supply.",
+      "keyRule": "Capacity depends on installation, temperature, grouping and insulation; keep voltage drop to about 3 percent for lighting and 5 percent otherwise.",
+      "codeReferences": [
+        "523",
+        "525"
+      ],
+      "keywords": [
+        "current-carrying capacity",
+        "derating",
+        "voltage drop",
+        "grouping",
+        "insulation"
+      ],
+      "minimumDifficulty": "Journeyman"
+    },
+    {
+      "cardId": "QRC-CIRCUITS-001-UK",
+      "profileId": "bs7671",
+      "title": "Dividing an installation into circuits",
+      "category": "BranchCircuits",
+      "summary": "The installation is divided into several circuits so that a fault affects as little as possible, safe maintenance is possible and nuisance tripping is limited. There is no fixed list of dedicated circuits.",
+      "keyRule": "Divide the installation so a fault affects as little as possible and maintenance is safe.",
+      "codeReferences": [
+        "314.1"
+      ],
+      "keywords": [
+        "circuits",
+        "final circuit",
+        "nuisance tripping",
+        "maintenance"
+      ],
+      "minimumDifficulty": "Apprentice"
+    },
+    {
+      "cardId": "QRC-DEMAND-001-UK",
+      "profileId": "bs7671",
+      "title": "Maximum demand",
+      "category": "LoadCalculation",
+      "summary": "The designer assesses the maximum demand, with diversity, to size the supply and the conductors. The standard diversity tables are in industry guidance, not in the regulations themselves.",
+      "keyRule": "Assess the maximum demand, with diversity, before sizing the supply and conductors.",
+      "codeReferences": [
+        "311.1"
+      ],
+      "keywords": [
+        "maximum demand",
+        "diversity",
+        "supply",
+        "sizing"
+      ],
+      "minimumDifficulty": "Journeyman"
+    },
+    {
+      "cardId": "QRC-ISOLATE-001-UK",
+      "profileId": "bs7671",
+      "title": "Isolation and the main switch",
+      "category": "DisconnectingMeans",
+      "summary": "Every installation can be isolated by a main switch at its origin that opens all live conductors, and each circuit or item of equipment has isolation and switching suited to its use. The main switch must be accessible, and isolators can be secured against being switched on by mistake.",
+      "keyRule": "A main switch at the origin opens all live conductors and is accessible; isolators can be secured off.",
+      "codeReferences": [
+        "462"
+      ],
+      "keywords": [
+        "main switch",
+        "isolation",
+        "isolator",
+        "switching",
+        "lock off"
+      ],
+      "minimumDifficulty": "Journeyman"
+    },
+    {
+      "cardId": "QRC-MARKING-001-UK",
+      "profileId": "bs7671",
+      "title": "Charts, notices and cable colours",
+      "category": "Marking",
+      "summary": "A durable, legible chart, diagram or schedule at each consumer unit or distribution board shows the type and make-up of every circuit. In homes, the schedule from the electrical certificate fixed at the board usually meets this. A notice at the consumer unit tells users to press the RCD test button every six months. Single-phase installations use brown for the line, blue for the neutral and green-and-yellow for the circuit protective conductor; three-phase installations use brown, black and grey for the lines.",
+      "keyRule": "Label every circuit at the board, fit the RCD test notice, and use brown, blue and green-and-yellow correctly.",
+      "codeReferences": [
+        "514.9.1",
+        "514.12",
+        "514.3"
+      ],
+      "keywords": [
+        "circuit chart",
+        "schedule",
+        "RCD test notice",
+        "colours",
+        "brown",
+        "blue"
+      ],
+      "minimumDifficulty": "Apprentice"
+    },
+    {
+      "cardId": "QRC-CONCEALED-001-UK",
+      "profileId": "bs7671",
+      "title": "Cables concealed in walls",
+      "category": "General",
+      "summary": "A cable concealed less than 50 mm below a wall surface must run in a safe zone (vertical and horizontal runs tied to accessories and corners) and have 30 mA RCD protection, unless it has another protection. A concealed cable can avoid the RCD requirement if it has an earthed metal sheath or earthed conduit or trunking, is protected against nails and screws by its construction or an earthed barrier, or is a SELV or PELV circuit.",
+      "keyRule": "A cable less than 50 mm deep in a wall runs in a safe zone with 30 mA RCD protection, unless it has one of the listed alternatives.",
+      "codeReferences": [
+        "522.6.202",
+        "522.6.204"
+      ],
+      "keywords": [
+        "concealed cable",
+        "safe zone",
+        "RCD",
+        "50 mm",
+        "nails and screws"
+      ],
+      "minimumDifficulty": "Journeyman"
+    },
+    {
+      "cardId": "QRC-SPECIAL-001-UK",
+      "profileId": "bs7671",
+      "title": "Bathrooms, pools and charging points",
+      "category": "SpecialLocations",
+      "summary": "A room with a bath or shower is divided into zones. Zone 0 is inside the bath or shower tray, zone 1 is above it up to 2.25 m, and zone 2 extends 0.6 m beyond zone 1. Only very low voltage (SELV) equipment is allowed in zone 0, socket-outlets other than shaver units are not allowed in zones 0 to 2, and IP ratings and RCD protection apply across the zones. A swimming pool has zones 0, 1 and 2 too: zone 0 is the basin, where only SELV equipment is allowed, and metal parts such as ladders and rails are connected together by a supplementary bonding conductor. Each electric vehicle charging point needs 30 mA RCD protection plus protection against residual direct current. The exact wording for charging points is still being checked.",
+      "keyRule": "Zones decide what may go where in bathrooms and pools; charging points need an RCD and direct-current protection.",
+      "codeReferences": [
+        "701",
+        "702",
+        "702.415.2",
+        "722"
+      ],
+      "keywords": [
+        "bathroom",
+        "zones",
+        "swimming pool",
+        "SELV",
+        "charging point",
+        "EV"
+      ],
+      "minimumDifficulty": "Journeyman"
+    },
+    {
+      "cardId": "QRC-ACCESS-001-UK",
+      "profileId": "bs7671",
+      "title": "Access for operation and maintenance",
+      "category": "WorkingSpace",
+      "summary": "Equipment is installed so that it can be reached for operating, inspecting, testing and maintaining. There are no fixed clearance dimensions in the regulations; a duty to provide adequate working space comes from separate law.",
+      "keyRule": "Install equipment so it can be reached for operating, inspecting, testing and maintaining.",
+      "codeReferences": [
+        "132.12"
+      ],
+      "keywords": [
+        "access",
+        "working space",
+        "maintenance",
+        "inspection"
+      ],
+      "minimumDifficulty": "Apprentice"
+    },
+    {
+      "cardId": "QRC-CONSUMERUNIT-001-UK",
+      "profileId": "bs7671",
+      "title": "Consumer units and workmanship",
+      "category": "General",
+      "summary": "In homes, consumer units and similar boards are either made of non-combustible material (steel counts) or housed in a non-combustible cabinet. Installation work is carried out by competent people with proper materials, and connections are secure, suitable for the conductor and accessible for inspection.",
+      "keyRule": "Use a non-combustible consumer unit, competent workers and secure connections that can be inspected.",
+      "codeReferences": [
+        "421.1.201",
+        "134.1.1"
+      ],
+      "keywords": [
+        "consumer unit",
+        "non-combustible",
+        "workmanship",
+        "connections",
+        "competent"
+      ],
+      "minimumDifficulty": "Apprentice"
+    }
+  ]
+}
