@@ -9,7 +9,7 @@ Helpers carry, stage and cut materials, drill and thread openings, pull and stri
 
 - O*NET: https://www.onetonline.org/link/details/47-3013.00
 - BLS: https://www.bls.gov/ooh/construction-and-extraction/electricians.htm
-- Workers: No separate BLS figure for helpers found; the Electricians page (47-2111) reports about 821,000 jobs in 2025; growth: Electricians 9 percent, 2025 to 2035 (helpers not given separately on the page opened); openings: About 75,900 per year for electricians; median pay: Electricians $63,190 per year ($30.38 per hour); helper pay not shown on the page opened
+- Workers: 65,000 (2025, O*NET OnLine; the BLS Handbook has no separate page for helpers). See docs/product/MARKET_FACTS.md; growth: Electricians 9 percent, 2025 to 2035 (helpers not given separately on the page opened); openings: About 75,900 per year for electricians; median pay: Electricians $63,190 per year ($30.38 per hour); helper pay not shown on the page opened
 
 ## Path into the occupation
 

@@ -9,7 +9,7 @@ These workers install, program, maintain and repair wiring and equipment for bur
 
 - O*NET: https://www.onetonline.org/link/summary/49-2098.00
 - BLS: https://www.bls.gov/oes/2023/May/oes492098.htm
-- Workers: 83,540 (May 2023, OEWS); growth: O*NET summary page shows projected growth of about 7% or more through 2035; BLS Occupational Outlook Handbook has no profile page for this occupation (the OOH electrical installers page does not cover it); openings: not confirmed (no OOH profile); median pay: $56,430 per year, $27.13 per hour (May 2023 OEWS); O*NET page shows a newer median of about $60,070 per year
+- Workers: 86,300 (2025, O*NET OnLine; the BLS Handbook page did not open and a search found none). The May 2023 OEWS figure was 83,540. See docs/product/MARKET_FACTS.md; growth: O*NET summary page shows projected growth of about 7% or more through 2035; BLS Occupational Outlook Handbook has no profile page for this occupation (the OOH electrical installers page does not cover it); openings: not confirmed (no OOH profile); median pay: $56,430 per year, $27.13 per hour (May 2023 OEWS); O*NET page shows a newer median of about $60,070 per year
 
 ## Path into the occupation
 
