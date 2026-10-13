@@ -54,10 +54,10 @@ coverage ratings (a judgement, not a test). After phase 1 "in part" mostly means
 | O*NET code | Occupation | Workers (BLS or O*NET) | Procedures documented | Fit today | Verdict |
 |---|---|---|---|---|---|
 | 47-2111 | Electricians | 821,000 (2025) | 7 | 100% (was 57%) | Core, phase 1. Every procedure has a lesson and step practice; the 3D scenes and hands-on trainers (a virtual meter) remain. |
-| 47-3013 | Helpers, electricians | about 85,000 | 8 | 100% (was 38%) | Core, phase 1. The safety and basic skills it lacked are now lessons with practice. |
-| 47-4011 | Construction and building inspectors | about 106,000 | 7 | 100% (was 71%) | Best fit: the inspection scenarios are its work. Stages and code administration are now lessons; a staged inspection scene remains. |
-| 47-2231 | Solar photovoltaic installers | about 22,000 | 7 | 71% (was 57%) | Phase 3. Needs a PV and storage skill (new content in NEC Articles 690, 705, 706), which depends on the 2026 numbering being verified. |
-| 49-2098 | Security and fire alarm systems installers | about 85,000 | 7 | 43% | Phase 3. Needs low-voltage and fire alarm content and a second code (the fire alarm standard). |
+| 47-3013 | Helpers, electricians | 65,000 (2025) | 8 | 100% (was 38%) | Core, phase 1. The safety and basic skills it lacked are now lessons with practice. |
+| 47-4011 | Construction and building inspectors | 153,900 (2025) | 7 | 100% (was 71%) | Best fit: the inspection scenarios are its work. Stages and code administration are now lessons; a staged inspection scene remains. |
+| 47-2231 | Solar photovoltaic installers | 31,100 (2025) | 7 | 71% (was 57%) | Phase 3. Needs a PV and storage skill (new content in NEC Articles 690, 705, 706), which depends on the 2026 numbering being verified. |
+| 49-2098 | Security and fire alarm systems installers | 86,300 (2025) | 7 | 43% | Phase 3. Needs low-voltage and fire alarm content and a second code (the fire alarm standard). |
 | 49-9051 | Electrical power-line installers and repairers | 131,900 (2025) | 8 | 38% (was 12%) | **Phase 2, blocked.** Governed mainly by the NESC and OSHA line-work rules, not the NEC. Decided: build it (a NESC profile and utility scenes), after the licence decision. |
 
 ### 4.2 Adjacent occupations
@@ -133,13 +133,13 @@ The market view plans the six core occupations for a first-half-2027 launch. The
 The market view claims: a primary US education TAM of $26 million (6,400 programs at $250 to $375 per device, 15 devices a program), an adjacent TAM of $34.6 million, and a combined $60.6 million
 across 24 occupations. The occupation research checked what it could against O*NET and BLS:
 
-- Worker and opening totals do not reconcile: the 18 adjacent occupations alone sum to about 6.4 million workers, so "about 6.7 million" for all 24 looks understated or uses another basis; the 700,000 openings figure is plausible.
-- "All Bright Outlook" is false for five of the 18 (sheet metal workers, helpers of plumbers, energy engineers, energy auditors, telecom installers).
+- Worker and opening totals do not reconcile (checked on the live O*NET and BLS pages, 2026-10-13): counting each code once, the 23 distinct occupations have about 7.3 million workers, not 6.7 million, and about 616,000 annual openings, not 700,000; about 78 percent of the adjacent workers are general maintenance workers, laborers, construction managers and supervisors.
+- "All Bright Outlook" is false for five of the 18 (sheet metal workers, helpers of plumbers, energy engineers, energy auditors, telecom installers), confirmed on each O*NET page.
 - The document says 24 occupations but lists 6 core plus 18 adjacent with one repeated (49-2098 appears in both groups); codes and titles for 49-9021, 49-2095 and one 49-9071 entry are wrong or mislabelled.
 - Three adjacent occupations that look electrical (powerhouse and substation repairers, transportation equipment installers, energy engineers) are not NEC occupations, and elevator work is governed by a different standard.
 - The pricing, penetration and revenue figures are the owner's business assumptions; none was checked. The document itself notes that the NFPA licence cost is not modelled.
 
-Details: `docs/occupations/ADJACENT.md`. The market view should be corrected before it is used outside the team.
+Details: `docs/product/MARKET_FACTS.md` (every figure with its page, date and status) and `docs/occupations/ADJACENT.md`. The market view should be corrected before it is used outside the team. The market sizes, program and device counts and prices are still the owner's unverified assumptions.
 
 ## 9. Success measures
 
