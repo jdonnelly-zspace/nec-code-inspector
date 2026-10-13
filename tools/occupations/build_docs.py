@@ -115,10 +115,10 @@ def traceability(occs, proposed):
         for p in d["procedures"]:
             for s in p.get("plannedSkills", []):
                 need[s].append((d["soc"], p["name"]))
-    L += ["", "## Skills still to build: how many procedures need each", "", "| Skill | Wave | Status | Procedures | Occupations | Why |", "|---|---|---|---|---|---|"]
+    L += ["", "## Skills still to build: how many procedures need each", "", "| Skill | Phase | Status | Procedures | Occupations | Why |", "|---|---|---|---|---|---|"]
     for s in sorted(P, key=lambda k: -len(need[k])):
         socs = sorted({a for a, _ in need[s]})
-        L.append(f"| {s} | {P[s].get('wave', '')} | {P[s]['status']} | {len(need[s])} | {', '.join(socs)} | {cell(P[s]['summary'])} |")
+        L.append(f"| {s} | {P[s].get('phase', '')} | {P[s]['status']} | {len(need[s])} | {', '.join(socs)} | {cell(P[s]['summary'])} |")
     L += ["", "The reasons, standards and first content for each are in `docs/occupations/proposed-skills.json`.", ""]
     return L
 

@@ -5,7 +5,7 @@
       "socCode": "47-2111",
       "title": "Electrician",
       "summary": "Installs, maintains and repairs the wiring, lighting, power and control systems of homes and buildings, working from drawings and the code, and tests the result.",
-      "wave": 1,
+      "phase": 1,
       "available": true,
       "reviewStatus": "draft",
       "procedures": [
@@ -284,275 +284,11 @@
       ]
     },
     {
-      "id": "solar-installers",
-      "socCode": "47-2231",
-      "title": "Solar installer",
-      "summary": "Installs solar panels, wiring, inverters and disconnects on roofs and buildings, and tests and connects the system.",
-      "wave": 2,
-      "available": false,
-      "reviewStatus": "draft",
-      "procedures": [
-        {
-          "id": "solar-installers-1",
-          "name": "Site survey and roof fall protection",
-          "purpose": "Assess the roof and site, then keep workers from falling during array installation.",
-          "whenUsed": "Whenever work is at 6 feet or more above a lower level, which includes essentially all rooftop PV work.",
-          "role": "Every crew member; the employer provides systems and training.",
-          "steps": [
-            "Review plans and permit conditions and the adopted fire-code setbacks.",
-            "Walk the roof and check condition, slope, decking and attachment points.",
-            "Locate the service panel, meter, conduit routes and shading sources.",
-            "Identify overhead power lines, skylights, and roof edges and openings.",
-            "Inspect harness, lanyard or rope grab and connectors before use.",
-            "Install anchors into structural members, not sheathing alone.",
-            "Set ladder at a safe angle, secure it and extend it above the roof edge.",
-            "Connect to the anchor before stepping onto the roof.",
-            "Use guardrails or a safety monitor where the plan calls for them.",
-            "Keep tools and modules from sliding off the roof."
-          ],
-          "hazards": [
-            "Falls from roof edge",
-            "Falls from ladders",
-            "Slips on wet or dusty roofs",
-            "Dropped objects",
-            "Weak or wet roofing",
-            "Overhead power lines"
-          ],
-          "controls": [
-            "Personal fall arrest systems, guardrails or monitored warning lines per the safety regulations",
-            "Documented fall-protection training",
-            "Equipment inspection",
-            "Ladder securing and three points of contact"
-          ],
-          "skills": [
-            "jobsite-safety"
-          ],
-          "coverage": "partial",
-          "practice": true,
-          "reviewStatus": "draft"
-        },
-        {
-          "id": "solar-installers-2",
-          "name": "Array installation, DC wiring and connector handling",
-          "purpose": "Mount modules and wire strings with listed, correctly mated connectors and protected conductors.",
-          "whenUsed": "During the main install phase after racking is set.",
-          "role": "PV installers, with an electrician where state rules require.",
-          "steps": [
-            "Set racking and attach modules per manufacturer instructions.",
-            "Cover or keep modules shaded when practical while wiring.",
-            "Mate connectors of the same listed type and check they are fully seated.",
-            "Route and secure PV wire and cable so it is protected from damage and abrasion.",
-            "Label and group strings as shown on the single-line diagram.",
-            "Run DC circuits in the approved wiring method to the combiner or inverter.",
-            "Seal roof penetrations and confirm conduit and box fittings.",
-            "Verify all work against the plan set before closing up."
-          ],
-          "hazards": [
-            "Energized DC circuits whenever lit",
-            "DC arc from damaged or loose connectors",
-            "Module handling injuries",
-            "Burns from hot surfaces"
-          ],
-          "controls": [
-            "Listed or field-evaluated equipment",
-            "Matched connectors and torque to manufacturer values",
-            "Insulated tools and no jewelry",
-            "Working in pairs",
-            "Module covering or shading while connecting"
-          ],
-          "skills": [
-            "wiring-methods",
-            "conductor-sizing",
-            "equipment-installation"
-          ],
-          "coverage": "partial",
-          "practice": false,
-          "reviewStatus": "draft"
-        },
-        {
-          "id": "solar-installers-3",
-          "name": "Inverter, combiner, disconnect and rapid shutdown installation",
-          "purpose": "Place and connect conversion and shutdown equipment so the array can be isolated and firefighters are protected.",
-          "whenUsed": "After array wiring, before commissioning.",
-          "role": "Installer or electrician.",
-          "steps": [
-            "Mount inverter and combiner in a code-compliant, accessible location per listing.",
-            "Install the PV disconnecting means and any required AC disconnect.",
-            "Install rapid shutdown devices or listed system components per manufacturer.",
-            "Wire the initiating device where the system needs one and place it per plan.",
-            "Connect overcurrent protection sized from the design.",
-            "Apply required rapid shutdown and warning labels.",
-            "Test the shutdown function and record the result."
-          ],
-          "hazards": [
-            "Shock from DC and AC terminals",
-            "Arc flash at combiners",
-            "Firefighter exposure to energized conductors"
-          ],
-          "controls": [
-            "Rapid shutdown limiting controlled conductors to low voltage within a set time",
-            "Lockable disconnects",
-            "Listed shutdown equipment used per instructions",
-            "Clear labeling"
-          ],
-          "skills": [
-            "disconnecting-means",
-            "overcurrent-protection",
-            "equipment-installation",
-            "identification-marking"
-          ],
-          "coverage": "partial",
-          "practice": false,
-          "reviewStatus": "draft"
-        },
-        {
-          "id": "solar-installers-4",
-          "name": "Grounding and bonding of the array",
-          "purpose": "Bond all exposed metal and provide a fault path so ground faults are detected and cleared.",
-          "whenUsed": "During racking and wiring, and verified at commissioning.",
-          "role": "Installer or electrician.",
-          "steps": [
-            "Use racking and bonding hardware listed for module bonding.",
-            "Bond module frames and rails per the hardware instructions.",
-            "Run the equipment grounding conductor from array to inverter and panel.",
-            "Size the EGC from the overcurrent device rating and protect small sizes from damage.",
-            "Connect any optional grounding electrode to the premises electrode system.",
-            "Confirm ground-fault protection is present in the inverter.",
-            "Test ground continuity before energizing."
-          ],
-          "hazards": [
-            "Shock from energized frames",
-            "Fire from undetected ground faults",
-            "Corrosion from mismatched metals"
-          ],
-          "controls": [
-            "Listed bonding devices",
-            "Material-compatible connectors",
-            "Ground-fault detection and interruption",
-            "Continuity testing"
-          ],
-          "skills": [
-            "earthing-bonding"
-          ],
-          "coverage": "partial",
-          "practice": false,
-          "reviewStatus": "draft"
-        },
-        {
-          "id": "solar-installers-5",
-          "name": "Commissioning tests and electrically safe testing",
-          "purpose": "Prove the installed system is correct and safe before energizing and handing over.",
-          "whenUsed": "After installation, before inverter start-up and utility permission.",
-          "role": "Installer or commissioning technician, often two people.",
-          "steps": [
-            "Visually inspect wiring, labels, grounding and mounting with the system off.",
-            "Check meter on a known source, test, then recheck the meter.",
-            "Test continuity of grounding conductors.",
-            "Check polarity of each string at the combiner.",
-            "Measure open-circuit voltage per string and compare with temperature-corrected expected values.",
-            "Measure short-circuit current per string where the procedure calls for it.",
-            "Test insulation resistance with the disconnects open.",
-            "Start the inverter per manufacturer steps and verify AC side and shutdown.",
-            "Record results in the commissioning report."
-          ],
-          "hazards": [
-            "Shock and arc during test",
-            "Reverse polarity damage",
-            "Hidden insulation faults"
-          ],
-          "controls": [
-            "Test sequence with polarity before connection",
-            "Rated meters and gloves",
-            "Live-dead-live voltage check",
-            "Open disconnects for insulation tests",
-            "Documented results"
-          ],
-          "skills": [
-            "testing-and-measurement",
-            "electrically-safe-work"
-          ],
-          "coverage": "none",
-          "practice": false,
-          "reviewStatus": "draft"
-        },
-        {
-          "id": "solar-installers-6",
-          "name": "Interconnection and utility hand-off",
-          "purpose": "Connect the system to the building service and obtain utility permission to operate.",
-          "whenUsed": "Design and permitting for the application; after inspection for permission to operate.",
-          "role": "Installer company, electrician, inspector and the utility.",
-          "steps": [
-            "Submit the interconnection application with equipment data.",
-            "Choose load-side or supply-side connection per panel limits.",
-            "Install the connection and the required plaque or directory at the service.",
-            "Obtain permit sign-off and pass the AHJ inspection.",
-            "Provide documents to the utility.",
-            "Wait for utility permission to operate before exporting.",
-            "Leave labels, as-builts and manuals for the owner."
-          ],
-          "hazards": [
-            "Overloaded busbar",
-            "Backfeed to utility workers",
-            "Operating before approval"
-          ],
-          "controls": [
-            "Busbar and rating checks",
-            "Utility-interactive listed inverter",
-            "Inspection before energizing",
-            "Permission to operate"
-          ],
-          "skills": [
-            "overcurrent-protection",
-            "disconnecting-means",
-            "load-calculation"
-          ],
-          "coverage": "partial",
-          "practice": false,
-          "reviewStatus": "draft"
-        },
-        {
-          "id": "solar-installers-7",
-          "name": "Battery storage installation",
-          "purpose": "Install energy storage with correct disconnects, protection, location and shutdown.",
-          "whenUsed": "When a project includes batteries.",
-          "role": "Electrician or manufacturer-certified installer.",
-          "steps": [
-            "Confirm the unit is listed for battery storage and read its instructions.",
-            "Check allowed location and spacing with the fire code and AHJ.",
-            "Mount unit and install the lockable disconnect in sight or within the stated distance.",
-            "Size conductors and protection for continuous current.",
-            "Install the emergency shutdown device where required.",
-            "Label the system and apply any shock or arc warnings.",
-            "Commission and log maintenance records."
-          ],
-          "hazards": [
-            "Thermal runaway fire",
-            "High fault current",
-            "Stored energy shock"
-          ],
-          "controls": [
-            "Listed equipment",
-            "Spacing and capacity limits",
-            "Disconnect and shutdown",
-            "Commissioning"
-          ],
-          "skills": [
-            "disconnecting-means",
-            "equipment-installation",
-            "special-locations"
-          ],
-          "coverage": "none",
-          "practice": false,
-          "reviewStatus": "draft"
-        }
-      ]
-    },
-    {
       "id": "electrician-helpers",
       "socCode": "47-3013",
       "title": "Electrician's helper",
       "summary": "Helps electricians by preparing materials, running wire and conduit and keeping the site safe, under supervision, while learning the trade.",
-      "wave": 1,
+      "phase": 1,
       "available": true,
       "reviewStatus": "draft",
       "procedures": [
@@ -854,7 +590,7 @@
       "socCode": "47-4011",
       "title": "Electrical inspector",
       "summary": "Inspects electrical work against the code and the plans, records what is wrong, and decides whether work can be approved.",
-      "wave": 1,
+      "phase": 1,
       "available": true,
       "reviewStatus": "draft",
       "procedures": [
@@ -1114,264 +850,11 @@
       ]
     },
     {
-      "id": "alarm-installers",
-      "socCode": "49-2098",
-      "title": "Fire and security alarm installer",
-      "summary": "Installs and tests fire alarm and security systems: devices, panels, low-voltage wiring and their power supplies.",
-      "wave": 2,
-      "available": false,
-      "reviewStatus": "draft",
-      "procedures": [
-        {
-          "id": "alarm-installers-1",
-          "name": "Electrically safe work for line-voltage connections",
-          "purpose": "Make the supply to a panel, power supply or transformer dead and prove it before touching it.",
-          "whenUsed": "Whenever a fire or security panel, power supply or other equipment is wired to or served from a line-voltage circuit.",
-          "role": "Installer (qualified person) with the facility electrician or owner's authorized employee.",
-          "steps": [
-            "Find the circuit that feeds the equipment and tell affected people the work is planned.",
-            "Switch off the circuit and open the disconnecting means; for fire alarm panels note that this removes protection, so arrange impairment steps first.",
-            "Apply a lock and tag to the disconnect, or use the equivalent measure if a lock cannot be fitted.",
-            "Release or restrain any stored energy, including backup batteries on the panel.",
-            "Test with a meter that works, check the circuit at the work point, then recheck the meter.",
-            "Do the work, keeping to required approach distances and using insulated tools.",
-            "Before restoring power, remove tools, check people are clear, remove locks and tags, then re-energize and confirm normal status."
-          ],
-          "hazards": [
-            "Shock from line-voltage terminals",
-            "Backfeed or induced voltage",
-            "Panel battery energy",
-            "Unexpected re-energizing",
-            "Loss of fire protection while the panel is off"
-          ],
-          "controls": [
-            "Lock and tag",
-            "Meter verification before touching",
-            "Insulated tools and PPE chosen by hazard assessment",
-            "Qualified-person rule",
-            "Impairment notification when a fire system is off"
-          ],
-          "skills": [
-            "shock-protection",
-            "disconnecting-means",
-            "electrically-safe-work"
-          ],
-          "coverage": "partial",
-          "practice": true,
-          "reviewStatus": "draft"
-        },
-        {
-          "id": "alarm-installers-2",
-          "name": "Plan reading and device layout check",
-          "purpose": "Work out where devices, panels and cable runs go and which circuits they use before pulling cable.",
-          "whenUsed": "At job start, from the work order, drawings and building plans.",
-          "role": "Installer or lead installer, with the designer or project manager.",
-          "steps": [
-            "Read the work order and scope, and confirm the system type (fire, intrusion, access control, video).",
-            "Check the approved shop drawings and device layout against the building plans.",
-            "Mark panel, power supply, device and annunciator locations, checking mounting and access space.",
-            "Plan cable routes, noting fire-rated walls, ceilings and spaces where firestopping or plenum cable is needed.",
-            "Identify each circuit's class (power-limited fire alarm, Class 2/3, non-power-limited, communications) and plan separation from power wiring.",
-            "List materials and quantities, and raise conflicts with the designer before drilling."
-          ],
-          "hazards": [
-            "Drilling into live wiring or structure",
-            "Wrong cable type in a plenum or fire-rated assembly",
-            "Using unapproved layout"
-          ],
-          "controls": [
-            "Approved drawings on site",
-            "Scan walls before drilling",
-            "Cable type check against space",
-            "Layout reviewed with designer or inspector"
-          ],
-          "skills": [
-            "wiring-methods",
-            "plans-and-documentation"
-          ],
-          "coverage": "none",
-          "practice": false,
-          "reviewStatus": "draft"
-        },
-        {
-          "id": "alarm-installers-3",
-          "name": "Running low-voltage and fire alarm cable and raceway",
-          "purpose": "Route, support, separate and identify signaling cable so it stays safe and trouble-free.",
-          "whenUsed": "During rough-in, for new work and additions.",
-          "role": "Systems installer or technician, working to the plans and the employer's written procedure.",
-          "steps": [
-            "Choose cable of the right listed type for the circuit and the space (riser, plenum, general).",
-            "Keep fire alarm and Class 2/3 conductors out of enclosures and raceways with power or Class 1 conductors unless separated by a barrier or the approved exception applies.",
-            "Route through or along framing with the specified clearance or a protective plate.",
-            "Support cable with secure fastening at the required intervals and keep the work neat.",
-            "Firestop penetrations through fire-rated assemblies.",
-            "Label circuits at junction points so other work does not trigger signals, and remove abandoned cable.",
-            "Check the run for damage before termination."
-          ],
-          "hazards": [
-            "Cable damage or short against power conductors",
-            "Shock hazard if a fault crosses to line voltage",
-            "Spread of fire through penetrations",
-            "Falls from ladders"
-          ],
-          "controls": [
-            "Listed cable types",
-            "Barrier or separation",
-            "Protective plates near framing",
-            "Firestopping",
-            "Circuit labels",
-            "Ladder safety"
-          ],
-          "skills": [
-            "wiring-methods",
-            "equipment-installation"
-          ],
-          "coverage": "partial",
-          "practice": false,
-          "reviewStatus": "draft"
-        },
-        {
-          "id": "alarm-installers-4",
-          "name": "Installing panels, devices and power supply connections",
-          "purpose": "Mount and connect panels, detectors, notification devices and security devices, and supply the panel correctly.",
-          "whenUsed": "Trim-out after rough-in.",
-          "role": "Installer; a licensed electrician may do the line-voltage feed depending on the state.",
-          "steps": [
-            "Mount the panel and power supply at the planned location with working space and access.",
-            "Confirm the feed comes from a dedicated branch circuit with a marked disconnect and no ground-fault or arc-fault protection where the code forbids it.",
-            "Connect devices and terminate conductors, keeping circuit polarity and supervision correct.",
-            "Ground metal enclosures and connect equipment grounding conductors.",
-            "Install batteries last, only when ready to test.",
-            "Mount detectors, horns, strobes, pull stations and sensors at the layout locations.",
-            "Label the panel, circuits and the feed disconnect."
-          ],
-          "hazards": [
-            "Shock at line-voltage terminals",
-            "Battery short circuits",
-            "Wrong device on wrong circuit",
-            "Overhead work and ladders"
-          ],
-          "controls": [
-            "Procedure 1 before work on the feed",
-            "Dedicated, marked fire alarm branch circuit",
-            "Equipment grounding",
-            "Insulated tools",
-            "Terminal checks"
-          ],
-          "skills": [
-            "equipment-installation",
-            "working-space-access",
-            "disconnecting-means",
-            "earthing-bonding",
-            "identification-marking"
-          ],
-          "coverage": "partial",
-          "practice": true,
-          "reviewStatus": "draft"
-        },
-        {
-          "id": "alarm-installers-5",
-          "name": "Programming, addressing and sensitivity adjustment",
-          "purpose": "Make devices known to the panel and set them so they report correctly without false alarms.",
-          "whenUsed": "After device installation and before testing, and after changes.",
-          "role": "Installer or programming technician.",
-          "steps": [
-            "Assign addresses or zones to each device per the point list and drawings.",
-            "Enter device types, labels and zone text in the panel from the approved sequence of operations.",
-            "Set outputs, notification and monitoring communication settings.",
-            "Adjust detector sensitivity to the room within the allowed range.",
-            "Back up the programming and record the version.",
-            "Check that each point shows the correct label before functional testing."
-          ],
-          "hazards": [
-            "False alarms and nuisance signals",
-            "Wrong zone leading to wrong location reported",
-            "Lost programming"
-          ],
-          "controls": [
-            "Point list checked against drawings",
-            "Backup of programming",
-            "Settings within listed range",
-            "Retest after any software change"
-          ],
-          "skills": [],
-          "coverage": "none",
-          "practice": false,
-          "reviewStatus": "draft"
-        },
-        {
-          "id": "alarm-installers-6",
-          "name": "Functional and acceptance testing with documentation",
-          "purpose": "Show every device and the standby power work, and record the result for the authority having jurisdiction and owner.",
-          "whenUsed": "After installation and programming, and again after any added, deleted or modified components.",
-          "role": "Installer or certified technician, with the owner and the authority having jurisdiction (AHJ) or inspector.",
-          "steps": [
-            "Confirm approved drawings, sequence of operations and the battery calculation are on hand.",
-            "Check wiring and insulation for faults and verify circuit supervision by creating open and ground conditions.",
-            "Test pull stations, smoke and heat detectors by approved methods, and supervisory inputs such as waterflow and tamper.",
-            "Verify audible and visible notification appliances operate across the coverage area.",
-            "Test standby battery condition and capacity and check the system survives the required standby period.",
-            "Confirm alarm, supervisory and trouble signals reach the panel, annunciators and monitoring service.",
-            "Record deficiencies and correct them, reset to normal, and obtain the inspector's sign-off.",
-            "Deliver records and train the owner."
-          ],
-          "hazards": [
-            "Loud notification appliances",
-            "False dispatch to the fire department",
-            "Shock from live equipment during testing",
-            "Ladders"
-          ],
-          "controls": [
-            "Notify monitoring company and building occupants before testing",
-            "Hearing protection where needed",
-            "Written test record",
-            "AHJ witness where required"
-          ],
-          "skills": [
-            "testing-and-measurement"
-          ],
-          "coverage": "none",
-          "practice": false,
-          "reviewStatus": "draft"
-        },
-        {
-          "id": "alarm-installers-7",
-          "name": "Impairment handling and restoration",
-          "purpose": "Control the risk and tell the right people when a fire alarm system or part is out of service.",
-          "whenUsed": "When a system is turned off for service, a fault takes devices out, or work lasts beyond a short period.",
-          "role": "Impairment coordinator (owner or designated person) with the service technician.",
-          "steps": [
-            "Notify the coordinator before the system is taken out of service and agree scope and duration.",
-            "Inform the fire department, owner, insurer and monitoring company as the plan requires.",
-            "Use a fire watch or other interim measures for longer outages.",
-            "Tag the affected equipment as out of service.",
-            "Complete the repair and run the tests needed to prove the affected parts work.",
-            "Notify all parties that protection is restored and remove the tag."
-          ],
-          "hazards": [
-            "Building left unprotected",
-            "Fire watch not in place",
-            "Restoration not tested"
-          ],
-          "controls": [
-            "Impairment tag system",
-            "Fire watch",
-            "Notification to the fire department and others",
-            "Verification tests"
-          ],
-          "skills": [],
-          "coverage": "none",
-          "practice": false,
-          "reviewStatus": "draft"
-        }
-      ]
-    },
-    {
       "id": "line-installers",
       "socCode": "49-9051",
       "title": "Power-line installer",
       "summary": "Builds and maintains the lines, poles, transformers and cables that carry power from the utility to customers.",
-      "wave": 3,
+      "phase": 2,
       "available": false,
       "reviewStatus": "draft",
       "procedures": [
@@ -1642,6 +1125,523 @@
           ],
           "coverage": "partial",
           "practice": true,
+          "reviewStatus": "draft"
+        }
+      ]
+    },
+    {
+      "id": "solar-installers",
+      "socCode": "47-2231",
+      "title": "Solar installer",
+      "summary": "Installs solar panels, wiring, inverters and disconnects on roofs and buildings, and tests and connects the system.",
+      "phase": 3,
+      "available": false,
+      "reviewStatus": "draft",
+      "procedures": [
+        {
+          "id": "solar-installers-1",
+          "name": "Site survey and roof fall protection",
+          "purpose": "Assess the roof and site, then keep workers from falling during array installation.",
+          "whenUsed": "Whenever work is at 6 feet or more above a lower level, which includes essentially all rooftop PV work.",
+          "role": "Every crew member; the employer provides systems and training.",
+          "steps": [
+            "Review plans and permit conditions and the adopted fire-code setbacks.",
+            "Walk the roof and check condition, slope, decking and attachment points.",
+            "Locate the service panel, meter, conduit routes and shading sources.",
+            "Identify overhead power lines, skylights, and roof edges and openings.",
+            "Inspect harness, lanyard or rope grab and connectors before use.",
+            "Install anchors into structural members, not sheathing alone.",
+            "Set ladder at a safe angle, secure it and extend it above the roof edge.",
+            "Connect to the anchor before stepping onto the roof.",
+            "Use guardrails or a safety monitor where the plan calls for them.",
+            "Keep tools and modules from sliding off the roof."
+          ],
+          "hazards": [
+            "Falls from roof edge",
+            "Falls from ladders",
+            "Slips on wet or dusty roofs",
+            "Dropped objects",
+            "Weak or wet roofing",
+            "Overhead power lines"
+          ],
+          "controls": [
+            "Personal fall arrest systems, guardrails or monitored warning lines per the safety regulations",
+            "Documented fall-protection training",
+            "Equipment inspection",
+            "Ladder securing and three points of contact"
+          ],
+          "skills": [
+            "jobsite-safety"
+          ],
+          "coverage": "partial",
+          "practice": true,
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "solar-installers-2",
+          "name": "Array installation, DC wiring and connector handling",
+          "purpose": "Mount modules and wire strings with listed, correctly mated connectors and protected conductors.",
+          "whenUsed": "During the main install phase after racking is set.",
+          "role": "PV installers, with an electrician where state rules require.",
+          "steps": [
+            "Set racking and attach modules per manufacturer instructions.",
+            "Cover or keep modules shaded when practical while wiring.",
+            "Mate connectors of the same listed type and check they are fully seated.",
+            "Route and secure PV wire and cable so it is protected from damage and abrasion.",
+            "Label and group strings as shown on the single-line diagram.",
+            "Run DC circuits in the approved wiring method to the combiner or inverter.",
+            "Seal roof penetrations and confirm conduit and box fittings.",
+            "Verify all work against the plan set before closing up."
+          ],
+          "hazards": [
+            "Energized DC circuits whenever lit",
+            "DC arc from damaged or loose connectors",
+            "Module handling injuries",
+            "Burns from hot surfaces"
+          ],
+          "controls": [
+            "Listed or field-evaluated equipment",
+            "Matched connectors and torque to manufacturer values",
+            "Insulated tools and no jewelry",
+            "Working in pairs",
+            "Module covering or shading while connecting"
+          ],
+          "skills": [
+            "wiring-methods",
+            "conductor-sizing",
+            "equipment-installation"
+          ],
+          "coverage": "partial",
+          "practice": false,
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "solar-installers-3",
+          "name": "Inverter, combiner, disconnect and rapid shutdown installation",
+          "purpose": "Place and connect conversion and shutdown equipment so the array can be isolated and firefighters are protected.",
+          "whenUsed": "After array wiring, before commissioning.",
+          "role": "Installer or electrician.",
+          "steps": [
+            "Mount inverter and combiner in a code-compliant, accessible location per listing.",
+            "Install the PV disconnecting means and any required AC disconnect.",
+            "Install rapid shutdown devices or listed system components per manufacturer.",
+            "Wire the initiating device where the system needs one and place it per plan.",
+            "Connect overcurrent protection sized from the design.",
+            "Apply required rapid shutdown and warning labels.",
+            "Test the shutdown function and record the result."
+          ],
+          "hazards": [
+            "Shock from DC and AC terminals",
+            "Arc flash at combiners",
+            "Firefighter exposure to energized conductors"
+          ],
+          "controls": [
+            "Rapid shutdown limiting controlled conductors to low voltage within a set time",
+            "Lockable disconnects",
+            "Listed shutdown equipment used per instructions",
+            "Clear labeling"
+          ],
+          "skills": [
+            "disconnecting-means",
+            "overcurrent-protection",
+            "equipment-installation",
+            "identification-marking"
+          ],
+          "coverage": "partial",
+          "practice": false,
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "solar-installers-4",
+          "name": "Grounding and bonding of the array",
+          "purpose": "Bond all exposed metal and provide a fault path so ground faults are detected and cleared.",
+          "whenUsed": "During racking and wiring, and verified at commissioning.",
+          "role": "Installer or electrician.",
+          "steps": [
+            "Use racking and bonding hardware listed for module bonding.",
+            "Bond module frames and rails per the hardware instructions.",
+            "Run the equipment grounding conductor from array to inverter and panel.",
+            "Size the EGC from the overcurrent device rating and protect small sizes from damage.",
+            "Connect any optional grounding electrode to the premises electrode system.",
+            "Confirm ground-fault protection is present in the inverter.",
+            "Test ground continuity before energizing."
+          ],
+          "hazards": [
+            "Shock from energized frames",
+            "Fire from undetected ground faults",
+            "Corrosion from mismatched metals"
+          ],
+          "controls": [
+            "Listed bonding devices",
+            "Material-compatible connectors",
+            "Ground-fault detection and interruption",
+            "Continuity testing"
+          ],
+          "skills": [
+            "earthing-bonding"
+          ],
+          "coverage": "partial",
+          "practice": false,
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "solar-installers-5",
+          "name": "Commissioning tests and electrically safe testing",
+          "purpose": "Prove the installed system is correct and safe before energizing and handing over.",
+          "whenUsed": "After installation, before inverter start-up and utility permission.",
+          "role": "Installer or commissioning technician, often two people.",
+          "steps": [
+            "Visually inspect wiring, labels, grounding and mounting with the system off.",
+            "Check meter on a known source, test, then recheck the meter.",
+            "Test continuity of grounding conductors.",
+            "Check polarity of each string at the combiner.",
+            "Measure open-circuit voltage per string and compare with temperature-corrected expected values.",
+            "Measure short-circuit current per string where the procedure calls for it.",
+            "Test insulation resistance with the disconnects open.",
+            "Start the inverter per manufacturer steps and verify AC side and shutdown.",
+            "Record results in the commissioning report."
+          ],
+          "hazards": [
+            "Shock and arc during test",
+            "Reverse polarity damage",
+            "Hidden insulation faults"
+          ],
+          "controls": [
+            "Test sequence with polarity before connection",
+            "Rated meters and gloves",
+            "Live-dead-live voltage check",
+            "Open disconnects for insulation tests",
+            "Documented results"
+          ],
+          "skills": [
+            "testing-and-measurement",
+            "electrically-safe-work"
+          ],
+          "coverage": "none",
+          "practice": false,
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "solar-installers-6",
+          "name": "Interconnection and utility hand-off",
+          "purpose": "Connect the system to the building service and obtain utility permission to operate.",
+          "whenUsed": "Design and permitting for the application; after inspection for permission to operate.",
+          "role": "Installer company, electrician, inspector and the utility.",
+          "steps": [
+            "Submit the interconnection application with equipment data.",
+            "Choose load-side or supply-side connection per panel limits.",
+            "Install the connection and the required plaque or directory at the service.",
+            "Obtain permit sign-off and pass the AHJ inspection.",
+            "Provide documents to the utility.",
+            "Wait for utility permission to operate before exporting.",
+            "Leave labels, as-builts and manuals for the owner."
+          ],
+          "hazards": [
+            "Overloaded busbar",
+            "Backfeed to utility workers",
+            "Operating before approval"
+          ],
+          "controls": [
+            "Busbar and rating checks",
+            "Utility-interactive listed inverter",
+            "Inspection before energizing",
+            "Permission to operate"
+          ],
+          "skills": [
+            "overcurrent-protection",
+            "disconnecting-means",
+            "load-calculation"
+          ],
+          "coverage": "partial",
+          "practice": false,
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "solar-installers-7",
+          "name": "Battery storage installation",
+          "purpose": "Install energy storage with correct disconnects, protection, location and shutdown.",
+          "whenUsed": "When a project includes batteries.",
+          "role": "Electrician or manufacturer-certified installer.",
+          "steps": [
+            "Confirm the unit is listed for battery storage and read its instructions.",
+            "Check allowed location and spacing with the fire code and AHJ.",
+            "Mount unit and install the lockable disconnect in sight or within the stated distance.",
+            "Size conductors and protection for continuous current.",
+            "Install the emergency shutdown device where required.",
+            "Label the system and apply any shock or arc warnings.",
+            "Commission and log maintenance records."
+          ],
+          "hazards": [
+            "Thermal runaway fire",
+            "High fault current",
+            "Stored energy shock"
+          ],
+          "controls": [
+            "Listed equipment",
+            "Spacing and capacity limits",
+            "Disconnect and shutdown",
+            "Commissioning"
+          ],
+          "skills": [
+            "disconnecting-means",
+            "equipment-installation",
+            "special-locations"
+          ],
+          "coverage": "none",
+          "practice": false,
+          "reviewStatus": "draft"
+        }
+      ]
+    },
+    {
+      "id": "alarm-installers",
+      "socCode": "49-2098",
+      "title": "Fire and security alarm installer",
+      "summary": "Installs and tests fire alarm and security systems: devices, panels, low-voltage wiring and their power supplies.",
+      "phase": 3,
+      "available": false,
+      "reviewStatus": "draft",
+      "procedures": [
+        {
+          "id": "alarm-installers-1",
+          "name": "Electrically safe work for line-voltage connections",
+          "purpose": "Make the supply to a panel, power supply or transformer dead and prove it before touching it.",
+          "whenUsed": "Whenever a fire or security panel, power supply or other equipment is wired to or served from a line-voltage circuit.",
+          "role": "Installer (qualified person) with the facility electrician or owner's authorized employee.",
+          "steps": [
+            "Find the circuit that feeds the equipment and tell affected people the work is planned.",
+            "Switch off the circuit and open the disconnecting means; for fire alarm panels note that this removes protection, so arrange impairment steps first.",
+            "Apply a lock and tag to the disconnect, or use the equivalent measure if a lock cannot be fitted.",
+            "Release or restrain any stored energy, including backup batteries on the panel.",
+            "Test with a meter that works, check the circuit at the work point, then recheck the meter.",
+            "Do the work, keeping to required approach distances and using insulated tools.",
+            "Before restoring power, remove tools, check people are clear, remove locks and tags, then re-energize and confirm normal status."
+          ],
+          "hazards": [
+            "Shock from line-voltage terminals",
+            "Backfeed or induced voltage",
+            "Panel battery energy",
+            "Unexpected re-energizing",
+            "Loss of fire protection while the panel is off"
+          ],
+          "controls": [
+            "Lock and tag",
+            "Meter verification before touching",
+            "Insulated tools and PPE chosen by hazard assessment",
+            "Qualified-person rule",
+            "Impairment notification when a fire system is off"
+          ],
+          "skills": [
+            "shock-protection",
+            "disconnecting-means",
+            "electrically-safe-work"
+          ],
+          "coverage": "partial",
+          "practice": true,
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "alarm-installers-2",
+          "name": "Plan reading and device layout check",
+          "purpose": "Work out where devices, panels and cable runs go and which circuits they use before pulling cable.",
+          "whenUsed": "At job start, from the work order, drawings and building plans.",
+          "role": "Installer or lead installer, with the designer or project manager.",
+          "steps": [
+            "Read the work order and scope, and confirm the system type (fire, intrusion, access control, video).",
+            "Check the approved shop drawings and device layout against the building plans.",
+            "Mark panel, power supply, device and annunciator locations, checking mounting and access space.",
+            "Plan cable routes, noting fire-rated walls, ceilings and spaces where firestopping or plenum cable is needed.",
+            "Identify each circuit's class (power-limited fire alarm, Class 2/3, non-power-limited, communications) and plan separation from power wiring.",
+            "List materials and quantities, and raise conflicts with the designer before drilling."
+          ],
+          "hazards": [
+            "Drilling into live wiring or structure",
+            "Wrong cable type in a plenum or fire-rated assembly",
+            "Using unapproved layout"
+          ],
+          "controls": [
+            "Approved drawings on site",
+            "Scan walls before drilling",
+            "Cable type check against space",
+            "Layout reviewed with designer or inspector"
+          ],
+          "skills": [
+            "wiring-methods",
+            "plans-and-documentation"
+          ],
+          "coverage": "none",
+          "practice": false,
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "alarm-installers-3",
+          "name": "Running low-voltage and fire alarm cable and raceway",
+          "purpose": "Route, support, separate and identify signaling cable so it stays safe and trouble-free.",
+          "whenUsed": "During rough-in, for new work and additions.",
+          "role": "Systems installer or technician, working to the plans and the employer's written procedure.",
+          "steps": [
+            "Choose cable of the right listed type for the circuit and the space (riser, plenum, general).",
+            "Keep fire alarm and Class 2/3 conductors out of enclosures and raceways with power or Class 1 conductors unless separated by a barrier or the approved exception applies.",
+            "Route through or along framing with the specified clearance or a protective plate.",
+            "Support cable with secure fastening at the required intervals and keep the work neat.",
+            "Firestop penetrations through fire-rated assemblies.",
+            "Label circuits at junction points so other work does not trigger signals, and remove abandoned cable.",
+            "Check the run for damage before termination."
+          ],
+          "hazards": [
+            "Cable damage or short against power conductors",
+            "Shock hazard if a fault crosses to line voltage",
+            "Spread of fire through penetrations",
+            "Falls from ladders"
+          ],
+          "controls": [
+            "Listed cable types",
+            "Barrier or separation",
+            "Protective plates near framing",
+            "Firestopping",
+            "Circuit labels",
+            "Ladder safety"
+          ],
+          "skills": [
+            "wiring-methods",
+            "equipment-installation"
+          ],
+          "coverage": "partial",
+          "practice": false,
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "alarm-installers-4",
+          "name": "Installing panels, devices and power supply connections",
+          "purpose": "Mount and connect panels, detectors, notification devices and security devices, and supply the panel correctly.",
+          "whenUsed": "Trim-out after rough-in.",
+          "role": "Installer; a licensed electrician may do the line-voltage feed depending on the state.",
+          "steps": [
+            "Mount the panel and power supply at the planned location with working space and access.",
+            "Confirm the feed comes from a dedicated branch circuit with a marked disconnect and no ground-fault or arc-fault protection where the code forbids it.",
+            "Connect devices and terminate conductors, keeping circuit polarity and supervision correct.",
+            "Ground metal enclosures and connect equipment grounding conductors.",
+            "Install batteries last, only when ready to test.",
+            "Mount detectors, horns, strobes, pull stations and sensors at the layout locations.",
+            "Label the panel, circuits and the feed disconnect."
+          ],
+          "hazards": [
+            "Shock at line-voltage terminals",
+            "Battery short circuits",
+            "Wrong device on wrong circuit",
+            "Overhead work and ladders"
+          ],
+          "controls": [
+            "Procedure 1 before work on the feed",
+            "Dedicated, marked fire alarm branch circuit",
+            "Equipment grounding",
+            "Insulated tools",
+            "Terminal checks"
+          ],
+          "skills": [
+            "equipment-installation",
+            "working-space-access",
+            "disconnecting-means",
+            "earthing-bonding",
+            "identification-marking"
+          ],
+          "coverage": "partial",
+          "practice": true,
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "alarm-installers-5",
+          "name": "Programming, addressing and sensitivity adjustment",
+          "purpose": "Make devices known to the panel and set them so they report correctly without false alarms.",
+          "whenUsed": "After device installation and before testing, and after changes.",
+          "role": "Installer or programming technician.",
+          "steps": [
+            "Assign addresses or zones to each device per the point list and drawings.",
+            "Enter device types, labels and zone text in the panel from the approved sequence of operations.",
+            "Set outputs, notification and monitoring communication settings.",
+            "Adjust detector sensitivity to the room within the allowed range.",
+            "Back up the programming and record the version.",
+            "Check that each point shows the correct label before functional testing."
+          ],
+          "hazards": [
+            "False alarms and nuisance signals",
+            "Wrong zone leading to wrong location reported",
+            "Lost programming"
+          ],
+          "controls": [
+            "Point list checked against drawings",
+            "Backup of programming",
+            "Settings within listed range",
+            "Retest after any software change"
+          ],
+          "skills": [],
+          "coverage": "none",
+          "practice": false,
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "alarm-installers-6",
+          "name": "Functional and acceptance testing with documentation",
+          "purpose": "Show every device and the standby power work, and record the result for the authority having jurisdiction and owner.",
+          "whenUsed": "After installation and programming, and again after any added, deleted or modified components.",
+          "role": "Installer or certified technician, with the owner and the authority having jurisdiction (AHJ) or inspector.",
+          "steps": [
+            "Confirm approved drawings, sequence of operations and the battery calculation are on hand.",
+            "Check wiring and insulation for faults and verify circuit supervision by creating open and ground conditions.",
+            "Test pull stations, smoke and heat detectors by approved methods, and supervisory inputs such as waterflow and tamper.",
+            "Verify audible and visible notification appliances operate across the coverage area.",
+            "Test standby battery condition and capacity and check the system survives the required standby period.",
+            "Confirm alarm, supervisory and trouble signals reach the panel, annunciators and monitoring service.",
+            "Record deficiencies and correct them, reset to normal, and obtain the inspector's sign-off.",
+            "Deliver records and train the owner."
+          ],
+          "hazards": [
+            "Loud notification appliances",
+            "False dispatch to the fire department",
+            "Shock from live equipment during testing",
+            "Ladders"
+          ],
+          "controls": [
+            "Notify monitoring company and building occupants before testing",
+            "Hearing protection where needed",
+            "Written test record",
+            "AHJ witness where required"
+          ],
+          "skills": [
+            "testing-and-measurement"
+          ],
+          "coverage": "none",
+          "practice": false,
+          "reviewStatus": "draft"
+        },
+        {
+          "id": "alarm-installers-7",
+          "name": "Impairment handling and restoration",
+          "purpose": "Control the risk and tell the right people when a fire alarm system or part is out of service.",
+          "whenUsed": "When a system is turned off for service, a fault takes devices out, or work lasts beyond a short period.",
+          "role": "Impairment coordinator (owner or designated person) with the service technician.",
+          "steps": [
+            "Notify the coordinator before the system is taken out of service and agree scope and duration.",
+            "Inform the fire department, owner, insurer and monitoring company as the plan requires.",
+            "Use a fire watch or other interim measures for longer outages.",
+            "Tag the affected equipment as out of service.",
+            "Complete the repair and run the tests needed to prove the affected parts work.",
+            "Notify all parties that protection is restored and remove the tag."
+          ],
+          "hazards": [
+            "Building left unprotected",
+            "Fire watch not in place",
+            "Restoration not tested"
+          ],
+          "controls": [
+            "Impairment tag system",
+            "Fire watch",
+            "Notification to the fire department and others",
+            "Verification tests"
+          ],
+          "skills": [],
+          "coverage": "none",
+          "practice": false,
           "reviewStatus": "draft"
         }
       ]

@@ -21,7 +21,7 @@ namespace NECInspector.Data
         public const string WiringMethods = "wiring-methods";                     // cable and raceway installation, support, burial depth, box fill, overhead clearances
         public const string SpecialLocations = "special-locations";               // pools and spas, wet-location devices, storage batteries
 
-        // Procedure skills (wave 1 of the occupation-driven product, docs/product/DECISIONS.md): what a tradesperson does and how, as opposed to what an installation must look like.
+        // Procedure skills (phase 1 of the occupation-driven product, docs/product/DECISIONS.md): what a tradesperson does and how, as opposed to what an installation must look like.
         // They are taught by lessons and procedure practice, not by inspection violations or reference entries.
         public const string ElectricallySafeWork = "electrically-safe-work";         // make a circuit safe to work on and prove it: lockout and tagging, test before touch, PPE
         public const string TestingMeasurement = "testing-and-measurement";         // choose and use testers and meters, read what they show

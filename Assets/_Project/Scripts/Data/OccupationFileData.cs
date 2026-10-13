@@ -24,7 +24,7 @@ namespace NECInspector.Data
         public string socCode;          // classification code, for traceability only; not shown to students
         public string title;
         public string summary;
-        public int wave;                // release wave 1 to 3 (docs/product/DECISIONS.md)
+        public int phase;               // release phase 1 to 3 (docs/product/DECISIONS.md, D-13)
         public bool available;          // false: shown as coming soon
         public string reviewStatus;     // draft | reviewed (by an occupational expert)
         public ProcedureData[] procedures;
@@ -93,7 +93,7 @@ namespace NECInspector.Data
                 else if (!ids.Add(o.id)) errors.Add($"{label}: duplicate id");
                 if (string.IsNullOrWhiteSpace(o.title)) errors.Add($"{label}: title is missing");
                 if (string.IsNullOrWhiteSpace(o.summary)) errors.Add($"{label}: summary is missing");
-                if (o.wave < 1 || o.wave > 3) errors.Add($"{label}: wave must be 1, 2 or 3");
+                if (o.phase < 1 || o.phase > 3) errors.Add($"{label}: phase must be 1, 2 or 3");
                 if (o.reviewStatus != StatusDraft && o.reviewStatus != StatusReviewed) errors.Add($"{label}: reviewStatus must be draft or reviewed");
                 if (o.procedures == null || o.procedures.Length == 0) { errors.Add($"{label}: no procedures"); continue; }
 

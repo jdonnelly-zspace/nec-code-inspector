@@ -16,8 +16,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 DATA = os.path.join(ROOT, "docs", "occupations", "data")
 OUT = os.path.join(ROOT, "Assets", "_Project", "StreamingAssets", "Occupations", "occupations.json")
 
-# What the owner's decisions put in each release wave (docs/product/DECISIONS.md)
-WAVE = {"47-2111": 1, "47-3013": 1, "47-4011": 1, "47-2231": 2, "49-2098": 2, "49-9051": 3}
+# What the owner's decisions put in each release phase (docs/product/DECISIONS.md, D-13: power-line before solar and alarm)
+PHASE = {"47-2111": 1, "47-3013": 1, "47-4011": 1, "49-9051": 2, "47-2231": 3, "49-2098": 3}
 ID = {"47-2111": "electricians", "47-3013": "electrician-helpers", "47-4011": "inspectors", "47-2231": "solar-installers",
       "49-2098": "alarm-installers", "49-9051": "line-installers"}
 TITLE = {"47-2111": "Electrician", "47-3013": "Electrician's helper", "47-4011": "Electrical inspector",
@@ -58,7 +58,8 @@ def level(coverage):
 def main():
     occupations = []
     problems = []
-    for path in sorted(glob.glob(os.path.join(DATA, "[0-9]*.json"))):
+    # Display order: by release phase, then by occupation code
+    for path in sorted(glob.glob(os.path.join(DATA, "[0-9]*.json")), key=lambda q: (PHASE[os.path.basename(q)[:7]], os.path.basename(q))):
         d = json.load(open(path, encoding="utf-8"))
         soc = d["soc"]
         procs = []
@@ -78,8 +79,8 @@ def main():
             procs.append({"id": f"{ID[soc]}-{i}", "name": fields["name"], "purpose": fields["purpose"], "whenUsed": fields["whenUsed"], "role": fields["role"],
                           "steps": steps, "hazards": hazards, "controls": controls, "skills": skills, "coverage": level(p["appCoverage"]),
                           "practice": practice, "reviewStatus": "draft"})
-        occupations.append({"id": ID[soc], "socCode": soc, "title": TITLE[soc], "summary": SUMMARY[soc], "wave": WAVE[soc],
-                            "available": WAVE[soc] == 1, "reviewStatus": "draft", "procedures": procs})
+        occupations.append({"id": ID[soc], "socCode": soc, "title": TITLE[soc], "summary": SUMMARY[soc], "phase": PHASE[soc],
+                            "available": PHASE[soc] == 1, "reviewStatus": "draft", "procedures": procs})
     if problems:
         print("student-facing text still names a code, regulator or standard:", file=sys.stderr)
         for p in problems:

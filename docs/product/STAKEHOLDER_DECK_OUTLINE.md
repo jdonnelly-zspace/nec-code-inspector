@@ -65,17 +65,17 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 
 ### Slide 4. Roadmap: order and gates, not dates
 
-- **Headline:** Three waves, each one gated by what has to be true.
-- **Now (Wave 1: electricians, helpers, inspectors)**
+- **Headline:** Three phases, each one gated by what has to be true.
+- **Now (Phase 1: electricians, helpers, inspectors)**
   - Build the 3D scenes; wire the panels; add the analytics and the teacher export; expert review of the content.
   - Gate: scenes built and a classroom pilot; expert sign-off on the first occupations.
-- **Next (Wave 2: solar PV installers, fire and security alarm installers)**
+- **Next (Phase 2: power-line installers and adjacent occupations)**
+  - A utility code profile and new utility scenes (poles, vaults, bucket trucks), the largest new content in the plan, then literacy packages for maintenance, HVAC and construction roles.
+  - Gate: Phase 1 live; licence decision for the utility code; the utility scenes planned and funded.
+- **Later (Phase 3: solar PV installers, fire and security alarm installers)**
   - Two new skills (solar PV and storage; low-voltage and fire alarm) and a second code profile for alarm work.
-  - Gate: Wave 1 live; licence decision for the alarm standard; the 2026 code numbering verified for the PV content.
-- **Later (Wave 3: power-line installers and adjacent occupations)**
-  - A utility code profile and utility scenes, then literacy packages for maintenance, HVAC and construction roles.
-  - Gate: licence decision; earlier waves done.
-- **Also running across all waves:** more regions (Canada, UK), more languages (English first, the others next), accessibility settings.
+  - Gate: Phase 2 under way; licence decision for the alarm standard; the 2026 code numbering verified for the PV content.
+- **Also running across all phases:** more regions (Canada, UK), more languages (English first, the others next), accessibility settings.
 - **Visual idea:** a three-lane Now / Next / Later strip, each with its gate underneath.
 
 ### Slide 5. Marketing: who we say what to
@@ -94,11 +94,11 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 
 - **Headline:** What we need from you to move.
 - **Decisions needed**
-  1. Licences for the installation codes and standards (NEC, CEC, BS 7671, the alarm standard, the utility code). This gates shipping and Wave 2 and 3.
+  1. Licences for the installation codes and standards (NEC, CEC, BS 7671, the alarm standard, the utility code). This gates shipping and Phase 3 and 3.
   2. Which analytics service the other zSpace apps use, and what the generic student account is.
   3. Funding and owners for the 3D scenes and art, the biggest remaining piece of work.
   4. An occupational expert and a code expert to review the content.
-  5. The first pilot classrooms for Wave 1.
+  5. The first pilot classrooms for Phase 1.
 - **Risks, stated once:** content outpaces art; the code licences are undecided; the original market sizing needs correcting before outside use.
 - **Visual idea:** a short decisions table with an owner and a "needed by" column to fill in.
 
@@ -112,7 +112,7 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 | "Teaches in 3D today" | **Cannot say**: scenes are not built | `TODO.md` |
 | "Reviewed by electrical experts" | **Cannot say yet**: nothing has had an expert review | `PRD.md` |
 | Primary education market of $26M, adjacent $34.6M, combined $60.6M | **Owner's estimate, not checked**; the worker total does not reconcile, "Bright Outlook" is wrong for five adjacent occupations, one occupation is counted twice | `docs/occupations/ADJACENT.md` |
-| Launch of all six occupations in the first half of 2027 | **Cannot say**: the research supports Wave 1 only | `PRD.md` section 7 |
+| Launch of all six occupations in the first half of 2027 | **Cannot say**: the research supports Phase 1 only | `PRD.md` section 7 |
 | Aligned to a credential or exam | **Cannot say**: the app contains skills, never credentials | `docs/CONTENT_POLICY.md` |
 
 ## 6. Questions to settle before building the deck

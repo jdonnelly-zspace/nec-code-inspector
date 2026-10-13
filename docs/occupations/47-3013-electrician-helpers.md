@@ -116,7 +116,7 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.333 (Lock and tag on each disconnect; qualified person tests circuits to confirm de-energized.)
 - https://www.uti.edu/blog/electrical/first-year-electrical-training (Lockout/tagout is among the first things first-year trainees learn.)
 
-**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: disconnecting-means covers where and how disconnects must be provided, but the app has no lockout/tagout steps, verification or lock handling.)
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: disconnecting-means covers where and how disconnects must be provided, but the app has no lockout/tagout steps, verification or lock handling.)
 
 **Skills the app teaches that this procedure uses:** disconnecting-means, electrically-safe-work
 
@@ -155,7 +155,7 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.250 (Stacking, blocking, setback from openings, passageways and housekeeping rules for construction storage.)
 - https://www.onetonline.org/link/details/47-3013.00 (Helpers move materials and keep supplies and equipment organised.)
 
-**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app does not simulate lifting, staging or material storage.)
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: the app does not simulate lifting, staging or material storage.)
 
 **Skills the app teaches that this procedure uses:** jobsite-safety
 
@@ -274,7 +274,7 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.404 (Daily visual check and periodic continuity testing of cords and tools.)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.20 (Non-compliant tools must be tagged or removed from use.)
 
-**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: the app teaches code rules, not tool handling or inspection.)
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: the app teaches code rules, not tool handling or inspection.)
 
 **Skills the app teaches that this procedure uses:** shock-protection, jobsite-safety
 
@@ -315,7 +315,7 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.501 (Six-foot trigger and hole protection duties.)
 - https://www.onetonline.org/link/details/47-3013.00 (42 percent of helpers climb daily.)
 
-**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: no height, ladder or fall-protection content in the app.)
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: no height, ladder or fall-protection content in the app.)
 
 **Skills the app teaches that this procedure uses:** jobsite-safety
 
@@ -354,7 +354,7 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.416 (Barriers and signs around exposed energized equipment.)
 - https://www.onetonline.org/link/details/47-3013.00 (Cleaning the work area is a core helper task (77).)
 
-**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before wave 1 the rating was: none: working-space-access covers required clearances, but the app does not teach cleanup or securing a site.)
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before phase 1 the rating was: none: working-space-access covers required clearances, but the app does not teach cleanup or securing a site.)
 
 **Skills the app teaches that this procedure uses:** working-space-access, jobsite-safety
 
