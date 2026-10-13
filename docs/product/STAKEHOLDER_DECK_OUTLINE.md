@@ -111,7 +111,7 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 | About 821,000 electricians in the US | Can say, cite BLS 2025 | `docs/occupations/` |
 | "Teaches in 3D today" | **Cannot say**: scenes are not built | `TODO.md` |
 | "Reviewed by electrical experts" | **Cannot say yet**: nothing has had an expert review | `PRD.md` |
-| Primary education market of $26M, adjacent $34.6M, combined $60.6M | **Owner's estimate, not checked**; the worker total does not reconcile, "Bright Outlook" is wrong for five adjacent occupations, one occupation is counted twice | `docs/occupations/ADJACENT.md` |
+| Primary education market of $26M, adjacent $34.6M, combined $60.6M | **Owner's estimate, not checked.** Its inputs do not hold: the worker total is about 7.3 million, not 6.7 million; "Bright Outlook" is wrong for five adjacent occupations; 49-2098 is counted twice (23 distinct occupations, not 24); openings are about 616,000, not 700,000 | `docs/product/MARKET_FACTS.md` |
 | Launch of all six occupations in the first half of 2027 | **Cannot say**: the research supports Phase 1 only | `PRD.md` section 7 |
 | Aligned to a credential or exam | **Cannot say**: the app contains skills, never credentials | `docs/CONTENT_POLICY.md` |
 

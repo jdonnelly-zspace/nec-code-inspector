@@ -865,18 +865,18 @@
   "headlineChecks": [
     {
       "claim": "~6.7M workers across the combined 24 occupations",
-      "result": "Not confirmed; the adjacent 18 alone sum to about 6.38M unique codes, or 7.80M if overlapping child codes are counted again",
-      "note": "Sum of 2025 O*NET/BLS figures for 16 distinct codes: 440,900 + 510,600 + 131,100 + 45,300 + 11,800 + 913,300 + 6,600 + 20,900 + 166,700 + 1,621,800 + 1,489,300 + 609,100 + 24,700 + 153,900 + 143,100 + 86,300 = 6,375,400. 47-1011.03 and 47-2152.04 are children of 47-1011 and 47-2152 and O*NET repeats the parent figure, so counting them again adds 913,300 + 510,600 (total 7,799,300). 49-2098 (86,300) is also a core occupation. Adding the six core occupations (not opened here) would likely exceed 6.7M, so the claim looks understated or uses another basis. Also most of these workers do no electrical work, so the total is not the market for an electrical app."
+      "result": "Not reproducible. Counting each code once on one basis (O*NET and OOH 2025 employment) gives about 7.3 million for all 23 distinct occupations",
+      "note": "Checked on 2026-10-13 against each page; see docs/product/MARKET_FACTS.md. Core six 1,289,200; the 13 adjacent codes with their own figure 5,968,500 (49-2098 is in both groups and counted once; 47-1011.03, 47-2152.04 and 47-4011.01 only repeat a parent's figure; 17-2199.03 shows a larger group's figure). About 78 percent of the adjacent workers are general maintenance workers, construction laborers, construction managers and supervisors, who are not electrical workers. If the 18 rows are summed as listed, with the parents counted again, the adjacent total is 7.80 million."
     },
     {
       "claim": "~700K annual openings for the combined 24 occupations",
-      "result": "Plausible but not confirmed",
-      "note": "The 16 distinct adjacent codes sum to about 531,300 openings per year (40,600+42,000+9,800+4,400+1,500+67,000+500+1,800+8,800+148,700+120,000+49,700+1,900+14,800+11,300+8,500); 640,300 with the two overlapping child codes counted again. Six core occupations would bring it to roughly 630K-740K depending on basis, so 700K is in range but I did not open the core figures. Over 60% of the 531K is general maintenance, laborers, and construction managers/supervisors, which are not electrical jobs."
+      "result": "About 616,000, not 700,000, on the same basis (checked 2026-10-13)",
+      "note": "Core six 117,200 plus 13 adjacent codes 499,200. 62 percent of the total (385,400) is general maintenance, construction laborers, construction managers and supervisors. The OOH confirms O*NET's openings figure as annual for most codes; for a few the unit is unconfirmed. See docs/product/MARKET_FACTS.md."
     },
     {
       "claim": "All 18 adjacent occupations are Bright Outlook",
-      "result": "False for 5",
-      "note": "Not Bright on O*NET: 47-2211 Sheet Metal Workers, 47-3015 Helpers--Pipelayers/Plumbers, 17-2199.03 Energy Engineers, 47-4011.01 Energy Auditors, 49-2022 Telecom Equipment Installers (declining). The other 13 are Bright (11 for rapid growth, 49-9071 for numerous openings, 47-2061 for both). The Bright Outlook list was read through a summarising fetch tool, so recheck by opening each page."
+      "result": "False for 5 (confirmed on each O*NET page, 2026-10-13)",
+      "note": "Not Bright on their own pages: 47-2211 Sheet Metal Workers, 47-3015 Helpers--Pipelayers/Plumbers, 17-2199.03 Energy Engineers, 47-4011.01 Energy Auditors, 49-2022 Telecom Equipment Installers (declining). The other 13 are Bright (growth for most; 49-9071 for numerous openings; 47-2061 for both). Pages were read through a summarising tool, so spot-check before quoting."
     },
     {
       "claim": "SOC codes and titles match O*NET",
