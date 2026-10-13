@@ -2,7 +2,7 @@
 
 Status: draft for the owner. This is the flow, talking points and tone for a Product Strategy, Roadmap and Marketing deck of **six slides at most**. Nothing is designed yet. Agree the tone, the points and the value first; then the deck is built from this file.
 
-Every number below comes from a file in the repository (named in each slide) except the market figures, which are the owner's and have not been checked (see "Claims ledger").
+Every number below comes from a file in the repository (named in each slide). The worker and opening figures are in `docs/product/MARKET_FACTS.md`, checked on the live O*NET and BLS pages on 2026-10-13 and still to be spot-checked by a person. The market sizes and prices are the owner's and have not been checked (see the claims ledger in section 5).
 
 ## 1. Who the deck is for and what it must do
 
@@ -31,10 +31,10 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 
 - **Headline:** Students learn electrical work by doing it, and schools cannot let them do it live.
 - **Points**
-  - Electricians are the largest group: about 821,000 workers in the US (BLS, 2025), with helpers and inspectors beside them. Six core occupations and eighteen adjacent ones need foundational electrical knowledge (`docs/occupations/`).
+  - Electricians are the largest group: about 821,000 workers in the US (BLS, 2025), with helpers and inspectors beside them. The six core occupations employ about 1.3 million people; eighteen adjacent ones (23 distinct occupations in all, once a repeat is removed) need foundational electrical knowledge (`docs/product/MARKET_FACTS.md`).
   - The work is dangerous to learn on live equipment and hard to show in a textbook.
   - The Inspire 2 stylus display puts a 3D panel in front of the student, which is what this needs.
-- **Visual idea:** one image of a 3D panel with the stylus ray on a part, and three numbers (workers, occupations, schools to be sized).
+- **Visual idea:** one image of a 3D panel with the stylus ray on a part, and three numbers: 1.3 million workers in the six core occupations, 6 core and 18 adjacent occupations, and schools to be sized (no dollar figure until the market view is corrected).
 - **Caveat to say aloud:** the market sizing in the original market view is the owner's estimate and is being corrected before outside use.
 
 ### Slide 2. The product and its value
@@ -42,10 +42,10 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 - **Headline:** Learn the work of an occupation, not a code book.
 - **Points**
   - The student chooses an **occupation** (electrician, helper, inspector first). The app teaches its **procedures**, the **skills** behind them and the rules that apply in the student's **region**, without naming a code.
-  - Four ways to learn: a short lesson, step-by-step practice of a real procedure, inspection of a 3D building, and designing a panel. A quick reference is always at hand.
+  - Four ways to learn: a short lesson, step-by-step practice of a real procedure, inspection of a 3D building (the scenes are still to be built), and designing a panel. A quick reference is always at hand.
   - Three levels that follow the trade's own ladder, **Apprentice, Journeyman and Master**, each described by what the student can already do (the app's current labels, Beginner, Standard and Expert, are being replaced; see section 7).
   - For teachers: a clear progress file by skill, no accounts to manage in the first release; for students: a plain screen saying what is tracked and how to export or delete it.
-- **Why it is different (say these, with proof):** it is built around an occupation's procedures; it measures skills across the 3D practice; it is stylus-first.
+- **Why it is different (say these, with proof):** it is built around an occupation's procedures; it measures skills across every kind of practice; it is stylus-first.
 - **Visual idea:** the mockup's occupation screen next to a practice screen (`docs/design/mockup.html`).
 
 ### Slide 3. Where we are today (the proof)
@@ -81,7 +81,7 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 ### Slide 5. Marketing: who we say what to
 
 - **Headline:** One promise, told to three audiences.
-- **Promise:** Students learn the real work of an electrician, safely, in 3D.
+- **Promise:** Students learn the real work of an electrician, safely, in 3D. (A promise for when the scenes ship; until then say "will", not "does".)
 - **Audiences and the line for each**
   - *Teachers and programs* (CTE, apprenticeship, community college): "A safe place to practise the procedures your students will do on the job, with progress you can see by skill."
   - *Administrators and buyers:* "Stylus-driven lessons for the zSpace Inspire 2, with no accounts to manage in the first release."
@@ -94,7 +94,7 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 
 - **Headline:** What we need from you to move.
 - **Decisions needed**
-  1. Licences for the installation codes and standards (NEC, CEC, BS 7671, the alarm standard, the utility code). This gates shipping and Phase 3 and 3.
+  1. Licences for the installation codes and standards (NEC, CEC, BS 7671, the alarm standard, the utility code). This gates shipping and Phases 2 and 3; the utility code comes first because it gates the next phase.
   2. Which analytics service the other zSpace apps use, and what the generic student account is.
   3. Funding and owners for the 3D scenes and art, the biggest remaining piece of work.
   4. An occupational expert and a code expert to review the content.
@@ -108,7 +108,8 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 |---|---|---|
 | 20 skills, 20 lessons, 44 procedures documented, 28 with step practice | Can say (counts from the repository) | `PRD.md`, `occupations.json` |
 | 139 inspection violations, 17 cards, 6 panel designs, 8-step tutorial | Can say | `Content/`, `TODO.md` |
-| About 821,000 electricians in the US | Can say, cite BLS 2025 | `docs/occupations/` |
+| About 821,000 electricians in the US | Can say, cite BLS 2025 | `docs/product/MARKET_FACTS.md` |
+| About 1.3 million workers in the six core occupations; 23 distinct occupations, about 7.3 million workers, counting each code once | Can say with the basis stated (O*NET and BLS 2025), after a person spot-checks the pages | `docs/product/MARKET_FACTS.md` |
 | "Teaches in 3D today" | **Cannot say**: scenes are not built | `TODO.md` |
 | "Reviewed by electrical experts" | **Cannot say yet**: nothing has had an expert review | `PRD.md` |
 | Primary education market of $26M, adjacent $34.6M, combined $60.6M | **Owner's estimate, not checked.** Its inputs do not hold: the worker total is about 7.3 million, not 6.7 million; "Bright Outlook" is wrong for five adjacent occupations; 49-2098 is counted twice (23 distinct occupations, not 24); openings are about 616,000, not 700,000 | `docs/product/MARKET_FACTS.md` |
@@ -124,7 +125,7 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 5. Should the deck be one artifact you share by link, or a downloadable file? (Decks made from the Slides type can be exported to .pptx or PDF.)
 6. Any audience missing (for example, a school district buyer, an industry association or a funder)?
 
-## 7. One naming system for levels (open)
+## 7. One naming system for levels (decided as D-12; the points below are open)
 
 Today the deck's occupations (electrician, helper, inspector) and the app's levels (Beginner, Standard, Expert) use two vocabularies. The owner's direction: use one, the trade's own ladder, **Apprentice, Journeyman, Master**, in the deck and in the app (`TODO.md`, "One naming system for levels"). The deck says so from now on. Points to settle before it is built into the app:
 
