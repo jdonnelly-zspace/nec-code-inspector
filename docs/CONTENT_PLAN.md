@@ -170,6 +170,8 @@ missing skill, a code or credential name, a number or an unfilled region word. N
 edition decision) and 7 are Master or Foundation items in arc-fault, overcurrent, working space and special locations. Fewer of this batch survived verification
 (15 of 20) because the easy ideas were already used. Evidence: `docs/expert-review/PHASE1_VERIFICATION_BATCH4.md`.
 
+**Phase 1 status (fifth batch, 2026-10-13).** The seven hard-to-find items are in (two arc-fault, two overcurrent, one working space, two special locations), so 96 of the 106 are done and the NEC pool shortfall is 10: all load calculation, which waits on the 2026 dwelling values being verified. Evidence: `docs/expert-review/PHASE1_VERIFICATION_BATCH5.md`. The pool-cord entry was renumbered from 680.7 to 680.8 (the 2020 and 2023 numbering).
+
 **Phase 1 status (third batch).** 24 more violations are in (shock protection 8, branch circuits 6, wiring methods 6, overcurrent protection 4), so 74
 of the 106 are done and the NEC pool shortfall is 32. The check also found the app's 210.8(A) item numbers were the 2020 list; they are now the 2023 list.
 Still to author: load calculation (waits on the edition decision) and the remaining arc-fault, marking, working-space, overcurrent, disconnecting means

@@ -1768,7 +1768,7 @@
       "isNewInEdition": false
     },
     {
-      "reference": "680.7",
+      "reference": "680.8",
       "title": "Pool Equipment - Cord-and-Plug Connections",
       "text": "Fixed or stationary pool equipment, other than underwater luminaires, may be connected with a flexible cord and plug so it can be removed for servicing, with a cord of 3 ft or less, a copper equipment grounding conductor of at least 12 AWG and a grounding-type plug.",
       "section": 6,
@@ -2896,6 +2896,107 @@
       ],
       "related": [
         "680.22(B)"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.12(A)",
+      "title": "Arc-Fault Protection - Methods",
+      "text": "Where arc-fault protection is required, the code gives several ways to provide it: a combination-type breaker at the panel, or an arc-fault device at the first outlet used with a plain breaker only in set conditions (a metal wiring method from the panel to that outlet, or a short continuous run listed as a system).",
+      "section": 2,
+      "keywords": [
+        "AFCI",
+        "arc fault",
+        "combination breaker",
+        "first outlet",
+        "methods"
+      ],
+      "related": [
+        "210.12(B)",
+        "210.12(E)"
+      ],
+      "conceptId": "arc-fault-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "210.12(A)(5)",
+      "title": "Arc-Fault Protection - Outlet Device with a Metal Home Run",
+      "text": "A plain breaker may be used with an arc-fault device at the first outlet when the run from the panel to that outlet is metal conduit, metal-clad cable or steel-armored cable with metal boxes and enclosures; the outlet device then protects the rest of the circuit.",
+      "section": 2,
+      "keywords": [
+        "AFCI",
+        "arc fault",
+        "first outlet",
+        "home run",
+        "metal cable",
+        "MC cable",
+        "conduit"
+      ],
+      "related": [
+        "210.12(B)",
+        "210.12(E)"
+      ],
+      "conceptId": "arc-fault-protection",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "110.26(D)",
+      "title": "Working Space - Lighting",
+      "text": "Indoor working space about service equipment and panels needs lighting, and that lighting must not rely on automatic control alone. A motion sensor is fine if a manual switch or override also keeps the light on. Extra lighting is not needed where a nearby light source already lights the space.",
+      "section": 1,
+      "keywords": [
+        "illumination",
+        "lighting",
+        "working space",
+        "occupancy sensor",
+        "panel",
+        "switch"
+      ],
+      "related": [
+        "110.26(A)(1)",
+        "110.26(E)(1)(a)"
+      ],
+      "conceptId": "working-space-access",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.8(A)",
+      "title": "Pool Equipment - Cord Length",
+      "text": "For a permanent pool, fixed equipment such as a pump may be connected with a cord and plug so it can be removed for servicing, but the cord can be no longer than 3 ft. Storable pools have no stated length limit.",
+      "section": 6,
+      "keywords": [
+        "pool",
+        "pump",
+        "cord",
+        "cord and plug",
+        "3 feet",
+        "length"
+      ],
+      "related": [
+        "680.21(C)",
+        "680.26"
+      ],
+      "conceptId": "special-locations",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "680.24(A)(2)",
+      "title": "Pool Light Junction Box - Height and Distance",
+      "text": "A junction box that feeds a pool light above the low-voltage limit, on conduit running to a forming shell or no-niche bracket, sits at least 4 in above the deck or 8 in above the highest water level, whichever is higher, and at least 4 ft from the pool wall unless a barrier separates it. A low-voltage potted box may sit flush with the deck if it is at least 4 ft from the wall.",
+      "section": 6,
+      "keywords": [
+        "pool",
+        "junction box",
+        "light",
+        "4 inches",
+        "8 inches",
+        "4 feet",
+        "deck"
+      ],
+      "related": [
+        "680.22(B)",
+        "680.26"
       ],
       "conceptId": "special-locations",
       "isNewInEdition": false
