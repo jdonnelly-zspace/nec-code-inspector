@@ -248,12 +248,12 @@
         {
           "profileId": "nec-2023",
           "reference": "210.12(B)",
-          "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the methods in 210.12(A)(1) through (A)(6)."
+          "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the approved methods."
         },
         {
           "profileId": "nec-2026",
           "reference": "210.12(B)",
-          "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the methods in 210.12(A)(1) through (A)(6)."
+          "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the approved methods."
         },
         {
           "profileId": "cec",
@@ -287,12 +287,12 @@
         {
           "profileId": "nec-2023",
           "reference": "210.12(B)",
-          "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the methods in 210.12(A)(1) through (A)(6)."
+          "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the approved methods."
         },
         {
           "profileId": "nec-2026",
           "reference": "210.12(B)",
-          "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the methods in 210.12(A)(1) through (A)(6)."
+          "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the approved methods."
         },
         {
           "profileId": "cec",
@@ -436,18 +436,18 @@
         {
           "profileId": "nec-2023",
           "reference": "334.80",
-          "text": "Bundling more than two NM cables (each with at least two current-carrying conductors) in a single hole in wood framing, without any gap between them, calls for derating each conductor's ampacity per Table 310.15(C)(1)."
+          "text": "Bundling more than two NM cables (each with at least two current-carrying conductors) in a single hole in wood framing, without any gap between them, calls for derating each conductor's ampacity using the code's adjustment factors."
         },
         {
           "profileId": "nec-2026",
           "reference": "334.80",
-          "text": "Bundling more than two NM cables (each with at least two current-carrying conductors) in a single hole in wood framing, without any gap between them, calls for derating each conductor's ampacity per Table 310.15(C)(1)."
+          "text": "Bundling more than two NM cables (each with at least two current-carrying conductors) in a single hole in wood framing, without any gap between them, calls for derating each conductor's ampacity using the code's adjustment factors."
         }
       ],
       "componentObjectName": "KitchenWall_CableBundleHole",
       "hintText": "When multiple NM cables pass through the same hole, ampacity derating may be required.",
       "componentType": "Cable Bundle",
-      "inspectionNote": "Four NM cables are bundled through a single stud hole. With this many cables, ampacity must be derated per Table 310.15(C)(1), potentially making the conductors undersized for their breakers.",
+      "inspectionNote": "Four NM cables are bundled through a single stud hole. With this many cables, ampacity must be derated using the code's adjustment factors, potentially making the conductors undersized for their breakers.",
       "conceptId": "conductor-sizing",
       "severity": "Major",
       "minimumDifficulty": "Expert",
@@ -471,7 +471,7 @@
       "componentObjectName": "KitchenDishwasher_Circuit",
       "hintText": "Dishwashers in homes need GFCI protection on the outlet that supplies them. Check the breaker or outlet type.",
       "componentType": "Appliance Circuit",
-      "inspectionNote": "Dishwasher circuit lacks GFCI protection (210.8(D)).",
+      "inspectionNote": "Dishwasher circuit lacks GFCI protection.",
       "conceptId": "shock-protection",
       "severity": "Major",
       "minimumDifficulty": "Expert",
@@ -501,12 +501,12 @@
         {
           "profileId": "nec-2023",
           "reference": "210.12(B)",
-          "text": "In a dwelling unit, 120 V 10 A, 15 A and 20 A branch circuits serving outlets or devices in hallways and the other listed areas need arc-fault protection by one of the means in 210.12(A), usually a combination-type {term:arc-fault-device}."
+          "text": "In a dwelling unit, 120 V 10 A, 15 A and 20 A branch circuits serving outlets or devices in hallways and the other listed areas need arc-fault protection by one of the approved means, usually a combination-type {term:arc-fault-device}."
         },
         {
           "profileId": "nec-2026",
           "reference": "210.12(B)",
-          "text": "In a dwelling unit, 120 V 10 A, 15 A and 20 A branch circuits serving outlets or devices in hallways and the other listed areas need arc-fault protection by one of the means in 210.12(A), usually a combination-type {term:arc-fault-device}."
+          "text": "In a dwelling unit, 120 V 10 A, 15 A and 20 A branch circuits serving outlets or devices in hallways and the other listed areas need arc-fault protection by one of the approved means, usually a combination-type {term:arc-fault-device}."
         }
       ],
       "componentObjectName": "Hallway_Receptacle",
@@ -535,12 +535,12 @@
         {
           "profileId": "nec-2023",
           "reference": "210.12(B)",
-          "text": "Dining room outlets on 120 V 10 A, 15 A and 20 A dwelling-unit circuits need arc-fault protection by one of the means in 210.12(A)."
+          "text": "Dining room outlets on 120 V 10 A, 15 A and 20 A dwelling-unit circuits need arc-fault protection by one of the approved means."
         },
         {
           "profileId": "nec-2026",
           "reference": "210.12(B)",
-          "text": "Dining room outlets on 120 V 10 A, 15 A and 20 A dwelling-unit circuits need arc-fault protection by one of the means in 210.12(A)."
+          "text": "Dining room outlets on 120 V 10 A, 15 A and 20 A dwelling-unit circuits need arc-fault protection by one of the approved means."
         }
       ],
       "componentObjectName": "DiningRoom_Receptacle",
@@ -569,12 +569,12 @@
         {
           "profileId": "nec-2023",
           "reference": "210.12(B)",
-          "text": "Family room outlets on 120 V 10 A, 15 A and 20 A dwelling-unit circuits need arc-fault protection by one of the means in 210.12(A), not just overcurrent protection."
+          "text": "Family room outlets on 120 V 10 A, 15 A and 20 A dwelling-unit circuits need arc-fault protection by one of the approved means, not just overcurrent protection."
         },
         {
           "profileId": "nec-2026",
           "reference": "210.12(B)",
-          "text": "Family room outlets on 120 V 10 A, 15 A and 20 A dwelling-unit circuits need arc-fault protection by one of the means in 210.12(A), not just overcurrent protection."
+          "text": "Family room outlets on 120 V 10 A, 15 A and 20 A dwelling-unit circuits need arc-fault protection by one of the approved means, not just overcurrent protection."
         }
       ],
       "componentObjectName": "FamilyRoom_Receptacle",
@@ -603,12 +603,12 @@
         {
           "profileId": "nec-2023",
           "reference": "210.12(B)",
-          "text": "Closets are among the dwelling-unit areas where 120 V 10 A, 15 A and 20 A circuits need arc-fault protection by one of the means in 210.12(A)."
+          "text": "Closets are among the dwelling-unit areas where 120 V 10 A, 15 A and 20 A circuits need arc-fault protection by one of the approved means."
         },
         {
           "profileId": "nec-2026",
           "reference": "210.12(B)",
-          "text": "Closets are among the dwelling-unit areas where 120 V 10 A, 15 A and 20 A circuits need arc-fault protection by one of the means in 210.12(A)."
+          "text": "Closets are among the dwelling-unit areas where 120 V 10 A, 15 A and 20 A circuits need arc-fault protection by one of the approved means."
         }
       ],
       "componentObjectName": "Closet_Receptacle",
@@ -637,12 +637,12 @@
         {
           "profileId": "nec-2023",
           "reference": "210.12(B)",
-          "text": "Kitchen outlets on dwelling-unit 120 V 10 A, 15 A and 20 A circuits need arc-fault protection by one of the means in 210.12(A), in addition to any ground-fault protection the counter location needs."
+          "text": "Kitchen outlets on dwelling-unit 120 V 10 A, 15 A and 20 A circuits need arc-fault protection by one of the approved means, in addition to any ground-fault protection the counter location needs."
         },
         {
           "profileId": "nec-2026",
           "reference": "210.12(B)",
-          "text": "Kitchen outlets on dwelling-unit 120 V 10 A, 15 A and 20 A circuits need arc-fault protection by one of the means in 210.12(A), in addition to any ground-fault protection the counter location needs."
+          "text": "Kitchen outlets on dwelling-unit 120 V 10 A, 15 A and 20 A circuits need arc-fault protection by one of the approved means, in addition to any ground-fault protection the counter location needs."
         }
       ],
       "componentObjectName": "KitchenArc_Receptacle",
@@ -673,12 +673,12 @@
         {
           "profileId": "nec-2023",
           "reference": "210.12(B)",
-          "text": "Laundry areas are on the dwelling-unit list needing arc-fault protection for 120 V 10 A, 15 A and 20 A circuits, by one of the means in 210.12(A)."
+          "text": "Laundry areas are on the dwelling-unit list needing arc-fault protection for 120 V 10 A, 15 A and 20 A circuits, by one of the approved means."
         },
         {
           "profileId": "nec-2026",
           "reference": "210.12(B)",
-          "text": "Laundry areas are on the dwelling-unit list needing arc-fault protection for 120 V 10 A, 15 A and 20 A circuits, by one of the means in 210.12(A)."
+          "text": "Laundry areas are on the dwelling-unit list needing arc-fault protection for 120 V 10 A, 15 A and 20 A circuits, by one of the approved means."
         }
       ],
       "componentObjectName": "Laundry_Receptacle",
@@ -709,12 +709,12 @@
         {
           "profileId": "nec-2023",
           "reference": "210.12(E)",
-          "text": "When branch-circuit wiring serving the dwelling areas in 210.12(B) is modified, replaced or extended, the circuit needs arc-fault protection by a 210.12(A) means or an outlet branch-circuit AFCI at the first receptacle outlet of the existing circuit. A short extension adding no outlets or devices is excepted."
+          "text": "When branch-circuit wiring serving the dwelling areas that need arc-fault protection is modified, replaced or extended, the circuit needs arc-fault protection by one of the approved means or an outlet branch-circuit AFCI at the first receptacle outlet of the existing circuit. A short extension adding no outlets or devices is excepted."
         },
         {
           "profileId": "nec-2026",
           "reference": "210.12(E)",
-          "text": "When branch-circuit wiring serving the dwelling areas in 210.12(B) is modified, replaced or extended, the circuit needs arc-fault protection by a 210.12(A) means or an outlet branch-circuit AFCI at the first receptacle outlet of the existing circuit. A short extension adding no outlets or devices is excepted."
+          "text": "When branch-circuit wiring serving the dwelling areas that need arc-fault protection is modified, replaced or extended, the circuit needs arc-fault protection by one of the approved means or an outlet branch-circuit AFCI at the first receptacle outlet of the existing circuit. A short extension adding no outlets or devices is excepted."
         }
       ],
       "componentObjectName": "BedroomAddition_Receptacle",
@@ -911,12 +911,12 @@
         {
           "profileId": "nec-2023",
           "reference": "210.8(A)(5)",
-          "text": "Basement receptacles need ground-fault protection for personnel. A sump pump is also listed in 210.8(D) (item 6 in 2023). The old dedicated-appliance exception for a single receptacle is not in the 2023 text."
+          "text": "Basement receptacles need ground-fault protection for personnel. A sump pump is also on the list of appliances that need it. The old dedicated-appliance exception for a single receptacle is no longer in the code."
         },
         {
           "profileId": "nec-2026",
           "reference": "210.8(A)(5)",
-          "text": "Basement receptacles need ground-fault protection for personnel. A sump pump is also listed in 210.8(D) (item 6 in 2023). The old dedicated-appliance exception for a single receptacle is not in the 2023 text."
+          "text": "Basement receptacles need ground-fault protection for personnel. A sump pump is also on the list of appliances that need it. The old dedicated-appliance exception for a single receptacle is no longer in the code."
         }
       ],
       "componentObjectName": "Basement_SumpPump_Receptacle",

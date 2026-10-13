@@ -151,12 +151,12 @@
         {
           "profileId": "nec-2023",
           "reference": "250.122",
-          "text": "Wire-type equipment grounding conductors are at least the size Table 250.122 specifies."
+          "text": "Wire-type equipment grounding conductors are at least the size the code's grounding-conductor table specifies."
         },
         {
           "profileId": "nec-2026",
           "reference": "250.122",
-          "text": "Wire-type equipment grounding conductors are at least the size Table 250.122 specifies."
+          "text": "Wire-type equipment grounding conductors are at least the size the code's grounding-conductor table specifies."
         },
         {
           "profileId": "bs7671",
@@ -168,9 +168,9 @@
         }
       ],
       "componentObjectName": "EGC_SubPanel",
-      "hintText": "Equipment grounding conductors must be sized per Table 250.122 based on the overcurrent device rating.",
+      "hintText": "Equipment grounding conductors must be sized per the code's grounding-conductor table based on the overcurrent device rating.",
       "componentType": "Conductor",
-      "inspectionNote": "Equipment grounding conductor is 14 AWG on a 30A circuit. Table 250.122 requires minimum 10 AWG for 30A.",
+      "inspectionNote": "Equipment grounding conductor is 14 AWG on a 30A circuit. The code's grounding-conductor table requires minimum 10 AWG for 30A.",
       "conceptId": "earthing-bonding",
       "severity": "Major",
       "minimumDifficulty": "Beginner",
@@ -183,12 +183,12 @@
         {
           "profileId": "nec-2023",
           "reference": "250.50",
-          "text": "Bond together every electrode of the types listed in 250.52(A)(1) through (A)(7) at a building so they act as one system."
+          "text": "Bond together every grounding electrode present at a building so they act as one system."
         },
         {
           "profileId": "nec-2026",
           "reference": "250.50",
-          "text": "Bond together every electrode of the types listed in 250.52(A)(1) through (A)(7) at a building so they act as one system."
+          "text": "Bond together every grounding electrode present at a building so they act as one system."
         },
         {
           "profileId": "cec",
