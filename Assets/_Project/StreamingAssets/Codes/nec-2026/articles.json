@@ -56,7 +56,7 @@
     {
       "reference": "110.26(A)(1)",
       "title": "Working Space - Minimum Clear Distances",
-      "text": "Working space in front of live parts must be at least as deep as Table 110.26(A)(1) gives, unless exception (a) or (b) applies.",
+      "text": "Working space in front of live parts must be at least as deep as the code's working-space table gives, unless exception (a) or (b) applies.",
       "section": 1,
       "keywords": [
         "working space",
@@ -109,7 +109,7 @@
     {
       "reference": "210.8(A)",
       "title": "GFCI Protection - Dwelling Units",
-      "text": "Receptacles rated 125 V to 250 V in any dwelling location named in 210.8(A)(1) through (A)(11) require GFCI protection to keep people safe.",
+      "text": "Receptacles rated 125 V to 250 V in any dwelling location the code lists require GFCI protection to keep people safe.",
       "section": 2,
       "keywords": [
         "GFCI",
@@ -248,7 +248,7 @@
     {
       "reference": "210.12(B)",
       "title": "AFCI Protection - Dwelling Units",
-      "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the methods in 210.12(A)(1) through (A)(6).",
+      "text": "In a home, 120 V single-phase 15 A and 20 A branch circuits that serve outlets in habitable rooms such as kitchens, living and dining rooms, bedrooms, closets, hallways and laundry areas need arc-fault protection by one of the approved methods.",
       "section": 2,
       "keywords": [
         "AFCI",
@@ -287,7 +287,7 @@
     {
       "reference": "210.52(B)",
       "title": "Receptacle Outlets Required - Small Appliance",
-      "text": "Kitchen, pantry, breakfast-room and dining-room areas need their wall, floor and countertop receptacles (those covered by 210.52(A) and 210.52(C)), plus receptacles for refrigeration equipment, supplied by the two or more 20 A small-appliance circuits from 210.11(C)(1).",
+      "text": "Kitchen, pantry, breakfast-room and dining-room areas need their wall, floor and countertop receptacles (those covered by the general and countertop receptacle rules), plus receptacles for refrigeration equipment, supplied by the two or more 20 A small-appliance circuits required for kitchens.",
       "section": 2,
       "keywords": [
         "small appliance",
@@ -324,7 +324,7 @@
     {
       "reference": "120.12",
       "title": "Lighting Loads for Specified Occupancies",
-      "text": "Lighting load is at least the unit load in Table 220.12 for the occupancy.",
+      "text": "Lighting load is at least the unit load in the code's lighting-load table for the occupancy.",
       "section": 2,
       "keywords": [
         "lighting",
@@ -362,7 +362,7 @@
     {
       "reference": "120.82",
       "title": "Optional Calculation - Dwelling Unit",
-      "text": "A one-family dwelling, or one unit of a two-family or multifamily dwelling, may use the optional calculation in 220.82: the first 10 kVA of general loads at 100% and the rest at 40%, with heating and air-conditioning loads added by their own percentages.",
+      "text": "A one-family dwelling, or one unit of a two-family or multifamily dwelling, may use the optional calculation: the first 10 kVA of general loads at 100% and the rest at 40%, with heating and air-conditioning loads added by their own percentages.",
       "section": 2,
       "keywords": [
         "optional calculation",
@@ -432,7 +432,7 @@
     {
       "reference": "240.4(D)",
       "title": "Small Conductors",
-      "text": "Breaker limits for small conductors, unless 240.4(E) or 240.4(G) allow more. Copper: 14 AWG 15 A, 12 AWG 20 A, 10 AWG 30 A. Aluminum or copper-clad aluminum: 12 AWG 15 A, 10 AWG 25 A.",
+      "text": "Breaker limits for small conductors, unless the code's special cases allow more. Copper: 14 AWG 15 A, 12 AWG 20 A, 10 AWG 30 A. Aluminum or copper-clad aluminum: 12 AWG 15 A, 10 AWG 25 A.",
       "section": 2,
       "keywords": [
         "small conductor",
@@ -506,7 +506,7 @@
     {
       "reference": "250.50",
       "title": "Grounding Electrode System",
-      "text": "Bond together every electrode of the types listed in 250.52(A)(1) through (A)(7) at a building so they act as one system.",
+      "text": "Bond together every grounding electrode present at a building so they act as one system.",
       "section": 2,
       "keywords": [
         "grounding electrode",
@@ -595,7 +595,7 @@
     {
       "reference": "250.122",
       "title": "Size of Equipment Grounding Conductors",
-      "text": "Wire-type equipment grounding conductors are at least the size Table 250.122 specifies.",
+      "text": "Wire-type equipment grounding conductors are at least the size the code's grounding-conductor table specifies.",
       "section": 2,
       "keywords": [
         "equipment grounding",
@@ -612,7 +612,7 @@
     {
       "reference": "310.14",
       "title": "Conductor Ampacities",
-      "text": "Conductor ampacities come from Tables 310.16 through 310.21 and their notes.",
+      "text": "Conductor ampacities come from the code's ampacity tables and their notes.",
       "section": 3,
       "keywords": [
         "ampacity",
@@ -631,7 +631,7 @@
     {
       "reference": "310.16",
       "title": "Ampacities of Insulated Conductors",
-      "text": "Insulated conductors rated 2000 V or below have their allowable ampacities listed in Table 310.16, which assumes a 30 degrees C ambient.",
+      "text": "Insulated conductors rated 2000 V or below have their allowable ampacities listed in the code's ampacity table, which assumes a 30 degrees C ambient.",
       "section": 3,
       "keywords": [
         "ampacity",
@@ -723,7 +723,7 @@
     {
       "reference": "408.54",
       "title": "Maximum Number of Overcurrent Devices",
-      "text": "In addition to 408.30, a panelboard must physically prevent installing more overcurrent devices than the number it was designed, rated and listed for.",
+      "text": "In addition to the rule on panelboard ratings, a panelboard must physically prevent installing more overcurrent devices than the number it was designed, rated and listed for.",
       "section": 4,
       "keywords": [
         "panelboard",
@@ -756,7 +756,7 @@
     {
       "reference": "430.6(A)(1)",
       "title": "Motor Ampere Ratings - Table Values",
-      "text": "Take motor current ratings from Table 430.247, 430.248, 430.249 or 430.250 whenever the rating determines conductor ampacity, switch size, protection of the branch circuit against short circuits and ground faults, or overload protection.",
+      "text": "Take motor current ratings from the code's full-load current tables whenever the rating determines conductor ampacity, switch size, protection of the branch circuit against short circuits and ground faults, or overload protection.",
       "section": 4,
       "keywords": [
         "motor",
@@ -775,7 +775,7 @@
     {
       "reference": "430.52",
       "title": "Motor Branch-Circuit Short-Circuit and Ground-Fault Protection",
-      "text": "Short-circuit and ground-fault protection for a motor branch circuit has to satisfy 430.52(B) and one of 430.52(C) or (D); the device rating or setting cannot go above the Table 430.52 values.",
+      "text": "Short-circuit and ground-fault protection for a motor branch circuit has to satisfy the general sizing rule and one of the specific methods; the device rating or setting cannot go above the code's table values.",
       "section": 4,
       "keywords": [
         "motor",
@@ -853,7 +853,7 @@
     {
       "reference": "210.12(E)",
       "title": "AFCI Protection - Branch Circuit Extensions or Modifications",
-      "text": "Wiring changes, replacements or extensions on a circuit in the 210.12(B) areas bring the circuit under the same arc-fault protection methods, 210.12(A)(1) through (A)(6).",
+      "text": "Wiring changes, replacements or extensions on a circuit in the listed areas bring the circuit under the same arc-fault protection methods.",
       "section": 2,
       "keywords": [
         "AFCI",
@@ -949,7 +949,7 @@
     {
       "reference": "240.4(B)",
       "title": "Next Higher Standard Overcurrent Device",
-      "text": "When a conductor's ampacity does not land on a standard device rating from 240.6(A), the next size up may be used, but not for a circuit with more than one receptacle for portable cord-and-plug loads.",
+      "text": "When a conductor's ampacity does not land on a standard device rating, the next size up may be used, but not for a circuit with more than one receptacle for portable cord-and-plug loads.",
       "section": 2,
       "keywords": [
         "overcurrent",
@@ -969,7 +969,7 @@
     {
       "reference": "334.80",
       "title": "NM Cable - Ampacity",
-      "text": "Where more than two NM cables (each with at least two current-carrying conductors) pass without spacing through the same hole in wood framing that is sealed with insulation, caulk or foam, derate each conductor's ampacity per Table 310.15(C)(1); the adjustment counts only current-carrying conductors.",
+      "text": "Where more than two NM cables (each with at least two current-carrying conductors) pass without spacing through the same hole in wood framing that is sealed with insulation, caulk or foam, derate each conductor's ampacity using the code's adjustment factors; the adjustment counts only current-carrying conductors.",
       "section": 3,
       "keywords": [
         "NM cable",
@@ -990,7 +990,7 @@
     {
       "reference": "120.42",
       "title": "General Lighting Demand Factors",
-      "text": "Table 220.42 demand factors apply to the general-illumination part of the branch-circuit load but not to heavy-duty lampholders. In dwellings: 100% for the first 3,000 VA, 35% for VA from 3,001 up to 120,000, and 25% above 120,000 VA.",
+      "text": "The standard demand factors apply to the general-illumination part of the branch-circuit load but not to heavy-duty lampholders. In dwellings: 100% for the first 3,000 VA, 35% for VA from 3,001 up to 120,000, and 25% above 120,000 VA.",
       "section": 2,
       "keywords": [
         "demand factor",
@@ -1010,7 +1010,7 @@
     {
       "reference": "120.52",
       "title": "Small-Appliance and Laundry Loads - Dwelling Unit",
-      "text": "Each 2-wire small-appliance circuit (210.11(C)(1)) and each laundry circuit (210.11(C)(2)) in a dwelling counts as 1,500 VA; add these to the general lighting load if you like and apply the Table 220.42 demand factors to the sum.",
+      "text": "Each 2-wire small-appliance circuit and each laundry circuit in a dwelling counts as 1,500 VA; add these to the general lighting load if you like and apply the standard demand factors to the sum.",
       "section": 2,
       "keywords": [
         "small appliance",
@@ -1031,7 +1031,7 @@
     {
       "reference": "120.54",
       "title": "Electric Dryer Load - Dwelling Unit",
-      "text": "A household electric dryer counts as 5,000 W or its nameplate rating, whichever is larger, and Table 220.54 demand factors may be used for multiple dryers.",
+      "text": "A household electric dryer counts as 5,000 W or its nameplate rating, whichever is larger, and the code's dryer demand factors may be used for multiple dryers.",
       "section": 2,
       "keywords": [
         "dryer",
@@ -1050,7 +1050,7 @@
     {
       "reference": "120.55",
       "title": "Electric Cooking Equipment - Dwelling Unit",
-      "text": "Demand for household electric ranges, built-in wall ovens, countertop cooking units and similar appliances individually rated above 1-3/4 kW may come from Table 220.55. A single circuit feeding a cooking appliance of 12 kW or less is limited to 8 kW of demand.",
+      "text": "Demand for household electric ranges, built-in wall ovens, countertop cooking units and similar appliances individually rated above 1-3/4 kW may come from the code's cooking-appliance demand table. A single circuit feeding a cooking appliance of 12 kW or less is limited to 8 kW of demand.",
       "section": 2,
       "keywords": [
         "range",
@@ -1090,7 +1090,7 @@
     {
       "reference": "250.53(A)(2)",
       "title": "Supplemental Electrode Required",
-      "text": "One rod, pipe or plate on its own must be backed by another electrode of a type in 250.52(A)(2) through (A)(8). The extra electrode may be bonded to the first, to the grounding electrode conductor, to the incoming grounded conductor at the service, or to the service enclosure. Exception: a lone electrode that measures 25 ohms or less to earth needs no supplement.",
+      "text": "One rod, pipe or plate on its own must be backed by an electrode of another approved type. The extra electrode may be bonded to the first, to the grounding electrode conductor, to the incoming grounded conductor at the service, or to the service enclosure. Exception: a lone electrode that measures 25 ohms or less to earth needs no supplement.",
       "section": 2,
       "keywords": [
         "supplemental electrode",
@@ -1210,7 +1210,7 @@
     {
       "reference": "210.19(A)",
       "title": "Branch-Circuit Conductors - Minimum Ampacity",
-      "text": "Branch-circuit conductors must carry at least the largest load they serve; size them to the greater of the results from 210.19(A)(1) and (A)(2).",
+      "text": "Branch-circuit conductors must carry at least the largest load they serve; size them to the greater of the two results the code gives.",
       "section": 2,
       "keywords": [
         "branch circuit",
@@ -1247,7 +1247,7 @@
     {
       "reference": "215.2",
       "title": "Minimum Rating and Size of Feeders",
-      "text": "Feeder conductors must carry the load found by the Article 220 calculation parts III, IV and V. Before any adjustment or correction factors, the smallest allowable conductor must be rated to carry the noncontinuous load together with 125 percent of what runs continuously.",
+      "text": "Feeder conductors must carry the load found by the code's feeder load calculation. Before any adjustment or correction factors, the smallest allowable conductor must be rated to carry the noncontinuous load together with 125 percent of what runs continuously.",
       "section": 2,
       "keywords": [
         "feeder",
@@ -1288,7 +1288,7 @@
     {
       "reference": "120.44",
       "title": "Receptacle Loads - Other Than Dwelling Units",
-      "text": "Receptacle loads from 220.14 may use the Table 220.44 demand factors or be calculated as 220.44(A) allows.",
+      "text": "Receptacle loads may use the receptacle demand factors or be calculated in the other way the code allows.",
       "section": 2,
       "keywords": [
         "receptacle",
@@ -1346,7 +1346,7 @@
     {
       "reference": "250.66",
       "title": "Size of AC Grounding Electrode Conductor",
-      "text": "Table 250.66 gives the smallest allowed grounding electrode conductor for a service, for buildings fed from a feeder or a branch circuit, and for a separately derived system.",
+      "text": "The code's electrode-conductor table gives the smallest allowed grounding electrode conductor for a service, for buildings fed from a feeder or a branch circuit, and for a separately derived system.",
       "section": 2,
       "keywords": [
         "grounding electrode conductor",
@@ -1404,7 +1404,7 @@
     {
       "reference": "300.5",
       "title": "Underground Installations",
-      "text": "Direct-buried cables and raceways must meet the minimum cover in Table 300.5. Underground cables beneath a building go in a raceway. Protect underground conductors from damage as 300.5(D) describes.",
+      "text": "Direct-buried cables and raceways must meet the minimum cover in the code's burial table. Underground cables beneath a building go in a raceway. Protect underground conductors from damage as the code describes.",
       "section": 3,
       "keywords": [
         "underground",
@@ -1423,7 +1423,7 @@
     {
       "reference": "314.16",
       "title": "Number of Conductors in Outlet, Device, and Junction Boxes",
-      "text": "Choose a box or conduit body big enough to leave free space for every conductor inside; the box volume must at least match the fill calculation in 314.16(A) and (B). Count a conductor once if it begins outside and ends or is spliced inside, and once if it simply passes through without splice or termination.",
+      "text": "Choose a box or conduit body big enough to leave free space for every conductor inside; the box volume must at least match the code's box fill calculation. Count a conductor once if it begins outside and ends or is spliced inside, and once if it simply passes through without splice or termination.",
       "section": 3,
       "keywords": [
         "box fill",
@@ -1460,7 +1460,7 @@
     {
       "reference": "430.22",
       "title": "Single Motor - Branch-Circuit Conductor Size",
-      "text": "Conductors for one continuously running motor need ampacity of at least 125 percent of its full-load current (taken per 430.6(A)(1)).",
+      "text": "Conductors for one continuously running motor need ampacity of at least 125 percent of its full-load current (taken from the code's full-load current tables).",
       "section": 4,
       "keywords": [
         "motor",
@@ -1499,7 +1499,7 @@
     {
       "reference": "430.32",
       "title": "Continuous-Duty Motors - Overload Protection",
-      "text": "A continuous-duty motor over 1 hp needs its own overload device that responds to motor current. Set it to trip at no more than 125 percent of nameplate full-load current when the motor has a service factor of 1.15 or more, or a marked temperature rise of 40 C or less, and no more than 115 percent for other motors. If that setting cannot start the motor or carry its load, 430.32(C) allows a higher setting, up to 140 percent and 130 percent.",
+      "text": "A continuous-duty motor over 1 hp needs its own overload device that responds to motor current. Set it to trip at no more than 125 percent of nameplate full-load current when the motor has a service factor of 1.15 or more, or a marked temperature rise of 40 C or less, and no more than 115 percent for other motors. If that setting cannot start the motor or carry its load, the code allows a higher setting, up to 140 percent and 130 percent.",
       "section": 4,
       "keywords": [
         "motor",
@@ -1593,7 +1593,7 @@
     {
       "reference": "120.18",
       "title": "Maximum Loads",
-      "text": "The total load cannot go beyond the branch circuit's rating or past the limits in 220.18(A) through (C) when their conditions apply.",
+      "text": "The total load cannot go beyond the branch circuit's rating or past the other limits the code sets for load, when their conditions apply.",
       "section": 2,
       "keywords": [
         "maximum",
@@ -1699,7 +1699,7 @@
     {
       "reference": "480.3",
       "title": "Storage Batteries - Equipment",
-      "text": "Battery system equipment and wiring follow the rest of the Code plus Article 480's own rules.",
+      "text": "Battery system equipment and wiring follow the rest of the Code plus the battery article's own rules.",
       "section": 4,
       "keywords": [
         "battery",
@@ -2072,7 +2072,7 @@
     {
       "reference": "230.90(A)",
       "title": "Service Overcurrent Device - Maximum Rating",
-      "text": "The overcurrent device protecting service conductors must not be rated higher than the ampacity of those service conductors, apart from limited exceptions such as the next-size-up allowance. Separately, 230.42(A) requires the conductors to carry the calculated load.",
+      "text": "The overcurrent device protecting service conductors must not be rated higher than the ampacity of those service conductors, apart from limited exceptions such as the next-size-up allowance. Separately, the code requires the conductors to carry the calculated load.",
       "section": 2,
       "keywords": [
         "service conductors",
@@ -2110,7 +2110,7 @@
     {
       "reference": "310.15(C)(1)",
       "title": "Ampacity Adjustment for More Than Three Conductors",
-      "text": "When more than three current-carrying conductors share a raceway or cable for more than 24 in., start from the 90 C column of Table 310.16 and apply the adjustment factor (80% for 4-6, 70% for 7-9, 50% for 10-20). The overcurrent limits in 240.4(D) are then applied to the adjusted ampacity.",
+      "text": "When more than three current-carrying conductors share a raceway or cable for more than 24 in., start from the 90 C column of the ampacity table and apply the adjustment factor (80% for 4-6, 70% for 7-9, 50% for 10-20). The small-conductor overcurrent limits are then applied to the adjusted ampacity.",
       "section": 3,
       "keywords": [
         "derating",
@@ -2215,7 +2215,7 @@
     {
       "reference": "225.31",
       "title": "Disconnecting Means for Buildings Supplied by a Feeder",
-      "text": "A building or structure supplied by a feeder or branch circuit needs a means to disconnect all ungrounded conductors that supply or pass through it. Under 225.36 a circuit breaker, molded case switch, general-use switch or snap switch all qualify.",
+      "text": "A building or structure supplied by a feeder or branch circuit needs a means to disconnect all ungrounded conductors that supply or pass through it. A circuit breaker, molded case switch, general-use switch or snap switch all qualify.",
       "section": 2,
       "keywords": [
         "detached garage",
@@ -2350,7 +2350,7 @@
     {
       "reference": "680.9(A)",
       "title": "Overhead Conductor Clearances - Pools",
-      "text": "Pools, spas and hot tubs may not be placed within the Table 680.9(A) clearances of overhead service or other overhead conductors not in a raceway; for 0-750 V insulated service-drop type cable the clearance is 22.5 ft, measured from the maximum water level.",
+      "text": "Pools, spas and hot tubs may not be placed within the code's clearances of overhead service or other overhead conductors not in a raceway; for 0-750 V insulated service-drop type cable the clearance is 22.5 ft, measured from the maximum water level.",
       "section": 6,
       "keywords": [
         "pool",
@@ -2397,7 +2397,7 @@
     {
       "reference": "680.21(C)",
       "title": "Pool Pump Motors - Ground-Fault Protection",
-      "text": "Outlets supplying pool pump motors on single-phase 120 V through 240 V branch circuits need Class A ground-fault protection, whether the pump is on a receptacle or wired directly; in 2023 the protection type points to 680.5(B).",
+      "text": "Outlets supplying pool pump motors on single-phase 120 V through 240 V branch circuits need Class A ground-fault protection, whether the pump is on a receptacle or wired directly.",
       "section": 6,
       "keywords": [
         "pool pump",
@@ -2597,7 +2597,7 @@
     {
       "reference": "240.52",
       "title": "Edison-Base Fuseholders",
-      "text": "Edison-base fuseholders may be installed only where adapters make them accept Type S fuses, which resist swapping in a larger fuse. Once fitted, a Type S adapter is designed not to be removed (240.54).",
+      "text": "Edison-base fuseholders may be installed only where adapters make them accept Type S fuses, which resist swapping in a larger fuse. Once fitted, a Type S adapter is designed not to be removed.",
       "section": 2,
       "keywords": [
         "Edison-base",

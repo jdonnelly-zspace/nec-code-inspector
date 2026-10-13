@@ -100,7 +100,7 @@
         {
           "profileId": "nec-2023",
           "reference": "680.9(A)",
-          "text": "Pools, spas and hot tubs may not be placed within the Table 680.9(A) clearances of overhead service or other overhead conductors not in a raceway; for 0-750 V insulated service-drop type cable the clearance is 22.5 ft, measured from the maximum water level.",
+          "text": "Pools, spas and hot tubs may not be placed within the code's clearances of overhead service or other overhead conductors not in a raceway; for 0-750 V insulated service-drop type cable the clearance is 22.5 ft, measured from the maximum water level.",
           "limit": {
             "quantity": "overhead conductor clearance above maximum water level",
             "kind": "min",
@@ -111,7 +111,7 @@
         {
           "profileId": "nec-2026",
           "reference": "680.9(A)",
-          "text": "Pools, spas and hot tubs may not be placed within the Table 680.9(A) clearances of overhead service or other overhead conductors not in a raceway; for 0-750 V insulated service-drop type cable the clearance is 22.5 ft, measured from the maximum water level.",
+          "text": "Pools, spas and hot tubs may not be placed within the code's clearances of overhead service or other overhead conductors not in a raceway; for 0-750 V insulated service-drop type cable the clearance is 22.5 ft, measured from the maximum water level.",
           "limit": {
             "quantity": "overhead conductor clearance above maximum water level",
             "kind": "min",
@@ -244,12 +244,12 @@
         {
           "profileId": "nec-2023",
           "reference": "680.21(C)",
-          "text": "Outlets supplying pool pump motors on single-phase 120 V through 240 V branch circuits need Class A ground-fault protection, whether the pump is on a receptacle or wired directly; in 2023 the protection type points to 680.5(B)."
+          "text": "Outlets supplying pool pump motors on single-phase 120 V through 240 V branch circuits need Class A ground-fault protection, whether the pump is on a receptacle or wired directly."
         },
         {
           "profileId": "nec-2026",
           "reference": "680.21(C)",
-          "text": "Outlets supplying pool pump motors on single-phase 120 V through 240 V branch circuits need Class A ground-fault protection, whether the pump is on a receptacle or wired directly; in 2023 the protection type points to 680.5(B)."
+          "text": "Outlets supplying pool pump motors on single-phase 120 V through 240 V branch circuits need Class A ground-fault protection, whether the pump is on a receptacle or wired directly."
         }
       ],
       "componentObjectName": "Pool_Pump_Receptacle_NoGFCI",

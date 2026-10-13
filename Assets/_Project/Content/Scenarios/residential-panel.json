@@ -77,7 +77,7 @@
         {
           "profileId": "nec-2023",
           "reference": "110.26(A)(1)",
-          "text": "Working space in front of live parts must be at least as deep as Table 110.26(A)(1) requires; for 0 to 150 V nominal that is 3 feet.",
+          "text": "Working space in front of live parts must be at least as deep as the code's working-space table requires; for 0 to 150 V nominal that is 3 feet.",
           "limit": {
             "quantity": "panel-working-depth",
             "kind": "min",
@@ -88,7 +88,7 @@
         {
           "profileId": "nec-2026",
           "reference": "110.26(A)(1)",
-          "text": "Working space in front of live parts must be at least as deep as Table 110.26(A)(1) requires; for 0 to 150 V nominal that is 3 feet.",
+          "text": "Working space in front of live parts must be at least as deep as the code's working-space table requires; for 0 to 150 V nominal that is 3 feet.",
           "limit": {
             "quantity": "panel-working-depth",
             "kind": "min",
@@ -778,12 +778,12 @@
         {
           "profileId": "nec-2023",
           "reference": "225.31",
-          "text": "A building or structure supplied by a feeder or branch circuit needs a means to disconnect all ungrounded conductors that supply or pass through it. Under 225.36 a circuit breaker, molded case switch, general-use switch or snap switch all qualify."
+          "text": "A building or structure supplied by a feeder or branch circuit needs a means to disconnect all ungrounded conductors that supply or pass through it. A circuit breaker, molded case switch, general-use switch or snap switch all qualify."
         },
         {
           "profileId": "nec-2026",
           "reference": "225.31",
-          "text": "A building or structure supplied by a feeder or branch circuit needs a means to disconnect all ungrounded conductors that supply or pass through it. Under 225.36 a circuit breaker, molded case switch, general-use switch or snap switch all qualify."
+          "text": "A building or structure supplied by a feeder or branch circuit needs a means to disconnect all ungrounded conductors that supply or pass through it. A circuit breaker, molded case switch, general-use switch or snap switch all qualify."
         }
       ],
       "componentObjectName": "Shed_Feeder_NoDisconnect",
@@ -898,7 +898,7 @@
         {
           "profileId": "nec-2023",
           "reference": "440.14",
-          "text": "An air-conditioning disconnect must meet the working space rules of 110.26(A). At 120/240 V (0-150 V to ground) the clear depth in front is at least 36 in; the space is also at least 30 in wide and 6.5 ft high.",
+          "text": "An air-conditioning disconnect must meet the working space rules. At 120/240 V (0-150 V to ground) the clear depth in front is at least 36 in; the space is also at least 30 in wide and 6.5 ft high.",
           "limit": {
             "quantity": "clear working space depth in front of disconnect",
             "kind": "min",
@@ -909,7 +909,7 @@
         {
           "profileId": "nec-2026",
           "reference": "440.14",
-          "text": "An air-conditioning disconnect must meet the working space rules of 110.26(A). At 120/240 V (0-150 V to ground) the clear depth in front is at least 36 in; the space is also at least 30 in wide and 6.5 ft high.",
+          "text": "An air-conditioning disconnect must meet the working space rules. At 120/240 V (0-150 V to ground) the clear depth in front is at least 36 in; the space is also at least 30 in wide and 6.5 ft high.",
           "limit": {
             "quantity": "clear working space depth in front of disconnect",
             "kind": "min",
@@ -1210,12 +1210,12 @@
         {
           "profileId": "nec-2023",
           "reference": "240.52",
-          "text": "Edison-base fuseholders may be installed only where adapters make them accept Type S fuses, which resist swapping in a larger fuse. Once fitted, a Type S adapter is designed not to be removed (240.54)."
+          "text": "Edison-base fuseholders may be installed only where adapters make them accept Type S fuses, which resist swapping in a larger fuse. Once fitted, a Type S adapter is designed not to be removed."
         },
         {
           "profileId": "nec-2026",
           "reference": "240.52",
-          "text": "Edison-base fuseholders may be installed only where adapters make them accept Type S fuses, which resist swapping in a larger fuse. Once fitted, a Type S adapter is designed not to be removed (240.54)."
+          "text": "Edison-base fuseholders may be installed only where adapters make them accept Type S fuses, which resist swapping in a larger fuse. Once fitted, a Type S adapter is designed not to be removed."
         }
       ],
       "componentObjectName": "Panel_EdisonFuseholder",

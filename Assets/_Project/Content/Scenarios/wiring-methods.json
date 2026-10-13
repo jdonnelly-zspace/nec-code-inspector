@@ -69,12 +69,12 @@
         {
           "profileId": "nec-2023",
           "reference": "300.5",
-          "text": "Direct-buried cable needs the cover depth in Table 300.5, normally 24 in. Shallower depths are allowed only in listed cases, such as 12 in for GFCI-protected residential circuits."
+          "text": "Direct-buried cable needs the cover depth in the code's burial table, normally 24 in. Shallower depths are allowed only in listed cases, such as 12 in for GFCI-protected residential circuits."
         },
         {
           "profileId": "nec-2026",
           "reference": "300.5",
-          "text": "Direct-buried cable needs the cover depth in Table 300.5, normally 24 in. Shallower depths are allowed only in listed cases, such as 12 in for GFCI-protected residential circuits."
+          "text": "Direct-buried cable needs the cover depth in the code's burial table, normally 24 in. Shallower depths are allowed only in listed cases, such as 12 in for GFCI-protected residential circuits."
         }
       ],
       "componentObjectName": "Trench_UFCable_Depth",

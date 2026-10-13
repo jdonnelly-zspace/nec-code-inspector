@@ -115,8 +115,8 @@
       "profileId": "nec-2026",
       "title": "Residential Load Calculation",
       "category": "LoadCalculation",
-      "summary": "Standard method: General lighting at 3 VA/sq ft + small-appliance circuits at 1,500 VA each + laundry at 1,500 VA. Apply Table 220.42 demand factors: first 3,000 VA at 100%, remainder at 35%. Add dryer (5,000 VA) and range (8,000 VA demand) at 100%.",
-      "keyRule": "3 VA/sq ft lighting + 1,500 VA per SA circuit + demand factors from Table 220.42",
+      "summary": "Standard method: General lighting at 3 VA/sq ft + small-appliance circuits at 1,500 VA each + laundry at 1,500 VA. Apply the standard demand factors: first 3,000 VA at 100%, remainder at 35%. Add dryer (5,000 VA) and range (8,000 VA demand) at 100%.",
+      "keyRule": "3 VA/sq ft lighting + 1,500 VA per SA circuit + standard demand factors",
       "codeReferences": [
         "120.12",
         "120.42",
@@ -184,7 +184,7 @@
       "profileId": "nec-2026",
       "title": "NM Cable Installation",
       "category": "General",
-      "summary": "NM (Romex) cable must be secured within 12 inches of every box and at intervals not exceeding 4.5 feet. When more than 2 NM cables pass through the same hole in framing that is sealed with insulation, caulk or foam, ampacity must be derated per Table 310.15(C)(1).",
+      "summary": "NM (Romex) cable must be secured within 12 inches of every box and at intervals not exceeding 4.5 feet. When more than 2 NM cables pass through the same hole in framing that is sealed with insulation, caulk or foam, ampacity must be derated using the code's adjustment factors.",
       "keyRule": "Secure within 12\" of boxes, every 4.5 ft. Derate when bundling 3+ cables in a sealed opening.",
       "codeReferences": [
         "334.30",

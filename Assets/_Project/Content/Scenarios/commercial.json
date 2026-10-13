@@ -16,23 +16,23 @@
   "violations": [
     {
       "violationId": "COM-MOTOR-OCPD-001",
-      "description": "Motor branch circuit overcurrent protection device exceeds Table 430.52 maximum",
+      "description": "Motor branch circuit overcurrent protection device exceeds the code's maximum",
       "citations": [
         {
           "profileId": "nec-2023",
           "reference": "430.52",
-          "text": "A motor branch circuit's short-circuit and ground-fault device follows the percentages in Table 430.52 and stays at or below the maximum they give."
+          "text": "A motor branch circuit's short-circuit and ground-fault device follows the percentages in the code's motor table and stays at or below the maximum they give."
         },
         {
           "profileId": "nec-2026",
           "reference": "430.52",
-          "text": "A motor branch circuit's short-circuit and ground-fault device follows the percentages in Table 430.52 and stays at or below the maximum they give."
+          "text": "A motor branch circuit's short-circuit and ground-fault device follows the percentages in the code's motor table and stays at or below the maximum they give."
         }
       ],
       "componentObjectName": "Motor1_BranchBreaker",
-      "hintText": "Check the breaker size against the motor's full-load current. Table 430.52 sets the maximum OCPD size for different motor types.",
+      "hintText": "Check the breaker size against the motor's full-load current. The code's motor table sets the maximum OCPD size for different motor types.",
       "componentType": "Motor OCPD",
-      "inspectionNote": "The 50A breaker on this 10HP motor exceeds the maximum allowed by Table 430.52 for an inverse-time breaker (typically 250% of FLC).",
+      "inspectionNote": "The 50A breaker on this 10HP motor exceeds the maximum allowed by the code's motor table for an inverse-time breaker (typically 250% of FLC).",
       "conceptId": "overcurrent-protection",
       "severity": "Critical",
       "minimumDifficulty": "Beginner",
@@ -45,16 +45,16 @@
         {
           "profileId": "nec-2023",
           "reference": "430.22",
-          "text": "Conductors for one continuously running motor need ampacity of at least 125 percent of its full-load current (taken per 430.6(A)(1))."
+          "text": "Conductors for one continuously running motor need ampacity of at least 125 percent of its full-load current (taken from the code's full-load current tables)."
         },
         {
           "profileId": "nec-2026",
           "reference": "430.22",
-          "text": "Conductors for one continuously running motor need ampacity of at least 125 percent of its full-load current (taken per 430.6(A)(1))."
+          "text": "Conductors for one continuously running motor need ampacity of at least 125 percent of its full-load current (taken from the code's full-load current tables)."
         }
       ],
       "componentObjectName": "Motor2_BranchConductor",
-      "hintText": "Motor branch circuit conductors must be sized at 125% of the motor's full-load current from Table 430.248/250.",
+      "hintText": "Motor branch circuit conductors must be sized at 125% of the motor's full-load current from the code's tables.",
       "componentType": "Motor Conductor",
       "inspectionNote": "10 AWG conductors supply a 7.5HP motor with 22A FLC. Required ampacity is 27.5A (125% of 22A), but 10 AWG is only rated 30A at 60C — marginal with temperature derating applied.",
       "conceptId": "conductor-sizing",
@@ -148,12 +148,12 @@
         {
           "profileId": "nec-2023",
           "reference": "215.2",
-          "text": "Size feeder conductors to carry the load worked out by the Article 220 calculation methods (its Parts III, IV and V)."
+          "text": "Size feeder conductors to carry the load worked out by the code's load calculation methods."
         },
         {
           "profileId": "nec-2026",
           "reference": "215.2",
-          "text": "Size feeder conductors to carry the load worked out by the Article 220 calculation methods (its Parts III, IV and V)."
+          "text": "Size feeder conductors to carry the load worked out by the code's load calculation methods."
         }
       ],
       "componentObjectName": "Feeder_SubPanel_Conductor",
@@ -196,18 +196,18 @@
         {
           "profileId": "nec-2023",
           "reference": "250.122",
-          "text": "Pick the equipment grounding conductor size from Table 250.122, using the ampere rating or trip setting of the protective device ahead of the circuit."
+          "text": "Pick the equipment grounding conductor size from the code's grounding-conductor table, using the ampere rating or trip setting of the protective device ahead of the circuit."
         },
         {
           "profileId": "nec-2026",
           "reference": "250.122",
-          "text": "Pick the equipment grounding conductor size from Table 250.122, using the ampere rating or trip setting of the protective device ahead of the circuit."
+          "text": "Pick the equipment grounding conductor size from the code's grounding-conductor table, using the ampere rating or trip setting of the protective device ahead of the circuit."
         }
       ],
       "componentObjectName": "Motor1_EGC",
-      "hintText": "The equipment grounding conductor must be sized based on the rating of the overcurrent device, per Table 250.122.",
+      "hintText": "The equipment grounding conductor must be sized based on the rating of the overcurrent device, per the code's grounding-conductor table.",
       "componentType": "Equipment Grounding Conductor",
-      "inspectionNote": "A 14 AWG EGC is used on a motor circuit protected by a 40A breaker. Table 250.122 requires a minimum 10 AWG copper EGC for a 40A OCPD.",
+      "inspectionNote": "A 14 AWG EGC is used on a motor circuit protected by a 40A breaker. The code's grounding-conductor table requires a minimum 10 AWG copper EGC for a 40A OCPD.",
       "conceptId": "earthing-bonding",
       "severity": "Major",
       "minimumDifficulty": "Standard",
@@ -316,12 +316,12 @@
         {
           "profileId": "nec-2023",
           "reference": "230.90(A)",
-          "text": "The overcurrent device protecting service conductors must not be rated higher than the ampacity of those service conductors, apart from limited exceptions such as the next-size-up allowance. Separately, 230.42(A) requires the conductors to carry the calculated load."
+          "text": "The overcurrent device protecting service conductors must not be rated higher than the ampacity of those service conductors, apart from limited exceptions such as the next-size-up allowance. Separately, the code requires the conductors to carry the calculated load."
         },
         {
           "profileId": "nec-2026",
           "reference": "230.90(A)",
-          "text": "The overcurrent device protecting service conductors must not be rated higher than the ampacity of those service conductors, apart from limited exceptions such as the next-size-up allowance. Separately, 230.42(A) requires the conductors to carry the calculated load."
+          "text": "The overcurrent device protecting service conductors must not be rated higher than the ampacity of those service conductors, apart from limited exceptions such as the next-size-up allowance. Separately, the code requires the conductors to carry the calculated load."
         }
       ],
       "componentObjectName": "ServiceEntrance_Conductors_Undersized",
@@ -364,18 +364,18 @@
         {
           "profileId": "nec-2023",
           "reference": "310.15(C)(1)",
-          "text": "When more than three current-carrying conductors share a raceway or cable for more than 24 in., start from the 90 C column of Table 310.16 and apply the adjustment factor (80% for 4-6, 70% for 7-9, 50% for 10-20). The overcurrent limits in 240.4(D) are then applied to the adjusted ampacity."
+          "text": "When more than three current-carrying conductors share a raceway or cable for more than 24 in., start from the 90 C column of the ampacity table and apply the adjustment factor (80% for 4-6, 70% for 7-9, 50% for 10-20). The small-conductor overcurrent limits are then applied to the adjusted ampacity."
         },
         {
           "profileId": "nec-2026",
           "reference": "310.15(C)(1)",
-          "text": "When more than three current-carrying conductors share a raceway or cable for more than 24 in., start from the 90 C column of Table 310.16 and apply the adjustment factor (80% for 4-6, 70% for 7-9, 50% for 10-20). The overcurrent limits in 240.4(D) are then applied to the adjusted ampacity."
+          "text": "When more than three current-carrying conductors share a raceway or cable for more than 24 in., start from the 90 C column of the ampacity table and apply the adjustment factor (80% for 4-6, 70% for 7-9, 50% for 10-20). The small-conductor overcurrent limits are then applied to the adjusted ampacity."
         }
       ],
       "componentObjectName": "MechRoom_ConduitBundle_12AWG",
       "hintText": "Count the conductors that carry current inside the conduit before you trust the wire size.",
       "componentType": "Conductor",
-      "inspectionNote": "A mechanical-room EMT run longer than 24 in. holds five 2-wire 120 V receptacle circuits, ten 12 AWG THHN current-carrying conductors, each on a 20 A {term:breaker}. At the 50% factor, 30 A (90 C column) becomes 15 A, so the conductors cannot support 20 A, and the round-up allowance in 240.4(B) is not available on receptacle circuits.",
+      "inspectionNote": "A mechanical-room EMT run longer than 24 in. holds five 2-wire 120 V receptacle circuits, ten 12 AWG THHN current-carrying conductors, each on a 20 A {term:breaker}. At the 50% factor, 30 A (90 C column) becomes 15 A, so the conductors cannot support 20 A, and the round-up allowance is not available on receptacle circuits.",
       "conceptId": "conductor-sizing",
       "severity": "Major",
       "minimumDifficulty": "Standard",
