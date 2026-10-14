@@ -109,11 +109,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.961 (Designated person, tags, voltage test, grounds, and re-energizing order.)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.962 (Grounding rules, test before grounding, ground-end-first attachment, ampacity minimum.)
 
-**App coverage today (none):** none: the app has no lockout/tagout, voltage testing or line grounding, and this is NESC/OSHA line work, not NEC.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: the app has no lockout/tagout, voltage testing or line grounding, and this is NESC/OSHA line work, not NEC.)
 
-**Skills the app teaches that this procedure uses:** electrically-safe-work
+**Skills the app teaches that this procedure uses:** electrically-safe-work, utility-line-work
 
-**Skills still to build for it:** utility-line-work
+**Skills still to build for it:** none
 
 ### P3. Working near and on energized lines (approach distances)
 
@@ -148,11 +148,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.960 (Qualified-only, approach distances, insulation, flame-resistant clothing, two-person rule.)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269 (Paragraph (l)(3) approach distances and the three ways to approach a live part.)
 
-**App coverage today (none):** none: shock-protection teaches NEC premises protection, not approach distances or live-line work.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: shock-protection teaches NEC premises protection, not approach distances or live-line work.)
 
-**Skills the app teaches that this procedure uses:** shock-protection
+**Skills the app teaches that this procedure uses:** shock-protection, utility-line-work
 
-**Skills still to build for it:** utility-line-work
+**Skills still to build for it:** none
 
 ### P4. Climbing, fall protection and aerial-lift work
 
@@ -226,11 +226,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.964 (Pole setting, stringing methods, induced voltage and tag-line rules.)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.955 (Ladder and platform rules, including conductive ladder limits.)
 
-**App coverage today (none):** none: utility construction sits outside the NEC and the app has no line-work scenes.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: utility construction sits outside the NEC and the app has no line-work scenes.)
 
-**Skills the app teaches that this procedure uses:** none
+**Skills the app teaches that this procedure uses:** utility-line-work
 
-**Skills still to build for it:** utility-line-work
+**Skills still to build for it:** none
 
 ### P6. Underground cable and vault work (enclosed spaces)
 
@@ -264,11 +264,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.953 (Pre-entry testing, ventilation, attendant, rescue, training for enclosed spaces.)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269 (Paragraph (e) enclosed-space testing, ventilation and attendant.)
 
-**App coverage today (none):** none: no underground or enclosed-space content; utility vault work is NESC/OSHA, though building transformer vaults are NEC Article 450.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: no underground or enclosed-space content; utility vault work is NESC/OSHA, though building transformer vaults are NEC Article 450.)
 
-**Skills the app teaches that this procedure uses:** jobsite-safety
+**Skills the app teaches that this procedure uses:** jobsite-safety, utility-line-work
 
-**Skills still to build for it:** utility-line-work
+**Skills still to build for it:** none
 
 ### P7. Storm restoration and outage switching
 
@@ -301,11 +301,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.osha.gov/etools/hurricane/activity-sheets/infrastructure-repair/electrical (Restoration needs qualified technicians under 1910.269; lines assumed energized; backfeed risk (from search summary only, page not directly opened).)
 - https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.961 (Clearance, tag, test, ground and reverse sequence for re-energizing.)
 
-**App coverage today (none):** none: the app has no outage or restoration scenario; the NEC does not govern utility lines.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: the app has no outage or restoration scenario; the NEC does not govern utility lines.)
 
-**Skills the app teaches that this procedure uses:** none
+**Skills the app teaches that this procedure uses:** utility-line-work
 
-**Skills still to build for it:** utility-line-work
+**Skills still to build for it:** none
 
 ### P8. Making and verifying a service connection and meter at the customer
 

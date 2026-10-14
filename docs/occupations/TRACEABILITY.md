@@ -13,10 +13,10 @@ Every procedure of the six core occupations against what the app teaches today (
 | 47-3013 Helpers--Electricians | 8 | 0 | 8 | 0 | 100% |
 | 47-4011 Construction and Building Inspectors | 7 | 1 | 6 | 0 | 100% |
 | 49-2098 Security and Fire Alarm Systems Installers | 7 | 0 | 7 | 0 | 100% |
-| 49-9051 Electrical Power-Line Installers and Repairers | 8 | 0 | 3 | 5 | 38% |
-| **All six** | **44** | **2** | **37** | **5** | **89%** |
+| 49-9051 Electrical Power-Line Installers and Repairers | 8 | 0 | 8 | 0 | 100% |
+| **All six** | **44** | **2** | **42** | **0** | **100%** |
 
-39 of 44 procedures offer step-ordering practice in the app (`StreamingAssets/Occupations/occupations.json`).
+44 of 44 procedures offer step-ordering practice in the app (`StreamingAssets/Occupations/occupations.json`).
 
 ## Procedure by procedure
 
@@ -86,15 +86,15 @@ Every procedure of the six core occupations against what the app teaches today (
 | Procedure | Coverage | App skills used | Skills still to build |
 |---|---|---|---|
 | Job briefing and hazard assessment | partial | jobsite-safety | none |
-| De-energizing, testing, grounding and tagging lines | none | electrically-safe-work | utility-line-work |
-| Working near and on energized lines (approach distances) | none | shock-protection | utility-line-work |
+| De-energizing, testing, grounding and tagging lines | partial | electrically-safe-work, utility-line-work | none |
+| Working near and on energized lines (approach distances) | partial | shock-protection, utility-line-work | none |
 | Climbing, fall protection and aerial-lift work | partial | jobsite-safety | none |
-| Setting poles and stringing conductors | none | none | utility-line-work |
-| Underground cable and vault work (enclosed spaces) | none | jobsite-safety | utility-line-work |
-| Storm restoration and outage switching | none | none | utility-line-work |
+| Setting poles and stringing conductors | partial | utility-line-work | none |
+| Underground cable and vault work (enclosed spaces) | partial | jobsite-safety, utility-line-work | none |
+| Storm restoration and outage switching | partial | utility-line-work | none |
 | Making and verifying a service connection and meter at the customer | partial | equipment-installation, disconnecting-means, identification-marking, earthing-bonding, utility-interface | none |
 
-## The app's 22 skills: how many procedures use each
+## The app's 23 skills: how many procedures use each
 
 | Skill | Procedures | Occupations |
 |---|---|---|
@@ -113,6 +113,7 @@ Every procedure of the six core occupations against what the app teaches today (
 | overcurrent-protection | 5 | 47-2111, 47-2231, 47-4011 |
 | working-space-access | 5 | 47-2111, 47-3013, 47-4011, 49-2098 |
 | low-voltage-and-fire-alarm-systems | 5 | 49-2098 |
+| utility-line-work | 5 | 49-9051 |
 | branch-circuit-requirements | 4 | 47-2111, 47-4011 |
 | load-calculation | 4 | 47-2111, 47-2231, 47-4011 |
 | plans-and-documentation | 4 | 47-3013, 47-4011, 49-2098 |
@@ -125,7 +126,6 @@ Every procedure of the six core occupations against what the app teaches today (
 
 | Skill | Phase | Status | Procedures | Occupations | Why |
 |---|---|---|---|---|---|
-| utility-line-work | 1 | approved | 5 | 49-9051 | Work on utility lines and equipment: approach distances, de-energizing and grounding lines, climbing, pole setting, underground vaults, outage switching. |
 | electrically-safe-work | 1 | built | 0 |  | Making a circuit or piece of equipment safe to work on and proving it: identify every source, shut off, lock and tag, test before touching with a proved meter, and know what protective equipment to use. |
 | testing-and-measurement | 1 | built | 0 |  | Choosing and using testers and meters (voltage, continuity, polarity, insulation resistance, receptacle and GFCI/AFCI testers) and reading what they show. |
 | troubleshooting | 1 | built | 0 |  | Finding the cause of a dead or tripping circuit by narrowing the fault step by step, using the safe-work and testing skills. |
@@ -135,5 +135,6 @@ Every procedure of the six core occupations against what the app teaches today (
 | pv-and-storage-systems | 1 | built | 0 |  | Arrays, DC wiring, inverters, rapid shutdown, interconnection, and battery storage: how they are installed, protected, marked and connected. |
 | low-voltage-and-fire-alarm-systems | 1 | built | 0 |  | Power-limited and fire alarm circuits, communications cabling, separation from power wiring, devices and panels, supervision, power supplies, and the testing and handling of impairments. |
 | utility-interface | 1 | built | 0 |  | Where the utility's equipment ends and the customer's begins: the service point, meter, service entrance and the connections made there. |
+| utility-line-work | 1 | built | 0 |  | Work on utility lines and equipment: approach distances, de-energizing and grounding lines, climbing, pole setting, underground vaults, outage switching. |
 
 The reasons, standards and first content for each are in `docs/occupations/proposed-skills.json`.

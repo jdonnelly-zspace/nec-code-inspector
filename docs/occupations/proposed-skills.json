@@ -112,13 +112,13 @@
     {
       "id": "utility-line-work",
       "title": "Utility line work",
-      "status": "approved",
+      "status": "built",
       "summary": "Work on utility lines and equipment: approach distances, de-energizing and grounding lines, climbing, pole setting, underground vaults, outage switching.",
       "reason": "Power-line installers and repairers are a core occupation in the market view, but the NEC excludes installations under exclusive utility control and service drops up to the service point; the work is governed by the National Electrical Safety Code (NESC) and OSHA 1910.269 and 1926 Subpart V. Only about one task in thirteen touches the NEC.",
       "standards": "NESC (IEEE C2, paywalled); OSHA 29 CFR 1910.269 and 1926 Subpart V (public).",
       "codeProfile": "would need a NESC code profile and its licence decision",
       "firstContent": "None until the decision. The electrically safe work and jobsite safety skills would serve line workers' general safety procedures.",
-      "decision": "approved 2026-10-12; in the MVP since 2026-10-13 (D-19); no longer blocked on a licence (D-17), but it needs a utility code profile and new utility 3D content (poles, vaults, bucket trucks) first",
+      "decision": "approved 2026-10-12; built 2026-10-13 as a lesson and step practice (D-19: in the MVP); the utility code profile, violations, reference entries and the utility 3D scenes come next",
       "phase": 1
     }
   ]

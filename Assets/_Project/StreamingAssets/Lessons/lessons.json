@@ -533,6 +533,32 @@
         "Taking part of the system out of service without telling the people in the building and the fire service"
       ],
       "reviewStatus": "draft"
+    },
+    {
+      "skillId": "utility-line-work",
+      "title": "Utility line work",
+      "summary": "How crews work on the utility's own lines and equipment: clearing and proving a line dead, grounding it, keeping safe distances from live parts, working on poles and in underground vaults, and restoring power after a storm.",
+      "whatToLookFor": [
+        "A clearance obtained from the system operator for the exact line or equipment, with tags on every point that could feed it",
+        "Every conductor tested dead with a proper detector and protective grounds placed, so stray, induced or back-fed voltage cannot reach the crew",
+        "Only qualified workers near exposed live parts, keeping the safe distance for the voltage and altitude or using an insulating method (insulated tools, equipment or gloves), and arc-rated clothing where the arc hazard assessment calls for it",
+        "Poles, loads and digging equipment kept clear of live conductors, with the area set up so other people are kept away",
+        "Before anyone enters a vault or manhole: the air tested for low oxygen and dangerous gases, forced-air ventilation used where the air could be unsafe and kept running while people are inside, and a trained attendant outside with rescue equipment ready",
+        "Any downed or low line treated as live until it is proved otherwise"
+      ],
+      "whyItMatters": "A utility line can carry enough voltage to kill without touching it, and power can come back from a generator, a tie switch or a parallel line when a crew thinks it is off. The crew's own procedure, not luck, is what keeps them safe.",
+      "tiers": {
+        "foundation": "Say why a utility line is treated as live until it is cleared, tested and grounded, and name the roles that take part (crew, system operator, attendant).",
+        "practitioner": "Follow the clearance, test, ground and release sequence, choose the work method for the voltage, and carry out a pole, vault or storm-restoration job in the right order.",
+        "authority": "Review a work plan: the clearance and tagging, sources of back-feed and induced voltage, approach distances, crew numbers, rescue arrangements and restoration steps. The rules for the work come from the utility's own standards and the safety rules for line work, and they differ by voltage, owner and place, so always check the ones that apply."
+      },
+      "commonMistakes": [
+        "Working on a line that was switched off but never tested or grounded",
+        "Forgetting a source that can feed the line back, such as a generator or a connection from another circuit",
+        "Entering a vault before the air has been tested and an attendant is in place",
+        "Letting a pole, a load or a digger swing close to a live conductor"
+      ],
+      "reviewStatus": "draft"
     }
   ]
 }
