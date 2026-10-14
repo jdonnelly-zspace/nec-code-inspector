@@ -31,6 +31,7 @@ namespace NECInspector.Data
         public const string CodeAdministration = "code-administration";             // editions and amendments, permit and inspection stages, approve or reject
         public const string UtilityInterface = "utility-interface";                 // where the utility's equipment ends and the customer's begins
         public const string LowVoltageAndFireAlarm = "low-voltage-and-fire-alarm-systems";    // alarm, security and communications circuits: cable, separation, supervision, power, devices, testing and impairments (lesson and practice first; violations, entries and the fire alarm profile follow)
+        public const string UtilityLineWork = "utility-line-work";    // work on utility lines and equipment: clearance, testing and grounding, approach distances, poles, vaults and storm restoration (lesson and practice first; the utility profile, violations and entries follow)
         public const string PvAndStorage = "pv-and-storage-systems";                // solar arrays, DC wiring, inverters, shutdown, interconnection and battery storage (lesson and practice first; violations and entries follow the PV numbering check)
 
         /// <summary>The skills taught by code content: inspection violations, reference entries, the sandbox.</summary>
@@ -43,7 +44,7 @@ namespace NECInspector.Data
         /// <summary>The skills taught by procedure practice and lessons.</summary>
         public static readonly string[] ProcedureSkills =
         {
-            ElectricallySafeWork, TestingMeasurement, Troubleshooting, PlansDocumentation, JobsiteSafety, CodeAdministration, UtilityInterface, PvAndStorage, LowVoltageAndFireAlarm
+            ElectricallySafeWork, TestingMeasurement, Troubleshooting, PlansDocumentation, JobsiteSafety, CodeAdministration, UtilityInterface, PvAndStorage, LowVoltageAndFireAlarm, UtilityLineWork
         };
 
         public static readonly string[] All =
@@ -69,7 +70,8 @@ namespace NECInspector.Data
             CodeAdministration,
             UtilityInterface,
             PvAndStorage,
-            LowVoltageAndFireAlarm
+            LowVoltageAndFireAlarm,
+            UtilityLineWork
         };
 
         public static bool IsKnown(string conceptId)

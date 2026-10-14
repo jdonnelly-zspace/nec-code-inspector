@@ -208,12 +208,12 @@
         }
       ],
       "appSkills": [
-        "electrically-safe-work"
-      ],
-      "appCoverage": "none: the app has no lockout/tagout, voltage testing or line grounding, and this is NESC/OSHA line work, not NEC.",
-      "plannedSkills": [
+        "electrically-safe-work",
         "utility-line-work"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: the app has no lockout/tagout, voltage testing or line grounding, and this is NESC/OSHA line work, not NEC.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app has no lockout/tagout, voltage testing or line grounding, and this is NESC/OSHA line work, not NEC."
     },
     {
       "name": "Working near and on energized lines (approach distances)",
@@ -266,12 +266,12 @@
         }
       ],
       "appSkills": [
-        "shock-protection"
-      ],
-      "appCoverage": "none: shock-protection teaches NEC premises protection, not approach distances or live-line work.",
-      "plannedSkills": [
+        "shock-protection",
         "utility-line-work"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: shock-protection teaches NEC premises protection, not approach distances or live-line work.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: shock-protection teaches NEC premises protection, not approach distances or live-line work."
     },
     {
       "name": "Climbing, fall protection and aerial-lift work",
@@ -383,11 +383,12 @@
           "says": "Ladder and platform rules, including conductive ladder limits."
         }
       ],
-      "appSkills": [],
-      "appCoverage": "none: utility construction sits outside the NEC and the app has no line-work scenes.",
-      "plannedSkills": [
+      "appSkills": [
         "utility-line-work"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: utility construction sits outside the NEC and the app has no line-work scenes.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: utility construction sits outside the NEC and the app has no line-work scenes."
     },
     {
       "name": "Underground cable and vault work (enclosed spaces)",
@@ -437,12 +438,12 @@
         }
       ],
       "appSkills": [
-        "jobsite-safety"
-      ],
-      "appCoverage": "none: no underground or enclosed-space content; utility vault work is NESC/OSHA, though building transformer vaults are NEC Article 450.",
-      "plannedSkills": [
+        "jobsite-safety",
         "utility-line-work"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: no underground or enclosed-space content; utility vault work is NESC/OSHA, though building transformer vaults are NEC Article 450.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: no underground or enclosed-space content; utility vault work is NESC/OSHA, though building transformer vaults are NEC Article 450."
     },
     {
       "name": "Storm restoration and outage switching",
@@ -490,11 +491,12 @@
           "says": "Clearance, tag, test, ground and reverse sequence for re-energizing."
         }
       ],
-      "appSkills": [],
-      "appCoverage": "none: the app has no outage or restoration scenario; the NEC does not govern utility lines.",
-      "plannedSkills": [
+      "appSkills": [
         "utility-line-work"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: the app has no outage or restoration scenario; the NEC does not govern utility lines.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app has no outage or restoration scenario; the NEC does not govern utility lines."
     },
     {
       "name": "Making and verifying a service connection and meter at the customer",

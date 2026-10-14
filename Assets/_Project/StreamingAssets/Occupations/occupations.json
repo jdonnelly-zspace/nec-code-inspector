@@ -1449,10 +1449,11 @@
             "Documented release sequence"
           ],
           "skills": [
-            "electrically-safe-work"
+            "electrically-safe-work",
+            "utility-line-work"
           ],
-          "coverage": "none",
-          "practice": false,
+          "coverage": "partial",
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
@@ -1483,10 +1484,11 @@
             "Insulated aerial lifts"
           ],
           "skills": [
-            "shock-protection"
+            "shock-protection",
+            "utility-line-work"
           ],
-          "coverage": "none",
-          "practice": false,
+          "coverage": "partial",
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
@@ -1549,9 +1551,11 @@
             "Tag lines",
             "Insulated handling devices"
           ],
-          "skills": [],
-          "coverage": "none",
-          "practice": false,
+          "skills": [
+            "utility-line-work"
+          ],
+          "coverage": "partial",
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
@@ -1583,10 +1587,11 @@
             "Training in entry and rescue"
           ],
           "skills": [
-            "jobsite-safety"
+            "jobsite-safety",
+            "utility-line-work"
           ],
-          "coverage": "none",
-          "practice": false,
+          "coverage": "partial",
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
@@ -1616,9 +1621,11 @@
             "Barricaded work zones",
             "Briefings when conditions change"
           ],
-          "skills": [],
-          "coverage": "none",
-          "practice": false,
+          "skills": [
+            "utility-line-work"
+          ],
+          "coverage": "partial",
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
