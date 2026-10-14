@@ -218,12 +218,12 @@
       ],
       "appSkills": [
         "wiring-methods",
-        "plans-and-documentation"
-      ],
-      "appCoverage": "none: the app has no plan-reading or layout tasks; wiring-methods covers only the wiring rules.",
-      "plannedSkills": [
+        "plans-and-documentation",
         "low-voltage-and-fire-alarm-systems"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: the app has no plan-reading or layout tasks; wiring-methods covers only the wiring rules.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app has no plan-reading or layout tasks; wiring-methods covers only the wiring rules."
     },
     {
       "name": "Running low-voltage and fire alarm cable and raceway",
@@ -283,12 +283,11 @@
       ],
       "appSkills": [
         "wiring-methods",
-        "equipment-installation"
+        "equipment-installation",
+        "low-voltage-and-fire-alarm-systems"
       ],
       "appCoverage": "partial: wiring-methods trains routing and support in power wiring, but not signaling circuit classes, listed cable types or low-voltage separation.",
-      "plannedSkills": [
-        "low-voltage-and-fire-alarm-systems"
-      ]
+      "plannedSkills": []
     },
     {
       "name": "Installing panels, devices and power supply connections",
@@ -403,11 +402,12 @@
           "says": "Remote annunciators must show the correct point and condition matching approved plans."
         }
       ],
-      "appSkills": [],
-      "appCoverage": "none: the app has no panel or device programming content.",
-      "plannedSkills": [
+      "appSkills": [
         "low-voltage-and-fire-alarm-systems"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: the app has no panel or device programming content.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app has no panel or device programming content."
     },
     {
       "name": "Functional and acceptance testing with documentation",
@@ -457,12 +457,12 @@
         }
       ],
       "appSkills": [
-        "testing-and-measurement"
-      ],
-      "appCoverage": "none: the app has no testing, meter or acceptance-inspection tasks.",
-      "plannedSkills": [
+        "testing-and-measurement",
         "low-voltage-and-fire-alarm-systems"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: the app has no testing, meter or acceptance-inspection tasks.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app has no testing, meter or acceptance-inspection tasks."
     },
     {
       "name": "Impairment handling and restoration",
@@ -508,11 +508,12 @@
           "says": "Fire codes place the maintenance obligation on owners, supported by an approved testing program."
         }
       ],
-      "appSkills": [],
-      "appCoverage": "none: nothing in the app covers fire protection system outages or reporting.",
-      "plannedSkills": [
+      "appSkills": [
         "low-voltage-and-fire-alarm-systems"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: nothing in the app covers fire protection system outages or reporting.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: nothing in the app covers fire protection system outages or reporting."
     }
   ],
   "standardsAndCodes": [

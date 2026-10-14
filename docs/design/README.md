@@ -7,7 +7,7 @@ Two private artifacts show the app's screens. Their sources live here so they ar
 | `wireframe.html` | [Code Inspector Wireframe](https://claude.ai/artifact/Mb7u276ZC6bgTWYhtkMAXB) | A schematic of the UI panels as they exist in code. Each screen names its script and says whether it is built, not wired into a scene, or planned. |
 | `mockup.html` | [Code Inspector Mockup](https://claude.ai/artifact/8SWCa6eiGtK1kiWmzxFz6p) | A click-through prototype in the app's own look: 21 screens, a region switch, three difficulty levels. Scenes are illustrations and scores are example data. |
 
-Both were brought up to date on 2026-10-12 (solar PV and storage added as the 21st skill on 2026-10-13) with `docs/product/PRD.md` (decisions D-1 to D-11): occupations, procedure practice, skill lessons, the tutorial, a progress and data screen, accessibility settings, 20 skills, 17 reference cards, six sandbox designs, and rule titles instead of rule numbers, chapters and editions. The occupation, procedure and lesson text in the mockup is the real text from `StreamingAssets`.
+Both were brought up to date on 2026-10-12 (solar PV and storage, and low-voltage and fire alarm, added as the 21st and 22nd skills on 2026-10-13) with `docs/product/PRD.md` (decisions D-1 to D-11): occupations, procedure practice, skill lessons, the tutorial, a progress and data screen, accessibility settings, 20 skills, 17 reference cards, six sandbox designs, and rule titles instead of rule numbers, chapters and editions. The occupation, procedure and lesson text in the mockup is the real text from `StreamingAssets`.
 
 The artifact files carry no page skeleton (no doctype, head or body): the Artifact tool adds it when publishing.
 

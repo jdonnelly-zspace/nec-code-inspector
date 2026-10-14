@@ -1193,10 +1193,11 @@
           ],
           "skills": [
             "wiring-methods",
-            "plans-and-documentation"
+            "plans-and-documentation",
+            "low-voltage-and-fire-alarm-systems"
           ],
-          "coverage": "none",
-          "practice": false,
+          "coverage": "partial",
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
@@ -1230,10 +1231,11 @@
           ],
           "skills": [
             "wiring-methods",
-            "equipment-installation"
+            "equipment-installation",
+            "low-voltage-and-fire-alarm-systems"
           ],
           "coverage": "partial",
-          "practice": false,
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
@@ -1300,9 +1302,11 @@
             "Settings within listed range",
             "Retest after any software change"
           ],
-          "skills": [],
-          "coverage": "none",
-          "practice": false,
+          "skills": [
+            "low-voltage-and-fire-alarm-systems"
+          ],
+          "coverage": "partial",
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
@@ -1334,10 +1338,11 @@
             "AHJ witness where required"
           ],
           "skills": [
-            "testing-and-measurement"
+            "testing-and-measurement",
+            "low-voltage-and-fire-alarm-systems"
           ],
-          "coverage": "none",
-          "practice": false,
+          "coverage": "partial",
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
@@ -1365,9 +1370,11 @@
             "Notification to the fire department and others",
             "Verification tests"
           ],
-          "skills": [],
-          "coverage": "none",
-          "practice": false,
+          "skills": [
+            "low-voltage-and-fire-alarm-systems"
+          ],
+          "coverage": "partial",
+          "practice": true,
           "reviewStatus": "draft"
         }
       ]

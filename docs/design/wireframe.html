@@ -129,7 +129,7 @@ nav button:focus-visible, .btn:focus-visible, .opt:focus-visible { outline: 2px 
   var SKILLS = [
     ["Shock protection", 3], ["Arc-fault protection", 2], ["Overcurrent protection", 2], ["Conductor sizing", 1], ["Earthing and bonding", 3], ["Branch circuit requirements", 2],
     ["Load calculation", 1], ["Disconnecting means", 2], ["Working space and access", 1], ["Equipment installation", 2], ["Identification and marking", 1], ["Wiring methods", 0], ["Special locations", 0],
-    ["Electrically safe work", 2], ["Testing and measurement", 1], ["Troubleshooting", 1], ["Plans and documentation", 0], ["Jobsite safety", 1], ["Code administration", 0], ["Utility interface", 0], ["Solar PV and storage", 1]
+    ["Electrically safe work", 2], ["Testing and measurement", 1], ["Troubleshooting", 1], ["Plans and documentation", 0], ["Jobsite safety", 1], ["Code administration", 0], ["Utility interface", 0], ["Solar PV and storage", 1], ["Low-voltage and fire alarm", 0]
   ];
   var OCCS = [["Electrician", true, 7], ["Electrician's helper", true, 8], ["Electrical inspector", true, 7], ["Power-line installer", true, 8], ["Solar installer", true, 7], ["Fire and security alarm installer", true, 7]];
   var PRACTICE = { name: "Establishing an electrically safe work condition", steps: ["Identify every source of power to the equipment using drawings, labels and the panel schedule, including backfeed such as generators or second feeds.", "Shut the load down with normal controls, then open the disconnecting means.", "Visually confirm the disconnect is open, by handle position or visible blades.", "Release or block stored energy (capacitors, batteries, springs, other non-electrical energy that could restart parts)."], skills: ["Shock protection", "Disconnecting means", "Electrically safe work", "Testing and measurement"] };
@@ -280,8 +280,8 @@ nav button:focus-visible, .btn:focus-visible, .opt:focus-visible { outline: 2px 
           var t = ""; for (var i = 0; i < 3; i++) t += '<i class="' + (i < s[1] ? "on" : "") + '"></i>';
           return '<div class="kv"><span>' + s[0] + '</span><span class="tiers" title="Foundation, Practitioner, Authority">' + t + "</span></div>";
         }).join("");
-        return '<div class="row"><div class="col grow"><div class="box"><h3>Student</h3><b>Alex</b><div class="kv"><span>Total attempts</span><b>9</b></div><div class="kv"><span>Overall accuracy</span><b>82%</b></div><div class="kv"><span>Skills attained</span><b>4 of 21</b></div></div>' +
-          btn("Close", "menu") + '</div><div class="col grow"><div class="box"><h3>21 skills: 13 code skills and 8 procedure skills (Foundation, Practitioner, Authority)</h3>' + rows + "</div></div></div>" +
+        return '<div class="row"><div class="col grow"><div class="box"><h3>Student</h3><b>Alex</b><div class="kv"><span>Total attempts</span><b>9</b></div><div class="kv"><span>Overall accuracy</span><b>82%</b></div><div class="kv"><span>Skills attained</span><b>4 of 22</b></div></div>' +
+          btn("Close", "menu") + '</div><div class="col grow"><div class="box"><h3>22 skills: 13 code skills and 9 procedure skills (Foundation, Practitioner, Authority)</h3>' + rows + "</div></div></div>" +
           '<p class="sub" style="margin-top:10px">Progress is tracked per skill. Example numbers shown.</p>';
       } },
     { id: "data", group: "Skills", label: "Progress and data", tags: [["planned: no code yet", "warn"], ["FR-15, FR-19, FR-20", ""]], src: "docs/product/PRD.md, docs/product/DECISIONS.md (D-8, D-9)",
