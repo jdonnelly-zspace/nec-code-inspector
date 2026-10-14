@@ -1,0 +1,142 @@
+{
+ "violations": [
+  {
+   "violationId": "UL-BRIEF-001",
+   "verdict": "fix",
+   "problem": "Rule is met by a briefing covering hazards, procedures, precautions, energy-source control and protective gear; it can be brief for routine work and need not be written. The hint steers trainees to look for a written plan, which the rule does not require, so a trainer would dispute 'compliant = has a written plan'.",
+   "correction": {
+    "hintText": "Ask the crew what they were told before they started work, and ask the person in charge what the briefing covered."
+   },
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(c)(1)-(5): employee in charge briefs before each job; subjects in (c)(2); one briefing per shift for repetitive work plus more on significant change; (c)(4)(i) brief discussion is fine for routine work; no written record required; (c)(5) lone worker only plans. Crew here is more than one person."}]
+  },
+  {
+   "violationId": "UL-FALL-001",
+   "verdict": "fix",
+   "problem": "Right rule (the real paragraph is (g)(2)(iv)(C)(2), parent entry is acceptable). 9 ft violates. But a qualified climber must also use fall protection while climbing or changing position at ANY height unless infeasible, so '3 ft with no protection' is compliant only for a worker standing in place working, not climbing. Citation text 'stated low height' is vague.",
+   "correction": {
+    "citations[0].text": "Anyone on a pole more than 4 feet above the ground needs fall arrest, work-positioning or restraint equipment. A climber also needs it while climbing or moving to a new spot, unless that is not workable or makes things more dangerous.",
+    "compliantFact.note": "height of the worker's feet above the ground while he stands in place working (not climbing)",
+    "hintText": "Look at what holds the worker on the pole, and estimate how far off the ground his feet are."
+   },
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(g)(2)(iv)(C)(2): more than 1.2 m (4 ft) on poles, towers or similar structures needs PFAS, work-positioning or restraint; (C)(3): qualified climbers must use fall protection while climbing or changing location unless employer demonstrates infeasible or greater hazard; Note 2: unqualified/trainees any time above 4 ft; Note 1: applies to structures supporting overhead lines, not equipment like transformers."}]
+  },
+  {
+   "violationId": "UL-ARC-001",
+   "verdict": "fix",
+   "problem": "The scene never states the estimate. Arc-rated clothing is required only when the estimate is ABOVE 2.0 cal/cm2 (below that, clothing just must not melt or keep burning), so 'an estimated arc exposure' could be under 2 and a plain shirt would then not be this violation. Citation text 'a low threshold' is vague.",
+   "correction": {
+    "inspectionNote": "The job sheet lists an estimated arc exposure of 8 calories per square centimeter at the switch cabinet. The worker opening it wears a plain cotton-poly shirt with no arc rating label.",
+    "citations[0].text": "Where the estimated arc energy is above 2 calories per square centimeter, workers wear clothing and gear with an arc rating at least equal to the estimate."
+   },
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(l)(8)(ii) estimate; (l)(8)(iii) no melting or burning clothing (polyester blends barred unless treated); (l)(8)(iv)(D) outer layer flame resistant above 2.0 cal/cm2; (l)(8)(v) arc rating at least the estimate whenever it exceeds 2.0 cal/cm2, whole body except hand/feet/head exceptions."}]
+  },
+  {
+   "violationId": "UL-VAULT-ATTEND-001",
+   "verdict": "ok",
+   "problem": "Matches. First-aid-trained person on the surface near the entrance while work is in a vault with energized equipment, plus reliable two-way communication; radio left on the truck breaks the communication part. Lone-worker brief-entry exception does not apply (two workers below). Optional wording tweak: rule says 'available' near the entrance, and first-aid training is part of it.",
+   "correction": {
+    "citations[0].text": "While people work in a vault with live equipment, a first-aid-trained worker stays on the surface right by the entrance, and everyone on the job keeps reliable two-way contact, such as radios."
+   },
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(t)(3)(i) first-aid-trained employee available on the surface in the immediate vicinity of the entrance; (t)(3)(iii) lone worker brief entry exception; (t)(3)(iv) two-way radios or equivalent among all employees."}]
+  },
+  {
+   "violationId": "UL-TRAINING-001",
+   "verdict": "fix",
+   "problem": "Wrong entry. The cited paragraph says what qualified training contains; the rule that only qualified workers may work on or with exposed live parts is (l)(1), which exists in articles.json. A trainer could also dispute: a trainee under direct supervision of a qualified person who has shown he can do the duty safely counts as qualified for that duty, so the note must rule that out. Major understates untrained work on live parts; Critical fits the other energized-work items.",
+   "correction": {
+    "citations[0].reference": "1910.269(l)(1)",
+    "citations[0].text": "Only a qualified worker may work on or with exposed live parts. A qualified worker can tell live parts apart, find their voltage and use the right protection.",
+    "inspectionNote": "A new helper in the bucket is about to handle parts near energized conductors. His training card shows only ground-level duties, he cannot say how to check the voltage of the parts around him, and no qualified lineworker is supervising him at the bucket.",
+    "severity": "Critical"
+   },
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(l)(1)(i) only qualified employees may work on or with exposed energized parts; (a)(2)(ii) qualified training content; definition Note 2: an employee in on-the-job training who has shown ability and is under direct supervision of a qualified person is qualified for those duties."}]
+  },
+  {
+   "violationId": "UL-CLEARANCE-001",
+   "verdict": "fix",
+   "problem": "Operator call and tags are required only where a system operator controls the line. With no operator, the crew leader does the operator's job; and if one crew works with a visible disconnect under its sole control, no operator call and no tags are required. The note does not exclude that, so a lineman would call the open visible switch compliant. The scene must establish an operator-controlled line and a switch the crew cannot see or control.",
+   "correction": {
+    "inspectionNote": "The line is controlled by the utility's system operator. The crew says the section is dead and has started work. The feeding switch is open but is out of the crew's sight and under the operator's control. It carries no tag, there is no clearance record, and the crew never called the system operator.",
+    "citations[0].text": "Where a system operator controls the line, the section is made dead through the operator, with every source opened and tagged, before the crew works it as dead. A single crew that can see and alone controls the disconnect skips some of these steps."
+   },
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(m)(2)(i)-(iii), (m)(3)(i)-(viii): operator request, switches opened/inoperable/tagged, test then ground. (m)(2)(iii): single crew with visible disconnect under sole control skips (m)(3)(i), (iii), (v) and tags. (m)(2)(ii): no operator means crew leader performs operator functions."}]
+  },
+  {
+   "violationId": "UL-TWOPERSON-001",
+   "verdict": "fix",
+   "problem": "Rule applies when a worker is exposed to parts above 600 V and the work is installing, removing or repairing equipment (or equal hazard); it excludes routine switching, live-line-tool work from out of reach, and emergency repairs to protect the public. 'High-voltage parts' and 'working inside the open compartment' do not establish the voltage or the type of work, so a trainer could call this routine switching.",
+   "correction": {
+    "inspectionNote": "At the pad-mounted transformer one lineworker is repairing equipment inside the open compartment, within reach of parts energized at 12,000 volts. It is planned work, not an emergency or routine switching. His truck is empty and nobody else is on site.",
+    "citations[0].text": "Repair or removal of equipment such as a transformer, where a worker could touch parts energized above 600 volts, needs at least two workers present. Routine switching that is safe at the site, live-line-tool work from out of reach, and emergency repairs to protect the public are excepted."
+   },
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(l)(2)(i)(C) equipment such as transformers if an employee is exposed to contact with parts energized above 600 V; (l)(2)(ii)(A)-(C) exceptions: routine switching if employer demonstrates safe site, live-line tools out of reach, emergency repairs to safeguard the public."}]
+  },
+  {
+   "violationId": "UL-BOOM-001",
+   "verdict": "ok",
+   "problem": "Matches. A designated employee other than the operator must watch the approach distance unless the employer can show the operator can judge it accurately; the pole blocks the operator's view so the exception fails and nobody is watching. Insulated aerial lift exemption does not apply to this boom. Minor wording: the 'unless' is the employer demonstrating it.",
+   "correction": {
+    "citations[0].text": "Equipment must stay at a safe distance from live lines, and a second worker watches the distance and warns the operator unless the employer can show the operator can judge it accurately alone."
+   },
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(p)(4)(i) approach distances maintained, insulated aerial-lift portion exempt under conditions; (p)(4)(ii) designated employee other than operator observes and warns unless operator can accurately determine the distance."}]
+  },
+  {
+   "violationId": "UL-AIR-001",
+   "verdict": "fix",
+   "problem": "Two ways a trainer could dispute: (1) the oxygen test is not required if continuous forced-air ventilation is provided, and the whole enclosed-space paragraph does not apply to vented vaults where the employer determined the ventilation system is working; the note never says no ventilation. (2) The rule has no test-log requirement, so 'no entries in the test log' is not itself a violation and the hint pushing the log overreaches.",
+   "correction": {
+    "inspectionNote": "The lid is off and a worker is climbing down the ladder. The gas meter is still in its case on the truck, nobody has tested the air, and no blower is running. This is not a vented vault.",
+    "hintText": "Look at the equipment on the truck, ask whether anyone tested the air, and think about what the air below ground could hold.",
+    "citations[0].text": "Before entry into an enclosed space, the air is tested for too little oxygen first and then for flammable gas, unless continuous forced-air ventilation is already running."
+   },
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(e) intro: does not apply to vented vaults if employer determines ventilation is operating; (e)(9) oxygen test, not required if continuous forced-air ventilation provided; (e)(10) flammable test after oxygen test; (e)(11) ventilate or monitor if a problem is found. No log requirement in (e)."}]
+  },
+  {
+   "violationId": "UL-POLE-001",
+   "verdict": "ok",
+   "problem": "Matches. Employer must ascertain the pole can take the extra or unbalanced load of climbing and brace it if not; a visibly decayed, leaning pole climbed untested and unbraced breaks it, and a tested or braced pole is compliant. Test method is not prescribed. Severity Major is defensible; Critical is arguable since a failing pole under a climber can kill.",
+   "correction": {},
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(q)(1)(i) ascertain structures can sustain additional or unbalanced stresses; brace or support if not; Note refers to appendix D wood pole test methods."}]
+  },
+  {
+   "violationId": "UL-GROUND-ORDER-001",
+   "verdict": "fix",
+   "problem": "The test before grounding is required unless a ground is already in place on that line. The note does not say no ground is present, so a lineman could say this clamp is an additional ground. Otherwise correct; connecting with a hot stick is proper.",
+   "correction": {
+    "inspectionNote": "A worker clamps the first protective ground to the line with a hot stick. No other ground is on the line. The voltage detector still hangs on the truck and has not been used on this line."
+   },
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(n)(5) test and verify absence of nominal voltage before installing any ground unless a previously installed ground is present; (n)(6)(i) ground end first, then line end with a live-line tool."}]
+  },
+  {
+   "violationId": "UL-GROUND-MISSING-001",
+   "verdict": "ok",
+   "problem": "Grounds may be omitted only if impracticable or more hazardous AND no chance of contact with another energized source AND no induced voltage. A live line close beside the conductor means induced voltage and contact risk, so the exception is unavailable and the missing ground is a real violation. Compliant case: grounds installed. Optional wording closes the impracticable argument.",
+   "correction": {
+    "inspectionNote": "The section is open, tested and tagged, and a lineworker is splicing it. The conductor has no protective ground on it, nothing makes a ground impractical here, and a live line runs close beside it.",
+    "citations[0].text": "A line worked as dead is cleared and then grounded so workers cannot face a harmful voltage difference. Grounds may be left off only when they are impractical or more dangerous, and then only if no other live source can touch the line and no induced voltage is present."
+   },
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(n)(2) deenergize under (m) and ground per (n)(3)-(n)(8); omission only if employer demonstrates impracticable or greater hazard and (i) deenergized under (m), (ii) no possibility of contact with another energized source, (iii) no induced voltage hazard."}]
+  },
+  {
+   "violationId": "UL-BACKFEED-001",
+   "verdict": "fix",
+   "problem": "Misattributed fault. The utility rule governs the crew: if backfeed is possible, treat the line as live, or make it dead and ground it. The crew's violation is treating the line as dead without grounding. The unisolated generator hookup is a customer wiring problem (building wiring is under the general electrical rules, not this one). The description presents the generator hookup as the violation. Note should also say the generator is running and the crew did not ground.",
+   "correction": {
+    "description": "The crew treats a downed line as dead although a customer generator is wired to the house with no isolation",
+    "inspectionNote": "At the storm-damage site a portable generator is running and is wired to the house through a cord into a spare outlet, with no transfer switch or other isolation. The crew treats the nearby line as dead and has not grounded it or treated it as live.",
+    "citations[0].text": "A line that seems dead can be fed back from a customer generator or from the secondary side of a transformer, so it is treated as live, or it is made dead and grounded."
+   },
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(w)(7) if backfeed from cogeneration or the secondary system is possible, (l) applies when worked energized, (m) and (n) when worked deenergized."}]
+  },
+  {
+   "violationId": "UL-RESTORE-001",
+   "verdict": "ok",
+   "problem": "Matches. No reenergizing until grounds are off, every crew has released its clearance, workers are clear and tags are removed at that point. Clean violating and compliant cases. Optional: the scene is not subtle (isSubtle false), so Journeyman is a better floor than Master unless it is meant as a sequencing test.",
+   "correction": {
+    "minimumDifficulty": "Journeyman"
+   },
+   "sources": [{"url": "https://www.law.cornell.edu/cfr/text/29/1910.269", "says": "(m)(3)(x) release steps, (xi) only the requester releases unless transferred, (xii) tags stay until release, (xiii) no action to reenergize until grounds removed, all crews released, all clear, tags removed."}]
+  }
+ ],
+ "overall": "14 checked against raw Cornell LII text of 1910.269: 5 ok (VAULT-ATTEND, BOOM, POLE, GROUND-MISSING, RESTORE), 9 need fixes: BRIEF hint, FALL compliant case, ARC missing 2.0 threshold, TRAINING wrong entry, CLEARANCE operator/sole-control exception, TWOPERSON voltage and exceptions, AIR ventilation exception and no log rule, GROUND-ORDER prior-ground exception, BACKFEED misattributed. 4 ft fall figure consistent (9 violates; 3 ok only for a stationary worker). Scope: rules cover utility work; construction of new lines falls under the near-identical construction rules, and building wiring under the general electrical rules. Not checked: 2026 eCFR text vs Cornell copy."
+}

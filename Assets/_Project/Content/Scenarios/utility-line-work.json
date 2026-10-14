@@ -1,0 +1,302 @@
+{
+  "id": "scenario-utility-line-work",
+  "sceneName": "UtilityLineWorkInspection",
+  "displayName": "Utility Line Work Inspection",
+  "description": "Inspect a utility crew's job site and find the safety problems, from how the crew planned the work and made the line dead to how people work on poles, trucks and underground vaults. Check that every step that protects the crew was done, and done in the right order.",
+  "environmentDescription": "A residential pole line with a bucket truck, a crew working on a section made dead, an underground vault at a street corner, and a storm-damage repair site with a downed line and a customer generator.",
+  "masterTimeLimit": 1500,
+  "availableDifficulties": [
+    "Apprentice",
+    "Journeyman",
+    "Master"
+  ],
+  "assetPrefix": "UL",
+  "violationFolder": "UtilityLineWork",
+  "scenarioAssetName": "UtilityLineWork",
+  "violations": [
+    {
+      "violationId": "UL-BRIEF-001",
+      "description": "The crew started the job with no briefing on the hazards",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(c)",
+          "text": "Before the job starts, the person in charge walks the crew through the hazards, the steps, how power is controlled and what protective gear is needed."
+        }
+      ],
+      "componentObjectName": "UL_Crew_JobBriefing",
+      "hintText": "Ask the crew what they were told before they started work, and ask the person in charge what the briefing covered.",
+      "componentType": "Job Briefing",
+      "inspectionNote": "At the pole line the crew is already working. The person in charge has no briefing notes, and two workers say nobody explained which lines are live or what the plan is.",
+      "conceptId": "utility-line-work",
+      "severity": "Major",
+      "minimumDifficulty": "Apprentice",
+      "isSubtle": false
+    },
+    {
+      "violationId": "UL-FALL-001",
+      "description": "A worker is high on a pole with no fall protection",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(g)(2)",
+          "text": "Anyone on a pole more than 4 feet above the ground needs fall arrest, work-positioning or restraint equipment. A climber also needs it while climbing or moving to a new spot, unless that is not workable or makes things more dangerous.",
+          "limit": {
+            "quantity": "height above ground of a worker on a pole with no fall protection",
+            "kind": "max",
+            "value": 4,
+            "unit": "ft"
+          }
+        }
+      ],
+      "componentObjectName": "UL_Pole_ClimberHarness",
+      "hintText": "Look at what holds the worker on the pole, and estimate how far off the ground their feet are.",
+      "componentType": "Fall Protection",
+      "inspectionNote": "A lineworker stands on climbing gaffs about 9 feet above the ground, leaning out to reach a crossarm. He wears no harness, no strap and no restraint line.",
+      "conceptId": "utility-line-work",
+      "severity": "Critical",
+      "minimumDifficulty": "Apprentice",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "height above ground of a worker on a pole with no fall protection",
+        "value": 9,
+        "unit": "ft",
+        "note": "height of the worker's feet above the ground"
+      },
+      "compliantFact": {
+        "quantity": "height above ground of a worker on a pole with no fall protection",
+        "value": 3,
+        "unit": "ft",
+        "note": "height of the worker's feet above the ground while standing in place working (not climbing)"
+      }
+    },
+    {
+      "violationId": "UL-ARC-001",
+      "description": "A worker near live equipment wears ordinary clothing where an arc hazard is estimated",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(l)(8)",
+          "text": "Where the estimated arc energy is above 2 calories per square centimeter, workers wear clothing and gear with an arc rating at least equal to the estimate."
+        }
+      ],
+      "componentObjectName": "UL_Worker_ClothingRating",
+      "hintText": "Compare the job's hazard estimate sheet with what the worker at the switch cabinet is wearing.",
+      "componentType": "Arc-Rated Clothing",
+      "inspectionNote": "The job sheet lists an estimated arc exposure of 8 calories per square centimeter at the switch cabinet. The worker opening it wears a plain cotton-poly shirt with no arc rating label.",
+      "conceptId": "utility-line-work",
+      "severity": "Critical",
+      "minimumDifficulty": "Apprentice",
+      "isSubtle": false
+    },
+    {
+      "violationId": "UL-VAULT-ATTEND-001",
+      "description": "No attendant is stationed at the vault opening",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(t)(3)",
+          "text": "While people work in a vault with live equipment, a first-aid-trained worker stays on the surface right by the entrance, and everyone on the job keeps reliable two-way contact, such as radios."
+        }
+      ],
+      "componentObjectName": "UL_Vault_Attendant",
+      "hintText": "Look at the street-level opening while two workers are down in the vault.",
+      "componentType": "Vault Attendant",
+      "inspectionNote": "Two workers are below ground at the street corner vault with live equipment. Nobody stands at the opening, and the only radio is left on the truck seat.",
+      "conceptId": "utility-line-work",
+      "severity": "Major",
+      "minimumDifficulty": "Apprentice",
+      "isSubtle": false
+    },
+    {
+      "violationId": "UL-TRAINING-001",
+      "description": "A worker is doing a task they have not been trained or qualified for",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(l)(1)",
+          "text": "Only a qualified worker may work on or with exposed live parts. A qualified worker can tell live parts apart, find their voltage and use the right protection."
+        }
+      ],
+      "componentObjectName": "UL_Worker_Qualification",
+      "hintText": "Ask the new helper in the bucket what training they have for the job they are about to do.",
+      "componentType": "Worker Qualification",
+      "inspectionNote": "A new helper in the bucket is about to handle parts near energized conductors. The training card shows only ground-level duties, they cannot say how to check the voltage of the parts around them, and no qualified lineworker is supervising the helper at the bucket.",
+      "conceptId": "utility-line-work",
+      "severity": "Critical",
+      "minimumDifficulty": "Apprentice",
+      "isSubtle": false
+    },
+    {
+      "violationId": "UL-CLEARANCE-001",
+      "description": "Work on a section began with no clearance and no hold tags",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(m)(3)",
+          "text": "Where a system operator controls the line, the section is made dead through the operator, with every source opened and tagged, before the crew works it as dead. A single crew that can see and alone controls the disconnect skips some of these steps."
+        }
+      ],
+      "componentObjectName": "UL_Switch_HoldTag",
+      "hintText": "Look at the switches that feed this section and at what the crew has on file about who made it dead.",
+      "componentType": "Clearance and Tags",
+      "inspectionNote": "The line is controlled by the utility's system operator. The crew says the section is dead and has started work. The feeding switch is open but is out of the crew's sight and under the operator's control. It carries no tag, there is no clearance record, and the crew never called the system operator.",
+      "conceptId": "utility-line-work",
+      "severity": "Critical",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    },
+    {
+      "violationId": "UL-TWOPERSON-001",
+      "description": "One worker is alone on work that needs two",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(l)(2)",
+          "text": "Repair or removal of equipment such as a transformer, where a worker could touch parts energized above 600 volts, needs at least two workers present. Routine switching that is safe at the site, live-line-tool work from out of reach, and emergency repairs to protect the public are excepted."
+        }
+      ],
+      "componentObjectName": "UL_Crew_LoneWorker",
+      "hintText": "Count the people present at the transformer and think about who would help if something went wrong.",
+      "componentType": "Two-Person Rule",
+      "inspectionNote": "At the pad-mounted transformer one lineworker is repairing equipment inside the open compartment, within reach of parts energized at 12,000 volts. It is planned work, not an emergency or routine switching. His truck is empty and nobody else is on site.",
+      "conceptId": "utility-line-work",
+      "severity": "Critical",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    },
+    {
+      "violationId": "UL-BOOM-001",
+      "description": "The truck boom swings near live lines with no spotter",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(p)(4)",
+          "text": "Equipment must stay at a safe distance from live lines, and a second worker watches the distance and warns the operator unless the employer can show the operator can judge it accurately alone."
+        }
+      ],
+      "componentObjectName": "UL_Truck_Boom",
+      "hintText": "Watch the boom operator and see who, if anyone, is helping with the view of the wires.",
+      "componentType": "Boom Truck",
+      "inspectionNote": "The boom is turning toward a set of live wires beside the road. The operator's view is blocked by the pole, and nobody on the ground is watching or signalling.",
+      "conceptId": "utility-line-work",
+      "severity": "Critical",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    },
+    {
+      "violationId": "UL-AIR-001",
+      "description": "A worker enters the vault with no air test",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(e)(9)",
+          "text": "Before entry into an enclosed space, the air is tested for too little oxygen first and then for flammable gas, unless continuous forced-air ventilation is already running."
+        }
+      ],
+      "componentObjectName": "UL_Vault_GasMeter",
+      "hintText": "Look at the equipment on the truck, ask whether anyone tested the air, and think about what the air below ground could hold.",
+      "componentType": "Air Test",
+      "inspectionNote": "The lid is off and a worker is climbing down the ladder. The gas meter is still in its case on the truck, nobody has tested the air, and no blower is running. This is not a vented vault.",
+      "conceptId": "utility-line-work",
+      "severity": "Critical",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    },
+    {
+      "violationId": "UL-POLE-001",
+      "description": "A pole was climbed without checking that it can carry the load",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(q)(1)",
+          "text": "Before climbing or adding equipment, the crew makes sure the pole can take the extra or uneven load, and braces it if not."
+        }
+      ],
+      "componentObjectName": "UL_Pole_Condition",
+      "hintText": "Look closely at the base and the top of the pole before anyone puts weight on it.",
+      "componentType": "Pole Check",
+      "inspectionNote": "The storm-damaged pole leans, with soft, dark wood at its base and a cracked crossarm. A lineworker is already climbing it, and no one tested the pole or braced it.",
+      "conceptId": "utility-line-work",
+      "severity": "Major",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    },
+    {
+      "violationId": "UL-GROUND-ORDER-001",
+      "description": "A line was grounded before it was tested for voltage",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(n)(5)",
+          "text": "The line is tested to prove it is dead before any protective ground is put on."
+        }
+      ],
+      "componentObjectName": "UL_Line_TestSequence",
+      "hintText": "Follow what the crew did to the line, step by step, and look at the tools still on the truck.",
+      "componentType": "Test Before Ground",
+      "inspectionNote": "A worker clamps the first protective ground to the line with a hot stick. No other ground is on the line. The voltage detector still hangs on the truck and has not been used on this line.",
+      "conceptId": "utility-line-work",
+      "severity": "Critical",
+      "minimumDifficulty": "Master",
+      "isSubtle": true
+    },
+    {
+      "violationId": "UL-GROUND-MISSING-001",
+      "description": "A line being worked as dead has no protective ground on it",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(n)(2)",
+          "text": "A line worked as dead is cleared and then grounded so workers cannot face a harmful voltage difference. Grounds may be left off only when they are impractical or more dangerous, and then only if no other live source can touch the line and no induced voltage is present."
+        }
+      ],
+      "componentObjectName": "UL_Line_ProtectiveGround",
+      "hintText": "Look along the conductor the crew is splicing and see what is attached to it.",
+      "componentType": "Protective Ground",
+      "inspectionNote": "The section is open, tested and tagged, and a lineworker is splicing it. The conductor has no protective ground on it, nothing makes a ground impractical here, and a live line runs close beside it.",
+      "conceptId": "utility-line-work",
+      "severity": "Critical",
+      "minimumDifficulty": "Master",
+      "isSubtle": true
+    },
+    {
+      "violationId": "UL-BACKFEED-001",
+      "description": "The crew treats a downed line as dead although a customer generator is wired to the house with no isolation",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(w)(7)",
+          "text": "A line that seems dead can be fed back from a customer generator or from the secondary side of a transformer, so it is treated as live, or it is made dead and grounded."
+        }
+      ],
+      "componentObjectName": "UL_Generator_Connection",
+      "hintText": "Look at how the customer's generator is hooked up at the house near the downed line.",
+      "componentType": "Generator Backfeed",
+      "inspectionNote": "At the storm-damage site a portable generator is running and is wired to the house through a cord into a spare outlet, with no transfer switch or other isolation. The crew treats the nearby line as dead and has not grounded it or treated it as live.",
+      "conceptId": "utility-line-work",
+      "severity": "Critical",
+      "minimumDifficulty": "Master",
+      "isSubtle": true
+    },
+    {
+      "violationId": "UL-RESTORE-001",
+      "description": "Power is restored while a crew still holds its clearance",
+      "citations": [
+        {
+          "profileId": "utility-safety",
+          "reference": "1910.269(m)(3)(xiii)",
+          "text": "Power is restored only after every crew has released its clearance, all grounds are off and everyone is clear."
+        }
+      ],
+      "componentObjectName": "UL_Switch_Restoration",
+      "hintText": "Check the tags on the switch and ask each crew where it stands before anyone closes it.",
+      "componentType": "Restoring Power",
+      "inspectionNote": "The operator is about to close the switch. One crew's tag is still on it and its protective ground is still on the line, and that crew has not released its clearance.",
+      "conceptId": "utility-line-work",
+      "severity": "Critical",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    }
+  ]
+}
