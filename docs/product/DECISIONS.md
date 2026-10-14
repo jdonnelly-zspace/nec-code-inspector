@@ -2,6 +2,14 @@
 
 A log of the owner's decisions that shape the product. Newest first. Each entry says what was decided, what it affects and what it leaves open.
 
+## 2026-10-13: the MVP covers all six core occupations
+
+| # | Decision | Effect |
+|---|---|---|
+| D-19 | **The MVP covers all six core occupations and their 44 procedures.** Phase 1 is the MVP; phase 2 is the adjacent occupations. This replaces D-13's assignment of occupations to phases 1, 2 and 3 (D-13's judgement that utility line work matters more than solar and alarm no longer orders anything: all three are in the MVP). The deck was shown and shared. | `occupations.json` marks all six available. The three remaining skills, the fire alarm and utility code profiles and the utility scenes move into the MVP. D-17 means the codes need no licence, so utility line work is no longer blocked on one. |
+
+**Consequences to plan for.** The MVP now needs more new content than before: three skills, two more code profiles, and 3D scenes for three more occupations, on top of what is built. Of the 44 procedures, 28 can be practised today; the other 16 open when the three skills exist. The owner's list drops the deck review, the analytics spec and the 3DFrame confirmation (the owner is handling them).
+
 ## 2026-10-13: how a Master answer names a rule
 
 | # | Decision | Effect |

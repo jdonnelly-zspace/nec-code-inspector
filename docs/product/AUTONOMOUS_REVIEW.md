@@ -24,7 +24,7 @@ Checks: 8035 logic checks, 0 failed (23 warnings, all existing content-target an
 
 **F-3. Practice is offered for 28 of 44 procedures,** those whose every skill is built. The other 16 are listed (with steps, hazards and controls) but cannot be practised because each needs a phase 3 or 3 skill that does not exist yet (11 of them have no coverage at all). *Alternative:* offer practice for all and let the phase-3 skills be missing.
 
-**F-4. Only phase 1 occupations are "available"** (electricians, helpers, inspectors); solar, alarm and power-line show as coming soon and cannot be chosen. *Why:* you accepted the three phases; marketing must not promise the rest. *Alternative:* open all six now (the content exists, the skills do not).
+**F-4. Only phase 1 occupations are "available"** (superseded 2026-10-13: the MVP covers all six, so all six are available, D-19) (electricians, helpers, inspectors); solar, alarm and power-line show as coming soon and cannot be chosen. *Why:* you accepted the three phases; marketing must not promise the rest. *Alternative:* open all six now (the content exists, the skills do not).
 
 **F-5. Utility interface is a phase-1 skill.** Your list of phase 1 had seven skills; I built all seven, including utility interface, though it is the least used. Lesson only.
 
@@ -44,5 +44,5 @@ Checks: 8035 logic checks, 0 failed (23 warnings, all existing content-target an
 
 - Put the two panels in the menu scene and wire their buttons, texts and prefabs.
 - Hands-on trainers, violation content and scenes for the phase-1 skills.
-- Phase 3 and 3 skills; the licence decisions (NEC, CEC, BS 7671, fire alarm standard, NESC); NEC edition decision.
+- The three remaining skills (solar PV and storage, low-voltage and fire alarm, utility line work; now in the MVP, D-19); the licence decisions (NEC, CEC, BS 7671, fire alarm standard, NESC); NEC edition decision.
 - Master review of the 20 lessons, 6 profiles and 44 procedures.

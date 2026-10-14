@@ -82,8 +82,8 @@
       "standards": "NEC Articles 690, 691, 705, 706, 480, 710 and 250; fire-code access and setbacks; UL listings; utility interconnection rules.",
       "codeProfile": "new entries in each code profile; fire-code items as outside-code notes",
       "firstContent": "A residential rooftop array inspection (rapid shutdown, labels, disconnects, bonding) and an interconnection exercise on the panel sandbox.",
-      "decision": "approved 2026-10-12",
-      "phase": 3
+      "decision": "approved 2026-10-12; in the MVP since 2026-10-13 (D-19)",
+      "phase": 1
     },
     {
       "id": "low-voltage-and-fire-alarm-systems",
@@ -94,8 +94,8 @@
       "standards": "NEC Articles 725, 760, 800 and 830; NFPA 72 and UL 864 (paywalled, paraphrase only); local fire code.",
       "codeProfile": "new code profile for the fire alarm standard, with its own licence decision",
       "firstContent": "A commercial building with a fire alarm panel and devices to inspect (wiring class, separation, supervision, labelling).",
-      "decision": "approved 2026-10-12",
-      "phase": 3
+      "decision": "approved 2026-10-12; in the MVP since 2026-10-13 (D-19)",
+      "phase": 1
     },
     {
       "id": "utility-interface",
@@ -112,15 +112,14 @@
     {
       "id": "utility-line-work",
       "title": "Utility line work",
-      "status": "blocked",
+      "status": "approved",
       "summary": "Work on utility lines and equipment: approach distances, de-energizing and grounding lines, climbing, pole setting, underground vaults, outage switching.",
       "reason": "Power-line installers and repairers are a core occupation in the market view, but the NEC excludes installations under exclusive utility control and service drops up to the service point; the work is governed by the National Electrical Safety Code (NESC) and OSHA 1910.269 and 1926 Subpart V. Only about one task in thirteen touches the NEC.",
-      "blockedBy": "The NESC is a separate copyrighted code that the app has no profile for, and the work needs new 3D content (poles, vaults, bucket trucks) the project has not planned. Decided 2026-10-12: build it (phase 2). Still blocked until the NESC licence decision is made and the utility scenes are planned.",
       "standards": "NESC (IEEE C2, paywalled); OSHA 29 CFR 1910.269 and 1926 Subpart V (public).",
       "codeProfile": "would need a NESC code profile and its licence decision",
       "firstContent": "None until the decision. The electrically safe work and jobsite safety skills would serve line workers' general safety procedures.",
-      "decision": "approved 2026-10-12",
-      "phase": 2
+      "decision": "approved 2026-10-12; in the MVP since 2026-10-13 (D-19); no longer blocked on a licence (D-17), but it needs a utility code profile and new utility 3D content (poles, vaults, bucket trucks) first",
+      "phase": 1
     }
   ]
 }

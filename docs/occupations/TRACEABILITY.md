@@ -123,9 +123,9 @@ Every procedure of the six core occupations against what the app teaches today (
 
 | Skill | Phase | Status | Procedures | Occupations | Why |
 |---|---|---|---|---|---|
-| pv-and-storage-systems | 3 | approved | 6 | 47-2231 | Arrays, DC wiring, inverters, rapid shutdown, interconnection, and battery storage: how they are installed, protected, marked and connected. |
-| low-voltage-and-fire-alarm-systems | 3 | approved | 5 | 49-2098 | Power-limited and fire alarm circuits, communications cabling, separation from power wiring, devices and panels, supervision, power supplies, and the testing and handling of impairments. |
-| utility-line-work | 2 | blocked | 5 | 49-9051 | Work on utility lines and equipment: approach distances, de-energizing and grounding lines, climbing, pole setting, underground vaults, outage switching. |
+| pv-and-storage-systems | 1 | approved | 6 | 47-2231 | Arrays, DC wiring, inverters, rapid shutdown, interconnection, and battery storage: how they are installed, protected, marked and connected. |
+| low-voltage-and-fire-alarm-systems | 1 | approved | 5 | 49-2098 | Power-limited and fire alarm circuits, communications cabling, separation from power wiring, devices and panels, supervision, power supplies, and the testing and handling of impairments. |
+| utility-line-work | 1 | approved | 5 | 49-9051 | Work on utility lines and equipment: approach distances, de-energizing and grounding lines, climbing, pole setting, underground vaults, outage switching. |
 | electrically-safe-work | 1 | built | 0 |  | Making a circuit or piece of equipment safe to work on and proving it: identify every source, shut off, lock and tag, test before touching with a proved meter, and know what protective equipment to use. |
 | testing-and-measurement | 1 | built | 0 |  | Choosing and using testers and meters (voltage, continuity, polarity, insulation resistance, receptacle and GFCI/AFCI testers) and reading what they show. |
 | troubleshooting | 1 | built | 0 |  | Finding the cause of a dead or tripping circuit by narrowing the fault step by step, using the safe-work and testing skills. |

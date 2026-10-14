@@ -35,6 +35,7 @@ namespace NECInspector.LogicTests
             t.Equal(6, file.occupations.Length, "six core occupations");
             t.Equal(44, file.occupations.Sum(o => o.procedures.Length), "44 procedures");
             t.IsTrue(file.occupations.Where(o => o.available).All(o => o.phase == 1), "only phase 1 occupations are available");
+            t.Equal(6, file.occupations.Count(o => o.available && o.phase == 1), "all six core occupations are in the MVP and available (D-19)");
             t.IsTrue(file.occupations.Where(o => o.available).All(o => o.procedures.Any(p => p.practice)), "an available occupation offers some practice");
             foreach (var p in file.occupations.SelectMany(o => o.procedures))
                 if (p.practice)
