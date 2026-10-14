@@ -1,0 +1,376 @@
+{
+ "articles": [
+  {
+   "reference": "12.3",
+   "refVerdict": "correct",
+   "correctRef": null,
+   "textVerdict": "correct",
+   "correction": "",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_PRO_SD_SRstatements.pdf",
+     "says": "NFPA second-draft report (2022 cycle) prints 12.3.8 inside 12.3 (pathway class rules); chapter 12 numbering stable."
+    },
+    {
+     "url": "https://nationaltrainingcenter.com/nfpa-72-circuits-and-pathways/",
+     "says": "Trade page (edition unstated; seen via search summary, not independently re-read): pathway performance in 12.3, Class A past single open, Class X past short."
+    }
+   ]
+  },
+  {
+   "reference": "12.3.8",
+   "refVerdict": "correct",
+   "correctRef": null,
+   "textVerdict": "correct, with wording tweak",
+   "correction": "Say the distances are annex advice, not a rule. Suggested: 'On a Class A or Class X path, the outgoing and return conductors must be routed separately so one event cannot damage both. Annex advice suggests about a foot apart on vertical runs and about four feet on horizontal runs. They may share a cable or raceway only in short stretches, such as at a device or panel enclosure, or for single drops to devices.' (Class N is also covered by the rule; omitting it is acceptable.)",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_PRO_SD_SRstatements.pdf",
+     "says": "SR-5153 body: outgoing and return conductors routed separately. The 12 in vertical / 48 in horizontal figures are in annex A.12.3.8 as a RECOMMENDED minimum, not a requirement. 12.3.8.1 allows sharing a cable/enclosure/raceway only for up to 10 ft at device/panel enclosures, single drops, or a drop to multiple devices in one room under 1000 sq ft with no emergency control devices."
+    }
+   ]
+  },
+  {
+   "reference": "12.4",
+   "refVerdict": "correct",
+   "correctRef": null,
+   "textVerdict": "correct",
+   "correction": "",
+   "isNewInEdition": true,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_PRO_SD_SRstatements.pdf",
+     "says": "SR-5051 prints 12.4.5 Survivability Level 4 (1-hour rated cable/enclosure; sprinklered; smoke detection at backbone); annex says levels are not a hierarchy."
+    },
+    {
+     "url": "https://www.csemag.com/articles/what-to-look-for-in-nfpa-72-2022/",
+     "says": "2022 change list: Survivability Level 4 added in Chapter 12. Section 12.4 itself existed in 2019, so the flag is true only because the level list changed."
+    }
+   ]
+  },
+  {
+   "reference": "12.6",
+   "refVerdict": "correct",
+   "correctRef": null,
+   "textVerdict": "correct (2022 wording of single open/ground rule seen only in a search quote)",
+   "correction": "",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_PRO_SD_SRstatements.pdf",
+     "says": "SR-5053 prints 12.6.6 exemption: no integrity monitoring for a notification circuit in the same room as the control equipment if in conduit or equivalently protected. Matches the draft example."
+    },
+    {
+     "url": "search snippet only",
+     "says": "Single open / single ground trouble wording (12.6.1) seen only as a search-result quote of older editions (200 seconds); not opened for 2022. Long-standing rule, low risk."
+    }
+   ]
+  },
+  {
+   "reference": "10.15.7",
+   "refVerdict": "correct",
+   "correctRef": null,
+   "textVerdict": "correct",
+   "correction": "Optional: add that the 2022 list includes an emergency command center for multi-building campuses.",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_FUN_SD_SRstatements.pdf",
+     "says": "SR-5140 prints 10.15.7: visible and audible trouble signals and visible restoration at control unit, building fire command center, emergency command center, central/remote station. Heading shows 10.16.7 (pre-renumber), body 10.15.7 (final)."
+    },
+    {
+     "url": "https://www.longbeach.gov/globalassets/lbcd/media-library/documents/formsapplications/plan-review-checklists-prc/nfpa-72-fire-alarms",
+     "says": "2022-edition AHJ checklist cites 'trouble signal in accordance with Section 10.15', confirming 10.15 is the trouble section in 2022."
+    }
+   ]
+  },
+  {
+   "reference": "10.6.5",
+   "refVerdict": "correct (same in 2016, 2019, 2022; 2010 was 10.5.5)",
+   "correctRef": null,
+   "textVerdict": "correct; could add 'no other loads'",
+   "correction": "Suggested: 'The panel's normal power comes from a dedicated branch circuit that serves no other loads. The circuit's breaker is marked red, the location of that breaker is identified at the panel, and only authorized people should be able to reach it.' (Sub-sections: 10.6.5.1 dedicated circuit, 10.6.5.2 identification and access.)",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://up.codes/s/circuit-identification-and-accessibility",
+     "says": "Page heading '10.6.5.2 Circuit Identification and Accessibility' for the 2016 edition (red marking, authorized access). So the 10.6.5 number is not just the 2010 one."
+    },
+    {
+     "url": "https://www.meyerfire.com/daily/dual-electrical-feeds-meet-fa-secondary-power",
+     "says": "2019 edition quote cites 10.6.5.1 for the branch circuit."
+    },
+    {
+     "url": "https://www.longbeach.gov/globalassets/lbcd/media-library/documents/formsapplications/plan-review-checklists-prc/nfpa-72-fire-alarms",
+     "says": "2022-edition AHJ checklist: dedicated branch circuit, red marking, location permanently identified at the panel, authorized access (no section number given)."
+    },
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_FUN_SD_SRstatements.pdf",
+     "says": "2022 draft cross-reference 'comply with the requirements of 10.6.5' confirms the section in the 2022 cycle."
+    },
+    {
+     "url": "https://www.securityinfowatch.com/alarms-monitoring/fire-life-safety/article/10415085/fire-and-life-safety",
+     "says": "2010 edition 10.5.5.2.x: location identified at control unit, FIRE ALARM CIRCUIT label, red marking. Older numbering only."
+    }
+   ]
+  },
+  {
+   "reference": "10.6.7.3.1",
+   "refVerdict": "correct",
+   "correctRef": null,
+   "textVerdict": "correct",
+   "correction": "Slight tightening: 'The backup supply is normally a storage battery that serves only the alarm system. An automatic-starting generator can serve as the backup source, but the system still needs its own dedicated batteries sized for about four hours to cover the start-up.'",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://www.meyerfire.com/daily/dual-electrical-feeds-meet-fa-secondary-power",
+     "says": "2019 edition 10.6.7.3.1 quote: dedicated storage battery, OR automatic-starting engine-driven generator serving the 10.6.5.1 branch circuit plus dedicated batteries with 4 hours of capacity. No 2022 change found in two 2022 change summaries."
+    }
+   ]
+  },
+  {
+   "reference": "10.6.7.2",
+   "refVerdict": "correct",
+   "correctRef": null,
+   "textVerdict": "correct",
+   "correction": "",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://www.longbeach.gov/globalassets/lbcd/media-library/documents/formsapplications/plan-review-checklists-prc/nfpa-72-fire-alarms",
+     "says": "2022 checklist cites 10.6.7.2.1 (24 hours quiescent), 10.6.7.2.2 (5 minutes alarm), 10.6.7.2.4 (exceptions)."
+    },
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_FUN_SD_SRstatements.pdf",
+     "says": "SR-5138 prints the 24 h plus 5 min rule and the voice 15 min rule."
+    }
+   ]
+  },
+  {
+   "reference": "10.6.7.2.14",
+   "refVerdict": "correct",
+   "correctRef": null,
+   "textVerdict": "correct",
+   "correction": "",
+   "isNewInEdition": true,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_FUN_SD_SRstatements.pdf",
+     "says": "SR-5138 prints 10.6.7.2.14: battery calculations apply a 1.25 correction factor for aging."
+    },
+    {
+     "url": "https://www.csemag.com/articles/what-to-look-for-in-nfpa-72-2022/",
+     "says": "2022 changes: safety margin raised from 20% to 25% (1.25 factor)."
+    },
+    {
+     "url": "https://www.securitysales.com/fire-intrusion/nfpa-72-2022-changes-inspection-testing-maintenance/",
+     "says": "2022 changes: shift from a 20% margin to a 1.25 correction factor. NEW in 2022 vs 2019: set true."
+    }
+   ]
+  },
+  {
+   "reference": "10.6.10.1",
+   "refVerdict": "correct as parent; precise paragraphs are 10.6.10.1.2 and 10.6.10.1.3",
+   "correctRef": null,
+   "textVerdict": "correct",
+   "correction": "",
+   "isNewInEdition": true,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_FUN_SD_SRstatements.pdf",
+     "says": "SR-5122: 10.6.10.1.2 installer marks month/year if the maker has not; 10.6.10.1.3 label with replacement date not over 4 years from installation; 10.6.10.1.4 replace on or before that date. Annex ties 4 years to VRLA life."
+    },
+    {
+     "url": "https://www.longbeach.gov/globalassets/lbcd/media-library/documents/formsapplications/plan-review-checklists-prc/nfpa-72-fire-alarms",
+     "says": "2022 checklist cites 10.6.10.1.1 (marked month/year) and 10.6.10.1.2."
+    },
+    {
+     "url": "https://www.securitysales.com/fire-intrusion/nfpa-72-2022-changes-inspection-testing-maintenance/",
+     "says": "2022: installer must label with replacement date not over four years; prior editions only required the manufacture date. NEW in 2022: true."
+    },
+    {
+     "url": "https://www.csemag.com/articles/what-to-look-for-in-nfpa-72-2022/",
+     "says": "Same: replacement label within four years is a 2022 change."
+    }
+   ]
+  },
+  {
+   "reference": "17.7.4.2",
+   "refVerdict": "correct as 2022 parent section (spot-type); paragraph is 17.7.4.2.3 (smooth ceilings)",
+   "correctRef": "17.7.4.2.3 (inferred, not seen printed)",
+   "textVerdict": "needs minor correction",
+   "correction": "The two layouts are alternatives. Suggested: 'On a smooth flat ceiling, spot smoke detectors are normally spaced no more than about 30 feet apart, with a detector within half that distance of each wall. As an alternative, every point on the ceiling can be within seven tenths of the listed spacing, about 21 feet, of a detector. Ceiling height, beams, airflow and the listing can change the layout.'",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_IDS_SD_SRstatements.pdf",
+     "says": "SR-5040 moved 17.7.1.12 to 17.7.2; SR-5041 renumbers 17.7.3.7.8 to 17.7.4.7.8; SR-5042 renumbers 17.7.5.3.1 to 17.7.6.3.1. Everything after the new 17.7.2 shifts up one. 2019 smooth-ceiling spacing was 17.7.3.2.3, so 2022 should be 17.7.4.2.3. Indirect chain; final text not seen."
+    },
+    {
+     "url": "search result quote of 17.7.3.2.3.1",
+     "says": "Nominal 30 ft, detector within half the spacing of walls/partitions reaching the top 15 percent of ceiling height; alternative: all points within 0.7 times 30 ft."
+    },
+    {
+     "url": "https://www.meyerfire.com/blog/the-other-easy-way-to-space-a-smoke-detector",
+     "says": "Cites older 17.6.3.1.1(1) and (2) (2010 to 2016 numbering): 30 ft listed spacing with half to walls, or 0.7 rule, as two options."
+    }
+   ]
+  },
+  {
+   "reference": "18.4.6",
+   "refVerdict": "correct as parent; the rule is 18.4.6.1",
+   "correctRef": null,
+   "textVerdict": "correct",
+   "correction": "Minor: 'sounder' could read 'audible appliance'; 'loudest sustained noise' means one lasting at least a minute.",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_NAS_SD_SRstatements.pdf",
+     "says": "SR-5021 prints 18.4.6.1: sleeping areas at least 15 dB above average ambient, or 5 dB above the maximum sound lasting at least 60 seconds, or 75 dBA, whichever is greater, at pillow level. Annex examples: hotel guest rooms, sleeping-furniture living rooms, nap rooms. Draft text matches."
+    },
+    {
+     "url": "https://www.longbeach.gov/globalassets/lbcd/media-library/documents/formsapplications/plan-review-checklists-prc/nfpa-72-fire-alarms",
+     "says": "2022 checklist lists 18.4.4, 18.4.5, 18.4.6, 18.4.7 for audible signals; 18.4.5 is private mode in the drafts, 18.4.6 is sleeping areas."
+    }
+   ]
+  },
+  {
+   "reference": "7.5.3.1",
+   "refVerdict": "correct",
+   "correctRef": null,
+   "textVerdict": "correct",
+   "correction": "",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_FUN_SD_SRstatements.pdf",
+     "says": "SR-5161 prints 7.5.3.1 list: owner's manual, record drawings (7.5.5), record of completion (7.5.6), site software copy (7.5.7). A proposed cybersecurity item was struck."
+    },
+    {
+     "url": "https://www.longbeach.gov/globalassets/lbcd/media-library/documents/formsapplications/plan-review-checklists-prc/nfpa-72-fire-alarms",
+     "says": "2022-edition AHJ checklist: 'The documentation stated in 7.5.3.1 shall be delivered to the owner'. Confirmed for published 2022."
+    }
+   ]
+  },
+  {
+   "reference": "7.7",
+   "refVerdict": "correct",
+   "correctRef": null,
+   "textVerdict": "correct for 2022; 2025 adds a storage rule",
+   "correction": "Keep wording general ('kept with the system'). 2025 adds that record documents may not be stored inside the control unit enclosure.",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_FUN_SD_SRstatements.pdf",
+     "says": "2022 draft lists 'Records, record retention, and record maintenance in accordance with Section 7.7'."
+    },
+    {
+     "url": "https://www.securitysales.com/insights/fireside-chat-inside-2025-nfpa-72-part-2/609823/",
+     "says": "2025 summary: 7.7.2.4 prohibits storing record documents inside control unit enclosures; 7.5.6.6.2 revised documents supplement originals."
+    }
+   ]
+  },
+  {
+   "reference": "14.4.2",
+   "refVerdict": "correct",
+   "correctRef": null,
+   "textVerdict": "correct (added/removed device rule not confirmed in 2022 wording)",
+   "correction": "",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_TMS_FD_FRstatements.pdf",
+     "says": "First revision prints 14.4.2.3 (control unit hardware) and 14.4.2.6 (remote software) under 14.4.2 reacceptance testing."
+    },
+    {
+     "url": "https://www.web.health.state.mn.us/facilities/regulation/engineering/lscfatesting24.pdf",
+     "says": "Opened; my fetcher could not read it, so added/removed device wording not re-confirmed. Rule is long-standing."
+    }
+   ]
+  },
+  {
+   "reference": "14.4.3.2",
+   "refVerdict": "correct (it is the test methods and frequency table)",
+   "correctRef": null,
+   "textVerdict": "correct",
+   "correction": "Make clear the yearly cycle comes from the table.",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_TMS_FD_FRstatements.pdf",
+     "says": "First revision prints 14.4.3.2: 'Systems and associated equipment shall be tested according to Table 14.4.3.2'."
+    },
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_TMS_SD_SRstatements.pdf",
+     "says": "Second draft repeatedly cites Table 14.4.3.2 items (battery item 9, audible item 22)."
+    },
+    {
+     "url": "https://www.inspectpoint.com/resources/articles/fire-alarm-inspection-requirements",
+     "says": "Says clause numbers hold for 2019 and 2022: annual functional tests, batteries more often, smoke sensitivity first year then alternate years."
+    }
+   ]
+  },
+  {
+   "reference": "10.21.1",
+   "refVerdict": "correct for 2022 (notification only); end-of-impairment is 10.21.6, record is 10.21.2",
+   "correctRef": "draft text spans 10.21.1, 10.21.2, 10.21.6; 2025 changes 10.21.1 (8-hour notice)",
+   "textVerdict": "needs correction",
+   "correction": "Suggested: 'When part of a system is out of service, the system owner or the owner's representative must be told. They, and the local authority, must be told again when the impairment ends. The owner keeps a record of each impairment for one year after it is corrected.' For 2025 add that the first notice must go out within 8 hours.",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://www.bates.edu/environmental-health-safety/impairments",
+     "says": "10.21.1 notify owner; 10.21.2 record kept 1 year after correction; 10.21.3 supervising station reports terminated monitoring to AHJ; 10.21.4 service provider reports to AHJ any system out of service over 8 hours; 10.21.5 mitigating measures where required by AHJ; 10.21.6 owner and AHJ notified when impairment ends. Edition unstated."
+    },
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_TMS_SD_SRstatements.pdf",
+     "says": "2022 draft 14.2.2.2 refers to 'requirements of Section 10.21', confirming 10.21 is impairments in 2022."
+    },
+    {
+     "url": "https://www.securitysales.com/insights/fireside-chat-inside-2025-nfpa-72-part-2/609823/",
+     "says": "2025: 10.21.1 requires notice within 8 hours; 10.21.2 says impairments include out-of-service events. 2025 subparagraph numbers may differ; unconfirmed."
+    }
+   ]
+  },
+  {
+   "reference": "10.21.5",
+   "refVerdict": "correct for 2022; unconfirmed for 2025",
+   "correctRef": null,
+   "textVerdict": "needs correction",
+   "correction": "Suggested: 'Where the local authority requires it, protective measures are put in place for as long as the system is impaired. They range from simply notifying occupants to a full-time fire watch, which is a person or persons who patrol the building and can call the fire service.' (Draft implies measures are always required and lists informing the fire service; the rule is conditional on the authority.)",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://www.bates.edu/environmental-health-safety/impairments",
+     "says": "10.21.5: where required by the AHJ, mitigating measures shall be implemented while impaired; full-time fire watch is an example."
+    },
+    {
+     "url": "https://wmfr.specialdistrict.org/files/8b678da69/Fire+Watch+Related+to+Fire+Alarms.pdf",
+     "says": "Quotes the same rule under older 2016 numbering 10.20.5 and annex: measures range from occupant notification to full-time fire watch, decided case by case. Consistent with 10.20 becoming 10.21."
+    }
+   ]
+  },
+  {
+   "reference": "17.7.2",
+   "refVerdict": "correct for 2022 (was 17.7.1.12 in 2019); 2025 unconfirmed",
+   "correctRef": null,
+   "textVerdict": "correct",
+   "correction": "Note: number differs from 2019 even though the content existed.",
+   "isNewInEdition": false,
+   "sources": [
+    {
+     "url": "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_IDS_SD_SRstatements.pdf",
+     "says": "SR-5040 prints 17.7.2 Protection During Construction (.1 active detectors cleaned/verified or replaced; .2 non-operational detectors protected per maker and verified or replaced; .3 install after cleanup if not needed). Renumbered from 17.7.1.12 per the Manual of Style."
+    },
+    {
+     "url": "https://fireprevention.utexas.edu/sites/default/files/FPS-SOP%2072-04%20Smoke%20Detector%20Protection%20During%20Construction.pdf",
+     "says": "Opened: shipping covers are for shipping protection only, not construction protection."
+    }
+   ]
+  }
+ ],
+ "overall": "All 19 numbers look correct for the published 2022 edition (draft numbering mostly matched final); only 17.7.4.2 is a parent of the exact paragraph 17.7.4.2.3. Fixes are wording: 10.21.1 and 10.21.5 text, spacing as two alternatives, and flags (battery replacement label, 1.25 aging factor and Level 4 are new in 2022 vs 2019). The 2025 edition changes 10.21.1 (8-hour notice) and 7.7 (no records inside the panel); other 2025 numbers unconfirmed. No free published text was readable; evidence is NFPA draft reports, a 2022-edition AHJ checklist and trade summaries.",
+ "recommendDrop": []
+}

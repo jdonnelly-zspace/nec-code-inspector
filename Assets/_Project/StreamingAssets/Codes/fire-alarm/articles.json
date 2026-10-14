@@ -1,0 +1,378 @@
+{
+  "articles": [
+    {
+      "reference": "12.3",
+      "title": "Pathway classes",
+      "text": "Wiring paths are grouped into classes by how they behave when a fault happens. A Class B path stops serving the devices beyond a single break, a Class A path has a return route so devices keep working past one break or ground fault, and a Class X path also keeps working past a single short circuit.",
+      "section": 12,
+      "keywords": [
+        "class a",
+        "class b",
+        "class x",
+        "pathway",
+        "redundant",
+        "circuit",
+        "single open"
+      ],
+      "related": [
+        "12.3.8",
+        "12.6"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "12.3.8",
+      "title": "Separating outgoing and return conductors",
+      "text": "On a Class A or Class X path, the outgoing and return conductors are routed separately so one event cannot damage both. Guidance suggests about a foot apart on vertical runs and about four feet on horizontal runs, and they may share a cable or raceway only in short stretches, such as at a device or the panel.",
+      "section": 12,
+      "keywords": [
+        "separation",
+        "outgoing",
+        "return",
+        "class a",
+        "class x",
+        "routed separately",
+        "raceway"
+      ],
+      "related": [
+        "12.3"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "12.4",
+      "title": "Pathway survivability",
+      "text": "Survivability levels describe how well a signal path must resist fire so alarm signals still get through in an emergency. The levels are not a ranking, they are different ways to get protection, such as ordinary alarm cable in metal conduit in a fully sprinklered building, or cable or enclosures rated to resist fire for one or two hours. Other chapters say when a level is needed.",
+      "section": 12,
+      "keywords": [
+        "survivability",
+        "fire rated cable",
+        "conduit",
+        "two hour",
+        "one hour",
+        "sprinklered",
+        "circuit integrity"
+      ],
+      "related": [
+        "12.3"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": true
+    },
+    {
+      "reference": "12.6",
+      "title": "Monitoring circuits for faults",
+      "text": "Alarm wiring is watched so that a single break or a single ground fault is shown automatically as a trouble signal. A few short, protected runs are excused, for example a sounder circuit in the same room as the panel when its wires are in conduit.",
+      "section": 12,
+      "keywords": [
+        "monitoring",
+        "supervision",
+        "trouble signal",
+        "open circuit",
+        "ground fault",
+        "integrity"
+      ],
+      "related": [
+        "12.3",
+        "10.15.7"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "10.15.7",
+      "title": "Trouble signals at the panel",
+      "text": "A trouble condition has to show on the control panel with a light and a sound, and the display shows when the trouble has cleared. A system with a voice evacuation command center, or one monitored off site, shows the signal at that location too.",
+      "section": 10,
+      "keywords": [
+        "trouble signal",
+        "control unit",
+        "panel",
+        "annunciation",
+        "audible",
+        "visible"
+      ],
+      "related": [
+        "12.6",
+        "10.6.7.2"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "10.6.5",
+      "title": "Dedicated primary power circuit",
+      "text": "The panel's normal power comes from a dedicated branch circuit that serves no other loads. The circuit's breaker is marked red, its location is identified at the panel, and only authorized people should be able to reach it.",
+      "section": 10,
+      "keywords": [
+        "primary power",
+        "dedicated circuit",
+        "branch circuit",
+        "breaker",
+        "red marking",
+        "panel"
+      ],
+      "related": [
+        "10.6.7.2"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "10.6.7.3.1",
+      "title": "Secondary power sources",
+      "text": "The backup supply is normally a storage battery that serves only the alarm system. An automatic-starting generator can serve as the backup source, but the system still needs its own dedicated batteries sized for about four hours to cover the start-up.",
+      "section": 10,
+      "keywords": [
+        "secondary power",
+        "battery",
+        "generator",
+        "standby power",
+        "4 hours"
+      ],
+      "related": [
+        "10.6.7.2",
+        "10.6.10.1"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "10.6.7.2",
+      "title": "Backup power capacity",
+      "text": "The backup supply has to run the system in its normal quiet state for 24 hours and then still sound all the alarm sounders and strobes for 5 minutes. A voice evacuation system needs 15 minutes of operation at full load after the 24 hours.",
+      "section": 10,
+      "keywords": [
+        "secondary power",
+        "battery",
+        "24 hours",
+        "5 minutes",
+        "15 minutes",
+        "standby",
+        "capacity"
+      ],
+      "related": [
+        "10.6.7.3.1",
+        "10.6.7.2.14"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "10.6.7.2.14",
+      "title": "Battery aging margin",
+      "text": "When a battery is sized, the calculation adds a margin of 25 percent so the battery can still carry its load at the end of its service life.",
+      "section": 10,
+      "keywords": [
+        "battery calculation",
+        "aging",
+        "correction factor",
+        "1.25",
+        "battery sizing",
+        "margin"
+      ],
+      "related": [
+        "10.6.7.2",
+        "10.6.10.1"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": true
+    },
+    {
+      "reference": "10.6.10.1",
+      "title": "Battery date and replacement label",
+      "text": "Each battery carries the month and year it was made, and the installer adds the date if the maker did not. The installer also labels the battery with a replacement date no more than 4 years after installation.",
+      "section": 10,
+      "keywords": [
+        "battery",
+        "date code",
+        "replacement date",
+        "label",
+        "4 years",
+        "vrla"
+      ],
+      "related": [
+        "10.6.7.2.14"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": true
+    },
+    {
+      "reference": "17.7.4.2",
+      "title": "Smoke detector spacing",
+      "text": "On a smooth flat ceiling, spot smoke detectors are normally spaced no more than about 30 feet apart, with a detector within half that distance of each wall. As an alternative, every point on the ceiling can be within seven tenths of the listed spacing, about 21 feet, of a detector. Ceiling height, beams, airflow and the listing can change the layout.",
+      "section": 17,
+      "keywords": [
+        "smoke detector",
+        "spacing",
+        "30 feet",
+        "ceiling",
+        "layout",
+        "listed spacing"
+      ],
+      "related": [
+        "17.7.2"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "18.4.6",
+      "title": "Sound level in sleeping areas",
+      "text": "Where an audible appliance serves sleeping areas, the alarm must reach at least 75 dBA at the pillow, or 15 dB above the average background noise, or 5 dB above the loudest noise that lasts a minute or more, whichever is greatest. Rooms that people may sleep in, such as hotel rooms, count as sleeping areas.",
+      "section": 18,
+      "keywords": [
+        "sleeping area",
+        "sound level",
+        "75 dba",
+        "pillow",
+        "audible",
+        "sounder",
+        "hotel"
+      ],
+      "related": [],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "7.5.3.1",
+      "title": "Completion documents",
+      "text": "When the job is finished, the installer hands over an owner's manual with the maker's instructions, record drawings that show what was actually installed, and a completed record of completion form. A system that runs on software also needs a saved copy of its site-specific software.",
+      "section": 7,
+      "keywords": [
+        "record of completion",
+        "as-built",
+        "record drawings",
+        "owner's manual",
+        "documentation",
+        "completion"
+      ],
+      "related": [
+        "7.7"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "7.7",
+      "title": "Keeping system records",
+      "text": "The record of completion, test reports and later changes are kept up to date and kept with the system, so whoever services it next can find them. Many local authorities ask to see them before they approve a new system or a change.",
+      "section": 7,
+      "keywords": [
+        "records",
+        "record retention",
+        "record of completion",
+        "test reports",
+        "documentation cabinet",
+        "owner"
+      ],
+      "related": [
+        "7.5.3.1",
+        "14.4.3.2"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "14.4.2",
+      "title": "Retesting after changes",
+      "text": "Adding, removing or repairing devices, wiring or software means the changed part is tested again. A new device is tested, and when one is removed another device on the same circuit is operated to prove the circuit still works.",
+      "section": 14,
+      "keywords": [
+        "reacceptance",
+        "retest",
+        "modification",
+        "repair",
+        "software change",
+        "added device"
+      ],
+      "related": [
+        "14.4.3.2"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "14.4.3.2",
+      "title": "Periodic testing",
+      "text": "Once the system is in service, it is inspected and tested on a schedule set by a table of methods and frequencies, with most of the system tested at least once a year. Some items come up more often, such as batteries, and smoke detectors have their sensitivity checked on a schedule that starts within the first year.",
+      "section": 14,
+      "keywords": [
+        "periodic testing",
+        "annual test",
+        "inspection",
+        "battery test",
+        "sensitivity",
+        "maintenance",
+        "schedule"
+      ],
+      "related": [
+        "14.4.2",
+        "10.6.10.1"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "10.21.1",
+      "title": "Telling people about an impairment",
+      "text": "When part of a system is out of service, the system owner or the owner's representative must be told. They, and the local authority, must be told again when the impairment ends. The owner keeps a record of each impairment for one year after it is corrected.",
+      "section": 10,
+      "keywords": [
+        "impairment",
+        "out of service",
+        "notification",
+        "owner",
+        "restoration",
+        "record"
+      ],
+      "related": [
+        "10.21.5",
+        "14.4.3.2"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "10.21.5",
+      "title": "Protection while a system is impaired",
+      "text": "Where the local authority requires it, protective measures are put in place for as long as the system is impaired. They range from simply notifying occupants to a full-time fire watch, which is a person or persons who patrol the building and can call the fire service.",
+      "section": 10,
+      "keywords": [
+        "impairment",
+        "fire watch",
+        "interim measures",
+        "out of service",
+        "evacuation",
+        "patrol"
+      ],
+      "related": [
+        "10.21.1"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    },
+    {
+      "reference": "17.7.2",
+      "title": "Protecting detectors during construction",
+      "text": "Detectors that stay active during construction are cleaned and checked against their listed sensitivity, or replaced, before the final test. Detectors that are installed but not active are protected from dust and damage and verified or replaced, because the thin plastic caps that ship with detectors are not enough. Where no detection is needed during construction, detectors go in only after the other trades finish cleaning.",
+      "section": 17,
+      "keywords": [
+        "construction",
+        "dust cover",
+        "detector protection",
+        "sensitivity",
+        "cleanup",
+        "smoke detector",
+        "debris"
+      ],
+      "related": [
+        "17.7.4.2"
+      ],
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "isNewInEdition": false
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "fire-alarm",
+  "displayName": "Fire alarm standard (NFPA 72)",
+  "edition": "2022",
+  "region": "US",
+  "units": "imperial",
+  "artSet": "north-america",
+  "reviewStatus": "draft",
+  "note": "Partial draft in our own words from public sources (NFPA's public first-draft and second-draft reports for the 2022 edition, trade-press and fire authority guides). Numbers were checked by a second pass against public sources, but the published text was not opened: smoke detector spacing is a parent section (the exact paragraph is inferred), and the 2025 edition changes the impairment notice (within 8 hours) and adds a records storage rule. A person must check each entry against the standard before it is used.",
+  "license": {
+    "status": "unreviewed",
+    "holder": "National Fire Protection Association",
+    "note": "NFPA 72 is copyrighted. The app stores reference numbers and its own paraphrases from public sources and does not reproduce code text or tables (docs/CONTENT_POLICY.md). No licence has been sought and no one has decided that the paraphrases are enough to ship. Needs the owner and counsel before release.",
+    "evidence": "",
+    "checkedOn": ""
+  }
+}
