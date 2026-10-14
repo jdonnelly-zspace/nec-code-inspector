@@ -1,0 +1,41 @@
+{
+  "codeName": "Line work safety rules",
+  "referencePrefix": "Paragraph ",
+  "referenceNoun": "Paragraph",
+  "sectionLabel": "Part",
+  "generalPracticeLabel": "General practice",
+  "terms": [
+    {
+      "key": "grounding",
+      "text": "grounding"
+    },
+    {
+      "key": "breaker",
+      "text": "breaker"
+    },
+    {
+      "key": "panel",
+      "text": "panel"
+    },
+    {
+      "key": "ground-rod",
+      "text": "ground rod"
+    },
+    {
+      "key": "receptacle",
+      "text": "receptacle"
+    },
+    {
+      "key": "shock-protection-device",
+      "text": "GFCI"
+    },
+    {
+      "key": "arc-fault-device",
+      "text": "AFCI"
+    },
+    {
+      "key": "service-disconnect",
+      "text": "service disconnect"
+    }
+  ]
+}

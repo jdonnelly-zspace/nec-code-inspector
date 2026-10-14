@@ -1,0 +1,292 @@
+{
+ "articles": [
+  {
+   "reference": "1910.269(a)(2)",
+   "refVerdict": "correct",
+   "correctRef": "",
+   "textVerdict": "correct",
+   "correction": "",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(a)(2)(i)(A)-(C) job-specific training incl. pole-top and manhole rescue, degree set by risk; (a)(2)(viii) proficiency must be demonstrated before training counts as complete."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(a)(2)(ii)",
+   "refVerdict": "correct",
+   "correctRef": "",
+   "textVerdict": "correct",
+   "correction": "",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(a)(2)(ii)(A)-(E): distinguish exposed live parts, determine nominal voltage of exposed live parts, minimum approach distances, special precautions/PPE/insulating tools, recognize and control hazards. Note: this training is required to be a qualified person."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(a)(4)",
+   "refVerdict": "correct",
+   "correctRef": "",
+   "textVerdict": "correct",
+   "correction": "",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(a)(4)(i)-(viii): determine before work starts nominal voltages, max switching-transient voltages, induced voltage, presence and condition of grounds, circuit locations, pole condition, environmental conditions. Draft omits switching transients; fine as a summary."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(c)",
+   "refVerdict": "correct",
+   "correctRef": "",
+   "textVerdict": "correct",
+   "correction": "",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(c)(1)-(5): employee in charge briefs before each job; subjects hazards, procedures, special precautions, energy-source controls, PPE; at least one briefing per day or shift for repetitive work plus more on significant changes; brief talk ok for routine work, fuller if complicated; lone worker still plans as if briefed."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(e)(9)",
+   "refVerdict": "correct but only the first of four paragraphs the entry covers",
+   "correctRef": "(e)(9) to (e)(12): oxygen test (e)(9), flammable test after oxygen (e)(10), ventilation (e)(11), ventilation timing (e)(12)",
+   "textVerdict": "needs correction",
+   "correction": "Before anyone enters an enclosed space, the air is tested for too little oxygen first and then for flammable gas, using a direct-reading meter. If either problem is found, forced-air ventilation is used or, when flammable gas is only at safe levels, continuous monitoring. When continuous forced-air ventilation is the method, it starts before entry and runs until everyone has left.",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(e)(9) oxygen test with direct-reading meter, not required if continuous forced-air ventilation ensures no oxygen-deficiency exposure; (e)(10) flammable test performed after the oxygen test/ventilation shows enough oxygen; (e)(11) ventilate if gas or low oxygen found, or continuous monitoring if gas initially at safe levels; (e)(12) if continuous forced-air ventilation is used it begins before entry and continues until all leave. Draft overstates: ventilation running the whole time is conditional, and the oxygen test can be skipped under continuous ventilation. Paragraph (e) is routine entry only and does not apply to vented vaults where the employer determines ventilation works; remaining hazards may require full permit-space rules."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(e)(7)",
+   "refVerdict": "correct",
+   "correctRef": "",
+   "textVerdict": "correct",
+   "correction": "",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(e)(7): attendant with first-aid training immediately available outside while work is performed, to assist if a hazard exists because of traffic patterns at the opening; may do other duties if not distracted from monitoring entrants or ensuring safe entry/exit. Note: see (t) for manholes/vaults."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(l)(1)",
+   "refVerdict": "correct",
+   "correctRef": "(l)(1)(i)-(iii)",
+   "textVerdict": "needs correction",
+   "correction": "Only qualified workers may work on or with exposed energized lines or equipment parts, and only qualified workers may work in areas with unguarded, uninsulated live parts operating at 50 volts or more. Any line or equipment counts as energized unless it was made dead under the lockout rules for generation or the clearance procedure for lines.",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(l)(1)(i) qualified only on or WITH exposed energized parts (not 'near'); (l)(1)(ii) areas with unguarded, uninsulated energized parts at 50 V or more; (l)(1)(iii) treated as energized unless deenergized under (d) or (m). Draft 'on or near' and 'bare' are loose; (d) generation-side lockout omitted. 50 V confirmed."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(l)(2)",
+   "refVerdict": "correct",
+   "correctRef": "(l)(2)(i)(A)-(E), (l)(2)(ii)(A)-(C)",
+   "textVerdict": "needs correction",
+   "correction": "At least two workers must be present for installing, removing or repairing lines energized above 600 volts, for working on dead lines or on equipment such as transformers when a worker could touch parts energized above 600 volts, for using mechanical equipment (other than insulated aerial lifts) near such parts, and for other work at least as hazardous. The rule does not apply to routine switching where the employer shows site conditions allow it safely, to work with live-line tools from a position out of reach of live parts, or to emergency repairs needed to protect the public.",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(l)(2)(i)(A) lines energized at more than 600 V; (B) deenergized lines if exposed to contact with other parts above 600 V; (C) equipment such as transformers, capacitors, regulators if exposed to contact with parts above 600 V; (D) mechanical equipment other than insulated aerial lifts near parts above 600 V; (E) other equal or greater hazard. Exceptions (ii)(A) routine switching if employer demonstrates safe site conditions, (B) live-line tools out of reach, (C) emergency repairs to safeguard the public. Draft omits (D) and (E), the exposure condition on (B)/(C), and 'employer demonstrates' in the switching exception. 600 V and the two-person rule confirmed."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(l)(3)",
+   "refVerdict": "correct",
+   "correctRef": "(l)(3)(i), (l)(3)(iii)(A)-(C)",
+   "textVerdict": "correct",
+   "correction": "",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(l)(3)(i) employer-set minimum approach distances no less than Table R-3 (ac) or R-8 (dc); (l)(3)(iii) no employee or conductive object they carry closer unless (A) employee insulated (rubber gloves, or gloves and sleeves, with control of the part), (B) part insulated, or (C) insulated per live-line barehand rules in (q)(3). Draft gives no numeric distances, which avoids the tables."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(l)(8)",
+   "refVerdict": "correct",
+   "correctRef": "(l)(8)(i)-(v)",
+   "textVerdict": "needs correction",
+   "correction": "The employer finds out which workers face flames or electric arcs and estimates the heat energy they could be exposed to. Clothing must not melt onto the skin or keep burning. When the estimate is above 2.0 calories per square centimeter, workers wear protective clothing and gear with an arc rating at least equal to the estimate, covering the whole body except where the limited exceptions for hands, feet, face and head apply.",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(l)(8)(iii) no melting/burning clothing; (l)(8)(iv) outer layer flame resistant if contact with parts above 600 V, arc could ignite flammables, molten metal or arcs could ignite clothing, or estimate exceeds 2.0 cal/cm2; (l)(8)(v) arc rating at least the estimate whenever estimate exceeds 2.0 cal/cm2, entire body covered except hands (rubber gloves with protectors, or heavy leather gloves if estimate is 14 cal/cm2 or less), feet, and face/head/neck exceptions with conditions. 2 cal/cm2 confirmed. Draft omits 'arc rating at least the estimate'; I read the hands exception verbatim but not the feet and head exceptions line by line."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(m)(3)",
+   "refVerdict": "correct; also point to (m)(2) for exceptions",
+   "correctRef": "(m)(3)(i)-(viii)",
+   "textVerdict": "needs correction",
+   "correction": "Where a system operator controls the line, the crew member in charge of the clearance asks the operator to make the section dead. Every switch and other source is then opened, made inoperable where the design allows, and tagged, including remote and automatic controls. Once the operator grants clearance, the line is tested with a voltage detector and protective grounds are installed, and only then does it count as deenergized. If no system operator is in charge, or only one crew works with a visible disconnect under its sole control, some steps change.",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(m)(3)(i) request to system operator; (ii) switches opened, made inoperable unless design does not permit, tagged; (iii) automatic/remote switches tagged at control points; (v) tags prohibit operation and say employees at work; (vi) after clearance given, test with voltage detector; (vii) install grounds per (n); (viii) then considered deenergized. (m)(2)(ii)-(iii): without a system operator the person in charge performs the operator functions; single crew with visible, sole-control disconnect skips some steps and tags. Order confirmed: test, then ground. Draft overclaims by omitting the no-operator and single-crew variants."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(m)(3)(xiii)",
+   "refVerdict": "correct but the entry spans (m)(3)(x) to (xiii)",
+   "correctRef": "(m)(3)(x)-(xiii)",
+   "textVerdict": "needs correction",
+   "correction": "Nobody starts to reenergize a line at a disconnect until all protective grounds are removed, every crew has released its clearance, all workers are clear, and the tags at that disconnect are removed. Only the worker in charge who requested the clearance may release it, unless responsibility was formally transferred, and tags stay on until that release.",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(m)(3)(x) release steps (notify, clear, grounds removed, report to operator); (xi) only the requester releases unless transferred under (ix); (xii) no tag removal before release; (xiii) no reenergizing action until grounds removed, all crews released, all clear, tags removed. Draft omits the transfer exception."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(n)(2)",
+   "refVerdict": "correct",
+   "correctRef": "",
+   "textVerdict": "correct",
+   "correction": "",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(n)(2): to work as deenergized, lines must be deenergized under (m) and grounded per (n)(3)-(n)(8); omission allowed only if employer demonstrates grounding impracticable or more hazardous, and (i) deenergized under (m), (ii) no possibility of contact with another energized source, (iii) no induced voltage hazard. Draft matches."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(n)(5)",
+   "refVerdict": "correct for the test; the order rule is (n)(6)",
+   "correctRef": "(n)(5) for the test, (n)(6)(i)-(ii) for connect/remove order",
+   "textVerdict": "needs correction",
+   "correction": "Before any ground is installed, employees test the line and confirm no voltage is present, unless a ground is already in place. When attaching a ground, connect the ground end first and then the line end using a live-line tool, and when removing, take off the line end first and the ground end last. For lines at 600 volts or less, other insulating equipment can be allowed under conditions.",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(n)(5) test and verify absence of nominal voltage before installing any ground unless one already present; (n)(6)(i) ground-end first then other end with live-line tool, 600 V or less may allow other insulating equipment if line not energized or employees protected; (n)(6)(ii) removal: line end first using live-line tool, then ground end. Draft is right but omits the 600 V relaxation; add (n)(6) as the cited reference or related."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(g)(2)",
+   "refVerdict": "correct but parent of the real paragraph",
+   "correctRef": "(g)(2)(iv)(C)(1)-(3)",
+   "textVerdict": "needs correction",
+   "correction": "Workers in an aerial lift use a travel restraint or fall arrest system. Anyone on a pole, tower or similar structure more than 4 feet above the ground uses fall arrest, work-positioning or fall restraint equipment unless other qualifying fall protection is provided. Qualified climbers must also use it while climbing or changing position, unless the employer can show that doing so is infeasible or creates a greater hazard; trainees and other unqualified workers must use it any time they are above 4 feet.",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(g)(2)(iv)(C)(1) aerial lift: travel restraint or PFAS; (C)(2) more than 4 ft on poles/towers/similar structures: PFAS, work-positioning or restraint unless employer provided other fall protection meeting Subpart D; (C)(3) from 2015-04-01 qualified employees climbing/changing location must use fall protection unless infeasible or greater hazard; Note 2: unqualified including trainees must use it above 4 ft. Applies to structures supporting overhead lines, not building parts or equipment like transformers (Note 1). Draft applies the infeasible exception to everyone on the structure."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(p)(4)",
+   "refVerdict": "correct",
+   "correctRef": "(p)(4)(i)-(iii)",
+   "textVerdict": "correct",
+   "correction": "",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(p)(4)(i) maintain minimum approach distances (insulated aerial-lift portion exempt under conditions); (ii) designated employee other than operator observes and warns unless operator can accurately judge; (iii)(A) cover lines, (B) insulate equipment and keep uninsulated parts back, or (C) protect employees using best ground, bonding, ground mats, insulating equipment or barricades. Draft is accurate."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(q)(1)",
+   "refVerdict": "correct",
+   "correctRef": "(q)(1)(i)-(iv)",
+   "textVerdict": "correct",
+   "correction": "",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(q)(1)(i) verify the structure can take extra or unbalanced stress of climbing and equipment, brace if not; (ii) pole may not contact exposed energized conductor when set/moved/removed near one; (iii) protective equipment or insulated devices, no bare-body contact; (iv) physically guard or attend pole holes when anyone works nearby."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(q)(2)(iv)",
+   "refVerdict": "correct",
+   "correctRef": "",
+   "textVerdict": "correct",
+   "correction": "",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(q)(2)(iv): before installing lines parallel to energized lines, determine approximate induced voltage or assume hazardous; temporary grounds placed to prevent hazardous potential differences unless employer demonstrates not subject to induction or lines are treated as energized. Draft omits the two exceptions; acceptable in a short summary."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(t)(1)",
+   "refVerdict": "correct for the first sentence; second sentence is a different paragraph",
+   "correctRef": "(t)(1) for the ladder rule and (t)(2)(ii) for clearing the area under the opening",
+   "textVerdict": "needs correction",
+   "correction": "Use a ladder or other climbing device to enter or leave a manhole or underground vault deeper than 4 feet, and never climb by stepping on cables or hangers. Before anyone lowers tools or material into the opening, each person working below must be clear of the area directly under it.",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(t)(1) ladder or other climbing device for a manhole or subsurface vault exceeding 1.22 m (4 ft) in depth, no stepping on cables or hangers; (t)(2)(ii) before lowering tools or material everyone below is clear of the area directly under the opening. Draft puts the lowering rule under (t)(1); cite (t)(2)(ii) too."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(t)(3)",
+   "refVerdict": "correct",
+   "correctRef": "(t)(3)(i), (t)(3)(iv)",
+   "textVerdict": "correct",
+   "correction": "",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(t)(3)(i) first-aid-trained employee available on the surface in the immediate vicinity of the entrance while work is in a manhole or vault containing energized equipment; (ii) surface employee may briefly enter for non-emergency help; (iv) reliable two-way communications (radios or equivalent) among all employees on the job. Draft 'waits' is fine; 'available' is closer."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(w)(6)",
+   "refVerdict": "correct",
+   "correctRef": "",
+   "textVerdict": "correct",
+   "correction": "",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(w)(6)(i)-(v): traffic-control signs/devices meeting 1926.200(g)(2); warning signs, flags, traffic-control devices before work near vehicle or pedestrian traffic that may endanger them; barricades where more protection is needed; excavated areas barricaded; warning lights at night. Draft matches. Excavation work itself is under 1926 Subpart P per (f)."
+    }
+   ]
+  },
+  {
+   "reference": "1910.269(w)(7)",
+   "refVerdict": "correct",
+   "correctRef": "",
+   "textVerdict": "correct",
+   "correction": "",
+   "sources": [
+    {
+     "url": "https://www.law.cornell.edu/cfr/text/29/1910.269",
+     "says": "(w)(7): possible backfeed from cogeneration or the secondary system: (l) applies if worked energized, (m) and (n) if worked deenergized."
+    }
+   ]
+  }
+ ],
+ "overall": "All 22 references exist and cover what the entries say; none is wrong. Cross-checked against Cornell LII full text, read verbatim from the raw HTML. osha.gov returned 403 to every fetch so it was not usable; WebFetch summaries of LII were unreliable (garbled (m), (t)(2), (w)(6), (w)(7)) and were discarded in favour of the raw text. 9 of 22 entries need text corrections: (e)(9), (l)(1), (l)(2), (l)(8), (m)(3), (m)(3)(xiii), (n)(5), (g)(2), (t)(1). Numeric facts 50 V, 600 V, 4 ft, 2.0 cal/cm2, ground-end-first, oxygen-before-flammable all confirmed. Scope: 1910.269 does not apply to construction work (1926 Subpart V) except line-clearance tree trimming and generation work, and covers utility and equivalent industrial installations accessible only to qualified employees; profile note should say this and that building wiring is Subpart S. The 4-minute first-aid rule is in (b)(1)(ii) and is not used by any article. Not checked: whether the 2026 eCFR text differs from Cornell's current copy.",
+ "recommendDrop": []
+}
