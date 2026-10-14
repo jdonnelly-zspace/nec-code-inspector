@@ -48,7 +48,8 @@ namespace NECInspector.Codes
                 return false;
             }
 
-            CodeProfiles.SetActive(profile);
+            var companions = All.Where(p => p.Supplements.Contains(id)).OrderBy(p => p.ProfileId, StringComparer.Ordinal).ToList();
+            CodeProfiles.SetActive(companions.Count == 0 ? (ICodeProfile)profile : new CompositeCodeProfile(profile, companions));
             Debug.Log($"[CodeProfileLibrary] Active code profile: {profile.DisplayName} {profile.Edition}");
             return true;
         }
@@ -115,6 +116,8 @@ namespace NECInspector.Codes
                     Debug.LogError($"[CodeProfileLibrary] Codes/{name}: could not load: {e.Message}");
                 }
             }
+
+            CodeProfiles.RegisterSupplements(ProfileSupplements.Build(_all.Cast<ICodeProfile>()));
         }
 
         // Returns null if the file does not exist

@@ -16,6 +16,12 @@ namespace NECInspector.Codes
         string ArtSet { get; }          // art the scenes use, e.g., "north-america" (see ArtSets)
         string ReviewStatus { get; }    // app-defined, draft or reviewed (see CodeProfileManifest)
         bool IsLoaded { get; }
+
+        /// <summary>
+        /// Ids of the profiles this one supplements: a companion standard (fire alarm, line work) whose entries and violations
+        /// apply wherever one of those profiles is the student's code. Empty for an ordinary code.
+        /// </summary>
+        string[] Supplements => System.Array.Empty<string>();
         int ArticleCount { get; }
 
         /// <summary>Voltages, ampacities, load-calc constants and compliance rule settings.</summary>

@@ -40,6 +40,10 @@ Checks: 8035 logic checks, 0 failed (23 warnings, all existing content-target an
 
 **F-11. Compile-check stub:** I added `interactable` to the `Selectable` stub in `tools/unity-compile-check/Stubs.cs`; the real Unity class has it.
 
+**F-12. Companion standards (2026-10-13).** The fire alarm standard and the line work rules are profiles that supplement the NEC (`supplements` in `profile.json`), not codes a student picks. A student whose region uses the NEC also gets their entries, searchable and citable, and violations that cite them. This needed a small C# change (`ProfileSupplements`, `CompositeCodeProfile`, `CodeProfiles.CitationIdsFor`) because the active profile was a single code. The alternative was copying those entries into each NEC profile. Say if you would rather have that.
+
+**F-13. The utility profile follows the US federal line-work rules, not the NESC.** The federal text is public and could be checked paragraph by paragraph; the NESC is paywalled. A NESC profile can be added later as another companion.
+
 ## Not done (needs you or the Unity Editor)
 
 - Put the two panels in the menu scene and wire their buttons, texts and prefabs.

@@ -44,7 +44,8 @@ namespace NECInspector.Data
         /// <summary>The citation for a code profile, or null if this violation does not apply to it.</summary>
         public ViolationCitation GetCitation(string profileId)
         {
-            return ViolationCitations.Find(citations, profileId);
+            // The code itself first, then the companion standards that supplement it (fire alarm, line work)
+            return ViolationCitations.FindAny(citations, CodeProfiles.CitationIdsFor(profileId));
         }
 
         public bool AppliesTo(string profileId)

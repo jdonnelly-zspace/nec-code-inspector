@@ -39,6 +39,7 @@ namespace NECInspector.Codes
         public string ArtSet => _manifest.artSet;
         public string Units => _manifest.units;
         public string ReviewStatus => _manifest.reviewStatus;
+        public string[] Supplements => _manifest.supplements ?? System.Array.Empty<string>();
 
         /// <summary>The licensing record from profile.json (see CodeLicense).</summary>
         public CodeLicense License => _manifest.license;
