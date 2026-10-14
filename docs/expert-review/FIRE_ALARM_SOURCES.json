@@ -1,0 +1,150 @@
+{
+  "12.3": {
+    "urls": [
+      "https://www.securitysales.com/contributed/pathways-to-glory1/",
+      "https://nationaltrainingcenter.com/nfpa-72-circuits-and-pathways/",
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_PRO_SD_SRstatements.pdf"
+    ],
+    "says": "Two trade pages say pathway performance is defined in section 12.3 with Class A, B, C, D, E, N, X; Class A continues past a single open (and ground), Class X also past a single short. NFPA public second-draft PDF for the 2022 cycle cites 12.3.8 in the same section.",
+    "doubt": "Section number 12.3 confirmed by two trade pages (editions not stated) plus NFPA draft; plain-language class behaviour matches both. Class C/D/E/N left out on purpose."
+  },
+  "12.3.8": {
+    "urls": [
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_PRO_SD_SRstatements.pdf"
+    ],
+    "says": "NFPA second-draft statement SR-5153 (2022 cycle) prints 12.3.8 requiring outgoing and return conductors of Class A/N/X to be routed separately, annex guidance of 12 in. vertical and 48 in. horizontal, and the narrow allowances in 12.3.8.1 (up to 10 ft at device or panel enclosures, single drops).",
+    "doubt": "Source is a second-draft revision, not the published 2022 text. The 12 in./48 in. figures are annex (advisory) guidance, not a requirement. Check the final wording of 12.3.8 and its subsections."
+  },
+  "12.4": {
+    "urls": [
+      "https://www.csemag.com/surviving-survivability-a-guide-to-life-safety-pathway-survivability/",
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_PRO_SD_SRstatements.pdf"
+    ],
+    "says": "Consulting-Specifying Engineer guide: Chapter 12 defines survivability levels 1-4 (L1 = fire-alarm cable in metal raceway or armored cable in fully sprinklered building, L2 = 2-hour rated, L3 = 2-hour plus sprinklers, L4 = 1-hour, added in 2022); levels are not hierarchical; Chapter 12 does not say when needed, Chapters 23/24 do. NFPA draft prints 12.4.5 (Level 4) with the same not-a-hierarchy annex note.",
+    "doubt": "The guide cites 2025 edition numbers for its cross-references; level 0 and exact conditions of each level not described. Text deliberately general."
+  },
+  "12.6": {
+    "urls": [
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_PRO_SD_SRstatements.pdf",
+      "https://nationaltrainingcenter.com/nfpa-72-circuits-and-pathways/"
+    ],
+    "says": "NFPA draft SR-5053 prints 12.6.6 (no monitoring needed for a notification circuit in the same room as the control equipment if in conduit or equally protected); NTC page says 12.6 defines where supervision is not required. A search-engine quote of 12.6.1 (2022) says the trouble signal appears within 200 seconds.",
+    "doubt": "The single open or single ground wording and the 200 second time limit come only from a search snippet quoting 12.6.1 of the 2022 edition (the ecmag page returned 403 and was not opened); the time is left out of the student text. NFPA drafts show 200 seconds only for radio pathway restoration and circuit independence rules, not for this section. Verify 12.6.1."
+  },
+  "10.15.7": {
+    "urls": [
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_FUN_SD_SRstatements.pdf"
+    ],
+    "says": "NFPA second-draft SR-5140 prints the paragraph (numbered 10.15.7 after renumbering): visible and audible trouble signals and visible indication of restoration at the fire alarm control unit, building fire command center, emergency command center and central or remote station.",
+    "doubt": "Number 10.15.7 is the renumbered body of a second-draft revision (heading in that PDF reads 10.16.7 because of a late renumbering). Verify against the published 2022 text. Power-loss trouble (10.6.9) not covered: only a search snippet supports it."
+  },
+  "10.6.5": {
+    "urls": [
+      "https://www.securityinfowatch.com/alarms-monitoring/fire-life-safety/article/10415085/fire-and-life-safety",
+      "https://www.meyerfire.com/daily/dual-electrical-feeds-meet-fa-secondary-power"
+    ],
+    "says": "SecurityInfoWatch article (2010 edition, then numbered 10.5.5.2) quotes: location of the dedicated branch circuit disconnecting means permanently identified at the control unit, identified as FIRE ALARM CIRCUIT, with a red marking. Meyer Fire page cites 10.6.5.1 (2019) as the primary branch circuit.",
+    "doubt": "BIGGEST DOUBT. Wording confirmed only from the 2010 edition (older numbering). 10.6.5 as the primary power section is confirmed by Meyer Fire and an NFPA draft cross-reference, but the finer points (no other loads, access, breaker lock; 10.6.5.1 to 10.6.5.4) come only from an unopened search summary and were left out of the student text. Verify against the 2022 text before release."
+  },
+  "10.6.7.3.1": {
+    "urls": [
+      "https://www.meyerfire.com/daily/dual-electrical-feeds-meet-fa-secondary-power"
+    ],
+    "says": "Meyer Fire page quotes 2019 edition 10.6.7.3.1: secondary power is either a dedicated storage battery, or an automatic-starting engine-driven generator plus dedicated storage batteries with 4 hours of capacity.",
+    "doubt": "Quoted from the 2019 edition on a Q&A page; numbering assumed unchanged in 2022 (10.6.7.2 in NFPA draft matches 2019). Verify 10.6.7.3.1 in 2022."
+  },
+  "10.6.7.2": {
+    "urls": [
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_FUN_SD_SRstatements.pdf",
+      "https://nationaltrainingcenter.com/?p=5987"
+    ],
+    "says": "NFPA second-draft SR-5138 prints 10.6.7.2.1 (24 hours quiescent then 5 minutes of alarm) and 10.6.7.2.3/.4 (voice: 24 hours then 15 minutes at maximum connected load). NTC page repeats 10.6.7.2.",
+    "doubt": "Confirmed from NFPA draft text; check the 2022 paragraph breakdown. Special cases (supervising station, carbon monoxide, mass notification) left out on purpose."
+  },
+  "10.6.7.2.14": {
+    "urls": [
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_FUN_SD_SRstatements.pdf"
+    ],
+    "says": "NFPA second-draft SR-5138 prints 10.6.7.2.14: as a minimum, battery calculations apply a correction factor of 1.25 for aging so the battery meets its demand at end of service life.",
+    "doubt": "This paragraph appears inside a 2022-cycle revision and may be new in the 2022 edition (isNewInEdition set false as instructed; a reviewer should decide). Verify the final paragraph number."
+  },
+  "10.6.10.1": {
+    "urls": [
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_FUN_SD_SRstatements.pdf"
+    ],
+    "says": "NFPA second-draft SR-5122 prints 10.6.10.1.2 (installer marks month/year of manufacture where the maker has not) and 10.6.10.1.3 (label with a replacement date not exceeding 4 years from installation); annex ties 4 years to expected VRLA service life.",
+    "doubt": "Draft text; verify final wording and numbers (10.6.10.1.2 and 10.6.10.1.3) in the 2022 edition."
+  },
+  "17.7.4.2": {
+    "urls": [
+      "https://getsafeandsound.com/blog/commercial-smoke-detector-requirements/",
+      "https://www.securitysales.com/sponsored/how-to-win-the-spacing-race/23555/"
+    ],
+    "says": "Safe and Sound guide: 30 ft nominal spacing on smooth flat ceilings, within 15 ft of walls, 0.7 times listed spacing alternative (about 21 ft). Security Sales article: the 0.7 rule, partitions within 15 percent of ceiling height, heat detector reductions above 10 ft ceilings.",
+    "doubt": "30 ft and the 0.7 rule confirmed by opened pages, but neither gives the 2022 subsection number. 17.7.4.2 is INFERRED: NFPA second-draft IDS text renumbers 17.7.1.12 to 17.7.2 and shifts later subsections up one (17.7.3.7.8 to 17.7.4.7.8), and the housing second draft cites 17.7.4.2.4 for smoke detectors on joisted or beamed ceilings; the older 17.7.3.2.1 reference in the first draft predates that renumbering. Ceiling height, beams, airflow and sloped ceilings left out. Heat detector spacing dropped: only a 2010-era article was opened."
+  },
+  "18.4.6": {
+    "urls": [
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_NAS_SD_SRstatements.pdf"
+    ],
+    "says": "NFPA second-draft SR-5021 prints 18.4.6.1 (sleeping areas: 15 dB above average ambient, or 5 dB above the maximum sound lasting at least 60 seconds, or 75 dBA, whichever is greater, at pillow level) with annex examples such as hotel guest rooms.",
+    "doubt": "Draft text for 18.4.6.1; the 2013 edition numbered this 18.4.5, so check the final 2022 number. The 520 Hz low-frequency wave is left out (not in the draft body text). Visible appliance mounting and general audible levels dropped for lack of a confirmed 2022 number."
+  },
+  "7.5.3.1": {
+    "urls": [
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_FUN_SD_SRstatements.pdf",
+      "https://seattle.gov/Documents/Departments/Fire/Business/5987CAMSmokeAlarms.pdf"
+    ],
+    "says": "NFPA second-draft SR-5161 prints 7.5.3.1: owner's manual and manufacturer instructions, record (as-built) drawings (7.5.5), record of completion form (7.5.6), site-specific software copy (7.5.7). Seattle fire memo also cites 7.5.6 for the record of completion.",
+    "doubt": "Draft text; verify final wording. Who signs and what the form must contain not stated here."
+  },
+  "7.7": {
+    "urls": [
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_FUN_SD_SRstatements.pdf",
+      "https://www.web.health.state.mn.us/facilities/regulation/engineering/lscfatesting24.pdf",
+      "https://facilitiesnet.com/firesafety/article/Required-Documentation-for-Fire-Safety-ITM--20304"
+    ],
+    "says": "NFPA second-draft PDF lists Records, record retention, and record maintenance in accordance with Section 7.7 among the owner documents. Minnesota guide (2010 numbering): record of completion stored at the control unit or an approved place, kept current, cabinet labelled FIRE ALARM DOCUMENTS; authorities often require it before final approval. Facilitiesnet says Chapter 7 covers the documentation items.",
+    "doubt": "Only the section number 7.7 and its title are confirmed for 2022. Storage location and labelled cabinet come from the 2010 edition (then numbered 10.18.2) and a search snippet; retention periods not verified. Text kept general."
+  },
+  "14.4.2": {
+    "urls": [
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_TMS_FD_FRstatements.pdf",
+      "https://www.web.health.state.mn.us/facilities/regulation/engineering/lscfatesting24.pdf"
+    ],
+    "says": "NFPA first-draft statements print 14.4.2 as reacceptance testing (14.4.2.3 on control unit hardware changes, 14.4.2.6 on remote software changes). Minnesota guide (2010 numbering 14.4.1.2) gives the added-device and removed-device rules.",
+    "doubt": "Added/removed device rule confirmed from 2010-edition numbering; assumed unchanged in 2022. Software-change test percentages left out on purpose."
+  },
+  "14.4.3.2": {
+    "urls": [
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_TMS_SD_SRstatements.pdf",
+      "https://www.web.health.state.mn.us/facilities/regulation/engineering/lscfatesting24.pdf"
+    ],
+    "says": "NFPA second-draft statements confirm Table 14.4.3.2 (test methods and frequencies, battery item 9) and Table 14.3.1 (visual inspection) exist in the 2022 text. Minnesota guide (2010 tables): whole system tested yearly, batteries inspected and tested more often, smoke detector sensitivity checked within the first year after installation.",
+    "doubt": "Yearly and sensitivity timing come from the 2010-edition table; check the 2022 table for the actual intervals before any figure is added. Text kept to the year and the first-year start."
+  },
+  "10.21.1": {
+    "urls": [
+      "https://www.bates.edu/environmental-health-safety/impairments",
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_TMS_SD_SRstatements.pdf"
+    ],
+    "says": "Bates College safety page lists the impairment rules: 10.21.1 notify owner, 10.21.2 keep a record for 1 year after correction, 10.21.6 notify when the impairment period ends. NFPA second-draft statement confirms Section 10.21 is the impairments section (14.2.2.2 refers to it).",
+    "doubt": "Section 10.21 confirmed by NFPA draft; subsection numbers and wording come from a college page that does not state the edition. Notification of the authority and the 8 hour out-of-service report (10.21.4) left out. Verify 10.21.1, 10.21.2 and 10.21.6."
+  },
+  "10.21.5": {
+    "urls": [
+      "https://www.bates.edu/environmental-health-safety/impairments"
+    ],
+    "says": "Bates College safety page cites 10.21.5 (mitigating measures during an impairment) and says a fire watch has an approved way to notify the fire department and the sole duty of constant patrols.",
+    "doubt": "Subsection 10.21.5 and the fire watch description come from one college page of unstated edition; the 2022 text may name specific measures and time limits (a search snippet mentioned 4 and 8 hour figures that were not confirmed and are left out). Verify."
+  },
+  "17.7.2": {
+    "urls": [
+      "https://docinfofiles.nfpa.org/files/AboutTheCodes/72/72_A2021_SIG_IDS_SD_SRstatements.pdf",
+      "https://fireprevention.utexas.edu/sites/default/files/FPS-SOP%2072-04%20Smoke%20Detector%20Protection%20During%20Construction.pdf",
+      "https://seattle.gov/Documents/Departments/Fire/Business/5987CAMSmokeAlarms.pdf"
+    ],
+    "says": "NFPA second-draft SR-5040 prints this section (renumbered from 17.7.1.12 to 17.7.2): cleaned and verified or replaced before final acceptance (active), protected per manufacturer and verified (not active), not installed until trades finish cleanup (not required). Texas and Seattle fire pages say shipping covers are not for construction protection and intelligent systems may keep covered heads if sensitivity is proven.",
+    "doubt": "17.7.2 is from a second-draft revision that renumbers an earlier 17.7.1.12; one forum answer said 17.7.1.11, which appears wrong. Verify the final 2022 number and wording."
+  }
+}
