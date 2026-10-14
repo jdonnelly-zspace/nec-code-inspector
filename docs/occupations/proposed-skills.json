@@ -88,13 +88,13 @@
     {
       "id": "low-voltage-and-fire-alarm-systems",
       "title": "Low-voltage and fire alarm systems",
-      "status": "approved",
+      "status": "built",
       "summary": "Power-limited and fire alarm circuits, communications cabling, separation from power wiring, devices and panels, supervision, power supplies, and the testing and handling of impairments.",
       "reason": "Security and fire alarm installers are a core occupation and telecom installers an adjacent one. The NEC covers these circuits in Articles 725, 760 and 800, but the governing fire alarm standard (NFPA 72) is a separate code, so this skill needs a second code profile as well as new content.",
       "standards": "NEC Articles 725, 760, 800 and 830; NFPA 72 and UL 864 (paywalled, paraphrase only); local fire code.",
       "codeProfile": "new code profile for the fire alarm standard, with its own licence decision",
       "firstContent": "A commercial building with a fire alarm panel and devices to inspect (wiring class, separation, supervision, labelling).",
-      "decision": "approved 2026-10-12; in the MVP since 2026-10-13 (D-19)",
+      "decision": "approved 2026-10-12; built 2026-10-13 as a lesson and step practice (D-19: in the MVP); violations, reference entries and the fire alarm code profile come after the fire alarm standard profile is drafted and verified",
       "phase": 1
     },
     {

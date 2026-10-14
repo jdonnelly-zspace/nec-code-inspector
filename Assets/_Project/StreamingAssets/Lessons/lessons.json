@@ -507,6 +507,32 @@
         "Connecting the inverter to a {term:panel} by a method the code or the panel maker does not allow"
       ],
       "reviewStatus": "draft"
+    },
+    {
+      "skillId": "low-voltage-and-fire-alarm-systems",
+      "title": "Low-voltage and fire alarm systems",
+      "summary": "How fire alarm circuits are run, kept apart from power wiring, powered, watched for faults, tested and kept working. Security and communications cabling follow related but separate rules.",
+      "whatToLookFor": [
+        "Cable of the type listed for the job and the place (including the kinds rated for air-handling spaces and for risers), supported and protected from damage",
+        "Alarm circuits kept apart from power wiring, by distance or a barrier, unless a method allows them to share a box or enclosure",
+        "Alarm circuits that are watched: a break or a ground fault shows as a trouble signal at the panel",
+        "A panel with a dedicated power circuit that is marked and kept from being switched off by accident, and a battery to carry the system when that power fails",
+        "Detectors and sounders in working order, unpainted, unblocked and where the design puts them; holes made for cable through fire-rated walls and floors sealed again with an approved, tested method that keeps the fire rating",
+        "Test records, and a plan for when part of the system is out of service"
+      ],
+      "whyItMatters": "A fire alarm is only useful if it works on the day it is needed. A cable that is mixed with power wiring, a circuit nobody watches, a dead battery or a silenced device can fail without anyone knowing, and people rely on it to get out.",
+      "tiers": {
+        "foundation": "Name the parts of an alarm system (panel, power supply and battery, initiating devices, sounders, cable) and say why its circuits are watched and kept apart from power wiring.",
+        "practitioner": "Run and terminate the cable, mount and connect the devices, power the panel, and test every device and the trouble signals, recording the results.",
+        "authority": "Review a design and an installation: circuit class and supervision, separation, power supplies and battery size, firestopping, testing and records, and what changes when part of the system is out of service. Battery duration, test frequency, time limits for outages and which systems are required depend on the edition, the local rules and the type of building, so always check the ones your area has adopted."
+      },
+      "commonMistakes": [
+        "Running alarm cable in the same raceway or box as power wiring without a barrier or a method that allows it",
+        "Switching off the panel's power circuit, or leaving the battery old or disconnected",
+        "Painting over, covering or blocking a detector or sounder, or leaving a cable hole through a fire-rated wall unsealed",
+        "Taking part of the system out of service without telling the people in the building and the fire service"
+      ],
+      "reviewStatus": "draft"
     }
   ]
 }

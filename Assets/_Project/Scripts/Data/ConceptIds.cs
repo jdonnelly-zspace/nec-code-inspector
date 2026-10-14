@@ -30,6 +30,7 @@ namespace NECInspector.Data
         public const string JobsiteSafety = "jobsite-safety";                       // ladders and falls, tools and cords, material handling, enclosed spaces, housekeeping
         public const string CodeAdministration = "code-administration";             // editions and amendments, permit and inspection stages, approve or reject
         public const string UtilityInterface = "utility-interface";                 // where the utility's equipment ends and the customer's begins
+        public const string LowVoltageAndFireAlarm = "low-voltage-and-fire-alarm-systems";    // alarm, security and communications circuits: cable, separation, supervision, power, devices, testing and impairments (lesson and practice first; violations, entries and the fire alarm profile follow)
         public const string PvAndStorage = "pv-and-storage-systems";                // solar arrays, DC wiring, inverters, shutdown, interconnection and battery storage (lesson and practice first; violations and entries follow the PV numbering check)
 
         /// <summary>The skills taught by code content: inspection violations, reference entries, the sandbox.</summary>
@@ -42,7 +43,7 @@ namespace NECInspector.Data
         /// <summary>The skills taught by procedure practice and lessons.</summary>
         public static readonly string[] ProcedureSkills =
         {
-            ElectricallySafeWork, TestingMeasurement, Troubleshooting, PlansDocumentation, JobsiteSafety, CodeAdministration, UtilityInterface, PvAndStorage
+            ElectricallySafeWork, TestingMeasurement, Troubleshooting, PlansDocumentation, JobsiteSafety, CodeAdministration, UtilityInterface, PvAndStorage, LowVoltageAndFireAlarm
         };
 
         public static readonly string[] All =
@@ -67,7 +68,8 @@ namespace NECInspector.Data
             JobsiteSafety,
             CodeAdministration,
             UtilityInterface,
-            PvAndStorage
+            PvAndStorage,
+            LowVoltageAndFireAlarm
         };
 
         public static bool IsKnown(string conceptId)

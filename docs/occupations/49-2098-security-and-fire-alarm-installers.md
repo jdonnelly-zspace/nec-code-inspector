@@ -109,11 +109,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.onetonline.org/link/details/49-2098.00 (Installers review work orders and blueprints to decide materials and installation methods.)
 - https://www.mangoapps.com/templates/inspections/fire-alarm-acceptance-test-nfpa-72 (Acceptance testing expects approved shop drawings and a device layout to be on hand.)
 
-**App coverage today (none):** none: the app has no plan-reading or layout tasks; wiring-methods covers only the wiring rules.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: the app has no plan-reading or layout tasks; wiring-methods covers only the wiring rules.)
 
-**Skills the app teaches that this procedure uses:** wiring-methods, plans-and-documentation
+**Skills the app teaches that this procedure uses:** wiring-methods, plans-and-documentation, low-voltage-and-fire-alarm-systems
 
-**Skills still to build for it:** low-voltage-and-fire-alarm-systems
+**Skills still to build for it:** none
 
 ### P3. Running low-voltage and fire alarm cable and raceway
 
@@ -151,9 +151,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (partial):** partial: wiring-methods trains routing and support in power wiring, but not signaling circuit classes, listed cable types or low-voltage separation.
 
-**Skills the app teaches that this procedure uses:** wiring-methods, equipment-installation
+**Skills the app teaches that this procedure uses:** wiring-methods, equipment-installation, low-voltage-and-fire-alarm-systems
 
-**Skills still to build for it:** low-voltage-and-fire-alarm-systems
+**Skills still to build for it:** none
 
 ### P4. Installing panels, devices and power supply connections
 
@@ -227,11 +227,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.onetonline.org/link/details/49-2098.00 (Installers adjust device sensitivity to room conditions using programming controls.)
 - https://www.mangoapps.com/templates/inspections/fire-alarm-acceptance-test-nfpa-72 (Remote annunciators must show the correct point and condition matching approved plans.)
 
-**App coverage today (none):** none: the app has no panel or device programming content.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: the app has no panel or device programming content.)
 
-**Skills the app teaches that this procedure uses:** none
+**Skills the app teaches that this procedure uses:** low-voltage-and-fire-alarm-systems
 
-**Skills still to build for it:** low-voltage-and-fire-alarm-systems
+**Skills still to build for it:** none
 
 ### P6. Functional and acceptance testing with documentation
 
@@ -266,11 +266,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.mangoapps.com/templates/inspections/fire-alarm-acceptance-test-nfpa-72 (Acceptance covers device tests, notification, battery and standby duration, signals, deficiency list and inspector sign-off.)
 - https://www.securitysales.com/insights/5_nfpa_codes_consider_maintaining_fire_alarm_sytems/896/ (NFPA 72 Chapter 14 covers testing and maintenance, with owners responsible for upkeep after acceptance.)
 
-**App coverage today (none):** none: the app has no testing, meter or acceptance-inspection tasks.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: the app has no testing, meter or acceptance-inspection tasks.)
 
-**Skills the app teaches that this procedure uses:** testing-and-measurement
+**Skills the app teaches that this procedure uses:** testing-and-measurement, low-voltage-and-fire-alarm-systems
 
-**Skills still to build for it:** low-voltage-and-fire-alarm-systems
+**Skills still to build for it:** none
 
 ### P7. Impairment handling and restoration
 
@@ -303,11 +303,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.bates.edu/environmental-health-safety/impairments (Coordinator verifies scope, notifies fire department and insurer, uses fire watch, tags equipment and confirms restoration.)
 - https://www.securitysales.com/insights/5_nfpa_codes_consider_maintaining_fire_alarm_sytems/896/ (Fire codes place the maintenance obligation on owners, supported by an approved testing program.)
 
-**App coverage today (none):** none: nothing in the app covers fire protection system outages or reporting.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: nothing in the app covers fire protection system outages or reporting.)
 
-**Skills the app teaches that this procedure uses:** none
+**Skills the app teaches that this procedure uses:** low-voltage-and-fire-alarm-systems
 
-**Skills still to build for it:** low-voltage-and-fire-alarm-systems
+**Skills still to build for it:** none
 
 ## Standards and codes
 
