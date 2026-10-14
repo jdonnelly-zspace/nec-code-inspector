@@ -1,0 +1,302 @@
+{
+  "id": "scenario-fire-alarm",
+  "sceneName": "FireAlarmInspection",
+  "displayName": "Fire Alarm System Inspection",
+  "description": "Inspect a small commercial building's fire alarm system, from its power supply and battery to its detectors, sounders, wiring and paperwork. Check that the system will work on the day it is needed, and that changes and outages are handled properly.",
+  "environmentDescription": "A small commercial building with a fire alarm control {term:panel} and battery cabinet in an electrical room, an office floor with smoke detectors and horn and strobe devices, a hotel-style sleeping room, and a corridor still under construction.",
+  "masterTimeLimit": 1500,
+  "availableDifficulties": [
+    "Apprentice",
+    "Journeyman",
+    "Master"
+  ],
+  "assetPrefix": "FA",
+  "violationFolder": "FireAlarm",
+  "scenarioAssetName": "FireAlarm",
+  "violations": [
+    {
+      "violationId": "FA-PWR-BREAKER-ID-001",
+      "description": "The {term:breaker} that feeds the fire alarm control {term:panel} is not marked or identified",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "10.6.5",
+          "text": "The {term:breaker} for the control {term:panel} normal power is marked red, and the {term:panel} shows which circuit it is on."
+        }
+      ],
+      "componentObjectName": "FA_Panel_PowerBreaker",
+      "hintText": "Look at the {term:breaker} that powers the alarm control unit in the electrical room, and at what is written on the control unit itself.",
+      "componentType": "Primary Power Breaker",
+      "inspectionNote": "In the electrical room the {term:breaker} for the alarm control {term:panel} looks like every other {term:breaker} in the row: no red marking and no label. Nothing on the control {term:panel} says which circuit feeds it.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Minor",
+      "minimumDifficulty": "Apprentice",
+      "isSubtle": false
+    },
+    {
+      "violationId": "FA-BATT-LABEL-001",
+      "description": "The standby battery has no date and no replacement label",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "10.6.10.1",
+          "text": "Each battery shows when it was made, and carries a label with a replacement date no more than four years after it was installed."
+        }
+      ],
+      "componentObjectName": "FA_Battery_DateLabel",
+      "hintText": "Read the labels on the battery in the cabinet. Can anyone tell how old it is or when it is due to be swapped?",
+      "componentType": "Standby Battery",
+      "inspectionNote": "Two batteries sit in the cabinet beside the control {term:panel}. Their cases show no manufacture month and year, and there is no sticker with a replacement date.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Minor",
+      "minimumDifficulty": "Apprentice",
+      "isSubtle": false
+    },
+    {
+      "violationId": "FA-DET-SPACING-001",
+      "description": "Smoke detectors on the office ceiling are spaced too far apart",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "17.7.4.2",
+          "text": "On a smooth flat ceiling, spot smoke detectors are normally no more than about 30 feet apart (or the maker's listed spacing if smaller), with a detector within half that distance of each wall. The other way to lay them out is to keep every point on the ceiling within about 21 feet of a detector. Neighbours farther apart than 30 feet in a regular grid fail both tests.",
+          "limit": {
+            "quantity": "spacing between adjacent smoke detectors on a smooth flat ceiling",
+            "kind": "max",
+            "value": 30,
+            "unit": "ft"
+          }
+        }
+      ],
+      "componentObjectName": "FA_Office_SmokeDetectorRow",
+      "hintText": "Pace out the distance between neighbouring detectors in the open office grid and compare it with the usual maximum of about 30 feet, then check how far the middle of four detectors is from the nearest one.",
+      "componentType": "Smoke Detector",
+      "inspectionNote": "The open office has a regular grid of ceiling smoke detectors. The floor plan marks neighbouring detectors in the grid 38 feet apart, and the maker's listed spacing for them is 30 feet. The ceiling is smooth and flat, with no beams or ducts, so the spots in the middle of four detectors are about 27 feet from the nearest one, farther than the usual 21 feet.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Major",
+      "minimumDifficulty": "Apprentice",
+      "isSubtle": false,
+      "sceneFact": {
+        "quantity": "spacing between adjacent smoke detectors on a smooth flat ceiling",
+        "value": 38,
+        "unit": "ft",
+        "note": "centre to centre distance between the two neighbouring detectors"
+      },
+      "compliantFact": {
+        "quantity": "spacing between adjacent smoke detectors on a smooth flat ceiling",
+        "value": 24,
+        "unit": "ft",
+        "note": "centre to centre distance between the two neighbouring detectors"
+      }
+    },
+    {
+      "violationId": "FA-DET-CONSTRUCTION-001",
+      "description": "Detectors in the construction-phase corridor have only the thin plastic caps on",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "17.7.2",
+          "text": "Detectors that are installed but not active during construction need real protection from dust and damage; the thin plastic cap supplied with a detector is not enough."
+        }
+      ],
+      "componentObjectName": "FA_Corridor_DetectorCovers",
+      "hintText": "Look at how the corridor detectors are protected while other trades are still working beside them.",
+      "componentType": "Smoke Detector Cover",
+      "inspectionNote": "Drywall sanding is under way in the corridor. The installed detectors wear only the thin plastic shipping caps they came with, and a film of dust has settled around them.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Major",
+      "minimumDifficulty": "Apprentice",
+      "isSubtle": false
+    },
+    {
+      "violationId": "FA-DOC-RECORDS-001",
+      "description": "The system is being handed over with no record drawings or completion record",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "7.5.3.1",
+          "text": "At handover the owner receives the maker manual, drawings of what was really installed, and a filled-in record of completion."
+        }
+      ],
+      "componentObjectName": "FA_Handover_DocumentCabinet",
+      "hintText": "Open the documentation cabinet next to the control unit and check what the owner has been given.",
+      "componentType": "System Documentation",
+      "inspectionNote": "The walk-through is ending and the building is being handed over to its owner as finished. The documentation cabinet holds the maker manual and nothing else: no drawings of the installed system and no completion form.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Minor",
+      "minimumDifficulty": "Apprentice",
+      "isSubtle": false
+    },
+    {
+      "violationId": "FA-PWR-SHARED-001",
+      "description": "The control {term:panel} power circuit also feeds other loads",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "10.6.5",
+          "text": "The control {term:panel} normal power comes from a branch circuit that serves nothing else."
+        }
+      ],
+      "componentObjectName": "FA_Panel_PowerCircuit",
+      "hintText": "Trace what else is connected to the circuit that powers the alarm control unit.",
+      "componentType": "Primary Power Circuit",
+      "inspectionNote": "The circuit wire that feeds the alarm control {term:panel} runs on to a nearby outlet box. A small heater is plugged into that outlet, on the same circuit.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Major",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    },
+    {
+      "violationId": "FA-BATT-CAPACITY-001",
+      "description": "The standby battery is too small for the required standby and alarm time",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "10.6.7.2",
+          "text": "The backup supply must run the quiet system for 24 hours and then still sound all alarm sounders and strobes for 5 minutes, so its capacity has to cover that total."
+        }
+      ],
+      "componentObjectName": "FA_Battery_CapacityRating",
+      "hintText": "Compare the rating printed on the battery label with the figure on the calculation sheet kept in the cabinet.",
+      "componentType": "Standby Battery",
+      "inspectionNote": "The calculation sheet in the cabinet lists the amp-hours needed for a full day of standby followed by a short alarm period. The batteries installed are rated for clearly fewer amp-hours than that figure.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Major",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    },
+    {
+      "violationId": "FA-SLEEP-LEVEL-001",
+      "description": "The alarm is too quiet at the pillow in the sleeping room",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "18.4.6",
+          "text": "Where an alarm sounder serves a sleeping area, the sound at the pillow must reach at least 75 dBA, or more where noise around the room is louder. It is measured with any door or curtain between the sounder and the bed in place, so a closed room door counts."
+        }
+      ],
+      "componentObjectName": "FA_Hotel_PillowLevel",
+      "hintText": "Hold the sound meter at pillow height with the door closed while the sounder runs.",
+      "componentType": "Audible Appliance",
+      "inspectionNote": "In the hotel-style sleeping room the only horn and strobe are out in the corridor. With the room door shut and the alarm sounding, the sound meter held at the pillow reads about 60 dBA, well under the 75 dBA minimum.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Major",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    },
+    {
+      "violationId": "FA-CIRCUIT-MONITOR-001",
+      "description": "A horn and strobe circuit is not monitored, so a single break gives no trouble signal",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "12.6",
+          "text": "Alarm wiring is watched, so one break or one ground fault produces a trouble signal automatically."
+        }
+      ],
+      "componentObjectName": "FA_Circuit_Supervision",
+      "hintText": "Disconnect one wire at the last device on the circuit, wait a few minutes, and watch the control unit.",
+      "componentType": "Notification Circuit",
+      "inspectionNote": "The installer lifts one wire at the end of a horn and strobe circuit that runs across the office floor, away from the control {term:panel}. After waiting several minutes, the {term:panel} still shows no trouble light and gives no trouble sound.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Critical",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    },
+    {
+      "violationId": "FA-RETEST-ADDED-001",
+      "description": "A new device was added to the system and never tested",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "14.4.2",
+          "text": "Adding a device means the changed part is tested again, so the new device has to be operated to prove it works."
+        }
+      ],
+      "componentObjectName": "FA_Office_AddedDevice",
+      "hintText": "Check the test records against the devices on the ceiling, looking for any that are newer than the last entry.",
+      "componentType": "Added Device",
+      "inspectionNote": "A detector in the office looks newer than its neighbours and carries a recent install date. The test log has no entry for it, and the control {term:panel} history shows it was never operated.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Major",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    },
+    {
+      "violationId": "FA-IMPAIR-NOTIFY-001",
+      "description": "Part of the system was switched off and the building owner was not told",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "10.21.1",
+          "text": "When part of the system is out of service, the owner or the owner representative must be told, and told again when it is restored."
+        }
+      ],
+      "componentObjectName": "FA_Impairment_OwnerNotice",
+      "hintText": "Look for any sign of who was informed when the zone was taken out of service.",
+      "componentType": "Impairment Record",
+      "inspectionNote": "One zone has been showing a disabled light on the control {term:panel} for some time. The impairment log beside it has no entry, and the contractor note on the door says the owner has not been informed.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Major",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    },
+    {
+      "violationId": "FA-BATT-AGING-001",
+      "description": "The battery calculation leaves out the margin for aging",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "10.6.7.2.14",
+          "text": "A battery calculation adds a margin of 25 percent so the battery still carries the load at the end of its service life."
+        }
+      ],
+      "componentObjectName": "FA_Battery_Calculation",
+      "hintText": "Read the battery calculation sheet line by line and look at how the final required capacity is reached.",
+      "componentType": "Battery Calculation",
+      "inspectionNote": "The calculation sheet adds up the standby load and the alarm load and stops there. The installed battery matches that total exactly, with nothing added on top of it.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Major",
+      "minimumDifficulty": "Master",
+      "isSubtle": true
+    },
+    {
+      "violationId": "FA-IMPAIR-FIREWATCH-001",
+      "description": "The system is impaired and no fire watch or other protective measure is in place, although the local authority requires one",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "10.21.5",
+          "text": "Where the local authority requires it, a protective measure, up to a full-time fire watch, has to be in place for as long as the system is impaired."
+        }
+      ],
+      "componentObjectName": "FA_Impairment_FireWatch",
+      "hintText": "Read the impairment notice and the authority conditions, then look for who is covering the building.",
+      "componentType": "Impairment Protection",
+      "inspectionNote": "Half of the floor detection is out of service. The authority letter on the notice board asks for a fire watch, yet nobody is patrolling and there is no watch log.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Critical",
+      "minimumDifficulty": "Journeyman",
+      "isSubtle": false
+    },
+    {
+      "violationId": "FA-CLASSA-RETURN-001",
+      "description": "The return conductor of a Class A circuit runs in the same raceway as the outgoing one for the whole run",
+      "citations": [
+        {
+          "profileId": "fire-alarm",
+          "reference": "12.3.8",
+          "text": "On a Class A path, the outgoing and return conductors are routed separately so one event cannot damage both; they may be together only for short stretches."
+        }
+      ],
+      "componentObjectName": "FA_ClassA_ReturnRoute",
+      "hintText": "Follow the Class A circuit out and back through the ceiling space and see whether the two wires ever take separate routes.",
+      "componentType": "Class A Circuit",
+      "inspectionNote": "The plans call the circuit Class A. Above the ceiling the out and return wires lie together in one raceway for the whole run, so a single cut would take out both.",
+      "conceptId": "low-voltage-and-fire-alarm-systems",
+      "severity": "Major",
+      "minimumDifficulty": "Master",
+      "isSubtle": true
+    }
+  ]
+}

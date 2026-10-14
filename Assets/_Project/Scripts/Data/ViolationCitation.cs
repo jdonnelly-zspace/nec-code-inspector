@@ -31,6 +31,19 @@ namespace NECInspector.Data
             return string.IsNullOrEmpty(overrideText) ? fallback : overrideText;
         }
 
+        /// <summary>The first citation for any of the ids, tried in order (a code, then its companions), or null.</summary>
+        public static ViolationCitation FindAny(ViolationCitation[] citations, System.Collections.Generic.IReadOnlyList<string> profileIds)
+        {
+            if (profileIds == null) return null;
+            foreach (string id in profileIds)
+            {
+                var found = Find(citations, id);
+                if (found != null) return found;
+            }
+
+            return null;
+        }
+
         /// <summary>The citation for a profile, or null if the violation does not apply to it.</summary>
         public static ViolationCitation Find(ViolationCitation[] citations, string profileId)
         {

@@ -25,6 +25,7 @@ namespace NECInspector.Codes
         public string artSet;               // device and panel art the scenes use, e.g. "north-america" (see ArtSets)
         public string reviewStatus;         // app-defined | draft | reviewed (by a credential expert)
         public string note;                 // what is covered and what is not
+        public string[] supplements;        // optional: ids of the profiles this one supplements (see ICodeProfile.Supplements)
         public CodeLicense license;         // who holds the copyright and whether shipping the material has been decided (see CodeLicense)
     }
 
@@ -106,6 +107,13 @@ namespace NECInspector.Codes
             if (Array.IndexOf(Statuses, manifest.reviewStatus) < 0)
                 errors.Add($"reviewStatus must be one of {string.Join(", ", Statuses)} (got '{manifest.reviewStatus}')");
             errors.AddRange(CodeLicenseValidator.Validate(manifest.license));
+            foreach (string supplemented in manifest.supplements ?? new string[0])
+            {
+                if (string.IsNullOrWhiteSpace(supplemented) || !Regex.IsMatch(supplemented, "^[A-Za-z0-9_-]+$"))
+                    errors.Add($"supplements has an invalid profile id '{supplemented}'");
+                else if (supplemented == manifest.id)
+                    errors.Add("a profile cannot supplement itself");
+            }
 
             if (terminology == null)
                 errors.Add("terminology.json is missing or empty");

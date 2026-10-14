@@ -9,6 +9,19 @@ namespace NECInspector.Codes
     public static class CodeProfiles
     {
         private static ICodeProfile _active;
+        private static System.Collections.Generic.IReadOnlyDictionary<string, string[]> _supplements;
+
+        /// <summary>Records which companion profiles supplement which codes (set when the profiles load).</summary>
+        public static void RegisterSupplements(System.Collections.Generic.IReadOnlyDictionary<string, string[]> map)
+        {
+            _supplements = map;
+        }
+
+        /// <summary>The ids whose citations count for a code: the code itself, then the companions that supplement it.</summary>
+        public static string[] CitationIdsFor(string profileId)
+        {
+            return ProfileSupplements.CitationIds(_supplements, profileId);
+        }
 
         /// <summary>The active profile, or null if none is loaded (or it was destroyed).</summary>
         public static ICodeProfile Active
@@ -107,6 +120,7 @@ namespace NECInspector.Codes
         private static void ResetOnLoad()
         {
             _active = null;
+            _supplements = null;
             ActiveChanged = null;   // handlers from a previous play session must not survive
         }
     }

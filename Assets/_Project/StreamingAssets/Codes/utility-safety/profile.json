@@ -13,5 +13,9 @@
     "note": "Federal regulations are public. The app stores reference numbers and its own paraphrases and does not reproduce regulation text or tables (docs/CONTENT_POLICY.md). Nobody has decided whether anything further is needed. Needs the owner before release.",
     "evidence": "",
     "checkedOn": ""
-  }
+  },
+  "supplements": [
+    "nec-2023",
+    "nec-2026"
+  ]
 }
