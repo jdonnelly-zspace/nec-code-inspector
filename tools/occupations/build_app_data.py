@@ -16,8 +16,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 DATA = os.path.join(ROOT, "docs", "occupations", "data")
 OUT = os.path.join(ROOT, "Assets", "_Project", "StreamingAssets", "Occupations", "occupations.json")
 
-# What the owner's decisions put in each release phase (docs/product/DECISIONS.md, D-13: power-line before solar and alarm)
-PHASE = {"47-2111": 1, "47-3013": 1, "47-4011": 1, "49-9051": 2, "47-2231": 3, "49-2098": 3}
+# What the owner's decisions put in each release phase (docs/product/DECISIONS.md, D-19: all six core occupations are in the MVP, phase 1)
+PHASE = {"47-2111": 1, "47-3013": 1, "47-4011": 1, "49-9051": 1, "47-2231": 1, "49-2098": 1}
 ID = {"47-2111": "electricians", "47-3013": "electrician-helpers", "47-4011": "inspectors", "47-2231": "solar-installers",
       "49-2098": "alarm-installers", "49-9051": "line-installers"}
 TITLE = {"47-2111": "Electrician", "47-3013": "Electrician's helper", "47-4011": "Electrical inspector",

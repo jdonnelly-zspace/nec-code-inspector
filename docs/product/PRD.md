@@ -39,7 +39,7 @@ Occupation  ->  Procedure (SOP)  ->  Skill  ->  Content
 
 - A **procedure** has an ordered set of steps, hazards, controls and the standards that govern it. Procedures are documented in `docs/occupations/` and are the unit the
   app is checked against.
-- A **skill** is a unit of ability the app can teach and measure (`ConceptIds`): 13 code skills and 7 procedure skills today, with 3 more planned for phases 2 and 3. Procedures use one or more skills; skills are shared across occupations.
+- A **skill** is a unit of ability the app can teach and measure (`ConceptIds`): 13 code skills and 7 procedure skills today, with 3 more to build for the MVP (solar PV and storage; low-voltage and fire alarm; utility line work). Procedures use one or more skills; skills are shared across occupations.
 - **Content** teaches a skill: lessons, inspection scenarios, procedure trainers, sandbox designs, quick reference cards.
 - Progress is recorded per skill and tier, and each procedure practice is recorded with its score; a derived per-procedure view is planned.
 - **Editions are backend.** Each edition of a code is its own profile (`nec-2023`, `nec-2026`); the student never sees an edition, a rule number or a chapter, only the skill, the violation and the rule's title.
@@ -56,9 +56,9 @@ coverage ratings (a judgement, not a test). After phase 1 "in part" mostly means
 | 47-2111 | Electricians | 821,000 (2025) | 7 | 100% (was 57%) | Core, phase 1. Every procedure has a lesson and step practice; the 3D scenes and hands-on trainers (a virtual meter) remain. |
 | 47-3013 | Helpers, electricians | 65,000 (2025) | 8 | 100% (was 38%) | Core, phase 1. The safety and basic skills it lacked are now lessons with practice. |
 | 47-4011 | Construction and building inspectors | 153,900 (2025) | 7 | 100% (was 71%) | Best fit: the inspection scenarios are its work. Stages and code administration are now lessons; a staged inspection scene remains. |
-| 47-2231 | Solar photovoltaic installers | 31,100 (2025) | 7 | 71% (was 57%) | Phase 3. Needs a PV and storage skill (new content in NEC Articles 690, 705, 706), which depends on the 2026 numbering being verified. |
-| 49-2098 | Security and fire alarm systems installers | 86,300 (2025) | 7 | 43% | Phase 3. Needs low-voltage and fire alarm content and a second code (the fire alarm standard). |
-| 49-9051 | Electrical power-line installers and repairers | 131,900 (2025) | 8 | 38% (was 12%) | **Phase 2, blocked.** Governed mainly by the NESC and OSHA line-work rules, not the NEC. Decided: build it (a NESC profile and utility scenes), after the licence decision. |
+| 47-2231 | Solar photovoltaic installers | 31,100 (2025) | 7 | 71% (was 57%) | MVP. Needs a PV and storage skill (new content in NEC Articles 690, 705, 706); the 2026 numbering has to be verified. |
+| 49-2098 | Security and fire alarm systems installers | 86,300 (2025) | 7 | 43% | MVP. Needs low-voltage and fire alarm content and a second code profile (the fire alarm standard). |
+| 49-9051 | Electrical power-line installers and repairers | 131,900 (2025) | 8 | 38% (was 12%) | MVP. Governed mainly by the NESC and OSHA line-work rules, not the NEC: needs a utility code profile and new utility scenes. |
 
 ### 4.2 Adjacent occupations
 
@@ -81,7 +81,7 @@ Status: **Built** (in the repository and tested), **Partial** (data or code exis
 |---|---|---|---|
 | FR-1 | The student chooses an occupation; the app shows the procedures of that occupation and which are taught. | Partial | `occupations.json`, `OccupationLibrary`, `OccupationPickerPanel`; the panel is not in a scene yet. |
 | FR-2 | Each procedure is available as an SOP: purpose, steps, hazards, controls, standards. | Partial | 44 procedures load from `occupations.json` (purpose, steps, hazards, controls; standards stay in the research documents because students never see them); draft, no expert review. |
-| FR-3 | Skills with tiers (Foundation, Practitioner, Authority); code skills and procedure skills. | Partial | 20 built (13 code, 7 procedure skills of phase 1; `ConceptIds`); 3 skills of phases 2 and 3 not built. |
+| FR-3 | Skills with tiers (Foundation, Practitioner, Authority); code skills and procedure skills. | Partial | 20 built (13 code, 7 procedure skills; `ConceptIds`); 3 skills for the MVP not built yet (solar PV and storage, low-voltage and fire alarm, utility line work). |
 | FR-4 | Inspection scenarios: point at a part of a 3D building, flag a violation, name the rule, get scored feedback. | Partial | 6 scenarios, 146 NEC violations (under both NEC editions), 14 CEC, 9 BS 7671 as data; no 3D scenes built. |
 | FR-5 | Sessions draw a different set of violations each time, spread across skills. | Built | `ViolationDraw`, `docs/POOL_AND_DRAW.md`. |
 | FR-6 | Procedure trainers: guided practice of a procedure's steps (lockout and test-before-touch, troubleshooting, a staged inspection), including a virtual meter and tester. | Partial | Step-ordering practice built for 28 of 44 procedures (`ProcedurePractice`, `ProcedurePracticePanel`); the virtual meter and scene-based trainers are planned. |
@@ -116,17 +116,16 @@ Status: **Built** (in the repository and tested), **Partial** (data or code exis
 - **Accessibility (decided 2026-10-12, D-10):** never rely on colour alone (wire colours always carry a label); a minimum text size and 4.5:1 contrast for all UI text; student text at about grade 8; every timer can be turned off as an accommodation; a stereo depth setting; seated, stylus-only use with no long holds; read-aloud later. Stereo comfort and low-vision use need testing on the device.
 - **Localization (decided 2026-10-12, D-11):** English first. The other priority-one languages follow, in an order and list the owner sets; student text is already data, so it can be extracted. French (Canada) is the likely first, once the CEC reaches parity (phase 3). Translate only reviewed content.
 
-## 7. Scope by occupation, in phases (accepted 2026-10-12; order changed 2026-10-13)
+## 7. Scope by occupation, in phases (decided 2026-10-13: the MVP covers all six core occupations, D-19)
 
 A note on the word: a **release phase** (this section) is not a **content phase** (`docs/CONTENT_PLAN.md`, phases 0 to 5). Where both could be meant, the content plan's are called content phases.
 
-The market view plans the six core occupations for a first-half-2027 launch. The research does not support that for all six:
+The market view plans the six core occupations for a first-half-2027 launch, and the owner has decided the MVP covers all six, with their 44 procedures. The earlier research said this needs more than the current build:
 
-| Phase | Occupations | What has to exist first |
+| Phase | Occupations | What has to exist |
 |---|---|---|
-| 1 | Electricians, electrician helpers, inspectors | The seven new skills are built as lessons and step practice (electrically safe work, testing and measurement, troubleshooting, plans and documentation, jobsite safety, code administration, utility interface). Still needed: the 3D scenes, a staged inspection, hands-on trainers, the remaining phase 1 content and expert review. |
-| 2 | Power-line installers and repairers; adjacent clusters | Utility line work, decided 2026-10-12 and moved ahead of solar and alarm on 2026-10-13 (D-13): a NESC code profile and new utility scenes, after the NESC licence decision and phase 1; then beginner-literacy packages for maintenance, HVAC and construction roles. |
-| 3 | Solar PV installers, security and fire alarm installers | A PV and storage skill, and a low-voltage and fire alarm skill with a second code profile and its licence decision; the PV content needs the 2026 numbering verified (the edition decision itself is settled: both editions are profiles). |
+| 1, the MVP | All six core occupations: electricians, electrician's helpers, electrical inspectors, power-line installers, solar PV installers, fire and security alarm installers | Done: the seven procedure skills as lessons and step practice, the 44 procedures, the content engine. To build: the three remaining skills (solar PV and storage; low-voltage and fire alarm; utility line work) with lessons, practice and scenes, so that practice opens for the 16 procedures that wait on them; a fire alarm code profile and a utility code profile (D-17: no licence is needed for skills-based content, counsel to confirm); the 3D scenes and art (3DFrame, GameCoders Studio), including utility scenes (poles, vaults, bucket trucks); the 2026 numbering verified for the PV content; the remaining load-calculation content. |
+| 2 | The adjacent occupations (17 distinct, four clusters) | Beginner-literacy packages for maintenance, HVAC and construction roles first, then the other clusters; each needs the skills it uses to exist already. |
 
 ## 8. Market, as stated and as checked
 
@@ -152,9 +151,9 @@ teacher-reported use. Analytics (D-9) is how these are measured: events keyed by
 1a. **Student data.** Students include minors and analytics is required, so the privacy notice, consent route and retention rules need counsel before any release that sends data. (D-9)
 2. **Licensing.** The NEC, CEC and BS 7671 licence decisions are open, the fire alarm standard and the NESC would add more, and the market view says the NFPA cost is not modelled.
 3. **SOP accuracy.** The 44 procedures were drafted from public pages; the key standards (the electrical safe work standard, the fire alarm standard, the NESC) are paywalled and were not opened. An occupational expert must review each occupation.
-4. **Occupations the NEC does not cover.** Power-line work, and parts of fire alarm, elevator and utility work, need other codes. The owner decided to build utility line work (phase 2); until it exists, promising it in marketing would mislead buyers.
+4. **Occupations the NEC does not cover.** Power-line work, and parts of fire alarm, elevator and utility work, need other codes. The owner decided to build utility line work in the MVP (D-19); until it exists, promising it in marketing would mislead buyers.
 5. **Scenes.** Nothing teaches in 3D until scenes exist; content outpaces art.
-6. **Scope growth.** Ten skills were approved: seven are built as lessons and step practice, three remain for phases 2 and 3. Sequence the rest by phase and by how many procedures each unlocks (`docs/occupations/TRACEABILITY.md`).
+6. **Scope growth.** Ten skills were approved: seven are built as lessons and step practice, three remain for the MVP. Sequence them by how many procedures each unlocks (`docs/occupations/TRACEABILITY.md`).
 
 ## 11. Where the detail lives
 

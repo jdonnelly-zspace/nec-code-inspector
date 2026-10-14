@@ -27,7 +27,7 @@ Electrical work is learned by doing it safely, and schools cannot give every stu
 
 ## 4. The slides
 
-Seven slides: the six-slide limit was lifted by one at the owner's request, to show the six core occupations and the adjacent ones.
+Seven slides: the six-slide limit was lifted by one at the owner's request, to show the six core occupations and the adjacent ones. The deck was reviewed, approved and shared by the owner on 2026-10-13.
 
 ### Slide 1. The opportunity: skilled trades, taught safely, in 3D
 
@@ -68,20 +68,19 @@ Seven slides: the six-slide limit was lifted by one at the owner's request, to s
   - Progress is recorded by skill and tier, with analytics through RudderStack and Mixpanel (slide 7), under a generic ID with no personal data in any event.
 - **Visual idea:** the chain as four boxes, with one real procedure as the example (establishing an electrically safe work condition).
 
-### Slide 5. Roadmap: three phases, in order
+### Slide 5. Roadmap: the MVP, then the adjacent trades
 
-- **Headline:** Three phases, each building on the one before.
-- **Phase 1 (the MVP): electricians, electrician's helpers, electrical inspectors**
+- **Headline:** The MVP covers all six core occupations; the adjacent trades follow.
+- **Phase 1, the MVP: all six core occupations**
+  - Electricians, electrician's helpers, electrical inspectors, power-line installers, solar installers, fire and security alarm installers: all 44 procedures.
   - The 3D scenes and art (built in 3DFrame, with GameCoders Studio for higher fidelity), the panels in the app, analytics, and the progress export for teachers.
-  - Ready when: the three occupations can be taught end to end in 3D with progress visible.
-- **Phase 2: power-line installers and adjacent occupations**
-  - A utility code profile and new utility scenes (poles, vaults, bucket trucks) built in 3DFrame, then literacy packages for maintenance, HVAC and construction roles.
+  - New skills for solar and storage, low-voltage and fire alarm, and utility line work, with the utility scenes (poles, vaults, bucket trucks).
+  - Ready when all six can be taught end to end in 3D with progress visible.
+- **Phase 2: the adjacent occupations**
+  - Literacy packages for maintenance, HVAC and construction roles first, then the other clusters.
   - Starts when: Phase 1 is live.
-- **Phase 3: solar PV installers, fire and security alarm installers**
-  - Two new skills (solar PV and storage; low-voltage and fire alarm) and a second code profile for alarm work.
-  - Starts when: Phase 2 is under way.
 - **Runs across all phases:** more regions (Canada, UK), more languages (English first, the others next), accessibility settings.
-- **Visual idea:** a three-lane strip, each lane with its occupations and what it adds.
+- **Visual idea:** two lanes, the MVP wider, each with its occupations and what it adds.
 
 ### Slide 6. Marketing: who we say what to
 
@@ -124,7 +123,7 @@ Seven slides: the six-slide limit was lifted by one at the owner's request, to s
 2. Is "order, no dates" right for the roadmap, or do stakeholders expect quarters? (Recommendation: order, with a "target" column left blank for you to fill.)
 3. Who presents, and is this a read-ahead or a live talk? (A read-ahead needs more words per slide; a live talk needs fewer.)
 4. Should the deck be one artifact you share by link, or a downloadable file? (Decks made from the Slides type can be exported to .pptx or PDF.)
-5. Should the MVP include all six core occupations, or only phase 1 (electricians, helpers, inspectors)? The outline keeps the phases as decided (D-13); if all 44 procedures are in the MVP, slide 5 collapses to the MVP plus what comes after.
+5. (Answered 2026-10-13: the MVP covers all six core occupations, D-19.)
 
 ## 7. One naming system for levels (decided as D-12; the points below are open)
 
