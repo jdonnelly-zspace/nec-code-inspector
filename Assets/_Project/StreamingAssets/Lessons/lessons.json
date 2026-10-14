@@ -481,6 +481,32 @@
         "Forgetting to arrange the utility's shut-off before starting"
       ],
       "reviewStatus": "draft"
+    },
+    {
+      "skillId": "pv-and-storage-systems",
+      "title": "Solar PV and storage systems",
+      "summary": "How solar panels, their DC wiring, inverters and batteries are installed in a home, shut down, marked and connected to the building, and why parts of them can stay live when the grid is off.",
+      "whatToLookFor": [
+        "DC wiring that is secured, protected from damage and joined only with matching connectors",
+        "A way to shut the system down quickly, and a label that tells firefighters where it is (this lowers the voltage near the array but does not make the panels safe to touch)",
+        "Disconnects and labels that name every source of power (a system with microinverters may have no DC disconnect)",
+        "Array frames, rails and modules bonded to each other with listed hardware matched to the module and rail, and {term:grounding} that is continuous",
+        "A connection to the {term:panel} made by a method the code and the panel maker both allow, so its busbar is not overloaded",
+        "A home battery's location, ventilation, disconnect and the clear space around it"
+      ],
+      "whyItMatters": "Panels make power whenever light falls on them, so the wiring from the panels to the inverter can stay live when the grid is off or a switch is open, and a battery keeps its own power. A person can be shocked, or a fire fought, around equipment that looks switched off.",
+      "tiers": {
+        "foundation": "Name the main parts of a system (modules, DC wiring, inverter, disconnects, battery) and say which of them can stay live when the grid is off.",
+        "practitioner": "Install and check the DC wiring, shutdown, disconnects, bonding and labels of a home system, and test it safely before working on it.",
+        "authority": "Review a design and its connection to the utility: sizing, protection, interconnection and storage location, and what changes between editions. Always check the edition your area has adopted."
+      },
+      "commonMistakes": [
+        "Assuming the system is dead because the main {term:breaker} is off",
+        "Mixing connector types, or leaving wiring loose against a hot roof",
+        "Labels that name only one source of power",
+        "Connecting the inverter to a {term:panel} by a method the code or the panel maker does not allow"
+      ],
+      "reviewStatus": "draft"
     }
   ]
 }

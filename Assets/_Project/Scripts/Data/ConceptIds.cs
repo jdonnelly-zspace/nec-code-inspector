@@ -30,6 +30,7 @@ namespace NECInspector.Data
         public const string JobsiteSafety = "jobsite-safety";                       // ladders and falls, tools and cords, material handling, enclosed spaces, housekeeping
         public const string CodeAdministration = "code-administration";             // editions and amendments, permit and inspection stages, approve or reject
         public const string UtilityInterface = "utility-interface";                 // where the utility's equipment ends and the customer's begins
+        public const string PvAndStorage = "pv-and-storage-systems";                // solar arrays, DC wiring, inverters, shutdown, interconnection and battery storage (lesson and practice first; violations and entries follow the PV numbering check)
 
         /// <summary>The skills taught by code content: inspection violations, reference entries, the sandbox.</summary>
         public static readonly string[] CodeSkills =
@@ -41,7 +42,7 @@ namespace NECInspector.Data
         /// <summary>The skills taught by procedure practice and lessons.</summary>
         public static readonly string[] ProcedureSkills =
         {
-            ElectricallySafeWork, TestingMeasurement, Troubleshooting, PlansDocumentation, JobsiteSafety, CodeAdministration, UtilityInterface
+            ElectricallySafeWork, TestingMeasurement, Troubleshooting, PlansDocumentation, JobsiteSafety, CodeAdministration, UtilityInterface, PvAndStorage
         };
 
         public static readonly string[] All =
@@ -65,7 +66,8 @@ namespace NECInspector.Data
             PlansDocumentation,
             JobsiteSafety,
             CodeAdministration,
-            UtilityInterface
+            UtilityInterface,
+            PvAndStorage
         };
 
         public static bool IsKnown(string conceptId)

@@ -363,10 +363,11 @@
           "skills": [
             "wiring-methods",
             "conductor-sizing",
-            "equipment-installation"
+            "equipment-installation",
+            "pv-and-storage-systems"
           ],
           "coverage": "partial",
-          "practice": false,
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
@@ -399,10 +400,11 @@
             "disconnecting-means",
             "overcurrent-protection",
             "equipment-installation",
-            "identification-marking"
+            "identification-marking",
+            "pv-and-storage-systems"
           ],
           "coverage": "partial",
-          "practice": false,
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
@@ -432,10 +434,11 @@
             "Continuity testing"
           ],
           "skills": [
-            "earthing-bonding"
+            "earthing-bonding",
+            "pv-and-storage-systems"
           ],
           "coverage": "partial",
-          "practice": false,
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
@@ -469,10 +472,11 @@
           ],
           "skills": [
             "testing-and-measurement",
-            "electrically-safe-work"
+            "electrically-safe-work",
+            "pv-and-storage-systems"
           ],
-          "coverage": "none",
-          "practice": false,
+          "coverage": "partial",
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
@@ -504,10 +508,11 @@
           "skills": [
             "overcurrent-protection",
             "disconnecting-means",
-            "load-calculation"
+            "load-calculation",
+            "pv-and-storage-systems"
           ],
           "coverage": "partial",
-          "practice": false,
+          "practice": true,
           "reviewStatus": "draft"
         },
         {
@@ -539,10 +544,11 @@
           "skills": [
             "disconnecting-means",
             "equipment-installation",
-            "special-locations"
+            "special-locations",
+            "pv-and-storage-systems"
           ],
-          "coverage": "none",
-          "practice": false,
+          "coverage": "partial",
+          "practice": true,
           "reviewStatus": "draft"
         }
       ]

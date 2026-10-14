@@ -118,9 +118,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (partial):** partial: the sandbox teaches AC panel wiring and conductor choices, but not DC strings, connectors or PV wire.
 
-**Skills the app teaches that this procedure uses:** wiring-methods, conductor-sizing, equipment-installation
+**Skills the app teaches that this procedure uses:** wiring-methods, conductor-sizing, equipment-installation, pv-and-storage-systems
 
-**Skills still to build for it:** pv-and-storage-systems
+**Skills still to build for it:** none
 
 ### P3. Inverter, combiner, disconnect and rapid shutdown installation
 
@@ -157,9 +157,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (partial):** partial: disconnecting means and overcurrent skills transfer to the AC side, but rapid shutdown and PV-specific equipment are not taught.
 
-**Skills the app teaches that this procedure uses:** disconnecting-means, overcurrent-protection, equipment-installation, identification-marking
+**Skills the app teaches that this procedure uses:** disconnecting-means, overcurrent-protection, equipment-installation, identification-marking, pv-and-storage-systems
 
-**Skills still to build for it:** pv-and-storage-systems
+**Skills still to build for it:** none
 
 ### P4. Grounding and bonding of the array
 
@@ -195,9 +195,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (partial):** partial: the earthing-bonding skill trains bonding and grounding concepts for buildings, not array bonding hardware or DC ground-fault protection.
 
-**Skills the app teaches that this procedure uses:** earthing-bonding
+**Skills the app teaches that this procedure uses:** earthing-bonding, pv-and-storage-systems
 
-**Skills still to build for it:** pv-and-storage-systems
+**Skills still to build for it:** none
 
 ### P5. Commissioning tests and electrically safe testing
 
@@ -235,11 +235,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.surgepv.com/blog/solar-commissioning-checklist (Describes DC tests, expected Voc correction, insulation test with disconnects open and handover documents.)
 - https://www.portlandiaelectric.supply/blogs/generators/safety-first-osha-and-nfpa-requirements-for-solar-installation-crews (Recommends live-dead-live testing and rated PPE.)
 
-**App coverage today (none):** none: the app does not yet teach meter testing; no skill trains these steps.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: the app does not yet teach meter testing; no skill trains these steps.)
 
-**Skills the app teaches that this procedure uses:** testing-and-measurement, electrically-safe-work
+**Skills the app teaches that this procedure uses:** testing-and-measurement, electrically-safe-work, pv-and-storage-systems
 
-**Skills still to build for it:** pv-and-storage-systems
+**Skills still to build for it:** none
 
 ### P6. Interconnection and utility hand-off
 
@@ -276,9 +276,9 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 
 **App coverage today (partial):** partial: load calculation and service concepts exist, but no source interconnection, 120 percent rule or utility process.
 
-**Skills the app teaches that this procedure uses:** overcurrent-protection, disconnecting-means, load-calculation
+**Skills the app teaches that this procedure uses:** overcurrent-protection, disconnecting-means, load-calculation, pv-and-storage-systems
 
-**Skills still to build for it:** pv-and-storage-systems
+**Skills still to build for it:** none
 
 ### P7. Battery storage installation
 
@@ -314,11 +314,11 @@ Each procedure is the standard, repeatable way the work is done and made safe. S
 - https://www.solarpermitsolutions.com/blog/nec-2023-article-690-solar-pv-systems-requirements (2023 706.7 adds formal commissioning requirements for storage.)
 - https://iaeimagazine.org/columns/photovoltaic/2023-national-electrical-code-and-photovoltaic-power-systems (2023 NEC changed Articles 706 and 480 scope, commissioning and disconnects.)
 
-**App coverage today (none):** none: no batteries or storage content; skills touch only generic disconnect and location ideas.
+**App coverage today (partial):** partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: no batteries or storage content; skills touch only generic disconnect and location ideas.)
 
-**Skills the app teaches that this procedure uses:** disconnecting-means, equipment-installation, special-locations
+**Skills the app teaches that this procedure uses:** disconnecting-means, equipment-installation, special-locations, pv-and-storage-systems
 
-**Skills still to build for it:** pv-and-storage-systems
+**Skills still to build for it:** none
 
 ## Standards and codes
 

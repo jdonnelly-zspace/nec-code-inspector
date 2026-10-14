@@ -76,13 +76,13 @@
     {
       "id": "pv-and-storage-systems",
       "title": "Solar PV and storage systems",
-      "status": "approved",
+      "status": "built",
       "summary": "Arrays, DC wiring, inverters, rapid shutdown, interconnection, and battery storage: how they are installed, protected, marked and connected.",
       "reason": "The solar installer is a core occupation in the market view (the fastest growing), and PV and storage also touch electricians, inspectors and several adjacent occupations. None of the 13 skills covers DC systems or rapid shutdown. Much of it sits in the NEC (Articles 690, 691, 705, 706, 480), so it fits the app's code approach, but those articles changed in 2017, 2020 and 2023, so it depends on the edition decision.",
       "standards": "NEC Articles 690, 691, 705, 706, 480, 710 and 250; fire-code access and setbacks; UL listings; utility interconnection rules.",
       "codeProfile": "new entries in each code profile; fire-code items as outside-code notes",
       "firstContent": "A residential rooftop array inspection (rapid shutdown, labels, disconnects, bonding) and an interconnection exercise on the panel sandbox.",
-      "decision": "approved 2026-10-12; in the MVP since 2026-10-13 (D-19)",
+      "decision": "approved 2026-10-12; built 2026-10-13 as a lesson and step practice (D-19: in the MVP); violations and reference entries come after the PV numbering is verified for both NEC editions",
       "phase": 1
     },
     {
