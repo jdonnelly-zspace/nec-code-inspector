@@ -1,0 +1,17 @@
+{
+  "id": "utility-safety",
+  "displayName": "Electric power line work rules (OSHA 1910.269)",
+  "edition": "current as of 2026 (eCFR text read 2026-10-13, last amended 2020-02-18)",
+  "region": "US",
+  "units": "imperial",
+  "artSet": "north-america",
+  "reviewStatus": "draft",
+  "note": "Partial draft in our own words from the public federal text (29 CFR 1910.269, read on eCFR). The national utility safety code (NESC) is not covered because it is paywalled. Construction rules (1926 Subpart V) were not read and are not covered. A person must check each entry against the regulation before it is used. Scope: the rules cover electric power generation, transmission and distribution work in general industry; construction work falls under a separate rule (Subpart V of the construction standard), and building wiring under another. Numbers were checked by a second pass against a different public copy of the text (Cornell LII); five entries cite the parent paragraph while part of the content sits one level down.",
+  "license": {
+    "status": "unreviewed",
+    "holder": "U.S. Department of Labor (federal regulation, public)",
+    "note": "Federal regulations are public. The app stores reference numbers and its own paraphrases and does not reproduce regulation text or tables (docs/CONTENT_POLICY.md). Nobody has decided whether anything further is needed. Needs the owner before release.",
+    "evidence": "",
+    "checkedOn": ""
+  }
+}

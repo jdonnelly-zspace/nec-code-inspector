@@ -1,0 +1,181 @@
+{
+  "note": "All paragraphs read from the full eCFR XML text of section 1910.269 fetched 2026-10-13 (latest version in the eCFR versioner list is amended 2020-02-18). A WebFetch summary of the page was unreliable (it mislabelled paragraph (d) and (g)) and was not used. Not cross-checked against osha.gov.",
+  "sources": {
+    "1910.269(a)(2)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(a)(2)(i)(A)-(C), (v), (vii), (viii): training on job practices and emergency procedures such as pole-top and manhole rescue, degree set by risk, retraining triggers, proficiency must be demonstrated",
+      "doubt": ""
+    },
+    "1910.269(a)(2)(ii)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(a)(2)(ii)(A)-(E) lists the skills; the note says a person needs this training to be a qualified person",
+      "doubt": ""
+    },
+    "1910.269(a)(4)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(a)(4)(i)-(viii): nominal voltage, switching transients, induced voltage, grounds, circuit locations, condition of grounds and poles, environmental conditions",
+      "doubt": ""
+    },
+    "1910.269(c)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(c)(1)-(5): info to employee in charge, subjects of briefing, once per shift for repetitive work plus when significant changes, brief or extensive depending on the job, working alone still plans the job",
+      "doubt": ""
+    },
+    "1910.269(e)(9)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(e)(9) oxygen test, (e)(10) flammable test after oxygen, (e)(11) ventilation if a problem is found, (e)(12) ventilation starts before entry and continues until all leave",
+      "doubt": "Content spans (e)(9) to (e)(12); reference kept to (e)(9) as the primary one"
+    },
+    "1910.269(e)(7)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(e)(7): attendant with first aid training available outside if a hazard exists because of traffic patterns at the opening; may do other duties if not distracted",
+      "doubt": "The attendant text in (e)(7) is tied to traffic hazards at the opening; the energized-vault attendant rule is (t)(3)"
+    },
+    "1910.269(l)(1)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(l)(1)(i)-(iii): only qualified employees; areas of 50 V or more; treat as energized unless deenergized under (d) or (m)",
+      "doubt": ""
+    },
+    "1910.269(l)(2)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(l)(2)(i)(A)-(E) types of work needing two employees; (l)(2)(ii)(A)-(C) exceptions",
+      "doubt": ""
+    },
+    "1910.269(l)(3)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(l)(3)(i) employer establishes distances from tables (values not reproduced); (l)(3)(iii)(A)-(C) exceptions: employee insulated, part insulated, or barehand per (q)(3)",
+      "doubt": ""
+    },
+    "1910.269(l)(8)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(l)(8)(i)-(v): assess, estimate heat energy, no melting clothing, flame-resistant outer layer in listed cases, arc rating at least the estimate when above 2.0 cal/cm2, exceptions for hands, feet, head",
+      "doubt": ""
+    },
+    "1910.269(m)(3)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(m)(3)(i)-(viii): request, open and tag sources including remote and automatic, tags prohibit operation, test with voltage detector, install grounds, then deenergized; (m)(2) names the person in charge of the clearance",
+      "doubt": ""
+    },
+    "1910.269(m)(3)(xiii)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(m)(3)(x) release steps; (m)(3)(xi) only the requester releases; (m)(3)(xii) no tag removal before release; (m)(3)(xiii) conditions before reenergizing",
+      "doubt": ""
+    },
+    "1910.269(n)(2)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(n)(2) deenergize under (m) and ground; exceptions (i)-(iii): deenergized, no other source, no induced voltage; (n)(3) equipotential zone",
+      "doubt": ""
+    },
+    "1910.269(n)(5)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(n)(5) test absence of voltage before installing ground; (n)(6)(i) ground end first then line end by live-line tool; (n)(6)(ii) removal reverses; 600 V or less allows other insulating equipment",
+      "doubt": "Entry combines (n)(5) and (n)(6); reference kept to (n)(5)"
+    },
+    "1910.269(g)(2)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(g)(2)(iv)(C)(1)-(3): aerial lift needs restraint or arrest; over 4 ft on poles and towers; qualified climbers must use fall protection on and after 2015-04-01 unless infeasible or greater hazard",
+      "doubt": "Detail sits in (g)(2)(iv)(C); reference kept to (g)(2)"
+    },
+    "1910.269(p)(4)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(p)(4)(i) keep distance, insulated aerial lift portion exempt; (p)(4)(ii) designated observer; (p)(4)(iii)(A)-(C) cover lines, or insulate and keep back, or ground, bond, mats, barriers",
+      "doubt": ""
+    },
+    "1910.269(q)(1)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(q)(1)(i) structure strength and bracing; (q)(1)(ii)-(iii) pole near energized conductor; (q)(1)(iv) guard or attend pole holes",
+      "doubt": ""
+    },
+    "1910.269(q)(2)(iv)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(q)(2)(iv): determine approximate induced voltage or assume hazardous; temporary protective grounds unless shown not subject to induction; note gives 1 mA through 500 ohms as hazard threshold",
+      "doubt": ""
+    },
+    "1910.269(t)(1)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(t)(1) ladder for over 1.22 m (4 ft) depth, no stepping on cables; (t)(2)(ii) workers clear of the area under the opening",
+      "doubt": "The lowering rule is (t)(2); reference kept to (t)(1)"
+    },
+    "1910.269(t)(3)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(t)(3)(i) first-aid-trained employee on the surface near the entrance; (t)(3)(iv) reliable two-way communications",
+      "doubt": ""
+    },
+    "1910.269(w)(6)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(w)(6)(i)-(v): signs and devices, barricades, excavated areas barricaded, warning lights at night; excavation work itself defers to 1926 Subpart P per (f)",
+      "doubt": ""
+    },
+    "1910.269(w)(7)": {
+      "urls": [
+        "https://www.ecfr.gov/current/title-29/subtitle-B/chapter-XVII/part-1910/subpart-R/section-1910.269",
+        "https://www.ecfr.gov/api/versioner/v1/full/2026-10-01/title-29.xml?part=1910&section=1910.269"
+      ],
+      "says": "(w)(7): possibility of backfeed from cogeneration or the secondary system; (l) applies if worked energized, (m) and (n) if worked deenergized",
+      "doubt": ""
+    }
+  }
+}
