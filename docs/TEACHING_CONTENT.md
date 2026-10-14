@@ -5,7 +5,7 @@ built, and what is still to do.
 
 ## 1. Skill lessons (built)
 
-One short lesson per skill, 20 in all (13 code skills and 7 procedure skills), in `Assets/_Project/StreamingAssets/Lessons/lessons.json`.
+One short lesson per skill, 21 in all (13 code skills and 8 procedure skills), in `Assets/_Project/StreamingAssets/Lessons/lessons.json`.
 
 | Part | What it is |
 |---|---|

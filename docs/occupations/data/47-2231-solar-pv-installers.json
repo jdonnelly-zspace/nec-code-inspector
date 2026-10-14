@@ -243,12 +243,11 @@
       "appSkills": [
         "wiring-methods",
         "conductor-sizing",
-        "equipment-installation"
+        "equipment-installation",
+        "pv-and-storage-systems"
       ],
       "appCoverage": "partial: the sandbox teaches AC panel wiring and conductor choices, but not DC strings, connectors or PV wire.",
-      "plannedSkills": [
-        "pv-and-storage-systems"
-      ]
+      "plannedSkills": []
     },
     {
       "name": "Inverter, combiner, disconnect and rapid shutdown installation",
@@ -303,12 +302,11 @@
         "disconnecting-means",
         "overcurrent-protection",
         "equipment-installation",
-        "identification-marking"
+        "identification-marking",
+        "pv-and-storage-systems"
       ],
       "appCoverage": "partial: disconnecting means and overcurrent skills transfer to the AC side, but rapid shutdown and PV-specific equipment are not taught.",
-      "plannedSkills": [
-        "pv-and-storage-systems"
-      ]
+      "plannedSkills": []
     },
     {
       "name": "Grounding and bonding of the array",
@@ -356,12 +354,11 @@
         }
       ],
       "appSkills": [
-        "earthing-bonding"
+        "earthing-bonding",
+        "pv-and-storage-systems"
       ],
       "appCoverage": "partial: the earthing-bonding skill trains bonding and grounding concepts for buildings, not array bonding hardware or DC ground-fault protection.",
-      "plannedSkills": [
-        "pv-and-storage-systems"
-      ]
+      "plannedSkills": []
     },
     {
       "name": "Commissioning tests and electrically safe testing",
@@ -421,12 +418,12 @@
       ],
       "appSkills": [
         "testing-and-measurement",
-        "electrically-safe-work"
-      ],
-      "appCoverage": "none: the app does not yet teach meter testing; no skill trains these steps.",
-      "plannedSkills": [
+        "electrically-safe-work",
         "pv-and-storage-systems"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: the app does not yet teach meter testing; no skill trains these steps.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: the app does not yet teach meter testing; no skill trains these steps."
     },
     {
       "name": "Interconnection and utility hand-off",
@@ -480,12 +477,11 @@
       "appSkills": [
         "overcurrent-protection",
         "disconnecting-means",
-        "load-calculation"
+        "load-calculation",
+        "pv-and-storage-systems"
       ],
       "appCoverage": "partial: load calculation and service concepts exist, but no source interconnection, 120 percent rule or utility process.",
-      "plannedSkills": [
-        "pv-and-storage-systems"
-      ]
+      "plannedSkills": []
     },
     {
       "name": "Battery storage installation",
@@ -543,12 +539,12 @@
       "appSkills": [
         "disconnecting-means",
         "equipment-installation",
-        "special-locations"
-      ],
-      "appCoverage": "none: no batteries or storage content; skills touch only generic disconnect and location ideas.",
-      "plannedSkills": [
+        "special-locations",
         "pv-and-storage-systems"
-      ]
+      ],
+      "appCoverage": "partial: the app now teaches the sequence and the safety reasoning through a skill lesson and a step-by-step practice of the procedure; it has no hands-on tool or simulation for it. (Before this skill the rating was: none: no batteries or storage content; skills touch only generic disconnect and location ideas.)",
+      "plannedSkills": [],
+      "appCoverageBefore": "none: no batteries or storage content; skills touch only generic disconnect and location ideas."
     }
   ],
   "standardsAndCodes": [

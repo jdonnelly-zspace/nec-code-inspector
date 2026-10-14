@@ -9,14 +9,14 @@ Every procedure of the six core occupations against what the app teaches today (
 | Occupation | Procedures | Good | Partial | None | Share with any coverage |
 |---|---|---|---|---|---|
 | 47-2111 Electricians | 7 | 1 | 6 | 0 | 100% |
-| 47-2231 Solar Photovoltaic Installers | 7 | 0 | 5 | 2 | 71% |
+| 47-2231 Solar Photovoltaic Installers | 7 | 0 | 7 | 0 | 100% |
 | 47-3013 Helpers--Electricians | 8 | 0 | 8 | 0 | 100% |
 | 47-4011 Construction and Building Inspectors | 7 | 1 | 6 | 0 | 100% |
 | 49-2098 Security and Fire Alarm Systems Installers | 7 | 0 | 3 | 4 | 43% |
 | 49-9051 Electrical Power-Line Installers and Repairers | 8 | 0 | 3 | 5 | 38% |
-| **All six** | **44** | **2** | **31** | **11** | **75%** |
+| **All six** | **44** | **2** | **33** | **9** | **80%** |
 
-28 of 44 procedures offer step-ordering practice in the app (`StreamingAssets/Occupations/occupations.json`).
+34 of 44 procedures offer step-ordering practice in the app (`StreamingAssets/Occupations/occupations.json`).
 
 ## Procedure by procedure
 
@@ -37,12 +37,12 @@ Every procedure of the six core occupations against what the app teaches today (
 | Procedure | Coverage | App skills used | Skills still to build |
 |---|---|---|---|
 | Site survey and roof fall protection | partial | jobsite-safety | none |
-| Array installation, DC wiring and connector handling | partial | wiring-methods, conductor-sizing, equipment-installation | pv-and-storage-systems |
-| Inverter, combiner, disconnect and rapid shutdown installation | partial | disconnecting-means, overcurrent-protection, equipment-installation, identification-marking | pv-and-storage-systems |
-| Grounding and bonding of the array | partial | earthing-bonding | pv-and-storage-systems |
-| Commissioning tests and electrically safe testing | none | testing-and-measurement, electrically-safe-work | pv-and-storage-systems |
-| Interconnection and utility hand-off | partial | overcurrent-protection, disconnecting-means, load-calculation | pv-and-storage-systems |
-| Battery storage installation | none | disconnecting-means, equipment-installation, special-locations | pv-and-storage-systems |
+| Array installation, DC wiring and connector handling | partial | wiring-methods, conductor-sizing, equipment-installation, pv-and-storage-systems | none |
+| Inverter, combiner, disconnect and rapid shutdown installation | partial | disconnecting-means, overcurrent-protection, equipment-installation, identification-marking, pv-and-storage-systems | none |
+| Grounding and bonding of the array | partial | earthing-bonding, pv-and-storage-systems | none |
+| Commissioning tests and electrically safe testing | partial | testing-and-measurement, electrically-safe-work, pv-and-storage-systems | none |
+| Interconnection and utility hand-off | partial | overcurrent-protection, disconnecting-means, load-calculation, pv-and-storage-systems | none |
+| Battery storage installation | partial | disconnecting-means, equipment-installation, special-locations, pv-and-storage-systems | none |
 
 ### 47-3013 Helpers--Electricians
 
@@ -94,7 +94,7 @@ Every procedure of the six core occupations against what the app teaches today (
 | Storm restoration and outage switching | none | none | utility-line-work |
 | Making and verifying a service connection and meter at the customer | partial | equipment-installation, disconnecting-means, identification-marking, earthing-bonding, utility-interface | none |
 
-## The app's 20 skills: how many procedures use each
+## The app's 21 skills: how many procedures use each
 
 | Skill | Procedures | Occupations |
 |---|---|---|
@@ -108,6 +108,7 @@ Every procedure of the six core occupations against what the app teaches today (
 | identification-marking | 6 | 47-2111, 47-2231, 47-4011, 49-2098, 49-9051 |
 | electrically-safe-work | 6 | 47-2111, 47-2231, 47-3013, 47-4011, 49-2098, 49-9051 |
 | testing-and-measurement | 6 | 47-2111, 47-2231, 47-4011, 49-2098 |
+| pv-and-storage-systems | 6 | 47-2231 |
 | arc-fault-protection | 5 | 47-2111, 47-3013, 47-4011 |
 | overcurrent-protection | 5 | 47-2111, 47-2231, 47-4011 |
 | working-space-access | 5 | 47-2111, 47-3013, 47-4011, 49-2098 |
@@ -123,7 +124,6 @@ Every procedure of the six core occupations against what the app teaches today (
 
 | Skill | Phase | Status | Procedures | Occupations | Why |
 |---|---|---|---|---|---|
-| pv-and-storage-systems | 1 | approved | 6 | 47-2231 | Arrays, DC wiring, inverters, rapid shutdown, interconnection, and battery storage: how they are installed, protected, marked and connected. |
 | low-voltage-and-fire-alarm-systems | 1 | approved | 5 | 49-2098 | Power-limited and fire alarm circuits, communications cabling, separation from power wiring, devices and panels, supervision, power supplies, and the testing and handling of impairments. |
 | utility-line-work | 1 | approved | 5 | 49-9051 | Work on utility lines and equipment: approach distances, de-energizing and grounding lines, climbing, pole setting, underground vaults, outage switching. |
 | electrically-safe-work | 1 | built | 0 |  | Making a circuit or piece of equipment safe to work on and proving it: identify every source, shut off, lock and tag, test before touching with a proved meter, and know what protective equipment to use. |
@@ -132,6 +132,7 @@ Every procedure of the six core occupations against what the app teaches today (
 | plans-and-documentation | 1 | built | 0 |  | Reading drawings, schedules and one-line diagrams; laying out work from them; and recording what was found or done (inspection notes, correction notices, test records). |
 | jobsite-safety | 1 | built | 0 |  | General hazards of the job apart from electricity: ladders and falls, roofs and aerial lifts, tools and cords, material handling, enclosed spaces, housekeeping and a pre-job briefing. |
 | code-administration | 1 | built | 0 |  | How the code is adopted and enforced: which edition and local amendments apply, the stages of a permit and inspection, and how work is approved, corrected or rejected. |
+| pv-and-storage-systems | 1 | built | 0 |  | Arrays, DC wiring, inverters, rapid shutdown, interconnection, and battery storage: how they are installed, protected, marked and connected. |
 | utility-interface | 1 | built | 0 |  | Where the utility's equipment ends and the customer's begins: the service point, meter, service entrance and the connections made there. |
 
 The reasons, standards and first content for each are in `docs/occupations/proposed-skills.json`.
